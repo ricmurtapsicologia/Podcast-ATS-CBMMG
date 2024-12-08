@@ -4,17 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Podcast ATS - Áudios Interativos</title>
+    <title>Girando a Ampulheta da Vida</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
+            background: url('https://i.pinimg.com/originals/38/70/c5/3870c5a678e72a0c16ca58914e14df3f.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
         }
 
         header {
-            background: #333;
+            background: rgba(0, 0, 0, 0.6); /* Background escuro com transparência */
             color: white;
             padding: 20px;
             text-align: center;
@@ -22,16 +24,58 @@
 
         header h1 {
             margin: 0;
-            font-size: 28px;
+            font-size: 2.5em;
+            color: #fff; /* Melhor contraste para o título */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para aumentar contraste */
         }
 
         main {
             padding: 20px;
             max-width: 900px;
             margin: auto;
-            background: white;
+            background: rgba(255, 255, 255, 0.9); /* Fundo branco sem opacidade total para contraste */
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #006400;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            text-align: justify;
+            color: #333;
+        }
+
+        p.cta {
+            font-weight: bold;
+            color: #006400;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+      footer {
+    display: flex;               /* Usar flexbox para alinhar o conteúdo */
+    justify-content: center;      /* Centraliza o conteúdo */
+    align-items: center;          /* Alinha o conteúdo verticalmente */
+    text-align: center;           /* Alinha o texto ao centro */
+    margin-top: 20px;
+    color: #555;
+    font-size: 1em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+}
+
+        footer p {
+            color: white; /* Contraste para facilitar a leitura */
+            margin: 0;
         }
 
         .audio-section {
@@ -63,19 +107,33 @@
             fill: #006400;
         }
 
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            color: #555;
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            main {
+                padding: 15px;
+                margin: 15px;
+            }
         }
     </style>
 </head>
 
 <body>
     <header>
-        <h1>Podcast ATS - Áudios Interativos</h1>
+        <h1>Girando a Ampulheta da Vida</h1>
     </header>
     <main>
+        <h2>Primeira Série do Projeto</h2>
+        <p>Bem-vindo à primeira série do <strong>Projeto Girando a Ampulheta da Vida</strong>, intitulada <strong>"Abordagem Técnica - Comunicação que Salva"</strong>.</p>
+
+        <p>Este material é voltado para a formação complementar dos profissionais do Corpo de Bombeiros Militar de Minas Gerais, focando no atendimento a tentativas de suicídio. A série "Abordagem Técnica - Comunicação que Salva" foi desenvolvida para aprimorar a comunicação e as habilidades de intervenção dos bombeiros em situações de crise. Através de técnicas eficazes e empáticas, buscamos proporcionar uma formação sólida para que os profissionais estejam preparados para agir com precisão e humanização.</p>
+
+        <p>A cada episódio, você aprenderá como aplicar abordagens técnicas, aprimorar suas interações e salvar vidas. Este conteúdo foi criado para complementar o aprendizado dos cursos de formação do CBMMG, oferecendo recursos valiosos para o atendimento a tentativas de suicídio.</p>
+
+        <p>Esteja preparado para absorver um conteúdo que fará diferença na sua carreira e salvará vidas. <span class="cta">Aperte o play e comece a escutar agora mesmo!</span></p>
+
         <h2>Lista de Áudios</h2>
         <div id="audio-list"></div>
     </main>
@@ -134,3 +192,4 @@
 </body>
 
 </html>
+
