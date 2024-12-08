@@ -15,6 +15,7 @@
 		    background: url('https://i.pinimg.com/originals/38/70/c5/3870c5a678e72a0c16ca58914e14df3f.jpg') no-repeat center center fixed;
 		    background-size: cover;
 		    color: #333;
+		    box-sizing: border-box;  /* Garantir que padding e margens não causem overflow */
 		}
 		
 		header {
@@ -60,7 +61,7 @@
 		    text-decoration: underline;
 		}
 		
-		      footer {
+		footer {
 		    display: flex;               /* Usar flexbox para alinhar o conteúdo */
 		    flex-direction: column;       /* Alinhar o texto em coluna */
 		    justify-content: center;      /* Centraliza o conteúdo */
@@ -110,9 +111,25 @@
 		    fill: #006400;
 		}
 		
-		@media (max-width: 768px) {
+		/* Responsividade para diferentes tamanhos de tela */
+		@media (max-width: 1024px) {  /* Para tablets e dispositivos grandes */
 		    header h1 {
-		        font-size: 2em; /* Reduzir o tamanho do título para telas menores */
+		        font-size: 2.2em;  /* Ajuste de tamanho do título */
+		    }
+		
+		    main {
+		        padding: 20px;
+		        margin: 20px;
+		    }
+		
+		    footer {
+		        padding: 20px;  /* Ajuste do padding para melhor visualização */
+		    }
+		}
+		
+		@media (max-width: 768px) {  /* Para celulares */
+		    header h1 {
+		        font-size: 2em;  /* Reduzir título para telas menores */
 		    }
 		
 		    main {
@@ -121,7 +138,24 @@
 		    }
 		
 		    footer {
-		        padding: 15px; /* Aumentar o espaçamento interno no rodapé para telas pequenas */
+		        padding: 15px;
+		        font-size: 0.9em;  /* Ajuste da fonte para telas menores */
+		    }
+		}
+		
+		@media (max-width: 480px) {  /* Para dispositivos pequenos */
+		    header h1 {
+		        font-size: 1.6em;  /* Reduzir mais para telas pequenas */
+		    }
+		
+		    main {
+		        padding: 10px;
+		        margin: 10px;
+		    }
+		
+		    footer {
+		        padding: 10px;
+		        font-size: 0.8em;  /* Ajustar a fonte do rodapé */
 		    }
 		}
 	</style>
