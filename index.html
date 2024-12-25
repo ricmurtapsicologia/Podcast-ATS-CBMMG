@@ -5,8 +5,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Girando a Ampulheta da Vida</title>
-	<meta property="og:image" content="https://i.pinimg.com/originals/33/9d/0c/339d0cc2f05bbb719debe6a5efb414dd.jpg">
-	<meta property="og:url" content="https://ricmurtapsicologia.github.io/Podcast-ATS-CBMMG/">
+	<meta property="og:title" content="Girando a Ampulheta da Vida - Podcast" />
+	<meta property="og:image" content="https://i.pinimg.com/originals/33/9d/0c/339d0cc2f05bbb719debe6a5efb414dd.jpg" />
+	<meta property="og:description" content="Explore temas profundos com os podcasts de Girando a Ampulheta da Vida. Educação, empatia e suporte!" />
+	<meta property="og:url" content="https://ricmurtapsicologia.github.io/Podcast-ATS-CBMMG/" />
 	<style>
 		body {
 		    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -15,7 +17,6 @@
 		    background: url('https://i.pinimg.com/originals/38/70/c5/3870c5a678e72a0c16ca58914e14df3f.jpg') no-repeat center center fixed;
 		    background-size: cover;
 		    color: #333;
-		    box-sizing: border-box;
 		}
 		
 		header {
@@ -32,105 +33,87 @@
 		    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 		}
 		
-		main {
+		.container {
+		    display: flex;
+		    flex-wrap: wrap;
+		    justify-content: center;
 		    padding: 20px;
-		    max-width: 900px;
-		    margin: auto;
+		    gap: 20px;
+		}
+		
+		.folder {
+		    background: rgba(255, 255, 255, 0.9);
+		    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+		    border-radius: 10px;
+		    width: 300px;
+		    text-align: center;
+		    padding: 15px;
+		    cursor: pointer;
+		    transition: transform 0.3s;
+		}
+		
+		.folder:hover {
+		    transform: translateY(-5px);
+		    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+		}
+		
+		.folder img {
+		    width: 100%;
+		    height: 200px;
+		    border-radius: 10px;
+		    object-fit: cover;
+		}
+		
+		.folder h2 {
+		    font-size: 1.5em;
+		    color: #006400;
+		    margin: 10px 0;
+		}
+		
+		.audio-container {
+		    display: none;
+		    padding: 20px;
 		    background: rgba(255, 255, 255, 0.9);
 		    border-radius: 10px;
-		    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-		}
-		
-		h2 {
-		    font-size: 1.8em;
-		    margin-bottom: 15px;
-		    color: #006400;
-		    text-align: center;
-		}
-		
-		p {
-		    font-size: 1.1em;
-		    line-height: 1.6;
-		    text-align: justify;
-		    color: #333;
-		}
-		
-		p.cta {
-		    font-weight: bold;
-		    color: #006400;
-		    cursor: pointer;
-		    text-decoration: underline;
-		}
-		
-		footer {
-		    display: flex;
-		    flex-direction: column;
-		    justify-content: center;
-		    align-items: center;
-		    text-align: center;
-		    margin-top: 20px;
-		    color: #555;
-		    font-size: 1em;
-		    position: relative;
-		    bottom: 0;
-		    width: 100%;
-		    background: rgba(0, 0, 0, 0.7);
-		    padding: 10px;
-		}
-		
-		footer p {
-		    color: white;
-		    margin: 5px 0;
+		    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+		    max-width: 800px;
+		    margin: 0 auto;
 		}
 		
 		.audio-section {
-		    margin-bottom: 30px;
-		    padding: 10px;
-		    border: 1px solid #ddd;
-		    border-radius: 10px;
-		    background: #f9f9f9;
+		    margin-bottom: 20px;
 		}
 		
 		.audio-section h3 {
+		    font-size: 1.2em;
+		    color: #005f73;
 		    margin-bottom: 10px;
-		    font-size: 18px;
-		    color: #333;
-		    display: flex;
-		    align-items: center;
-		    gap: 10px;
 		}
 		
 		.audio-controls {
-		    display: flex;
-		    align-items: center;
-		    gap: 10px;
+		    text-align: center;
 		}
 		
-		.audio-section svg {
-		    width: 24px;
-		    height: 24px;
-		    fill: #006400;
+		.audio-controls audio {
+		    width: 100%;
 		}
 		
 		.feedback-section {
-		    display: flex;
-		    flex-direction: column;
-		    justify-content: center;
-		    align-items: center;
-		    margin-top: 30px;
-		    margin-bottom: 30px;
+		    margin: 20px 0;
 		    text-align: center;
 		}
 		
 		.feedback-section p {
-		    font-size: 1.1em;
-		    margin-bottom: 15px;
-		    color: #333;
+		    font-size: 1.2em;
+		    color: #ffffff;
+		    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Melhor contraste */
+		    margin-bottom: 10px;
 		}
 		
 		.feedback-button {
 		    display: inline-flex;
 		    align-items: center;
+		    justify-content: center;
 		    gap: 10px;
 		    background-color: #005f73;
 		    color: #fff;
@@ -138,7 +121,7 @@
 		    padding: 10px 20px;
 		    border-radius: 5px;
 		    font-size: 1.2em;
-		    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+		    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 		    transition: transform 0.3s ease;
 		}
 		
@@ -146,33 +129,35 @@
 		    transform: translateY(-3px);
 		}
 		
-		@media (max-width: 768px) {
-		    header h1 {
-		        font-size: 2em;
-		    }
-		
-		    main {
-		        padding: 15px;
-		    }
-		
-		    footer {
-		        padding: 15px;
-		        font-size: 0.9em;
-		    }
+		footer {
+		    background: rgba(0, 0, 0, 0.8);
+		    color: white;
+		    text-align: center;
+		    padding: 20px;
+		    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 		}
 		
-		@media (max-width: 480px) {
-		    header h1 {
-		        font-size: 1.6em;
+		.footer-text p {
+		    margin: 5px 0;
+		    font-size: 0.9em;
+		}
+		
+		.footer-text p:first-child {
+		    font-weight: bold;
+		}
+		
+		@media (max-width: 768px) {
+		    .folder {
+		        width: 90%;
 		    }
 		
-		    main {
-		        padding: 10px;
+		    .feedback-button {
+		        font-size: 1em;
+		        padding: 8px 15px;
 		    }
 		
 		    footer {
-		        padding: 10px;
-		        font-size: 0.8em;
+		        font-size: 0.9em;
 		    }
 		}
 	</style>
@@ -182,66 +167,174 @@
 	<header>
 		<h1>Girando a Ampulheta da Vida</h1>
 	</header>
-	<main>
-		<h2>Primeira Série do Projeto</h2>
-		<p>Bem-vindo à primeira série do <strong>Projeto Girando a Ampulheta da Vida</strong>, intitulada <strong>"Abordagem Técnica - Comunicação que Salva"</strong>.</p>
-		<p>Esta série foi criada para complementar as aulas da disciplina de <strong>Atendimento a Tentativas de Suicídio</strong> nos cursos de formação do Corpo de Bombeiros Militar de Minas Gerais. Com foco na comunicação eficaz e humanizada, buscamos capacitar os bombeiros a lidarem com situações de crise com empatia e precisão, aprimorando suas habilidades de intervenção em tentativas de suicídio.</p>
-		<p>Cada episódio traz abordagens técnicas que transformam a prática diária em momentos de impacto real na vida das pessoas. Ao ouvir, você ganhará recursos essenciais que farão a diferença no atendimento, permitindo que você seja mais assertivo e sensível em cada abordagem.</p>
-		<p>Este é o seu momento de aprofundar o conhecimento e de salvar vidas. <span class="cta">Aperte o play e comece a escutar agora mesmo!</span></p>
-		<h2>Lista de Áudios</h2>
-		<div id="audio-list"></div>
-		<div class="feedback-section">
-			<p>Gostou do conteúdo? Envie-nos seu feedback:</p>
-			<a href="https://wa.me/5535984640729?text=Ol%C3%A1%2C%20gostaria%20de%20dar%20um%20feedback%20sobre%20o%20projeto%20Girando%20a%20Ampulheta%20da%20Vida." target="_blank" class="feedback-button">
-				<img src="https://img.icons8.com/ios-filled/50/ffffff/feedback.png" width="24" alt="Feedback"> Enviar Feedback </a>
+	<div class="container">
+		<!-- Série 1 -->
+		<div class="folder" id="folder-1" onclick="toggleAudios(1)">
+			<img src="https://i.pinimg.com/736x/46/a2/33/46a2335ebc2074b6df9a9774ce9cfd5d.jpg" alt="Abordagens Técnicas">
+			<h2>Série 1: Abordagens Técnicas</h2>
+			<p>Descubra como a comunicação pode salvar vidas. <strong>Aperte o play e transforme suas abordagens!</strong></p>
 		</div>
-	</main>
-	<footer>
-		<p>Richelmy Murta, Major BM, CBMMG © 2024</p>
-		<p>Instrutor de Atendimento a Tentativas de Suicídio (ATS)</p>
-		<p>Todos os direitos reservados</p>
-	</footer>
+		<!-- Série 2 -->
+		<div class="folder" id="folder-2" onclick="toggleAudios(2)">
+			<img src="https://i.pinimg.com/736x/51/e8/8c/51e88c0d477d8812200af68229bf66d7.jpg" alt="Razões Multicausais">
+			<h2>Série 2: Razões Multicausais</h2>
+			<p>Entenda as causas por trás das crises e torne-se mais eficiente. <strong>Aperte o play e aprofunde seu conhecimento!</strong></p>
+		</div>
+		<!-- Série 3 -->
+		<div class="folder" id="folder-3" onclick="toggleAudios(3)">
+			<img src="https://i.pinimg.com/736x/1f/68/67/1f6867294fd6c1b101f2fdab626e658b.jpg" alt="Prevenção no CBMMG">
+			<h2>Série 3: Prevenção no CBMMG</h2>
+			<p>Explore estratégias práticas para prevenir crises. <strong>Aperte o play e faça a diferença!</strong></p>
+		</div>
+	</div>
+	<!-- Lista de Áudios -->
+	<div class="audio-container" id="audio-container">
+		<div id="audio-list"></div>
+	</div>
+	<!-- Seção de Feedback -->
+	<div class="feedback-section">
+		<p>Gostou do conteúdo? Envie-nos seu feedback:</p>
+		<a href="https://wa.me/5535984640729?text=Ol%C3%A1%2C%20gostaria%20de%20dar%20um%20feedback%20sobre%20o%20projeto%20Girando%20a%20Ampulheta%20da%20Vida." target="_blank" class="feedback-button" style="
+           display: inline-flex; 
+           align-items: center; 
+           justify-content: center; 
+           gap: 10px; 
+           background-color: #005f73; 
+           color: #fff; 
+           text-decoration: none; 
+           padding: 10px 20px; 
+           border-radius: 5px; 
+           font-size: 1.2em; 
+           box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); 
+           transition: transform 0.3s ease;">
+			<img src="https://img.icons8.com/ios-filled/50/ffffff/feedback.png" alt="Feedback" style="width: 24px; height: 24px;"> Enviar Feedback </a>
+	</div>
 	<script>
-		const audios = [
-					    { title: "001: Abordagem Técnica - comunicação que salva!", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/001%20Aborgagem%20T%C3%A9cnica%20-%20comunica%C3%A7%C3%A3o%20que%20salva!.mp3.mp3" },
-					    { title: "002: Comportamentos Desejáveis na Abordagem Técnica", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/002%20Comportamentos%20Desej%C3%A1veis%20na%20Abordagem%20T%C3%A9cnica.mp3.mp3" },
-					    { title: "003: Comportamentos que Devem Ser Evitados na Abordagem Técnica", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/003%20Comportamentos%20que%20Devem%20Ser%20Evitados%20na%20Abordagem%20T%C3%A9cnica.mp3.mp3" },
-					    { title: "004: A Aproximação Segura no Atendimento a Tentativas de Suicídio", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/004%20A%20Aproxima%C3%A7%C3%A3o%20Segura%20no%20Atendimento%20a%20Tentativas%20de%20Suic%C3%ADdio.mp3.mp3" },
-					    { title: "005: O Poder de Ouvir", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/005%20O%20Poder%20de%20Ouvir.mp3.mp3" },
-					    { title: "006: A Apresentação Pessoal - A Primeira Conexão", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/006%20A%20Apresenta%C3%A7%C3%A3o%20Pessoal%20A%20Primeira%20Conex%C3%A3o.mp3.mp3" },
-					    { title: "007: Perguntas Simples - Rastreando Fatores de Risco e Proteção", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/007%20Perguntas%20Simples%20-%20%20Rastreando%20Fatores%20de%20Risco%20e%20Prote%C3%A7%C3%A3o.mp3.mp3" },
-					    { title: "008: Usando Perguntas Simples com Tentante de Perfil Depressivo", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/008%20Usando%20Perguntas%20Simples%20com%20Tentante%20de%20Perfil%20Depressivo.mp3.mp3" },
-					    { title: "009: Usando Perguntas Simples com Tentante de Perfil Agressivo", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/009%20Usando%20Perguntas%20Simples%20com%20Tentante%20de%20Perfil%20Agressivo.mp3.mp3" },
-					    { title: "010: Usando Perguntas Simples com Tentante de Perfil Psicótico", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/010%20Usando%20Perguntas%20Simples%20com%20Tentante%20de%20Perfil%20Psic%C3%B3tico.mp3.mp3" },
-					    { title: "011: Usando Perguntas Complexas para Apoiar o Tentante", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/011%20Usando%20Perguntas%20Complexas%20para%20Apoiar%20o%20Tentante.mp3.mp3" },
-					    { title: "012: Ferramentas de Diálogo Influenciando a Reflexão do Tentante", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/012%20Ferramentas%20de%20Di%C3%A1logo%20Influenciando%20a%20Reflex%C3%A3o%20do%20Tentante.mp3.mp3" },
-					    { title: "013: Técnica do Sucesso Anterior - Resgatando Estratégias do Passado", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/013%20T%C3%A9cnica%20do%20Sucesso%20Anterior%20Resgatando%20Estrat%C3%A9gias%20do%20Passado.mp3.mp3" },
-					    { title: "014: Ponte para o Passado - Resgatando Memórias Agradáveis", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/014%20Ponte%20para%20o%20Passado%20Resgatando%20Mem%C3%B3rias%20Agrad%C3%A1veis.mp3.mp3" },
-					    { title: "015: Ponte para o Futuro - Criando Perspectivas Positivas", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/015%20Ponte%20para%20o%20Futuro%20Criando%20Perspectivas%20Positivas.mp3.mp3" },
-					    { title: "016: Paráfrase Resumida - Refinando o Foco no Diálogo", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/016%20Par%C3%A1frase%20Resumida%20Refinando%20o%20Foco%20no%20Di%C3%A1logo.mp3.mp3" },
-					    { title: "017: Especificidades para Abordar Tentantes de Perfil Depressivo", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/017%20Especificidades%20para%20Abordar%20Tentantes%20de%20Perfil%20Depressivo.mp3.mp3" },
-					    { title: "018: Especificidades para Abordar Tentantes de Perfil Agressivo", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/018%20Especificidades%20para%20Abordar%20Tentantes%20de%20Perfil%20Agressivo.mp3.mp3" },
-					    { title: "019: Especificidades para Abordar Tentantes de Perfil Psicótico", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/019%20Especificidades%20para%20Abordar%20Tentantes%20de%20Perfil%20Psic%C3%B3tico.mp3.mp3" },
-					    { title: "020: Entrada Forçada - Quando a Segurança Exige Ação", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/020%20Entrada%20For%C3%A7ada%20Quando%20a%20Seguran%C3%A7a%20Exige%20A%C3%A7%C3%A3o.mp3.mp3" },
-					    { title: "021: Encerramento - Continuemos a Girar a Ampulheta da Vida", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/021%20Encerramento%20Continuemos%20a%20Girar%20a%20Ampulheta%20da%20Vida.mp3.mp3" }
-					];
-					
-					const audioList = document.getElementById('audio-list');
-				audios.forEach((audio, index) => {
-				    const section = document.createElement('div');
-				    section.classList.add('audio-section');
-				    section.innerHTML = `
-				        <h3>${audio.title}</h3>
-				        <div class="audio-controls">
-				            <audio id="audio-${index}" controls>
-				                <source src="${audio.url}" type="audio/mp3">
-				                Seu navegador não suporta o elemento de áudio. <a href="${audio.url}" download>Clique aqui para baixar</a>
-				            </audio>
-				        </div>
-				    `;
-				    audioList.appendChild(section);
-				});
+		const audiosByFolder = {
+		    1: [
+		         { title: "001: Abordagem Técnica - comunicação que salva!", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/001%20Aborgagem%20T%C3%A9cnica%20-%20comunica%C3%A7%C3%A3o%20que%20salva!.mp3.mp3" },
+		{ title: "002: Comportamentos Desejáveis na Abordagem Técnica", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/002%20Comportamentos%20Desej%C3%A1veis%20na%20Abordagem%20T%C3%A9cnica.mp3.mp3" },
+		{ title: "003: Comportamentos que Devem Ser Evitados na Abordagem Técnica", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/003%20Comportamentos%20que%20Devem%20Ser%20Evitados%20na%20Abordagem%20T%C3%A9cnica.mp3.mp3" },
+		{ title: "004: A Aproximação Segura no Atendimento a Tentativas de Suicídio", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/004%20A%20Aproxima%C3%A7%C3%A3o%20Segura%20no%20Atendimento%20a%20Tentativas%20de%20Suic%C3%ADdio.mp3.mp3" },
+		{ title: "005: O Poder de Ouvir", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/005%20O%20Poder%20de%20Ouvir.mp3.mp3" },
+		{ title: "006: A Apresentação Pessoal - A Primeira Conexão", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/006%20A%20Apresenta%C3%A7%C3%A3o%20Pessoal%20A%20Primeira%20Conex%C3%A3o.mp3.mp3" },
+		{ title: "007: Perguntas Simples - Rastreando Fatores de Risco e Proteção", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/007%20Perguntas%20Simples%20-%20%20Rastreando%20Fatores%20de%20Risco%20e%20Prote%C3%A7%C3%A3o.mp3.mp3" },
+		{ title: "008: Usando Perguntas Simples com Tentante de Perfil Depressivo", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/008%20Usando%20Perguntas%20Simples%20com%20Tentante%20de%20Perfil%20Depressivo.mp3.mp3" },
+		{ title: "009: Usando Perguntas Simples com Tentante de Perfil Agressivo", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/009%20Usando%20Perguntas%20Simples%20com%20Tentante%20de%20Perfil%20Agressivo.mp3.mp3" },
+		{ title: "010: Usando Perguntas Simples com Tentante de Perfil Psicótico", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/010%20Usando%20Perguntas%20Simples%20com%20Tentante%20de%20Perfil%20Psic%C3%B3tico.mp3.mp3" },
+		{ title: "011: Usando Perguntas Complexas para Apoiar o Tentante", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/011%20Usando%20Perguntas%20Complexas%20para%20Apoiar%20o%20Tentante.mp3.mp3" },
+		{ title: "012: Ferramentas de Diálogo Influenciando a Reflexão do Tentante", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/012%20Ferramentas%20de%20Di%C3%A1logo%20Influenciando%20a%20Reflex%C3%A3o%20do%20Tentante.mp3.mp3" },
+		{ title: "013: Técnica do Sucesso Anterior - Resgatando Estratégias do Passado", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/013%20T%C3%A9cnica%20do%20Sucesso%20Anterior%20Resgatando%20Estrat%C3%A9gias%20do%20Passado.mp3.mp3" },
+		{ title: "014: Ponte para o Passado - Resgatando Memórias Agradáveis", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/014%20Ponte%20para%20o%20Passado%20Resgatando%20Mem%C3%B3rias%20Agrad%C3%A1veis.mp3.mp3" },
+		{ title: "015: Ponte para o Futuro - Criando Perspectivas Positivas", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/015%20Ponte%20para%20o%20Futuro%20Criando%20Perspectivas%20Positivas.mp3.mp3" },
+		{ title: "016: Paráfrase Resumida - Refinando o Foco no Diálogo", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/016%20Par%C3%A1frase%20Resumida%20Refinando%20o%20Foco%20no%20Di%C3%A1logo.mp3.mp3" },
+		{ title: "017: Especificidades para Abordar Tentantes de Perfil Depressivo", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/017%20Especificidades%20para%20Abordar%20Tentantes%20de%20Perfil%20Depressivo.mp3.mp3" },
+		{ title: "018: Especificidades para Abordar Tentantes de Perfil Agressivo", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/018%20Especificidades%20para%20Abordar%20Tentantes%20de%20Perfil%20Agressivo.mp3.mp3" },
+		{ title: "019: Especificidades para Abordar Tentantes de Perfil Psicótico", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/019%20Especificidades%20para%20Abordar%20Tentantes%20de%20Perfil%20Psic%C3%B3tico.mp3.mp3" },
+		{ title: "020: Entrada Forçada - Quando a Segurança Exige Ação", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/020%20Entrada%20For%C3%A7ada%20Quando%20a%20Seguran%C3%A7a%20Exige%20A%C3%A7%C3%A3o.mp3.mp3" },
+		{ title: "021: Encerramento - Continuemos a Girar a Ampulheta da Vida", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/021%20Encerramento%20Continuemos%20a%20Girar%20a%20Ampulheta%20da%20Vida.mp3.mp3" }
+		],
+		    2: [
+		        { title: "Razão 1: Multicausalidade Exemplo 1", url: "https://example.com/audio-folder2-1.mp3" },
+		        { title: "Razão 2: Multicausalidade Exemplo 2", url: "https://example.com/audio-folder2-2.mp3" }
+		    ],
+		    3: [
+		        { title: "Prevenção 1: Exemplo CBMMG 1", url: "https://example.com/audio-folder3-1.mp3" },
+		        { title: "Prevenção 2: Exemplo CBMMG 2", url: "https://example.com/audio-folder3-2.mp3" }
+		    ]
+		};
+		
+		let currentFolder = null;
+		
+		function toggleAudios(folder) {
+		    const audioContainer = document.getElementById('audio-container');
+		    const audioList = document.getElementById('audio-list');
+		
+		    // Verifica se a mesma pasta foi clicada novamente
+		    if (currentFolder === folder) {
+		        audioContainer.style.display = 'none';
+		        currentFolder = null;
+		        return;
+		    }
+		
+		    // Atualiza a lista de áudios da pasta selecionada
+		    audioList.innerHTML = ''; // Limpa a lista
+		    audiosByFolder[folder].forEach((audio, index) => {
+		        const section = document.createElement('div');
+		        section.classList.add('audio-section');
+		        section.innerHTML = `
+		            <h3>${audio.title}</h3>
+		            <div class="audio-controls">
+		                <audio id="audio-${folder}-${index}" controls>
+		                    <source src="${audio.url}" type="audio/mp3">
+		                    Seu navegador não suporta o elemento de áudio. <a href="${audio.url}" download>Clique aqui para baixar</a>
+		                </audio>
+		            </div>
+		        `;
+		        audioList.appendChild(section);
+		    });
+		
+		    // Exibe o contêiner de áudio
+		    audioContainer.style.display = 'block';
+		    currentFolder = folder;
+		}
 	</script>
-</body>
-
-</html>
+	<footer>
+		<div class="footer-text">
+			<p>Richelmy Murta, Major BM, CBMMG © 2024</p>
+			<p>Instrutor de Atendimento a Tentativas de Suicídio (ATS)</p>
+			<p>Todos os direitos reservados</p>
+		</div>
+	</footer>
+	<style>
+		footer {
+		    background: rgba(0, 0, 0, 0.8);
+		    color: white;
+		    text-align: center;
+		    padding: 20px;
+		    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+		
+		.feedback-section {
+		    display: flex;
+		    flex-direction: column; /* Alinha os itens em uma única coluna */
+		    align-items: center; /* Centraliza os itens horizontalmente */
+		    justify-content: center; /* Centraliza os itens verticalmente */
+		    margin-bottom: 20px;
+		}
+		
+		.feedback-section p {
+		    font-size: 1.1em;
+		    color: #f1f1f1;
+		    margin-bottom: 10px;
+		    text-align: center; /* Centraliza o texto */
+		}
+		
+		.feedback-button {
+		    display: inline-flex;
+		    align-items: center;
+		    justify-content: center; /* Centraliza o conteúdo dentro do botão */
+		    gap: 10px;
+		    background-color: #005f73;
+		    color: #fff;
+		    text-decoration: none;
+		    padding: 10px 20px;
+		    border-radius: 5px;
+		    font-size: 1.1em;
+		    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+		    transition: transform 0.3s ease;
+		}
+		
+		.feedback-button:hover {
+		    transform: translateY(-3px);
+		}
+		
+		.footer-text p {
+		    margin: 5px 0;
+		    font-size: 0.9em;
+		}
+		
+		.footer-text p:first-child {
+		    font-weight: bold;
+		}
+	</style>
