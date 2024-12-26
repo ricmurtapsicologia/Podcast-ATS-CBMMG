@@ -156,14 +156,59 @@
 		
 		@media (max-width: 768px) {
 		    .folder {
-		        width: 90%;
+		        width: 90%; /* Ajusta a largura das pastas */
+		        margin-bottom: 10px; /* Espaço entre pastas */
+		    }
+		
+		    .intro {
+		        width: 90%; /* Ajusta a largura da introdução para ficar alinhada às pastas */
+		        margin: 0 auto 20px; /* Centraliza e adiciona margem inferior */
+		        font-size: 1em; /* Mantém o texto legível */
 		    }
 		
 		    .audio-container {
-		        max-width: 100%;
-		        margin-top: 20px;
+		        display: none; /* Inicialmente escondido */
+		        max-width: 90%; /* Mesma largura das pastas */
+		        margin: 10px auto; /* Centralizado e próximo à pasta */
+		        padding: 10px;
 		    }
+		
+		    .folder + .audio-container {
+		        margin-top: -5px; /* Aproxima os áudios das pastas */
+		    }
+		
+		    .audio-controls audio {
+		        width: 100%; /* Mantém o áudio responsivo */
+		    }
+		
+		   .back-to-folders {
+		    display: flex; /* Usando flex para alinhar ícone e texto */
+		    align-items: center;
+		    justify-content: center;
+		    width: 90%;
+		    margin: 10px auto; /* Centraliza o botão */
+		    padding: 10px;
+		    background-color: #005f73;
+		    color: #ffffff;
+		    text-align: center;
+		    border-radius: 5px;
+		    font-size: 1.2em;
+		    font-weight: bold;
+		    cursor: pointer;
+		    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+		    transition: background-color 0.3s ease, transform 0.3s ease;
 		}
+		
+		.back-to-folders svg {
+		    margin-right: 8px; /* Espaço entre o ícone e o texto */
+		}
+		
+		.back-to-folders:hover {
+		    background-color: #003f5c; /* Mudança de cor ao passar o mouse */
+		    transform: translateY(-3px); /* Animação ao passar o mouse */
+		}
+		
+		
 	</style>
 </head>
 
@@ -252,6 +297,19 @@
 		function toggleAudios(folder) {
 		    const audioContainer = document.getElementById('audio-container');
 		    const audioList = document.getElementById('audio-list');
+		    const backToFolders = document.createElement('div');
+		    backToFolders.className = 'back-to-folders';
+		   backToFolders.innerHTML = `
+		    <svg xmlns="http://www.w3.org/2000/svg" fill="#FFD700" viewBox="0 0 24 24" stroke="currentColor" style="width: 24px; height: 24px; vertical-align: middle;">
+		        <path d="M10 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
+		    </svg>
+		    <span style="vertical-align: middle; margin-left: 8px; font-size: 1.2em; font-weight: bold;">Voltar às Pastas</span>
+		`;
+		    backToFolders.onclick = () => {
+		        audioContainer.style.display = 'none';
+		        document.querySelectorAll('.folder').forEach(folderEl => folderEl.style.display = 'block');
+		        currentFolder = null;
+		    };
 		
 		    if (currentFolder === folder) {
 		        audioContainer.style.display = 'none';
@@ -275,9 +333,15 @@
 		        audioList.appendChild(section);
 		    });
 		
+		    if (!audioContainer.querySelector('.back-to-folders')) {
+		        audioContainer.appendChild(backToFolders);
+		    }
+		
 		    audioContainer.style.display = 'block';
 		    currentFolder = folder;
 		}
+		
+		
 	</script>
 </body>
 
