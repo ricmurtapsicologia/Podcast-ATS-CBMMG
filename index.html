@@ -178,7 +178,7 @@
 		    }
 		
 		    .audio-controls audio {
-		        width: 100%; /* Mantém o áudio responsivo */
+		        width: 90%; /* Mantém o áudio responsivo */
 		    }
 		
 		   .back-to-folders {
@@ -294,55 +294,61 @@
 				
 				let currentFolder = null;
 		
-		function toggleAudios(folder) {
-		    const audioContainer = document.getElementById('audio-container');
-		    const audioList = document.getElementById('audio-list');
-		    const backToFolders = document.createElement('div');
-		    backToFolders.className = 'back-to-folders';
-		   backToFolders.innerHTML = `
-		    <svg xmlns="http://www.w3.org/2000/svg" fill="#FFD700" viewBox="0 0 24 24" stroke="currentColor" style="width: 24px; height: 24px; vertical-align: middle;">
-		        <path d="M10 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
-		    </svg>
-		    <span style="vertical-align: middle; margin-left: 8px; font-size: 1.2em; font-weight: bold;">Voltar às Pastas</span>
-		`;
-		    backToFolders.onclick = () => {
-		        audioContainer.style.display = 'none';
-		        document.querySelectorAll('.folder').forEach(folderEl => folderEl.style.display = 'block');
-		        currentFolder = null;
-		    };
+		        function toggleAudios(folder) {
+		            const audioContainer = document.getElementById('audio-container');
+		            const audioList = document.getElementById('audio-list');
 		
-		    if (currentFolder === folder) {
-		        audioContainer.style.display = 'none';
-		        currentFolder = null;
-		        return;
-		    }
+		            if (currentFolder === folder) {
+		                audioContainer.style.display = 'none';
+		                currentFolder = null;
+		                return;
+		            }
 		
-		    audioList.innerHTML = '';
-		    audiosByFolder[folder].forEach((audio, index) => {
-		        const section = document.createElement('div');
-		        section.classList.add('audio-section');
-		        section.innerHTML = `
-		            <h3>${audio.title}</h3>
-		            <div class="audio-controls">
-		                <audio id="audio-${folder}-${index}" controls>
-		                    <source src="${audio.url}" type="audio/mp3">
-		                    Seu navegador não suporta o elemento de áudio. <a href="${audio.url}" download>Clique aqui para baixar</a>
-		                </audio>
-		            </div>
-		        `;
-		        audioList.appendChild(section);
-		    });
+		            audioList.innerHTML = '';
+		            audiosByFolder[folder].forEach((audio, index) => {
+		                const section = document.createElement('div');
+		                section.classList.add('audio-section');
+		                section.innerHTML = `
+		                    <h3>${audio.title}</h3>
+		                    <div class="audio-controls">
+		                        <audio id="audio-${folder}-${index}" controls>
+		                            <source src="${audio.url}" type="audio/mp3">
+		                            Seu navegador não suporta o elemento de áudio. <a href="${audio.url}" download>Clique aqui para baixar</a>
+		                        </audio>
+		                    </div>
+		                `;
+		                audioList.appendChild(section);
+		            });
 		
-		    if (!audioContainer.querySelector('.back-to-folders')) {
-		        audioContainer.appendChild(backToFolders);
-		    }
+		            const backToFolders = document.createElement('div');
+		            backToFolders.className = 'back-to-folders';
+		            backToFolders.innerHTML = `
+		                <svg xmlns="http://www.w3.org/2000/svg" fill="#FFD700" viewBox="0 0 24 24" stroke="currentColor" style="width: 24px; height: 24px; vertical-align: middle;">
+		                    <path d="M10 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
+		                </svg>
+		                <span style="vertical-align: middle; margin-left: 8px; font-size: 1.2em; font-weight: bold;">Voltar às Pastas</span>
+		            `;
+		            backToFolders.onclick = () => {
+		                audioContainer.style.display = 'none';
+		                document.querySelectorAll('.folder').forEach(folderEl => folderEl.style.display = 'block');
+		                currentFolder = null;
+		            };
 		
-		    audioContainer.style.display = 'block';
-		    currentFolder = folder;
-		}
+		            if (!audioContainer.querySelector('.back-to-folders')) {
+		                audioContainer.appendChild(backToFolders);
+		            }
 		
+		            audioContainer.style.display = 'block';
+		            currentFolder = folder;
 		
+		            // Leva o usuário diretamente para os áudios
+		            audioContainer.scrollIntoView({ behavior: 'smooth' });
+		        }
 	</script>
+</body>
+
+</html>
+</script>
 </body>
 
 </html>
