@@ -30,21 +30,63 @@
 		    margin: 0;
 		    font-size: 2.5em;
 		    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+		    margin-bottom: 30px; /* Adiciona espaçamento abaixo do título */
 		}
 		
-		.intro {
-		    padding: 20px;
-		    max-width: 800px;
-		    margin: 20px auto;
-		    background: rgba(255, 255, 255, 0.9);
+		
+		.intro-button {
+		    display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    gap: 10px;
+		    background-color: #005f73;
+		    color: #fff;
+		    text-decoration: none;
+		    padding: 15px 30px;
 		    border-radius: 10px;
-		    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+		    font-size: 1.2em;
+		    font-weight: bold;
+		    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+		    transition: transform 0.3s ease, background-color 0.3s ease;
+		    margin: 0 auto 20px; /* Centraliza horizontalmente */
+		    width: fit-content; /* Adapta a largura ao conteúdo */
+		    cursor: pointer;
+		    text-align: center;
+		margin-top: 30px; /* Aumente o espaçamento superior */
+		}
+		
+		
+		.intro-button img {
+		    width: 24px;
+		    height: 24px;
+		}
+		
+		.intro-button:hover {
+		     transform: scale(1.05); /* Leve aumento */
+		    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Mais destaque */
+		    transition: transform 0.3s ease, box-shadow 0.3s ease;
+		}
+		.intro-button {
+		        animation: blink 4s infinite; /* Piscar */
+		    }
+		
+		
+		/* Contêiner de introdução (texto) */
+		#intro-container {
+		    display: none;
+		    padding: 20px;
+		    max-width: 800px; /* Limita a largura do texto */
+		    margin: 20px auto; /* Centraliza o contêiner horizontalmente */
+		    background: rgba(255, 255, 255, 0.95); /* Fundo quase branco para contraste */
+		    border-radius: 10px;
+		    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 		    color: #333;
-		    text-align: justify;
+		    text-align: justify; /* Justifica o texto */
 		    font-size: 1.2em;
 		    line-height: 1.8;
 		}
 		
+		/* Container geral para itens e pastas */
 		.container {
 		    display: flex;
 		    flex-wrap: wrap;
@@ -53,6 +95,7 @@
 		    gap: 20px;
 		}
 		
+		/* Estilo de cada pasta */
 		.folder {
 		    background: rgba(255, 255, 255, 0.9);
 		    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -82,6 +125,7 @@
 		    margin: 10px 0;
 		}
 		
+		/* Contêiner para áudios */
 		.audio-container {
 		    display: none;
 		    padding: 20px;
@@ -106,6 +150,7 @@
 		    width: 100%;
 		}
 		
+		/* Feedback Section */
 		.feedback-section {
 		    margin: 20px 0;
 		    text-align: center;
@@ -119,24 +164,30 @@
 		}
 		
 		.feedback-button {
-		    display: inline-flex;
+		     display: inline-flex;
 		    align-items: center;
 		    justify-content: center;
 		    gap: 10px;
 		    background-color: #005f73;
 		    color: #fff;
 		    text-decoration: none;
-		    padding: 10px 20px;
-		    border-radius: 5px;
+		    padding: 15px 30px;
+		    border-radius: 10px;
 		    font-size: 1.2em;
+		    font-weight: bold;
 		    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-		    transition: transform 0.3s ease;
+		    transition: transform 0.3s ease, background-color 0.3s ease;
+		    border: none;
+		    cursor: pointer;
 		}
 		
 		.feedback-button:hover {
-		    transform: translateY(-3px);
+		    transform: scale(1.05); /* Leve aumento */
+		    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Mais destaque */
+		    transition: transform 0.3s ease, box-shadow 0.3s ease;
 		}
 		
+		/* Footer */
 		footer {
 		    background: rgba(0, 0, 0, 0.8);
 		    color: white;
@@ -154,58 +205,62 @@
 		    font-weight: bold;
 		}
 		
+		/* Responsividade */
 		@media (max-width: 768px) {
 		    .folder {
 		        width: 90%; /* Ajusta a largura das pastas */
 		        margin-bottom: 10px; /* Espaço entre pastas */
 		    }
 		
-		    .intro {
-		        width: 90%; /* Ajusta a largura da introdução para ficar alinhada às pastas */
-		        margin: 0 auto 20px; /* Centraliza e adiciona margem inferior */
-		        font-size: 1em; /* Mantém o texto legível */
-		    }
+		   #intro-container {
+		    padding: 20px;
+		    max-width: 90%;
+		    margin: 20px auto;
+		}
+		
 		
 		    .audio-container {
-		        display: none; /* Inicialmente escondido */
 		        max-width: 90%; /* Mesma largura das pastas */
 		        margin: 10px auto; /* Centralizado e próximo à pasta */
 		        padding: 10px;
-		    }
-		
-		    .folder + .audio-container {
-		        margin-top: -5px; /* Aproxima os áudios das pastas */
 		    }
 		
 		    .audio-controls audio {
 		        width: 90%; /* Mantém o áudio responsivo */
 		    }
 		
-		   .back-to-folders {
-		    display: flex; /* Usando flex para alinhar ícone e texto */
+		    .back-to-folders {
+		        display: inline-flex;
 		    align-items: center;
 		    justify-content: center;
-		    width: 90%;
-		    margin: 10px auto; /* Centraliza o botão */
-		    padding: 10px;
+		    gap: 10px;
 		    background-color: #005f73;
-		    color: #ffffff;
-		    text-align: center;
-		    border-radius: 5px;
+		    color: #fff;
+		    text-decoration: none;
+		    padding: 15px 30px;
+		    border-radius: 25px; /* Cantos mais arredondados */
 		    font-size: 1.2em;
 		    font-weight: bold;
+		    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+		    transition: transform 0.3s ease, background-color 0.3s ease;
+		    border: none;
 		    cursor: pointer;
-		    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
-		    transition: background-color 0.3s ease, transform 0.3s ease;
 		}
 		
-		.back-to-folders svg {
-		    margin-right: 8px; /* Espaço entre o ícone e o texto */
+		    .back-to-folders:hover {
+		        background-color: #003f5c; /* Mudança de cor ao passar o mouse */
+		        transform: translateY(-3px); /* Animação ao passar o mouse */
+		    }
 		}
-		
-		.back-to-folders:hover {
-		    background-color: #003f5c; /* Mudança de cor ao passar o mouse */
-		    transform: translateY(-3px); /* Animação ao passar o mouse */
+		@keyframes blink {
+		    0%, 100% {
+		        background-color: #005f73; /* Azul padrão */
+		        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+		    }
+		    50% {
+		        background-color: #ff8c00; /* Cor laranja */
+		        box-shadow: 0 3px 6px rgba(255, 140, 0, 0.6);
+		    }
 		}
 		
 		
@@ -216,11 +271,13 @@
 	<header>
 		<h1>Girando a Ampulheta da Vida</h1>
 	</header>
-	<div class="intro" style="text-align: justify; font-size: 1em; color: #333; line-height: 1.6; margin: 20px auto; max-width: 800px;">
+	<a href="javascript:void(0);" class="intro-button" onclick="toggleIntro()">
+		<img src="https://img.icons8.com/ios-filled/50/ffffff/idea.png" alt="Introdução"> Conheça o Projeto Agora! </a>
+	<div id="intro-container" onclick="toggleIntro()">
 		<p><strong>Saudações, caro abordador,</strong></p>
 		<p>Apresentamos o <strong>Projeto Girando a Ampulheta da Vida</strong>, um material complementar à disciplina de <strong>Atendimento a Tentativas de Suicídio</strong>, oferecida nos cursos de formação do <strong>Corpo de Bombeiros Militar de Minas Gerais</strong>.</p>
 		<p>Por meio de <em>três séries exclusivas</em>, este podcast fornece ferramentas práticas e reflexões essenciais que unem <strong>técnica</strong>, <strong>empatia</strong> e <strong>humanidade</strong>, preparando você para abordar de forma segura e eficaz.</p>
-		<ul style="list-style-type: none; padding: 0; margin: 15px 0;">
+		<ul>
 			<li><strong>Série 1:</strong> Abordagem Técnica – Comunicação que salva.</li>
 			<li><strong>Série 2:</strong> Engrenagens do Comportamento Suicida.</li>
 			<li><strong>Série 3:</strong> Prevenção e Transformação de Vidas.</li>
@@ -356,6 +413,22 @@
 		            // Leva o usuário diretamente para os áudios
 		            audioContainer.scrollIntoView({ behavior: 'smooth' });
 		        }
+	</script>
+	<script>
+		function toggleIntro() {
+		    const introContainer = document.getElementById('intro-container');
+		    const feedbackButton = document.querySelector('.feedback-button');
+		
+		    if (introContainer.style.display === 'none' || introContainer.style.display === '') {
+		        introContainer.style.display = 'block';
+		        feedbackButton.textContent = 'Ocultar Introdução';
+		    } else {
+		        introContainer.style.display = 'none';
+		        feedbackButton.innerHTML = `
+		            <img src="https://img.icons8.com/ios-filled/50/ffffff/info.png" style="width: 24px; height: 24px;"> Conheça o Projeto
+		        `;
+		    }
+		}
 	</script>
 </body>
 
