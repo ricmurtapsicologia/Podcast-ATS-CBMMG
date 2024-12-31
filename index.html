@@ -164,21 +164,23 @@
 		}
 		
 		.feedback-button {
-		     display: inline-flex;
-		    align-items: center;
-		    justify-content: center;
-		    gap: 10px;
-		    background-color: #005f73;
-		    color: #fff;
-		    text-decoration: none;
-		    padding: 15px 30px;
-		    border-radius: 10px;
-		    font-size: 1.2em;
-		    font-weight: bold;
-		    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-		    transition: transform 0.3s ease, background-color 0.3s ease;
-		    border: none;
-		    cursor: pointer;
+		    display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		gap: 10px;
+		background-color: #005f73;
+		color: #fff;
+		text-decoration: none;
+		padding: 15px 30px;
+		border-radius: 10px;
+		font-size: 1.2em;
+		font-weight: bold;
+		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+		transition: transform 0.3s ease, background-color 0.3s ease;
+		border: none;
+		cursor: pointer;
+		margin: 20px auto; /* Centraliza horizontalmente */
+		width: fit-content; /* Adapta a largura ao conteúdo */
 		}
 		
 		.feedback-button:hover {
@@ -419,18 +421,21 @@
 	<script>
 		function toggleIntro() {
 		    const introContainer = document.getElementById('intro-container');
-		    const feedbackButton = document.querySelector('.feedback-button');
-		
+		    const introButton = document.querySelector('.intro-button'); // Alterar a classe para .intro-button
+		    
 		    if (introContainer.style.display === 'none' || introContainer.style.display === '') {
 		        introContainer.style.display = 'block';
-		        feedbackButton.textContent = 'Ocultar Introdução';
+		        introButton.innerHTML = `
+		            <img src="https://img.icons8.com/ios-filled/50/ffffff/info.png" style="width: 24px; height: 24px;"> Ocultar Introdução
+		        `;
 		    } else {
 		        introContainer.style.display = 'none';
-		        feedbackButton.innerHTML = `
+		        introButton.innerHTML = `
 		            <img src="https://img.icons8.com/ios-filled/50/ffffff/info.png" style="width: 24px; height: 24px;"> Conheça o Projeto
 		        `;
 		    }
 		}
+		
 	</script>
 </body>
 
