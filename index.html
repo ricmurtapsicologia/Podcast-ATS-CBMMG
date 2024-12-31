@@ -164,7 +164,7 @@
 		}
 		
 		.feedback-button {
-		    display: inline-flex;
+		display: flex;
 		align-items: center;
 		justify-content: center;
 		gap: 10px;
@@ -172,7 +172,7 @@
 		color: #fff;
 		text-decoration: none;
 		padding: 15px 30px;
-		border-radius: 10px;
+		border-radius: 15px;
 		font-size: 1.2em;
 		font-weight: bold;
 		box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
@@ -231,23 +231,28 @@
 		        width: 90%; /* Mantém o áudio responsivo */
 		    }
 		
-		    .back-to-folders {
-		        display: inline-flex;
-		    align-items: center;
-		    justify-content: center;
-		    gap: 10px;
+		.back-to-folders {
+		    display: flex; /* Organiza o conteúdo como flexbox */
+		    align-items: center; /* Centraliza verticalmente */
+		    justify-content: center; /* Centraliza horizontalmente */
+		    gap: 10px; /* Espaçamento entre ícone e texto */
 		    background-color: #005f73;
 		    color: #fff;
 		    text-decoration: none;
 		    padding: 15px 30px;
-		    border-radius: 25px; /* Cantos mais arredondados */
+		    border-radius: 25px; /* Cantos arredondados */
 		    font-size: 1.2em;
 		    font-weight: bold;
 		    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
 		    transition: transform 0.3s ease, background-color 0.3s ease;
 		    border: none;
 		    cursor: pointer;
+		    margin: 20px auto; /* Garante centralização horizontal */
+		    width: fit-content; /* Ajusta a largura ao conteúdo */
+		    text-align: center; /* Garante centralização do texto */
 		}
+		
+		
 		
 		    .back-to-folders:hover {
 		        background-color: #003f5c; /* Mudança de cor ao passar o mouse */
