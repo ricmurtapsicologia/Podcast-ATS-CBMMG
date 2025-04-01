@@ -341,33 +341,27 @@
 				      slide.style.display = (i === slideIndex) ? "block" : "none";
 				    }
 				
-				   // Verifica se está no primeiro slide
+			// Verifica se está no primeiro slide
 		if (slideIndex === 1) {
 		  // Esconde os botões e mostra "aguarde..."
 		  onboardPrev.style.display = "none";
 		  onboardNext.style.display = "none";
-		  
-		  // Garante o delay de 2 segundos usando requestAnimationFrame
-		  const startTime = Date.now();
-		  const delayTime = 2000; // 2000 ms = 2 segundos
 		
-		  const waitForDelay = () => {
-		    const elapsed = Date.now() - startTime;
-		    if (elapsed < delayTime) {
-		      requestAnimationFrame(waitForDelay);
-		    } else {
-		      currentSlide = 2;
-		      showSlide(currentSlide);
-		    }
-		  };
-		  waitForDelay();
+		  // Define o delay: 3000ms (3s) no mobile, 2000ms no desktop
+		  let delayTime = (window.innerWidth < 768) ? 3000 : 2000;
+		  setTimeout(() => {
+		    currentSlide = 2;
+		    showSlide(currentSlide);
+		  }, delayTime);
 		} else {
 		  // Exibe os botões a partir do slide 2
 		  onboardPrev.style.display = "inline-block";
 		  onboardNext.style.display = "inline-block";
-		  onboardPrev.disabled = (slideIndex === 2);
+		  // Permite que o botão "Voltar" funcione em qualquer slide após o 1
+		  onboardPrev.disabled = false;
 		  onboardNext.textContent = (slideIndex === totalSlides) ? "Concluir" : "Seguir";
 		}
+		
 		
 				
 				    // Animação fade + leve movimento "sway"
