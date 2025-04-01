@@ -208,25 +208,25 @@
 				}
 				
 				/* Responsividade aprimorada */
-@media (max-width: 768px) {
-  #intro-container, .audio-container {
-    max-width: 90%;
-    margin: 20px auto;
-    padding: 15px;
-  }
-  .audio-controls audio {
-    width: 100%;
-  }
-  .feedback-button, .intro-button {
-    width: auto;
-    padding: 12px 20px;
-  }
-  .back-to-folders {
-    display: block;
-    margin: 20px auto;
-  }
-}
-
+		@media (max-width: 768px) {
+		  #intro-container, .audio-container {
+		    max-width: 90%;
+		    margin: 20px auto;
+		    padding: 15px;
+		  }
+		  .audio-controls audio {
+		    width: 100%;
+		  }
+		  .feedback-button, .intro-button {
+		    width: auto;
+		    padding: 12px 20px;
+		  }
+		  .back-to-folders {
+		    display: block;
+		    margin: 20px auto;
+		  }
+		}
+		
 				
 				/* Animação blink para o botão de introdução */
 				@keyframes blink {
@@ -342,33 +342,33 @@
 				    }
 				
 				   // Verifica se está no primeiro slide
-if (slideIndex === 1) {
-  // Esconde os botões e mostra "aguarde..."
-  onboardPrev.style.display = "none";
-  onboardNext.style.display = "none";
-  
-  // Garante o delay de 2 segundos usando requestAnimationFrame
-  const startTime = Date.now();
-  const delayTime = 2000; // 2000 ms = 2 segundos
-
-  const waitForDelay = () => {
-    const elapsed = Date.now() - startTime;
-    if (elapsed < delayTime) {
-      requestAnimationFrame(waitForDelay);
-    } else {
-      currentSlide = 2;
-      showSlide(currentSlide);
-    }
-  };
-  waitForDelay();
-} else {
-  // Exibe os botões a partir do slide 2
-  onboardPrev.style.display = "inline-block";
-  onboardNext.style.display = "inline-block";
-  onboardPrev.disabled = (slideIndex === 2);
-  onboardNext.textContent = (slideIndex === totalSlides) ? "Concluir" : "Seguir";
-}
-
+		if (slideIndex === 1) {
+		  // Esconde os botões e mostra "aguarde..."
+		  onboardPrev.style.display = "none";
+		  onboardNext.style.display = "none";
+		  
+		  // Garante o delay de 2 segundos usando requestAnimationFrame
+		  const startTime = Date.now();
+		  const delayTime = 2000; // 2000 ms = 2 segundos
+		
+		  const waitForDelay = () => {
+		    const elapsed = Date.now() - startTime;
+		    if (elapsed < delayTime) {
+		      requestAnimationFrame(waitForDelay);
+		    } else {
+		      currentSlide = 2;
+		      showSlide(currentSlide);
+		    }
+		  };
+		  waitForDelay();
+		} else {
+		  // Exibe os botões a partir do slide 2
+		  onboardPrev.style.display = "inline-block";
+		  onboardNext.style.display = "inline-block";
+		  onboardPrev.disabled = (slideIndex === 2);
+		  onboardNext.textContent = (slideIndex === totalSlides) ? "Concluir" : "Seguir";
+		}
+		
 				
 				    // Animação fade + leve movimento "sway"
 				    const currentSlideEl = document.getElementById(`slide-${slideIndex}`);
@@ -429,13 +429,13 @@ if (slideIndex === 1) {
 				      anime({
 				        targets: '#intro-container',
 				        opacity: [1, 0],
-				        duration: 500,
+				        duration: 3000,
 				        easing: 'easeInOutQuad',
 				        complete: () => {
 				          introContainer.style.display = 'none';
 				          introBtn.innerHTML = `
 				            <img src="https://img.icons8.com/ios-filled/50/ffffff/idea.png" alt="Introdução">
-				            Conheça o Projeto Agora! <span style="font-size:0.8em; margin-left:10px;">Clique para conhecer mais</span>
+				            Conheça o Projeto Agora! <span style="font-size:0.8em; margin-left:10px;"
 				          `;
 				        }
 				      });
@@ -445,12 +445,12 @@ if (slideIndex === 1) {
 				      anime({
 				        targets: '#intro-container',
 				        opacity: [0, 1],
-				        duration: 500,
+				        duration: 3000,
 				        easing: 'easeInOutQuad'
 				      });
 				      introBtn.innerHTML = `
 				        <img src="https://img.icons8.com/ios-filled/50/ffffff/info.png" alt="Ocultar Introdução">
-				        Ocultar Introdução <span style="font-size:0.8em; margin-left:10px;">Clique para conhecer mais</span>
+				        Ocultar Introdução <span style="font-size:0.8em; margin-left:10px;"
 				      `;
 				    }
 				  };
@@ -581,26 +581,25 @@ if (slideIndex === 1) {
 	<!-- Onboarding (agora com slide 1 sem botões, avança automaticamente após 2s) -->
 	<div class="onboarding" id="onboarding" aria-label="Onboarding do projeto">
 		<div class="onboard-content" id="onboard-content">
-			<!-- Slide 1 (Bem-vindo e aguarde) -->
+			<!-- Slide 1 (Atenção: Boas-vindas e aguarde) -->
 			<div class="onboard-slide" id="slide-1">
-				<p>Seja bem-vindo(a) ao Girando a Ampulheta da Vida</p>
-				<p style="font-size: 1.5em;">Aguarde...</p>
+				<p>Bem-vindo(a)! Aguarde ... sua imersão em conhecimento começa agora.</p>
 			</div>
-			<!-- Slide 2 -->
+			<!-- Slide 2 (Interesse) -->
 			<div class="onboard-slide" id="slide-2" style="display: none;">
-				<p>Explore as pastas com conteúdos variados para ampliar seu conhecimento.</p>
+				<p>Descubra técnicas exclusivas para abordar perfis de tentantes.</p>
 			</div>
-			<!-- Slide 3 -->
+			<!-- Slide 3 (Desejo) -->
 			<div class="onboard-slide" id="slide-3" style="display: none;">
-				<p>Ouça os áudios e baixe para ouvir offline quando quiser.</p>
+				<p>Ouça áudios impactantes e amplie sua expertise técnica.</p>
 			</div>
-			<!-- Slide 4 -->
+			<!-- Slide 4 (Desejo) -->
 			<div class="onboard-slide" id="slide-4" style="display: none;">
-				<p>Ouça os áudios que ensinam técnicas e empatia em cada mensagem.</p>
+				<p>Entenda engrenagens do comportamento suicida com clareza absoluta.</p>
 			</div>
-			<!-- Slide 5 -->
+			<!-- Slide 5 (Ação) -->
 			<div class="onboard-slide" id="slide-5" style="display: none;">
-				<p>Clique no botão "Conheça o Projeto Agora" para iniciar sua jornada.</p>
+				<p>Inicie imersão e transforme sua prática profissional hoje.</p>
 			</div>
 		</div>
 		<div class="onboard-buttons">
@@ -614,11 +613,8 @@ if (slideIndex === 1) {
 	<main>
 		<section class="intro-section">
 			<!-- Botão de Introdução (centralizado) -->
-<a href="javascript:void(0);" class="intro-button" id="intro-btn" role="button" aria-expanded="false">
-  <img src="https://img.icons8.com/ios-filled/50/ffffff/idea.png" alt="Introdução">
-  Clique aqui para conhecer o Projeto Agora!
-</a>
-
+			<a href="javascript:void(0);" class="intro-button" id="intro-btn" role="button" aria-expanded="false">
+				<img src="https://img.icons8.com/ios-filled/50/ffffff/idea.png" alt="Introdução"> Clique aqui para conhecer o Projeto Agora! </a>
 			<!-- Conteúdo de Introdução -->
 			<div id="intro-container" aria-live="polite">
 				<p><strong>Saudações, caro abordador!</strong></p>
@@ -672,5 +668,3 @@ if (slideIndex === 1) {
 </body>
 
 </html>
-
-
