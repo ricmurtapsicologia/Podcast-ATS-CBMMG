@@ -3,221 +3,290 @@
 
 <head>
 	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- Metatags para SEO e Compartilhamento -->
+	<meta name="description" content="Explore temas profundos com os podcasts de Girando a Ampulheta da Vida. Educação, empatia e suporte!" />
+	<meta property="og:title" content="Girando a Ampulheta da Vida - Podcast" />
+	<meta property="og:image" content="https://i.pinimg.com/originals/33/9d/0c/339d0cc2f05bbb719debe6a5efb414dd.jpg" />
+	<meta property="og:description" content="Explore temas profundos com os podcasts de Girando a Ampulheta da Vida. Educação, empatia e suporte!" />
+	<meta property="og:url" content="https://ricmurtapsicologia.github.io/Podcast-ATS-CBMMG/" />
+	<link rel="icon" href="https://i.pinimg.com/originals/33/9d/0c/339d0cc2f05bbb719debe6a5efb414dd.jpg" type="image/x-icon" />
 	<title>Girando a Ampulheta da Vida - Podcast</title>
-	<meta property="og:title" content="Girando a Ampulheta da Vida - Podcast">
-	<meta property="og:image" content="https://i.pinimg.com/originals/33/9d/0c/339d0cc2f05bbb719debe6a5efb414dd.jpg">
-	<meta property="og:description" content="Explore temas profundos com os podcasts de Girando a Ampulheta da Vida. Educação, empatia e suporte!">
-	<meta property="og:url" content="https://ricmurtapsicologia.github.io/Podcast-ATS-CBMMG/">
-	<link rel="icon" href="https://i.pinimg.com/originals/33/9d/0c/339d0cc2f05bbb719debe6a5efb414dd.jpg">
 	<!-- Google tag (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-N1GEBDNZ8B"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
+		const gtag = (...args) => dataLayer.push(args);
 		gtag('js', new Date());
-		
 		gtag('config', 'G-N1GEBDNZ8B');
-		
 	</script>
-	<!-- Estilos inline organizados e responsivos -->
+	<!-- Estilos Inline Organizados e Responsivos -->
 	<style>
-		/* Reset global e transições */
-				*, *::before, *::after {
-				  box-sizing: border-box;
-				  transition: all 0.3s ease-in-out;
-				}
-				html {
-				  scroll-behavior: smooth;
-				}
-				
-				/* 
-				  1) Trazendo o fundo de “fogo” de volta para o body.
-				     Assim, ele fica atrás de header, main e footer.
-				*/
-				body {
-				  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-				  margin: 0;
-				  padding: 0;
-				  background: url('https://i.pinimg.com/originals/38/70/c5/3870c5a678e72a0c16ca58914e14df3f.jpg') no-repeat center center fixed;
-				  background-size: cover;
-				  color: #333;
-				  line-height: 1.6;
-				}
-				
-				/*
-				  2) main não precisa mais ter background de “fogo”.
-				     Basta manter min-height se desejar (opcional).
-				*/
-				main {
-				  min-height: 100vh; /* se quiser garantir que main ocupe toda a tela */
-				  /* background: none;  <-- Removido o fundo aqui */
-				}
-				
-				/* Cabeçalho */
-				header {
-				  background: rgba(0, 0, 0, 0.8);
-				  color: #fff;
-				  padding: 20px;
-				  text-align: center;
-				}
-				header h1 {
-				  margin: 0;
-				  font-size: 2.5em;
-				  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-				  margin-bottom: 30px;
-				}
-				
-				/* Seção para centralizar o botão e introdução */
-				.intro-section {
-				  text-align: center;
-				  margin: 0 auto;
-				}
-				
-				/* Botão de Introdução (centralizado) */
-				.intro-button {
-				  display: inline-flex;
-				  align-items: center;
-				  gap: 10px;
-				  background-color: #005f73;
-				  color: #fff;
-				  text-decoration: none;
-				  padding: 15px 30px;
-				  border-radius: 10px;
-				  font-size: 1.2em;
-				  font-weight: bold;
-				  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-				  margin: 30px auto 20px;
-				  cursor: pointer;
-				  text-align: center;
-				  animation: blink 3s infinite;
-				}
-				.intro-button img {
-				  width: 24px;
-				  height: 24px;
-				}
-				.intro-button:hover {
-				  transform: scale(1.05);
-				  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-				}
-				
-				/* Conteúdo de Introdução */
-				#intro-container {
-				  display: none;
-				  padding: 20px;
-				  max-width: 800px;
-				  margin: 20px auto;
-				  background: rgba(255, 255, 255, 0.95);
-				  border-radius: 10px;
-				  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-				  color: #333;
-				  text-align: justify;
-				  font-size: 1.2em;
-				  line-height: 1.8;
-				}
-				
-				/* Pastas utilizando CSS Grid */
-				.folders-container {
-				  display: grid;
-				  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-				  gap: 20px;
-				  padding: 20px;
-				}
-				.folder {
-				  background: rgba(255, 255, 255, 0.9);
-				  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-				  border-radius: 10px;
-				  text-align: center;
-				  padding: 15px;
-				  cursor: pointer;
-				  transition: transform 0.3s, box-shadow 0.3s;
-				}
-				.folder:hover {
-				  transform: translateY(-5px);
-				  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-				}
-				.folder img {
-				  width: 100%;
-				  height: 240px;
-				  border-radius: 10px;
-				  object-fit: cover;
-				}
-				.folder h2 {
-				  font-size: 1.5em;
-				  color: #006400;
-				  margin: 10px 0;
-				}
-				
-				/* Áudios */
-				.audio-container {
-				  display: none;
-				  padding: 20px;
-				  background: rgba(255, 255, 255, 0.9);
-				  border-radius: 10px;
-				  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-				  max-width: 800px;
-				  margin: 0 auto;
-				}
-				.audio-section {
-				  margin-bottom: 20px;
-				}
-				.audio-section h3 {
-				  font-size: 1.2em;
-				  color: #005f73;
-				  margin-bottom: 10px;
-				}
-				.audio-controls audio {
-				  width: 100%;
-				}
-				
-				/* Feedback */
-				.feedback-section {
-				  margin: 20px 0;
-				  text-align: center;
-				}
-				.feedback-section p {
-				  font-size: 1.2em;
-				  color: #fff;
-				  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-				  margin-bottom: 10px;
-				}
-				.feedback-button {
-				  display: inline-flex;
-				  align-items: center;
-				  gap: 10px;
-				  background-color: #005f73;
-				  color: #fff;
-				  text-decoration: none;
-				  padding: 15px 30px;
-				  border-radius: 15px;
-				  font-size: 1.2em;
-				  font-weight: bold;
-				  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-				  border: none;
-				  cursor: pointer;
-				  margin: 20px auto;
-				}
-				.feedback-button:hover {
-				  transform: scale(1.05);
-				  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-				}
-				
-				/* Footer */
-				footer {
-				  background: rgba(0, 0, 0, 0.8);
-				  color: #fff;
-				  text-align: center;
-				  padding: 20px;
-				  font-size: 0.9em;
-				}
-				footer p {
-				  margin: 5px 0;
-				}
-				footer p:first-child {
-				  font-weight: bold;
-				}
-				
-				/* Responsividade aprimorada */
+		/* RESET & BASE */
+		*, *::before, *::after {
+		  box-sizing: border-box;
+		  transition: all 0.3s ease-in-out;
+		}
+		html {
+		  scroll-behavior: smooth;
+		}
+		body {
+		  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		  margin: 0;
+		  padding: 0;
+		  /* Fundo "fogo" aplicado ao body para ficar atrás de header, main e footer */
+		  background: url('https://i.pinimg.com/originals/38/70/c5/3870c5a678e72a0c16ca58914e14df3f.jpg') no-repeat center center fixed;
+		  background-size: cover;
+		  color: #333;
+		  line-height: 1.6;
+		}
+		a {
+		  text-decoration: none;
+		  color: inherit;
+		}
+		
+		/* Cabeçalho */
+		header {
+		  background: rgba(0, 0, 0, 0.8);
+		  color: #fff;
+		  padding: 20px;
+		  text-align: center;
+		}
+		header h1 {
+		  margin: 0;
+		  font-size: 2.5em;
+		  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+		  margin-bottom: 30px;
+		}
+		
+		/* Seção de Introdução */
+		.intro-section {
+		  text-align: center;
+		  margin: 0 auto;
+		}
+		.intro-button {
+		  display: inline-flex;
+		  align-items: center;
+		  gap: 10px;
+		  background-color: #005f73;
+		  color: #fff;
+		  text-decoration: none;
+		  padding: 15px 30px;
+		  border-radius: 10px;
+		  font-size: 1.2em;
+		  font-weight: bold;
+		  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+		  margin: 30px auto 20px;
+		  cursor: pointer;
+		  text-align: center;
+		  animation: blink 3s infinite;
+		}
+		.intro-button img {
+		  width: 24px;
+		  height: 24px;
+		}
+		.intro-button:hover {
+		  transform: scale(1.05);
+		  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+		}
+		#intro-container {
+		  display: none;
+		  padding: 20px;
+		  max-width: 800px;
+		  margin: 20px auto;
+		  background: rgba(255, 255, 255, 0.95);
+		  border-radius: 10px;
+		  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+		  color: #333;
+		  text-align: justify;
+		  font-size: 1.2em;
+		  line-height: 1.8;
+		}
+		
+		/* Pastas (usando CSS Grid) */
+		.folders-container {
+		  display: grid;
+		  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		  gap: 20px;
+		  padding: 20px;
+		}
+		.folder {
+		  background: rgba(255, 255, 255, 0.9);
+		  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+		  border-radius: 10px;
+		  text-align: center;
+		  padding: 15px;
+		  cursor: pointer;
+		  transition: transform 0.3s, box-shadow 0.3s;
+		}
+		.folder:hover {
+		  transform: translateY(-5px);
+		  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+		}
+		.folder img {
+		  width: 100%;
+		  height: 240px;
+		  border-radius: 10px;
+		  object-fit: cover;
+		}
+		.folder h2 {
+		  font-size: 1.5em;
+		  color: #006400;
+		  margin: 10px 0;
+		}
+		
+		/* Áudios */
+		.audio-container {
+		  display: none;
+		  padding: 20px;
+		  background: rgba(255, 255, 255, 0.9);
+		  border-radius: 10px;
+		  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+		  max-width: 800px;
+		  margin: 0 auto;
+		}
+		.audio-section {
+		  margin-bottom: 20px;
+		}
+		.audio-section h3 {
+		  font-size: 1.2em;
+		  color: #005f73;
+		  margin-bottom: 10px;
+		}
+		.audio-controls audio {
+		  width: 100%;
+		}
+		
+		/* Feedback */
+		.feedback-section {
+		  margin: 20px 0;
+		  text-align: center;
+		}
+		.feedback-section p {
+		  font-size: 1.2em;
+		  color: #fff;
+		  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+		  margin-bottom: 10px;
+		}
+		.feedback-button {
+		  display: inline-flex;
+		  align-items: center;
+		  gap: 10px;
+		  background-color: #005f73;
+		  color: #fff;
+		  text-decoration: none;
+		  padding: 15px 30px;
+		  border-radius: 15px;
+		  font-size: 1.2em;
+		  font-weight: bold;
+		  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+		  border: none;
+		  cursor: pointer;
+		  margin: 20px auto;
+		}
+		.feedback-button:hover {
+		  transform: scale(1.05);
+		  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+		}
+		
+		/* Footer */
+		footer {
+		  background: rgba(0, 0, 0, 0.8);
+		  color: #fff;
+		  text-align: center;
+		  padding: 20px;
+		  font-size: 0.9em;
+		}
+		footer p {
+		  margin: 5px 0;
+		}
+		footer p:first-child {
+		  font-weight: bold;
+		}
+		
+		/* Animações */
+		@keyframes blink {
+		  0%, 100% {
+		    background-color: #005f73;
+		    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+		  }
+		  50% {
+		    background-color: #ff8c00;
+		    box-shadow: 0 3px 6px rgba(255, 140, 0, 0.6);
+		  }
+		}
+		@keyframes fadeIn {
+		  from { opacity: 0; }
+		  to { opacity: 1; }
+		}
+		@keyframes slideDown {
+		  from { transform: translateY(-20px); opacity: 0; }
+		  to { transform: translateY(0); opacity: 1; }
+		}
+		
+		/* Onboarding */
+		.onboarding {
+		  position: fixed;
+		  inset: 0;
+		  background-color: #005f73; /* Fundo sólido para cobrir o fundo "fogo" */
+		  display: flex;
+		  flex-direction: column;
+		  align-items: center;
+		  justify-content: center;
+		  color: #fff;
+		  text-align: center;
+		  z-index: 9999;
+		  padding: 20px;
+		  opacity: 1;
+		}
+		.onboarding p {
+		  font-size: 1.8em;
+		  margin: 0 20px 20px;
+		  line-height: 1.4;
+		}
+		.onboard-buttons {
+		  display: flex;
+		  gap: 20px;
+		  margin-top: 20px;
+		}
+		.onboarding button {
+		  padding: 10px 20px;
+		  font-size: 1em;
+		  font-weight: bold;
+		  border: none;
+		  border-radius: 8px;
+		  cursor: pointer;
+		  background-color: #fff;
+		  color: #005f73;
+		  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+		}
+		.onboarding button:hover {
+		  transform: scale(1.05);
+		}
+		
+		/* Botão Voltar às Pastas */
+		.back-to-folders {
+		  display: inline-flex;
+		  align-items: center;
+		  gap: 10px;
+		  background-color: #005f73;
+		  color: #fff;
+		  text-decoration: none;
+		  padding: 15px 30px;
+		  border-radius: 25px;
+		  font-size: 1.2em;
+		  font-weight: bold;
+		  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+		  border: none;
+		  cursor: pointer;
+		  margin: 20px auto;
+		}
+		.back-to-folders:hover {
+		  background-color: #003f5c;
+		  transform: translateY(-3px);
+		}
+		
+		/* Responsividade - Mobile First */
 		@media (max-width: 768px) {
 		  #intro-container, .audio-container {
 		    max-width: 90%;
@@ -235,357 +304,42 @@
 		    display: block;
 		    margin: 20px auto;
 		  }
+		  /* Ajusta container de login */
+		  .login-container {
+		    padding: 20px;
+		  }
+		  .login-container input,
+		  .login-container button {
+		    width: 90%;
+		    margin: 0 auto;
+		  }
+		  header h1 {
+		    font-size: 2rem;
+		  }
+		  header h2 {
+		    font-size: 1rem;
+		  }
+		  /* Footer: Em mobile, mantemos o conteúdo único conforme HTML */
+		  footer {
+		    display: block;
+		  }
 		}
-		
-				
-				/* Animação blink para o botão de introdução */
-				@keyframes blink {
-				  0%, 100% {
-				    background-color: #005f73;
-				    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-				  }
-				  50% {
-				    background-color: #ff8c00;
-				    box-shadow: 0 3px 6px rgba(255, 140, 0, 0.6);
-				  }
-				}
-				
-				/* Onboarding */
-				.onboarding {
-				  position: fixed;
-				  inset: 0;
-				  background-color: #005f73; /* Fundo sólido para cobrir o “fogo” */
-				  display: flex;
-				  flex-direction: column;
-				  align-items: center;
-				  justify-content: center;
-				  color: #fff;
-				  text-align: center;
-				  z-index: 9999;
-				  padding: 20px;
-				  opacity: 1;
-				}
-				.onboarding p {
-				  font-size: 1.8em;
-				  margin: 0 20px 20px;
-				  line-height: 1.4;
-				}
-				.onboard-buttons {
-				  display: flex;
-				  gap: 20px;
-				  margin-top: 20px;
-				}
-				.onboarding button {
-				  padding: 10px 20px;
-				  font-size: 1em;
-				  font-weight: bold;
-				  border: none;
-				  border-radius: 8px;
-				  cursor: pointer;
-				  background-color: #fff;
-				  color: #005f73;
-				  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-				}
-				.onboarding button:hover {
-				  transform: scale(1.05);
-				}
-				
-				/* Botão Voltar às Pastas */
-				.back-to-folders {
-				  display: inline-flex;
-				  align-items: center;
-				  gap: 10px;
-				  background-color: #005f73;
-				  color: #fff;
-				  text-decoration: none;
-				  padding: 15px 30px;
-				  border-radius: 25px;
-				  font-size: 1.2em;
-				  font-weight: bold;
-				  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
-				  border: none;
-				  cursor: pointer;
-				  margin: 20px auto;
-				}
-				.back-to-folders:hover {
-				  background-color: #003f5c;
-				  transform: translateY(-3px);
-				}
+		/* Responsividade - Desktop */
+		@media (min-width: 769px) {
+		  footer {
+		    display: block;
+		  }
+		}
 	</style>
-	<!-- Biblioteca Anime.js para animações -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
-	<!-- Script principal com defer para melhor performance -->
-	<script defer>
-		document.addEventListener('DOMContentLoaded', () => {
-				  // Elementos principais
-				  const headerEl = document.querySelector('header');
-				  const mainEl = document.querySelector('main');
-				  const footerEl = document.querySelector('footer');
-				  const onboarding = document.getElementById('onboarding');
-				  const introBtn = document.getElementById('intro-btn');
-				  const introContainer = document.getElementById('intro-container');
-				  const onboardPrev = document.getElementById("onboard-prev");
-				  const onboardNext = document.getElementById("onboard-next");
-				
-				  // Esconde conteúdo principal até o término do onboarding
-				  [headerEl, mainEl, footerEl].forEach(el => el.style.display = 'none');
-				
-				  // Exibe o onboarding imediatamente
-				  onboarding.style.display = "flex";
-				  onboarding.style.opacity = 0;
-				  anime({
-				    targets: '#onboarding',
-				    opacity: [0, 1],
-				    duration: 800,
-				    easing: 'easeInOutQuad'
-				  });
-				
-				  // Lógica de Onboarding com 5 slides. 
-				  // O slide 1 fica sem botões e avança automaticamente após 2s.
-				  let currentSlide = 1;
-				  const totalSlides = 5;
-				
-				  const showSlide = (slideIndex) => {
-				    for (let i = 1; i <= totalSlides; i++) {
-				      const slide = document.getElementById(`slide-${i}`);
-				      slide.style.display = (i === slideIndex) ? "block" : "none";
-				    }
-				
-			// Verifica se está no primeiro slide
-		if (slideIndex === 1) {
-		  // Esconde os botões e mostra "aguarde..."
-		  onboardPrev.style.display = "none";
-		  onboardNext.style.display = "none";
-		
-		  // Define o delay: 3000ms (3s) no mobile, 2000ms no desktop
-		  let delayTime = (window.innerWidth < 768) ? 3000 : 2000;
-		  setTimeout(() => {
-		    currentSlide = 2;
-		    showSlide(currentSlide);
-		  }, delayTime);
-		} else {
-		  // Exibe os botões a partir do slide 2
-		  onboardPrev.style.display = "inline-block";
-		  onboardNext.style.display = "inline-block";
-		  // Permite que o botão "Voltar" funcione em qualquer slide após o 1
-		  onboardPrev.disabled = false;
-		  onboardNext.textContent = (slideIndex === totalSlides) ? "Concluir" : "Seguir";
-		}
-		
-		
-				
-				    // Animação fade + leve movimento "sway"
-				    const currentSlideEl = document.getElementById(`slide-${slideIndex}`);
-				    currentSlideEl.style.opacity = 0;
-				    anime({
-				      targets: currentSlideEl,
-				      opacity: [0, 1],
-				      translateY: [20, 0],
-				      duration: 500,
-				      easing: 'easeInOutQuad'
-				    });
-				  };
-				
-				  // Inicia mostrando o slide 1 (bem-vindo + aguarde)
-				  showSlide(currentSlide);
-				
-				  // Botões "Voltar" e "Seguir"
-				  onboardPrev.addEventListener("click", () => {
-				    if (currentSlide > 2) {
-				      currentSlide--;
-				      showSlide(currentSlide);
-				    }
-				  });
-				  onboardNext.addEventListener("click", () => {
-				    if (currentSlide < totalSlides) {
-				      currentSlide++;
-				      showSlide(currentSlide);
-				    } else {
-				      // Conclui o Onboarding com transição suave
-				      anime({
-				        targets: '#onboarding',
-				        opacity: [1, 0],
-				        translateY: [0, 20],
-				        duration: 1200,
-				        easing: 'easeInOutQuad',
-				        complete: () => {
-				          onboarding.style.display = "none";
-				          // Exibe os elementos da página principal
-				          [headerEl, mainEl, footerEl].forEach(el => {
-				            el.style.display = '';
-				            el.style.opacity = 0;
-				          });
-				          anime({
-				            targets: [headerEl, mainEl, footerEl],
-				            opacity: [0, 1],
-				            translateY: [20, 0],
-				            duration: 800,
-				            easing: 'easeOutQuad'
-				          });
-				        }
-				      });
-				    }
-				  });
-				
-				  // Toggle para o container de introdução
-				  const toggleIntro = () => {
-				    if (introContainer.style.display === 'block') {
-				      anime({
-				        targets: '#intro-container',
-				        opacity: [1, 0],
-				        duration: 1000,
-				        easing: 'easeInOutQuad',
-				        complete: () => {
-				          introContainer.style.display = 'none';
-				          introBtn.innerHTML = `
-				            <img src="https://img.icons8.com/ios-filled/50/ffffff/idea.png" alt="Introdução">
-				            Conheça o Projeto Agora! <span style="font-size:0.8em; margin-left:10px;"
-				          `;
-				        }
-				      });
-				    } else {
-				      introContainer.style.display = 'block';
-				      introContainer.style.opacity = 0;
-				      anime({
-				        targets: '#intro-container',
-				        opacity: [0, 1],
-				        duration: 1000,
-				        easing: 'easeInOutQuad'
-				      });
-				      introBtn.innerHTML = `
-				        <img src="https://img.icons8.com/ios-filled/50/ffffff/info.png" alt="Ocultar Introdução">
-				        Ocultar Introdução <span style="font-size:0.8em; margin-left:10px;"
-				      `;
-				    }
-				  };
-				  introBtn.addEventListener('click', toggleIntro);
-				
-				  // Controle dos áudios por pasta
-				  const audiosByFolder = {
-				    1: [
-				      { title: "A1 001: Abordagem Técnica - comunicação que salva!", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/001%20Aborgagem%20T%C3%A9cnica%20-%20comunica%C3%A7%C3%A3o%20que%20salva!.mp3.mp3" },
-				      { title: "A1 002: Comportamentos Desejáveis na Abordagem Técnica", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/002%20Comportamentos%20Desej%C3%A1veis%20na%20Abordagem%20T%C3%A9cnica.mp3.mp3" },
-				      { title: "A1 003: Comportamentos que Devem Ser Evitados na Abordagem Técnica", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/003%20Comportamentos%20que%20Devem%20Ser%20Evitados%20na%20Abordagem%20T%C3%A9cnica.mp3.mp3" },
-				      { title: "A1 004: A Aproximação Segura no Atendimento a Tentativas de Suicídio", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/004%20A%20Aproxima%C3%A7%C3%A3o%20Segura%20no%20Atendimento%20a%20Tentativas%20de%20Suic%C3%ADdio.mp3.mp3" },
-				      { title: "A1 005: O Poder de Ouvir", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/005%20O%20Poder%20de%20Ouvir.mp3.mp3" },
-				      { title: "A1 006: A Apresentação Pessoal - A Primeira Conexão", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/006%20A%20Apresenta%C3%A7%C3%A3o%20Pessoal%20A%20Primeira%20Conex%C3%A3o.mp3.mp3" },
-				      { title: "A1 007: Perguntas Simples - Rastreando Fatores de Risco e Proteção", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/007%20Perguntas%20Simples%20-%20%20Rastreando%20Fatores%20de%20Risco%20e%20Prote%C3%A7%C3%A3o.mp3.mp3" },
-				      { title: "A1 008: Usando Perguntas Simples com Tentante de Perfil Depressivo", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/008%20Usando%20Perguntas%20Simples%20com%20Tentante%20de%20Perfil%20Depressivo.mp3.mp3" },
-				      { title: "A1 009: Usando Perguntas Simples com Tentante de Perfil Agressivo", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/009%20Usando%20Perguntas%20Simples%20com%20Tentante%20de%20Perfil%20Agressivo.mp3.mp3" },
-				      { title: "A1 010: Usando Perguntas Simples com Tentante de Perfil Psicótico", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/010%20Usando%20Perguntas%20Simples%20com%20Tentante%20de%20Perfil%20Psic%C3%B3tico.mp3.mp3" },
-				      { title: "A1 011: Usando Perguntas Complexas para Apoiar o Tentante", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/011%20Usando%20Perguntas%20Complexas%20para%20Apoiar%20o%20Tentante.mp3.mp3" },
-				      { title: "A1 012: Ferramentas de Diálogo Influenciando a Reflexão do Tentante", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/012%20Ferramentas%20de%20Di%C3%A1logo%20Influenciando%20a%20Reflex%C3%A3o%20do%20Tentante.mp3.mp3" },
-				      { title: "A1 013: Técnica do Sucesso Anterior - Resgatando Estratégias do Passado", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/013%20T%C3%A9cnica%20do%20Sucesso%20Anterior%20Resgatando%20Estrat%C3%A9gias%20do%20Passado.mp3.mp3" },
-				      { title: "A1 014: Ponte para o Passado - Resgatando Memórias Agradáveis", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/014%20Ponte%20para%20o%20Passado%20Resgatando%20Mem%C3%B3rias%20Agrad%C3%A1veis.mp3.mp3" },
-				      { title: "A1 015: Ponte para o Futuro - Criando Perspectivas Positivas", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/015%20Ponte%20para%20o%20Futuro%20Criando%20Perspectivas%20Positivas.mp3.mp3" },
-				      { title: "A1 016: Paráfrase Resumida - Refinando o Foco no Diálogo", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/016%20Par%C3%A1frase%20Resumida%20Refinando%20o%20Foco%20no%20Di%C3%A1logo.mp3.mp3" },
-				      { title: "A1 017: Especificidades para Abordar Tentantes de Perfil Depressivo", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/017%20Especificidades%20para%20Abordar%20Tentantes%20de%20Perfil%20Depressivo.mp3.mp3" },
-				      { title: "A1 018: Especificidades para Abordar Tentantes de Perfil Agressivo", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/018%20Especificidades%20para%20Abordar%20Tentantes%20de%20Perfil%20Agressivo.mp3.mp3" },
-				      { title: "A1 019: Especificidades para Abordar Tentantes de Perfil Psicótico", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/019%20Especificidades%20para%20Abordar%20Tentantes%20de%20Perfil%20Psic%C3%B3tico.mp3.mp3" },
-				      { title: "A1 020: Entrada Forçada - Quando a Segurança Exige Ação", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/020%20Entrada%20For%C3%A7ada%20Quando%20a%20Seguran%C3%A7a%20Exige%20A%C3%A7%C3%A3o.mp3.mp3" },
-				      { title: "A1 021: Encerramento - Continuemos a Girar a Ampulheta da Vida", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/021%20Encerramento%20Continuemos%20a%20Girar%20a%20Ampulheta%20da%20Vida.mp3.mp3" }
-				    ],
-				    2: [
-				      { title: "A2 000: Desvendando as Engrenagens", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20000%20Desvendando%20as%20Engrenagens%20do%20Comportamento%20Suicida.mp3" },
-				      { title: "A2 001: O Suicídio ao Longo da História", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20001%20A%20Origem%20do%20Suic%C3%ADdio.mp3" },
-				      { title: "A2 002: Decisões no Caos: O Cérebro em Crise", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20002%20Os%20Bastidores%20do%20C%C3%A9rebro.mp3" },
-				      { title: "A2 003: Transtornos Mentais e o Peso do Sofrimento", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20003%20O%20Peso%20da%20Mente.mp3" },
-				      { title: "A2 004: Maria e as Sombras da Depressão", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20004%20Maria%20e%20as%20sombras%20da%20depressao.mp3" },
-				      { title: "A2 005: Cláudio e os Ciclos da Bipolaridade", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20005%20Cl%C3%A1udio%20e%20os%20Ciclos%20do%20TAB.mp3" },
-				      { title: "A2 006: Fernanda e o Labirinto da Cocaína", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20006%20Fernanda%20na%20Rede%20da%20Depend%C3%AAncia.mp3" },
-				      { title: "A2 007: Programa em Foco - Saúde Mental: Júlia e o Desafio do Borderline", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20007%20Entrevista%20com%20J%C3%BAlia.mp3" },
-				      { title: "A2 008: Programa em Foco - Saúde Mental: Dra. Sara e os Transtornos de Personalidade", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20008%20Entrevista%20com%20Dra%20Sara.mp3" },
-				      { title: "A2 009: Dona Lurdes, Mônica e os Desafios da Esquizofrenia", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20009%20Dona%20Lurdes%20e%20sua%20irm%C3%A3.mp3" },
-				      { title: "A2 010: As Vulnerabilidades Invisíveis: Um Olhar Filosófico e Social", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20010%20Fatores%20Invis%C3%ADveis%20Vulnerabilidades%20Sociais%20e%20Filos%C3%B3ficas.mp3" },
-				      { title: "A2 011: Quando as Emoções Dominam", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20011%20Quando%20o%20C%C3%A9rebro%20Quebra.mp3" },
-				      { title: "A2 012: A Ação Antes da Razão", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20012%20A%20Impulsividade%20e%20o%20Comportamento%20de%20Fuga.mp3" },
-				      { title: "A2 013: Um Novo Olhar para as Engrenagens", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A3%20013%20Um%20Novo%20Olhar%20para%20as%20Engrenagens.mp3" }
-				    ],
-				    3: [
-				      { title: "Série Em construção 1", url: "https://example.com/audio-folder3-1.mp3" },
-				      { title: "Série Em construção 2", url: "https://example.com/audio-folder3-2.mp3" }
-				    ]
-				  };
-				
-				  let currentFolder = null;
-				  const audioContainer = document.getElementById('audio-container');
-				  const audioList = document.getElementById('audio-list');
-				
-				  window.toggleAudios = (folder) => {
-				    if (currentFolder === folder) {
-				      anime({
-				        targets: audioContainer,
-				        opacity: [1, 0],
-				        duration: 500,
-				        easing: 'easeInOutQuad',
-				        complete: () => {
-				          audioContainer.style.display = 'none';
-				          currentFolder = null;
-				        }
-				      });
-				      return;
-				    }
-				    audioList.innerHTML = '';
-				    audiosByFolder[folder].forEach((audio, index) => {
-				      const section = document.createElement('div');
-				      section.classList.add('audio-section');
-				      section.innerHTML = `
-				        <h3>${audio.title}</h3>
-				        <div class="audio-controls">
-				          <audio controls>
-				            <source src="${audio.url}" type="audio/mp3">
-				            Seu navegador não suporta o elemento de áudio. <a href="${audio.url}" download>Clique aqui para baixar</a>
-				          </audio>
-				        </div>
-				      `;
-				      audioList.appendChild(section);
-				    });
-				    let backToFolders = audioContainer.querySelector('.back-to-folders');
-				    if (!backToFolders) {
-				      backToFolders = document.createElement('button');
-				      backToFolders.className = 'back-to-folders';
-				      backToFolders.innerHTML = `
-				        <svg xmlns="http://www.w3.org/2000/svg" fill="#FFD700" viewBox="0 0 24 24" stroke="currentColor" style="width: 24px; height: 24px; vertical-align: middle;">
-				          <path d="M10 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
-				        </svg>
-				        <span style="vertical-align: middle; margin-left: 8px; font-size: 1.2em; font-weight: bold;">Voltar às Pastas</span>
-				      `;
-				      backToFolders.addEventListener('click', () => {
-				        anime({
-				          targets: audioContainer,
-				          opacity: [1, 0],
-				          duration: 500,
-				          easing: 'easeInOutQuad',
-				          complete: () => {
-				            audioContainer.style.display = 'none';
-				            document.querySelectorAll('.folder').forEach(folderEl => folderEl.style.display = 'block');
-				            currentFolder = null;
-				          }
-				        });
-				      });
-				      audioContainer.appendChild(backToFolders);
-				    }
-				    audioContainer.style.display = 'block';
-				    audioContainer.style.opacity = 0;
-				    anime({
-				      targets: audioContainer,
-				      opacity: [0, 1],
-				      duration: 500,
-				      easing: 'easeInOutQuad'
-				    });
-				    currentFolder = folder;
-				    document.querySelectorAll('.folder').forEach(folderEl => folderEl.style.display = 'none');
-				    audioContainer.scrollIntoView({ behavior: 'smooth' });
-				  };
-				});
-	</script>
+	<!-- Link para CSS Externo (caso haja) -->
+	<link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-	<!-- Onboarding (agora com slide 1 sem botões, avança automaticamente após 2s) -->
+	<!-- Onboarding -->
 	<div class="onboarding" id="onboarding" aria-label="Onboarding do projeto">
 		<div class="onboard-content" id="onboard-content">
-			<!-- Slide 1 (Atenção: Boas-vindas e aguarde) -->
+			<!-- Slide 1 (Bem-vindo e aguarde) -->
 			<div class="onboard-slide" id="slide-1">
 				<p>Bem-vindo(a)! Aguarde ... sua imersão em conhecimento começa agora.</p>
 			</div>
@@ -616,7 +370,7 @@
 	</header>
 	<main>
 		<section class="intro-section">
-			<!-- Botão de Introdução (centralizado) -->
+			<!-- Botão de Introdução -->
 			<a href="javascript:void(0);" class="intro-button" id="intro-btn" role="button" aria-expanded="false">
 				<img src="https://img.icons8.com/ios-filled/50/ffffff/idea.png" alt="Introdução"> Clique aqui para conhecer o Projeto Agora! </a>
 			<!-- Conteúdo de Introdução -->
@@ -630,9 +384,8 @@
 					<li><strong>Série 3:</strong> Prevenção e Transformação de Vidas.</li>
 				</ul>
 				<p><strong>Aperte o play</strong> e descubra como este aprendizado pode ampliar sua atuação profissional e fazer a diferença na vida de quem mais precisa.</p>
-				<p style="margin-top: 20px;"><em>Abraços,</em>
-					<br><strong>Richelmy Murta, Major BM</strong>
-					<br>Coordenador de ATS
+				<p style="margin-top: 20px;"><em>Abraços,</em><br>
+					<strong>Richelmy Murta, Major BM</strong><br> Coordenador de ATS
 				</p>
 			</div>
 		</section>
@@ -669,6 +422,255 @@
 			<p>Todos os direitos reservados</p>
 		</div>
 	</footer>
+	<!-- Biblioteca Anime.js para animações -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" defer></script>
+	<!-- Script principal com defer para melhor performance -->
+	<script defer>
+		document.addEventListener('DOMContentLoaded', () => {
+		  // Elementos do Onboarding e Conteúdo Principal
+		  const headerEl = document.querySelector('header');
+		  const mainEl = document.querySelector('main');
+		  const footerEl = document.querySelector('footer');
+		  const onboarding = document.getElementById('onboarding');
+		  const introBtn = document.getElementById('intro-btn');
+		  const introContainer = document.getElementById('intro-container');
+		  const onboardPrev = document.getElementById("onboard-prev");
+		  const onboardNext = document.getElementById("onboard-next");
+		
+		  // Esconde o conteúdo principal até concluir o Onboarding
+		  [headerEl, mainEl, footerEl].forEach(el => el.style.display = 'none');
+		
+		  // Exibe o Onboarding com animação
+		  onboarding.style.display = "flex";
+		  onboarding.style.opacity = 0;
+		  anime({
+		    targets: '#onboarding',
+		    opacity: [0, 1],
+		    duration: 800,
+		    easing: 'easeInOutQuad'
+		  });
+		
+		  // Lógica do Onboarding com 5 slides
+		  let currentSlide = 1;
+		  const totalSlides = 5;
+		  const showSlide = (slideIndex) => {
+		    for (let i = 1; i <= totalSlides; i++) {
+		      const slide = document.getElementById(`slide-${i}`);
+		      slide.style.display = (i === slideIndex) ? "block" : "none";
+		    }
+		    if (slideIndex === 1) {
+		      onboardPrev.style.display = "none";
+		      onboardNext.style.display = "none";
+		      let delayTime = (window.innerWidth < 768) ? 3000 : 2000;
+		      setTimeout(() => {
+		        currentSlide = 2;
+		        showSlide(currentSlide);
+		      }, delayTime);
+		    } else {
+		      onboardPrev.style.display = "inline-block";
+		      onboardNext.style.display = "inline-block";
+		      onboardPrev.disabled = false;
+		      onboardNext.textContent = (slideIndex === totalSlides) ? "Concluir" : "Seguir";
+		    }
+		    const currentSlideEl = document.getElementById(`slide-${slideIndex}`);
+		    currentSlideEl.style.opacity = 0;
+		    anime({
+		      targets: currentSlideEl,
+		      opacity: [0, 1],
+		      translateY: [20, 0],
+		      duration: 500,
+		      easing: 'easeInOutQuad'
+		    });
+		  };
+		  showSlide(currentSlide);
+		
+		  onboardPrev.addEventListener("click", () => {
+		    if (currentSlide > 2) {
+		      currentSlide--;
+		      showSlide(currentSlide);
+		    }
+		  });
+		  onboardNext.addEventListener("click", () => {
+		    if (currentSlide < totalSlides) {
+		      currentSlide++;
+		      showSlide(currentSlide);
+		    } else {
+		      anime({
+		        targets: '#onboarding',
+		        opacity: [1, 0],
+		        translateY: [0, 20],
+		        duration: 1200,
+		        easing: 'easeInOutQuad',
+		        complete: () => {
+		          onboarding.style.display = "none";
+		          [headerEl, mainEl, footerEl].forEach(el => {
+		            el.style.display = '';
+		            el.style.opacity = 0;
+		          });
+		          anime({
+		            targets: [headerEl, mainEl, footerEl],
+		            opacity: [0, 1],
+		            translateY: [20, 0],
+		            duration: 800,
+		            easing: 'easeOutQuad'
+		          });
+		        }
+		      });
+		    }
+		  });
+		
+		  // Toggle para o container de introdução
+		  const toggleIntro = () => {
+		    if (introContainer.style.display === 'block') {
+		      anime({
+		        targets: '#intro-container',
+		        opacity: [1, 0],
+		        duration: 1000,
+		        easing: 'easeInOutQuad',
+		        complete: () => {
+		          introContainer.style.display = 'none';
+		          introBtn.innerHTML = `
+		            <img src="https://img.icons8.com/ios-filled/50/ffffff/idea.png" alt="Introdução">
+		            Conheça o Projeto Agora! <span style="font-size:0.8em; margin-left:10px;"
+		          `;
+		        }
+		      });
+		    } else {
+		      introContainer.style.display = 'block';
+		      introContainer.style.opacity = 0;
+		      anime({
+		        targets: '#intro-container',
+		        opacity: [0, 1],
+		        duration: 1000,
+		        easing: 'easeInOutQuad'
+		      });
+		      introBtn.innerHTML = `
+		        <img src="https://img.icons8.com/ios-filled/50/ffffff/info.png" alt="Ocultar Introdução">
+		        Ocultar Introdução <span style="font-size:0.8em; margin-left:10px;"
+		      `;
+		    }
+		  };
+		  introBtn.addEventListener('click', toggleIntro);
+		
+		  // Controle dos áudios por pasta (mantendo 100% dos áudios)
+		  const audiosByFolder = {
+		    1: [
+		      { title: "A1 001: Abordagem Técnica - comunicação que salva!", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/001%20Aborgagem%20T%C3%A9cnica%20-%20comunica%C3%A7%C3%A3o%20que%20salva!.mp3.mp3" },
+		      { title: "A1 002: Comportamentos Desejáveis na Abordagem Técnica", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/002%20Comportamentos%20Desej%C3%A1veis%20na%20Abordagem%20T%C3%A9cnica.mp3.mp3" },
+		      { title: "A1 003: Comportamentos que Devem Ser Evitados na Abordagem Técnica", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/003%20Comportamentos%20que%20Devem%20Ser%20Evitados%20na%20Abordagem%20T%C3%A9cnica.mp3.mp3" },
+		      { title: "A1 004: A Aproximação Segura no Atendimento a Tentativas de Suicídio", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/004%20A%20Aproxima%C3%A7%C3%A3o%20Segura%20no%20Atendimento%20a%20Tentativas%20de%20Suic%C3%ADdio.mp3.mp3" },
+		      { title: "A1 005: O Poder de Ouvir", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/005%20O%20Poder%20de%20Ouvir.mp3.mp3" },
+		      { title: "A1 006: A Apresentação Pessoal - A Primeira Conexão", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/006%20A%20Apresenta%C3%A7%C3%A3o%20Pessoal%20A%20Primeira%20Conex%C3%A3o.mp3.mp3" },
+		      { title: "A1 007: Perguntas Simples - Rastreando Fatores de Risco e Proteção", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/007%20Perguntas%20Simples%20-%20%20Rastreando%20Fatores%20de%20Risco%20e%20Prote%C3%A7%C3%A3o.mp3.mp3" },
+		      { title: "A1 008: Usando Perguntas Simples com Tentante de Perfil Depressivo", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/008%20Usando%20Perguntas%20Simples%20com%20Tentante%20de%20Perfil%20Depressivo.mp3.mp3" },
+		      { title: "A1 009: Usando Perguntas Simples com Tentante de Perfil Agressivo", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/009%20Usando%20Perguntas%20Simples%20com%20Tentante%20de%20Perfil%20Agressivo.mp3.mp3" },
+		      { title: "A1 010: Usando Perguntas Simples com Tentante de Perfil Psicótico", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/010%20Usando%20Perguntas%20Simples%20com%20Tentante%20de%20Perfil%20Psic%C3%B3tico.mp3.mp3" },
+		      { title: "A1 011: Usando Perguntas Complexas para Apoiar o Tentante", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/011%20Usando%20Perguntas%20Complexas%20para%20Apoiar%20o%20Tentante.mp3.mp3" },
+		      { title: "A1 012: Ferramentas de Diálogo Influenciando a Reflexão do Tentante", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/012%20Ferramentas%20de%20Di%C3%A1logo%20Influenciando%20a%20Reflex%C3%A3o%20do%20Tentante.mp3.mp3" },
+		      { title: "A1 013: Técnica do Sucesso Anterior - Resgatando Estratégias do Passado", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/013%20T%C3%A9cnica%20do%20Sucesso%20Anterior%20Resgatando%20Estrat%C3%A9gias%20do%20Passado.mp3.mp3" },
+		      { title: "A1 014: Ponte para o Passado - Resgatando Memórias Agradáveis", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/014%20Ponte%20para%20o%20Passado%20Resgatando%20Mem%C3%B3rias%20Agrad%C3%A1veis.mp3.mp3" },
+		      { title: "A1 015: Ponte para o Futuro - Criando Perspectivas Positivas", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/015%20Ponte%20para%20o%20Futuro%20Criando%20Perspectivas%20Positivas.mp3.mp3" },
+		      { title: "A1 016: Paráfrase Resumida - Refinando o Foco no Diálogo", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/016%20Par%C3%A1frase%20Resumida%20Refinando%20o%20Foco%20no%20Di%C3%A1logo.mp3.mp3" },
+		      { title: "A1 017: Especificidades para Abordar Tentantes de Perfil Depressivo", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/017%20Especificidades%20para%20Abordar%20Tentantes%20de%20Perfil%20Depressivo.mp3.mp3" },
+		      { title: "A1 018: Especificidades para Abordar Tentantes de Perfil Agressivo", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/018%20Especificidades%20para%20Abordar%20Tentantes%20de%20Perfil%20Agressivo.mp3.mp3" },
+		      { title: "A1 019: Especificidades para Abordar Tentantes de Perfil Psicótico", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/019%20Especificidades%20para%20Abordar%20Tentantes%20de%20Perfil%20Psic%C3%B3tico.mp3.mp3" },
+		      { title: "A1 020: Entrada Forçada - Quando a Segurança Exige Ação", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/020%20Entrada%20For%C3%A7ada%20Quando%20a%20Seguran%C3%A7a%20Exige%20A%C3%A7%C3%A3o.mp3.mp3" },
+		      { title: "A1 021: Encerramento - Continuemos a Girar a Ampulheta da Vida", url: "https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/021%20Encerramento%20Continuemos%20a%20Girar%20a%20Ampulheta%20da%20Vida.mp3.mp3" }
+		    ],
+		    2: [
+		      { title: "A2 000: Desvendando as Engrenagens", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20000%20Desvendando%20as%20Engrenagens%20do%20Comportamento%20Suicida.mp3" },
+		      { title: "A2 001: O Suicídio ao Longo da História", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20001%20A%20Origem%20do%20Suic%C3%ADdio.mp3" },
+		      { title: "A2 002: Decisões no Caos: O Cérebro em Crise", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20002%20Os%20Bastidores%20do%20C%C3%A9rebro.mp3" },
+		      { title: "A2 003: Transtornos Mentais e o Peso do Sofrimento", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20003%20O%20Peso%20da%20Mente.mp3" },
+		      { title: "A2 004: Maria e as Sombras da Depressão", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20004%20Maria%20e%20as%20sombras%20da%20depressao.mp3" },
+		      { title: "A2 005: Cláudio e os Ciclos da Bipolaridade", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20005%20Cl%C3%A1udio%20e%20os%20Ciclos%20do%20TAB.mp3" },
+		      { title: "A2 006: Fernanda e o Labirinto da Cocaína", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20006%20Fernanda%20na%20Rede%20da%20Depend%C3%AAncia.mp3" },
+		      { title: "A2 007: Programa em Foco - Saúde Mental: Júlia e o Desafio do Borderline", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20007%20Entrevista%20com%20J%C3%BAlia.mp3" },
+		      { title: "A2 008: Programa em Foco - Saúde Mental: Dra. Sara e os Transtornos de Personalidade", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20008%20Entrevista%20com%20Dra%20Sara.mp3" },
+		      { title: "A2 009: Dona Lurdes, Mônica e os Desafios da Esquizofrenia", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20009%20Dona%20Lurdes%20e%20sua%20irm%C3%A3.mp3" },
+		      { title: "A2 010: As Vulnerabilidades Invisíveis: Um Olhar Filosófico e Social", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20010%20Fatores%20Invis%C3%ADveis%20Vulnerabilidades%20Sociais%20e%20Filos%C3%B3ficas.mp3" },
+		      { title: "A2 011: Quando as Emoções Dominam", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20011%20Quando%20o%20C%C3%A9rebro%20Quebra.mp3" },
+		      { title: "A2 012: A Ação Antes da Razão", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A2%20012%20A%20Impulsividade%20e%20o%20Comportamento%20de%20Fuga.mp3" },
+		      { title: "A2 013: Um Novo Olhar para as Engrenagens", url: "https://raw.githubusercontent.com/ricmurtapsicologia/Podcast-ATS-CBMMG/main/A3%20013%20Um%20Novo%20Olhar%20para%20as%20Engrenagens.mp3" }
+		    ],
+		    3: [
+		      { title: "Série Em construção 1", url: "https://example.com/audio-folder3-1.mp3" },
+		      { title: "Série Em construção 2", url: "https://example.com/audio-folder3-2.mp3" }
+		    ]
+		  };
+		
+		  let currentFolder = null;
+		  const audioContainer = document.getElementById('audio-container');
+		  const audioList = document.getElementById('audio-list');
+		
+		  window.toggleAudios = (folder) => {
+		    if (currentFolder === folder) {
+		      anime({
+		        targets: audioContainer,
+		        opacity: [1, 0],
+		        duration: 500,
+		        easing: 'easeInOutQuad',
+		        complete: () => {
+		          audioContainer.style.display = 'none';
+		          currentFolder = null;
+		        }
+		      });
+		      return;
+		    }
+		    audioList.innerHTML = '';
+		    audiosByFolder[folder].forEach((audio) => {
+		      const section = document.createElement('div');
+		      section.classList.add('audio-section');
+		      section.innerHTML = `
+		        <h3>${audio.title}</h3>
+		        <div class="audio-controls">
+		          <audio controls>
+		            <source src="${audio.url}" type="audio/mp3">
+		            Seu navegador não suporta o elemento de áudio. <a href="${audio.url}" download>Clique aqui para baixar</a>
+		          </audio>
+		        </div>
+		      `;
+		      audioList.appendChild(section);
+		    });
+		    let backToFolders = audioContainer.querySelector('.back-to-folders');
+		    if (!backToFolders) {
+		      backToFolders = document.createElement('button');
+		      backToFolders.className = 'back-to-folders';
+		      backToFolders.innerHTML = `
+		        <svg xmlns="http://www.w3.org/2000/svg" fill="#FFD700" viewBox="0 0 24 24" stroke="currentColor" style="width: 24px; height: 24px; vertical-align: middle;">
+		          <path d="M10 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
+		        </svg>
+		        <span style="vertical-align: middle; margin-left: 8px; font-size: 1.2em; font-weight: bold;">Voltar às Pastas</span>
+		      `;
+		      backToFolders.addEventListener('click', () => {
+		        anime({
+		          targets: audioContainer,
+		          opacity: [1, 0],
+		          duration: 500,
+		          easing: 'easeInOutQuad',
+		          complete: () => {
+		            audioContainer.style.display = 'none';
+		            document.querySelectorAll('.folder').forEach(folderEl => folderEl.style.display = 'block');
+		            currentFolder = null;
+		          }
+		        });
+		      });
+		      audioContainer.appendChild(backToFolders);
+		    }
+		    audioContainer.style.display = 'block';
+		    audioContainer.style.opacity = 0;
+		    anime({
+		      targets: audioContainer,
+		      opacity: [0, 1],
+		      duration: 500,
+		      easing: 'easeInOutQuad'
+		    });
+		    currentFolder = folder;
+		    document.querySelectorAll('.folder').forEach(folderEl => folderEl.style.display = 'none');
+		    audioContainer.scrollIntoView({ behavior: 'smooth' });
+		  };
+		});
+	</script>
 </body>
 
 </html>
