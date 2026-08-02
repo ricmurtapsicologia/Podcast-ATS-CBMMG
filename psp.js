@@ -8,121 +8,188 @@
       n:"01", phase:"Fundamentos", tag:"Compreender", image:"assets/psp-01.svg",
       alt:"Ilustração autoral sobre apoio humano e proteção nos Primeiros Socorros Psicológicos",
       title:"O que são Primeiros Socorros Psicológicos",
-      lead:"PSP são uma forma de ajuda humana, prática e respeitosa para pessoas afetadas por eventos críticos. O foco inicial é favorecer segurança, orientação, dignidade e acesso a recursos úteis.",
-      objective:"Reconhecer PSP como apoio inicial, e não como psicoterapia ou diagnóstico.",
-      field:["Ofereça presença calma e respeitosa.","Pergunte o que seria útil agora, sem presumir necessidades.","Priorize ajuda prática, informação simples e conexão com recursos."],
-      team:"O mesmo princípio vale entre colegas: disponibilidade sem invasão e respeito ao tempo de cada profissional.",
-      avoid:"Não force conversa, não interprete reações como diagnóstico e não prometa resultados que você não pode garantir.",
-      check:"Minha presença está aumentando segurança, orientação e autonomia?"
+      lead:"Primeiros Socorros Psicológicos (PSP) são uma forma de ajuda humana, prática e respeitosa oferecida a pessoas afetadas por eventos críticos. Seu objetivo não é fazer a pessoa deixar de sentir emoções difíceis, mas ajudá-la a recuperar um mínimo de segurança, orientação, autonomia e acesso a recursos que façam sentido naquele momento.",
+      context:"Em emergência e segurança pública, PSP funcionam como uma competência transversal: o profissional usa sua presença, comunicação e conhecimento da rede disponível para reduzir desorganização e facilitar o próximo passo. A intervenção deve ser proporcional à necessidade e compatível com a função de quem ajuda.",
+      objective:"Reconhecer PSP como apoio inicial estruturado, distinguindo-o de psicoterapia, diagnóstico, interrogatório ou aconselhamento prolongado.",
+      field:[
+        "Ofereça presença calma, respeitosa e previsível antes de tentar resolver problemas.",
+        "Pergunte o que a pessoa precisa agora, em vez de presumir o que seria melhor para ela.",
+        "Priorize necessidades concretas, informação simples e conexão com pessoas ou serviços úteis.",
+        "Preserve dignidade, privacidade, cultura e escolhas sempre que as condições permitirem."
+      ],
+      team:"O mesmo princípio vale entre colegas: apoio entre pares começa pela disponibilidade, não pela invasão. Um colega pode querer conversar imediatamente, preferir apenas companhia ou buscar outro recurso mais tarde.",
+      avoid:"Não force conversa, não interprete reações como diagnóstico, não faça promessas que não controla e não transforme um contato breve em uma sessão clínica improvisada.",
+      check:"Minha presença está aumentando segurança, orientação, autonomia e conexão — ou apenas acrescentando mais estímulo?"
     },
     {
       n:"02", phase:"Fundamentos", tag:"Indicação", image:"assets/psp-02.svg",
       alt:"Ilustração autoral sobre preparação e indicação dos Primeiros Socorros Psicológicos",
       title:"Quando usar PSP — e quando outra resposta é necessária",
-      lead:"PSP podem ser úteis após situações críticas quando a pessoa demonstra sofrimento ou necessidade de apoio. Nem toda pessoa afetada precisa ou deseja intervenção imediata.",
-      objective:"Distinguir uma oferta de apoio inicial de situações que exigem outros recursos profissionais ou operacionais.",
-      field:["Ofereça ajuda sem obrigar a pessoa a aceitá-la.","Observe necessidades concretas e capacidade de compreender informações.","Acione os recursos institucionais adequados quando a necessidade ultrapassar sua função."],
-      team:"Entre pares, uma conversa breve pode ser suficiente; quando o funcionamento permanece prejudicado, facilite acesso a suporte formal.",
-      avoid:"Não transforme PSP em avaliação clínica improvisada nem em procedimento obrigatório para todos após uma ocorrência.",
-      check:"Esta pessoa precisa de presença e apoio prático ou de outro recurso especializado agora?"
+      lead:"PSP podem ser oferecidos após situações críticas quando alguém demonstra sofrimento, confusão, necessidade de informação, dificuldade para organizar o próximo passo ou ausência de apoio suficiente. Nem toda pessoa afetada precisa de intervenção imediata, e algumas preferem lidar inicialmente com seus próprios recursos.",
+      context:"O profissional deve observar a necessidade real antes de intervir. Em muitos casos, uma orientação objetiva ou a facilitação de contato com alguém de confiança é suficiente. Em outros, a prioridade será atendimento médico, proteção, assistência social, apoio especializado ou outro fluxo institucional.",
+      objective:"Distinguir uma oferta de apoio inicial de situações em que a necessidade principal exige outro recurso profissional, assistencial, médico ou operacional.",
+      field:[
+        "Ofereça ajuda sem obrigar a pessoa a aceitá-la ou falar sobre o evento.",
+        "Observe se ela consegue compreender informações simples e participar das decisões possíveis.",
+        "Identifique a necessidade predominante: proteção, saúde, informação, apoio social, orientação ou continuidade do cuidado.",
+        "Acione os recursos institucionais adequados quando a demanda ultrapassar sua função ou competência."
+      ],
+      team:"Entre pares, uma conversa breve e prática pode ser suficiente. Quando o colega permanece com funcionamento muito prejudicado, dificuldade persistente para retomar tarefas ou necessidade maior de suporte, facilite o acesso aos recursos formais disponíveis.",
+      avoid:"Não transforme PSP em procedimento obrigatório após toda ocorrência, nem use o conceito para substituir avaliações ou encaminhamentos que sejam realmente necessários.",
+      check:"Esta pessoa precisa principalmente de presença e apoio prático ou há uma necessidade diferente que deve ser atendida primeiro?"
     },
     {
       n:"03", phase:"Preparar", tag:"Antes do contato", image:"assets/psp-03.svg",
-      alt:"Ilustração autoral sobre observação de segurança e necessidades prioritárias",
+      alt:"Ilustração autoral sobre preparação antes de oferecer Primeiros Socorros Psicológicos",
       title:"Preparar: cenário, segurança, papel e recursos",
-      lead:"Antes de ajudar, compreenda o contexto. Uma atuação organizada depende de informação mínima sobre segurança, estrutura da ocorrência, serviços disponíveis e limites da própria função.",
-      objective:"Entrar no contato com um mapa simples do cenário e capacidade realista de ajudar.",
-      field:["Confirme as condições de segurança e o fluxo da ocorrência.","Identifique recursos de saúde, assistência, transporte, abrigo, informação e apoio social.","Alinhe sua atuação com equipe, comando e protocolos institucionais."],
-      team:"Faça também um autocheck: estou orientado e em condição de oferecer presença útil? Se não, sinalize a necessidade de apoio ou troca de função quando possível.",
-      avoid:"Não prometa recursos que você não controla e não deixe o apoio psicossocial competir com necessidades operacionais prioritárias.",
-      check:"Segurança conhecida • papel definido • recursos mapeados • equipe alinhada."
+      lead:"A qualidade do apoio começa antes do primeiro contato. Preparar significa compreender o que aconteceu, quais riscos ainda existem, qual é o papel da equipe, quais recursos estão disponíveis e quais informações podem ser transmitidas com segurança.",
+      context:"Profissionais de emergência atuam em ambientes com carga informacional elevada. Sem preparação mínima, o ajudante pode fornecer informações contraditórias, criar expectativas irreais ou iniciar uma conversa que será interrompida por uma prioridade operacional. PSP devem entrar no fluxo da ocorrência, e não competir com ele.",
+      objective:"Entrar no contato com um mapa simples do cenário, limites claros de atuação e uma noção realista do que pode ser oferecido.",
+      field:[
+        "Confirme condições de segurança, comando, fluxo da ocorrência e eventuais restrições de acesso.",
+        "Identifique recursos disponíveis: saúde, assistência, transporte, abrigo, informação e apoio social.",
+        "Alinhe com a equipe quem fará o contato, quem mantém outras funções e como ocorrerá a passagem de informações.",
+        "Faça um autocheck breve: estou orientado, regulado e com atenção suficiente para ser útil neste contato?"
+      ],
+      team:"Quando um profissional não está em boas condições para assumir a função de apoio, comunicar isso pode ser uma medida de segurança. Sempre que possível, redistribua tarefas sem estigmatização.",
+      avoid:"Não faça promessas sobre recursos que você não controla, não ofereça informações não confirmadas e não deixe o apoio psicossocial interferir em necessidades operacionais prioritárias.",
+      check:"Segurança conhecida • função definida • recursos mapeados • informação confiável • equipe alinhada."
     },
     {
       n:"04", phase:"Observar", tag:"Priorizar", image:"assets/psp-04.svg",
-      alt:"Ilustração autoral sobre aproximação respeitosa e primeiro contato",
+      alt:"Ilustração autoral sobre observação de segurança, necessidades e prioridades",
       title:"Observar: quem precisa de quê primeiro",
-      lead:"Observar em PSP significa organizar prioridades, não diagnosticar. Procure necessidades básicas urgentes, pessoas sem suporte e sinais de desorganização que dificultem compreender ou utilizar a ajuda disponível.",
-      objective:"Priorizar a resposta a partir de segurança, necessidades e funcionamento atual.",
-      field:["Observe proteção física, cuidados de saúde, abrigo, água, informação e contato com pessoas de referência.","Perceba barreiras de comunicação, orientação ou mobilidade.","Direcione a pessoa ao recurso mais adequado para a necessidade identificada."],
-      team:"Observe a equipe também: exaustão, confusão ou queda importante de atenção podem indicar necessidade de pausa ou reorganização de função.",
-      avoid:"Não rotule reações esperadas ao estresse. O foco inicial é o que a pessoa precisa para funcionar e permanecer protegida.",
-      check:"Segurança → necessidades básicas → capacidade de compreender → recurso adequado."
+      lead:"Observar em PSP significa organizar prioridades a partir do que está acontecendo agora. O foco não é diagnosticar, mas perceber segurança, necessidades básicas, capacidade de compreender o ambiente e disponibilidade de apoio.",
+      context:"Duas pessoas expostas ao mesmo evento podem precisar de coisas diferentes. Uma pode necessitar apenas de informação; outra pode estar sem contato com familiares; outra pode ter barreiras de comunicação ou uma necessidade de saúde que exige resposta imediata. A observação evita oferecer a mesma intervenção para todos.",
+      objective:"Priorizar o cuidado de modo funcional, reconhecendo necessidades urgentes e direcionando cada pessoa ao recurso mais pertinente.",
+      field:[
+        "Observe proteção física, cuidados de saúde, abrigo, água, informação e contato com pessoas de referência.",
+        "Perceba barreiras de comunicação, orientação, mobilidade, compreensão ou acesso aos recursos existentes.",
+        "Identifique quem parece sem suporte suficiente para organizar o próximo passo.",
+        "Direcione a pessoa ao recurso adequado sem transformar a observação em rotulagem clínica."
+      ],
+      team:"Observe também sua equipe. Exaustão, desorganização, falhas de atenção ou irritabilidade incomum podem sinalizar necessidade de pausa, apoio ou reorganização de funções.",
+      avoid:"Não patologize reações esperadas ao estresse e não use uma impressão inicial como diagnóstico. Em PSP, a pergunta principal é: o que esta pessoa precisa para ficar mais protegida e funcional agora?",
+      check:"Segurança → necessidades básicas → capacidade de compreender → apoio disponível → recurso adequado."
     },
     {
       n:"05", phase:"Escutar", tag:"Contato", image:"assets/psp-05.svg",
-      alt:"Ilustração autoral sobre escuta ativa sem pressão",
+      alt:"Ilustração autoral sobre aproximação respeitosa e escuta ativa sem pressão",
       title:"Aproximar-se e escutar sem pressionar",
-      lead:"O primeiro contato deve ser previsível e respeitoso. Apresente-se, explique sua função e escute necessidades atuais. A pessoa não precisa recontar toda a experiência para receber ajuda.",
-      objective:"Criar vínculo suficiente para compreender necessidades sem retirar autonomia desnecessariamente.",
-      field:["Diga quem você é e por que está ali.","Use perguntas breves e abertas sobre o presente.","Dê tempo para resposta, aceite silêncio e resuma o que compreendeu."],
-      team:"Com colegas, prefira abordagem discreta e concreta, evitando exposição diante do grupo.",
-      avoid:"Não force desabafo, não busque detalhes por curiosidade e não use frases que minimizem o sofrimento.",
-      check:"Ao final da escuta, consigo identificar uma ou duas necessidades prioritárias?"
+      lead:"O primeiro contato deve reduzir, e não aumentar, a imprevisibilidade. Apresente-se, diga sua função, explique por que está ali e ofereça ajuda em linguagem simples. Escutar significa compreender necessidades atuais, não obter um relato completo do que aconteceu.",
+      context:"Pessoas sob forte estresse podem processar informação de forma mais lenta ou fragmentada. Frases curtas, perguntas simples e tempo para resposta tendem a ser mais úteis do que longas explicações. Silêncio também pode ser uma forma válida de contato.",
+      objective:"Criar vínculo suficiente para compreender necessidades e preocupações atuais sem retirar autonomia ou pressionar a narrativa.",
+      field:[
+        "Aproxime-se de modo visível e previsível e respeite o espaço pessoal.",
+        "Diga quem você é e por que está ali antes de fazer perguntas.",
+        "Use perguntas abertas e breves sobre o presente: o que está mais difícil agora? de que você precisa primeiro?",
+        "Dê tempo para resposta, aceite silêncio e resuma o que compreendeu para confirmar a informação."
+      ],
+      team:"Com colegas, prefira uma abordagem discreta e privada. Apoio entre pares deve preservar dignidade e não se confundir com avaliação de desempenho.",
+      avoid:"Não force desabafo, não busque detalhes por curiosidade, não interrompa para contar experiências próprias e não use frases que minimizem ou corrijam rapidamente a emoção da pessoa.",
+      check:"Ao final da escuta, consigo nomear uma ou duas necessidades prioritárias sem ter exigido um relato detalhado?"
     },
     {
       n:"06", phase:"Conectar", tag:"Ação útil", image:"assets/psp-06.svg",
-      alt:"Ilustração autoral sobre conexão com pessoas e recursos de apoio",
+      alt:"Ilustração autoral sobre apoio prático e conexão com pessoas e recursos",
       title:"Ajudar de forma prática e conectar recursos",
-      lead:"PSP tornam-se concretos quando a conversa facilita um próximo passo útil: informação confiável, necessidade básica, pessoa de referência, serviço ou apoio disponível.",
-      objective:"Converter acolhimento em ação simples, possível e compreendida.",
-      field:["Ajude a priorizar um problema de cada vez.","Forneça apenas informações confirmadas e compatíveis com sua função.","Facilite contato com pessoas, serviços ou recursos pertinentes."],
-      team:"Para um colega, conexão pode significar companhia, pausa, substituição temporária, contato com chefia ou acesso a suporte institucional.",
-      avoid:"Não sobrecarregue com muitas orientações e não encaminhe sem explicar o que acontecerá em seguida.",
-      check:"Para onde? Com quem? Qual é o próximo passo?"
+      lead:"PSP tornam-se concretos quando a presença se transforma em uma ação útil. Isso pode significar organizar uma informação, facilitar contato com alguém de confiança, atender uma necessidade básica, explicar o que acontecerá em seguida ou aproximar a pessoa de um serviço adequado.",
+      context:"Em situações críticas, oferecer muitas orientações ao mesmo tempo pode aumentar confusão. O princípio é reduzir complexidade: um problema de cada vez, poucas opções claras e um próximo passo que a pessoa consiga compreender.",
+      objective:"Converter acolhimento em uma ação simples, realista e compreendida, fortalecendo recursos existentes em vez de criar dependência do ajudante.",
+      field:[
+        "Ajude a ordenar prioridades e escolha com a pessoa um próximo passo possível.",
+        "Forneça informações curtas, confirmadas e compatíveis com sua função.",
+        "Facilite contato com pessoas significativas, serviços e redes disponíveis quando isso for útil.",
+        "Confirme se a pessoa entendeu o que acontecerá depois e se existe alguma barreira prática para acessar o recurso."
+      ],
+      team:"Para um colega, conexão pode significar companhia, pausa, reorganização de tarefa, contato com chefia, suporte entre pares ou acesso aos recursos institucionais de saúde e apoio.",
+      avoid:"Não sobrecarregue com uma lista extensa de orientações, não encaminhe sem explicar o processo e não assuma tarefas que a própria pessoa consegue realizar com apoio mínimo.",
+      check:"Para onde? Com quem? O que acontecerá em seguida? A pessoa consegue realizar esse próximo passo?"
     },
     {
       n:"07", phase:"Cuidar", tag:"Entre pares", image:"assets/psp-07.svg",
       alt:"Ilustração autoral sobre apoio entre colegas e cuidado em equipe",
       title:"Cuidar do colega: apoio entre pares",
-      lead:"Profissionais de emergência e segurança pública também são afetados por eventos críticos. Apoio entre pares combina observação, aproximação discreta, escuta, ajuda prática e conexão com suporte quando necessário.",
-      objective:"Oferecer ajuda sem estigmatizar, expor ou assumir o papel de terapeuta do colega.",
-      field:["Observe mudanças relevantes no funcionamento após ocorrências exigentes.","Ofereça ajuda específica: água, pausa, companhia, informação ou reorganização de tarefa.","Facilite acesso aos recursos institucionais quando o apoio entre pares não for suficiente."],
-      team:"Uma cultura de segurança trata pedir ajuda como comportamento profissional, não como falha pessoal.",
-      avoid:"Não faça diagnóstico informal, não exponha confidências e não pressione o colega a falar diante da equipe.",
-      check:"O que pode reduzir a carga deste colega agora sem retirar sua autonomia?"
+      lead:"Profissionais de emergência e segurança pública também são afetados por eventos críticos, exposição repetida ao sofrimento, longos períodos de atenção e decisões sob pressão. Apoio entre pares é uma extensão prática dos princípios de PSP dentro da equipe.",
+      context:"O objetivo não é transformar colegas em terapeutas uns dos outros. É criar uma cultura em que perceber sobrecarga, oferecer ajuda concreta e facilitar acesso a suporte seja entendido como comportamento de segurança e profissionalismo.",
+      objective:"Reconhecer necessidades de apoio entre colegas e responder de forma discreta, respeitosa e sem estigmatização.",
+      field:[
+        "Observe mudanças relevantes no funcionamento, sobretudo após ocorrências de alta carga.",
+        "Aproxime-se em local discreto e ofereça ajuda concreta, sem exigir explicações.",
+        "Considere recursos simples: água, alimentação, pausa, companhia, troca de tarefa ou organização de informações.",
+        "Quando o apoio entre pares não for suficiente, facilite acesso aos recursos institucionais apropriados."
+      ],
+      team:"A equipe se torna mais segura quando seus membros podem dizer que precisam de ajuda sem medo de humilhação. Lideranças têm papel importante ao normalizar pausas, rodízio e acesso a suporte quando necessário.",
+      avoid:"Não faça diagnóstico informal, não exponha confidências, não transforme sofrimento em comentário de bastidor e não pressione o colega a falar diante do grupo.",
+      check:"O que pode reduzir a carga deste colega nas próximas horas sem retirar sua autonomia ou expô-lo?"
     },
     {
       n:"08", phase:"Cuidar", tag:"Autocuidado", image:"assets/psp-08.svg",
       alt:"Ilustração autoral sobre autocuidado operacional e recuperação",
       title:"Cuidar de si: autocuidado operacional",
-      lead:"Autocuidado operacional ajuda a preservar atenção, julgamento e comunicação. Ele não substitui condições adequadas de trabalho, apoio de equipe ou gestão da carga, mas integra uma resposta profissional sustentável.",
-      objective:"Reconhecer medidas básicas de preservação funcional antes, durante e depois de ocorrências exigentes.",
-      field:["Proteja necessidades básicas possíveis: hidratação, alimentação, descanso e pausas.","Alterne tarefas de alta carga quando a organização da operação permitir.","Após a ocorrência, favoreça recuperação gradual, rotina e suporte social."],
-      team:"Chefias e pares podem apoiar a recuperação com rodízio, informação clara, pausas e acesso sem estigma aos recursos institucionais.",
-      avoid:"Não normalize exaustão extrema como prova de comprometimento e não imponha uma única forma de processar a experiência.",
-      check:"Minha atenção, julgamento e comunicação continuam adequados para a função?"
+      lead:"Autocuidado operacional é a preservação intencional da capacidade de perceber, decidir, comunicar e trabalhar com segurança. Não é uma solução individual para problemas de organização; deve caminhar junto com apoio da equipe, liderança e condições adequadas de trabalho.",
+      context:"Em ocorrências prolongadas ou emocionalmente exigentes, necessidades básicas ignoradas podem comprometer atenção e julgamento. Pequenas medidas de recuperação, quando possíveis, ajudam o profissional a manter qualidade de atuação e a reconhecer o momento de pedir apoio.",
+      objective:"Reconhecer práticas realistas de preservação funcional antes, durante e depois de situações de alta carga.",
+      field:[
+        "Proteja necessidades básicas possíveis: hidratação, alimentação, descanso e pausas disponíveis.",
+        "Faça autochecks periódicos de atenção, irritabilidade, concentração e capacidade de comunicação.",
+        "Alterne tarefas de maior carga quando a organização da operação permitir.",
+        "Após a ocorrência, favoreça recuperação gradual, rotina, vínculos sociais e acesso a apoio quando o impacto persistir."
+      ],
+      team:"Chefias e pares podem favorecer recuperação com rodízio, comunicação clara, pausas, previsibilidade e acesso sem estigma aos recursos institucionais.",
+      avoid:"Não normalize exaustão extrema como prova de compromisso, não use autocuidado para responsabilizar individualmente quem está sobrecarregado e não imponha uma única forma de processar a experiência.",
+      check:"Minha atenção, julgamento, comunicação e tolerância ao estresse continuam adequados para a função que estou exercendo?"
     },
     {
       n:"09", phase:"Limites", tag:"Ética", image:"assets/psp-09.svg",
-      alt:"Ilustração autoral sobre limites profissionais e proteção ética",
+      alt:"Ilustração autoral sobre limites profissionais, privacidade e proteção ética",
       title:"Limites profissionais: o que fazer e o que evitar",
-      lead:"Limites claros protegem a pessoa atendida, o colega e a confiança institucional. PSP exigem honestidade sobre o que o profissional sabe, pode fazer e deve encaminhar.",
-      objective:"Evitar intervenções que aumentem dependência, vergonha, confusão ou exposição desnecessária.",
-      field:["Seja honesto sobre possibilidades e limites.","Compartilhe somente informações necessárias à continuidade e conforme normas institucionais.","Mantenha linguagem respeitosa e não julgadora."],
-      team:"Apoio entre pares não substitui avaliação especializada quando há prejuízo importante e persistente do funcionamento.",
-      avoid:"Evite falsas garantias, conselhos moralizantes, comparações de sofrimento, exposição pública e debriefing emocional obrigatório.",
-      check:"Minha forma de ajudar preserva dignidade, privacidade e autonomia?"
+      lead:"PSP dependem tanto do que o profissional faz quanto do que escolhe não fazer. Limites claros evitam exposição desnecessária, falsas expectativas, dependência do ajudante e confusão entre apoio inicial e intervenção clínica.",
+      context:"Em contextos institucionais, privacidade e circulação de informações precisam respeitar normas e necessidades operacionais. O princípio é compartilhar apenas o necessário para proteção e continuidade, sem transformar a experiência da pessoa em assunto público.",
+      objective:"Usar honestidade, privacidade, respeito e limites de competência como parte ativa da segurança psicológica.",
+      field:[
+        "Seja claro sobre o que sabe, o que não sabe e o que está autorizado a fazer.",
+        "Compartilhe somente as informações necessárias à continuidade do cuidado e conforme os protocolos aplicáveis.",
+        "Mantenha linguagem não julgadora, evitando rótulos ou conclusões precipitadas.",
+        "Encaminhe quando a necessidade ultrapassar sua competência, seu tempo disponível ou o objetivo dos PSP."
+      ],
+      team:"Apoio entre pares não substitui avaliação profissional quando existe necessidade clínica específica ou prejuízo relevante e persistente do funcionamento. Facilitar o acesso ao recurso adequado também é cuidar.",
+      avoid:"Evite falsas garantias, conselhos moralizantes, comparações de sofrimento, promessas impossíveis, exposição pública e qualquer forma de debriefing emocional obrigatório.",
+      check:"Minha forma de ajudar preserva dignidade, privacidade e autonomia e permanece dentro dos limites da minha função?"
     },
     {
       n:"10", phase:"Encerrar", tag:"Continuidade", image:"assets/psp-10.svg",
-      alt:"Ilustração autoral sobre continuidade do cuidado e passagem segura",
+      alt:"Ilustração autoral sobre continuidade do cuidado, passagem segura e reorganização da equipe",
       title:"Encerrar: próximo passo, passagem e reorganização da equipe",
-      lead:"O apoio inicial termina melhor quando a pessoa compreende o que foi combinado, quem seguirá responsável e como acessar o recurso seguinte. A equipe também precisa reorganizar-se após atuações exigentes.",
-      objective:"Finalizar PSP com continuidade clara e sem criar dependência desnecessária.",
-      field:["Resuma necessidades identificadas e ações realizadas.","Confirme o próximo recurso ou responsável.","Faça passagem objetiva das informações necessárias, respeitando privacidade e protocolos."],
-      team:"Depois da ocorrência, faça uma checagem operacional de necessidades da equipe e facilite suporte adicional para quem precisar.",
-      avoid:"Não prolongue o contato sem finalidade e não transforme revisão operacional em exposição emocional obrigatória.",
-      check:"Necessidade principal encaminhada • próximo passo compreendido • equipe reorganizada."
+      lead:"Um bom encerramento reduz incerteza. A pessoa deve saber o que já foi resolvido, o que ainda precisa acontecer, quem seguirá responsável e como acessar o recurso seguinte. Encerrar não é abandonar; é fazer uma transição clara.",
+      context:"Na prática operacional, a continuidade depende de passagens objetivas. Informações excessivas podem expor a pessoa; informações insuficientes podem quebrar o cuidado. O equilíbrio é transmitir apenas o necessário para que a próxima etapa funcione com segurança.",
+      objective:"Finalizar PSP com previsibilidade, continuidade e preservação de autonomia, incluindo uma breve reorganização das necessidades da própria equipe.",
+      field:[
+        "Resuma as necessidades identificadas e as ações que já foram realizadas.",
+        "Confirme o próximo recurso, serviço ou profissional responsável.",
+        "Verifique se a pessoa compreendeu como acessar a próxima etapa e se permanece alguma barreira prática.",
+        "Faça passagem objetiva das informações necessárias, respeitando privacidade e protocolos institucionais."
+      ],
+      team:"Depois da ocorrência, faça uma checagem operacional das necessidades da equipe: informações pendentes, condições para retorno às funções, necessidade de pausa e acesso a suporte adicional. Recuperação da equipe também faz parte da continuidade segura do serviço.",
+      avoid:"Não prolongue contato sem finalidade, não abandone uma passagem necessária e não transforme revisão operacional em exposição emocional obrigatória.",
+      check:"Necessidade principal encaminhada • próximo passo compreendido • passagem realizada • equipe reorganizada."
     }
   ];
 
-  function cardMarkup(c) {
-    return `<article class="psp-card">
-      <div class="psp-media"><img src="${c.image}" alt="${c.alt}" loading="lazy" decoding="async"></div>
-      <div class="psp-content">
-        <div class="psp-top"><span class="psp-step">Card ${c.n} • ${c.phase}</span><span class="psp-tag">${c.tag}</span></div>
-        <h3>${c.title}</h3>
+  function cardMarkup(c, index) {
+    const detailId = `psp-detail-${index + 1}`;
+    return `<article class="psp-card" data-psp-index="${index}">
+      <button class="psp-card-toggle" type="button" aria-expanded="false" aria-controls="${detailId}">
+        <div class="psp-media"><img src="${c.image}" alt="${c.alt}" loading="lazy" decoding="async"></div>
+        <div class="psp-summary">
+          <div class="psp-top"><span class="psp-step">Card ${c.n} • ${c.phase}</span><span class="psp-tag">${c.tag}</span></div>
+          <h3>${c.title}</h3>
+          <span class="psp-open-label">Abrir conteúdo <span aria-hidden="true">＋</span></span>
+        </div>
+      </button>
+      <div class="psp-card-details" id="${detailId}" hidden>
         <p class="psp-lead">${c.lead}</p>
+        <p class="psp-context">${c.context}</p>
         <div class="psp-objective"><strong>Objetivo de aprendizagem</strong><p>${c.objective}</p></div>
         <div class="psp-block"><strong>Aplicação no campo</strong><ul>${c.field.map(item => `<li>${item}</li>`).join("")}</ul></div>
         <div class="psp-block psp-team"><strong>Colega e equipe</strong><p>${c.team}</p></div>
@@ -130,6 +197,71 @@
         <p class="psp-check"><strong>Microchecagem:</strong> ${c.check}</p>
       </div>
     </article>`;
+  }
+
+  function closeAllCards(exceptCard = null) {
+    document.querySelectorAll(".psp-card").forEach(card => {
+      if (card === exceptCard) return;
+      card.classList.remove("is-open");
+      const toggle = card.querySelector(".psp-card-toggle");
+      const details = card.querySelector(".psp-card-details");
+      const label = card.querySelector(".psp-open-label");
+      if (toggle) toggle.setAttribute("aria-expanded", "false");
+      if (details) details.hidden = true;
+      if (label) label.innerHTML = 'Abrir conteúdo <span aria-hidden="true">＋</span>';
+    });
+  }
+
+  function bindPspCards() {
+    document.querySelectorAll(".psp-card-toggle").forEach(toggle => {
+      toggle.addEventListener("click", () => {
+        const card = toggle.closest(".psp-card");
+        const details = card?.querySelector(".psp-card-details");
+        const label = card?.querySelector(".psp-open-label");
+        if (!card || !details) return;
+
+        const opening = toggle.getAttribute("aria-expanded") !== "true";
+        closeAllCards(opening ? card : null);
+
+        card.classList.toggle("is-open", opening);
+        toggle.setAttribute("aria-expanded", String(opening));
+        details.hidden = !opening;
+        if (label) label.innerHTML = opening
+          ? 'Ocultar conteúdo <span aria-hidden="true">−</span>'
+          : 'Abrir conteúdo <span aria-hidden="true">＋</span>';
+
+        if (opening) {
+          window.setTimeout(() => card.scrollIntoView({behavior:"smooth", block:"start"}), 40);
+        }
+      });
+    });
+  }
+
+  function returnToSeries() {
+    const back = document.getElementById("backToSeries");
+    if (back) back.click();
+    else document.getElementById("series")?.scrollIntoView({behavior:"smooth", block:"start"});
+  }
+
+  function endActionMarkup(label = "Fechar esta série e voltar à página inicial") {
+    return `<div class="series-end-action"><button class="btn ghost series-end-button" type="button">${label}</button></div>`;
+  }
+
+  function bindEndButtons(root = document) {
+    root.querySelectorAll(".series-end-button").forEach(button => {
+      if (button.dataset.bound === "1") return;
+      button.dataset.bound = "1";
+      button.addEventListener("click", returnToSeries);
+    });
+  }
+
+  function ensureAudioEndAction() {
+    const list = document.getElementById("episodeList");
+    if (!list || !list.children.length || list.querySelector(".psp-shell")) return;
+    if (!list.querySelector(".series-end-action")) {
+      list.insertAdjacentHTML("beforeend", endActionMarkup());
+    }
+    bindEndButtons(list);
   }
 
   function openPsp() {
@@ -141,6 +273,7 @@
     const episodeList = document.getElementById("episodeList");
     if (!panel || !kicker || !title || !description || !episodeList) return;
 
+    document.querySelectorAll("audio").forEach(audio => audio.pause());
     if (audioTip) audioTip.hidden = true;
     kicker.textContent = "Série 3 • 10 cards • PSP";
     title.textContent = "Primeiros Socorros Psicológicos";
@@ -153,12 +286,16 @@
         <div class="psp-path-step"><strong>Conectar</strong><span>apoio e continuidade</span></div>
         <div class="psp-path-step"><strong>Cuidar</strong><span>colega, equipe e si</span></div>
       </div>
-      <div class="psp-intro">Use os cards em sequência na primeira leitura. Depois, eles funcionam como consulta rápida. PSP são apoio humano, prático e respeitoso e não substituem protocolos operacionais nem atendimento especializado quando necessário.</div>
+      <div class="psp-intro"><strong>Como usar:</strong> os 10 cards aparecem inicialmente fechados para reduzir a carga visual. Clique em um card para ler seu conteúdo. Ao abrir outro, o anterior fecha automaticamente. Na primeira leitura, siga a ordem numérica; depois, use-os como consulta rápida.</div>
       <div class="psp-grid">${PSP_CARDS.map(cardMarkup).join("")}</div>
       <div class="psp-references"><strong>Base técnica</strong><p>Conteúdo estruturado a partir do guia de Primeiros Socorros Psicológicos da OMS/WHO e da versão em português da OPAS. <a href="https://www.who.int/publications-detail-redirect/9789241548205" target="_blank" rel="noopener noreferrer">OMS/WHO</a> • <a href="https://iris.paho.org/handle/10665.2/7676" target="_blank" rel="noopener noreferrer">OPAS/OMS em português</a>.</p></div>
+      ${endActionMarkup("Fechar a trilha de PSP e voltar à página inicial")}
     </div>`;
+
+    bindPspCards();
+    bindEndButtons(episodeList);
     panel.classList.add("is-open");
-    setTimeout(() => panel.scrollIntoView({behavior:"smooth", block:"start"}), 40);
+    window.setTimeout(() => panel.scrollIntoView({behavior:"smooth", block:"start"}), 40);
   }
 
   function enhancePage() {
@@ -185,20 +322,30 @@
     button.disabled = false;
     button.classList.remove("ghost");
     button.textContent = "Abrir trilha de PSP";
-    button.addEventListener("click", openPsp);
+    if (button.dataset.pspBound !== "1") {
+      button.dataset.pspBound = "1";
+      button.addEventListener("click", openPsp);
+    }
 
     const aboutItems = document.querySelectorAll(".about-list li");
     if (aboutItems[2]) aboutItems[2].innerHTML = "<strong>Série 3:</strong> Primeiros Socorros Psicológicos.";
+  }
 
-    const heroText = document.querySelector(".hero-text");
-    if (heroText) heroText.textContent = "Conteúdos complementares para escuta, reflexão técnica e aprofundamento em abordagem, compreensão do sofrimento em crise e Primeiros Socorros Psicológicos.";
-
-    const aboutLead = document.querySelector(".about-summary p");
-    if (aboutLead) aboutLead.textContent = "O projeto organiza conteúdos de apoio à formação técnica em ATS e uma trilha visual de Primeiros Socorros Psicológicos para profissionais de emergência e segurança pública.";
+  function observeSeriesContent() {
+    const list = document.getElementById("episodeList");
+    if (!list) return;
+    const observer = new MutationObserver(() => {
+      window.setTimeout(ensureAudioEndAction, 0);
+    });
+    observer.observe(list, {childList:true, subtree:false});
   }
 
   function init() {
-    window.setTimeout(enhancePage, 0);
+    window.setTimeout(() => {
+      enhancePage();
+      observeSeriesContent();
+      ensureAudioEndAction();
+    }, 0);
   }
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init, {once:true});
