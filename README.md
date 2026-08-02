@@ -64,15 +64,36 @@ Os cards são:
 9. **Limites profissionais: o que fazer e o que evitar** — ética, privacidade e competência.
 10. **Encerrar: próximo passo, passagem e reorganização da equipe** — continuidade segura.
 
-Cada card contém:
+Cada card contém conteúdo ampliado e estruturado em:
 
-- imagem autoral;
 - síntese conceitual;
+- contextualização para emergência e segurança pública;
 - objetivo de aprendizagem;
 - aplicação no campo;
 - orientação específica para colega/equipe;
 - condutas a evitar;
-- microchecagem de retenção.
+- microchecagem de retenção e tomada de decisão.
+
+### Comportamento dos cards PSP
+
+Para reduzir carga visual e melhorar ergonomia cognitiva:
+
+- os 10 cards aparecem inicialmente **fechados**;
+- no estado fechado ficam visíveis apenas imagem, número/fase, marcador temático e título;
+- o conteúdo textual só aparece quando o usuário clica no card;
+- apenas **um card pode permanecer aberto por vez**;
+- ao abrir outro card, o anterior fecha automaticamente;
+- o card aberto ocupa a largura da trilha para favorecer leitura;
+- no celular, a leitura passa para uma única coluna;
+- ao final da trilha existe um botão para **fechar a série e voltar à página inicial das séries**.
+
+## Navegação das três séries
+
+As três séries usam o mesmo painel de conteúdo.
+
+- Séries 1 e 2: apresentam os episódios de áudio e, abaixo do último episódio, um botão para fechar a série e voltar à página inicial.
+- Série 3: apresenta os 10 cards de PSP e, após o último conteúdo e as referências, um botão equivalente para retornar à página inicial.
+- O botão superior “Voltar às séries” permanece disponível como segunda rota de saída.
 
 ## Imagens autorais dos 10 cards
 
@@ -115,8 +136,8 @@ O conteúdo apresenta PSP como ajuda humana, prática e respeitosa após eventos
 - `index.html` — estrutura semântica e conteúdo institucional;
 - `styles.css` — identidade visual e responsividade base;
 - `app.js` — séries sonoras, players, progresso local e navegação principal;
-- `psp.css` — componentes e responsividade dos cards PSP;
-- `psp.js` — ativação da Série 3 e conteúdo dos 10 cards;
+- `psp.css` — componentes, acordeão e responsividade dos cards PSP;
+- `psp.js` — ativação da Série 3, conteúdo dos 10 cards e botão final das três séries;
 - `assets/psp-01.svg` a `assets/psp-10.svg` — artes autorais da trilha PSP;
 - `README.md` — documentação do projeto.
 
@@ -128,11 +149,13 @@ A versão atual mantém ou acrescenta:
 - link “Pular para o conteúdo”;
 - foco visível por teclado;
 - áreas de clique adequadas;
+- `aria-expanded` e `aria-controls` nos cards expansíveis;
 - textos alternativos nas imagens;
 - suporte a `prefers-reduced-motion`;
-- cards com hierarquia visual consistente;
+- abertura exclusiva de um card PSP por vez;
 - progressão explícita da trilha PSP;
-- separação entre conteúdo conceitual, aplicação, cuidado da equipe e alertas.
+- separação entre conceito, contexto, aplicação, cuidado da equipe e alertas;
+- botão de fechamento ao final de cada uma das três séries.
 
 ## Manutenção
 
@@ -142,12 +165,12 @@ Ao alterar o projeto:
 2. preservar os links de áudio já existentes;
 3. manter a Série 3 como Primeiros Socorros Psicológicos;
 4. manter os 10 cards em progressão pedagógica;
-5. não substituir os SVGs internos por imagens externas sem necessidade;
-6. verificar periodicamente a disponibilidade da imagem externa da Pexels;
-7. usar fontes técnicas oficiais para alterações de conteúdo;
-8. testar desktop e mobile;
-9. testar abertura e fechamento das três séries;
-10. testar reprodução, retomada e download dos áudios após qualquer refatoração.
+5. manter o comportamento de apenas um card PSP aberto por vez;
+6. preservar o botão final de retorno nas três séries;
+7. não substituir os SVGs internos por imagens externas sem necessidade;
+8. verificar periodicamente a disponibilidade da imagem externa da Pexels;
+9. testar desktop e mobile;
+10. testar abertura/fechamento dos cards, reprodução, retomada e download dos áudios após qualquer refatoração.
 
 ## Publicação
 
