@@ -1,0 +1,47 @@
+name: Gerar áudios PSP Série 3
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/generate-psp-audio.yml'
+      - 'scripts/generate_psp_audio.py'
+      - 'roteiros/serie-3/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Dependências
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          pip install edge-tts==7.2.8 pydub
+
+      - name: Gerar microaulas MP3
+        run: python scripts/generate_psp_audio.py
+
+      - name: Publicar áudios
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/audio/serie-3/*.mp3
+          if git diff --cached --quiet; then
+            echo "Sem alterações nos áudios."
+          else
+            git commit -m "Gera MP3s neurais da Série 3 PSP"
+            git push
+          fi
