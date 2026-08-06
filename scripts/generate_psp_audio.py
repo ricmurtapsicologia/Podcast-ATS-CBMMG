@@ -1,8 +1,8 @@
 from __future__ import annotations
 
+# Alteração operacional para disparar a geração dos MP3s da Série 3 via GitHub Actions.
 import asyncio
 import re
-import subprocess
 from pathlib import Path
 
 import edge_tts
@@ -25,9 +25,9 @@ PATTERN = re.compile(r"^\*\*(INSTRUTOR|PROFISSIONAL):\*\*\s*(.+)$")
 def read_turns(path: Path):
     turns = []
     for line in path.read_text(encoding="utf-8").splitlines():
-        m = PATTERN.match(line.strip())
-        if m:
-            turns.append((m.group(1), m.group(2).strip()))
+        match = PATTERN.match(line.strip())
+        if match:
+            turns.append((match.group(1), match.group(2).strip()))
     if not turns:
         raise RuntimeError(f"Nenhuma fala encontrada em {path}")
     return turns
@@ -46,12 +46,12 @@ async def build_lesson(number: int):
 
     pieces = []
     for idx, (speaker, text) in enumerate(turns):
-        seg = work / f"{idx:02d}.mp3"
+        segment = work / f"{idx:02d}.mp3"
         if speaker == "INSTRUTOR":
-            await synthesize(text, VOICE_INSTRUTOR, RATE_INSTRUTOR, seg)
+            await synthesize(text, VOICE_INSTRUTOR, RATE_INSTRUTOR, segment)
         else:
-            await synthesize(text, VOICE_PROFISSIONAL, RATE_PROFISSIONAL, seg)
-        pieces.append(seg)
+            await synthesize(text, VOICE_PROFISSIONAL, RATE_PROFISSIONAL, segment)
+        pieces.append(segment)
 
     merged = AudioSegment.empty()
     pause = AudioSegment.silent(duration=PAUSE_MS)
@@ -60,7 +60,6 @@ async def build_lesson(number: int):
         if idx < len(pieces) - 1:
             merged += pause
 
-    # Normalização simples para consistência entre as dez microaulas.
     if merged.max_dBFS != float("-inf"):
         merged = merged.apply_gain(-1.5 - merged.max_dBFS)
 
