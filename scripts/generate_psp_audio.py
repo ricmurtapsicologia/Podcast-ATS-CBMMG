@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-# Alteração operacional para disparar a geração dos MP3s da Série 3 via GitHub Actions.
+# Gerador oficial dos MP3s da Série 3 — execução validada por pull request.
 import asyncio
 import re
 from pathlib import Path
