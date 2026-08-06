@@ -7,6 +7,12 @@ on:
       - '.github/workflows/generate-psp-audio.yml'
       - 'scripts/generate_psp_audio.py'
       - 'roteiros/serie-3/**'
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/generate-psp-audio.yml'
+      - 'scripts/generate_psp_audio.py'
+      - 'roteiros/serie-3/**'
   workflow_dispatch:
 
 permissions:
@@ -18,6 +24,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
 
       - name: Python
         uses: actions/setup-python@v5
@@ -34,7 +42,7 @@ jobs:
       - name: Gerar microaulas MP3
         run: python scripts/generate_psp_audio.py
 
-      - name: Publicar áudios
+      - name: Publicar áudios na branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -43,5 +51,5 @@ jobs:
             echo "Sem alterações nos áudios."
           else
             git commit -m "Gera MP3s neurais da Série 3 PSP"
-            git push
+            git push origin HEAD:${{ github.head_ref || github.ref_name }}
           fi
