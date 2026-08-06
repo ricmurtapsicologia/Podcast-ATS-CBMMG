@@ -14,27 +14,35 @@ Regras de preservação:
 ## Arquitetura
 
 - `psp-cards.json`: fonte de dados do conteúdo escrito dos 10 cards;
-- `psp.js`: renderização, acordeão, reprodução das microaulas e progresso;
-- `psp.css`: apresentação responsiva dos cards e controles de áudio;
-- `roteiros/serie-3/psp-01.md` a `psp-10.md`: roteiros-fonte das microaulas.
-
-Os roteiros são carregados somente quando o usuário solicita a reprodução do card correspondente.
+- `psp.js`: renderização, acordeão, players HTML5 e progresso;
+- `psp.css`: apresentação responsiva dos cards e área de áudio;
+- `roteiros/serie-3/psp-01.md` a `psp-10.md`: roteiros-fonte das microaulas;
+- `assets/audio/serie-3/psp-01.mp3` a `psp-10.mp3`: arquivos finais reproduzidos na página;
+- `scripts/generate_psp_audio.py`: gerador dos arquivos a partir dos roteiros;
+- `.github/workflows/generate-psp-audio.yml`: automação de geração e publicação.
 
 ## Reprodução
 
-A Série 3 usa `SpeechSynthesis` do navegador/dispositivo para evitar a publicação de arquivos de voz artificial de baixa qualidade. A reprodução:
+A Série 3 usa arquivos MP3 reais hospedados no próprio repositório, seguindo o mesmo padrão utilizado nas demais páginas sonoras do projeto.
 
-- usa voz em português disponível no dispositivo;
-- tenta usar vozes distintas para instrutor e profissional quando há mais de uma voz pt-BR/pt disponível;
-- usa ritmo aproximado de 125 palavras por minuto;
-- mantém apenas uma microaula ativa por vez;
-- pausa os players HTML5 das Séries 1 e 2 quando uma microaula PSP é iniciada;
-- cancela a microaula PSP quando um áudio HTML5 é iniciado;
-- salva progresso por card no `localStorage`;
-- oferece pausar, retomar, reiniciar e indicação de conclusão;
+Os arquivos são gerados com duas vozes neurais em português brasileiro:
+
+- instrutor: `pt-BR-AntonioNeural`;
+- profissional/aluno: `pt-BR-FranciscaNeural`.
+
+O navegador reproduz os arquivos por `<audio controls>` nativo. A reprodução:
+
+- não depende das vozes instaladas no celular ou notebook;
+- mantém timbre consistente entre dispositivos;
+- utiliza uma voz principal e uma segunda voz para dúvidas curtas;
+- mantém apenas um áudio ativo por vez;
+- pausa outro player quando uma nova faixa é iniciada;
+- salva posição por card no `localStorage`;
+- permite retomada;
+- marca conclusão;
+- permite reiniciar o áudio;
+- usa `preload="metadata"`;
 - não usa autoplay.
-
-A qualidade e o timbre dependem das vozes instaladas no sistema operacional/navegador. A arquitetura permite substituir futuramente a síntese nativa por MP3s neurais sem alterar o conteúdo dos cards.
 
 ## UX
 
@@ -44,17 +52,16 @@ Ao abrir o card, o usuário encontra:
 
 1. conteúdo escrito preservado;
 2. bloco `Microaula em áudio`;
-3. botão principal de ouvir/pausar/retomar;
-4. status de progresso;
-5. barra discreta de progresso;
-6. botão de reinício quando aplicável;
-7. demais blocos escritos do card e microchecagem.
+3. player HTML5 simples e conhecido;
+4. status `Novo`, `Retomar em mm:ss`, `Em mm:ss` ou `Concluído`;
+5. botão discreto para reiniciar quando aplicável;
+6. demais blocos escritos do card e microchecagem.
 
-Em telas estreitas, os controles ocupam a largura disponível e evitam overflow horizontal.
+Em telas estreitas, o player usa 100% da largura disponível e não cria overflow horizontal.
 
 ## Manutenção editorial
 
-Para alterar uma microaula, edite somente seu arquivo em `roteiros/serie-3/`.
+Para alterar uma microaula, edite seu roteiro em `roteiros/serie-3/` e execute novamente o workflow de geração.
 
 As falas devem manter o formato:
 
@@ -62,15 +69,18 @@ As falas devem manter o formato:
 
 `**PROFISSIONAL:** texto`
 
-O parser do player reconhece essas duas marcações.
+O script reconhece essas marcações, gera cada fala com a voz correspondente, insere pausas discretas e exporta um único MP3 por card.
 
-## Validação recomendada
+## Não regressão
+
+Antes de publicar futuras alterações:
 
 - abrir Séries 1 e 2 e confirmar reprodução normal;
+- confirmar que seus URLs e catálogo continuam inalterados;
 - abrir os 10 cards PSP;
-- testar as 10 microaulas;
+- testar os 10 MP3s;
 - iniciar um áudio e depois outro;
-- testar pausar, retomar, reiniciar e concluir;
+- testar pausa, retomada, conclusão e reinício;
 - recarregar a página e verificar retomada;
 - testar Chrome/Edge no notebook e Chrome no Android;
 - verificar ausência de overflow horizontal e erros no console.
