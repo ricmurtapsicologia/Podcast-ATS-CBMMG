@@ -1,0 +1,117 @@
+{
+  "schema": 1,
+  "series": "serie-3",
+  "episode": "psp-04",
+  "canonical_sha256": "f150b1af7744279cca64e25c3291e4b99e8b4243fad646eb4b89cbd90e1bf4a1",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Observar em Primeiros Socorros Psicológicos não é procurar sinais para encaixar alguém em um diagnóstico. É ampliar a leitura do contexto e perguntar: o que mudou, o que está pesando e quanto isso interfere no funcionamento desta pessoa agora?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 680,
+      "estimated_seconds": 18.7
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "O que significa observar funcionamento?",
+      "intent": "question",
+      "rate_percent": 1,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 2.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Significa olhar para aspectos concretos: atenção, comunicação, organização, interação com a equipe, tomada de decisão, tolerância ao estresse e capacidade de executar tarefas com segurança.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 12.0
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Em profissões de alta demanda, alterações nesses pontos podem aparecer antes mesmo de a pessoa dizer que está sobrecarregada.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 9.1
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Mas o trabalho por si só já é estressante.",
+      "intent": "explanation",
+      "rate_percent": 0,
+      "pitch_hz": 1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 4.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Por isso o parâmetro não é ausência de estresse. O parâmetro é mudança relevante. Um profissional pode estar cansado depois de um plantão difícil e se recuperar normalmente. Outra situação é quando a alteração persiste, aumenta ou começa a interferir no funcionamento.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 20.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Observe também se houve uma sequência de fatores: pouco descanso, ocorrência de alta carga, conflito, problema familiar ou acúmulo de responsabilidades.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 10.1
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Depois, tente identificar a necessidade mais próxima do presente. Talvez seja pausa. Talvez seja informação. Talvez seja alguém para ouvir. Talvez seja reorganizar temporariamente uma tarefa. Talvez seja procurar apoio profissional.",
+      "intent": "transition",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 390,
+      "estimated_seconds": 14.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "O PSP ajuda a ordenar essa necessidade sem transformar observação em rótulo.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 5.8
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "E se eu perceber que a pessoa está com funcionamento muito alterado?",
+      "intent": "question",
+      "rate_percent": 0,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 5.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "A prioridade passa a ser proteção e acesso ao recurso adequado. Apoio entre pares tem limite. Quanto maior o prejuízo de funcionamento ou a preocupação com segurança, mais importante é envolver os fluxos institucionais ou profissionais correspondentes.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Uma observação útil produz uma pergunta, não uma sentença. Microchecagem: qual necessidade é mais evidente agora e o que pode ajudar este colega a recuperar organização, proteção e capacidade de seguir o próximo passo?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 0,
+      "estimated_seconds": 16.3
+    }
+  ]
+}

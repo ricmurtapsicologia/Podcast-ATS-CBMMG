@@ -1,0 +1,207 @@
+{
+  "schema": 1,
+  "series": "serie-2",
+  "episode": "a2-009",
+  "canonical_sha256": "fbe4fde7aa1f7a22301973842a3db6e094d375bb59a69a1573e6322de102670e",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Dona Lourdes e sua irmã conversam?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 680,
+      "estimated_seconds": 2.9
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Bem-vindos ao girando a ampulheta da vida. Um espaço onde histórias reais se entrelaçam com reflexões profundas sobre saúde mental. Hoje trazemos um diálogo emocionante entre Dona Lourdes, mandimônica, que vive com esquizofrenia e sua irmã Fatima.",
+      "intent": "explanation",
+      "rate_percent": -1,
+      "pitch_hz": 1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.8
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Ao longo da conversa abordaremos como sintomas da esquizofrenia e o estigma ao redor desse transtorno podem aumentar o risco de comportamentos suicidas e como suporte familiar pode ser um fator de proteção crucial.",
+      "intent": "explanation",
+      "rate_percent": -1,
+      "pitch_hz": 1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 16.3
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Vamos ouvir. Sons de chícaras sendo colocadas na mesa. Lourdes, você parece um pouco mais tranquila hoje.",
+      "intent": "explanation",
+      "rate_percent": -1,
+      "pitch_hz": 1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 8.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Como está a mônica?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 680,
+      "estimated_seconds": 1.9
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Ah, Fatima está mais estável com o novo tratamento, mas os sintomas ainda aparecem. O importante é que agora ela fala mais comigo e reconhece quando algo não está bem.",
+      "intent": "explanation",
+      "rate_percent": -1,
+      "pitch_hz": 1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 14.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Ela ainda ouve vozes?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 680,
+      "estimated_seconds": 1.9
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Sim, às vezes. Esses dias achou que estavam falando mal dela. Também tem delírios como acreditar que está sendo observada. O pior é quando ela se desliga completamente. Parece não sentir nada e isso me preocupa.",
+      "intent": "explanation",
+      "rate_percent": -1,
+      "pitch_hz": 1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Fatima, ela já falou sobre pensamentos ruins?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 680,
+      "estimated_seconds": 3.4
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Já. Durante as crises. Dice que não vê sentido em continuar. É muito difícil ouvir isso, mas sei que faz parte da esquizofrenia. A terapêuta explicou que esses sintomas aumentam o risco de pensamentos suicidas.",
+      "intent": "explanation",
+      "rate_percent": -1,
+      "pitch_hz": 1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 16.8
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Por isso, eu sempre fico perto dela, mostrando que não está sozinha.",
+      "intent": "explanation",
+      "rate_percent": -1,
+      "pitch_hz": 1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 5.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Fatima, como você reage nesses momentos?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 680,
+      "estimated_seconds": 2.9
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Eu respiro fundo e tento manter a calma. Fico ao lado dela, seguro sua mão e digo, estou aqui com você. Depois, a leva ao hospital se necessário, pequenos gestos fazem diferença.",
+      "intent": "explanation",
+      "rate_percent": -1,
+      "pitch_hz": 1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 15.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "E você está cuidando de si mesma?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 680,
+      "estimated_seconds": 3.4
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Estou tentando, Fatima. Entendi que não posso carregar tudo sozinha. Tenho ido a um grupo de apoio para familiares e ouvir outras histórias me dá forças. Não estamos sozinhos.",
+      "intent": "explanation",
+      "rate_percent": -1,
+      "pitch_hz": 1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 13.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "E ela ainda tem sonhos?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 2.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Sim, quer voltar a estudar e terminar a faculdade de artes?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 680,
+      "estimated_seconds": 5.3
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Vamos devagar, mas cada dia que ela encontra algo positivo, já é uma vitória. Essa foi a conversa entre Dona Lourdes e Fatima. Um retrato dos desafios e esperanças de quem cuida de alguém com esquizofrenia.",
+      "intent": "explanation",
+      "rate_percent": -1,
+      "pitch_hz": 1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "A esquizofrenia é um transtorno sério que pode aumentar a vulnerabilidade ao comportamento suicida, especialmente devido a alucinações, delírios e isolamento emocional.",
+      "intent": "explanation",
+      "rate_percent": -1,
+      "pitch_hz": 1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 10.6
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Buscar ajuda profissional e construir uma rede de apoio é essencial.",
+      "intent": "explanation",
+      "rate_percent": -1,
+      "pitch_hz": 1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 5.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "No próximo episódio, continuaremos nossa série com o tema fatores invisíveis, vulnerabilidades sociais e filosóficas.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 7.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Não perca.",
+      "intent": "conclusion",
+      "rate_percent": -4,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 1.0
+    }
+  ]
+}

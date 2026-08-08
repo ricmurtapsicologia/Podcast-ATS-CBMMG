@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "series": "serie-1",
+  "episode": "a1-009",
+  "canonical_sha256": "7f0d39c0a905e2f3db6e904e7bc37cc109926c2bf1df0a636c73ef95216c400f",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "usando perguntas simples com um tentante de perfil agressivo. Olá, pessoal. Continuando nossa série sobre abordagem técnica e comunicação que salva, hoje vamos demonstrar como usar perguntas simples para lidar com um tentante de perfil agressivo.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Esse tipo de abordagem exige calma, empatia e muito cuidado, já que estamos lidando com alguém que pode expressar raiva ou hostilidade. Vamos acompanhar o diálogo.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 12.5
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Uma mulher está no terraço de um prédio, andando de um lado para o outro, gesticulando de forma agitada e falando em tom elevado. O abordador mantém distância inicial, respeitando o espaço da tentante. Abordador. Oi, meu nome é Ana.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 19.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Sou bombeira militar e estou aqui para ouvir você. Como posso te chamar? Não quero falar com ninguém. Entendo. Parece que você está muito irritada. Posso ficar aqui para garantir que você não esteja sozinha? Faz o que quiser.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 18.7
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Ninguém se importa mesmo. Isso soa muito doloroso. Me conta, tem alguém na sua vida que você sente que já se importou com você? Não. Nunca se importaram. Você mora com alguém? Ou está morando sozinha?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Moro com minha irmã, mas ela só grita comigo. Entendo como isso pode ser difícil. E fora da sua casa, tem alguém em quem você confia ou com quem gosta de conversar? Não tenho ninguém.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 16.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Às vezes é difícil encontrar alguém para ouvir. Antes disso, o que costumava te ajudar a relaxar quando as coisas ficavam difíceis? Eu fazia academia, mas parei. Fazer exercícios ajudava você? Já pensou em voltar ou sente que agora não faz sentido?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 20.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Não sei. Não consigo pensar nisso agora. Entendi. Você trabalha ou estuda? Como era a sua rotina antes de chegar até aqui? É sustentante. Trabalho, mas meu chefe é insuportável. Isso parece bem frustrante.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 16.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Você sente que as coisas no trabalho têm contribuído para o que está sentindo agora? Com certeza. E fora isso, tem algo que você gosta de fazer, como ouvir música ou ver filmes? Eu ouço música às vezes, mas não ajuda muito.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 20.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Qual estilo de música você gosta? Tem alguma banda ou artista que te marcou? Eu ouvia muito antes. Entendi. Quando você pensa em momentos bons que já viveu, consegue lembrar de algo específico que te trouxe felicidade? Não.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 18.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Não lembro de nada agora. Tudo bem. E sobre o que você sente que precisa mais agora, além de alguém para te ouvir? Por que essas perguntas funcionam?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 13.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Essas perguntas equilibram a busca por fatores de risco, como relações tensas, ausência de apoio ou situações de conflito, e fatores de proteção, como hobbies, lembranças positivas ou conexões interpessoais.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 14.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "O objetivo é desarmar a agressividade inicial e criar uma ponte de diálogo, sempre respeitando o ritmo do tentante. No próximo episódio, vamos falar sobre como usar perguntas simples com tentantes de perfil psicótico. Não perca.",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 17.3
+    }
+  ]
+}

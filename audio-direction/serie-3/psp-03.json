@@ -1,0 +1,117 @@
+{
+  "schema": 1,
+  "series": "serie-3",
+  "episode": "psp-03",
+  "canonical_sha256": "70e6d55b75ec8a6f961cc9021926fb547a39a651ae71e513c73804a9af61b92e",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Uma conversa de apoio começa antes da primeira pergunta. Preparar é decidir quando, onde e como abordar. Uma boa intenção pode gerar constrangimento se o colega for chamado diante da equipe, durante uma demanda operacional ou num momento em que você próprio está irritado, apressado ou sem tempo para ouvir.",
+      "intent": "opening",
+      "rate_percent": -4,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 24.0
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Qual seria um bom cenário?",
+      "intent": "question",
+      "rate_percent": 1,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 2.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Sempre que possível, escolha um momento com menor pressão e um local discreto. Não precisa ser uma reunião formal. Pode ser uma conversa breve, desde que haja privacidade suficiente e que o colega não se sinta exposto.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Também verifique se você possui tempo real para sustentar alguns minutos de escuta.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 6.2
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "E o que eu preparo para dizer?",
+      "intent": "question",
+      "rate_percent": 1,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 3.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Comece por uma observação concreta, não por uma conclusão. Em vez de dizer “você não está bem”, pense em algo como: “Percebi que você está mais quieto e com mais dificuldade para se organizar nesses últimos dias.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Queria saber como você está.” Isso reduz defensividade porque descreve o que foi observado e oferece espaço para a pessoa responder.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 10.1
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Outra parte da preparação é conhecer seus limites. Você não precisa ter resposta para tudo. Mas é útil saber quais recursos existem: apoio de liderança, serviço de saúde, apoio psicossocial, rede externa ou outra possibilidade institucional.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Se a conversa apontar para necessidade maior, você já sabe para onde ajudar a conectar.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 7.2
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "E se eu não estiver em boas condições para conversar?",
+      "intent": "question",
+      "rate_percent": 0,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 4.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Reconhecer isso também é prevenção. Se você está reativo, muito cansado ou envolvido no problema, talvez outro colega com mais vínculo e equilíbrio seja mais adequado para a aproximação.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 13.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Antes de iniciar, faça quatro checagens: tenho privacidade? Tenho tempo? Consigo falar sem julgamento? Sei qual recurso pode ser acionado se necessário? Preparar reduz improvisação e aumenta segurança psicológica para os dois lados.",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 15.8
+    }
+  ]
+}

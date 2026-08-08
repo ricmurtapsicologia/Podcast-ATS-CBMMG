@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "series": "serie-1",
+  "episode": "a1-016",
+  "canonical_sha256": "8f4e98e3b3018af7e24838ac30167de6fc317c44712754218cae1f4289d402b8",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Paráfrase resumida. Refinando o foco no diálogo. Olá, pessoal. Continuando nossa série sobre abordagem técnica, comunicação que salva, hoje vamos falar sobre a técnica da paráfrase resumida.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 13.0
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Essa ferramenta é fundamental para demonstrar escuta ativa, organizar os pensamentos do tentante e ajudá-lo a refletir sobre o que está sentindo. Vamos ver como ela pode ser aplicada na prática. Sena. Camila.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 15.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Uma mulher em crise, está sentada no parapeito de uma janela visivelmente angustiada. Ela fala de maneira confusa, alternando entre problemas pessoais e profissionais. Abordador. Me deixe confirmar se entendi bem o que você está dizendo.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Parece que você está carregando muito peso, tentando lidar com tantas coisas ao mesmo tempo. E no fundo, sente que não importa o que faça, as pessoas à sua volta não reconhecem ou valorizam seus esforços.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "É isso que está te afetando mais agora. Por que essa técnica funciona? A paráfrase resumida demonstra ao tentante que o abordador está ouvindo atentamente e buscando compreender sua dor.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 14.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Essa validação gera confiança e organiza os pensamentos do tentante, possibilitando um diálogo mais claro e focado. No próximo episódio, vamos falar sobre especificidades para abordar tentantes de perfil depressivo. Não perca.",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 15.4
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "series": "serie-1",
+  "episode": "a1-017",
+  "canonical_sha256": "a79aa81bfd8f7ffa1c0824fc1f867d321b6da762ca536a85d07a95818f7f2025",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Especificidades para abordar tentantes de perfil depressivo. Olá, pessoal! Continuando nossa série sobre abordagem técnica, comunicação que salva, hoje vamos trazer orientações práticas para abordar tentantes com perfil depressivo.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 13.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Esses tentantes costumam apresentar silêncio, tristeza, dificuldade em se expressar e, muitas vezes, uma sensação de desesperança. A abordagem exige paciência, empatia e assertividade. Aqui estão algumas diretrizes importantes.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 13.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Inicie com muita fala para criar conexão, mas sempre respeite o tempo do tentante para responder. Posicione-se de frente para ele e, se possível, no mesmo nível, para reduzir barreiras. Mantenha uma postura assertiva, mas nunca agressiva, buscando transmitir segurança.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 19.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Conduza o diálogo de forma que ele possa encontrar suas próprias respostas sem impor conselhos. Evite qualquer tom pessimista. O otimismo é essencial para criar um ambiente acolhedor e de confiança.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 14.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Lembre-se, o objetivo é trazer o tentante para um espaço onde ele se sinta ouvido e compreendido, ajudando a redirecionar seus pensamentos e aliviar sua angústia. No próximo episódio, vamos abordar as especificidades para abordar tentantes de perfil agressivo. Não perca!",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 19.7
+    }
+  ]
+}

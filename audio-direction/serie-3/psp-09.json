@@ -1,0 +1,99 @@
+{
+  "schema": 1,
+  "series": "serie-3",
+  "episode": "psp-09",
+  "canonical_sha256": "b94a346798ec6af0db3fc8d3ba7653001e17f1914ab82fbbd2cd6c78c12870ea",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Quem apoia também precisa ser apoiado. Em profissionais de segurança e emergência, autocuidado não deve ser entendido como luxo, recompensa ou solução individual para todos os problemas. É parte da preservação da capacidade de perceber, decidir, comunicar e trabalhar com segurança.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 19.7
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "O que seria autocuidado operacional na prática?",
+      "intent": "question",
+      "rate_percent": 1,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 3.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Começa por necessidades básicas e checagens honestas. Como está sua atenção? Seu nível de cansaço? Sua irritabilidade? Sua capacidade de ouvir e tomar decisões? Quando possível, proteja sono, descanso, alimentação, hidratação, recuperação entre períodos de alta carga e vínculos fora do trabalho.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 20.2
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Mas nem sempre o profissional controla a escala ou a carga de trabalho.",
+      "intent": "explanation",
+      "rate_percent": -1,
+      "pitch_hz": 1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 6.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Exatamente. Por isso autocuidado não pode virar uma forma de responsabilizar individualmente quem está sobrecarregado. A organização também tem responsabilidade: previsibilidade, pausas, rodízio, apoio de liderança, dimensionamento possível e acesso sem estigma aos recursos de saúde.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Existe ainda outro limite importante: você não precisa ser a pessoa que sustenta todas as conversas difíceis da equipe. Se está esgotado, emocionalmente envolvido ou sem condições de escutar, reconhecer isso é uma atitude responsável.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 16.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Outro colega, uma liderança ou um profissional pode assumir melhor aquele apoio.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 5.8
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "E quando devo buscar ajuda para mim?",
+      "intent": "question",
+      "rate_percent": 1,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 3.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Não espere a sobrecarga se tornar rotina. Quando você percebe mudanças persistentes no seu funcionamento, na recuperação, na concentração, na convivência ou na capacidade de lidar com demandas, vale procurar apoio cedo.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 15.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Cuidar de si protege você, seus colegas e o serviço. Microchecagem: minhas condições atuais permitem continuar trabalhando e oferecendo apoio com presença, clareza e equilíbrio ou eu também preciso reorganizar minha carga e buscar suporte?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 0,
+      "estimated_seconds": 16.8
+    }
+  ]
+}

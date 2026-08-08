@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "series": "serie-3",
+  "episode": "psp-02",
+  "canonical_sha256": "4b6d1417e3be98d2c8d68e579edc7919a98774f49fa5187f3a6a8a61b486fac0",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Reconhecer que um colega talvez não esteja bem não significa diagnosticar. Significa perceber mudanças concretas no funcionamento habitual. Em segurança e emergência, isso é importante porque pessoas competentes também podem atravessar períodos de sobrecarga, cansaço ou sofrimento sem verbalizar diretamente o que está acontecendo.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 21.1
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Que tipo de mudança merece atenção?",
+      "intent": "question",
+      "rate_percent": 1,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 2.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Observe principalmente diferenças em relação ao padrão da própria pessoa. Pode ser uma queda incomum de concentração, irritabilidade fora do habitual, isolamento, dificuldade para organizar tarefas, erros atípicos, comunicação diferente, cansaço muito evidente ou menor tolerância a situações que antes eram manejadas com facilidade. Nenhum desses elementos, isoladamente, fecha qualquer conclusão.",
+      "intent": "explanation",
+      "rate_percent": -4,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 24.5
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Então um dia ruim não significa necessariamente problema.",
+      "intent": "transition",
+      "rate_percent": 0,
+      "pitch_hz": 1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 3.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Correto. Use quatro filtros: mudança, intensidade, duração e impacto. Houve uma mudança real? Ela é importante? Está se repetindo? Está interferindo no trabalho, nas relações ou na capacidade de se organizar?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 14.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Quanto mais esses elementos se combinam, mais razoável é fazer uma aproximação cuidadosa.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 6.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Considere também o contexto. Sequência de plantões exigentes, ocorrência de alta carga, conflitos, perdas, problemas familiares ou pouco tempo de recuperação podem ajudar a compreender o cenário. Mas contexto não deve virar explicação automática. O melhor caminho é observar e depois perguntar.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 20.2
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "E o que eu não devo fazer?",
+      "intent": "question",
+      "rate_percent": 1,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 3.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Evite rótulos como fraqueza, falta de perfil ou descompromisso. Evite comentar com terceiros apenas para confirmar sua impressão. E não transforme uma alteração momentânea em julgamento de caráter. Seu papel é abrir uma possibilidade de apoio, não construir um diagnóstico informal.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 19.7
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Uma boa frase interna antes de abordar é: eu tenho fatos observáveis ou apenas uma interpretação? Se você consegue nomear mudanças concretas e está genuinamente preocupado, prepare uma conversa discreta.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 14.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Microchecagem: estou vendo uma mudança de funcionamento ou projetando uma expectativa minha sobre como esse colega deveria agir?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 0,
+      "estimated_seconds": 8.6
+    }
+  ]
+}

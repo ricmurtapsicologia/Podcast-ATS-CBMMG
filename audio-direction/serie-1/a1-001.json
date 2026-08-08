@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "series": "serie-1",
+  "episode": "a1-001",
+  "canonical_sha256": "3c8ed47eafcf247dddcba738e622bfa42ac534a723ccc4395ad58cb4780611bf",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "abordagem técnica comunicação que salva olá pessoal hoje vamos mergulhar no que chamamos de abordagem técnica uma das ferramentas mais poderosas que temos para lidar com situações de crise mas o que é exatamente essa abordagem é a aplicação da comunicação tanto",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 20.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "verbal quanto não verbal para estabelecer um vínculo de confiança com o tentante compreender seus pensamentos e com empatia guiá-lo a abandonar o ato autodestrutivo e sabe o que faz tudo isso funcionar cada detalhe importa a forma como nos posicionamos o",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 20.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "tom de voz o olhar atento até a inclinação do corpo tudo conta para passar segurança e acolhimento essa combinação de palavras e linguagem corporal transforma o contato em algo genuíno e eficaz comunicar é salvar vidas e no próximo episódio vamos",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 20.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "explorar ainda mais como palavras e gestos podem ser a ponte para a esperança não perca",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 7.7
+    }
+  ]
+}

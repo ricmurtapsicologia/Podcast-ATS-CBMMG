@@ -1,0 +1,411 @@
+{
+  "schema": 1,
+  "generated_at_utc": "2026-08-08T19:24:10.408266+00:00",
+  "episodes": [
+    {
+      "series": "serie-1",
+      "episode": "a1-001",
+      "source": "roteiros/serie-1/a1-001.txt",
+      "path": "roteiros-canonicos/serie-1/a1-001.txt",
+      "sha256": "3c8ed47eafcf247dddcba738e622bfa42ac534a723ccc4395ad58cb4780611bf",
+      "characters": 851,
+      "words": 142
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-002",
+      "source": "roteiros/serie-1/a1-002.txt",
+      "path": "roteiros-canonicos/serie-1/a1-002.txt",
+      "sha256": "b7490d56ddd5b9d5f0f2aa1348d074ce081eeb9be6663e6846d1e6662fca9391",
+      "characters": 1007,
+      "words": 155
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-003",
+      "source": "roteiros/serie-1/a1-003.txt",
+      "path": "roteiros-canonicos/serie-1/a1-003.txt",
+      "sha256": "56bda8feedfe60cde6f5b216f9ee7b99f7f5afaea2c30ee4dc8537ab57ac9b07",
+      "characters": 1411,
+      "words": 222
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-004",
+      "source": "roteiros/serie-1/a1-004.txt",
+      "path": "roteiros-canonicos/serie-1/a1-004.txt",
+      "sha256": "5bf373adc2d2f47bbc951aa7dac4ab101775cdde71e3146acf461f99c6751317",
+      "characters": 1437,
+      "words": 233
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-005",
+      "source": "roteiros/serie-1/a1-005.txt",
+      "path": "roteiros-canonicos/serie-1/a1-005.txt",
+      "sha256": "03bd288e03ba44196c21f5d071296b719c1430dfadb5b582c469c67a0ae17912",
+      "characters": 693,
+      "words": 110
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-006",
+      "source": "roteiros/serie-1/a1-006.txt",
+      "path": "roteiros-canonicos/serie-1/a1-006.txt",
+      "sha256": "0a486d029d719cc8d952ea12b53f5bf67e0c7993e34e216cee77ff55bae88c9b",
+      "characters": 953,
+      "words": 148
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-007",
+      "source": "roteiros/serie-1/a1-007.txt",
+      "path": "roteiros-canonicos/serie-1/a1-007.txt",
+      "sha256": "1a47f3b0bff72e576bde6158a7ee3d8952a9acf2fd14b76ebc7004c4d469826a",
+      "characters": 1261,
+      "words": 198
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-008",
+      "source": "roteiros/serie-1/a1-008.txt",
+      "path": "roteiros-canonicos/serie-1/a1-008.txt",
+      "sha256": "be730af5e877014e723dc78fb77e227a596aba741432a219e38e6f3af8941fda",
+      "characters": 2605,
+      "words": 452
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-009",
+      "source": "roteiros/serie-1/a1-009.txt",
+      "path": "roteiros-canonicos/serie-1/a1-009.txt",
+      "sha256": "7f0d39c0a905e2f3db6e904e7bc37cc109926c2bf1df0a636c73ef95216c400f",
+      "characters": 2744,
+      "words": 462
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-010",
+      "source": "roteiros/serie-1/a1-010.txt",
+      "path": "roteiros-canonicos/serie-1/a1-010.txt",
+      "sha256": "152869b24471f2296a3ae819427438d31ebc978a42fc01d89eed6ffbb838a973",
+      "characters": 3808,
+      "words": 632
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-011",
+      "source": "roteiros/serie-1/a1-011.txt",
+      "path": "roteiros-canonicos/serie-1/a1-011.txt",
+      "sha256": "16cd177499bc8d71eaba88fc25f6c4bcdc01a01238fd668d583dedab7a40b5b2",
+      "characters": 1993,
+      "words": 349
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-012",
+      "source": "roteiros/serie-1/a1-012.txt",
+      "path": "roteiros-canonicos/serie-1/a1-012.txt",
+      "sha256": "aa24d248b3c5810d57a8990fb5945a0a48b52532c3d69201010300926ee4fd87",
+      "characters": 1596,
+      "words": 239
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-013",
+      "source": "roteiros/serie-1/a1-013.txt",
+      "path": "roteiros-canonicos/serie-1/a1-013.txt",
+      "sha256": "a1ab762957c0477cdfbdd8c6e6cd7085be77e856718359a16d4e66b6395ebe99",
+      "characters": 2607,
+      "words": 419
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-014",
+      "source": "roteiros/serie-1/a1-014.txt",
+      "path": "roteiros-canonicos/serie-1/a1-014.txt",
+      "sha256": "09fb03b7f6b904a214fd0512f07d34673b3b4502b5a81e1b8c1564e63c625964",
+      "characters": 2869,
+      "words": 481
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-015",
+      "source": "roteiros/serie-1/a1-015.txt",
+      "path": "roteiros-canonicos/serie-1/a1-015.txt",
+      "sha256": "98fc35513a01553975deba366f7dad8e5a119ce9b676bb4c232e5fb8208bf76a",
+      "characters": 2711,
+      "words": 442
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-016",
+      "source": "roteiros/serie-1/a1-016.txt",
+      "path": "roteiros-canonicos/serie-1/a1-016.txt",
+      "sha256": "8f4e98e3b3018af7e24838ac30167de6fc317c44712754218cae1f4289d402b8",
+      "characters": 1256,
+      "words": 194
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-017",
+      "source": "roteiros/serie-1/a1-017.txt",
+      "path": "roteiros-canonicos/serie-1/a1-017.txt",
+      "sha256": "a79aa81bfd8f7ffa1c0824fc1f867d321b6da762ca536a85d07a95818f7f2025",
+      "characters": 1200,
+      "words": 170
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-018",
+      "source": "roteiros/serie-1/a1-018.txt",
+      "path": "roteiros-canonicos/serie-1/a1-018.txt",
+      "sha256": "04a59a7bd627c410fee8149411db5b7e924ef03a14230f7002b946c485c2e14f",
+      "characters": 1274,
+      "words": 196
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-019",
+      "source": "roteiros/serie-1/a1-019.txt",
+      "path": "roteiros-canonicos/serie-1/a1-019.txt",
+      "sha256": "bb6b10d106c00a543030f4380d04d2423340f0833d8e6a6b596bef4f5bde3716",
+      "characters": 1266,
+      "words": 192
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-020",
+      "source": "roteiros/serie-1/a1-020.txt",
+      "path": "roteiros-canonicos/serie-1/a1-020.txt",
+      "sha256": "62192af0c84515a76fbac8457264a9c0175dcf604c620a038bc59e33a11bf2a5",
+      "characters": 1684,
+      "words": 262
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-021",
+      "source": "roteiros/serie-1/a1-021.txt",
+      "path": "roteiros-canonicos/serie-1/a1-021.txt",
+      "sha256": "ba98ad309b58bf167b45f5747a310a7bd5fc3733f95c0ccca773570b6be1f129",
+      "characters": 1171,
+      "words": 172
+    },
+    {
+      "series": "serie-2",
+      "episode": "a2-000",
+      "source": "roteiros/serie-2/a2-000.txt",
+      "path": "roteiros-canonicos/serie-2/a2-000.txt",
+      "sha256": "f97bb01b88f5dfe4f7e1686e6d84bde33a505c0b9a08134e5d240d9a93b91125",
+      "characters": 1030,
+      "words": 142
+    },
+    {
+      "series": "serie-2",
+      "episode": "a2-001",
+      "source": "roteiros/serie-2/a2-001.txt",
+      "path": "roteiros-canonicos/serie-2/a2-001.txt",
+      "sha256": "23b4d688dcdb2a496be51ecb9ce15cf145270f128dc55e2c9d017fabae204e9d",
+      "characters": 2564,
+      "words": 380
+    },
+    {
+      "series": "serie-2",
+      "episode": "a2-002",
+      "source": "roteiros/serie-2/a2-002.txt",
+      "path": "roteiros-canonicos/serie-2/a2-002.txt",
+      "sha256": "190e9e09730db48ae8651d98e4e4b2f717c4265915886d4c21e59ae76492059c",
+      "characters": 1766,
+      "words": 243
+    },
+    {
+      "series": "serie-2",
+      "episode": "a2-003",
+      "source": "roteiros/serie-2/a2-003.txt",
+      "path": "roteiros-canonicos/serie-2/a2-003.txt",
+      "sha256": "bd3cc06adbab26bbf8db89145c2936cdcb5075b1a7df646fa122f3d898476a55",
+      "characters": 2809,
+      "words": 383
+    },
+    {
+      "series": "serie-2",
+      "episode": "a2-004",
+      "source": "roteiros/serie-2/a2-004.txt",
+      "path": "roteiros-canonicos/serie-2/a2-004.txt",
+      "sha256": "4fdad1ef19eb7ef42ea18dc0ab759b6806f32a663e9b22f8d803adf8b1c975df",
+      "characters": 2643,
+      "words": 443
+    },
+    {
+      "series": "serie-2",
+      "episode": "a2-005",
+      "source": "roteiros/serie-2/a2-005.txt",
+      "path": "roteiros-canonicos/serie-2/a2-005.txt",
+      "sha256": "b4cd4680efe53e2b3f9fe495b761aab99a1060a3c455174fe78cddf7ea7ad6df",
+      "characters": 2183,
+      "words": 363
+    },
+    {
+      "series": "serie-2",
+      "episode": "a2-006",
+      "source": "roteiros/serie-2/a2-006.txt",
+      "path": "roteiros-canonicos/serie-2/a2-006.txt",
+      "sha256": "8183bc41c694dd8971de86ed0a27bd0ca38d8e115d36084c6889467044e5a2f5",
+      "characters": 2421,
+      "words": 409
+    },
+    {
+      "series": "serie-2",
+      "episode": "a2-007",
+      "source": "roteiros/serie-2/a2-007.txt",
+      "path": "roteiros-canonicos/serie-2/a2-007.txt",
+      "sha256": "952b9e3b784ec89ec645988d1b152d9b5e635f5e9d1b707385d24e9dce84efcf",
+      "characters": 3163,
+      "words": 508
+    },
+    {
+      "series": "serie-2",
+      "episode": "a2-008",
+      "source": "roteiros/serie-2/a2-008.txt",
+      "path": "roteiros-canonicos/serie-2/a2-008.txt",
+      "sha256": "38f70180e56f2961927367538a5d96a912ef6428876d50b48c362837615704df",
+      "characters": 3050,
+      "words": 456
+    },
+    {
+      "series": "serie-2",
+      "episode": "a2-009",
+      "source": "roteiros/serie-2/a2-009.txt",
+      "path": "roteiros-canonicos/serie-2/a2-009.txt",
+      "sha256": "fbe4fde7aa1f7a22301973842a3db6e094d375bb59a69a1573e6322de102670e",
+      "characters": 2439,
+      "words": 398
+    },
+    {
+      "series": "serie-2",
+      "episode": "a2-010",
+      "source": "roteiros/serie-2/a2-010.txt",
+      "path": "roteiros-canonicos/serie-2/a2-010.txt",
+      "sha256": "44d21b22d0845936d854886e7d08d7e7a5a259091b0309bb2424c8b1f4c0fd72",
+      "characters": 2115,
+      "words": 316
+    },
+    {
+      "series": "serie-2",
+      "episode": "a2-011",
+      "source": "roteiros/serie-2/a2-011.txt",
+      "path": "roteiros-canonicos/serie-2/a2-011.txt",
+      "sha256": "07e78105a36431da9ac65409436cb5f6f3e72c2666f74d3ba29f59e995558897",
+      "characters": 2030,
+      "words": 286
+    },
+    {
+      "series": "serie-2",
+      "episode": "a2-012",
+      "source": "roteiros/serie-2/a2-012.txt",
+      "path": "roteiros-canonicos/serie-2/a2-012.txt",
+      "sha256": "165b0b7cb74d0630ad97d53fe4633653c9d1d47ce5ba05066fa54b069e09be2f",
+      "characters": 2270,
+      "words": 356
+    },
+    {
+      "series": "serie-2",
+      "episode": "a2-013",
+      "source": "roteiros/serie-2/a2-013.txt",
+      "path": "roteiros-canonicos/serie-2/a2-013.txt",
+      "sha256": "58e9ff1a7213eee32ec9f742fb3ff0e78d6862f9031bee9a5d1c19d6db16a287",
+      "characters": 2066,
+      "words": 304
+    },
+    {
+      "series": "serie-3",
+      "episode": "psp-01",
+      "source": "roteiros/serie-3/psp-01.md",
+      "path": "roteiros-canonicos/serie-3/psp-01.txt",
+      "sha256": "6d58a9ccd32b3dd4f6cd6953c025650d6bf46b269f03bd0ba661430f910e56ba",
+      "characters": 1976,
+      "words": 312
+    },
+    {
+      "series": "serie-3",
+      "episode": "psp-02",
+      "source": "roteiros/serie-3/psp-02.md",
+      "path": "roteiros-canonicos/serie-3/psp-02.txt",
+      "sha256": "4b6d1417e3be98d2c8d68e579edc7919a98774f49fa5187f3a6a8a61b486fac0",
+      "characters": 2062,
+      "words": 291
+    },
+    {
+      "series": "serie-3",
+      "episode": "psp-03",
+      "source": "roteiros/serie-3/psp-03.md",
+      "path": "roteiros-canonicos/serie-3/psp-03.txt",
+      "sha256": "70e6d55b75ec8a6f961cc9021926fb547a39a651ae71e513c73804a9af61b92e",
+      "characters": 1818,
+      "words": 293
+    },
+    {
+      "series": "serie-3",
+      "episode": "psp-04",
+      "source": "roteiros/serie-3/psp-04.md",
+      "path": "roteiros-canonicos/serie-3/psp-04.txt",
+      "sha256": "f150b1af7744279cca64e25c3291e4b99e8b4243fad646eb4b89cbd90e1bf4a1",
+      "characters": 1915,
+      "words": 286
+    },
+    {
+      "series": "serie-3",
+      "episode": "psp-05",
+      "source": "roteiros/serie-3/psp-05.md",
+      "path": "roteiros-canonicos/serie-3/psp-05.txt",
+      "sha256": "7813d65eef1010cfed0d7afc53f0a2512c670095b7bd2acb2563fa45eb242fa5",
+      "characters": 1688,
+      "words": 277
+    },
+    {
+      "series": "serie-3",
+      "episode": "psp-06",
+      "source": "roteiros/serie-3/psp-06.md",
+      "path": "roteiros-canonicos/serie-3/psp-06.txt",
+      "sha256": "1d847114b81963fb5b181740fcd17a533dbc8b66db10eb7016e44ada0d10a7ca",
+      "characters": 1759,
+      "words": 282
+    },
+    {
+      "series": "serie-3",
+      "episode": "psp-07",
+      "source": "roteiros/serie-3/psp-07.md",
+      "path": "roteiros-canonicos/serie-3/psp-07.txt",
+      "sha256": "20657449f7a9fd83cda1d9cdc5226f99f1ddf955a783a883543b201fe5a60319",
+      "characters": 1682,
+      "words": 261
+    },
+    {
+      "series": "serie-3",
+      "episode": "psp-08",
+      "source": "roteiros/serie-3/psp-08.md",
+      "path": "roteiros-canonicos/serie-3/psp-08.txt",
+      "sha256": "7108ba9beb17f99336f10fb3490ca08feb4ca6d23a41fe1967e2c465d3508cf9",
+      "characters": 1680,
+      "words": 250
+    },
+    {
+      "series": "serie-3",
+      "episode": "psp-09",
+      "source": "roteiros/serie-3/psp-09.md",
+      "path": "roteiros-canonicos/serie-3/psp-09.txt",
+      "sha256": "b94a346798ec6af0db3fc8d3ba7653001e17f1914ab82fbbd2cd6c78c12870ea",
+      "characters": 1797,
+      "words": 260
+    },
+    {
+      "series": "serie-3",
+      "episode": "psp-10",
+      "source": "roteiros/serie-3/psp-10.md",
+      "path": "roteiros-canonicos/serie-3/psp-10.txt",
+      "sha256": "cc380ca625c2b62efe548fa3a1f08f7b3a5d4c0b8b2b44043edfb522debb663e",
+      "characters": 1990,
+      "words": 297
+    }
+  ]
+}

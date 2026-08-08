@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "series": "serie-1",
+  "episode": "a1-019",
+  "canonical_sha256": "bb6b10d106c00a543030f4380d04d2423340f0833d8e6a6b596bef4f5bde3716",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Especificidades para abordar tentantes de perfil psicótico. Olá, pessoal. Continuando nossa série sobre abordagem técnica, comunicação que salva, hoje vamos falar sobre como abordar tentantes de perfil psicótico.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 13.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Essa abordagem requer paciência e empatia, já que o tentante pode apresentar delírios, alucinações ou dificuldade em diferenciar a realidade da imaginação. Evite uma postura autoritária ou superior, pois isso pode fazer o tentante sentir-se perseguido.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Se ele perguntar algo relacionado aos seus delírios, como se você é um personagem específico, devolva a pergunta, dizendo Para você, pareço ser essa pessoa. Essa estratégia evita confrontos e mantém a conexão.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 15.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Descreva em voz alta o que está acontecendo, como você está segurando a mochila firmemente. Isso ajuda o tentante a se situar melhor na realidade. Pergunte também se ele conhece profissionais ou instituições que possam ajudá-lo com as vozes ou o sofrimento.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 20.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Mostrar essa possibilidade pode abrir espaço para diálogo e suporte. Essas abordagens podem levar tempo, mas cada passo é valioso. Utilize, se possível, alguém de confiança do tentante para facilitar o vínculo e manter a calma.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "No próximo episódio, vamos explorar como abordar tentantes que se trancam atrás de uma porta. Não perca!",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 8.2
+    }
+  ]
+}
