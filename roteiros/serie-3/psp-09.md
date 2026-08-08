@@ -1,28 +1,30 @@
-# Microaula 09 — Limites profissionais: o que fazer e o que evitar
+# Microaula 09 — Cuidar de si para continuar cuidando
 
 - Série: 3 — Primeiros Socorros Psicológicos
 - Card: 09
-- Duração estimada: 2.0 min, com locução a ~125 palavras/min
+- Duração estimada: 2.9 min, com locução a ~125 palavras/min
 - Formato: microaula conversacional; instrutor + profissional/aluno
 - Finalidade: aprofundar e aplicar o conteúdo escrito do card sem substituí-lo.
 
 ## Roteiro
 
-**INSTRUTOR:** Em PSP, limite profissional não é distância fria. É uma forma de proteção. Saber o que fazer e, principalmente, saber o que não fazer reduz exposição desnecessária, falsas expectativas e confusão entre apoio inicial e intervenção clínica.
+**INSTRUTOR:** Quem apoia também precisa ser apoiado. Em profissionais de segurança e emergência, autocuidado não deve ser entendido como luxo, recompensa ou solução individual para todos os problemas. É parte da preservação da capacidade de perceber, decidir, comunicar e trabalhar com segurança.
 
-**PROFISSIONAL:** Como manter proximidade sem ultrapassar meu papel?
+**PROFISSIONAL:** O que seria autocuidado operacional na prática?
 
-**INSTRUTOR:** Seja claro sobre sua função. Diga o que sabe, o que ainda não sabe e o que realmente pode oferecer. Não prometa resultado, recurso ou prazo que você não controla. Honestidade aumenta previsibilidade; promessas frágeis podem destruir confiança quando não se cumprem.
+**INSTRUTOR:** Começa por necessidades básicas e checagens honestas. Como está sua atenção? Seu nível de cansaço? Sua irritabilidade? Sua capacidade de ouvir e tomar decisões? Quando possível, proteja sono, descanso, alimentação, hidratação, recuperação entre períodos de alta carga e vínculos fora do trabalho.
 
-**INSTRUTOR:** Privacidade também é parte do cuidado. Em ambiente institucional, algumas informações precisam circular para garantir proteção e continuidade. Mas a regra é compartilhar somente o necessário, com quem precisa saber e de acordo com o protocolo aplicável. A experiência da pessoa não deve virar assunto de corredor.
+**PROFISSIONAL:** Mas nem sempre o profissional controla a escala ou a carga de trabalho.
 
-**PROFISSIONAL:** E se eu perceber que a necessidade ultrapassa o que consigo fazer?
+**INSTRUTOR:** Exatamente. Por isso autocuidado não pode virar uma forma de responsabilizar individualmente quem está sobrecarregado. A organização também tem responsabilidade: previsibilidade, pausas, rodízio, apoio de liderança, dimensionamento possível e acesso sem estigma aos recursos de saúde.
 
-**INSTRUTOR:** Encaminhar é parte da boa prática. PSP não exige que você permaneça indefinidamente num papel para o qual não tem competência, tempo ou recurso. Reconhecer o limite e conectar a pessoa ao atendimento adequado preserva a qualidade do cuidado.
+**INSTRUTOR:** Existe ainda outro limite importante: você não precisa ser a pessoa que sustenta todas as conversas difíceis da equipe. Se está esgotado, emocionalmente envolvido ou sem condições de escutar, reconhecer isso é uma atitude responsável. Outro colega, uma liderança ou um profissional pode assumir melhor aquele apoio.
 
-**INSTRUTOR:** Evite conselhos moralizantes, comparações de sofrimento, rótulos, falsas garantias e qualquer tentativa de obrigar pessoas ou colegas a expor emoções diante de um grupo. Apoio inicial deve ampliar segurança e autonomia, não criar mais pressão.
+**PROFISSIONAL:** E quando devo buscar ajuda para mim?
 
-**INSTRUTOR:** Para resumir: seja honesto, compartilhe apenas o necessário e reconheça quando é hora de passar o cuidado adiante. Microchecagem: minha forma de ajudar preserva dignidade, privacidade e autonomia e continua dentro dos limites da minha função?
+**INSTRUTOR:** Não espere a sobrecarga se tornar rotina. Quando você percebe mudanças persistentes no seu funcionamento, na recuperação, na concentração, na convivência ou na capacidade de lidar com demandas, vale procurar apoio cedo.
+
+**INSTRUTOR:** Cuidar de si protege você, seus colegas e o serviço. Microchecagem: minhas condições atuais permitem continuar trabalhando e oferecendo apoio com presença, clareza e equilíbrio ou eu também preciso reorganizar minha carga e buscar suporte?
 
 ## Direção de voz
 
