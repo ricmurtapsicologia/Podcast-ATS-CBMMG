@@ -8,7 +8,8 @@ Princípios do N2:
 - segmenta a fala em unidades naturais sem reescrever o conteúdo;
 - varia discretamente ritmo e pitch conforme função da frase;
 - aplica pausas contextuais entre frases e interlocutores;
-- faz compressão leve e normalização para escuta mais uniforme.
+- faz compressão leve e normalização para escuta mais uniforme;
+- usa concorrência limitada e retentativas para reduzir o tempo de geração.
 """
 
 import asyncio
@@ -25,21 +26,14 @@ TMP = ROOT / ".tmp_psp_audio_n2"
 
 VOICE_INSTRUTOR = "pt-BR-AntonioNeural"
 VOICE_PROFISSIONAL = "pt-BR-FranciscaNeural"
-
-# Ritmo-base menos uniforme que a versão anterior, preservando clareza didática.
-BASE_RATE = {
-    "INSTRUTOR": -4,
-    "PROFISSIONAL": -1,
-}
-BASE_PITCH = {
-    "INSTRUTOR": -1,
-    "PROFISSIONAL": 1,
-}
+BASE_RATE = {"INSTRUTOR": -4, "PROFISSIONAL": -1}
+BASE_PITCH = {"INSTRUTOR": -1, "PROFISSIONAL": 1}
 
 TURN_PAUSE_MS = 520
 OPENING_SILENCE_MS = 130
 ENDING_SILENCE_MS = 240
 TARGET_DBFS = -18.0
+MAX_CONCURRENT_SYNTH = 4
 
 PATTERN = re.compile(r"^\*\*(INSTRUTOR|PROFISSIONAL):\*\*\s*(.+)$")
 SENTENCE_BOUNDARY = re.compile(r"(?<=[.!?…])\s+(?=[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ0-9\"“])")
@@ -66,10 +60,7 @@ def split_natural(text: str) -> list[str]:
             chunks.append(sentence)
             continue
         clauses = [part for part in CLAUSE_BOUNDARY.split(sentence) if part]
-        if len(clauses) == 1:
-            chunks.append(sentence)
-        else:
-            chunks.extend(clauses)
+        chunks.extend(clauses if len(clauses) > 1 else [sentence])
     return chunks
 
 
@@ -93,43 +84,53 @@ def prosody_for(speaker: str, text: str, chunk_index: int, chunk_total: int) -> 
     pitch = BASE_PITCH[speaker]
     normalized = text.strip().lower()
 
-    # Perguntas ganham leve subida e fluxo um pouco mais conversacional.
     if text.rstrip().endswith("?"):
         rate += 2
         pitch += 2
-
-    # Sínteses e frases de retenção ficam discretamente mais lentas.
     if normalized.startswith(("guarde", "em resumo", "microchecagem", "pense", "imagine", "o ponto")):
         rate -= 2
-
-    # Evita uma cadência idêntica em todos os períodos, sem dramatização.
     if chunk_total > 1:
-        cycle = (-1, 0, 1, 0)
-        rate += cycle[chunk_index % len(cycle)]
+        rate += (-1, 0, 1, 0)[chunk_index % 4]
 
     rate = max(-10, min(4, rate))
     pitch = max(-4, min(4, pitch))
     return f"{rate:+d}%", f"{pitch:+d}Hz"
 
 
-async def synthesize(text: str, voice: str, rate: str, pitch: str, output: Path):
-    communicate = edge_tts.Communicate(
-        text=text,
-        voice=voice,
-        rate=rate,
-        volume="+0%",
-        pitch=pitch,
-    )
-    await communicate.save(str(output))
+async def synthesize(
+    text: str,
+    voice: str,
+    rate: str,
+    pitch: str,
+    output: Path,
+    semaphore: asyncio.Semaphore,
+):
+    async with semaphore:
+        for attempt in range(1, 4):
+            try:
+                communicate = edge_tts.Communicate(
+                    text=text,
+                    voice=voice,
+                    rate=rate,
+                    volume="+0%",
+                    pitch=pitch,
+                )
+                await communicate.save(str(output))
+                return
+            except Exception:
+                if attempt == 3:
+                    raise
+                await asyncio.sleep(0.8 * attempt)
 
 
-async def build_lesson(number: int):
+async def build_lesson(number: int, semaphore: asyncio.Semaphore):
     script = ROTEIROS / f"psp-{number:02d}.md"
     turns = read_turns(script)
     work = TMP / f"psp-{number:02d}"
     work.mkdir(parents=True, exist_ok=True)
 
-    merged = AudioSegment.silent(duration=OPENING_SILENCE_MS)
+    sequence = []
+    synth_tasks = []
     segment_number = 0
 
     for turn_index, (speaker, text) in enumerate(turns):
@@ -139,20 +140,24 @@ async def build_lesson(number: int):
         for chunk_index, chunk in enumerate(chunks):
             rate, pitch = prosody_for(speaker, chunk, chunk_index, len(chunks))
             segment = work / f"{segment_number:03d}.mp3"
-            await synthesize(chunk, voice, rate, pitch, segment)
-            merged += AudioSegment.from_file(segment, format="mp3")
-            segment_number += 1
-
             is_last_chunk = chunk_index == len(chunks) - 1
             is_last_turn = turn_index == len(turns) - 1
-            if not (is_last_chunk and is_last_turn):
-                merged += AudioSegment.silent(
-                    duration=TURN_PAUSE_MS if is_last_chunk else pause_after(chunk)
-                )
+            pause_ms = 0 if (is_last_chunk and is_last_turn) else (
+                TURN_PAUSE_MS if is_last_chunk else pause_after(chunk)
+            )
+            sequence.append((segment, pause_ms))
+            synth_tasks.append(synthesize(chunk, voice, rate, pitch, segment, semaphore))
+            segment_number += 1
 
+    await asyncio.gather(*synth_tasks)
+
+    merged = AudioSegment.silent(duration=OPENING_SILENCE_MS)
+    for segment, pause_ms in sequence:
+        merged += AudioSegment.from_file(segment, format="mp3")
+        if pause_ms:
+            merged += AudioSegment.silent(duration=pause_ms)
     merged += AudioSegment.silent(duration=ENDING_SILENCE_MS)
 
-    # Pós-processamento leve: reduz picos e estabiliza nível sem esmagar a dinâmica da fala.
     merged = effects.compress_dynamic_range(
         merged,
         threshold=-20.0,
@@ -182,8 +187,9 @@ async def build_lesson(number: int):
 
 async def main():
     TMP.mkdir(parents=True, exist_ok=True)
+    semaphore = asyncio.Semaphore(MAX_CONCURRENT_SYNTH)
     for number in range(1, 11):
-        await build_lesson(number)
+        await build_lesson(number, semaphore)
 
 
 if __name__ == "__main__":
