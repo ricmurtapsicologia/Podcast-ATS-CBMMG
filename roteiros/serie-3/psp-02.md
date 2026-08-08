@@ -1,28 +1,30 @@
-# Microaula 02 — Quando usar PSP — e quando outra resposta é necessária
+# Microaula 02 — Como perceber que um colega talvez não esteja bem
 
 - Série: 3 — Primeiros Socorros Psicológicos
 - Card: 02
-- Duração estimada: 2.4 min, com locução a ~125 palavras/min
+- Duração estimada: 2.9 min, com locução a ~125 palavras/min
 - Formato: microaula conversacional; instrutor + profissional/aluno
 - Finalidade: aprofundar e aplicar o conteúdo escrito do card sem substituí-lo.
 
 ## Roteiro
 
-**INSTRUTOR:** Nem toda pessoa exposta a um evento crítico precisa de uma intervenção imediata. Esse é um ponto importante. PSP é uma oferta de apoio, não um procedimento que precisa ser aplicado automaticamente a todos. Antes de agir, observe qual é a necessidade predominante.
+**INSTRUTOR:** Reconhecer que um colega talvez não esteja bem não significa diagnosticar. Significa perceber mudanças concretas no funcionamento habitual. Em segurança e emergência, isso é importante porque pessoas competentes também podem atravessar períodos de sobrecarga, cansaço ou sofrimento sem verbalizar diretamente o que está acontecendo.
 
-**PROFISSIONAL:** Como eu sei se é momento de oferecer PSP ou de acionar outro recurso?
+**PROFISSIONAL:** Que tipo de mudança merece atenção?
 
-**INSTRUTOR:** Comece pelo que está diante de você. A pessoa consegue compreender informações simples? Consegue participar das decisões possíveis? Precisa principalmente de orientação, companhia, apoio social ou ajuda prática? Ou existe uma necessidade de saúde, proteção, assistência ou outro atendimento que deve vir primeiro? PSP não substitui a resposta principal quando outra necessidade é prioritária.
+**INSTRUTOR:** Observe principalmente diferenças em relação ao padrão da própria pessoa. Pode ser uma queda incomum de concentração, irritabilidade fora do habitual, isolamento, dificuldade para organizar tarefas, erros atípicos, comunicação diferente, cansaço muito evidente ou menor tolerância a situações que antes eram manejadas com facilidade. Nenhum desses elementos, isoladamente, fecha qualquer conclusão.
 
-**INSTRUTOR:** Há situações em que uma informação objetiva resolve boa parte da desorganização: onde aguardar, quem será responsável, como entrar em contato com alguém de confiança. Em outras, a pessoa pode preferir ficar em silêncio e usar seus próprios recursos. Respeitar essa escolha também faz parte de uma ajuda adequada.
+**PROFISSIONAL:** Então um dia ruim não significa necessariamente problema.
 
-**PROFISSIONAL:** E se ela não quiser conversar comigo?
+**INSTRUTOR:** Correto. Use quatro filtros: mudança, intensidade, duração e impacto. Houve uma mudança real? Ela é importante? Está se repetindo? Está interferindo no trabalho, nas relações ou na capacidade de se organizar? Quanto mais esses elementos se combinam, mais razoável é fazer uma aproximação cuidadosa.
 
-**INSTRUTOR:** Não transforme recusa de conversa em recusa de toda ajuda. Você pode dizer quem é, o que pode oferecer e permanecer disponível. Se houver uma necessidade concreta que exija ação da equipe, siga o fluxo correspondente. O erro seria usar o nome PSP para obrigar a pessoa a falar ou para adiar um encaminhamento necessário.
+**INSTRUTOR:** Considere também o contexto. Sequência de plantões exigentes, ocorrência de alta carga, conflitos, perdas, problemas familiares ou pouco tempo de recuperação podem ajudar a compreender o cenário. Mas contexto não deve virar explicação automática. O melhor caminho é observar e depois perguntar.
 
-**INSTRUTOR:** Entre colegas, a mesma lógica é útil. Uma conversa breve, uma pausa ou uma ajuda prática pode ser suficiente. Se o funcionamento continuar muito prejudicado ou a demanda ultrapassar o apoio entre pares, facilite o acesso ao recurso institucional adequado, sem estigma.
+**PROFISSIONAL:** E o que eu não devo fazer?
 
-**INSTRUTOR:** Resumo: ofereça, não imponha; identifique a necessidade principal; e saiba quando outro recurso precisa assumir a prioridade. Microchecagem: esta pessoa precisa principalmente de presença e apoio prático ou existe algo diferente que deve ser atendido primeiro?
+**INSTRUTOR:** Evite rótulos como fraqueza, falta de perfil ou descompromisso. Evite comentar com terceiros apenas para confirmar sua impressão. E não transforme uma alteração momentânea em julgamento de caráter. Seu papel é abrir uma possibilidade de apoio, não construir um diagnóstico informal.
+
+**INSTRUTOR:** Uma boa frase interna antes de abordar é: eu tenho fatos observáveis ou apenas uma interpretação? Se você consegue nomear mudanças concretas e está genuinamente preocupado, prepare uma conversa discreta. Microchecagem: estou vendo uma mudança de funcionamento ou projetando uma expectativa minha sobre como esse colega deveria agir?
 
 ## Direção de voz
 
