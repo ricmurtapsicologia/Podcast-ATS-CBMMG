@@ -1,0 +1,128 @@
+[
+  {
+    "episode": 0,
+    "output": "a2-000-s3v2.mp3",
+    "text_integrity": 1.0,
+    "speech_units": 10,
+    "duration_seconds": 77.1,
+    "voice": "pt-BR-AntonioNeural",
+    "audio_profile": "serie-3-parity"
+  },
+  {
+    "episode": 1,
+    "output": "a2-001-s3v2.mp3",
+    "text_integrity": 1.0,
+    "speech_units": 21,
+    "duration_seconds": 187.5,
+    "voice": "pt-BR-AntonioNeural",
+    "audio_profile": "serie-3-parity"
+  },
+  {
+    "episode": 2,
+    "output": "a2-002-s3v2.mp3",
+    "text_integrity": 1.0,
+    "speech_units": 15,
+    "duration_seconds": 132.1,
+    "voice": "pt-BR-AntonioNeural",
+    "audio_profile": "serie-3-parity"
+  },
+  {
+    "episode": 3,
+    "output": "a2-003-s3v2.mp3",
+    "text_integrity": 1.0,
+    "speech_units": 26,
+    "duration_seconds": 208.4,
+    "voice": "pt-BR-AntonioNeural",
+    "audio_profile": "serie-3-parity"
+  },
+  {
+    "episode": 4,
+    "output": "a2-004-s3v2.mp3",
+    "text_integrity": 1.0,
+    "speech_units": 35,
+    "duration_seconds": 215.4,
+    "voice": "pt-BR-AntonioNeural",
+    "audio_profile": "serie-3-parity"
+  },
+  {
+    "episode": 5,
+    "output": "a2-005-s3v2.mp3",
+    "text_integrity": 1.0,
+    "speech_units": 22,
+    "duration_seconds": 167.4,
+    "voice": "pt-BR-AntonioNeural",
+    "audio_profile": "serie-3-parity"
+  },
+  {
+    "episode": 6,
+    "output": "a2-006-s3v2.mp3",
+    "text_integrity": 1.0,
+    "speech_units": 54,
+    "duration_seconds": 234.2,
+    "voice": "pt-BR-AntonioNeural",
+    "audio_profile": "serie-3-parity"
+  },
+  {
+    "episode": 7,
+    "output": "a2-007-s3v2.mp3",
+    "text_integrity": 1.0,
+    "speech_units": 38,
+    "duration_seconds": 234.7,
+    "voice": "pt-BR-FranciscaNeural",
+    "audio_profile": "serie-3-parity"
+  },
+  {
+    "episode": 8,
+    "output": "a2-008-s3v2.mp3",
+    "text_integrity": 1.0,
+    "speech_units": 38,
+    "duration_seconds": 238.6,
+    "voice": "pt-BR-FranciscaNeural",
+    "audio_profile": "serie-3-parity"
+  },
+  {
+    "episode": 9,
+    "output": "a2-009-s3v2.mp3",
+    "text_integrity": 1.0,
+    "speech_units": 42,
+    "duration_seconds": 211.9,
+    "voice": "pt-BR-AntonioNeural",
+    "audio_profile": "serie-3-parity"
+  },
+  {
+    "episode": 10,
+    "output": "a2-010-s3v2.mp3",
+    "text_integrity": 1.0,
+    "speech_units": 22,
+    "duration_seconds": 161.0,
+    "voice": "pt-BR-AntonioNeural",
+    "audio_profile": "serie-3-parity"
+  },
+  {
+    "episode": 11,
+    "output": "a2-011-s3v2.mp3",
+    "text_integrity": 1.0,
+    "speech_units": 20,
+    "duration_seconds": 153.7,
+    "voice": "pt-BR-AntonioNeural",
+    "audio_profile": "serie-3-parity"
+  },
+  {
+    "episode": 12,
+    "output": "a2-012-s3v2.mp3",
+    "text_integrity": 1.0,
+    "speech_units": 23,
+    "duration_seconds": 172.5,
+    "voice": "pt-BR-AntonioNeural",
+    "audio_profile": "serie-3-parity"
+  },
+  {
+    "episode": 13,
+    "output": "a2-013-s3v2.mp3",
+    "text_integrity": 1.0,
+    "speech_units": 20,
+    "duration_seconds": 155.7,
+    "voice": "pt-BR-AntonioNeural",
+    "audio_profile": "serie-3-parity"
+  }
+]
