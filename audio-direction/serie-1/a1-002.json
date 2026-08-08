@@ -7,39 +7,39 @@
   "turns": [
     {
       "speaker": "INSTRUTOR",
-      "text": "Comportamentos desejáveis na abordagem técnica. Olá, pessoal. Se você acompanhou o podcast anterior sobre abordagem técnica, comunicação que salva, sabe que a comunicação pode ser transformadora em situações de crise. Agora vamos falar sobre como suas ações e palavras podem construir confiança e salvar vidas.",
+      "text": "Comportamentos desejáveis na abordagem técnica. Olá, pessoal. Se você acompanhou o podcast anterior sobre abordagem técnica, comunicação que salva, sabe que a comunicação pode ser transformadora em situações de crise.",
       "intent": "opening",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 430,
-      "estimated_seconds": 21.6
+      "estimated_seconds": 14.4
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Primeiro, preste atenção ao tentante. Observe sua postura, o tom de voz e os gestos. Mostre sinceridade e atenção. Isso é fundamental para fortalecer o vínculo. Olhe nos olhos, ouça ativamente e respeite os silêncios, porque até o silêncio tem seu papel na comunicação.",
-      "intent": "enumeration",
-      "rate_percent": -4,
+      "text": "Agora vamos falar sobre como suas ações e palavras podem construir confiança e salvar vidas. Primeiro, preste atenção ao tentante. Observe sua postura, o tom de voz e os gestos. Mostre sinceridade e atenção. Isso é fundamental para fortalecer o vínculo.",
+      "intent": "transition",
+      "rate_percent": -3,
       "pitch_hz": -1,
-      "pause_after_ms": 360,
-      "estimated_seconds": 21.1
+      "pause_after_ms": 390,
+      "estimated_seconds": 19.7
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Repita, resuma e conecte as ideias para que o tentante se sinta compreendido. Mais que isso, ajude-o a encontrar suas próprias soluções, dando espaço para perguntas e valorizando suas ideias. Essa abordagem cria um canal aberto de confiança e faz toda a diferença.",
+      "text": "Olhe nos olhos, ouça ativamente e respeite os silêncios, porque até o silêncio tem seu papel na comunicação. Repita, resuma e conecte as ideias para que o tentante se sinta compreendido.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 20.6
+      "estimated_seconds": 14.9
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Quer saber o que não fazer durante uma abordagem?",
+      "text": "Mais que isso, ajude-o a encontrar suas próprias soluções, dando espaço para perguntas e valorizando suas ideias. Essa abordagem cria um canal aberto de confiança e faz toda a diferença. Quer saber o que não fazer durante uma abordagem?",
       "intent": "question",
-      "rate_percent": -1,
+      "rate_percent": -2,
       "pitch_hz": 0,
       "pause_after_ms": 540,
-      "estimated_seconds": 4.3
+      "estimated_seconds": 18.7
     },
     {
       "speaker": "INSTRUTOR",

@@ -34,201 +34,84 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Daniel, você me contou que gosta de cozinhar para os seus amigos. É uma coisa especial que faz parte de quem você é.",
-      "intent": "explanation",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 11.0
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Me conta, quando foi a última vez que você fez isso?",
+      "text": "Daniel, você me contou que gosta de cozinhar para os seus amigos. É uma coisa especial que faz parte de quem você é. Me conta, quando foi a última vez que você fez isso?",
       "intent": "question",
       "rate_percent": -2,
       "pitch_hz": 0,
       "pause_after_ms": 540,
-      "estimated_seconds": 5.3
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Na semana passada, fiz um jantar, mas agora nada disso importa.",
-      "intent": "explanation",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 5.3
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Entendo que parece assim agora, mas e se fosse organizar outro jantar no próximo sábado, qual prato você acha que seus amigos iriam gostar?",
-      "intent": "question",
-      "rate_percent": -2,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 11.5
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Talvez, lasanha. Eles gostam bastante. Lasanha soa ótimo.",
-      "intent": "explanation",
-      "rate_percent": -2,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 3.8
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Você costuma fazer tudo sozinho ou alguém te ajuda com os preparativos?",
-      "intent": "question",
-      "rate_percent": -2,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 5.8
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Eu faço sozinho, mas eles sempre trazem sobremesas.",
-      "intent": "explanation",
-      "rate_percent": -2,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 3.8
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "E depois que a lasanha está pronta, você organiza a mesa ou prefere algo mais descontraído?",
-      "intent": "question",
-      "rate_percent": -2,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 7.7
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Geralmente colocamos a comida na bancada e cada um se serve. Parece uma atmosfera muito acolhedora.",
-      "intent": "explanation",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 7.7
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Depois do jantar, o que vocês costumam fazer?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 3.8
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Jogam algo?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 1.0
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Assistem filmes?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 1.0
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Conversamos, só ficamos juntos. Isso soa tão bom.",
-      "intent": "explanation",
-      "rate_percent": -2,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 3.8
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Se fosse planejar esse jantar agora, o que acha que precisaria comprar para garantir que tudo saia perfeito?",
-      "intent": "question",
-      "rate_percent": -2,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 8.6
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Alguns ingredientes, queijo, massa.",
-      "intent": "explanation",
-      "rate_percent": -2,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 1.9
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Então, Daniel, se você estivesse no supermercado escolhendo os queijos, como decidiria entre os tipos?",
-      "intent": "question",
-      "rate_percent": -2,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 7.2
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Sempre escolha os que derretem melhor. Você parece saber exatamente o que faz, depois que todo mundo vai embora, como você sente.",
-      "intent": "explanation",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 10.6
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Consegue descansar ou ainda fica pensando na noite?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 3.8
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Fico feliz. É o único momento em que me sinto bem. Esses momentos mostram como você cria algo especial para as pessoas ao seu redor.",
-      "intent": "explanation",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 12.0
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Já pensou que pode fazer isso de novo no próximo sábado?",
-      "intent": "question",
-      "rate_percent": -2,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 5.3
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Imaginar como seria montar esse jantar pode ser um primeiro passo. Porque essa técnica funciona. A ponte para o futuro ajuda o tentante a imaginar eventos futuros, incutindo dúvidas sobre a ausência de perspectivas.",
-      "intent": "enumeration",
-      "rate_percent": -4,
-      "pitch_hz": -1,
-      "pause_after_ms": 360,
       "estimated_seconds": 16.3
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Com isso, ele passa a visualizar um amanhã mais positivo, fortalecendo fatores de proteção como hobbies e conexões sociais. No próximo episódio, vamos falar sobre a parafrase resumida e como ela ajuda a reafirmar o vínculo e a compreensão durante o diálogo. Não perca.",
+      "text": "Na semana passada, fiz um jantar, mas agora nada disso importa. Entendo que parece assim agora, mas e se fosse organizar outro jantar no próximo sábado, qual prato você acha que seus amigos iriam gostar? Talvez, lasanha. Eles gostam bastante.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 19.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Lasanha soa ótimo. Você costuma fazer tudo sozinho ou alguém te ajuda com os preparativos? Eu faço sozinho, mas eles sempre trazem sobremesas. E depois que a lasanha está pronta, você organiza a mesa ou prefere algo mais descontraído?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 18.7
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Geralmente colocamos a comida na bancada e cada um se serve. Parece uma atmosfera muito acolhedora. Depois do jantar, o que vocês costumam fazer? Jogam algo? Assistem filmes? Conversamos, só ficamos juntos. Isso soa tão bom.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Se fosse planejar esse jantar agora, o que acha que precisaria comprar para garantir que tudo saia perfeito? Alguns ingredientes, queijo, massa. Então, Daniel, se você estivesse no supermercado escolhendo os queijos, como decidiria entre os tipos?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 17.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Sempre escolha os que derretem melhor. Você parece saber exatamente o que faz, depois que todo mundo vai embora, como você sente. Consegue descansar ou ainda fica pensando na noite? Fico feliz. É o único momento em que me sinto bem.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 19.7
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Esses momentos mostram como você cria algo especial para as pessoas ao seu redor. Já pensou que pode fazer isso de novo no próximo sábado? Imaginar como seria montar esse jantar pode ser um primeiro passo. Porque essa técnica funciona.",
+      "intent": "enumeration",
+      "rate_percent": -4,
+      "pitch_hz": -1,
+      "pause_after_ms": 360,
+      "estimated_seconds": 19.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "A ponte para o futuro ajuda o tentante a imaginar eventos futuros, incutindo dúvidas sobre a ausência de perspectivas. Com isso, ele passa a visualizar um amanhã mais positivo, fortalecendo fatores de proteção como hobbies e conexões sociais.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 18.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "No próximo episódio, vamos falar sobre a parafrase resumida e como ela ajuda a reafirmar o vínculo e a compreensão durante o diálogo. Não perca.",
       "intent": "conclusion",
       "rate_percent": -5,
       "pitch_hz": -2,
       "pause_after_ms": 0,
-      "estimated_seconds": 21.1
+      "estimated_seconds": 12.0
     }
   ]
 }

@@ -25,57 +25,12 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Começa por necessidades básicas e checagens honestas.",
-      "intent": "explanation",
-      "rate_percent": -2,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 3.4
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Como está sua atenção?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 1.9
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Seu nível de cansaço?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 1.9
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Sua irritabilidade?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 1.0
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Sua capacidade de ouvir e tomar decisões?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 3.4
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Quando possível, proteja sono, descanso, alimentação, hidratação, recuperação entre períodos de alta carga e vínculos fora do trabalho.",
+      "text": "Começa por necessidades básicas e checagens honestas. Como está sua atenção? Seu nível de cansaço? Sua irritabilidade? Sua capacidade de ouvir e tomar decisões? Quando possível, proteja sono, descanso, alimentação, hidratação, recuperação entre períodos de alta carga e vínculos fora do trabalho.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 620,
-      "estimated_seconds": 8.6
+      "estimated_seconds": 20.2
     },
     {
       "speaker": "PROFISSIONAL",
@@ -133,21 +88,12 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Cuidar de si protege você, seus colegas e o serviço.",
-      "intent": "explanation",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 4.8
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Microchecagem: minhas condições atuais permitem continuar trabalhando e oferecendo apoio com presença, clareza e equilíbrio ou eu também preciso reorganizar minha carga e buscar suporte?",
+      "text": "Cuidar de si protege você, seus colegas e o serviço. Microchecagem: minhas condições atuais permitem continuar trabalhando e oferecendo apoio com presença, clareza e equilíbrio ou eu também preciso reorganizar minha carga e buscar suporte?",
       "intent": "question",
       "rate_percent": -2,
       "pitch_hz": 0,
       "pause_after_ms": 0,
-      "estimated_seconds": 12.0
+      "estimated_seconds": 16.8
     }
   ]
 }

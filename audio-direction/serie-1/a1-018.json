@@ -25,30 +25,39 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Evite olhar diretamente nos olhos dele nos primeiros momentos, pois isso pode ser percebido como uma afronta. Posicione-se no mesmo nível ou abaixo, demonstrando respeito e minimizando qualquer percepção de superioridade. Se o tentante gritar, fale mais baixo. Esse tom ajuda a diminuir a tensão.",
+      "text": "Evite olhar diretamente nos olhos dele nos primeiros momentos, pois isso pode ser percebido como uma afronta. Posicione-se no mesmo nível ou abaixo, demonstrando respeito e minimizando qualquer percepção de superioridade. Se o tentante gritar, fale mais baixo.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 21.6
+      "estimated_seconds": 18.2
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Evite palavras negativas como não pode ou não vai, e por mais desafiador que seja, não reaja a provocações ou xingamentos. Nunca desafie o tentante ou ceda a exigências que comprometam o protocolo. E claro, não imponha ultimatos de tempo, isso só aumenta a pressão.",
+      "text": "Esse tom ajuda a diminuir a tensão. Evite palavras negativas como não pode ou não vai, e por mais desafiador que seja, não reaja a provocações ou xingamentos. Nunca desafie o tentante ou ceda a exigências que comprometam o protocolo.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 21.6
+      "estimated_seconds": 19.2
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Com essas estratégias, você mantém o controle da situação, ajuda a reduzir o conflito e cria uma chance maior de conduzir o diálogo de forma produtiva. No próximo episódio, vamos abordar as especificidades para tentantes de perfil psicótico. Não perca!",
+      "text": "E claro, não imponha ultimatos de tempo, isso só aumenta a pressão. Com essas estratégias, você mantém o controle da situação, ajuda a reduzir o conflito e cria uma chance maior de conduzir o diálogo de forma produtiva.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 18.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "No próximo episódio, vamos abordar as especificidades para tentantes de perfil psicótico. Não perca!",
       "intent": "conclusion",
       "rate_percent": -5,
       "pitch_hz": -2,
       "pause_after_ms": 0,
-      "estimated_seconds": 19.2
+      "estimated_seconds": 6.7
     }
   ]
 }

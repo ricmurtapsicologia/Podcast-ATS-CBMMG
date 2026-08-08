@@ -16,57 +16,12 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "As perguntas simples ajudam a conhecer o cotidiano do tentante de forma respeitosa e acolhedora.",
-      "intent": "explanation",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 7.2
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Questione com naturalidade, qual é o seu nome?",
+      "text": "As perguntas simples ajudam a conhecer o cotidiano do tentante de forma respeitosa e acolhedora. Questione com naturalidade, qual é o seu nome? Você tem filhos? Qual o nome deles? Com quem você mora? Ou até o que você gosta de fazer?",
       "intent": "question",
-      "rate_percent": -1,
+      "rate_percent": -2,
       "pitch_hz": 0,
       "pause_after_ms": 540,
-      "estimated_seconds": 3.8
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Você tem filhos?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 1.4
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Qual o nome deles?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 1.9
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Com quem você mora?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 1.9
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Ou até o que você gosta de fazer?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 3.8
+      "estimated_seconds": 20.2
     },
     {
       "speaker": "INSTRUTOR",

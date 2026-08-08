@@ -16,48 +16,48 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Então, atenção aos pontos que precisam ser evitados. Primeiro, não interrompa o tentante ou complete suas frases. Ele precisa do espaço para se expressar no tempo dele. E nada de mentir, prometer algo impossível ou tentar seduzir. A sinceridade é a base para construir confiança.",
+      "text": "Então, atenção aos pontos que precisam ser evitados. Primeiro, não interrompa o tentante ou complete suas frases. Ele precisa do espaço para se expressar no tempo dele. E nada de mentir, prometer algo impossível ou tentar seduzir.",
       "intent": "transition",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 390,
-      "estimated_seconds": 21.6
+      "estimated_seconds": 17.8
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Evite usar apelidos ou palavras que possam soar depreciativas. E claro, mantenha a calma. Ser ríspido ou agressivo só aumenta a tensão. Outro ponto, nunca ria, julgue ou ameace. Isso demonstra desprezo e quebra completamente o vínculo emocional.",
+      "text": "A sinceridade é a base para construir confiança. Evite usar apelidos ou palavras que possam soar depreciativas. E claro, mantenha a calma. Ser ríspido ou agressivo só aumenta a tensão. Outro ponto, nunca ria, julgue ou ameace.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 18.2
+      "estimated_seconds": 17.8
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Lembre-se também de não dar conselhos ou opinar sobre o que ele deveria fazer. Estamos ali para ouvir, não para julgar. Antecipar ações táticas sem necessidade pode trazer ainda mais medo para a situação. Então, haja com cautela.",
-      "intent": "synthesis",
-      "rate_percent": -5,
-      "pitch_hz": -2,
-      "pause_after_ms": 480,
-      "estimated_seconds": 18.2
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "E por fim, nada de levar familiares ao local sem orientação ou comemorar na frente do tentante. Não ceda pedidos que violem o protocolo, como dar cigarros, celulares ou comida. Mesmo que pareça uma atitude empática, pode complicar ainda mais as coisas. Cada atitude conta.",
+      "text": "Isso demonstra desprezo e quebra completamente o vínculo emocional. Lembre-se também de não dar conselhos ou opinar sobre o que ele deveria fazer. Estamos ali para ouvir, não para julgar.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 21.6
+      "estimated_seconds": 14.4
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "No próximo episódio, vamos falar sobre a aproximação segura na abordagem técnica. Não perca!",
+      "text": "Antecipar ações táticas sem necessidade pode trazer ainda mais medo para a situação. Então, haja com cautela. E por fim, nada de levar familiares ao local sem orientação ou comemorar na frente do tentante.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 16.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Não ceda pedidos que violem o protocolo, como dar cigarros, celulares ou comida. Mesmo que pareça uma atitude empática, pode complicar ainda mais as coisas. Cada atitude conta. No próximo episódio, vamos falar sobre a aproximação segura na abordagem técnica. Não perca!",
       "intent": "conclusion",
       "rate_percent": -5,
       "pitch_hz": -2,
       "pause_after_ms": 0,
-      "estimated_seconds": 6.7
+      "estimated_seconds": 20.2
     }
   ]
 }

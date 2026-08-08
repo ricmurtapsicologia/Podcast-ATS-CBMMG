@@ -196,12 +196,21 @@
     },
     {
       "speaker": "PROFISSIONAL",
-      "text": "Julia, sua história é muito importante e, com certeza, inspira outras pessoas que passam por algo semelhante. No próximo bloco vamos receber a Dra. Sara Umeida, psiquiatra especialista em saúde mental, para explicar o que são os transtornos de personalidade e como eles podem ser tratados.",
+      "text": "Julia, sua história é muito importante e, com certeza, inspira outras pessoas que passam por algo semelhante. No próximo bloco vamos receber a Dra.",
       "intent": "explanation",
-      "rate_percent": -2,
+      "rate_percent": -1,
       "pitch_hz": 1,
       "pause_after_ms": 340,
-      "estimated_seconds": 22.1
+      "estimated_seconds": 11.5
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Sara Umeida, psiquiatra especialista em saúde mental, para explicar o que são os transtornos de personalidade e como eles podem ser tratados.",
+      "intent": "explanation",
+      "rate_percent": -1,
+      "pitch_hz": 1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 10.6
     },
     {
       "speaker": "PROFISSIONAL",

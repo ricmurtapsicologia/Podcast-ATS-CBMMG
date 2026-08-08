@@ -25,12 +25,21 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Depende da necessidade. Pode ser uma pausa, alimentação, descanso disponível, reorganização de tarefa, conversa com uma liderança de confiança, contato com alguém próximo, serviço de saúde, apoio psicossocial ou atendimento profissional. O ponto central é reduzir a distância entre a necessidade e o recurso.",
+      "text": "Depende da necessidade. Pode ser uma pausa, alimentação, descanso disponível, reorganização de tarefa, conversa com uma liderança de confiança, contato com alguém próximo, serviço de saúde, apoio psicossocial ou atendimento profissional.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 14.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "O ponto central é reduzir a distância entre a necessidade e o recurso.",
+      "intent": "synthesis",
+      "rate_percent": -5,
+      "pitch_hz": -2,
       "pause_after_ms": 620,
-      "estimated_seconds": 21.1
+      "estimated_seconds": 6.2
     },
     {
       "speaker": "PROFISSIONAL",
@@ -79,21 +88,12 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Conectar não é carregar o colega nas costas. É ajudá-lo a recuperar acesso a escolhas, apoio e recursos.",
-      "intent": "explanation",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 8.6
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Microchecagem: esta conversa terminou com um próximo passo claro, possível e compreendido ou apenas com boas intenções?",
+      "text": "Conectar não é carregar o colega nas costas. É ajudá-lo a recuperar acesso a escolhas, apoio e recursos. Microchecagem: esta conversa terminou com um próximo passo claro, possível e compreendido ou apenas com boas intenções?",
       "intent": "question",
       "rate_percent": -2,
       "pitch_hz": 0,
       "pause_after_ms": 0,
-      "estimated_seconds": 8.2
+      "estimated_seconds": 16.8
     }
   ]
 }

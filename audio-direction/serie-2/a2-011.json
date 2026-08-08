@@ -16,21 +16,21 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Até aqui discutimos os fatores que antecedem uma tentativa. Agora vamos ao momento em que o pensamento suicida se transforma em ação, influenciado por alterações emocionais e cerebrais que comprometem a reflexão. O comportamento suicida surge da interação entre vulnerabilidades biológicas, psíquicas e sociais.",
+      "text": "Até aqui discutimos os fatores que antecedem uma tentativa. Agora vamos ao momento em que o pensamento suicida se transforma em ação, influenciado por alterações emocionais e cerebrais que comprometem a reflexão.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 21.1
+      "estimated_seconds": 15.4
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Transtornos mentais, isolamento e traumas criam um terreno de risco, enquanto um fator precipitante, como uma perda ou conflito, desencadei uma desregulação emocional.",
+      "text": "O comportamento suicida surge da interação entre vulnerabilidades biológicas, psíquicas e sociais. Transtornos mentais, isolamento e traumas criam um terreno de risco, enquanto um fator precipitante, como uma perda ou conflito, desencadei uma desregulação emocional.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 11.0
+      "estimated_seconds": 16.8
     },
     {
       "speaker": "INSTRUTOR",

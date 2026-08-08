@@ -34,282 +34,75 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Sou bombeira militar e estou aqui para ouvir você.",
-      "intent": "explanation",
-      "rate_percent": -2,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 4.3
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Como posso te chamar?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 1.9
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Não quero falar com ninguém. Entendo. Parece que você está muito irritada.",
+      "text": "Sou bombeira militar e estou aqui para ouvir você. Como posso te chamar? Não quero falar com ninguém. Entendo. Parece que você está muito irritada. Posso ficar aqui para garantir que você não esteja sozinha? Faz o que quiser.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 5.8
+      "estimated_seconds": 18.7
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Posso ficar aqui para garantir que você não esteja sozinha?",
+      "text": "Ninguém se importa mesmo. Isso soa muito doloroso. Me conta, tem alguém na sua vida que você sente que já se importou com você? Não. Nunca se importaram. Você mora com alguém? Ou está morando sozinha?",
       "intent": "question",
       "rate_percent": -2,
       "pitch_hz": 0,
       "pause_after_ms": 540,
-      "estimated_seconds": 4.8
+      "estimated_seconds": 17.3
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Faz o que quiser. Ninguém se importa mesmo. Isso soa muito doloroso.",
+      "text": "Moro com minha irmã, mas ela só grita comigo. Entendo como isso pode ser difícil. E fora da sua casa, tem alguém em quem você confia ou com quem gosta de conversar? Não tenho ninguém.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 5.8
+      "estimated_seconds": 16.8
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Me conta, tem alguém na sua vida que você sente que já se importou com você?",
+      "text": "Às vezes é difícil encontrar alguém para ouvir. Antes disso, o que costumava te ajudar a relaxar quando as coisas ficavam difíceis? Eu fazia academia, mas parei. Fazer exercícios ajudava você? Já pensou em voltar ou sente que agora não faz sentido?",
       "intent": "question",
       "rate_percent": -2,
       "pitch_hz": 0,
       "pause_after_ms": 540,
-      "estimated_seconds": 7.7
+      "estimated_seconds": 20.2
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Não. Nunca se importaram.",
-      "intent": "explanation",
-      "rate_percent": -2,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 1.9
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Você mora com alguém?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 1.9
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Ou está morando sozinha?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 1.9
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Moro com minha irmã, mas ela só grita comigo. Entendo como isso pode ser difícil.",
+      "text": "Não sei. Não consigo pensar nisso agora. Entendi. Você trabalha ou estuda? Como era a sua rotina antes de chegar até aqui? É sustentante. Trabalho, mas meu chefe é insuportável. Isso parece bem frustrante.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 7.2
+      "estimated_seconds": 16.3
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "E fora da sua casa, tem alguém em quem você confia ou com quem gosta de conversar?",
-      "intent": "question",
-      "rate_percent": -2,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 8.2
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Não tenho ninguém. Às vezes é difícil encontrar alguém para ouvir.",
+      "text": "Você sente que as coisas no trabalho têm contribuído para o que está sentindo agora? Com certeza. E fora isso, tem algo que você gosta de fazer, como ouvir música ou ver filmes? Eu ouço música às vezes, mas não ajuda muito.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 5.3
+      "estimated_seconds": 20.2
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Antes disso, o que costumava te ajudar a relaxar quando as coisas ficavam difíceis?",
-      "intent": "question",
-      "rate_percent": -2,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 6.7
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Eu fazia academia, mas parei.",
-      "intent": "explanation",
-      "rate_percent": -2,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 2.4
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Fazer exercícios ajudava você?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 1.9
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Já pensou em voltar ou sente que agora não faz sentido?",
-      "intent": "question",
-      "rate_percent": -2,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 5.3
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Não sei. Não consigo pensar nisso agora. Entendi.",
-      "intent": "explanation",
-      "rate_percent": -2,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 3.8
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Você trabalha ou estuda?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 1.9
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Como era a sua rotina antes de chegar até aqui?",
-      "intent": "question",
-      "rate_percent": -2,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 4.8
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "É sustentante. Trabalho, mas meu chefe é insuportável. Isso parece bem frustrante.",
+      "text": "Qual estilo de música você gosta? Tem alguma banda ou artista que te marcou? Eu ouvia muito antes. Entendi. Quando você pensa em momentos bons que já viveu, consegue lembrar de algo específico que te trouxe felicidade? Não.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 5.8
+      "estimated_seconds": 18.2
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Você sente que as coisas no trabalho têm contribuído para o que está sentindo agora?",
+      "text": "Não lembro de nada agora. Tudo bem. E sobre o que você sente que precisa mais agora, além de alguém para te ouvir? Por que essas perguntas funcionam?",
       "intent": "question",
       "rate_percent": -2,
       "pitch_hz": 0,
       "pause_after_ms": 540,
-      "estimated_seconds": 7.2
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Com certeza.",
-      "intent": "explanation",
-      "rate_percent": -2,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 1.0
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "E fora isso, tem algo que você gosta de fazer, como ouvir música ou ver filmes?",
-      "intent": "question",
-      "rate_percent": -2,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 7.7
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Eu ouço música às vezes, mas não ajuda muito.",
-      "intent": "explanation",
-      "rate_percent": -2,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 4.3
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Qual estilo de música você gosta?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 2.9
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Tem alguma banda ou artista que te marcou?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 3.8
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Eu ouvia muito antes. Entendi.",
-      "intent": "explanation",
-      "rate_percent": -2,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 2.4
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Quando você pensa em momentos bons que já viveu, consegue lembrar de algo específico que te trouxe felicidade?",
-      "intent": "question",
-      "rate_percent": -2,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 8.6
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Não. Não lembro de nada agora. Tudo bem.",
-      "intent": "explanation",
-      "rate_percent": -2,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 3.8
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "E sobre o que você sente que precisa mais agora, além de alguém para te ouvir?",
-      "intent": "question",
-      "rate_percent": -2,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 7.7
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Por que essas perguntas funcionam?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 2.4
+      "estimated_seconds": 13.4
     },
     {
       "speaker": "INSTRUTOR",

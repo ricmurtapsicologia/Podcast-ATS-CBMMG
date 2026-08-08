@@ -16,102 +16,39 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Oi, eu sou Guilherme, bombeiro militar. Estou aqui pra te ouvir.",
-      "intent": "explanation",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 5.3
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Qual é o seu nome?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 2.4
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Fernanda. Mas isso não importa. Nada mais importa. Importa, sim, Fernanda.",
-      "intent": "explanation",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 5.3
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "O que você está sentindo agora?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 2.9
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Posso te ajudar de alguma forma?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 2.9
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Eu não sei. Minha vida está uma bagunça. Minha mãe já desistiu de mim. Eu só trago problemas pra ela.",
-      "intent": "explanation",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 9.6
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Entendo que você se sinta assim?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 2.9
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Sua mãe mora com você?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 2.4
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Sim, mas ela está cansada. Ela tentou me ajudar tantas vezes, mas eu só estraguei tudo. Sou um desastre. Parece que você está carregando muita culpa, Fernanda.",
-      "intent": "explanation",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 13.0
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Desde quando você sente que está assim?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 3.4
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Desde que comecei com essa porcaria, cocaína, faz uns seis meses. Eu sempre digo que vai ser a última vez, mas nunca consigo parar. Isso deve ser muito difícil. E hoje, antes de vir pra cá, você usou novamente. Sim, usei muito.",
+      "text": "Oi, eu sou Guilherme, bombeiro militar. Estou aqui pra te ouvir. Qual é o seu nome? Fernanda. Mas isso não importa. Nada mais importa. Importa, sim, Fernanda. O que você está sentindo agora? Posso te ajudar de alguma forma? Eu não sei.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
       "estimated_seconds": 20.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Minha vida está uma bagunça. Minha mãe já desistiu de mim. Eu só trago problemas pra ela. Entendo que você se sinta assim? Sua mãe mora com você? Sim, mas ela está cansada.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 15.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Ela tentou me ajudar tantas vezes, mas eu só estraguei tudo. Sou um desastre. Parece que você está carregando muita culpa, Fernanda. Desde quando você sente que está assim? Desde que comecei com essa porcaria, cocaína, faz uns seis meses.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 19.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Eu sempre digo que vai ser a última vez, mas nunca consigo parar. Isso deve ser muito difícil. E hoje, antes de vir pra cá, você usou novamente. Sim, usei muito.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 14.9
     },
     {
       "speaker": "INSTRUTOR",
@@ -124,66 +61,30 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Agora só fico em casa e nem minha mãe quer olhar pra mim.",
+      "text": "Agora só fico em casa e nem minha mãe quer olhar pra mim. E antes de começar a usar a droga, o que te fazia bem? Tinha algo que você gostava de fazer.",
       "intent": "transition",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 390,
-      "estimated_seconds": 6.2
+      "estimated_seconds": 15.8
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "E antes de começar a usar a droga, o que te fazia bem?",
+      "text": "Eu gostava de ouvir música, sair com as minhas amigas, mas agora ninguém quer saber de mim. Eu destruí tudo. Sua mãe ainda se preocupa com você, não é? Mesmo com tudo isso? Ela diz que sim, mas eu só machuco ela.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 20.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Eu não consigo mais, Guilherme. Eu queria desaparecer. Eu entendo que você esteja se sentindo sobrecarregada agora, Fernanda. Mas você não está sozinha. Vamos sair daqui juntos e continuar essa conversa no lugar mais tranquilo. Pode ser?",
       "intent": "question",
       "rate_percent": -2,
       "pitch_hz": 0,
       "pause_after_ms": 540,
-      "estimated_seconds": 6.2
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Tinha algo que você gostava de fazer. Eu gostava de ouvir música, sair com as minhas amigas, mas agora ninguém quer saber de mim. Eu destruí tudo.",
-      "intent": "explanation",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 13.0
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Sua mãe ainda se preocupa com você, não é?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 4.3
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Mesmo com tudo isso?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 1.9
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Ela diz que sim, mas eu só machuco ela. Eu não consigo mais, Guilherme. Eu queria desaparecer. Eu entendo que você esteja se sentindo sobrecarregada agora, Fernanda. Mas você não está sozinha. Vamos sair daqui juntos e continuar essa conversa no lugar mais tranquilo.",
-      "intent": "explanation",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 21.1
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Pode ser?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 1.0
+      "estimated_seconds": 17.8
     },
     {
       "speaker": "INSTRUTOR",

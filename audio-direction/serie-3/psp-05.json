@@ -7,12 +7,21 @@
   "turns": [
     {
       "speaker": "INSTRUTOR",
-      "text": "Depois de perceber uma mudança e preparar o momento, vem a aproximação. O objetivo é abrir uma porta, não colocar o colega contra a parede. A maneira como você inicia a conversa pode determinar se ele sente acolhimento ou necessidade de se defender.",
+      "text": "Depois de perceber uma mudança e preparar o momento, vem a aproximação. O objetivo é abrir uma porta, não colocar o colega contra a parede.",
       "intent": "opening",
       "rate_percent": -3,
       "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 12.0
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "A maneira como você inicia a conversa pode determinar se ele sente acolhimento ou necessidade de se defender.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
       "pause_after_ms": 620,
-      "estimated_seconds": 20.6
+      "estimated_seconds": 8.6
     },
     {
       "speaker": "PROFISSIONAL",
@@ -25,12 +34,21 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Use uma observação concreta, um tom simples e uma pergunta aberta. Por exemplo: “Percebi que você está mais quieto e sobrecarregado nesses últimos dias. Como você está?” Ou: “Notei que a semana foi pesada para você. Quer conversar um pouco?” A frase não precisa ser perfeita. Precisa ser respeitosa, verdadeira e sem plateia.",
+      "text": "Use uma observação concreta, um tom simples e uma pergunta aberta. Por exemplo: “Percebi que você está mais quieto e sobrecarregado nesses últimos dias. Como você está?” Ou: “Notei que a semana foi pesada para você.",
       "intent": "explanation",
-      "rate_percent": -4,
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Quer conversar um pouco?” A frase não precisa ser perfeita. Precisa ser respeitosa, verdadeira e sem plateia.",
+      "intent": "explanation",
+      "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 620,
-      "estimated_seconds": 25.4
+      "estimated_seconds": 8.2
     },
     {
       "speaker": "PROFISSIONAL",
@@ -88,21 +106,12 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Aproxime-se com curiosidade respeitosa: eu percebi algo, posso estar errado e quero compreender.",
-      "intent": "explanation",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 6.2
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Microchecagem final: a forma como estou falando permite que o colega escolha quanto quer dizer ou faz com que ele se sinta obrigado a se justificar?",
+      "text": "Aproxime-se com curiosidade respeitosa: eu percebi algo, posso estar errado e quero compreender. Microchecagem final: a forma como estou falando permite que o colega escolha quanto quer dizer ou faz com que ele se sinta obrigado a se justificar?",
       "intent": "question",
       "rate_percent": -2,
       "pitch_hz": 0,
       "pause_after_ms": 0,
-      "estimated_seconds": 12.5
+      "estimated_seconds": 18.7
     }
   ]
 }

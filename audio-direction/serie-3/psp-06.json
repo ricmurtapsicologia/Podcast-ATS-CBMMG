@@ -61,12 +61,21 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Uma ferramenta simples é resumir: “Então, pelo que entendi, você está muito sobrecarregado, dormindo pouco e o que mais preocupa agora é conseguir atravessar essa sequência de plantões. É isso?” A síntese ajuda a pessoa a se sentir compreendida e permite corrigir interpretações.",
+      "text": "Uma ferramenta simples é resumir: “Então, pelo que entendi, você está muito sobrecarregado, dormindo pouco e o que mais preocupa agora é conseguir atravessar essa sequência de plantões.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 13.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "É isso?” A síntese ajuda a pessoa a se sentir compreendida e permite corrigir interpretações.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 620,
-      "estimated_seconds": 20.6
+      "estimated_seconds": 7.2
     },
     {
       "speaker": "PROFISSIONAL",
@@ -88,21 +97,12 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Lembre também dos limites de privacidade e proteção. Se surgir necessidade maior de cuidado, facilite o acesso ao recurso adequado.",
-      "intent": "synthesis",
-      "rate_percent": -5,
-      "pitch_hz": -2,
-      "pause_after_ms": 480,
-      "estimated_seconds": 9.6
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Microchecagem: ao terminar, consigo dizer qual é a principal necessidade desse colega sem ter exigido que ele conte mais do que queria?",
+      "text": "Lembre também dos limites de privacidade e proteção. Se surgir necessidade maior de cuidado, facilite o acesso ao recurso adequado. Microchecagem: ao terminar, consigo dizer qual é a principal necessidade desse colega sem ter exigido que ele conte mais do que queria?",
       "intent": "question",
       "rate_percent": -2,
       "pitch_hz": 0,
       "pause_after_ms": 0,
-      "estimated_seconds": 10.6
+      "estimated_seconds": 20.2
     }
   ]
 }

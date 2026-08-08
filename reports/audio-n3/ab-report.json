@@ -22,17 +22,17 @@
       "voices": [
         "pt-BR-AntonioNeural"
       ],
-      "segments": 1,
-      "mean_estimated_segment_seconds": 68.2,
+      "segments": 4,
+      "mean_estimated_segment_seconds": 17.07,
       "canonical_sha256": "3c8ed47eafcf247dddcba738e622bfa42ac534a723ccc4395ad58cb4780611bf",
-      "generated_at_utc": "2026-08-08T19:13:45.020294+00:00",
+      "generated_at_utc": "2026-08-08T19:24:23.647704+00:00",
       "duration_seconds": 51.88,
       "sample_rate": 44100,
       "channels": 1,
       "bitrate": 128071,
       "lufs_integrated": -18.6,
       "true_peak_dbfs": -1.9,
-      "long_silence_ratio": 0.0545,
+      "long_silence_ratio": 0.0,
       "status": "fail",
       "issues": [
         "loudness"
@@ -47,17 +47,17 @@
       "voices": [
         "pt-BR-AntonioNeural"
       ],
-      "segments": 1,
-      "mean_estimated_segment_seconds": 68.2,
+      "segments": 4,
+      "mean_estimated_segment_seconds": 17.07,
       "canonical_sha256": "3c8ed47eafcf247dddcba738e622bfa42ac534a723ccc4395ad58cb4780611bf",
-      "generated_at_utc": "2026-08-08T19:13:53.750733+00:00",
-      "duration_seconds": 49.92,
+      "generated_at_utc": "2026-08-08T19:24:40.627146+00:00",
+      "duration_seconds": 52.27,
       "sample_rate": 44100,
       "channels": 1,
-      "bitrate": 128074,
+      "bitrate": 128070,
       "lufs_integrated": -16.9,
       "true_peak_dbfs": -1.9,
-      "long_silence_ratio": 0.0228,
+      "long_silence_ratio": 0.0,
       "status": "pass",
       "issues": []
     },
@@ -70,21 +70,20 @@
       "voices": [
         "pt-BR-AntonioNeural"
       ],
-      "segments": 34,
-      "mean_estimated_segment_seconds": 6.37,
+      "segments": 13,
+      "mean_estimated_segment_seconds": 16.69,
       "canonical_sha256": "be730af5e877014e723dc78fb77e227a596aba741432a219e38e6f3af8941fda",
-      "generated_at_utc": "2026-08-08T19:14:20.209810+00:00",
+      "generated_at_utc": "2026-08-08T19:25:35.268927+00:00",
       "duration_seconds": 210.96,
       "sample_rate": 44100,
       "channels": 1,
       "bitrate": 128017,
       "lufs_integrated": -18.9,
       "true_peak_dbfs": -1.6,
-      "long_silence_ratio": 0.1243,
+      "long_silence_ratio": 0.0,
       "status": "fail",
       "issues": [
-        "loudness",
-        "silencio_excessivo"
+        "loudness"
       ]
     },
     {
@@ -96,21 +95,19 @@
       "voices": [
         "pt-BR-AntonioNeural"
       ],
-      "segments": 34,
-      "mean_estimated_segment_seconds": 6.37,
+      "segments": 13,
+      "mean_estimated_segment_seconds": 16.69,
       "canonical_sha256": "be730af5e877014e723dc78fb77e227a596aba741432a219e38e6f3af8941fda",
-      "generated_at_utc": "2026-08-08T19:15:01.536043+00:00",
-      "duration_seconds": 225.49,
+      "generated_at_utc": "2026-08-08T19:26:42.445204+00:00",
+      "duration_seconds": 213.55,
       "sample_rate": 44100,
       "channels": 1,
-      "bitrate": 128016,
-      "lufs_integrated": -16.6,
+      "bitrate": 128017,
+      "lufs_integrated": -16.7,
       "true_peak_dbfs": -1.9,
-      "long_silence_ratio": 0.2519,
-      "status": "fail",
-      "issues": [
-        "silencio_excessivo"
-      ]
+      "long_silence_ratio": 0.0,
+      "status": "pass",
+      "issues": []
     },
     {
       "series": "serie-1",
@@ -121,21 +118,20 @@
       "voices": [
         "pt-BR-AntonioNeural"
       ],
-      "segments": 33,
-      "mean_estimated_segment_seconds": 9.19,
+      "segments": 17,
+      "mean_estimated_segment_seconds": 17.84,
       "canonical_sha256": "152869b24471f2296a3ae819427438d31ebc978a42fc01d89eed6ffbb838a973",
-      "generated_at_utc": "2026-08-08T19:15:38.812958+00:00",
+      "generated_at_utc": "2026-08-08T19:27:59.206140+00:00",
       "duration_seconds": 297.43,
       "sample_rate": 44100,
       "channels": 1,
       "bitrate": 128012,
       "lufs_integrated": -18.8,
       "true_peak_dbfs": -1.6,
-      "long_silence_ratio": 0.1421,
+      "long_silence_ratio": 0.0,
       "status": "fail",
       "issues": [
-        "loudness",
-        "silencio_excessivo"
+        "loudness"
       ]
     },
     {
@@ -147,21 +143,19 @@
       "voices": [
         "pt-BR-AntonioNeural"
       ],
-      "segments": 33,
-      "mean_estimated_segment_seconds": 9.19,
+      "segments": 17,
+      "mean_estimated_segment_seconds": 17.84,
       "canonical_sha256": "152869b24471f2296a3ae819427438d31ebc978a42fc01d89eed6ffbb838a973",
-      "generated_at_utc": "2026-08-08T19:16:31.730765+00:00",
-      "duration_seconds": 306.86,
+      "generated_at_utc": "2026-08-08T19:29:32.244807+00:00",
+      "duration_seconds": 297.69,
       "sample_rate": 44100,
       "channels": 1,
       "bitrate": 128012,
       "lufs_integrated": -16.7,
       "true_peak_dbfs": -1.8,
-      "long_silence_ratio": 0.1891,
-      "status": "fail",
-      "issues": [
-        "silencio_excessivo"
-      ]
+      "long_silence_ratio": 0.0,
+      "status": "pass",
+      "issues": []
     },
     {
       "series": "serie-2",
@@ -175,14 +169,14 @@
       "segments": 8,
       "mean_estimated_segment_seconds": 14.58,
       "canonical_sha256": "190e9e09730db48ae8651d98e4e4b2f717c4265915886d4c21e59ae76492059c",
-      "generated_at_utc": "2026-08-08T19:16:47.702469+00:00",
+      "generated_at_utc": "2026-08-08T19:30:05.023731+00:00",
       "duration_seconds": 126.85,
       "sample_rate": 44100,
       "channels": 1,
       "bitrate": 128029,
       "lufs_integrated": -18.9,
       "true_peak_dbfs": -1.6,
-      "long_silence_ratio": 0.0984,
+      "long_silence_ratio": 0.0,
       "status": "fail",
       "issues": [
         "loudness"
@@ -200,14 +194,14 @@
       "segments": 8,
       "mean_estimated_segment_seconds": 14.58,
       "canonical_sha256": "190e9e09730db48ae8651d98e4e4b2f717c4265915886d4c21e59ae76492059c",
-      "generated_at_utc": "2026-08-08T19:17:08.499141+00:00",
-      "duration_seconds": 125.75,
+      "generated_at_utc": "2026-08-08T19:30:43.790075+00:00",
+      "duration_seconds": 125.41,
       "sample_rate": 44100,
       "channels": 1,
       "bitrate": 128029,
       "lufs_integrated": -16.7,
       "true_peak_dbfs": -1.9,
-      "long_silence_ratio": 0.0996,
+      "long_silence_ratio": 0.0,
       "status": "pass",
       "issues": []
     },
@@ -220,21 +214,20 @@
       "voices": [
         "pt-BR-AntonioNeural"
       ],
-      "segments": 22,
-      "mean_estimated_segment_seconds": 8.93,
+      "segments": 11,
+      "mean_estimated_segment_seconds": 17.85,
       "canonical_sha256": "8183bc41c694dd8971de86ed0a27bd0ca38d8e115d36084c6889467044e5a2f5",
-      "generated_at_utc": "2026-08-08T19:17:35.000970+00:00",
+      "generated_at_utc": "2026-08-08T19:31:38.431843+00:00",
       "duration_seconds": 211.15,
       "sample_rate": 44100,
       "channels": 1,
       "bitrate": 128017,
       "lufs_integrated": -18.7,
       "true_peak_dbfs": -1.5,
-      "long_silence_ratio": 0.2039,
+      "long_silence_ratio": 0.0,
       "status": "fail",
       "issues": [
-        "loudness",
-        "silencio_excessivo"
+        "loudness"
       ]
     },
     {
@@ -246,21 +239,19 @@
       "voices": [
         "pt-BR-AntonioNeural"
       ],
-      "segments": 22,
-      "mean_estimated_segment_seconds": 8.93,
+      "segments": 11,
+      "mean_estimated_segment_seconds": 17.85,
       "canonical_sha256": "8183bc41c694dd8971de86ed0a27bd0ca38d8e115d36084c6889467044e5a2f5",
-      "generated_at_utc": "2026-08-08T19:18:11.424790+00:00",
-      "duration_seconds": 209.95,
+      "generated_at_utc": "2026-08-08T19:32:40.303611+00:00",
+      "duration_seconds": 203.28,
       "sample_rate": 44100,
       "channels": 1,
-      "bitrate": 128017,
-      "lufs_integrated": -16.7,
+      "bitrate": 128018,
+      "lufs_integrated": -16.8,
       "true_peak_dbfs": -1.9,
-      "long_silence_ratio": 0.2084,
-      "status": "fail",
-      "issues": [
-        "silencio_excessivo"
-      ]
+      "long_silence_ratio": 0.0,
+      "status": "pass",
+      "issues": []
     },
     {
       "series": "serie-2",
@@ -275,18 +266,17 @@
       "segments": 22,
       "mean_estimated_segment_seconds": 9.95,
       "canonical_sha256": "38f70180e56f2961927367538a5d96a912ef6428876d50b48c362837615704df",
-      "generated_at_utc": "2026-08-08T19:18:38.905225+00:00",
+      "generated_at_utc": "2026-08-08T19:33:37.266115+00:00",
       "duration_seconds": 219.43,
       "sample_rate": 44100,
       "channels": 1,
       "bitrate": 128016,
       "lufs_integrated": -18.1,
       "true_peak_dbfs": -1.9,
-      "long_silence_ratio": 0.1476,
+      "long_silence_ratio": 0.0,
       "status": "fail",
       "issues": [
-        "loudness",
-        "silencio_excessivo"
+        "loudness"
       ]
     },
     {
@@ -302,18 +292,16 @@
       "segments": 22,
       "mean_estimated_segment_seconds": 9.95,
       "canonical_sha256": "38f70180e56f2961927367538a5d96a912ef6428876d50b48c362837615704df",
-      "generated_at_utc": "2026-08-08T19:19:17.099223+00:00",
-      "duration_seconds": 221.78,
+      "generated_at_utc": "2026-08-08T19:34:46.253182+00:00",
+      "duration_seconds": 222.35,
       "sample_rate": 44100,
       "channels": 1,
       "bitrate": 128016,
       "lufs_integrated": -16.2,
       "true_peak_dbfs": -1.8,
-      "long_silence_ratio": 0.1523,
-      "status": "fail",
-      "issues": [
-        "silencio_excessivo"
-      ]
+      "long_silence_ratio": 0.0,
+      "status": "pass",
+      "issues": []
     },
     {
       "series": "serie-3",
@@ -325,21 +313,20 @@
         "pt-BR-AntonioNeural",
         "pt-BR-FranciscaNeural"
       ],
-      "segments": 11,
-      "mean_estimated_segment_seconds": 12.09,
+      "segments": 12,
+      "mean_estimated_segment_seconds": 11.09,
       "canonical_sha256": "7813d65eef1010cfed0d7afc53f0a2512c670095b7bd2acb2563fa45eb242fa5",
-      "generated_at_utc": "2026-08-08T19:19:33.436004+00:00",
+      "generated_at_utc": "2026-08-08T19:35:19.678366+00:00",
       "duration_seconds": 129.75,
       "sample_rate": 44100,
       "channels": 1,
       "bitrate": 128028,
       "lufs_integrated": -18.5,
       "true_peak_dbfs": -1.5,
-      "long_silence_ratio": 0.2027,
+      "long_silence_ratio": 0.0,
       "status": "fail",
       "issues": [
-        "loudness",
-        "silencio_excessivo"
+        "loudness"
       ]
     },
     {
@@ -352,21 +339,19 @@
         "pt-BR-AntonioNeural",
         "pt-BR-FranciscaNeural"
       ],
-      "segments": 11,
-      "mean_estimated_segment_seconds": 12.09,
+      "segments": 12,
+      "mean_estimated_segment_seconds": 11.09,
       "canonical_sha256": "7813d65eef1010cfed0d7afc53f0a2512c670095b7bd2acb2563fa45eb242fa5",
-      "generated_at_utc": "2026-08-08T19:19:57.438821+00:00",
-      "duration_seconds": 129.96,
+      "generated_at_utc": "2026-08-08T19:36:00.952459+00:00",
+      "duration_seconds": 130.17,
       "sample_rate": 44100,
       "channels": 1,
       "bitrate": 128028,
       "lufs_integrated": -16.8,
-      "true_peak_dbfs": -1.9,
-      "long_silence_ratio": 0.1862,
-      "status": "fail",
-      "issues": [
-        "silencio_excessivo"
-      ]
+      "true_peak_dbfs": -1.8,
+      "long_silence_ratio": 0.0,
+      "status": "pass",
+      "issues": []
     }
   ]
 }

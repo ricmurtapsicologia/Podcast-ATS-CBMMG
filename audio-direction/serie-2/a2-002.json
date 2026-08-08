@@ -25,34 +25,34 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Essa interação permite atos volitivos, ou seja, ações baseadas em intenção, deliberação, decisão e execução. Em momentos de estresse extremo, esse equilíbrio pode ser rompido. A amigda é uma estrutura do sistema límbico, pode assumir o controle, reduzindo a influência do Cortex Prefrontal.",
+      "text": "Essa interação permite atos volitivos, ou seja, ações baseadas em intenção, deliberação, decisão e execução. Em momentos de estresse extremo, esse equilíbrio pode ser rompido.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 20.6
+      "estimated_seconds": 12.0
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Esse fenômeno, conhecido como sequestro da amigdala, transforma decisões ponderadas em ações impulsivas, frequentemente sem avaliação adequada das consequências.",
+      "text": "A amigda é uma estrutura do sistema límbico, pode assumir o controle, reduzindo a influência do Cortex Prefrontal. Esse fenômeno, conhecido como sequestro da amigdala, transforma decisões ponderadas em ações impulsivas, frequentemente sem avaliação adequada das consequências.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 9.1
+      "estimated_seconds": 17.8
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Como as emoções influenciam o processo decisório?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 3.4
+      "text": "Como as emoções influenciam o processo decisório? As emoções desempenham um papel central na tomada de decisões, ajudando a priorizar informações e avaliar situações.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 11.5
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "As emoções desempenham um papel central na tomada de decisões, ajudando a priorizar informações e avaliar situações. No entanto, em crises, a intensa ativação da amigdala pode distorcer a percepção de risco e obscurecer alternativas viáveis.",
+      "text": "No entanto, em crises, a intensa ativação da amigdala pode distorcer a percepção de risco e obscurecer alternativas viáveis. Quando Cortex Prefrontal não consegue moderar essas reações, as decisões se tornam precipitadas e guiadas pelo desespero.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
@@ -61,12 +61,12 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Quando Cortex Prefrontal não consegue moderar essas reações, as decisões se tornam precipitadas e guiadas pelo desespero. Compreender esses mecanismos nos ajuda a reconhecer como comportamento suicida é influenciado por uma interação complexa entre processos emocionais e biológicos, muitas vezes limitando controle racional e intensificando o sofrimento.",
+      "text": "Compreender esses mecanismos nos ajuda a reconhecer como comportamento suicida é influenciado por uma interação complexa entre processos emocionais e biológicos, muitas vezes limitando controle racional e intensificando o sofrimento.",
       "intent": "explanation",
-      "rate_percent": -4,
+      "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 22.6
+      "estimated_seconds": 14.4
     },
     {
       "speaker": "INSTRUTOR",

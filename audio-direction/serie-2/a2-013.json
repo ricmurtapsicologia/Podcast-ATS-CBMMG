@@ -43,39 +43,39 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Também discutimos os aspectos sociais e filosóficos, como as ideias de Durkheim sobre isolamento e instabilidade e de camis sobre o vazio existencial, mostrando como fatores externos intensificam o sofrimento interno. Por fim, analisamos o ato suicida como resultado de impulsividade e desregulação emocional.",
+      "text": "Também discutimos os aspectos sociais e filosóficos, como as ideias de Durkheim sobre isolamento e instabilidade e de camis sobre o vazio existencial, mostrando como fatores externos intensificam o sofrimento interno.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 21.1
+      "estimated_seconds": 14.9
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Ador toma o controle, levando ações automáticas em busca de alívio e mediato. O comportamento de fuga reflete a tentativa urgente de escapar do sofrimento sem reflexão consciente. Apesar de desvendarmos as engrenagens do comportamento suicida, nunca devemos esquecer que há um ser humano que sofre.",
-      "intent": "explanation",
-      "rate_percent": -4,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 22.1
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Como carro o jung nos ensina, conheça todas as teorias, domine todas as técnicas, mas autocar uma alma humana seja apenas outra alma humana. Essa frase nos lembra que mais do que teorias, a conexão genuína e a empatia salvam vidas.",
-      "intent": "explanation",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
+      "text": "Por fim, analisamos o ato suicida como resultado de impulsividade e desregulação emocional. Ador toma o controle, levando ações automáticas em busca de alívio e mediato. O comportamento de fuga reflete a tentativa urgente de escapar do sofrimento sem reflexão consciente.",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 520,
       "estimated_seconds": 19.7
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Obrigado por nos acompanhar até aqui, que os conhecimentos desta série ajudem a girar a ampulheta da vida de pessoas em crise, oferecendo tempo e esperança. Até a próxima série.",
+      "text": "Apesar de desvendarmos as engrenagens do comportamento suicida, nunca devemos esquecer que há um ser humano que sofre. Como carro o jung nos ensina, conheça todas as teorias, domine todas as técnicas, mas autocar uma alma humana seja apenas outra alma humana.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 20.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Essa frase nos lembra que mais do que teorias, a conexão genuína e a empatia salvam vidas. Obrigado por nos acompanhar até aqui, que os conhecimentos desta série ajudem a girar a ampulheta da vida de pessoas em crise, oferecendo tempo e esperança. Até a próxima série.",
       "intent": "conclusion",
-      "rate_percent": -5,
+      "rate_percent": -6,
       "pitch_hz": -2,
       "pause_after_ms": 0,
-      "estimated_seconds": 14.4
+      "estimated_seconds": 22.6
     }
   ]
 }

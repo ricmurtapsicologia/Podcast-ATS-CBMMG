@@ -16,57 +16,21 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Gorette pergunta, Maria, você está aqui nesse canto a horas?",
-      "intent": "question",
-      "rate_percent": -2,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 4.8
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Não foi trabalhar hoje?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 1.9
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Maria responde, não, mãe, não consegui. Sinto que não tenho forças pra nada, só levantar da cama já parece impossível.",
+      "text": "Gorette pergunta, Maria, você está aqui nesse canto a horas? Não foi trabalhar hoje? Maria responde, não, mãe, não consegui. Sinto que não tenho forças pra nada, só levantar da cama já parece impossível.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 9.6
+      "estimated_seconds": 16.3
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Gorette diz, minha filha, eu percebo que você anda muito desanimada ultimamente, mas o que está te deixando assim?",
+      "text": "Gorette diz, minha filha, eu percebo que você anda muito desanimada ultimamente, mas o que está te deixando assim? Você pode falar comigo. Maria explica, é difícil explicar, não é só tristeza, é como se tudo fosse vazio, sabe?",
       "intent": "question",
       "rate_percent": -2,
       "pitch_hz": 0,
       "pause_after_ms": 540,
-      "estimated_seconds": 9.1
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Você pode falar comigo.",
-      "intent": "explanation",
-      "rate_percent": -2,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 1.9
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Maria explica, é difícil explicar, não é só tristeza, é como se tudo fosse vazio, sabe?",
-      "intent": "question",
-      "rate_percent": -2,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 7.7
+      "estimated_seconds": 18.7
     },
     {
       "speaker": "INSTRUTOR",
@@ -88,61 +52,34 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Gorette pergunta preocupada, e o sono, você tem conseguido dormir direito?",
-      "intent": "question",
-      "rate_percent": -2,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 5.3
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Maria responde, não, tem noites que ficam rolando na cama com um milhão de pensamentos ruins, em outras eu durmo demais e ainda acordo cansada.",
+      "text": "Gorette pergunta preocupada, e o sono, você tem conseguido dormir direito? Maria responde, não, tem noites que ficam rolando na cama com um milhão de pensamentos ruins, em outras eu durmo demais e ainda acordo cansada.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 12.0
+      "estimated_seconds": 17.3
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Gorette continua, e você tem sentido fome?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 3.4
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Maria explica, não sinto vontade de comer. Às vezes passo o dia todo sem lembrar de comer nada, e quando como parece que é só pra não desmaiar. Gorette diz com preocupação, Maria, isso está me preocupando.",
+      "text": "Gorette continua, e você tem sentido fome? Maria explica, não sinto vontade de comer. Às vezes passo o dia todo sem lembrar de comer nada, e quando como parece que é só pra não desmaiar.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 17.8
+      "estimated_seconds": 16.8
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Você sempre foi tão ativa, mas agora parece que tudo te pesa, você já pensou em buscar ajuda?",
+      "text": "Gorette diz com preocupação, Maria, isso está me preocupando. Você sempre foi tão ativa, mas agora parece que tudo te pesa, você já pensou em buscar ajuda?",
       "intent": "question",
       "rate_percent": -2,
       "pitch_hz": 0,
       "pause_after_ms": 540,
-      "estimated_seconds": 8.6
+      "estimated_seconds": 13.0
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Maria responde exitante, já pensei, mas fico com medo de não melhorar, e tem outra coisa, mãe. Às vezes penso que talvez fosse mais fácil não estar aqui. Gorette se aproxima e segura as mãos de Maria dizendo com firmeza. Minha filha, você não está sozinha.",
-      "intent": "explanation",
-      "rate_percent": -4,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 22.1
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Eu estou aqui e quero que você saiba que a pessoas que podem te ajudar a sair disso. Vamos procurar um médico ou um terapelta. Você é forte, Maria, mesmo que não sinta isso agora. Maria emocionada responde. Obrigada, mãe.",
+      "text": "Maria responde exitante, já pensei, mas fico com medo de não melhorar, e tem outra coisa, mãe. Às vezes penso que talvez fosse mais fácil não estar aqui. Gorette se aproxima e segura as mãos de Maria dizendo com firmeza.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
@@ -151,12 +88,21 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Eu não quero continuar assim, só quero sentir que posso ser eu mesma de novo. Maria demonstra sintomas característicos do transtorno depressivo maior, como tristeza persistente, falta de energia, perda de interesse, alterações do sono e apetite, dificuldades de concentração e pensamentos de desesperança.",
+      "text": "Minha filha, você não está sozinha. Eu estou aqui e quero que você saiba que a pessoas que podem te ajudar a sair disso. Vamos procurar um médico ou um terapelta. Você é forte, Maria, mesmo que não sinta isso agora.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 21.1
+      "estimated_seconds": 19.7
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Maria emocionada responde. Obrigada, mãe. Eu não quero continuar assim, só quero sentir que posso ser eu mesma de novo. Maria demonstra sintomas característicos do transtorno depressivo maior, como tristeza persistente, falta de energia, perda de interesse, alterações do sono e apetite, dificuldades de concentração e pensamentos de desesperança.",
+      "intent": "explanation",
+      "rate_percent": -4,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 23.5
     },
     {
       "speaker": "INSTRUTOR",

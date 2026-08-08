@@ -7,39 +7,39 @@
   "turns": [
     {
       "speaker": "INSTRUTOR",
-      "text": "A APRESENTAÇÃO PESSUAL, A PRIMEIRA CONEXÃO Olá, pessoal. Continuando nossa série sobre abordagem técnica, comunicação que salva, hoje vamos falar sobre a apresentação pessoal. O primeiro passo para criar uma conexão genuína com o tentante. Depois do silêncio inicial, apresente-se de forma simples e direta.",
+      "text": "A APRESENTAÇÃO PESSUAL, A PRIMEIRA CONEXÃO Olá, pessoal. Continuando nossa série sobre abordagem técnica, comunicação que salva, hoje vamos falar sobre a apresentação pessoal. O primeiro passo para criar uma conexão genuína com o tentante.",
       "intent": "opening",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 430,
-      "estimated_seconds": 21.6
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Diga seu nome, sua função e mostre-se disponível para ouvir. Por exemplo, Oi, meu nome é Thais, sou bombeira militar e estou aqui para te ouvir. Essa frase transmite acolhimento e segurança, sem criar expectativas que você talvez não possa atender.",
-      "intent": "explanation",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 19.7
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Evite frases como Estou aqui para ajudar, pois o tentante pode interpretar isso como uma promessa que não será cumprida, quebrando a confiança. Também passe longe de saudações como Bom dia, ou Como você está.",
-      "intent": "explanation",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
       "estimated_seconds": 16.8
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Em momentos de crise, essas frases podem soar desconectadas ou gerar repulsa. No próximo episódio, vamos falar sobre perguntas simples. Uma ferramenta essencial na comunicação. Não perca.",
+      "text": "Depois do silêncio inicial, apresente-se de forma simples e direta. Diga seu nome, sua função e mostre-se disponível para ouvir. Por exemplo, Oi, meu nome é Thais, sou bombeira militar e estou aqui para te ouvir.",
+      "intent": "transition",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 390,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Essa frase transmite acolhimento e segurança, sem criar expectativas que você talvez não possa atender. Evite frases como Estou aqui para ajudar, pois o tentante pode interpretar isso como uma promessa que não será cumprida, quebrando a confiança.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 18.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Também passe longe de saudações como Bom dia, ou Como você está. Em momentos de crise, essas frases podem soar desconectadas ou gerar repulsa. No próximo episódio, vamos falar sobre perguntas simples. Uma ferramenta essencial na comunicação. Não perca.",
       "intent": "conclusion",
       "rate_percent": -5,
       "pitch_hz": -2,
       "pause_after_ms": 0,
-      "estimated_seconds": 13.0
+      "estimated_seconds": 18.7
     }
   ]
 }

@@ -34,93 +34,48 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "O abordador mantém uma postura empática, incentivando-a a se abrir.",
+      "text": "O abordador mantém uma postura empática, incentivando-a a se abrir. Athena, mas afinal, o que te trouxe para cá hoje? Eu não sei nem por onde começar. É como se tudo tivesse desmoronado de uma vez.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 4.8
+      "estimated_seconds": 17.3
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Athena, mas afinal, o que te trouxe para cá hoje?",
-      "intent": "question",
-      "rate_percent": -2,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 4.8
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Eu não sei nem por onde começar. É como se tudo tivesse desmoronado de uma vez. Perdi meu emprego há dois meses, e desde então parece que não consigo acertar em nada.",
+      "text": "Perdi meu emprego há dois meses, e desde então parece que não consigo acertar em nada. Meu chefe sempre dizia que eu não era bom o suficiente, que faltava algo em mim. E depois que isso aconteceu, eu comecei a acreditar nele.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 15.4
+      "estimated_seconds": 20.2
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Meu chefe sempre dizia que eu não era bom o suficiente, que faltava algo em mim. E depois que isso aconteceu, eu comecei a acreditar nele. Minha mãe tenta me ajudar, mas ela não entende. Ela acha que é só levantar e continuar.",
-      "intent": "explanation",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 20.6
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Mas como?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 1.0
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Eu sinto como se cada dia fosse uma batalha perdida. E ontem, quando o banco ligou cobrando uma dívida, eu só pensei, chega, eu não aguento mais. Eu vim para cá porque, por um momento, parecia a única saída. Isso tudo parece um peso enorme, Athena.",
-      "intent": "explanation",
-      "rate_percent": -4,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 22.1
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Você tem segurado tanto sozinha.",
-      "intent": "explanation",
-      "rate_percent": -2,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 2.4
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Como você se sente agora colocando tudo isso para fora?",
-      "intent": "question",
-      "rate_percent": -2,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 4.8
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Por que essas perguntas funcionam?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 2.4
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Neste estágio, as perguntas complexas ajudam a explorar as emoções mais profundas e os eventos que levaram à tentativa, criando um espaço seguro para o tentante processar sua dor.",
+      "text": "Minha mãe tenta me ajudar, mas ela não entende. Ela acha que é só levantar e continuar. Mas como? Eu sinto como se cada dia fosse uma batalha perdida.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
       "estimated_seconds": 13.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "E ontem, quando o banco ligou cobrando uma dívida, eu só pensei, chega, eu não aguento mais. Eu vim para cá porque, por um momento, parecia a única saída. Isso tudo parece um peso enorme, Athena. Você tem segurado tanto sozinha.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 19.7
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Como você se sente agora colocando tudo isso para fora? Por que essas perguntas funcionam? Neste estágio, as perguntas complexas ajudam a explorar as emoções mais profundas e os eventos que levaram à tentativa, criando um espaço seguro para o tentante processar sua dor.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 21.1
     },
     {
       "speaker": "INSTRUTOR",

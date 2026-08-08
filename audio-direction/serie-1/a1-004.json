@@ -25,39 +25,48 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "E a partir daí que o vínculo começa a ser construído. E se houver agressividade ou xingamentos, mantenha a calma. Esse comportamento é comum e geralmente diminui com o tempo. Evite gestos que possam parecer intimidação, como colocar as mãos na cintura ou escondê-las.",
+      "text": "E a partir daí que o vínculo começa a ser construído. E se houver agressividade ou xingamentos, mantenha a calma. Esse comportamento é comum e geralmente diminui com o tempo.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 21.1
+      "estimated_seconds": 14.4
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Cada movimento deve passar segurança e empatia. O objetivo principal é alcançar a zona interpersonal do tentante de forma segura e permissiva. Garantindo que ele se sinta respeitado. Lembre-se, apenas o abordador se comunica e a segurança da cena é essencial.",
+      "text": "Evite gestos que possam parecer intimidação, como colocar as mãos na cintura ou escondê-las. Cada movimento deve passar segurança e empatia. O objetivo principal é alcançar a zona interpersonal do tentante de forma segura e permissiva. Garantindo que ele se sinta respeitado.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 19.7
+      "estimated_seconds": 20.2
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "No caso de objetos perigosos, use linguagem que desarme a situação. Como pedir para o tentante deixar o objeto de lado. A aproximação segura é o primeiro passo para criar um espaço de confiança e empatia.",
+      "text": "Lembre-se, apenas o abordador se comunica e a segurança da cena é essencial. No caso de objetos perigosos, use linguagem que desarme a situação. Como pedir para o tentante deixar o objeto de lado.",
+      "intent": "synthesis",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 480,
+      "estimated_seconds": 16.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "A aproximação segura é o primeiro passo para criar um espaço de confiança e empatia. É como abrir a porta para um diálogo que pode salvar vidas. No próximo episódio vamos explorar o silêncio inicial.",
       "intent": "enumeration",
       "rate_percent": -4,
       "pitch_hz": -1,
       "pause_after_ms": 360,
-      "estimated_seconds": 17.3
+      "estimated_seconds": 16.8
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "É como abrir a porta para um diálogo que pode salvar vidas. No próximo episódio vamos explorar o silêncio inicial. Aquele momento estratégico que prepara o terreno para uma conversa verdadeira e transformadora. Não perca!",
+      "text": "Aquele momento estratégico que prepara o terreno para uma conversa verdadeira e transformadora. Não perca!",
       "intent": "conclusion",
       "rate_percent": -5,
       "pitch_hz": -2,
       "pause_after_ms": 0,
-      "estimated_seconds": 16.8
+      "estimated_seconds": 7.2
     }
   ]
 }

@@ -106,48 +106,12 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Antes de iniciar, faça quatro checagens: tenho privacidade?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 3.8
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Tenho tempo?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 1.0
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Consigo falar sem julgamento?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 1.9
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Sei qual recurso pode ser acionado se necessário?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 3.8
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Preparar reduz improvisação e aumenta segurança psicológica para os dois lados.",
+      "text": "Antes de iniciar, faça quatro checagens: tenho privacidade? Tenho tempo? Consigo falar sem julgamento? Sei qual recurso pode ser acionado se necessário? Preparar reduz improvisação e aumenta segurança psicológica para os dois lados.",
       "intent": "conclusion",
       "rate_percent": -5,
       "pitch_hz": -2,
       "pause_after_ms": 0,
-      "estimated_seconds": 5.3
+      "estimated_seconds": 15.8
     }
   ]
 }

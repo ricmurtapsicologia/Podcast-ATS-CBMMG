@@ -43,48 +43,30 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Cláudio, você está falando rápido demais e parece não conseguir focar em nada. Vem, vamos sentar um pouco. Cláudio ri, mas sua energia não diminui.",
-      "intent": "explanation",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 12.0
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Ana, você está me chamando de distraído?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 3.4
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Eu só tenho muitas ideias, já pensou se eu deixasse essa energia parar?",
+      "text": "Cláudio, você está falando rápido demais e parece não conseguir focar em nada. Vem, vamos sentar um pouco. Cláudio ri, mas sua energia não diminui. Ana, você está me chamando de distraído?",
       "intent": "question",
       "rate_percent": -2,
       "pitch_hz": 0,
       "pause_after_ms": 540,
-      "estimated_seconds": 6.2
+      "estimated_seconds": 15.4
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Impossível, eu mal preciso dormir, sabia?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 2.9
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Três horas por noite e já estou pronto pra conquistar o mundo. Mas tarde, ao tentar se desculpar com alguém na pista, Cláudio começa a mudar abruptamente o foco novamente. Ele balance a cabeça rí e diz então mais baixo.",
+      "text": "Eu só tenho muitas ideias, já pensou se eu deixasse essa energia parar? Impossível, eu mal preciso dormir, sabia? Três horas por noite e já estou pronto pra conquistar o mundo.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 19.2
+      "estimated_seconds": 14.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Mas tarde, ao tentar se desculpar com alguém na pista, Cláudio começa a mudar abruptamente o foco novamente. Ele balance a cabeça rí e diz então mais baixo.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 13.4
     },
     {
       "speaker": "INSTRUTOR",
@@ -97,21 +79,12 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Cláudio exibe sintomas claros de um episódio maníaco do transtorno afetivo Bipolar 1, incluindo fala acelerada, fuga de ideias, grandiosidade e impossividade.",
+      "text": "Cláudio exibe sintomas claros de um episódio maníaco do transtorno afetivo Bipolar 1, incluindo fala acelerada, fuga de ideias, grandiosidade e impossividade. No entanto, é importante lembrar que o tab se caracteriza por polos opostos, o polo maníaco, como demonstrado na sketch, ou hipomaníaco e o polo depressivo, que não foi explorado aqui.",
       "intent": "explanation",
-      "rate_percent": -3,
+      "rate_percent": -4,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 10.6
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "No entanto, é importante lembrar que o tab se caracteriza por polos opostos, o polo maníaco, como demonstrado na sketch, ou hipomaníaco e o polo depressivo, que não foi explorado aqui.",
-      "intent": "explanation",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 14.9
+      "estimated_seconds": 25.4
     },
     {
       "speaker": "INSTRUTOR",

@@ -16,21 +16,30 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Essas ferramentas não apenas modulam emoções, mas também ajudam a redirecionar pensamentos, promovendo uma melhor regulação do humor e diminuindo o risco de suicídio. Vamos explorar como isso funciona na prática. Durante uma tentativa de suicídio, o diálogo pode ser um divisor de águas.",
+      "text": "Essas ferramentas não apenas modulam emoções, mas também ajudam a redirecionar pensamentos, promovendo uma melhor regulação do humor e diminuindo o risco de suicídio. Vamos explorar como isso funciona na prática.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 21.1
+      "estimated_seconds": 14.9
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Segundo o modelo da cadeia de comportamento de Beck, pensamentos influenciam emoções, que, por sua vez, determinam comportamentos. Ao intervir no pensamento, oferecendo novas perspectivas ou mudando o foco para algo positivo, é possível quebrar esse ciclo negativo, diminuindo a angústia e incentivando a desistência do ato.",
+      "text": "Durante uma tentativa de suicídio, o diálogo pode ser um divisor de águas. Segundo o modelo da cadeia de comportamento de Beck, pensamentos influenciam emoções, que, por sua vez, determinam comportamentos.",
       "intent": "enumeration",
-      "rate_percent": -5,
+      "rate_percent": -4,
       "pitch_hz": -1,
       "pause_after_ms": 360,
-      "estimated_seconds": 22.6
+      "estimated_seconds": 14.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Ao intervir no pensamento, oferecendo novas perspectivas ou mudando o foco para algo positivo, é possível quebrar esse ciclo negativo, diminuindo a angústia e incentivando a desistência do ato.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 13.9
     },
     {
       "speaker": "INSTRUTOR",

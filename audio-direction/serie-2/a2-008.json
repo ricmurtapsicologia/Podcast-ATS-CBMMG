@@ -43,39 +43,30 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Falar sobre transtornos de personalidade é essencial, porque eles causam muito impacto na vida das pessoas, mas nem sempre são bem compreendidos.",
+      "text": "Falar sobre transtornos de personalidade é essencial, porque eles causam muito impacto na vida das pessoas, mas nem sempre são bem compreendidos. Espero ajudar nossos ouvintes a entender em melhor o que são esses transtornos e como lidar com eles. O que são exatamente os transtornos de personalidade.",
       "intent": "explanation",
-      "rate_percent": -3,
+      "rate_percent": -4,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 10.6
+      "estimated_seconds": 23.0
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Espero ajudar nossos ouvintes a entender em melhor o que são esses transtornos e como lidar com eles. O que são exatamente os transtornos de personalidade.",
+      "text": "São padrões duradouros e inflexíveis de pensar, sentir e agir que dificultam a adaptação da pessoa essas situações do dia a dia. Esses padrões afetam as relações, o trabalho e muitas vezes até a visão que a pessoa tem de si mesma.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 12.5
+      "estimated_seconds": 20.2
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "São padrões duradouros e inflexíveis de pensar, sentir e agir que dificultam a adaptação da pessoa essas situações do dia a dia.",
+      "text": "Eles geram sofrimento e prejudicam o funcionamento da vida de quem os enfrenta.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 10.6
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Esses padrões afetam as relações, o trabalho e muitas vezes até a visão que a pessoa tem de si mesma. Eles geram sofrimento e prejudicam o funcionamento da vida de quem os enfrenta.",
-      "intent": "explanation",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 15.8
+      "estimated_seconds": 6.2
     },
     {
       "speaker": "INSTRUTOR",
@@ -88,12 +79,21 @@
     },
     {
       "speaker": "PROFISSIONAL",
-      "text": "Por exemplo, por exemplo, uma pessoa com transtorno Borderline pode tomar decisões impulsivas por estar dominada por emoções intensas. Enquanto alguém com transtorno obsessivo, compulsivo de personalidade, pode ficar paralizado pela necessidade de perfeição. Em ambos os casos, há uma dificuldade em equilibrar razão e emoção.",
+      "text": "Por exemplo, por exemplo, uma pessoa com transtorno Borderline pode tomar decisões impulsivas por estar dominada por emoções intensas. Enquanto alguém com transtorno obsessivo, compulsivo de personalidade, pode ficar paralizado pela necessidade de perfeição.",
       "intent": "explanation",
-      "rate_percent": -2,
+      "rate_percent": -1,
+      "pitch_hz": 1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 16.3
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Em ambos os casos, há uma dificuldade em equilibrar razão e emoção.",
+      "intent": "explanation",
+      "rate_percent": -1,
       "pitch_hz": 1,
       "pause_after_ms": 620,
-      "estimated_seconds": 22.1
+      "estimated_seconds": 5.8
     },
     {
       "speaker": "INSTRUTOR",

@@ -61,48 +61,12 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Observe também a evolução do funcionamento.",
-      "intent": "explanation",
-      "rate_percent": -2,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 2.9
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "O colega parece estar se reorganizando?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 2.9
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "A dificuldade continua significativa?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 1.9
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "O recurso combinado foi acessível?",
-      "intent": "question",
-      "rate_percent": -1,
-      "pitch_hz": 0,
-      "pause_after_ms": 540,
-      "estimated_seconds": 2.4
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Se não foi, talvez seja necessário ajudar a pensar em outra alternativa.",
+      "text": "Observe também a evolução do funcionamento. O colega parece estar se reorganizando? A dificuldade continua significativa? O recurso combinado foi acessível? Se não foi, talvez seja necessário ajudar a pensar em outra alternativa.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 620,
-      "estimated_seconds": 5.8
+      "estimated_seconds": 15.8
     },
     {
       "speaker": "PROFISSIONAL",
@@ -124,21 +88,12 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Acompanhamento proporcional comunica uma mensagem importante: você não foi ouvido apenas por alguns minutos e depois esquecido. Ao mesmo tempo, evita dependência.",
-      "intent": "explanation",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 10.6
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Microchecagem: meu contato oferece continuidade e apoio ou transmite controle, expectativa de melhora e invasão de privacidade?",
+      "text": "Acompanhamento proporcional comunica uma mensagem importante: você não foi ouvido apenas por alguns minutos e depois esquecido. Ao mesmo tempo, evita dependência. Microchecagem: meu contato oferece continuidade e apoio ou transmite controle, expectativa de melhora e invasão de privacidade?",
       "intent": "question",
       "rate_percent": -2,
       "pitch_hz": 0,
       "pause_after_ms": 0,
-      "estimated_seconds": 8.2
+      "estimated_seconds": 18.7
     }
   ]
 }

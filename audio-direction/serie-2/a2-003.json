@@ -34,21 +34,21 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Transformo depressivo maior, caracterizado por tristeza persistente, desesperança e baixa autoestima. O TDM frequentemente reduz a capacidade de enxergar alternativas e intensifica o sofrimento emocional, tornando-se um dos transtornos mais associados ao suicídio. Transformo afetivo, bipolar. Oscilações entre episódios de mania e depressão marcam o tabi.",
-      "intent": "explanation",
-      "rate_percent": -4,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 22.1
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Durante a mania, a impossividade e os comportamentos de risco aumentam, enquanto a depressão profunda pode levar a pensamento suicidas intensos, criando um cenário de alta vulnerabilidade. Transformo por uso de substâncias.",
+      "text": "Transformo depressivo maior, caracterizado por tristeza persistente, desesperança e baixa autoestima. O TDM frequentemente reduz a capacidade de enxergar alternativas e intensifica o sofrimento emocional, tornando-se um dos transtornos mais associados ao suicídio. Transformo afetivo, bipolar.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 15.4
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Oscilações entre episódios de mania e depressão marcam o tabi. Durante a mania, a impossividade e os comportamentos de risco aumentam, enquanto a depressão profunda pode levar a pensamento suicidas intensos, criando um cenário de alta vulnerabilidade. Transformo por uso de substâncias.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 20.2
     },
     {
       "speaker": "INSTRUTOR",
@@ -70,21 +70,21 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Antes social, a impossividade e a desconsideração pelas consequências frequentemente expõem o indivíduo a situações de risco, incluindo o suicídio. Estriônico, a busca constante por atenção e a estabilidade emocional intensifica um risco de comportamentos extremos em momentos de rejeição ou perda. Esquisa ofrenia.",
+      "text": "Antes social, a impossividade e a desconsideração pelas consequências frequentemente expõem o indivíduo a situações de risco, incluindo o suicídio. Estriônico, a busca constante por atenção e a estabilidade emocional intensifica um risco de comportamentos extremos em momentos de rejeição ou perda.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 21.1
+      "estimated_seconds": 20.2
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Delírios e alucinações podem distorcer a percepção de realidade, criando um sofrimento extremo e isolando ainda mais o indivíduo. Ideias persecutórias ou vozes imperativas, frequentemente estão associadas ao aumento do risco suicida.",
+      "text": "Esquisa ofrenia. Delírios e alucinações podem distorcer a percepção de realidade, criando um sofrimento extremo e isolando ainda mais o indivíduo. Ideias persecutórias ou vozes imperativas, frequentemente estão associadas ao aumento do risco suicida.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 340,
-      "estimated_seconds": 15.4
+      "estimated_seconds": 16.3
     },
     {
       "speaker": "INSTRUTOR",

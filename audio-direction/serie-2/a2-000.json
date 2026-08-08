@@ -34,12 +34,21 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Falaremos sobre as vulnerabilidades que antecedem uma tentativa de suicídio. Os processos emocionais e neurologicos que ocorrem durante a crise e o impacto devastador da impossividade em momentos decisivos. No próximo episódio começaremos com o tema a origem do suicídio, compreendendo o comportamento suicida. Não perca.",
+      "text": "Falaremos sobre as vulnerabilidades que antecedem uma tentativa de suicídio. Os processos emocionais e neurologicos que ocorrem durante a crise e o impacto devastador da impossividade em momentos decisivos.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 13.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "No próximo episódio começaremos com o tema a origem do suicídio, compreendendo o comportamento suicida. Não perca.",
       "intent": "conclusion",
-      "rate_percent": -6,
+      "rate_percent": -5,
       "pitch_hz": -2,
       "pause_after_ms": 0,
-      "estimated_seconds": 22.1
+      "estimated_seconds": 8.2
     }
   ]
 }

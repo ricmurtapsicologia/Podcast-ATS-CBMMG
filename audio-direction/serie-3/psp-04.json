@@ -7,21 +7,12 @@
   "turns": [
     {
       "speaker": "INSTRUTOR",
-      "text": "Observar em Primeiros Socorros Psicológicos não é procurar sinais para encaixar alguém em um diagnóstico.",
-      "intent": "opening",
-      "rate_percent": -3,
-      "pitch_hz": -1,
-      "pause_after_ms": 430,
-      "estimated_seconds": 7.2
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "É ampliar a leitura do contexto e perguntar: o que mudou, o que está pesando e quanto isso interfere no funcionamento desta pessoa agora?",
+      "text": "Observar em Primeiros Socorros Psicológicos não é procurar sinais para encaixar alguém em um diagnóstico. É ampliar a leitura do contexto e perguntar: o que mudou, o que está pesando e quanto isso interfere no funcionamento desta pessoa agora?",
       "intent": "question",
       "rate_percent": -2,
       "pitch_hz": 0,
       "pause_after_ms": 680,
-      "estimated_seconds": 11.5
+      "estimated_seconds": 18.7
     },
     {
       "speaker": "PROFISSIONAL",
@@ -34,12 +25,21 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Significa olhar para aspectos concretos: atenção, comunicação, organização, interação com a equipe, tomada de decisão, tolerância ao estresse e capacidade de executar tarefas com segurança. Em profissões de alta demanda, alterações nesses pontos podem aparecer antes mesmo de a pessoa dizer que está sobrecarregada.",
+      "text": "Significa olhar para aspectos concretos: atenção, comunicação, organização, interação com a equipe, tomada de decisão, tolerância ao estresse e capacidade de executar tarefas com segurança.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 12.0
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Em profissões de alta demanda, alterações nesses pontos podem aparecer antes mesmo de a pessoa dizer que está sobrecarregada.",
       "intent": "explanation",
       "rate_percent": -3,
       "pitch_hz": -1,
       "pause_after_ms": 620,
-      "estimated_seconds": 21.1
+      "estimated_seconds": 9.1
     },
     {
       "speaker": "PROFISSIONAL",
@@ -70,12 +70,21 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Depois, tente identificar a necessidade mais próxima do presente. Talvez seja pausa. Talvez seja informação. Talvez seja alguém para ouvir. Talvez seja reorganizar temporariamente uma tarefa. Talvez seja procurar apoio profissional. O PSP ajuda a ordenar essa necessidade sem transformar observação em rótulo.",
+      "text": "Depois, tente identificar a necessidade mais próxima do presente. Talvez seja pausa. Talvez seja informação. Talvez seja alguém para ouvir. Talvez seja reorganizar temporariamente uma tarefa. Talvez seja procurar apoio profissional.",
       "intent": "transition",
       "rate_percent": -3,
       "pitch_hz": -1,
+      "pause_after_ms": 390,
+      "estimated_seconds": 14.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "O PSP ajuda a ordenar essa necessidade sem transformar observação em rótulo.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
       "pause_after_ms": 620,
-      "estimated_seconds": 20.6
+      "estimated_seconds": 5.8
     },
     {
       "speaker": "PROFISSIONAL",
@@ -97,21 +106,12 @@
     },
     {
       "speaker": "INSTRUTOR",
-      "text": "Uma observação útil produz uma pergunta, não uma sentença.",
-      "intent": "explanation",
-      "rate_percent": -2,
-      "pitch_hz": -1,
-      "pause_after_ms": 340,
-      "estimated_seconds": 4.3
-    },
-    {
-      "speaker": "INSTRUTOR",
-      "text": "Microchecagem: qual necessidade é mais evidente agora e o que pode ajudar este colega a recuperar organização, proteção e capacidade de seguir o próximo passo?",
+      "text": "Uma observação útil produz uma pergunta, não uma sentença. Microchecagem: qual necessidade é mais evidente agora e o que pode ajudar este colega a recuperar organização, proteção e capacidade de seguir o próximo passo?",
       "intent": "question",
       "rate_percent": -2,
       "pitch_hz": 0,
       "pause_after_ms": 0,
-      "estimated_seconds": 12.0
+      "estimated_seconds": 16.3
     }
   ]
 }
