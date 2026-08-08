@@ -4,10 +4,11 @@ from __future__ import annotations
 
 Regras editoriais:
 - usa os roteiros congelados já extraídos dos MP3s originais;
-- não reescreve, resume ou amplia o texto;
-- usa a mesma família de vozes, cadência, pausas e pós-processamento da Série 3;
-- sintetiza em unidades curtas de fala para evitar o efeito de locução robótica;
-- grava com novos nomes de arquivo para impedir reaproveitamento de cache.
+- não resume nem amplia o conteúdo;
+- usa a mesma família de vozes, a mesma função de prosódia, pausas e pós-processamento da Série 3;
+- cria turnos de tamanho semelhante aos da Série 3, evitando tanto blocos enormes quanto fala picotada;
+- usa duas vozes apenas em episódios originalmente dialogados e somente quando a estrutura textual permite distingui-las;
+- grava novos nomes de arquivo para impedir reaproveitamento de cache.
 """
 
 import asyncio
@@ -21,7 +22,7 @@ from pydub import AudioSegment, effects
 ROOT = Path(__file__).resolve().parents[1]
 ROTEIROS = ROOT / "roteiros" / "serie-2"
 OUT = ROOT / "assets" / "audio" / "serie-2"
-TMP = ROOT / ".tmp_serie2_s3_parity"
+TMP = ROOT / ".tmp_serie2_s3_parity_v3"
 APP = ROOT / "app.js"
 
 VOICE_INSTRUTOR = "pt-BR-AntonioNeural"
@@ -33,9 +34,10 @@ OPENING_SILENCE_MS = 130
 ENDING_SILENCE_MS = 240
 TARGET_DBFS = -18.0
 MAX_CONCURRENT_SYNTH = 4
-SYNTH_TIMEOUT_SECONDS = 35
-MAX_UTTERANCE_CHARS = 260
-VERSION_TAG = "s3v2"
+SYNTH_TIMEOUT_SECONDS = 40
+MAX_TURN_CHARS = 560
+VERSION_TAG = "s3v3"
+DIALOGUE_EPISODES = {7, 8, 9}
 
 
 def read_frozen_text(number: int) -> str:
@@ -49,56 +51,98 @@ def read_frozen_text(number: int) -> str:
     return text
 
 
-def split_long_unit(text: str) -> list[str]:
-    if len(text) <= MAX_UTTERANCE_CHARS:
-        return [text.strip()]
-
-    parts = re.split(r"(?<=[,;:])\s+", text)
-    chunks: list[str] = []
-    current = ""
-    for part in parts:
-        part = part.strip()
-        if not part:
-            continue
-        candidate = f"{current} {part}".strip() if current else part
-        if current and len(candidate) > MAX_UTTERANCE_CHARS:
-            chunks.append(current)
-            current = part
-        else:
-            current = candidate
-    if current:
-        chunks.append(current)
-    return chunks
+def sentences_from(text: str) -> list[str]:
+    return [s.strip() for s in re.split(r"(?<=[.!?…])\s+", text) if s.strip()]
 
 
-def speech_units(text: str) -> list[str]:
-    # Mesma lógica perceptiva da Série 3: fala curta + pausa + nova decisão de prosódia.
-    sentences = re.split(r"(?<=[.!?…])\s+", text)
-    units: list[str] = []
-    for sentence in sentences:
-        sentence = sentence.strip()
-        if sentence:
-            units.extend(split_long_unit(sentence))
-    if not units:
-        raise RuntimeError("Nenhuma unidade de fala gerada.")
-
-    # Gate de conteúdo: apenas espaços de junção podem mudar.
-    rebuilt = re.sub(r"\s+", " ", " ".join(units)).strip()
+def join_gate(text: str, turns: list[tuple[str, str]]):
+    rebuilt = re.sub(r"\s+", " ", " ".join(t for _, t in turns)).strip()
     expected = re.sub(r"\s+", " ", text).strip()
     if rebuilt != expected:
-        raise RuntimeError("Gate de integridade textual falhou ao segmentar o roteiro.")
-    return units
+        raise RuntimeError("Gate de integridade textual falhou ao organizar os turnos.")
 
 
-def voice_for_episode(number: int) -> str:
-    # Mantém a mesma família de vozes da Série 3. Nos episódios originalmente
-    # apresentados como entrevistas, usa a voz profissional feminina de forma estável,
-    # sem inventar alternância de interlocutores sem diarização confiável.
-    return VOICE_PROFISSIONAL if number in {7, 8} else VOICE_INSTRUTOR
+def chunk_narration(sentences: list[str], voice: str) -> list[tuple[str, str]]:
+    turns: list[tuple[str, str]] = []
+    current: list[str] = []
+    current_len = 0
+    for sentence in sentences:
+        projected = current_len + (1 if current else 0) + len(sentence)
+        # Perguntas ficam como turnos próprios para receber a mesma inflexão da Série 3.
+        if sentence.endswith("?"):
+            if current:
+                turns.append((voice, " ".join(current)))
+                current, current_len = [], 0
+            turns.append((voice, sentence))
+            continue
+        if current and projected > MAX_TURN_CHARS:
+            turns.append((voice, " ".join(current)))
+            current = [sentence]
+            current_len = len(sentence)
+        else:
+            current.append(sentence)
+            current_len = projected
+    if current:
+        turns.append((voice, " ".join(current)))
+    return turns
+
+
+def looks_like_host(sentence: str) -> bool:
+    n = sentence.strip().lower()
+    return sentence.endswith("?") or n.startswith((
+        "programa ", "estamos de volta", "entrevistador", "obrigad", "doutor", "dra.", "dr. ",
+        "no próximo episódio", "no proximo episódio", "no proximo episodio", "até breve", "ate breve",
+    ))
+
+
+def dialogue_turns(sentences: list[str]) -> list[tuple[str, str]]:
+    """Organiza entrevista sem inventar conteúdo.
+
+    Pergunta = voz do instrutor/apresentador. Respostas seguintes = voz profissional,
+    até a próxima pergunta. Aberturas/encerramentos reconhecíveis permanecem com o apresentador.
+    """
+    turns: list[tuple[str, str]] = []
+    current_voice = VOICE_INSTRUTOR
+    current: list[str] = []
+    current_len = 0
+
+    def flush():
+        nonlocal current, current_len
+        if current:
+            turns.append((current_voice, " ".join(current)))
+            current, current_len = [], 0
+
+    for sentence in sentences:
+        if looks_like_host(sentence):
+            flush()
+            turns.append((VOICE_INSTRUTOR, sentence))
+            current_voice = VOICE_PROFISSIONAL if sentence.endswith("?") else VOICE_INSTRUTOR
+            continue
+
+        projected = current_len + (1 if current else 0) + len(sentence)
+        if current and projected > MAX_TURN_CHARS:
+            flush()
+        current.append(sentence)
+        current_len = sum(len(x) for x in current) + max(0, len(current) - 1)
+
+    flush()
+    return turns
+
+
+def build_turns(number: int, text: str) -> list[tuple[str, str]]:
+    sentences = sentences_from(text)
+    if number in DIALOGUE_EPISODES:
+        turns = dialogue_turns(sentences)
+    else:
+        turns = chunk_narration(sentences, VOICE_INSTRUTOR)
+    if not turns:
+        raise RuntimeError("Nenhum turno de fala gerado.")
+    join_gate(text, turns)
+    return turns
 
 
 def prosody_for(voice: str, text: str, turn_index: int) -> tuple[str, str, int]:
-    # Espelha generate_psp_audio.py (Série 3).
+    # Espelha a função usada em generate_psp_audio.py (Série 3).
     rate = BASE_RATE[voice]
     pitch = BASE_PITCH[voice]
     normalized = text.strip().lower()
@@ -143,18 +187,19 @@ async def synthesize(text: str, voice: str, rate: str, pitch: str, output: Path,
 
 async def build_episode(number: int, semaphore: asyncio.Semaphore):
     text = read_frozen_text(number)
-    units = speech_units(text)
-    voice = voice_for_episode(number)
+    turns = build_turns(number, text)
     work = TMP / f"a2-{number:03d}"
     work.mkdir(parents=True, exist_ok=True)
 
     sequence = []
     tasks = []
-    for idx, unit in enumerate(units):
-        rate, pitch, pause_ms = prosody_for(voice, unit, idx)
+    voices_used = []
+    for idx, (voice, turn) in enumerate(turns):
+        rate, pitch, pause_ms = prosody_for(voice, turn, idx)
         segment = work / f"{idx:03d}.mp3"
-        sequence.append((segment, 0 if idx == len(units) - 1 else pause_ms))
-        tasks.append(synthesize(unit, voice, rate, pitch, segment, semaphore))
+        sequence.append((segment, 0 if idx == len(turns) - 1 else pause_ms))
+        voices_used.append(voice)
+        tasks.append(synthesize(turn, voice, rate, pitch, segment, semaphore))
 
     await asyncio.gather(*tasks)
 
@@ -184,10 +229,10 @@ async def build_episode(number: int, semaphore: asyncio.Semaphore):
         "episode": number,
         "output": target.name,
         "text_integrity": 1.0,
-        "speech_units": len(units),
+        "turns": len(turns),
         "duration_seconds": round(len(merged) / 1000, 1),
-        "voice": voice,
-        "audio_profile": "serie-3-parity",
+        "voices": sorted(set(voices_used)),
+        "audio_profile": "serie-3-parity-v3",
     }
 
 
@@ -216,7 +261,7 @@ async def main():
     semaphore = asyncio.Semaphore(MAX_CONCURRENT_SYNTH)
     quality = []
     for number in range(14):
-        print(f"[{number:03d}] ressintetizando com paridade Série 3")
+        print(f"[{number:03d}] ressintetizando com paridade Série 3 v3")
         quality.append(await build_episode(number, semaphore))
 
     patch_app_urls()
@@ -224,7 +269,7 @@ async def main():
         json.dumps(quality, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
-    print("Série 2 concluída com o mesmo perfil sonoro da Série 3.")
+    print("Série 2 concluída com perfil sonoro Série 3 v3.")
 
 
 if __name__ == "__main__":
