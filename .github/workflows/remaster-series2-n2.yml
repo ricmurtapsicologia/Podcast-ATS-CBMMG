@@ -1,4 +1,4 @@
-name: Remasterizar Série 2 N2
+name: Remasterizar Série 2 — paridade Série 3
 
 on:
   pull_request:
@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/remaster-series2-n2.yml'
       - 'scripts/remaster_series2_n2.py'
+      - 'roteiros/serie-2/**'
   workflow_dispatch:
 
 permissions:
@@ -14,7 +15,7 @@ permissions:
 jobs:
   remaster:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 60
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -32,19 +33,19 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y ffmpeg
           python -m pip install --upgrade pip
-          pip install 'faster-whisper>=1.1,<2' edge-tts==7.2.8 pydub
+          pip install edge-tts==7.2.8 pydub
 
-      - name: Remasterizar Série 2
+      - name: Ressintetizar Série 2 no padrão da Série 3
         run: python scripts/remaster_series2_n2.py
 
-      - name: Publicar Série 2 N2 na branch
+      - name: Publicar novos áudios na branch
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/audio/serie-2 roteiros/serie-2 app.js
+          git add assets/audio/serie-2 app.js
           if git diff --cached --quiet; then
             echo "Sem alterações geradas."
           else
-            git commit -m "Gera Série 2 em áudio N2"
+            git commit -m "Gera Série 2 com perfil sonoro da Série 3"
             git push origin HEAD:${{ github.head_ref || github.ref_name }}
           fi
