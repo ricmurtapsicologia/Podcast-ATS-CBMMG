@@ -1,28 +1,30 @@
-# Microaula 07 — Cuidar do colega: apoio entre pares
+# Microaula 07 — Conectar: transformar acolhimento em apoio concreto
 
 - Série: 3 — Primeiros Socorros Psicológicos
 - Card: 07
-- Duração estimada: 2.1 min, com locução a ~125 palavras/min
+- Duração estimada: 2.8 min, com locução a ~125 palavras/min
 - Formato: microaula conversacional; instrutor + profissional/aluno
 - Finalidade: aprofundar e aplicar o conteúdo escrito do card sem substituí-lo.
 
 ## Roteiro
 
-**INSTRUTOR:** Profissionais de emergência também são afetados pelo trabalho. Exposição repetida ao sofrimento, decisões sob pressão, turnos longos e ocorrências de alta carga podem reduzir atenção e aumentar desgaste. Apoio entre pares traz os princípios de PSP para dentro da própria equipe.
+**INSTRUTOR:** Uma conversa acolhedora é importante, mas o PSP ganha força quando ajuda a pessoa a chegar a um próximo passo. Conectar significa transformar compreensão em ação prática, sem assumir o controle da vida do colega.
 
-**PROFISSIONAL:** Mas como abordar um colega sem parecer invasivo?
+**PROFISSIONAL:** Que tipo de próximo passo pode ser esse?
 
-**INSTRUTOR:** Comece pela discrição e por algo concreto. Escolha um momento e local adequados e faça uma oferta simples: percebi que essa ocorrência foi pesada; precisa de alguma coisa agora? Evite exigir explicações. O colega pode querer falar, pode preferir apenas companhia ou pode não querer nenhum dos dois naquele momento.
+**INSTRUTOR:** Depende da necessidade. Pode ser uma pausa, alimentação, descanso disponível, reorganização de tarefa, conversa com uma liderança de confiança, contato com alguém próximo, serviço de saúde, apoio psicossocial ou atendimento profissional. O ponto central é reduzir a distância entre a necessidade e o recurso.
 
-**INSTRUTOR:** Observe mudanças relevantes no funcionamento, principalmente quando afetam segurança, comunicação ou capacidade de executar tarefas. Uma ajuda pequena pode fazer diferença: água, alimentação, uma pausa, reorganização de informação, companhia ou troca de função quando a operação permitir.
+**PROFISSIONAL:** Então não basta dizer “qualquer coisa, me chama”.
 
-**PROFISSIONAL:** E quando o apoio de colega não é suficiente?
+**INSTRUTOR:** Essa frase demonstra boa intenção, mas pode deixar toda a iniciativa com alguém que já está sobrecarregado. Você pode ser mais concreto: “Quer que eu fique com você enquanto organiza isso?” “Posso te ajudar a localizar o serviço?” “Faz sentido conversarmos com a chefia sobre uma reorganização de tarefa?” Sempre oferecendo opção, não impondo.
 
-**INSTRUTOR:** Então ajudar também significa facilitar acesso ao recurso institucional apropriado. Apoio entre pares não transforma bombeiros ou outros profissionais em terapeutas uns dos outros. Seu papel é perceber, apoiar de forma respeitosa e ajudar a conectar quando necessário.
+**INSTRUTOR:** Também explique o caminho. Encaminhar alguém sem dizer o que vai acontecer aumenta incerteza. Se você conhece o recurso, diga de forma simples para que serve, como acessar e o que a pessoa pode esperar.
 
-**INSTRUTOR:** Lideranças influenciam muito essa cultura. Quando pedir uma pausa ou apoio é tratado como comportamento profissional e de segurança, a equipe tende a sinalizar dificuldades mais cedo. Quando vira motivo de exposição ou comentário de bastidor, as pessoas aprendem a esconder necessidade.
+**PROFISSIONAL:** E se ela não quiser o recurso que eu sugeri?
 
-**INSTRUTOR:** Evite diagnóstico informal, confidência circulando pela equipe e pressão para falar em grupo. Preserve dignidade. Microchecagem: o que pode reduzir a carga desse colega nas próximas horas sem expô-lo, infantilizá-lo ou retirar sua autonomia?
+**INSTRUTOR:** Respeite a autonomia sempre que as condições permitirem. Você pode explorar outra possibilidade ou deixar a informação disponível. Quando houver necessidade de proteção ou funcionamento muito comprometido, siga os fluxos institucionais correspondentes.
+
+**INSTRUTOR:** Conectar não é carregar o colega nas costas. É ajudá-lo a recuperar acesso a escolhas, apoio e recursos. Microchecagem: esta conversa terminou com um próximo passo claro, possível e compreendido ou apenas com boas intenções?
 
 ## Direção de voz
 
