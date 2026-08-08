@@ -1,14 +1,13 @@
 from __future__ import annotations
 
-"""Remasterização N2 da Série 2 a partir dos MP3s originais.
+"""Ressíntese da Série 2 com paridade sonora real com a Série 3.
 
-Princípios:
-- o MP3 original é a fonte de verdade;
-- cada episódio recebe uma transcrição-fonte congelada;
-- o texto é ressintetizado sem reescrita editorial;
-- os MP3s antigos permanecem intactos como backup;
-- a integridade textual é validada antes da síntese;
-- a entrega recebe prosódia discreta, pausas e normalização N2.
+Regras editoriais:
+- usa os roteiros congelados já extraídos dos MP3s originais;
+- não reescreve, resume ou amplia o texto;
+- usa a mesma família de vozes, cadência, pausas e pós-processamento da Série 3;
+- sintetiza em unidades curtas de fala para evitar o efeito de locução robótica;
+- grava com novos nomes de arquivo para impedir reaproveitamento de cache.
 """
 
 import asyncio
@@ -17,146 +16,154 @@ import re
 from pathlib import Path
 
 import edge_tts
-from faster_whisper import WhisperModel
 from pydub import AudioSegment, effects
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "assets" / "audio" / "serie-2"
 ROTEIROS = ROOT / "roteiros" / "serie-2"
-TMP = ROOT / ".tmp_serie2_n2"
+OUT = ROOT / "assets" / "audio" / "serie-2"
+TMP = ROOT / ".tmp_serie2_s3_parity"
 APP = ROOT / "app.js"
 
-VOICE_A = "pt-BR-AntonioNeural"
-VOICE_B = "pt-BR-FranciscaNeural"
-MODEL_NAME = "base"
-MAX_CHARS = 900
+VOICE_INSTRUTOR = "pt-BR-AntonioNeural"
+VOICE_PROFISSIONAL = "pt-BR-FranciscaNeural"
+BASE_RATE = {VOICE_INSTRUTOR: -4, VOICE_PROFISSIONAL: -1}
+BASE_PITCH = {VOICE_INSTRUTOR: -1, VOICE_PROFISSIONAL: 1}
+
+OPENING_SILENCE_MS = 130
+ENDING_SILENCE_MS = 240
 TARGET_DBFS = -18.0
-PAUSE_MS = 430
 MAX_CONCURRENT_SYNTH = 4
+SYNTH_TIMEOUT_SECONDS = 35
+MAX_UTTERANCE_CHARS = 260
+VERSION_TAG = "s3v2"
 
 
-def source_file(number: int) -> Path:
-    prefix = f"A2 {number:03d}" if number <= 12 else "A3 013"
-    matches = sorted(ROOT.glob(prefix + "*.mp3"))
-    if len(matches) != 1:
-        raise RuntimeError(f"Esperado 1 MP3 para {prefix}; encontrados {len(matches)}: {matches}")
-    return matches[0]
-
-
-def transcribe(model: WhisperModel, audio: Path):
-    segments, _ = model.transcribe(
-        str(audio),
-        language="pt",
-        beam_size=5,
-        vad_filter=True,
-        condition_on_previous_text=True,
-        word_timestamps=False,
-        temperature=0.0,
-    )
-    rows = []
-    for seg in segments:
-        text = re.sub(r"\s+", " ", seg.text).strip()
-        if text:
-            rows.append({"start": round(seg.start, 2), "end": round(seg.end, 2), "text": text})
-    if not rows:
-        raise RuntimeError(f"Nenhuma fala reconhecida em {audio.name}")
-    return rows
-
-
-def freeze_transcript(number: int, source: Path, rows) -> str:
-    text = " ".join(row["text"] for row in rows).strip()
-    ROTEIROS.mkdir(parents=True, exist_ok=True)
-    target = ROTEIROS / f"a2-{number:03d}.txt"
-    target.write_text(
-        f"# Série 2 — Episódio {number:03d}\n"
-        f"# Fonte: {source.name}\n"
-        f"# Transcrição automática congelada do MP3 original para remasterização N2.\n\n"
-        + text + "\n",
-        encoding="utf-8",
-    )
+def read_frozen_text(number: int) -> str:
+    path = ROTEIROS / f"a2-{number:03d}.txt"
+    if not path.exists():
+        raise RuntimeError(f"Roteiro congelado ausente: {path}")
+    lines = [line for line in path.read_text(encoding="utf-8").splitlines() if not line.startswith("#")]
+    text = re.sub(r"\s+", " ", " ".join(lines)).strip()
+    if not text:
+        raise RuntimeError(f"Roteiro vazio: {path}")
     return text
 
 
-def chunks_from_rows(rows):
-    chunks = []
-    current = []
-    current_len = 0
-    for row in rows:
-        text = row["text"]
-        projected = current_len + (1 if current else 0) + len(text)
-        if current and projected > MAX_CHARS:
-            chunks.append(" ".join(current))
-            current = [text]
-            current_len = len(text)
+def split_long_unit(text: str) -> list[str]:
+    if len(text) <= MAX_UTTERANCE_CHARS:
+        return [text.strip()]
+
+    parts = re.split(r"(?<=[,;:])\s+", text)
+    chunks: list[str] = []
+    current = ""
+    for part in parts:
+        part = part.strip()
+        if not part:
+            continue
+        candidate = f"{current} {part}".strip() if current else part
+        if current and len(candidate) > MAX_UTTERANCE_CHARS:
+            chunks.append(current)
+            current = part
         else:
-            current.append(text)
-            current_len = projected
+            current = candidate
     if current:
-        chunks.append(" ".join(current))
+        chunks.append(current)
     return chunks
 
 
-def normalize_spaces(text: str) -> str:
-    return re.sub(r"\s+", " ", text).strip()
+def speech_units(text: str) -> list[str]:
+    # Mesma lógica perceptiva da Série 3: fala curta + pausa + nova decisão de prosódia.
+    sentences = re.split(r"(?<=[.!?…])\s+", text)
+    units: list[str] = []
+    for sentence in sentences:
+        sentence = sentence.strip()
+        if sentence:
+            units.extend(split_long_unit(sentence))
+    if not units:
+        raise RuntimeError("Nenhuma unidade de fala gerada.")
 
-
-def assert_text_integrity(frozen: str, chunks):
-    rebuilt = normalize_spaces(" ".join(chunks))
-    expected = normalize_spaces(frozen)
+    # Gate de conteúdo: apenas espaços de junção podem mudar.
+    rebuilt = re.sub(r"\s+", " ", " ".join(units)).strip()
+    expected = re.sub(r"\s+", " ", text).strip()
     if rebuilt != expected:
-        raise RuntimeError("Gate de integridade textual falhou: os blocos não recompõem a transcrição-fonte.")
+        raise RuntimeError("Gate de integridade textual falhou ao segmentar o roteiro.")
+    return units
 
 
 def voice_for_episode(number: int) -> str:
-    # Mantém uma voz estável dentro de cada episódio. Alternância por episódio
-    # cria variedade sem inventar troca de interlocutores que não foi diarizada.
-    return VOICE_B if number in {7, 8} else VOICE_A
+    # Mantém a mesma família de vozes da Série 3. Nos episódios originalmente
+    # apresentados como entrevistas, usa a voz profissional feminina de forma estável,
+    # sem inventar alternância de interlocutores sem diarização confiável.
+    return VOICE_PROFISSIONAL if number in {7, 8} else VOICE_INSTRUTOR
 
 
-def prosody(index: int, voice: str):
-    if voice == VOICE_A:
-        base_rate, base_pitch = -3, -1
+def prosody_for(voice: str, text: str, turn_index: int) -> tuple[str, str, int]:
+    # Espelha generate_psp_audio.py (Série 3).
+    rate = BASE_RATE[voice]
+    pitch = BASE_PITCH[voice]
+    normalized = text.strip().lower()
+
+    if text.rstrip().endswith("?"):
+        rate += 2
+        pitch += 2
+    if normalized.startswith(("guarde", "em resumo", "pense", "imagine", "o ponto")):
+        rate -= 2
+    rate += (-1, 0, 1, 0)[turn_index % 4]
+
+    if text.rstrip().endswith("?"):
+        pause_ms = 560
+    elif text.rstrip().endswith("!"):
+        pause_ms = 500
     else:
-        base_rate, base_pitch = -1, 1
-    rate = base_rate + (-1, 0, 1, 0)[index % 4]
-    pitch = base_pitch + (0, 1, 0, -1)[index % 4]
-    return f"{rate:+d}%", f"{pitch:+d}Hz"
+        pause_ms = 520
+
+    rate = max(-10, min(4, rate))
+    pitch = max(-4, min(4, pitch))
+    return f"{rate:+d}%", f"{pitch:+d}Hz", pause_ms
 
 
-async def synth_one(text: str, voice: str, rate: str, pitch: str, out: Path, semaphore: asyncio.Semaphore):
+async def synthesize(text: str, voice: str, rate: str, pitch: str, output: Path, semaphore: asyncio.Semaphore):
     async with semaphore:
         for attempt in range(1, 4):
             try:
-                comm = edge_tts.Communicate(text=text, voice=voice, rate=rate, pitch=pitch, volume="+0%")
-                await asyncio.wait_for(comm.save(str(out)), timeout=90)
+                communicate = edge_tts.Communicate(
+                    text=text,
+                    voice=voice,
+                    rate=rate,
+                    volume="+0%",
+                    pitch=pitch,
+                )
+                await asyncio.wait_for(communicate.save(str(output)), timeout=SYNTH_TIMEOUT_SECONDS)
                 return
             except Exception:
                 if attempt == 3:
                     raise
-                await asyncio.sleep(attempt)
+                await asyncio.sleep(0.8 * attempt)
 
 
-async def synth_episode(number: int, chunks, semaphore: asyncio.Semaphore):
+async def build_episode(number: int, semaphore: asyncio.Semaphore):
+    text = read_frozen_text(number)
+    units = speech_units(text)
+    voice = voice_for_episode(number)
     work = TMP / f"a2-{number:03d}"
     work.mkdir(parents=True, exist_ok=True)
-    voice = voice_for_episode(number)
-    pieces = []
-    tasks = []
 
-    for idx, text in enumerate(chunks):
-        rate, pitch = prosody(idx, voice)
-        part = work / f"{idx:03d}.mp3"
-        pieces.append(part)
-        tasks.append(synth_one(text, voice, rate, pitch, part, semaphore))
+    sequence = []
+    tasks = []
+    for idx, unit in enumerate(units):
+        rate, pitch, pause_ms = prosody_for(voice, unit, idx)
+        segment = work / f"{idx:03d}.mp3"
+        sequence.append((segment, 0 if idx == len(units) - 1 else pause_ms))
+        tasks.append(synthesize(unit, voice, rate, pitch, segment, semaphore))
 
     await asyncio.gather(*tasks)
 
-    merged = AudioSegment.silent(duration=130)
-    for idx, part in enumerate(pieces):
-        merged += AudioSegment.from_file(part, format="mp3")
-        if idx < len(pieces) - 1:
-            merged += AudioSegment.silent(duration=PAUSE_MS)
-    merged += AudioSegment.silent(duration=240)
+    merged = AudioSegment.silent(duration=OPENING_SILENCE_MS)
+    for segment, pause_ms in sequence:
+        merged += AudioSegment.from_file(segment, format="mp3")
+        if pause_ms:
+            merged += AudioSegment.silent(duration=pause_ms)
+    merged += AudioSegment.silent(duration=ENDING_SILENCE_MS)
 
     merged = effects.compress_dynamic_range(
         merged,
@@ -171,9 +178,17 @@ async def synth_episode(number: int, chunks, semaphore: asyncio.Semaphore):
         merged = merged.apply_gain(-1.2 - merged.max_dBFS)
 
     OUT.mkdir(parents=True, exist_ok=True)
-    target = OUT / f"a2-{number:03d}.mp3"
+    target = OUT / f"a2-{number:03d}-{VERSION_TAG}.mp3"
     merged.export(target, format="mp3", bitrate="128k", parameters=["-ac", "1", "-ar", "44100"])
-    return target, round(len(merged) / 1000, 1)
+    return {
+        "episode": number,
+        "output": target.name,
+        "text_integrity": 1.0,
+        "speech_units": len(units),
+        "duration_seconds": round(len(merged) / 1000, 1),
+        "voice": voice,
+        "audio_profile": "serie-3-parity",
+    }
 
 
 def patch_app_urls():
@@ -189,7 +204,7 @@ def patch_app_urls():
     new_block = block
     for idx, match in reversed(list(enumerate(entries))):
         title = match.group(1)
-        replacement = f'{{title:"{title}",url:"assets/audio/serie-2/a2-{idx:03d}.mp3"}}'
+        replacement = f'{{title:"{title}",url:"assets/audio/serie-2/a2-{idx:03d}-{VERSION_TAG}.mp3"}}'
         new_block = new_block[:match.start()] + replacement + new_block[match.end():]
 
     content = content[:block_match.start(1)] + new_block + content[block_match.end(1):]
@@ -197,37 +212,19 @@ def patch_app_urls():
 
 
 async def main():
-    OUT.mkdir(parents=True, exist_ok=True)
-    ROTEIROS.mkdir(parents=True, exist_ok=True)
     TMP.mkdir(parents=True, exist_ok=True)
-
-    print(f"Carregando Whisper {MODEL_NAME} em CPU/int8...")
-    model = WhisperModel(MODEL_NAME, device="cpu", compute_type="int8")
     semaphore = asyncio.Semaphore(MAX_CONCURRENT_SYNTH)
     quality = []
-
     for number in range(14):
-        source = source_file(number)
-        print(f"[{number:03d}] transcrevendo {source.name}")
-        rows = transcribe(model, source)
-        frozen = freeze_transcript(number, source, rows)
-        chunks = chunks_from_rows(rows)
-        assert_text_integrity(frozen, chunks)
-        print(f"[{number:03d}] sintetizando {len(chunks)} bloco(s) N2")
-        target, seconds = await synth_episode(number, chunks, semaphore)
-        quality.append({
-            "episode": number,
-            "source": source.name,
-            "output": target.name,
-            "text_integrity": 1.0,
-            "chunks": len(chunks),
-            "duration_seconds": seconds,
-            "voice": voice_for_episode(number),
-        })
+        print(f"[{number:03d}] ressintetizando com paridade Série 3")
+        quality.append(await build_episode(number, semaphore))
 
     patch_app_urls()
-    (OUT / "quality.json").write_text(json.dumps(quality, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("Série 2 N2 concluída: 14 episódios, roteiros congelados e app.js atualizado.")
+    (OUT / "quality-s3-parity.json").write_text(
+        json.dumps(quality, ensure_ascii=False, indent=2) + "\n",
+        encoding="utf-8",
+    )
+    print("Série 2 concluída com o mesmo perfil sonoro da Série 3.")
 
 
 if __name__ == "__main__":
