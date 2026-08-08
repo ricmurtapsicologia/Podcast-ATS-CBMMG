@@ -2,14 +2,12 @@ from __future__ import annotations
 
 """Geração dos MP3s da Série 3 — padrão de áudio N2.
 
-Princípios do N2:
-- preserva integralmente o texto narrado dos roteiros;
-- usa vozes neurais pt-BR já validadas no projeto;
-- segmenta a fala em unidades naturais sem reescrever o conteúdo;
-- varia discretamente ritmo e pitch conforme função da frase;
-- aplica pausas contextuais entre frases e interlocutores;
-- faz compressão leve e normalização para escuta mais uniforme;
-- usa concorrência limitada e retentativas para reduzir o tempo de geração.
+O N2 preserva integralmente o texto narrado e melhora a entrega por:
+- vozes neurais pt-BR já validadas no projeto;
+- prosódia variável por fala, sem reescrita;
+- pausas contextuais entre interlocutores;
+- compressão leve e normalização de nível;
+- geração concorrente limitada, com retentativas.
 """
 
 import asyncio
@@ -29,15 +27,11 @@ VOICE_PROFISSIONAL = "pt-BR-FranciscaNeural"
 BASE_RATE = {"INSTRUTOR": -4, "PROFISSIONAL": -1}
 BASE_PITCH = {"INSTRUTOR": -1, "PROFISSIONAL": 1}
 
-TURN_PAUSE_MS = 520
 OPENING_SILENCE_MS = 130
 ENDING_SILENCE_MS = 240
 TARGET_DBFS = -18.0
 MAX_CONCURRENT_SYNTH = 4
-
 PATTERN = re.compile(r"^\*\*(INSTRUTOR|PROFISSIONAL):\*\*\s*(.+)$")
-SENTENCE_BOUNDARY = re.compile(r"(?<=[.!?…])\s+(?=[A-ZÁÀÂÃÉÊÍÓÔÕÚÇ0-9\"“])")
-CLAUSE_BOUNDARY = re.compile(r"(?<=[;:])\s+")
 
 
 def read_turns(path: Path):
@@ -51,35 +45,7 @@ def read_turns(path: Path):
     return turns
 
 
-def split_natural(text: str) -> list[str]:
-    """Divide para prosódia sem mudar palavras, pontuação ou ordem do texto."""
-    sentences = [part for part in SENTENCE_BOUNDARY.split(text) if part]
-    chunks: list[str] = []
-    for sentence in sentences:
-        if len(sentence) <= 290:
-            chunks.append(sentence)
-            continue
-        clauses = [part for part in CLAUSE_BOUNDARY.split(sentence) if part]
-        chunks.extend(clauses if len(clauses) > 1 else [sentence])
-    return chunks
-
-
-def pause_after(text: str) -> int:
-    stripped = text.rstrip()
-    if stripped.endswith("?"):
-        return 440
-    if stripped.endswith("!"):
-        return 390
-    if stripped.endswith((".", "…")):
-        return 360
-    if stripped.endswith(":"):
-        return 300
-    if stripped.endswith(";"):
-        return 260
-    return 220
-
-
-def prosody_for(speaker: str, text: str, chunk_index: int, chunk_total: int) -> tuple[str, str]:
+def prosody_for(speaker: str, text: str, turn_index: int) -> tuple[str, str, int]:
     rate = BASE_RATE[speaker]
     pitch = BASE_PITCH[speaker]
     normalized = text.strip().lower()
@@ -87,24 +53,23 @@ def prosody_for(speaker: str, text: str, chunk_index: int, chunk_total: int) -> 
     if text.rstrip().endswith("?"):
         rate += 2
         pitch += 2
-    if normalized.startswith(("guarde", "em resumo", "microchecagem", "pense", "imagine", "o ponto")):
+    if normalized.startswith(("guarde", "em resumo", "pense", "imagine", "o ponto")):
         rate -= 2
-    if chunk_total > 1:
-        rate += (-1, 0, 1, 0)[chunk_index % 4]
+    rate += (-1, 0, 1, 0)[turn_index % 4]
+
+    if text.rstrip().endswith("?"):
+        pause_ms = 560
+    elif text.rstrip().endswith("!"):
+        pause_ms = 500
+    else:
+        pause_ms = 520
 
     rate = max(-10, min(4, rate))
     pitch = max(-4, min(4, pitch))
-    return f"{rate:+d}%", f"{pitch:+d}Hz"
+    return f"{rate:+d}%", f"{pitch:+d}Hz", pause_ms
 
 
-async def synthesize(
-    text: str,
-    voice: str,
-    rate: str,
-    pitch: str,
-    output: Path,
-    semaphore: asyncio.Semaphore,
-):
+async def synthesize(text, voice, rate, pitch, output, semaphore):
     async with semaphore:
         for attempt in range(1, 4):
             try:
@@ -130,26 +95,16 @@ async def build_lesson(number: int, semaphore: asyncio.Semaphore):
     work.mkdir(parents=True, exist_ok=True)
 
     sequence = []
-    synth_tasks = []
-    segment_number = 0
+    tasks = []
 
     for turn_index, (speaker, text) in enumerate(turns):
-        chunks = split_natural(text)
         voice = VOICE_INSTRUTOR if speaker == "INSTRUTOR" else VOICE_PROFISSIONAL
+        rate, pitch, pause_ms = prosody_for(speaker, text, turn_index)
+        segment = work / f"{turn_index:03d}.mp3"
+        sequence.append((segment, 0 if turn_index == len(turns) - 1 else pause_ms))
+        tasks.append(synthesize(text, voice, rate, pitch, segment, semaphore))
 
-        for chunk_index, chunk in enumerate(chunks):
-            rate, pitch = prosody_for(speaker, chunk, chunk_index, len(chunks))
-            segment = work / f"{segment_number:03d}.mp3"
-            is_last_chunk = chunk_index == len(chunks) - 1
-            is_last_turn = turn_index == len(turns) - 1
-            pause_ms = 0 if (is_last_chunk and is_last_turn) else (
-                TURN_PAUSE_MS if is_last_chunk else pause_after(chunk)
-            )
-            sequence.append((segment, pause_ms))
-            synth_tasks.append(synthesize(chunk, voice, rate, pitch, segment, semaphore))
-            segment_number += 1
-
-    await asyncio.gather(*synth_tasks)
+    await asyncio.gather(*tasks)
 
     merged = AudioSegment.silent(duration=OPENING_SILENCE_MS)
     for segment, pause_ms in sequence:
