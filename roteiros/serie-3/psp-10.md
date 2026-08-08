@@ -1,28 +1,30 @@
-# Microaula 10 — Encerrar: próximo passo, passagem e reorganização da equipe
+# Microaula 10 — Integrar: perceber, aproximar, escutar, conectar e cuidar
 
 - Série: 3 — Primeiros Socorros Psicológicos
 - Card: 10
-- Duração estimada: 2.1 min, com locução a ~125 palavras/min
+- Duração estimada: 3.0 min, com locução a ~125 palavras/min
 - Formato: microaula conversacional; instrutor + profissional/aluno
 - Finalidade: aprofundar e aplicar o conteúdo escrito do card sem substituí-lo.
 
 ## Roteiro
 
-**INSTRUTOR:** Uma intervenção pode ter sido boa e ainda assim terminar mal se ninguém souber o que acontece depois. Encerrar PSP não é simplesmente dizer que o contato acabou. É reduzir incerteza e construir uma transição clara para a próxima etapa.
+**INSTRUTOR:** Nesta trilha, os Primeiros Socorros Psicológicos foram tratados como uma ferramenta de prevenção em saúde mental para profissionais de segurança e emergência. O valor do PSP não está em uma frase perfeita, mas em uma sequência de atitudes simples, humanas e tecnicamente cuidadosas.
 
-**PROFISSIONAL:** O que a pessoa precisa saber antes de eu encerrar?
+**PROFISSIONAL:** Qual é a sequência que eu devo guardar?
 
-**INSTRUTOR:** Quatro coisas ajudam. Primeiro, o que já foi resolvido. Segundo, o que ainda precisa acontecer. Terceiro, quem será a referência seguinte. Quarto, como acessar esse recurso. Depois confirme se existe alguma barreira prática ou dúvida importante.
+**INSTRUTOR:** Primeiro, perceber. Observe mudanças concretas no funcionamento sem rotular. Segundo, preparar. Escolha momento, lugar e postura. Terceiro, aproximar. Fale de forma privada, descreva o que percebeu e abra espaço. Quarto, escutar. Procure compreender necessidades atuais antes de dar conselhos. Quinto, conectar. Ajude a transformar a conversa em um próximo passo realista. Sexto, acompanhar. Retome o contato sem vigiar. E, durante todo o processo, cuidar também de si.
 
-**INSTRUTOR:** Na passagem para outro profissional ou serviço, transmita somente as informações necessárias à continuidade. Informação demais pode expor; informação de menos pode quebrar o cuidado. O objetivo é uma passagem objetiva, compatível com privacidade e protocolo.
+**PROFISSIONAL:** Isso pode fazer parte da rotina da equipe?
 
-**PROFISSIONAL:** E a equipe? O encerramento termina quando a pessoa atendida é encaminhada?
+**INSTRUTOR:** Deve fazer parte de uma cultura de cuidado, não como fiscalização emocional, mas como comportamento profissional. Em ambientes de alta exigência, saúde mental e segurança operacional se influenciam. Uma equipe que consegue reconhecer sobrecarga e acessar apoio cedo reduz silêncio, estigma e atraso na procura por ajuda.
 
-**INSTRUTOR:** Não necessariamente. Depois de uma ocorrência de alta carga, vale uma checagem operacional da equipe. Existem informações pendentes? Alguém precisa de pausa? Há condição para retorno às funções? É necessário reorganizar tarefas ou facilitar suporte adicional? Isso não precisa se transformar em exposição emocional obrigatória. É uma revisão de continuidade e segurança.
+**INSTRUTOR:** Isso não significa que colegas assumam papel clínico. PSP tem limites. Quando a necessidade ultrapassa o apoio inicial, conectar com o recurso adequado é parte da intervenção, não sinal de fracasso.
 
-**INSTRUTOR:** Evite prolongar contato sem finalidade apenas porque encerrar parece desconfortável. Também evite sair sem explicar quem seguirá responsável. Um encerramento claro preserva autonomia porque a pessoa sabe onde está e o que vem a seguir.
+**PROFISSIONAL:** E qual seria uma boa regra para lideranças?
 
-**INSTRUTOR:** A Série 3 termina com uma sequência simples: compreender, preparar, observar, escutar, conectar, cuidar, respeitar limites e encerrar com continuidade. Microchecagem final: a necessidade principal foi encaminhada, o próximo passo foi compreendido, a passagem necessária foi feita e a equipe está organizada para seguir?
+**INSTRUTOR:** Separar cuidado de exposição. Uma liderança pode perguntar como a pessoa está, reorganizar demandas quando possível, informar recursos e acompanhar funcionalidade sem exigir detalhes pessoais. Segurança psicológica cresce quando pedir ajuda não é tratado como fraqueza.
+
+**INSTRUTOR:** Para fechar, memorize: perceber, preparar, aproximar, escutar, conectar, acompanhar e cuidar. Você não precisa resolver a vida de ninguém. Precisa reconhecer quando alguém pode estar precisando de apoio e ajudar a tornar o próximo passo mais acessível. Essa é uma forma concreta de prevenção em saúde mental no trabalho.
 
 ## Direção de voz
 
