@@ -1,28 +1,28 @@
-# Microaula 01 — O que são Primeiros Socorros Psicológicos
+# Microaula 01 — PSP no trabalho: cuidar antes que o problema se agrave
 
 - Série: 3 — Primeiros Socorros Psicológicos
 - Card: 01
-- Duração estimada: 2.7 min, com locução a ~125 palavras/min
+- Duração estimada: 2.8 min, com locução a ~125 palavras/min
 - Formato: microaula conversacional; instrutor + profissional/aluno
 - Finalidade: aprofundar e aplicar o conteúdo escrito do card sem substituí-lo.
 
 ## Roteiro
 
-**INSTRUTOR:** Pense numa ocorrência em que alguém está abalado, confuso e cercado de informações. A primeira tentação de quem quer ajudar pode ser falar muito, aconselhar ou tentar fazer a emoção desaparecer. Nos Primeiros Socorros Psicológicos, o ponto de partida é outro: reduzir desorganização e ajudar a pessoa a recuperar segurança, orientação, autonomia e conexão com recursos úteis.
+**INSTRUTOR:** Quando se fala em Primeiros Socorros Psicológicos no trabalho, a primeira ideia importante é esta: você não precisa ser terapeuta do seu colega para oferecer um primeiro apoio de qualidade. Em equipes de segurança e emergência, prevenção também acontece nas pequenas interações do cotidiano, quando alguém percebe uma mudança, se aproxima com respeito e ajuda o outro a encontrar um próximo passo.
 
-**PROFISSIONAL:** Então PSP não é uma conversa para convencer a pessoa a ficar bem?
+**PROFISSIONAL:** Então o PSP pode começar antes de existir uma situação grave?
 
-**INSTRUTOR:** Exatamente. PSP não é psicoterapia, diagnóstico, interrogatório nem uma sessão improvisada. É uma ajuda inicial, humana, prática e respeitosa. Às vezes, isso significa oferecer presença calma. Em outras situações, significa explicar com clareza o que vai acontecer, localizar alguém de confiança, facilitar acesso a um serviço ou atender uma necessidade concreta.
+**INSTRUTOR:** Sim. Aqui, o PSP é usado como uma ferramenta de prevenção e apoio inicial. O foco não é descobrir um diagnóstico nem fazer a pessoa contar tudo. É perceber que talvez exista sobrecarga, sofrimento ou perda de funcionamento e criar uma oportunidade segura de apoio. Às vezes, o que ajuda é uma conversa breve. Em outras situações, é uma pausa, uma reorganização de tarefa, contato com alguém de confiança ou acesso a um recurso profissional.
 
-**INSTRUTOR:** Uma forma simples de pensar é usar quatro perguntas. A pessoa está mais segura depois da minha aproximação? Está entendendo melhor o que acontece agora? Continua participando das decisões que pode tomar? Ficou mais conectada a pessoas ou recursos que realmente ajudam? Se a resposta caminha para sim, sua intervenção provavelmente está cumprindo a função de PSP.
+**PROFISSIONAL:** E como evitar que isso vire invasão?
 
-**PROFISSIONAL:** E se eu achar que sei o que seria melhor para ela?
+**INSTRUTOR:** Preserve três coisas: dignidade, autonomia e privacidade. Você oferece ajuda; não obriga. Você pergunta; não conclui. Você escuta; não interroga. E mantém clareza sobre o seu papel. Um colega pode dizer que está tudo bem, pode querer falar pouco ou pode preferir conversar depois. O apoio continua sendo respeitoso quando deixa uma porta aberta.
 
-**INSTRUTOR:** Evite presumir. Pergunte o que ela precisa agora e ofereça opções realistas. Respeitar autonomia não significa deixar de agir diante de uma necessidade objetiva de proteção ou saúde; significa não retirar escolhas sem necessidade. Também não force relato do evento. A pessoa pode aceitar ajuda sem querer contar detalhes.
+**INSTRUTOR:** Pense numa lógica simples. Primeiro, perceba mudanças concretas. Depois, prepare uma abordagem discreta. Aproxime-se sem encurralar. Escute para entender o que pesa mais agora. Ajude a conectar o colega a um próximo passo e acompanhe de forma proporcional. E cuide também das suas próprias condições para apoiar.
 
-**INSTRUTOR:** Imagine alguém aguardando encaminhamento após uma situação crítica. Em vez de pedir que conte tudo o que aconteceu, você se apresenta, explica seu papel, verifica se há alguma necessidade imediata e informa qual será o próximo passo. Isso é simples, mas pode diminuir bastante a imprevisibilidade.
+**PROFISSIONAL:** Então o objetivo não é resolver tudo.
 
-**INSTRUTOR:** Guarde três ideias: PSP é apoio inicial, não tratamento clínico; o foco está nas necessidades atuais e no próximo passo; e dignidade, privacidade e autonomia fazem parte da própria intervenção. Microchecagem final: minha presença está tornando a situação mais segura, compreensível e manejável ou está acrescentando mais estímulo?
+**INSTRUTOR:** Exatamente. O objetivo é reduzir isolamento, aumentar orientação e facilitar acesso a recursos. Uma cultura preventiva não exige que todo profissional esteja sempre bem; ela permite que alguém diga que precisa de ajuda sem ser diminuído por isso. Microchecagem: minha aproximação aumenta segurança, autonomia e conexão ou acrescenta pressão?
 
 ## Direção de voz
 
