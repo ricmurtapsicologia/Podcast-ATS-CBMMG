@@ -1,28 +1,30 @@
-# Microaula 06 — Ajudar de forma prática e conectar recursos
+# Microaula 06 — Escutar: menos conselho, mais compreensão
 
 - Série: 3 — Primeiros Socorros Psicológicos
 - Card: 06
-- Duração estimada: 2.1 min, com locução a ~125 palavras/min
+- Duração estimada: 2.9 min, com locução a ~125 palavras/min
 - Formato: microaula conversacional; instrutor + profissional/aluno
 - Finalidade: aprofundar e aplicar o conteúdo escrito do card sem substituí-lo.
 
 ## Roteiro
 
-**INSTRUTOR:** Acolher é importante, mas PSP ganha forma quando o acolhimento vira uma ação útil. Em situações críticas, a pessoa pode estar cercada de problemas e informações. O nosso trabalho é ajudar a reduzir complexidade e tornar o próximo passo compreensível.
+**INSTRUTOR:** Profissionais de segurança e emergência são treinados para agir, decidir e resolver problemas. Na escuta, porém, a primeira tarefa é diferente: compreender antes de tentar corrigir. Escutar em PSP não é investigação, entrevista clínica nem busca por todos os detalhes. É atenção suficiente para entender o que está mais difícil agora e qual apoio pode ser útil.
 
-**PROFISSIONAL:** Isso significa resolver o problema para ela?
+**PROFISSIONAL:** Como faço isso sem transformar a conversa em algo longo?
 
-**INSTRUTOR:** Não. Significa ajudar a organizar prioridades e fortalecer recursos que já existem. Escolha, com a pessoa, um próximo passo possível. Pode ser entender onde aguardar, fazer contato com alguém de confiança, acessar um serviço, obter uma informação confirmada ou atender uma necessidade básica.
+**INSTRUTOR:** Use perguntas simples. “O que está pesando mais agora?” “O que tem sido mais difícil nessa semana?” “O que ajudaria um pouco neste momento?” Depois, dê espaço para a resposta. Evite preencher todos os silêncios. Muitas pessoas organizam o pensamento enquanto falam.
 
-**INSTRUTOR:** Evite despejar muitas orientações de uma vez. Quando o processamento está sobrecarregado, dez instruções podem ser menos úteis do que uma instrução clara. Diga o que acontece agora, quem será a referência seguinte e o que a pessoa precisa fazer. Depois confirme se ela compreendeu.
+**PROFISSIONAL:** E se eu já passei por algo parecido?
 
-**PROFISSIONAL:** E se eu encaminhar para outro serviço? Meu papel termina ali?
+**INSTRUTOR:** Sua experiência pode ajudar na empatia, mas cuidado para não deslocar a conversa para você. Frases como “comigo foi pior” ou longos relatos pessoais podem fazer a pessoa se sentir comparada. Primeiro, permaneça no mundo dela.
 
-**INSTRUTOR:** Antes de encerrar, verifique se o encaminhamento é realmente acessível. A pessoa sabe para onde ir? Sabe com quem falar? Existe transporte, contato, documento ou outra barreira prática? Conectar não é apenas apontar uma direção; é aumentar a chance de o próximo passo funcionar.
+**INSTRUTOR:** Uma ferramenta simples é resumir: “Então, pelo que entendi, você está muito sobrecarregado, dormindo pouco e o que mais preocupa agora é conseguir atravessar essa sequência de plantões. É isso?” A síntese ajuda a pessoa a se sentir compreendida e permite corrigir interpretações.
 
-**INSTRUTOR:** Entre colegas, uma ação útil pode ser muito concreta: água, alimentação, companhia, uma pausa possível, troca temporária de tarefa, organização de informação ou acesso a suporte institucional. O princípio é o mesmo: reduzir carga e aumentar recursos sem retirar autonomia.
+**PROFISSIONAL:** Preciso dar um conselho no final?
 
-**INSTRUTOR:** Evite assumir tarefas que a própria pessoa consegue fazer com apoio mínimo. Ajuda eficaz não cria dependência desnecessária. Microchecagem: para onde é o próximo passo, com quem, o que acontecerá e a pessoa consegue realmente chegar até ele?
+**INSTRUTOR:** Nem sempre. Conselho só faz sentido depois de compreender a necessidade e, de preferência, como opção, não como ordem. Às vezes, o próximo passo nasce de uma pergunta: “O que faria diferença hoje?” ou “Quem poderia ajudar nisso?”
+
+**INSTRUTOR:** Lembre também dos limites de privacidade e proteção. Se surgir necessidade maior de cuidado, facilite o acesso ao recurso adequado. Microchecagem: ao terminar, consigo dizer qual é a principal necessidade desse colega sem ter exigido que ele conte mais do que queria?
 
 ## Direção de voz
 
