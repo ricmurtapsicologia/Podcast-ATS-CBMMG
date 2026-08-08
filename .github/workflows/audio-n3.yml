@@ -53,7 +53,7 @@ jobs:
           AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION }}
           AZURE_HD_VOICE_MALE: ${{ secrets.AZURE_HD_VOICE_MALE }}
           AZURE_HD_VOICE_FEMALE: ${{ secrets.AZURE_HD_VOICE_FEMALE }}
-        run: python scripts/audio_n3/n3_pipeline.py
+        run: python scripts/audio_n3/n3_runner.py
 
       - name: Gate de escopo congelado
         shell: bash
