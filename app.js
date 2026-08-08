@@ -24,20 +24,20 @@ const AUDIOS={1:[
 {title:"A1 020: Entrada Forçada - Quando a Segurança Exige Ação",url:"https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/020%20Entrada%20For%C3%A7ada%20Quando%20a%20Seguran%C3%A7a%20Exige%20A%C3%A7%C3%A3o.mp3.mp3"},
 {title:"A1 021: Encerramento - Continuemos a Girar a Ampulheta da Vida",url:"https://github.com/ricmurtapsicologia/Podcast-ATS-CBMMG/raw/refs/heads/main/021%20Encerramento%20Continuemos%20a%20Girar%20a%20Ampulheta%20da%20Vida.mp3.mp3"}
 ],2:[
-{title:"A2 000: Desvendando as Engrenagens",url:"assets/audio/serie-2/a2-000.mp3"},
-{title:"A2 001: O Suicídio ao Longo da História",url:"assets/audio/serie-2/a2-001.mp3"},
-{title:"A2 002: Decisões no Caos: O Cérebro em Crise",url:"assets/audio/serie-2/a2-002.mp3"},
-{title:"A2 003: Transtornos Mentais e o Peso do Sofrimento",url:"assets/audio/serie-2/a2-003.mp3"},
-{title:"A2 004: Maria e as Sombras da Depressão",url:"assets/audio/serie-2/a2-004.mp3"},
-{title:"A2 005: Cláudio e os Ciclos da Bipolaridade",url:"assets/audio/serie-2/a2-005.mp3"},
-{title:"A2 006: Fernanda e o Labirinto da Cocaína",url:"assets/audio/serie-2/a2-006.mp3"},
-{title:"A2 007: Programa em Foco - Saúde Mental: Júlia e o Desafio do Borderline",url:"assets/audio/serie-2/a2-007.mp3"},
-{title:"A2 008: Programa em Foco - Saúde Mental: Dra. Sara e os Transtornos de Personalidade",url:"assets/audio/serie-2/a2-008.mp3"},
-{title:"A2 009: Dona Lurdes, Mônica e os Desafios da Esquizofrenia",url:"assets/audio/serie-2/a2-009.mp3"},
-{title:"A2 010: As Vulnerabilidades Invisíveis: Um Olhar Filosófico e Social",url:"assets/audio/serie-2/a2-010.mp3"},
-{title:"A2 011: Quando as Emoções Dominam",url:"assets/audio/serie-2/a2-011.mp3"},
-{title:"A2 012: A Ação Antes da Razão",url:"assets/audio/serie-2/a2-012.mp3"},
-{title:"A2 013: Um Novo Olhar para as Engrenagens",url:"assets/audio/serie-2/a2-013.mp3"}
+{title:"A2 000: Desvendando as Engrenagens",url:"assets/audio/serie-2/a2-000-s3v3.mp3"},
+{title:"A2 001: O Suicídio ao Longo da História",url:"assets/audio/serie-2/a2-001-s3v3.mp3"},
+{title:"A2 002: Decisões no Caos: O Cérebro em Crise",url:"assets/audio/serie-2/a2-002-s3v3.mp3"},
+{title:"A2 003: Transtornos Mentais e o Peso do Sofrimento",url:"assets/audio/serie-2/a2-003-s3v3.mp3"},
+{title:"A2 004: Maria e as Sombras da Depressão",url:"assets/audio/serie-2/a2-004-s3v3.mp3"},
+{title:"A2 005: Cláudio e os Ciclos da Bipolaridade",url:"assets/audio/serie-2/a2-005-s3v3.mp3"},
+{title:"A2 006: Fernanda e o Labirinto da Cocaína",url:"assets/audio/serie-2/a2-006-s3v3.mp3"},
+{title:"A2 007: Programa em Foco - Saúde Mental: Júlia e o Desafio do Borderline",url:"assets/audio/serie-2/a2-007-s3v3.mp3"},
+{title:"A2 008: Programa em Foco - Saúde Mental: Dra. Sara e os Transtornos de Personalidade",url:"assets/audio/serie-2/a2-008-s3v3.mp3"},
+{title:"A2 009: Dona Lurdes, Mônica e os Desafios da Esquizofrenia",url:"assets/audio/serie-2/a2-009-s3v3.mp3"},
+{title:"A2 010: As Vulnerabilidades Invisíveis: Um Olhar Filosófico e Social",url:"assets/audio/serie-2/a2-010-s3v3.mp3"},
+{title:"A2 011: Quando as Emoções Dominam",url:"assets/audio/serie-2/a2-011-s3v3.mp3"},
+{title:"A2 012: A Ação Antes da Razão",url:"assets/audio/serie-2/a2-012-s3v3.mp3"},
+{title:"A2 013: Um Novo Olhar para as Engrenagens",url:"assets/audio/serie-2/a2-013-s3v3.mp3"}
 ],3:[]};
 const LS={ONBOARD:"gav:onboard_done_v2",LAST:"gav:last_series_v2",PROGRESS:u=>`gav:progress:${u}`};
 const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
