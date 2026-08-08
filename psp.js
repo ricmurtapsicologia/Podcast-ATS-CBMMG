@@ -63,9 +63,7 @@
 
     audio.addEventListener("loadedmetadata", () => {
       const state = loadState(index);
-      if (!state.completed && state.time > 1 && state.time < audio.duration - 2) {
-        audio.currentTime = state.time;
-      }
+      if (!state.completed && state.time > 1 && state.time < audio.duration - 2) audio.currentTime = state.time;
       updateAudioUi(card);
     });
 
@@ -100,14 +98,12 @@
       if (status) status.textContent = "Áudio temporariamente indisponível";
     });
 
-    if (reset) {
-      reset.addEventListener("click", () => {
-        audio.pause();
-        audio.currentTime = 0;
-        saveState(index, { time: 0, completed: false });
-        updateAudioUi(card);
-      });
-    }
+    reset?.addEventListener("click", () => {
+      audio.pause();
+      audio.currentTime = 0;
+      saveState(index, { time: 0, completed: false });
+      updateAudioUi(card);
+    });
   }
 
   function audioMarkup(card, index) {
@@ -115,12 +111,12 @@
     return `<section class="psp-audio" aria-label="Microaula em áudio do Card ${card.n}">
       <div class="psp-audio-head">
         <div>
-          <span class="psp-audio-kicker">Microaula em áudio</span>
+          <span class="psp-audio-kicker">Microaula em áudio • padrão N2</span>
           <strong>${card.title}</strong>
         </div>
         <span class="psp-audio-duration">2–4 min</span>
       </div>
-      <p class="psp-audio-note">Ouça uma explicação aplicada deste card. O conteúdo escrito permanece integralmente disponível para consulta.</p>
+      <p class="psp-audio-note">Mesmo conteúdo do roteiro, com locução neural tratada para ritmo, pausas e prosódia mais naturais.</p>
       <audio data-psp-audio controls preload="metadata" style="width:100%;max-width:100%" aria-label="Microaula ${card.n}: ${card.title}">
         <source src="${src}" type="audio/mpeg">
         Seu navegador não suporta áudio HTML5.
@@ -140,7 +136,7 @@
         <div class="psp-summary">
           <div class="psp-top"><span class="psp-step">Card ${card.n} • ${card.phase}</span><span class="psp-tag">${card.tag}</span></div>
           <h3>${card.title}</h3>
-          <div class="psp-summary-meta"><span class="psp-audio-chip">Áudio • 2–4 min</span><span class="psp-open-label">Abrir conteúdo <span aria-hidden="true">＋</span></span></div>
+          <div class="psp-summary-meta"><span class="psp-audio-chip">Áudio N2 • 2–4 min</span><span class="psp-open-label">Abrir conteúdo <span aria-hidden="true">＋</span></span></div>
         </div>
       </button>
       <div class="psp-card-details" id="${detailId}" hidden>
@@ -239,21 +235,21 @@
 
     pauseAllAudio();
     if (audioTip) audioTip.hidden = true;
-    kicker.textContent = "Série 3 • 10 cards • 10 microaulas";
+    kicker.textContent = "Série 3 • 10 cards • 10 microaulas N2";
     title.textContent = "Primeiros Socorros Psicológicos no Trabalho";
-    description.textContent = "PSP aplicado à prevenção em saúde mental de profissionais de segurança e emergência: reconhecer mudanças, aproximar, escutar, conectar e cuidar.";
+    description.textContent = "Adaptação preventiva para profissionais de segurança e emergência baseada no PSP da OMS: preparar o apoio e aplicar Observar, Escutar e Conectar.";
 
     episodeList.innerHTML = `<div class="psp-shell">
-      <div class="psp-path" aria-label="Progressão da trilha de PSP">
-        <div class="psp-path-step"><strong>Preparar</strong><span>momento, lugar e postura</span></div>
-        <div class="psp-path-step"><strong>Observar</strong><span>mudanças e funcionamento</span></div>
-        <div class="psp-path-step"><strong>Escutar</strong><span>presença e necessidades</span></div>
-        <div class="psp-path-step"><strong>Conectar</strong><span>apoio e próximo passo</span></div>
-        <div class="psp-path-step"><strong>Cuidar</strong><span>colega, equipe e si</span></div>
+      <div class="psp-path" aria-label="Estrutura da trilha baseada no modelo de PSP da OMS">
+        <div class="psp-path-step"><strong>Preparar</strong><span>antes do contato</span></div>
+        <div class="psp-path-step"><strong>Observar • Look</strong><span>segurança, mudanças e necessidades</span></div>
+        <div class="psp-path-step"><strong>Escutar • Listen</strong><span>presença e compreensão</span></div>
+        <div class="psp-path-step"><strong>Conectar • Link</strong><span>apoio prático e recursos</span></div>
+        <div class="psp-path-step"><strong>Complementos</strong><span>reconhecer cedo, acompanhar e cuidar</span></div>
       </div>
-      <div class="psp-intro"><strong>Como usar:</strong> esta trilha foi construída para profissionais de segurança e emergência. Na primeira leitura, siga a ordem numérica; depois, use os cards como consulta rápida para reconhecer mudanças, preparar uma abordagem, observar, escutar, conectar, acompanhar e praticar autocuidado. O progresso dos áudios fica salvo neste dispositivo.</div>
+      <div class="psp-intro"><strong>Como usar:</strong> o núcleo técnico segue os princípios de ação da OMS — Observar, Escutar e Conectar — precedidos de preparação para ajudar. Reconhecimento precoce, acompanhamento e autocuidado aparecem como adaptação desta trilha ao contexto de prevenção em saúde mental e apoio entre pares no trabalho. Na primeira leitura, siga os cards em ordem; depois, use-os como consulta rápida.</div>
       <div class="psp-grid">${CARDS.map(cardMarkup).join("")}</div>
-      <div class="psp-references"><strong>Base técnica</strong><p>Conteúdo estruturado a partir do guia de Primeiros Socorros Psicológicos da OMS/WHO e da versão em português da OPAS, adaptado ao contexto de prevenção em saúde mental e apoio entre pares no trabalho. <a href="https://www.who.int/publications-detail-redirect/9789241548205" target="_blank" rel="noopener noreferrer">OMS/WHO</a> • <a href="https://iris.paho.org/handle/10665.2/7676" target="_blank" rel="noopener noreferrer">OPAS/OMS em português</a>.</p></div>
+      <div class="psp-references"><strong>Base técnica e escopo</strong><p>Conteúdo baseado no guia de Primeiros Socorros Psicológicos da OMS/WHO e na versão em português da OPAS. A aplicação a apoio entre pares e prevenção em saúde mental de profissionais de segurança e emergência é uma adaptação educacional do projeto, e não uma reprodução literal de um protocolo ocupacional da OMS. <a href="https://www.who.int/publications-detail-redirect/9789241548205" target="_blank" rel="noopener noreferrer">OMS/WHO</a> • <a href="https://iris.paho.org/handle/10665.2/7676" target="_blank" rel="noopener noreferrer">OPAS/OMS em português</a>.</p></div>
       ${endActionMarkup("Fechar a trilha de PSP e voltar à página inicial")}
     </div>`;
 
@@ -281,8 +277,8 @@
       image.referrerPolicy = "no-referrer";
     }
     if (heading) heading.textContent = "Primeiros Socorros Psicológicos no Trabalho";
-    if (description) description.textContent = "Trilha prática de prevenção em saúde mental e apoio entre pares para profissionais de segurança e emergência.";
-    if (meta) meta.innerHTML = '<span class="pill available">Disponível</span><span class="pill">10 cards + 10 áudios</span>';
+    if (description) description.textContent = "PSP da OMS adaptado à prevenção em saúde mental e ao apoio entre pares de profissionais de segurança e emergência.";
+    if (meta) meta.innerHTML = '<span class="pill available">Disponível</span><span class="pill">10 cards + 10 áudios N2</span>';
 
     button.disabled = false;
     button.classList.remove("ghost");
@@ -293,7 +289,7 @@
     }
 
     const aboutItems = document.querySelectorAll(".about-list li");
-    if (aboutItems[2]) aboutItems[2].innerHTML = "<strong>Série 3:</strong> Primeiros Socorros Psicológicos no Trabalho — prevenção em saúde mental, apoio entre pares e autocuidado.";
+    if (aboutItems[2]) aboutItems[2].innerHTML = "<strong>Série 3:</strong> Primeiros Socorros Psicológicos no Trabalho — modelo OMS adaptado à prevenção, apoio entre pares e autocuidado.";
   }
 
   function observeSeriesContent() {
