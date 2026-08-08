@@ -1,28 +1,30 @@
-# Microaula 08 — Cuidar de si: autocuidado operacional
+# Microaula 08 — Acompanhar sem vigiar
 
 - Série: 3 — Primeiros Socorros Psicológicos
 - Card: 08
-- Duração estimada: 2.1 min, com locução a ~125 palavras/min
+- Duração estimada: 2.7 min, com locução a ~125 palavras/min
 - Formato: microaula conversacional; instrutor + profissional/aluno
 - Finalidade: aprofundar e aplicar o conteúdo escrito do card sem substituí-lo.
 
 ## Roteiro
 
-**INSTRUTOR:** Autocuidado operacional não é um prêmio depois do trabalho. É parte da preservação da capacidade de perceber, decidir, comunicar e atuar com segurança. Em uma ocorrência prolongada, necessidades básicas ignoradas podem aparecer como queda de atenção, irritabilidade e decisões piores.
+**INSTRUTOR:** Apoio entre pares não precisa terminar quando a primeira conversa acaba. Em algumas situações, vale retomar o contato. Acompanhar, porém, é diferente de vigiar. O objetivo é oferecer continuidade sem transformar cuidado em cobrança.
 
-**PROFISSIONAL:** Então autocuidado é responsabilidade individual do profissional?
+**PROFISSIONAL:** Como retomar sem parecer invasivo?
 
-**INSTRUTOR:** Só em parte. Medidas individuais ajudam, mas não podem ser usadas para esconder problemas de organização. Autocuidado precisa caminhar com liderança, pausas possíveis, rodízio, comunicação clara e condições adequadas de trabalho. A ideia não é dizer ao profissional sobrecarregado que basta se cuidar melhor.
+**INSTRUTOR:** Seja simples. Depois de algum tempo, em um momento privado, você pode perguntar: “Como você ficou depois daquela nossa conversa?” ou “Conseguiu encaminhar aquilo que combinamos?” A pergunta deve permitir uma resposta breve e não exigir detalhes pessoais.
 
-**INSTRUTOR:** Durante uma situação exigente, faça autochecks curtos. Como está minha atenção? Estou entendendo e transmitindo informações com clareza? Minha irritabilidade aumentou? Estou com dificuldade para decidir ou manter foco? Quando houver possibilidade operacional, cuide de hidratação, alimentação, descanso e alternância de tarefas mais carregadas.
+**PROFISSIONAL:** Preciso saber se ele foi ao atendimento ou o que falou lá?
 
-**PROFISSIONAL:** E depois da ocorrência? Existe uma maneira certa de processar o que aconteceu?
+**INSTRUTOR:** Não. A continuidade do cuidado não depende de conhecer conteúdo clínico. Se você é colega, o mais importante é saber se existe apoio suficiente e se alguma barreira prática permanece. Se você exerce função de liderança, acompanhe condições de trabalho e funcionalidade dentro dos limites da sua responsabilidade, preservando privacidade.
 
-**INSTRUTOR:** Não existe uma única resposta obrigatória. Recuperação pode envolver rotina, descanso, vínculos sociais, atividade habitual e acesso a apoio quando necessário. Algumas pessoas querem conversar cedo; outras precisam de tempo. O importante é reconhecer quando o impacto persiste ou interfere de forma relevante no funcionamento e buscar o recurso adequado.
+**INSTRUTOR:** Observe também a evolução do funcionamento. O colega parece estar se reorganizando? A dificuldade continua significativa? O recurso combinado foi acessível? Se não foi, talvez seja necessário ajudar a pensar em outra alternativa.
 
-**INSTRUTOR:** Evite glorificar exaustão extrema como prova de compromisso. Uma equipe segura não é aquela que ignora limites, e sim aquela que percebe queda de capacidade antes que isso produza erro.
+**PROFISSIONAL:** E se ele parecer incomodado com o acompanhamento?
 
-**INSTRUTOR:** Leve esta pergunta para o serviço: minha atenção, julgamento, comunicação e tolerância ao estresse continuam adequados para a função que estou exercendo agora? Se a resposta for não, sinalizar e reorganizar também é uma atitude profissional.
+**INSTRUTOR:** Respeite o limite. Você pode dizer que sua intenção era apenas demonstrar disponibilidade e que não precisa falar sobre isso. O vínculo é preservado quando a pessoa não se sente monitorada.
+
+**INSTRUTOR:** Acompanhamento proporcional comunica uma mensagem importante: você não foi ouvido apenas por alguns minutos e depois esquecido. Ao mesmo tempo, evita dependência. Microchecagem: meu contato oferece continuidade e apoio ou transmite controle, expectativa de melhora e invasão de privacidade?
 
 ## Direção de voz
 

@@ -1,28 +1,30 @@
-# Microaula 03 — Preparar: cenário, segurança, papel e recursos
+# Microaula 03 — Preparar: escolha momento, lugar e postura
 
 - Série: 3 — Primeiros Socorros Psicológicos
 - Card: 03
-- Duração estimada: 2.2 min, com locução a ~125 palavras/min
+- Duração estimada: 2.8 min, com locução a ~125 palavras/min
 - Formato: microaula conversacional; instrutor + profissional/aluno
 - Finalidade: aprofundar e aplicar o conteúdo escrito do card sem substituí-lo.
 
 ## Roteiro
 
-**INSTRUTOR:** Uma boa intervenção começa antes da primeira frase. Preparar, em PSP, significa chegar ao contato sabendo o suficiente para não aumentar a confusão. Qual é o cenário? Há riscos ativos? Qual é sua função? Que recursos estão disponíveis? Que informação pode ser transmitida com segurança?
+**INSTRUTOR:** Uma conversa de apoio começa antes da primeira pergunta. Preparar é decidir quando, onde e como abordar. Uma boa intenção pode gerar constrangimento se o colega for chamado diante da equipe, durante uma demanda operacional ou num momento em que você próprio está irritado, apressado ou sem tempo para ouvir.
 
-**PROFISSIONAL:** Mas em ocorrência real nem sempre dá tempo de fazer uma preparação longa.
+**PROFISSIONAL:** Qual seria um bom cenário?
 
-**INSTRUTOR:** E não precisa ser longa. Pense em um mapa de poucos segundos. Primeiro: segurança e fluxo da ocorrência. Segundo: qual é exatamente o seu papel naquele momento. Terceiro: que recursos você realmente pode oferecer. Quarto: quais informações são confirmadas. Quinto: como está sua própria condição para assumir esse contato.
+**INSTRUTOR:** Sempre que possível, escolha um momento com menor pressão e um local discreto. Não precisa ser uma reunião formal. Pode ser uma conversa breve, desde que haja privacidade suficiente e que o colega não se sinta exposto. Também verifique se você possui tempo real para sustentar alguns minutos de escuta.
 
-**INSTRUTOR:** Esse autocheck é importante porque profissionais também trabalham sob carga elevada. Se você está desorientado, muito acelerado ou com atenção comprometida, comunicar isso e redistribuir uma função, quando possível, pode ser uma medida de segurança, não uma fraqueza.
+**PROFISSIONAL:** E o que eu preparo para dizer?
 
-**PROFISSIONAL:** Qual é o risco de começar a ajudar sem esse mapa?
+**INSTRUTOR:** Comece por uma observação concreta, não por uma conclusão. Em vez de dizer “você não está bem”, pense em algo como: “Percebi que você está mais quieto e com mais dificuldade para se organizar nesses últimos dias. Queria saber como você está.” Isso reduz defensividade porque descreve o que foi observado e oferece espaço para a pessoa responder.
 
-**INSTRUTOR:** Você pode prometer algo que não controla, fornecer informação contraditória, iniciar uma conversa que será interrompida por uma prioridade operacional ou criar uma expectativa que a equipe não consegue cumprir. PSP deve entrar no fluxo da ocorrência, e não competir com ele.
+**INSTRUTOR:** Outra parte da preparação é conhecer seus limites. Você não precisa ter resposta para tudo. Mas é útil saber quais recursos existem: apoio de liderança, serviço de saúde, apoio psicossocial, rede externa ou outra possibilidade institucional. Se a conversa apontar para necessidade maior, você já sabe para onde ajudar a conectar.
 
-**INSTRUTOR:** Imagine que uma pessoa pergunta quando poderá falar com um familiar. Antes de responder no impulso, você confirma com a equipe qual é o fluxo disponível. Depois volta com uma informação curta e confiável. Uma resposta simples, mas correta, costuma ser mais útil do que uma resposta rápida e incerta.
+**PROFISSIONAL:** E se eu não estiver em boas condições para conversar?
 
-**INSTRUTOR:** Para memorizar, use cinco pontos: segurança conhecida, função definida, recursos mapeados, informação confiável e equipe alinhada. Microchecagem: estou entrando nesse contato com clareza suficiente para ser útil sem criar novas incertezas?
+**INSTRUTOR:** Reconhecer isso também é prevenção. Se você está reativo, muito cansado ou envolvido no problema, talvez outro colega com mais vínculo e equilíbrio seja mais adequado para a aproximação.
+
+**INSTRUTOR:** Antes de iniciar, faça quatro checagens: tenho privacidade? Tenho tempo? Consigo falar sem julgamento? Sei qual recurso pode ser acionado se necessário? Preparar reduz improvisação e aumenta segurança psicológica para os dois lados.
 
 ## Direção de voz
 

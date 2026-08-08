@@ -148,7 +148,7 @@
         <p class="psp-context">${card.context}</p>
         ${audioMarkup(card, index)}
         <div class="psp-objective"><strong>Objetivo de aprendizagem</strong><p>${card.objective}</p></div>
-        <div class="psp-block"><strong>Aplicação no campo</strong><ul>${card.field.map(item => `<li>${item}</li>`).join("")}</ul></div>
+        <div class="psp-block"><strong>Aplicação no trabalho</strong><ul>${card.field.map(item => `<li>${item}</li>`).join("")}</ul></div>
         <div class="psp-block psp-team"><strong>Colega e equipe</strong><p>${card.team}</p></div>
         <div class="psp-block psp-avoid"><strong>Evite</strong><p>${card.avoid}</p></div>
         <p class="psp-check"><strong>Microchecagem:</strong> ${card.check}</p>
@@ -240,20 +240,20 @@
     pauseAllAudio();
     if (audioTip) audioTip.hidden = true;
     kicker.textContent = "Série 3 • 10 cards • 10 microaulas";
-    title.textContent = "Primeiros Socorros Psicológicos";
-    description.textContent = "Leia cada card para consulta rápida e use a microaula de 2 a 4 minutos para aprofundar a aplicação.";
+    title.textContent = "Primeiros Socorros Psicológicos no Trabalho";
+    description.textContent = "PSP aplicado à prevenção em saúde mental de profissionais de segurança e emergência: reconhecer mudanças, aproximar, escutar, conectar e cuidar.";
 
     episodeList.innerHTML = `<div class="psp-shell">
       <div class="psp-path" aria-label="Progressão da trilha de PSP">
-        <div class="psp-path-step"><strong>Preparar</strong><span>contexto e recursos</span></div>
-        <div class="psp-path-step"><strong>Observar</strong><span>segurança e prioridades</span></div>
-        <div class="psp-path-step"><strong>Escutar</strong><span>contato e necessidades</span></div>
-        <div class="psp-path-step"><strong>Conectar</strong><span>apoio e continuidade</span></div>
+        <div class="psp-path-step"><strong>Preparar</strong><span>momento, lugar e postura</span></div>
+        <div class="psp-path-step"><strong>Observar</strong><span>mudanças e funcionamento</span></div>
+        <div class="psp-path-step"><strong>Escutar</strong><span>presença e necessidades</span></div>
+        <div class="psp-path-step"><strong>Conectar</strong><span>apoio e próximo passo</span></div>
         <div class="psp-path-step"><strong>Cuidar</strong><span>colega, equipe e si</span></div>
       </div>
-      <div class="psp-intro"><strong>Como usar:</strong> abra um card para ler o conteúdo e ouvir sua microaula. Na primeira leitura, siga a ordem numérica; depois, use os cards como consulta rápida. O progresso dos áudios fica salvo neste dispositivo.</div>
+      <div class="psp-intro"><strong>Como usar:</strong> esta trilha foi construída para profissionais de segurança e emergência. Na primeira leitura, siga a ordem numérica; depois, use os cards como consulta rápida para reconhecer mudanças, preparar uma abordagem, observar, escutar, conectar, acompanhar e praticar autocuidado. O progresso dos áudios fica salvo neste dispositivo.</div>
       <div class="psp-grid">${CARDS.map(cardMarkup).join("")}</div>
-      <div class="psp-references"><strong>Base técnica</strong><p>Conteúdo estruturado a partir do guia de Primeiros Socorros Psicológicos da OMS/WHO e da versão em português da OPAS. <a href="https://www.who.int/publications-detail-redirect/9789241548205" target="_blank" rel="noopener noreferrer">OMS/WHO</a> • <a href="https://iris.paho.org/handle/10665.2/7676" target="_blank" rel="noopener noreferrer">OPAS/OMS em português</a>.</p></div>
+      <div class="psp-references"><strong>Base técnica</strong><p>Conteúdo estruturado a partir do guia de Primeiros Socorros Psicológicos da OMS/WHO e da versão em português da OPAS, adaptado ao contexto de prevenção em saúde mental e apoio entre pares no trabalho. <a href="https://www.who.int/publications-detail-redirect/9789241548205" target="_blank" rel="noopener noreferrer">OMS/WHO</a> • <a href="https://iris.paho.org/handle/10665.2/7676" target="_blank" rel="noopener noreferrer">OPAS/OMS em português</a>.</p></div>
       ${endActionMarkup("Fechar a trilha de PSP e voltar à página inicial")}
     </div>`;
 
@@ -277,11 +277,11 @@
 
     if (image) {
       image.src = PSP_IMAGE;
-      image.alt = "Paramédico oferecendo presença e apoio a uma pessoa junto a uma ambulância";
+      image.alt = "Profissional de emergência oferecendo presença e apoio a um colega";
       image.referrerPolicy = "no-referrer";
     }
-    if (heading) heading.textContent = "Primeiros Socorros Psicológicos";
-    if (description) description.textContent = "Trilha prática e progressiva de PSP com 10 cards e 10 microaulas de 2 a 4 minutos.";
+    if (heading) heading.textContent = "Primeiros Socorros Psicológicos no Trabalho";
+    if (description) description.textContent = "Trilha prática de prevenção em saúde mental e apoio entre pares para profissionais de segurança e emergência.";
     if (meta) meta.innerHTML = '<span class="pill available">Disponível</span><span class="pill">10 cards + 10 áudios</span>';
 
     button.disabled = false;
@@ -293,7 +293,7 @@
     }
 
     const aboutItems = document.querySelectorAll(".about-list li");
-    if (aboutItems[2]) aboutItems[2].innerHTML = "<strong>Série 3:</strong> Primeiros Socorros Psicológicos — 10 cards e 10 microaulas.";
+    if (aboutItems[2]) aboutItems[2].innerHTML = "<strong>Série 3:</strong> Primeiros Socorros Psicológicos no Trabalho — prevenção em saúde mental, apoio entre pares e autocuidado.";
   }
 
   function observeSeriesContent() {
