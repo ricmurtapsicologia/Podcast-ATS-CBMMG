@@ -4,10 +4,10 @@ from __future__ import annotations
 
 Este runner refina somente:
 - segmentação semântica: evita blocos longos e excesso de microcortes;
-- QA de silêncio: considera como gap excessivo apenas pausas realmente longas;
-- reutilização de candidatos A/B já sintetizados quando aplicável.
+- QA de silêncio: considera como gap excessivo apenas pausas realmente longas.
 
-Nenhuma palavra do texto canônico é alterada.
+Nenhuma palavra do texto canônico é alterada. Candidatos A/B são sempre
+ressintetizados quando a direção de locução muda.
 """
 
 import asyncio
@@ -29,10 +29,7 @@ def split_by_words(text: str, max_words: int = MAX_WORDS) -> list[str]:
     words = text.split()
     if len(words) <= HARD_MAX_WORDS:
         return [text.strip()]
-    chunks = []
-    for start in range(0, len(words), max_words):
-        chunks.append(' '.join(words[start:start + max_words]))
-    return chunks
+    return [' '.join(words[start:start + max_words]) for start in range(0, len(words), max_words)]
 
 
 def refined_atoms(text: str) -> list[str]:
@@ -96,8 +93,8 @@ def refined_probe_audio(path: Path) -> dict:
     fmt = data.get('format', {})
     audio = AudioSegment.from_file(path)
 
-    # O N2 da Série 3, já validado perceptivamente, possui pausas naturais >1 s.
-    # Para o gate N3, só tratamos como "gap longo" silêncios contínuos >=2,2 s.
+    # A Série 3 N2 validada pelo usuário contém pausas naturais superiores a 1 s.
+    # O gate N3 só contabiliza como gap longo silêncios contínuos >= 2,2 s.
     gaps = silence.detect_silence(audio, min_silence_len=2200, silence_thresh=-50)
     gap_ms = sum(end - start for start, end in gaps)
     lufs, peak = p.parse_ebur128(path)
@@ -113,20 +110,8 @@ def refined_probe_audio(path: Path) -> dict:
     }
 
 
-_original_synth_episode_edge = p.synth_episode_edge
-
-
-async def reuse_or_synthesize(direction: dict, out: Path) -> None:
-    # Reutiliza apenas candidato da fase A/B já versionado. Na fase full os nomes -n3
-    # ainda não existem, portanto todos os 45 episódios são sintetizados de novo.
-    if out.exists() and 'candidate-n3' in out.parts:
-        return
-    await _original_synth_episode_edge(direction, out)
-
-
 p.group_units = refined_group_units
 p.probe_audio = refined_probe_audio
-p.synth_episode_edge = reuse_or_synthesize
 p.TARGET_MIN_WORDS = MIN_WORDS
 p.TARGET_MAX_WORDS = MAX_WORDS
 p.ABS_MAX_WORDS = HARD_MAX_WORDS
