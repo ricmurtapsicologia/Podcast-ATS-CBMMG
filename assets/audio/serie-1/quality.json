@@ -1,0 +1,422 @@
+[
+  {
+    "episode": 1,
+    "source": "001 Aborgagem Técnica - comunicação que salva!.mp3.mp3",
+    "output": "a1-001-s3n2.mp3",
+    "text_integrity": 1.0,
+    "frozen_characters": 851,
+    "turns": 2,
+    "dialogue_detected": false,
+    "voices": [
+      "pt-BR-AntonioNeural"
+    ],
+    "silhouette": 0.432,
+    "pitch_difference_hz": 13.0,
+    "cluster_shares": [
+      0.96,
+      0.04
+    ],
+    "duration_seconds": 51.8,
+    "audio_profile": "serie-3-n2"
+  },
+  {
+    "episode": 2,
+    "source": "002 Comportamentos Desejáveis na Abordagem Técnica.mp3.mp3",
+    "output": "a1-002-s3n2.mp3",
+    "text_integrity": 1.0,
+    "frozen_characters": 1007,
+    "turns": 2,
+    "dialogue_detected": false,
+    "voices": [
+      "pt-BR-AntonioNeural"
+    ],
+    "silhouette": 0.167,
+    "pitch_difference_hz": 6.1,
+    "cluster_shares": [
+      0.483,
+      0.517
+    ],
+    "duration_seconds": 77.1,
+    "audio_profile": "serie-3-n2"
+  },
+  {
+    "episode": 3,
+    "source": "003 Comportamentos que Devem Ser Evitados na Abordagem Técnica.mp3.mp3",
+    "output": "a1-003-s3n2.mp3",
+    "text_integrity": 1.0,
+    "frozen_characters": 1411,
+    "turns": 3,
+    "dialogue_detected": false,
+    "voices": [
+      "pt-BR-AntonioNeural"
+    ],
+    "silhouette": 0.21,
+    "pitch_difference_hz": 4.6,
+    "cluster_shares": [
+      0.251,
+      0.749
+    ],
+    "duration_seconds": 109.1,
+    "audio_profile": "serie-3-n2"
+  },
+  {
+    "episode": 4,
+    "source": "004 A Aproximação Segura no Atendimento a Tentativas de Suicídio.mp3.mp3",
+    "output": "a1-004-s3n2.mp3",
+    "text_integrity": 1.0,
+    "frozen_characters": 1437,
+    "turns": 3,
+    "dialogue_detected": false,
+    "voices": [
+      "pt-BR-AntonioNeural"
+    ],
+    "silhouette": 0.483,
+    "pitch_difference_hz": 12.7,
+    "cluster_shares": [
+      0.978,
+      0.022
+    ],
+    "duration_seconds": 106.2,
+    "audio_profile": "serie-3-n2"
+  },
+  {
+    "episode": 5,
+    "source": "005 O Poder de Ouvir.mp3.mp3",
+    "output": "a1-005-s3n2.mp3",
+    "text_integrity": 1.0,
+    "frozen_characters": 693,
+    "turns": 2,
+    "dialogue_detected": false,
+    "voices": [
+      "pt-BR-AntonioNeural"
+    ],
+    "silhouette": 0.162,
+    "pitch_difference_hz": 10.2,
+    "cluster_shares": [
+      0.332,
+      0.668
+    ],
+    "duration_seconds": 52.7,
+    "audio_profile": "serie-3-n2"
+  },
+  {
+    "episode": 6,
+    "source": "006 A Apresentação Pessoal A Primeira Conexão.mp3.mp3",
+    "output": "a1-006-s3n2.mp3",
+    "text_integrity": 1.0,
+    "frozen_characters": 953,
+    "turns": 2,
+    "dialogue_detected": false,
+    "voices": [
+      "pt-BR-AntonioNeural"
+    ],
+    "silhouette": 0.199,
+    "pitch_difference_hz": 17.0,
+    "cluster_shares": [
+      0.735,
+      0.265
+    ],
+    "duration_seconds": 70.8,
+    "audio_profile": "serie-3-n2"
+  },
+  {
+    "episode": 7,
+    "source": "007 Perguntas Simples -  Rastreando Fatores de Risco e Proteção.mp3.mp3",
+    "output": "a1-007-s3n2.mp3",
+    "text_integrity": 1.0,
+    "frozen_characters": 1261,
+    "turns": 3,
+    "dialogue_detected": false,
+    "voices": [
+      "pt-BR-AntonioNeural"
+    ],
+    "silhouette": 0.398,
+    "pitch_difference_hz": 10.6,
+    "cluster_shares": [
+      0.037,
+      0.963
+    ],
+    "duration_seconds": 93.7,
+    "audio_profile": "serie-3-n2"
+  },
+  {
+    "episode": 8,
+    "source": "008 Usando Perguntas Simples com Tentante de Perfil Depressivo.mp3.mp3",
+    "output": "a1-008-s3n2.mp3",
+    "text_integrity": 1.0,
+    "frozen_characters": 2605,
+    "turns": 5,
+    "dialogue_detected": false,
+    "voices": [
+      "pt-BR-AntonioNeural"
+    ],
+    "silhouette": 0.179,
+    "pitch_difference_hz": 1.0,
+    "cluster_shares": [
+      0.358,
+      0.642
+    ],
+    "duration_seconds": 210.9,
+    "audio_profile": "serie-3-n2"
+  },
+  {
+    "episode": 9,
+    "source": "009 Usando Perguntas Simples com Tentante de Perfil Agressivo.mp3.mp3",
+    "output": "a1-009-s3n2.mp3",
+    "text_integrity": 1.0,
+    "frozen_characters": 2744,
+    "turns": 5,
+    "dialogue_detected": false,
+    "voices": [
+      "pt-BR-AntonioNeural"
+    ],
+    "silhouette": 0.224,
+    "pitch_difference_hz": 3.3,
+    "cluster_shares": [
+      0.264,
+      0.736
+    ],
+    "duration_seconds": 219.8,
+    "audio_profile": "serie-3-n2"
+  },
+  {
+    "episode": 10,
+    "source": "010 Usando Perguntas Simples com Tentante de Perfil Psicótico.mp3.mp3",
+    "output": "a1-010-s3n2.mp3",
+    "text_integrity": 1.0,
+    "frozen_characters": 3808,
+    "turns": 8,
+    "dialogue_detected": false,
+    "voices": [
+      "pt-BR-AntonioNeural"
+    ],
+    "silhouette": 0.242,
+    "pitch_difference_hz": 3.0,
+    "cluster_shares": [
+      0.795,
+      0.205
+    ],
+    "duration_seconds": 297.4,
+    "audio_profile": "serie-3-n2"
+  },
+  {
+    "episode": 11,
+    "source": "011 Usando Perguntas Complexas para Apoiar o Tentante.mp3.mp3",
+    "output": "a1-011-s3n2.mp3",
+    "text_integrity": 1.0,
+    "frozen_characters": 1993,
+    "turns": 4,
+    "dialogue_detected": false,
+    "voices": [
+      "pt-BR-AntonioNeural"
+    ],
+    "silhouette": 0.207,
+    "pitch_difference_hz": 0.8,
+    "cluster_shares": [
+      0.21,
+      0.79
+    ],
+    "duration_seconds": 149.0,
+    "audio_profile": "serie-3-n2"
+  },
+  {
+    "episode": 12,
+    "source": "012 Ferramentas de Diálogo Influenciando a Reflexão do Tentante.mp3.mp3",
+    "output": "a1-012-s3n2.mp3",
+    "text_integrity": 1.0,
+    "frozen_characters": 1596,
+    "turns": 3,
+    "dialogue_detected": false,
+    "voices": [
+      "pt-BR-AntonioNeural"
+    ],
+    "silhouette": 0.474,
+    "pitch_difference_hz": 3.4,
+    "cluster_shares": [
+      0.98,
+      0.02
+    ],
+    "duration_seconds": 110.9,
+    "audio_profile": "serie-3-n2"
+  },
+  {
+    "episode": 13,
+    "source": "013 Técnica do Sucesso Anterior Resgatando Estratégias do Passado.mp3.mp3",
+    "output": "a1-013-s3n2.mp3",
+    "text_integrity": 1.0,
+    "frozen_characters": 2607,
+    "turns": 5,
+    "dialogue_detected": false,
+    "voices": [
+      "pt-BR-AntonioNeural"
+    ],
+    "silhouette": 0.338,
+    "pitch_difference_hz": 1.4,
+    "cluster_shares": [
+      0.893,
+      0.107
+    ],
+    "duration_seconds": 196.4,
+    "audio_profile": "serie-3-n2"
+  },
+  {
+    "episode": 14,
+    "source": "014 Ponte para o Passado Resgatando Memórias Agradáveis.mp3.mp3",
+    "output": "a1-014-s3n2.mp3",
+    "text_integrity": 1.0,
+    "frozen_characters": 2869,
+    "turns": 6,
+    "dialogue_detected": false,
+    "voices": [
+      "pt-BR-AntonioNeural"
+    ],
+    "silhouette": 0.278,
+    "pitch_difference_hz": 4.3,
+    "cluster_shares": [
+      0.166,
+      0.834
+    ],
+    "duration_seconds": 238.3,
+    "audio_profile": "serie-3-n2"
+  },
+  {
+    "episode": 15,
+    "source": "015 Ponte para o Futuro Criando Perspectivas Positivas.mp3.mp3",
+    "output": "a1-015-s3n2.mp3",
+    "text_integrity": 1.0,
+    "frozen_characters": 2711,
+    "turns": 6,
+    "dialogue_detected": false,
+    "voices": [
+      "pt-BR-AntonioNeural"
+    ],
+    "silhouette": 0.215,
+    "pitch_difference_hz": 2.1,
+    "cluster_shares": [
+      0.7,
+      0.3
+    ],
+    "duration_seconds": 206.6,
+    "audio_profile": "serie-3-n2"
+  },
+  {
+    "episode": 16,
+    "source": "016 Paráfrase Resumida Refinando o Foco no Diálogo.mp3.mp3",
+    "output": "a1-016-s3n2.mp3",
+    "text_integrity": 1.0,
+    "frozen_characters": 1256,
+    "turns": 3,
+    "dialogue_detected": false,
+    "voices": [
+      "pt-BR-AntonioNeural"
+    ],
+    "silhouette": 0.243,
+    "pitch_difference_hz": 4.8,
+    "cluster_shares": [
+      0.21,
+      0.79
+    ],
+    "duration_seconds": 94.2,
+    "audio_profile": "serie-3-n2"
+  },
+  {
+    "episode": 17,
+    "source": "017 Especificidades para Abordar Tentantes de Perfil Depressivo.mp3.mp3",
+    "output": "a1-017-s3n2.mp3",
+    "text_integrity": 1.0,
+    "frozen_characters": 1200,
+    "turns": 3,
+    "dialogue_detected": false,
+    "voices": [
+      "pt-BR-AntonioNeural"
+    ],
+    "silhouette": 0.559,
+    "pitch_difference_hz": 5.3,
+    "cluster_shares": [
+      0.974,
+      0.026
+    ],
+    "duration_seconds": 88.7,
+    "audio_profile": "serie-3-n2"
+  },
+  {
+    "episode": 18,
+    "source": "018 Especificidades para Abordar Tentantes de Perfil Agressivo.mp3.mp3",
+    "output": "a1-018-s3n2.mp3",
+    "text_integrity": 1.0,
+    "frozen_characters": 1274,
+    "turns": 3,
+    "dialogue_detected": false,
+    "voices": [
+      "pt-BR-AntonioNeural"
+    ],
+    "silhouette": 0.134,
+    "pitch_difference_hz": 3.9,
+    "cluster_shares": [
+      0.475,
+      0.525
+    ],
+    "duration_seconds": 96.7,
+    "audio_profile": "serie-3-n2"
+  },
+  {
+    "episode": 19,
+    "source": "019 Especificidades para Abordar Tentantes de Perfil Psicótico.mp3.mp3",
+    "output": "a1-019-s3n2.mp3",
+    "text_integrity": 1.0,
+    "frozen_characters": 1266,
+    "turns": 3,
+    "dialogue_detected": false,
+    "voices": [
+      "pt-BR-AntonioNeural"
+    ],
+    "silhouette": 0.45,
+    "pitch_difference_hz": 10.4,
+    "cluster_shares": [
+      0.025,
+      0.975
+    ],
+    "duration_seconds": 93.7,
+    "audio_profile": "serie-3-n2"
+  },
+  {
+    "episode": 20,
+    "source": "020 Entrada Forçada Quando a Segurança Exige Ação.mp3.mp3",
+    "output": "a1-020-s3n2.mp3",
+    "text_integrity": 1.0,
+    "frozen_characters": 1684,
+    "turns": 4,
+    "dialogue_detected": false,
+    "voices": [
+      "pt-BR-AntonioNeural"
+    ],
+    "silhouette": 0.242,
+    "pitch_difference_hz": 0.8,
+    "cluster_shares": [
+      0.149,
+      0.851
+    ],
+    "duration_seconds": 131.1,
+    "audio_profile": "serie-3-n2"
+  },
+  {
+    "episode": 21,
+    "source": "021 Encerramento Continuemos a Girar a Ampulheta da Vida.mp3.mp3",
+    "output": "a1-021-s3n2.mp3",
+    "text_integrity": 1.0,
+    "frozen_characters": 1171,
+    "turns": 3,
+    "dialogue_detected": false,
+    "voices": [
+      "pt-BR-AntonioNeural"
+    ],
+    "silhouette": 0.201,
+    "pitch_difference_hz": 7.2,
+    "cluster_shares": [
+      0.384,
+      0.616
+    ],
+    "duration_seconds": 84.5,
+    "audio_profile": "serie-3-n2"
+  }
+]
