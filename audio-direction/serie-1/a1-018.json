@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "series": "serie-1",
+  "episode": "a1-018",
+  "canonical_sha256": "04a59a7bd627c410fee8149411db5b7e924ef03a14230f7002b946c485c2e14f",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Especificidades para abordar tentantes de perfil agressivo. Olá, pessoal. Continuando nossa série sobre abordagem técnica e comunicação que salva, hoje vamos falar sobre como lidar com tentantes de perfil agressivo.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 14.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Esse tipo de abordagem exige cuidado extra, já que o tentante pode manifestar raiva, hostilidade ou até agressões verbais. Aqui, a palavra-chave é controle emocional. Dê espaço para o tentante desabafar. Interrompê-lo pode agravar o conflito.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Evite olhar diretamente nos olhos dele nos primeiros momentos, pois isso pode ser percebido como uma afronta. Posicione-se no mesmo nível ou abaixo, demonstrando respeito e minimizando qualquer percepção de superioridade. Se o tentante gritar, fale mais baixo. Esse tom ajuda a diminuir a tensão.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 21.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Evite palavras negativas como não pode ou não vai, e por mais desafiador que seja, não reaja a provocações ou xingamentos. Nunca desafie o tentante ou ceda a exigências que comprometam o protocolo. E claro, não imponha ultimatos de tempo, isso só aumenta a pressão.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 21.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Com essas estratégias, você mantém o controle da situação, ajuda a reduzir o conflito e cria uma chance maior de conduzir o diálogo de forma produtiva. No próximo episódio, vamos abordar as especificidades para tentantes de perfil psicótico. Não perca!",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 19.2
+    }
+  ]
+}

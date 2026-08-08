@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "series": "serie-3",
+  "episode": "psp-05",
+  "canonical_sha256": "7813d65eef1010cfed0d7afc53f0a2512c670095b7bd2acb2563fa45eb242fa5",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Depois de perceber uma mudança e preparar o momento, vem a aproximação. O objetivo é abrir uma porta, não colocar o colega contra a parede. A maneira como você inicia a conversa pode determinar se ele sente acolhimento ou necessidade de se defender.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 20.6
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Qual é uma boa forma de começar?",
+      "intent": "question",
+      "rate_percent": 1,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 3.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Use uma observação concreta, um tom simples e uma pergunta aberta. Por exemplo: “Percebi que você está mais quieto e sobrecarregado nesses últimos dias. Como você está?” Ou: “Notei que a semana foi pesada para você. Quer conversar um pouco?” A frase não precisa ser perfeita. Precisa ser respeitosa, verdadeira e sem plateia.",
+      "intent": "explanation",
+      "rate_percent": -4,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 25.4
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "E se ele disser que está tudo bem?",
+      "intent": "question",
+      "rate_percent": 1,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 3.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Não transforme isso em disputa. Você pode responder algo como: “Tudo bem. Só queria que soubesse que, se precisar, estou disponível.” Às vezes, a pessoa não quer falar naquele momento. Às vezes, precisa de tempo para confiar.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "O apoio continua existindo quando você respeita a resposta e mantém disponibilidade.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 5.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Também evite frases que aumentam exposição: “todo mundo percebeu”, “você precisa se abrir”, “você está estranho”, “isso não é normal”. Elas deslocam a conversa do cuidado para a defesa.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 13.9
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "E se eu for chefe dessa pessoa?",
+      "intent": "question",
+      "rate_percent": 1,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 3.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "A atenção precisa ser ainda maior para separar cuidado de cobrança. Deixe claro quando a conversa é de apoio e preserve o máximo possível de privacidade. Questões de desempenho podem exigir outro espaço. Misturar os dois objetivos tende a reduzir segurança psicológica.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 20.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Aproxime-se com curiosidade respeitosa: eu percebi algo, posso estar errado e quero compreender.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 6.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Microchecagem final: a forma como estou falando permite que o colega escolha quanto quer dizer ou faz com que ele se sinta obrigado a se justificar?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 0,
+      "estimated_seconds": 12.5
+    }
+  ]
+}

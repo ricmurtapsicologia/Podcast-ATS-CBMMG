@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "series": "serie-3",
+  "episode": "psp-06",
+  "canonical_sha256": "1d847114b81963fb5b181740fcd17a533dbc8b66db10eb7016e44ada0d10a7ca",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Profissionais de segurança e emergência são treinados para agir, decidir e resolver problemas. Na escuta, porém, a primeira tarefa é diferente: compreender antes de tentar corrigir. Escutar em PSP não é investigação, entrevista clínica nem busca por todos os detalhes.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 19.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "É atenção suficiente para entender o que está mais difícil agora e qual apoio pode ser útil.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 8.2
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Como faço isso sem transformar a conversa em algo longo?",
+      "intent": "question",
+      "rate_percent": 0,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 4.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Use perguntas simples. “O que está pesando mais agora?” “O que tem sido mais difícil nessa semana?” “O que ajudaria um pouco neste momento?” Depois, dê espaço para a resposta. Evite preencher todos os silêncios. Muitas pessoas organizam o pensamento enquanto falam.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 20.2
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "E se eu já passei por algo parecido?",
+      "intent": "question",
+      "rate_percent": 1,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 3.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Sua experiência pode ajudar na empatia, mas cuidado para não deslocar a conversa para você. Frases como “comigo foi pior” ou longos relatos pessoais podem fazer a pessoa se sentir comparada. Primeiro, permaneça no mundo dela.",
+      "intent": "enumeration",
+      "rate_percent": -4,
+      "pitch_hz": -1,
+      "pause_after_ms": 360,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Uma ferramenta simples é resumir: “Então, pelo que entendi, você está muito sobrecarregado, dormindo pouco e o que mais preocupa agora é conseguir atravessar essa sequência de plantões. É isso?” A síntese ajuda a pessoa a se sentir compreendida e permite corrigir interpretações.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 20.6
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Preciso dar um conselho no final?",
+      "intent": "question",
+      "rate_percent": 1,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 2.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Nem sempre. Conselho só faz sentido depois de compreender a necessidade e, de preferência, como opção, não como ordem. Às vezes, o próximo passo nasce de uma pergunta: “O que faria diferença hoje?” ou “Quem poderia ajudar nisso?”",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 18.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Lembre também dos limites de privacidade e proteção. Se surgir necessidade maior de cuidado, facilite o acesso ao recurso adequado.",
+      "intent": "synthesis",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 480,
+      "estimated_seconds": 9.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Microchecagem: ao terminar, consigo dizer qual é a principal necessidade desse colega sem ter exigido que ele conte mais do que queria?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 0,
+      "estimated_seconds": 10.6
+    }
+  ]
+}

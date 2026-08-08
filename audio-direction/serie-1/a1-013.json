@@ -1,0 +1,180 @@
+{
+  "schema": 1,
+  "series": "serie-1",
+  "episode": "a1-013",
+  "canonical_sha256": "a1ab762957c0477cdfbdd8c6e6cd7085be77e856718359a16d4e66b6395ebe99",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Técnica do Sucesso Anterior, resgatando estratégias do passado. Olá, pessoal. Continuando nossa série sobre abordagem técnica, comunicação que salva, hoje vamos demonstrar como aplicar a técnica do sucesso anterior, uma ferramenta essencial para ajudar o tentante a resgatar recursos internos e lembrar que já enfrentou situações desafiadoras antes.",
+      "intent": "opening",
+      "rate_percent": -4,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 23.0
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Essa abordagem é especialmente poderosa após algum tempo de conversa, quando já existe um vínculo de confiança. Vamos ver como ela pode ser usada para abordar o fator precipitante da tentativa de suicídio. Sena.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 16.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Carlos está sentado à beira de uma ponte, demonstrando sinais de cansaço emocional e desamparo. O abordador já desenvolveu um vínculo ao longo da abordagem, e agora busca explorar situações similares do passado que Carlos tenha superado. Diálogo.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 18.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Carlos, você mencionou que perdeu o emprego, e isso tem sido muito difícil para você.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 7.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Posso te perguntar uma coisa sobre como lidou com desafios no passado?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 5.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Tentante. Pode. Mas não sei se vai adiantar. Eu entendo.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 4.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Mas me conta, já houve algum momento em que você enfrentou algo tão complicado assim como ficar sem trabalho e conseguiu superar?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 10.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Algo que parecia impossível, mas depois deu certo?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 3.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Acho que da última vez que perdi o emprego. Foi difícil, mas consegui outro depois de um tempo.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 8.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "E o que você fez naquela época para conseguir superar aquilo?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 5.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Houve algo específico que te ajudou a sair daquela situação?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 4.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Tentante. Sim, comecei a procurar mais vagas, mandei muitos currículos. Meu amigo Pedro me indicou para uma vaga e acabou dando certo. Que ótimo. Você buscou ajuda, tentou estratégias e conseguiu sair daquela situação.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 16.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Você acha que algumas dessas coisas poderiam funcionar novamente agora?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 4.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Ou talvez adaptá-las ao que você está passando?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 3.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Tentante. Pode ser. Talvez eu devesse falar com alguém, mas parece que dessa vez é diferente. Eu entendo que tudo parece maior agora, mas olha só. A força que você usou daquela vez ainda está aí.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Se uma das coisas que te ajudou foi pedir apoio, tem alguém com quem você poderia conversar agora, assim como fez antes. Talvez. Acho que posso tentar falar com o Pedro de novo.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 15.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Por que essa técnica funciona?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 2.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "A técnica do sucesso anterior conecta o tentante a memórias de superação, ajudando a perceber que já enfrentou situações difíceis antes e encontrou soluções. Isso reforça a ideia de que ele tem recursos internos que podem ser reaplicados no presente, devolvendo-lhe uma sensação de controle.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 21.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "No próximo episódio, vamos explorar a ponte para o passado, uma ferramenta que reforça vínculos emocionais através de memórias positivas. Não perca!",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 10.6
+    }
+  ]
+}

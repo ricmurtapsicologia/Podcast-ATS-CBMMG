@@ -1,0 +1,216 @@
+{
+  "schema": 1,
+  "series": "serie-2",
+  "episode": "a2-007",
+  "canonical_sha256": "952b9e3b784ec89ec645988d1b152d9b5e635f5e9d1b707385d24e9dce84efcf",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Programa em foco saúde mental, o tema de hoje, transtornos de personalidade.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 5.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Entrevistador, boa noite ou vinte isitás spectadores.",
+      "intent": "explanation",
+      "rate_percent": -2,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 3.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "No programa em foco saúde mental de hoje, o tema são os transtornos de personalidade, condições que impactam profundamente a forma como as pessoas percebem assim mesmas e se relacionam com o mundo.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 15.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Neste primeiro bloco de abertura, recebemos Julia, estudante de farmácia, que foi diagnosticada com transtorno de personalidade borderline e aceitou compartilhar conosco sua experiência pessoal.",
+      "intent": "enumeration",
+      "rate_percent": -4,
+      "pitch_hz": -1,
+      "pause_after_ms": 360,
+      "estimated_seconds": 12.0
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Julia, muito obrigado por estar aqui. Eu que agradeço. Acho muito importante falar sobre isso, porque algo que afeta muitas pessoas e muitas vezes não é bem compreendido. Vamos começar com sua história.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 15.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Quando você percebeu que algo estava diferente na forma como lidava com suas emoções e relacionamentos.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 7.7
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Desde adolescência, eu já sentia que minhas emoções eram mais intensas do que o normal. Eu podia estar super animada em um momento e no outro completamente desmoronada.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 13.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Isso afetava muito meus relacionamentos porque eu tinha um medo constante de ser abandonada, fazia de tudo pra evitar isso.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 9.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Mas ao mesmo tempo, acabava me comportando de maneiras que afastavam as pessoas. Era uma contradição que me machucava muito.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 9.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "E foi nesse período que você começou a buscar ajuda profissional?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 680,
+      "estimated_seconds": 5.3
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Não imediatamente. Eu demorei pra entender que o que eu estava sentindo não era só ser emocional demais. Quando finalmente procurei ajuda, passei por uma avaliação com uma psicóloga e depois com psiquiatra que me diagnosticaram com um transtorno de personalidade borderline.",
+      "intent": "explanation",
+      "rate_percent": -1,
+      "pitch_hz": 1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 20.2
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "No início foi assustador ou vírio diagnóstico, mas hoje vejo que foi um passo essencial pra entender o que estava acontecendo comigo.",
+      "intent": "explanation",
+      "rate_percent": -1,
+      "pitch_hz": 1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 10.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "E como esse diagnóstico impactou sua vida?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 680,
+      "estimated_seconds": 3.4
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "De certa forma, foi um alívio. Antes disso, eu achava que o problema era simplesmente eu ser errada. Entender que existe um transtorno por trás disso, com características bem definidas, me ajudou a enxergar que não estou sozinha e que existem formas de lidar com isso.",
+      "intent": "explanation",
+      "rate_percent": -2,
+      "pitch_hz": 1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 22.1
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Como o transtorno afetava seu dia a dia?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 680,
+      "estimated_seconds": 3.8
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Impactava tudo. Na faculdade, eu tinha dificuldades de me concentrar porque essas opções de humor eram muito desgastantes. Com minha família e amigos, era complicado manter uma relação estável porque qualquer pequeno conflito se tornava enorme.",
+      "intent": "explanation",
+      "rate_percent": -1,
+      "pitch_hz": 1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Além disso, eu sentia um vazio constante que faltasse algo dentro de mim e essa sensação me acompanhava em quase tudo o que eu fazia.",
+      "intent": "transition",
+      "rate_percent": -1,
+      "pitch_hz": 1,
+      "pause_after_ms": 390,
+      "estimated_seconds": 12.0
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Hoje você busca tratamento.",
+      "intent": "explanation",
+      "rate_percent": 0,
+      "pitch_hz": 1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 1.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Como tem sido essa jornada?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 680,
+      "estimated_seconds": 2.4
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "No início, foi difícil aceitar que eu precisava de ajuda, mas agora vejo o quanto isso foi necessário. A terapia tem sido essencial pra me ajudar a entender melhor o que sinto e encontrar formas mais saudáveis de lidar com isso.",
+      "intent": "explanation",
+      "rate_percent": -1,
+      "pitch_hz": 1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 19.7
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Também faço acompanhamento médico e isso tem sido importante pra encontrar mais equilíbrio na minha vida.",
+      "intent": "explanation",
+      "rate_percent": -1,
+      "pitch_hz": 1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 7.7
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Julia, sua história é muito importante e, com certeza, inspira outras pessoas que passam por algo semelhante. No próximo bloco vamos receber a Dra. Sara Umeida, psiquiatra especialista em saúde mental, para explicar o que são os transtornos de personalidade e como eles podem ser tratados.",
+      "intent": "explanation",
+      "rate_percent": -2,
+      "pitch_hz": 1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 22.1
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Não saia daí. Volta-me já.",
+      "intent": "conclusion",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 0,
+      "estimated_seconds": 2.4
+    }
+  ]
+}

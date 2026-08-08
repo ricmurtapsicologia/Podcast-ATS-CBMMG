@@ -1,0 +1,315 @@
+{
+  "schema": 1,
+  "series": "serie-1",
+  "episode": "a1-008",
+  "canonical_sha256": "be730af5e877014e723dc78fb77e227a596aba741432a219e38e6f3af8941fda",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Usando perguntas simples com um tentante de perfil depressivo. Olá, pessoal. Continuando nossa série sobre abordagem técnica, comunicação que salva, hoje vamos demonstrar como usar perguntas simples para identificar fatores de risco e proteção em um tentante com perfil depressivo.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 19.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "O segredo está em criar um espaço seguro, sem pressionar e permitir que o tentante se expresse no seu tempo. Vamos acompanhar um diálogo direto. Um homem está sentado na beira de um viaduto com o rosto voltado para o chão, demonstrando tristeza e cansaço.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 21.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "O abordador se aproxima com calma, respeitando o silêncio inicial. Oi, meu nome é João. Sou bombeiro militar e estou aqui para te ouvir.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 11.5
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Como posso te chamar?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 1.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Permaneça em silêncio, desviando o olhar.",
+      "intent": "explanation",
+      "rate_percent": -2,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 2.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Você mora com alguém ou está sozinho em casa?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 4.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Moro com minha mãe.",
+      "intent": "explanation",
+      "rate_percent": -2,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 1.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "E como é a sua relação com ela?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 3.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Ela sabe que você está passando por isso?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 3.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Tentante. Ela tenta ajudar, mas não sabe o que fazer. Eu não quero preocupá-la. Entendi. Parece que você se preocupa com ela.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 10.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Você tem mais alguém próximo, como amigos ou parentes com quem costuma conversar?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 6.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Não, só ela.",
+      "intent": "explanation",
+      "rate_percent": -2,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 1.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Você tem algum animal de estimação, como um cachorro ou gato?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 5.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Eles podem ser uma boa companhia. Temos um cachorro. É da minha mãe, mas ele fica comigo às vezes. Isso é ótimo. Cachorros costumam ser uma boa companhia.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 13.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "E você tem algum hobby ou algo que gosta de fazer quando está sozinho?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 6.7
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Eu gostava de desenhar, mas faz tempo que não faço isso. Desenhar é uma forma incrível de se expressar.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 9.1
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "O que você desenhava?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 1.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Já pensou em voltar a desenhar só por você?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 4.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Às vezes penso, mas não consigo começar.",
+      "intent": "explanation",
+      "rate_percent": -2,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 3.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "E música?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 1.0
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Você costuma ouvir?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 1.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Tem algum artista ou estilo que gosta mais?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 3.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Gosto de MPB. Era algo que eu ouvia bastante.",
+      "intent": "explanation",
+      "rate_percent": -2,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 4.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Música pode trazer lembranças boas, não é?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 3.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Tem alguma música que te marcou de alguma forma?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 4.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Sim. Mas faz tempo que não ouço nada. Entendi.",
+      "intent": "explanation",
+      "rate_percent": -2,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 4.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "E sobre o seu dia a dia, você trabalha ou estuda?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 5.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Como é a sua rotina atualmente?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 2.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Eu trabalhava, mas perdi o emprego há alguns meses. Isso deve ter sido muito difícil.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 7.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Você tem pensado em tentar algo novo ou retomar sua carreira?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 5.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Tentante. Não sei. Parece que não tenho forças para isso. É normal se sentir assim em momentos difíceis.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 8.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Você tem amigos ou colegas com quem costumava conversar no trabalho?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 5.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Não muitos, mas tinha um ou dois com quem eu falava mais. Essas perguntas simples ajudam a explorar os fatores de proteção e risco, promovendo uma conexão empática e oferecendo ao tentante um espaço para compartilhar sua história.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 18.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "No próximo episódio, vamos falar sobre como usar perguntas simples com tentantes de perfil agressivo. Não perca.",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 8.2
+    }
+  ]
+}

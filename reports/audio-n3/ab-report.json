@@ -1,0 +1,372 @@
+{
+  "phase": "ab",
+  "reference": "Série 3 N2 previamente validada pelo usuário",
+  "availability": {
+    "A-current": true,
+    "N3-edge-semantic": true,
+    "B-azure-neural-ssml": false,
+    "C-azure-hd-contextual": false
+  },
+  "azure_errors": [],
+  "selection": {
+    "provisional_engine": "N3-edge-semantic",
+    "reason": "mantém a identidade vocal já validada na Série 3 e aplica segmentação/prosódia semânticas; Azure só pode ser promovido após teste auditivo quando credenciais estiverem disponíveis"
+  },
+  "qa": [
+    {
+      "series": "serie-1",
+      "episode": "a1-001",
+      "file": "assets/audio/candidate-n3/A-current/serie-1/a1-001.mp3",
+      "engine": "A-current",
+      "version": "N3",
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "segments": 1,
+      "mean_estimated_segment_seconds": 68.2,
+      "canonical_sha256": "3c8ed47eafcf247dddcba738e622bfa42ac534a723ccc4395ad58cb4780611bf",
+      "generated_at_utc": "2026-08-08T19:13:45.020294+00:00",
+      "duration_seconds": 51.88,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bitrate": 128071,
+      "lufs_integrated": -18.6,
+      "true_peak_dbfs": -1.9,
+      "long_silence_ratio": 0.0545,
+      "status": "fail",
+      "issues": [
+        "loudness"
+      ]
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-001",
+      "file": "assets/audio/candidate-n3/N3-edge-semantic/serie-1/a1-001.mp3",
+      "engine": "N3-edge-semantic",
+      "version": "N3",
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "segments": 1,
+      "mean_estimated_segment_seconds": 68.2,
+      "canonical_sha256": "3c8ed47eafcf247dddcba738e622bfa42ac534a723ccc4395ad58cb4780611bf",
+      "generated_at_utc": "2026-08-08T19:13:53.750733+00:00",
+      "duration_seconds": 49.92,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bitrate": 128074,
+      "lufs_integrated": -16.9,
+      "true_peak_dbfs": -1.9,
+      "long_silence_ratio": 0.0228,
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-008",
+      "file": "assets/audio/candidate-n3/A-current/serie-1/a1-008.mp3",
+      "engine": "A-current",
+      "version": "N3",
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "segments": 34,
+      "mean_estimated_segment_seconds": 6.37,
+      "canonical_sha256": "be730af5e877014e723dc78fb77e227a596aba741432a219e38e6f3af8941fda",
+      "generated_at_utc": "2026-08-08T19:14:20.209810+00:00",
+      "duration_seconds": 210.96,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bitrate": 128017,
+      "lufs_integrated": -18.9,
+      "true_peak_dbfs": -1.6,
+      "long_silence_ratio": 0.1243,
+      "status": "fail",
+      "issues": [
+        "loudness",
+        "silencio_excessivo"
+      ]
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-008",
+      "file": "assets/audio/candidate-n3/N3-edge-semantic/serie-1/a1-008.mp3",
+      "engine": "N3-edge-semantic",
+      "version": "N3",
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "segments": 34,
+      "mean_estimated_segment_seconds": 6.37,
+      "canonical_sha256": "be730af5e877014e723dc78fb77e227a596aba741432a219e38e6f3af8941fda",
+      "generated_at_utc": "2026-08-08T19:15:01.536043+00:00",
+      "duration_seconds": 225.49,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bitrate": 128016,
+      "lufs_integrated": -16.6,
+      "true_peak_dbfs": -1.9,
+      "long_silence_ratio": 0.2519,
+      "status": "fail",
+      "issues": [
+        "silencio_excessivo"
+      ]
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-010",
+      "file": "assets/audio/candidate-n3/A-current/serie-1/a1-010.mp3",
+      "engine": "A-current",
+      "version": "N3",
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "segments": 33,
+      "mean_estimated_segment_seconds": 9.19,
+      "canonical_sha256": "152869b24471f2296a3ae819427438d31ebc978a42fc01d89eed6ffbb838a973",
+      "generated_at_utc": "2026-08-08T19:15:38.812958+00:00",
+      "duration_seconds": 297.43,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bitrate": 128012,
+      "lufs_integrated": -18.8,
+      "true_peak_dbfs": -1.6,
+      "long_silence_ratio": 0.1421,
+      "status": "fail",
+      "issues": [
+        "loudness",
+        "silencio_excessivo"
+      ]
+    },
+    {
+      "series": "serie-1",
+      "episode": "a1-010",
+      "file": "assets/audio/candidate-n3/N3-edge-semantic/serie-1/a1-010.mp3",
+      "engine": "N3-edge-semantic",
+      "version": "N3",
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "segments": 33,
+      "mean_estimated_segment_seconds": 9.19,
+      "canonical_sha256": "152869b24471f2296a3ae819427438d31ebc978a42fc01d89eed6ffbb838a973",
+      "generated_at_utc": "2026-08-08T19:16:31.730765+00:00",
+      "duration_seconds": 306.86,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bitrate": 128012,
+      "lufs_integrated": -16.7,
+      "true_peak_dbfs": -1.8,
+      "long_silence_ratio": 0.1891,
+      "status": "fail",
+      "issues": [
+        "silencio_excessivo"
+      ]
+    },
+    {
+      "series": "serie-2",
+      "episode": "a2-002",
+      "file": "assets/audio/candidate-n3/A-current/serie-2/a2-002.mp3",
+      "engine": "A-current",
+      "version": "N3",
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "segments": 8,
+      "mean_estimated_segment_seconds": 14.58,
+      "canonical_sha256": "190e9e09730db48ae8651d98e4e4b2f717c4265915886d4c21e59ae76492059c",
+      "generated_at_utc": "2026-08-08T19:16:47.702469+00:00",
+      "duration_seconds": 126.85,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bitrate": 128029,
+      "lufs_integrated": -18.9,
+      "true_peak_dbfs": -1.6,
+      "long_silence_ratio": 0.0984,
+      "status": "fail",
+      "issues": [
+        "loudness"
+      ]
+    },
+    {
+      "series": "serie-2",
+      "episode": "a2-002",
+      "file": "assets/audio/candidate-n3/N3-edge-semantic/serie-2/a2-002.mp3",
+      "engine": "N3-edge-semantic",
+      "version": "N3",
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "segments": 8,
+      "mean_estimated_segment_seconds": 14.58,
+      "canonical_sha256": "190e9e09730db48ae8651d98e4e4b2f717c4265915886d4c21e59ae76492059c",
+      "generated_at_utc": "2026-08-08T19:17:08.499141+00:00",
+      "duration_seconds": 125.75,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bitrate": 128029,
+      "lufs_integrated": -16.7,
+      "true_peak_dbfs": -1.9,
+      "long_silence_ratio": 0.0996,
+      "status": "pass",
+      "issues": []
+    },
+    {
+      "series": "serie-2",
+      "episode": "a2-006",
+      "file": "assets/audio/candidate-n3/A-current/serie-2/a2-006.mp3",
+      "engine": "A-current",
+      "version": "N3",
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "segments": 22,
+      "mean_estimated_segment_seconds": 8.93,
+      "canonical_sha256": "8183bc41c694dd8971de86ed0a27bd0ca38d8e115d36084c6889467044e5a2f5",
+      "generated_at_utc": "2026-08-08T19:17:35.000970+00:00",
+      "duration_seconds": 211.15,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bitrate": 128017,
+      "lufs_integrated": -18.7,
+      "true_peak_dbfs": -1.5,
+      "long_silence_ratio": 0.2039,
+      "status": "fail",
+      "issues": [
+        "loudness",
+        "silencio_excessivo"
+      ]
+    },
+    {
+      "series": "serie-2",
+      "episode": "a2-006",
+      "file": "assets/audio/candidate-n3/N3-edge-semantic/serie-2/a2-006.mp3",
+      "engine": "N3-edge-semantic",
+      "version": "N3",
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "segments": 22,
+      "mean_estimated_segment_seconds": 8.93,
+      "canonical_sha256": "8183bc41c694dd8971de86ed0a27bd0ca38d8e115d36084c6889467044e5a2f5",
+      "generated_at_utc": "2026-08-08T19:18:11.424790+00:00",
+      "duration_seconds": 209.95,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bitrate": 128017,
+      "lufs_integrated": -16.7,
+      "true_peak_dbfs": -1.9,
+      "long_silence_ratio": 0.2084,
+      "status": "fail",
+      "issues": [
+        "silencio_excessivo"
+      ]
+    },
+    {
+      "series": "serie-2",
+      "episode": "a2-008",
+      "file": "assets/audio/candidate-n3/A-current/serie-2/a2-008.mp3",
+      "engine": "A-current",
+      "version": "N3",
+      "voices": [
+        "pt-BR-AntonioNeural",
+        "pt-BR-FranciscaNeural"
+      ],
+      "segments": 22,
+      "mean_estimated_segment_seconds": 9.95,
+      "canonical_sha256": "38f70180e56f2961927367538a5d96a912ef6428876d50b48c362837615704df",
+      "generated_at_utc": "2026-08-08T19:18:38.905225+00:00",
+      "duration_seconds": 219.43,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bitrate": 128016,
+      "lufs_integrated": -18.1,
+      "true_peak_dbfs": -1.9,
+      "long_silence_ratio": 0.1476,
+      "status": "fail",
+      "issues": [
+        "loudness",
+        "silencio_excessivo"
+      ]
+    },
+    {
+      "series": "serie-2",
+      "episode": "a2-008",
+      "file": "assets/audio/candidate-n3/N3-edge-semantic/serie-2/a2-008.mp3",
+      "engine": "N3-edge-semantic",
+      "version": "N3",
+      "voices": [
+        "pt-BR-AntonioNeural",
+        "pt-BR-FranciscaNeural"
+      ],
+      "segments": 22,
+      "mean_estimated_segment_seconds": 9.95,
+      "canonical_sha256": "38f70180e56f2961927367538a5d96a912ef6428876d50b48c362837615704df",
+      "generated_at_utc": "2026-08-08T19:19:17.099223+00:00",
+      "duration_seconds": 221.78,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bitrate": 128016,
+      "lufs_integrated": -16.2,
+      "true_peak_dbfs": -1.8,
+      "long_silence_ratio": 0.1523,
+      "status": "fail",
+      "issues": [
+        "silencio_excessivo"
+      ]
+    },
+    {
+      "series": "serie-3",
+      "episode": "psp-05",
+      "file": "assets/audio/candidate-n3/A-current/serie-3/psp-05.mp3",
+      "engine": "A-current",
+      "version": "N3",
+      "voices": [
+        "pt-BR-AntonioNeural",
+        "pt-BR-FranciscaNeural"
+      ],
+      "segments": 11,
+      "mean_estimated_segment_seconds": 12.09,
+      "canonical_sha256": "7813d65eef1010cfed0d7afc53f0a2512c670095b7bd2acb2563fa45eb242fa5",
+      "generated_at_utc": "2026-08-08T19:19:33.436004+00:00",
+      "duration_seconds": 129.75,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bitrate": 128028,
+      "lufs_integrated": -18.5,
+      "true_peak_dbfs": -1.5,
+      "long_silence_ratio": 0.2027,
+      "status": "fail",
+      "issues": [
+        "loudness",
+        "silencio_excessivo"
+      ]
+    },
+    {
+      "series": "serie-3",
+      "episode": "psp-05",
+      "file": "assets/audio/candidate-n3/N3-edge-semantic/serie-3/psp-05.mp3",
+      "engine": "N3-edge-semantic",
+      "version": "N3",
+      "voices": [
+        "pt-BR-AntonioNeural",
+        "pt-BR-FranciscaNeural"
+      ],
+      "segments": 11,
+      "mean_estimated_segment_seconds": 12.09,
+      "canonical_sha256": "7813d65eef1010cfed0d7afc53f0a2512c670095b7bd2acb2563fa45eb242fa5",
+      "generated_at_utc": "2026-08-08T19:19:57.438821+00:00",
+      "duration_seconds": 129.96,
+      "sample_rate": 44100,
+      "channels": 1,
+      "bitrate": 128028,
+      "lufs_integrated": -16.8,
+      "true_peak_dbfs": -1.9,
+      "long_silence_ratio": 0.1862,
+      "status": "fail",
+      "issues": [
+        "silencio_excessivo"
+      ]
+    }
+  ]
+}

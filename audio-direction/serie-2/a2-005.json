@@ -1,0 +1,135 @@
+{
+  "schema": 1,
+  "series": "serie-2",
+  "episode": "a2-005",
+  "canonical_sha256": "b4cd4680efe53e2b3f9fe495b761aab99a1060a3c455174fe78cddf7ea7ad6df",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Cláudio enfermeiro com transtorno afetivo bipolar tipo 1, cena, Cláudio está na pista de dança de uma boa ativisivelmente agitado, ele gesticula amplamente, fala rápido e parece mudar de assunto a cada instante, interagindo com desconhecidos de forma impulsiva.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 18.7
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Cláudio, com energia eufórica, diz pra um grupo próximo, vocês precisam vir dançar comigo, essa música é incrível, aliás eu deveria ser DJs, sabia, tem o dom pra isso, ou talvez eu abro um clube só meu.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Mas pensando bem, ser enfermeiro é meu verdadeiro super poder, faço mais diferença do que qualquer um aqui, enquanto falava, Cláudio de repente se aproxima de outra mulher na pista e diz sem exitar.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 16.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Você é a pessoa mais bonita que já vi, a gente precisa sair daqui juntos agora, vai ser épico. A mulher surpresa rissa em jeito, enquanto Ana amiga de Cláudio se aproxima pra tentar acalmá-lo.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 16.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Cláudio, você está falando rápido demais e parece não conseguir focar em nada. Vem, vamos sentar um pouco. Cláudio ri, mas sua energia não diminui.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 12.0
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Ana, você está me chamando de distraído?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 3.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Eu só tenho muitas ideias, já pensou se eu deixasse essa energia parar?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 6.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Impossível, eu mal preciso dormir, sabia?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 2.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Três horas por noite e já estou pronto pra conquistar o mundo. Mas tarde, ao tentar se desculpar com alguém na pista, Cláudio começa a mudar abruptamente o foco novamente. Ele balance a cabeça rí e diz então mais baixo.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 19.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Mas sabe, às vezes, depois de noites assim, eu acordo e não consigo levantar da cama. É como se todo esse poder sumisse de repente.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 12.0
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Cláudio exibe sintomas claros de um episódio maníaco do transtorno afetivo Bipolar 1, incluindo fala acelerada, fuga de ideias, grandiosidade e impossividade.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 10.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "No entanto, é importante lembrar que o tab se caracteriza por polos opostos, o polo maníaco, como demonstrado na sketch, ou hipomaníaco e o polo depressivo, que não foi explorado aqui.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 14.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Durante a depressão, o indivíduo enfrenta exaustão, desesperança e falta de energia, criando uma alternância intensa e desafiadora para quem vive com o transtorno.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 11.5
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "No próximo episódio, ouviremos a história de Fernanda, uma dependente química de cocaína, que enfrenta os desafios do transtorno por uso de substâncias. Não perca.",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 12.0
+    }
+  ]
+}

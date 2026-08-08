@@ -1,0 +1,207 @@
+{
+  "schema": 1,
+  "series": "serie-2",
+  "episode": "a2-008",
+  "canonical_sha256": "38f70180e56f2961927367538a5d96a912ef6428876d50b48c362837615704df",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Programa Infoco Saúde Mental bloco 2 entrevista com a Dr.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 4.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Sara Umeida sobre transtornos de personalidade.",
+      "intent": "explanation",
+      "rate_percent": -2,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 2.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Estamos de volta com o programa Infoco Saúde Mental.",
+      "intent": "explanation",
+      "rate_percent": -2,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 4.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "No bloco anterior, ouvimos a julha compartilhar experiência pessoal com transtorno de personalidade Borderline. Agora, para entendermos mais sobre os transtornos de personalidade, recebemos a Dr. Sara Umeida, psiquiatra especialista em saúde mental. Dr. Sara, obrigada por aceitar nosso convite. Eu que agradeço.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 20.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Falar sobre transtornos de personalidade é essencial, porque eles causam muito impacto na vida das pessoas, mas nem sempre são bem compreendidos.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 10.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Espero ajudar nossos ouvintes a entender em melhor o que são esses transtornos e como lidar com eles. O que são exatamente os transtornos de personalidade.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 12.5
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "São padrões duradouros e inflexíveis de pensar, sentir e agir que dificultam a adaptação da pessoa essas situações do dia a dia.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 10.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Esses padrões afetam as relações, o trabalho e muitas vezes até a visão que a pessoa tem de si mesma. Eles geram sofrimento e prejudicam o funcionamento da vida de quem os enfrenta.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 15.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Como eles influenciam as decisões do dia a dia?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 680,
+      "estimated_seconds": 4.3
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Por exemplo, por exemplo, uma pessoa com transtorno Borderline pode tomar decisões impulsivas por estar dominada por emoções intensas. Enquanto alguém com transtorno obsessivo, compulsivo de personalidade, pode ficar paralizado pela necessidade de perfeição. Em ambos os casos, há uma dificuldade em equilibrar razão e emoção.",
+      "intent": "explanation",
+      "rate_percent": -2,
+      "pitch_hz": 1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 22.1
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "E qual a relação dos transtornos de personalidade com o comportamento suicida?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 680,
+      "estimated_seconds": 5.8
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Dratarsara. É uma relação preocupante. Muitas pessoas com transtornos de personalidade vivem um sofrimento intenso, com sentimentos de vazio ou desesperança. A impossividade comum em alguns transtornos pode levar ações drásticas em momentos de crise, por isso é fundamental que recebam o acompanhamento adequado.",
+      "intent": "explanation",
+      "rate_percent": -1,
+      "pitch_hz": 1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 21.1
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Pode explicar os diferentes tipos de transtornos de personalidade?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 680,
+      "estimated_seconds": 4.3
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Sara, claro. Eles são divididos em três grupos. O primeiro reuni transtornos como Paranoide, com desconfiança excessiva, o Esquisoid, marcado pelo isolamento, e o Esquisotípico, compensamentos e comportamentos incomumos.",
+      "intent": "enumeration",
+      "rate_percent": -2,
+      "pitch_hz": 1,
+      "pause_after_ms": 360,
+      "estimated_seconds": 13.9
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "O segundo inclui transtornos como o antisocial, com falta de empatia, o Borderline, com instabilidade emocional, o estriônico que busca atenção e o narcisista, marcado por grandiosidade.",
+      "intent": "enumeration",
+      "rate_percent": -2,
+      "pitch_hz": 1,
+      "pause_after_ms": 360,
+      "estimated_seconds": 13.0
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "O terceiro grupo é composto pelos transtornos evitativos, dependente e obsessivo compulsivo de personalidade, todos relacionados à ansiedade e medo.",
+      "intent": "enumeration",
+      "rate_percent": -2,
+      "pitch_hz": 1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 9.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "E como é o tratamento?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 680,
+      "estimated_seconds": 2.4
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "A parsara, a base é a psicoterapia, que ajuda a pessoa a entender e mudar padrões que causam sofrimento. Em alguns casos, medicamentos são usados para tratar sintomas como ansiedade ou depressão. Além disso, o apoio de familiares e amigos é crucial.",
+      "intent": "explanation",
+      "rate_percent": -1,
+      "pitch_hz": 1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 20.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Entrevistador, do Corsara, obrigada por trazer tantas informações importantes.",
+      "intent": "explanation",
+      "rate_percent": -2,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 4.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "As ouvintes, agora seguimos congirando a ampulheta da vida, o podcast que conta histórias reais sobre saúde mental.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 8.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "No próximo episódio, conheceremos Mônica, que vive com Esquisofrenia e sua jornada inspiradora.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 6.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Até breve!",
+      "intent": "conclusion",
+      "rate_percent": -4,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 1.0
+    }
+  ]
+}

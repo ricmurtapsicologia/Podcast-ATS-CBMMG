@@ -1,0 +1,135 @@
+{
+  "schema": 1,
+  "series": "serie-1",
+  "episode": "a1-011",
+  "canonical_sha256": "16cd177499bc8d71eaba88fc25f6c4bcdc01a01238fd668d583dedab7a40b5b2",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Usando perguntas complexas para apoiar o tentante. Olá, pessoal. Continuando nossa série sobre abordagem técnica e comunicação que salva, hoje vamos explorar o uso de perguntas complexas.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 13.0
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Nesse momento da abordagem, o tentante já desenvolveu um vínculo de confiança e se sente mais à vontade para falar sobre o que o trouxe até ali. Nosso objetivo é oferecer espaço para que ele se expresse e reflita sobre suas emoções.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 20.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Vamos acompanhar o diálogo entre o bombeiro militar Seiya e a tentante Athena. Sena, Athena está sentada no parapeito de um prédio. Já se passaram horas desde o início da ocorrência, e agora ela começa a falar sobre o que a levou à tentativa.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 21.1
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "O abordador mantém uma postura empática, incentivando-a a se abrir.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 4.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Athena, mas afinal, o que te trouxe para cá hoje?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 4.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Eu não sei nem por onde começar. É como se tudo tivesse desmoronado de uma vez. Perdi meu emprego há dois meses, e desde então parece que não consigo acertar em nada.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 15.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Meu chefe sempre dizia que eu não era bom o suficiente, que faltava algo em mim. E depois que isso aconteceu, eu comecei a acreditar nele. Minha mãe tenta me ajudar, mas ela não entende. Ela acha que é só levantar e continuar.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 20.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Mas como?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 1.0
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Eu sinto como se cada dia fosse uma batalha perdida. E ontem, quando o banco ligou cobrando uma dívida, eu só pensei, chega, eu não aguento mais. Eu vim para cá porque, por um momento, parecia a única saída. Isso tudo parece um peso enorme, Athena.",
+      "intent": "explanation",
+      "rate_percent": -4,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 22.1
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Você tem segurado tanto sozinha.",
+      "intent": "explanation",
+      "rate_percent": -2,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 2.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Como você se sente agora colocando tudo isso para fora?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 4.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Por que essas perguntas funcionam?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 2.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Neste estágio, as perguntas complexas ajudam a explorar as emoções mais profundas e os eventos que levaram à tentativa, criando um espaço seguro para o tentante processar sua dor.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 13.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "A fala longa da tentante demonstra que ela já confia no abordador, o que é essencial para a continuação do diálogo. No próximo episódio, vamos falar sobre ferramentas de diálogo e como elas podem fortalecer ainda mais a conexão com o tentante. Não perca!",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 21.1
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "series": "serie-2",
+  "episode": "a2-011",
+  "canonical_sha256": "07e78105a36431da9ac65409436cb5f6f3e72c2666f74d3ba29f59e995558897",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Quando o cérebro quebra, desregulação emocional e decisões críticas. Olá, pessoal! Continuando nossa série, desvendando as engrenagens do comportamento suicida, hoje vamos explorar o estado psíquico durante uma tentativa de suicídio. Quando o cérebro quebra, desregulação emocional e decisões críticas.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 19.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Até aqui discutimos os fatores que antecedem uma tentativa. Agora vamos ao momento em que o pensamento suicida se transforma em ação, influenciado por alterações emocionais e cerebrais que comprometem a reflexão. O comportamento suicida surge da interação entre vulnerabilidades biológicas, psíquicas e sociais.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 21.1
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Transtornos mentais, isolamento e traumas criam um terreno de risco, enquanto um fator precipitante, como uma perda ou conflito, desencadei uma desregulação emocional.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 11.0
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "O estado psíquico durante a tentativa é marcado por reações extremas, seja por emoções intensas ou pela patia emocional que desconecta o indivíduo de seus próprios sentimentos. No cérebro, a amidala amplifica reações emocionais ou intensifica o distanciamento.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 18.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Enquanto Cortex Prefrontal, responsável por controle de impulsos e avaliação de riscos, tem sua função reduzida. Isso compromete a fase deliberativa do ato volitivo quando alternativas são ponderadas. Sem essa reflexão, o suicídio se torna uma ação imediata.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 18.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Baixos níveis de serotonina favorecem reações impulsivas, enquanto o glutamato em excesso intensifica a atividade cerebral, dificultando a modulação emocional. O Cortisol, liberado pelo estresse, mantenha o corpo em alerta, agravando o comprometimento do raciocínio.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 16.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Nesse estado psíquico, o tentante pode agir de forma impulsiva ou desconectada. Aqui a abordagem técnica com ferramentas de diálogo é essencial. A comunicação empática pode reduzir a intensidade emocional, oferecer tempo e modular o estado psíquico, ajudando a recuperar alguma capacidade de reflexão.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 21.1
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "No próximo episódio, falaremos sobre a impulsividade e o comportamento de fuga, analisando como a impulsividade acelera o risco em crises suicidas. Não perca.",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 11.5
+    }
+  ]
+}

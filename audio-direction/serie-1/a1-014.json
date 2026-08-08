@@ -1,0 +1,261 @@
+{
+  "schema": 1,
+  "series": "serie-1",
+  "episode": "a1-014",
+  "canonical_sha256": "09fb03b7f6b904a214fd0512f07d34673b3b4502b5a81e1b8c1564e63c625964",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Ponte para o passado resgatando memórias agradáveis. Olá, pessoal. Continuando nossa série sobre abordagem técnica e comunicação que salva, hoje vamos demonstrar como aplicar a técnica da ponte para o passado em um cenário de tentativa de suicídio.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 18.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Essa ferramenta ajuda o tentante a se reconectar com memórias sensoriais agradáveis, criando um espaço emocional positivo. Vamos acompanhar como ela funciona na prática. Sena. Larissa está sentada no parapeito de uma sacada, segurando um colar com pingente em forma de coração.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 20.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Ela está visivelmente emocionada, mas já desenvolveu algum vínculo com o abordador que busca explorar um fator de proteção ligado a uma lembrança especial do passado. Diálogo. Larissa, esse colar parece importante para você.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 16.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Tem alguma história especial por trás dele?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 3.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Sim. Foi meu avô quem me deu. Era um dia muito especial. Que lindo.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 6.7
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Você lembra como era aquele dia?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 2.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Onde vocês estavam?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 1.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Na varanda da casa dele, tomando café. Era um dia ensolarado. Consigo imaginar a Sena.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 7.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Como era a varanda?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 1.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Você consegue se lembrar de alguns detalhes?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 3.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Tinha uma rede branca, as plantas ao redor eram bem verdes, e o cheiro das flores era forte. Esse cheiro devia ser marcante.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 11.0
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "E o som?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 1.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Tinha algo que chamava atenção. Os pássaros. Ele adorava colocar milho para eles. Que bonito. Ele costumava dizer algo para você nesses momentos. Ele dizia que eu era forte e que tudo o que é ruim passa. Que palavras inspiradoras.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 19.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "E aquele café?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 1.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Você lembra do gosto?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 1.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Era bem forte, mas ele sempre colocava muito açúcar. Parece que ele gostava de coisas doces. Tinha algo especial que ele fazia para vocês comerem. Biscoitos de polvilho. O cheiro deles assando era delicioso. Imagino que fosse reconfortante.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 18.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Como você se sentia estando lá com ele?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 3.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Eu me sentia tranquila, protegida. Deve ter sido um momento único. O céu, você lembra de como era naquele dia. Azul, bem claro. Sem nenhuma nuvem.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 12.5
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "E o vento?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 1.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Consegue lembrar se tinha uma brisa?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 2.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Tinha. Era bem leve. Refrescava. Quando ele te entregou o colar, ele disse alguma coisa. Sim. Que era para eu lembrar que ele estaria comigo, sempre. Isso é muito especial. Ele acreditava muito em você, Larissa.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Você acha que essa força que ele via ainda faz parte de você?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 6.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Não sei. Talvez. Essas memórias mostram que momentos bons fazem parte de quem você é.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 7.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Se pudesse trazer algo daquele dia para o presente, o que seria?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 5.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "A paz que eu sentia. Essa paz está dentro de você. E ela pode estar aqui agora também.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 8.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Por que essa técnica funciona?",
+      "intent": "question",
+      "rate_percent": -1,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 2.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "A Ponte para o Passado ajuda o tentante a acessar memórias sensoriais agradáveis que evocam emoções positivas e reconexão com o presente. Essa estratégia funciona como uma âncora emocional, reduzindo o foco no sofrimento atual e fortalecendo a esperança.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 18.7
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "No próximo episódio, vamos explorar a Ponte para o Futuro, ajudando o tentante a visualizar novas possibilidades. Não perca.",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 9.1
+    }
+  ]
+}

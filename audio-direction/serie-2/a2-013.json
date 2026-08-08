@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "series": "serie-2",
+  "episode": "a2-013",
+  "canonical_sha256": "58e9ff1a7213eee32ec9f742fb3ff0e78d6862f9031bee9a5d1c19d6db16a287",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Um novo olhar para as engrenagens. Olá, pessoal. Bem-vindos ao último episódio da série desvendando as engrenagens do comportamento suicida. Hoje encerramos nossa jornada refletindo sobre o que aprendemos e como esse conhecimento pode salvar vidas.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Nesta série exploramos o suicídio como um fenômeno complexo, presente ao longo da história, da antigüidade aos tempos contemporâneos. Vimos como explicações religiosas, filosóficas e científicas moldaram nossa compreensão enquanto o sofrimento humano sempre exigiu a empatia e a ação.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 19.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Discutimos o processo decisório, mostrando como ele se distorce em crises. Sobre pressão extrema a amidá-la assume o controle e o cortex pré-frontal, responsável pela reflexão, perde força. Decisões tornam-se impulsivas, guiadas pela urgência de aliviarador.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Falamos sobre transtornos mentais ligados ao comportamento suicida, como depressão, transtorno bipolar, transtornos de personalidade e dependência química. Usamos exemplos fictícios para ilustrar como essas condições aumentam a vulnerabilidade em crises.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 14.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Também discutimos os aspectos sociais e filosóficos, como as ideias de Durkheim sobre isolamento e instabilidade e de camis sobre o vazio existencial, mostrando como fatores externos intensificam o sofrimento interno. Por fim, analisamos o ato suicida como resultado de impulsividade e desregulação emocional.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 21.1
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Ador toma o controle, levando ações automáticas em busca de alívio e mediato. O comportamento de fuga reflete a tentativa urgente de escapar do sofrimento sem reflexão consciente. Apesar de desvendarmos as engrenagens do comportamento suicida, nunca devemos esquecer que há um ser humano que sofre.",
+      "intent": "explanation",
+      "rate_percent": -4,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 22.1
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Como carro o jung nos ensina, conheça todas as teorias, domine todas as técnicas, mas autocar uma alma humana seja apenas outra alma humana. Essa frase nos lembra que mais do que teorias, a conexão genuína e a empatia salvam vidas.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 19.7
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Obrigado por nos acompanhar até aqui, que os conhecimentos desta série ajudem a girar a ampulheta da vida de pessoas em crise, oferecendo tempo e esperança. Até a próxima série.",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 14.4
+    }
+  ]
+}

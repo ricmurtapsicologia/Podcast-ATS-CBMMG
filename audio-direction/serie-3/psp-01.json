@@ -1,0 +1,117 @@
+{
+  "schema": 1,
+  "series": "serie-3",
+  "episode": "psp-01",
+  "canonical_sha256": "6d58a9ccd32b3dd4f6cd6953c025650d6bf46b269f03bd0ba661430f910e56ba",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Quando se fala em Primeiros Socorros Psicológicos no trabalho, a primeira ideia importante é esta: você não precisa ser terapeuta do seu colega para oferecer um primeiro apoio de qualidade.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 14.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Em equipes de segurança e emergência, prevenção também acontece nas pequenas interações do cotidiano, quando alguém percebe uma mudança, se aproxima com respeito e ajuda o outro a encontrar um próximo passo.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 15.4
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Então o PSP pode começar antes de existir uma situação grave?",
+      "intent": "question",
+      "rate_percent": 0,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 5.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Sim. Aqui, o PSP é usado como uma ferramenta de prevenção e apoio inicial. O foco não é descobrir um diagnóstico nem fazer a pessoa contar tudo. É perceber que talvez exista sobrecarga, sofrimento ou perda de funcionamento e criar uma oportunidade segura de apoio.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 21.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Às vezes, o que ajuda é uma conversa breve. Em outras situações, é uma pausa, uma reorganização de tarefa, contato com alguém de confiança ou acesso a um recurso profissional.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 14.4
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "E como evitar que isso vire invasão?",
+      "intent": "question",
+      "rate_percent": 1,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 3.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Preserve três coisas: dignidade, autonomia e privacidade. Você oferece ajuda; não obriga. Você pergunta; não conclui. Você escuta; não interroga. E mantém clareza sobre o seu papel. Um colega pode dizer que está tudo bem, pode querer falar pouco ou pode preferir conversar depois.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 21.1
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "O apoio continua sendo respeitoso quando deixa uma porta aberta.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 4.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Pense numa lógica simples. Primeiro, perceba mudanças concretas. Depois, prepare uma abordagem discreta. Aproxime-se sem encurralar. Escute para entender o que pesa mais agora. Ajude a conectar o colega a um próximo passo e acompanhe de forma proporcional. E cuide também das suas próprias condições para apoiar.",
+      "intent": "synthesis",
+      "rate_percent": -6,
+      "pitch_hz": -2,
+      "pause_after_ms": 620,
+      "estimated_seconds": 22.6
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Então o objetivo não é resolver tudo.",
+      "intent": "transition",
+      "rate_percent": 0,
+      "pitch_hz": 1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 3.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Exatamente. O objetivo é reduzir isolamento, aumentar orientação e facilitar acesso a recursos. Uma cultura preventiva não exige que todo profissional esteja sempre bem; ela permite que alguém diga que precisa de ajuda sem ser diminuído por isso.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 18.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Microchecagem: minha aproximação aumenta segurança, autonomia e conexão ou acrescenta pressão?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 0,
+      "estimated_seconds": 5.3
+    }
+  ]
+}

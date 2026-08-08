@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "series": "serie-2",
+  "episode": "a2-003",
+  "canonical_sha256": "bd3cc06adbab26bbf8db89145c2936cdcb5075b1a7df646fa122f3d898476a55",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "O peso da mente, contexto psiquiátrico e psicológico. Olá, pessoal! Continuando nossa série desvendando as engrenagens do comportamento suicida, hoje vamos falar sobre o peso da mente, contexto psiquiátrico e psicológico.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 14.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Estudos realizados pelo Organização Mundial da Saúde revelam que cerca de 90% das pessoas que cometem suicídio possuem algum transtorno mental diagnosticável, como depressão, transtorno bipolar ou esquizofrenia.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 13.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Esses dados demonstram como os transtornos psiquiátricos de impêmio um papel central no comportamento suicida, impactando diretamente o processo decisório e a percepção de alternativas em momentos de crise. Vamos explorar como alguns desses transtornos influenciam o comportamento suicida.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 18.7
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Transformo depressivo maior, caracterizado por tristeza persistente, desesperança e baixa autoestima. O TDM frequentemente reduz a capacidade de enxergar alternativas e intensifica o sofrimento emocional, tornando-se um dos transtornos mais associados ao suicídio. Transformo afetivo, bipolar. Oscilações entre episódios de mania e depressão marcam o tabi.",
+      "intent": "explanation",
+      "rate_percent": -4,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 22.1
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Durante a mania, a impossividade e os comportamentos de risco aumentam, enquanto a depressão profunda pode levar a pensamento suicidas intensos, criando um cenário de alta vulnerabilidade. Transformo por uso de substâncias.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 15.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "O abuso de álcool e drogas não apenas agrava sintomas de outros transtornos, mas também intensifica a impossividade e prejudica o julgamento, aumentando significativamente o risco de suicídio. Transformos de personalidade.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 14.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Borderline, instabilidade emocional, medo de abandono a impossividade, levam frequentemente a comportamentos autolesivos e ao risco de suicídio. Narcisista. A vulnerabilidade a crítica e as crises de autoestima podem gerar desespero profundo e pensamentos suicidas.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 16.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Antes social, a impossividade e a desconsideração pelas consequências frequentemente expõem o indivíduo a situações de risco, incluindo o suicídio. Estriônico, a busca constante por atenção e a estabilidade emocional intensifica um risco de comportamentos extremos em momentos de rejeição ou perda. Esquisa ofrenia.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 21.1
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Delírios e alucinações podem distorcer a percepção de realidade, criando um sofrimento extremo e isolando ainda mais o indivíduo. Ideias persecutórias ou vozes imperativas, frequentemente estão associadas ao aumento do risco suicida.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 15.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Esses transtornos afetam diretamente a forma como o indivíduo avalia suas opções, limitando a capacidade de tomar decisões racionais e amplificando o sofrimento emocional. Reconhecer essas características é fundamental para prevenir comportamentos suicidas e oferecer suporte efetivo.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "No próximo episódio ouviremos a história de Maria, uma garçonete que enfrenta o transtorno depressivo maior para ilustrar como esses desafios se manifestam na vida real. Não perca.",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 13.4
+    }
+  ]
+}

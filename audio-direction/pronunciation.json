@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "policy": "Camada separada; não altera o texto canônico. Usar somente em motores que suportem alias/lexicon.",
+  "entries": [
+    {
+      "token": "CBMMG",
+      "alias": "C B M M G"
+    },
+    {
+      "token": "ATS",
+      "alias": "A T S"
+    },
+    {
+      "token": "PSP",
+      "alias": "P S P"
+    }
+  ]
+}
