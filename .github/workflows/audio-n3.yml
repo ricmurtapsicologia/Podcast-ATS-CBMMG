@@ -32,9 +32,12 @@ jobs:
 
       - name: Dependências de áudio
         run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
           python -m pip install --upgrade pip
           pip install edge-tts pydub requests
           ffmpeg -version | head -1
+          ffprobe -version | head -1
 
       - name: Executar pipeline N3
         env:
