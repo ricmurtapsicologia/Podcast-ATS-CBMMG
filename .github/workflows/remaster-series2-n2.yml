@@ -1,0 +1,50 @@
+name: Remasterizar Série 2 N2
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/remaster-series2-n2.yml'
+      - 'scripts/remaster_series2_n2.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  remaster:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+          fetch-depth: 0
+
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Dependências
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          pip install 'faster-whisper>=1.1,<2' edge-tts==7.2.8 pydub
+
+      - name: Remasterizar Série 2
+        run: python scripts/remaster_series2_n2.py
+
+      - name: Publicar Série 2 N2 na branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/audio/serie-2 roteiros/serie-2 app.js
+          if git diff --cached --quiet; then
+            echo "Sem alterações geradas."
+          else
+            git commit -m "Gera Série 2 em áudio N2"
+            git push origin HEAD:${{ github.head_ref || github.ref_name }}
+          fi
