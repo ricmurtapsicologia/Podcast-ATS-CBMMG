@@ -1,30 +1,30 @@
-# Microaula 05 — Aproximar-se e escutar sem pressionar
+# Microaula 05 — Aproximar: como iniciar sem encurralar
 
 - Série: 3 — Primeiros Socorros Psicológicos
 - Card: 05
-- Duração estimada: 2.3 min, com locução a ~125 palavras/min
+- Duração estimada: 2.8 min, com locução a ~125 palavras/min
 - Formato: microaula conversacional; instrutor + profissional/aluno
 - Finalidade: aprofundar e aplicar o conteúdo escrito do card sem substituí-lo.
 
 ## Roteiro
 
-**INSTRUTOR:** O primeiro contato pode diminuir ou aumentar a sensação de imprevisibilidade. Por isso, aproximar-se e escutar bem não começa com uma sequência de perguntas. Começa sendo visível, previsível e claro.
+**INSTRUTOR:** Depois de perceber uma mudança e preparar o momento, vem a aproximação. O objetivo é abrir uma porta, não colocar o colega contra a parede. A maneira como você inicia a conversa pode determinar se ele sente acolhimento ou necessidade de se defender.
 
-**PROFISSIONAL:** O que eu digo primeiro?
+**PROFISSIONAL:** Qual é uma boa forma de começar?
 
-**INSTRUTOR:** Apresente-se. Diga sua função e por que está ali. Depois ofereça ajuda em linguagem simples. Algo como: eu sou da equipe de atendimento, estou aqui para verificar do que você precisa agora. Essa apresentação pequena devolve contexto para uma pessoa que pode estar processando muita informação ao mesmo tempo.
+**INSTRUTOR:** Use uma observação concreta, um tom simples e uma pergunta aberta. Por exemplo: “Percebi que você está mais quieto e sobrecarregado nesses últimos dias. Como você está?” Ou: “Notei que a semana foi pesada para você. Quer conversar um pouco?” A frase não precisa ser perfeita. Precisa ser respeitosa, verdadeira e sem plateia.
 
-**INSTRUTOR:** Na escuta, o objetivo não é obter um relato completo do evento. É compreender necessidades e preocupações atuais. Perguntas curtas funcionam melhor: o que está mais difícil agora? de que você precisa primeiro? há alguém que devemos contatar? Dê tempo para a resposta e aceite o silêncio.
+**PROFISSIONAL:** E se ele disser que está tudo bem?
 
-**PROFISSIONAL:** E se o silêncio ficar desconfortável?
+**INSTRUTOR:** Não transforme isso em disputa. Você pode responder algo como: “Tudo bem. Só queria que soubesse que, se precisar, estou disponível.” Às vezes, a pessoa não quer falar naquele momento. Às vezes, precisa de tempo para confiar. O apoio continua existindo quando você respeita a resposta e mantém disponibilidade.
 
-**INSTRUTOR:** O desconforto do silêncio não precisa ser resolvido imediatamente. Preencher cada pausa com novas perguntas pode aumentar pressão. Espere alguns segundos, observe e deixe claro que a pessoa não precisa contar detalhes para receber ajuda.
+**INSTRUTOR:** Também evite frases que aumentam exposição: “todo mundo percebeu”, “você precisa se abrir”, “você está estranho”, “isso não é normal”. Elas deslocam a conversa do cuidado para a defesa.
 
-**INSTRUTOR:** Outra ferramenta útil é resumir: então, pelo que entendi, sua prioridade agora é conseguir falar com sua família e saber para onde será encaminhado. Isso confirma se você compreendeu corretamente e organiza a conversa sem tomar o controle dela.
+**PROFISSIONAL:** E se eu for chefe dessa pessoa?
 
-**INSTRUTOR:** Evite curiosidade, interrupções para contar experiências próprias, frases que minimizem emoção e pressão para desabafar. Com colegas, prefira privacidade e discrição. Apoio não deve parecer avaliação de desempenho.
+**INSTRUTOR:** A atenção precisa ser ainda maior para separar cuidado de cobrança. Deixe claro quando a conversa é de apoio e preserve o máximo possível de privacidade. Questões de desempenho podem exigir outro espaço. Misturar os dois objetivos tende a reduzir segurança psicológica.
 
-**INSTRUTOR:** Três ideias para levar: apresente-se antes de perguntar; escute necessidades atuais, não uma história completa; e use silêncio e resumo como ferramentas. Microchecagem: ao final do contato, consigo nomear uma ou duas prioridades sem ter pressionado a pessoa a narrar o que viveu?
+**INSTRUTOR:** Aproxime-se com curiosidade respeitosa: eu percebi algo, posso estar errado e quero compreender. Microchecagem final: a forma como estou falando permite que o colega escolha quanto quer dizer ou faz com que ele se sinta obrigado a se justificar?
 
 ## Direção de voz
 
