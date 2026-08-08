@@ -1,0 +1,128 @@
+[
+  {
+    "episode": 0,
+    "source": "A2 000 Desvendando as Engrenagens do Comportamento Suicida.mp3",
+    "output": "a2-000.mp3",
+    "text_integrity": 1.0,
+    "chunks": 2,
+    "duration_seconds": 72.9,
+    "voice": "pt-BR-AntonioNeural"
+  },
+  {
+    "episode": 1,
+    "source": "A2 001 A Origem do Suicídio.mp3",
+    "output": "a2-001.mp3",
+    "text_integrity": 1.0,
+    "chunks": 3,
+    "duration_seconds": 175.0,
+    "voice": "pt-BR-AntonioNeural"
+  },
+  {
+    "episode": 2,
+    "source": "A2 002 Os Bastidores do Cérebro.mp3",
+    "output": "a2-002.mp3",
+    "text_integrity": 1.0,
+    "chunks": 3,
+    "duration_seconds": 123.6,
+    "voice": "pt-BR-AntonioNeural"
+  },
+  {
+    "episode": 3,
+    "source": "A2 003 O Peso da Mente.mp3",
+    "output": "a2-003.mp3",
+    "text_integrity": 1.0,
+    "chunks": 4,
+    "duration_seconds": 194.6,
+    "voice": "pt-BR-AntonioNeural"
+  },
+  {
+    "episode": 4,
+    "source": "A2 004 Maria e as sombras da depressao.mp3",
+    "output": "a2-004.mp3",
+    "text_integrity": 1.0,
+    "chunks": 3,
+    "duration_seconds": 193.6,
+    "voice": "pt-BR-AntonioNeural"
+  },
+  {
+    "episode": 5,
+    "source": "A2 005 Cláudio e os Ciclos do TAB.mp3",
+    "output": "a2-005.mp3",
+    "text_integrity": 1.0,
+    "chunks": 3,
+    "duration_seconds": 153.1,
+    "voice": "pt-BR-AntonioNeural"
+  },
+  {
+    "episode": 6,
+    "source": "A2 006 Fernanda na Rede da Dependência.mp3",
+    "output": "a2-006.mp3",
+    "text_integrity": 1.0,
+    "chunks": 3,
+    "duration_seconds": 199.7,
+    "voice": "pt-BR-AntonioNeural"
+  },
+  {
+    "episode": 7,
+    "source": "A2 007 Entrevista com Júlia.mp3",
+    "output": "a2-007.mp3",
+    "text_integrity": 1.0,
+    "chunks": 4,
+    "duration_seconds": 192.7,
+    "voice": "pt-BR-FranciscaNeural"
+  },
+  {
+    "episode": 8,
+    "source": "A2 008 Entrevista com Dra Sara.mp3",
+    "output": "a2-008.mp3",
+    "text_integrity": 1.0,
+    "chunks": 4,
+    "duration_seconds": 195.9,
+    "voice": "pt-BR-FranciscaNeural"
+  },
+  {
+    "episode": 9,
+    "source": "A2 009 Dona Lurdes e sua irmã.mp3",
+    "output": "a2-009.mp3",
+    "text_integrity": 1.0,
+    "chunks": 3,
+    "duration_seconds": 185.1,
+    "voice": "pt-BR-AntonioNeural"
+  },
+  {
+    "episode": 10,
+    "source": "A2 010 Fatores Invisíveis Vulnerabilidades Sociais e Filosóficas.mp3",
+    "output": "a2-010.mp3",
+    "text_integrity": 1.0,
+    "chunks": 3,
+    "duration_seconds": 147.7,
+    "voice": "pt-BR-AntonioNeural"
+  },
+  {
+    "episode": 11,
+    "source": "A2 011 Quando o Cérebro Quebra.mp3",
+    "output": "a2-011.mp3",
+    "text_integrity": 1.0,
+    "chunks": 3,
+    "duration_seconds": 142.8,
+    "voice": "pt-BR-AntonioNeural"
+  },
+  {
+    "episode": 12,
+    "source": "A2 012 A Impulsividade e o Comportamento de Fuga.mp3",
+    "output": "a2-012.mp3",
+    "text_integrity": 1.0,
+    "chunks": 3,
+    "duration_seconds": 158.0,
+    "voice": "pt-BR-AntonioNeural"
+  },
+  {
+    "episode": 13,
+    "source": "A3 013 Um Novo Olhar para as Engrenagens.mp3",
+    "output": "a2-013.mp3",
+    "text_integrity": 1.0,
+    "chunks": 3,
+    "duration_seconds": 144.3,
+    "voice": "pt-BR-AntonioNeural"
+  }
+]
