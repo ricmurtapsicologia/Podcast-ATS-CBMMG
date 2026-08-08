@@ -39,6 +39,13 @@ jobs:
           ffmpeg -version | head -1
           ffprobe -version | head -1
 
+      - name: Preparar diretórios candidatos N3
+        run: |
+          mkdir -p assets/audio/candidate-n3/A-current/{serie-1,serie-2,serie-3}
+          mkdir -p assets/audio/candidate-n3/N3-edge-semantic/{serie-1,serie-2,serie-3}
+          mkdir -p assets/audio/candidate-n3/B-azure-neural-ssml/{serie-1,serie-2,serie-3}
+          mkdir -p assets/audio/candidate-n3/C-azure-hd-contextual/{serie-1,serie-2,serie-3}
+
       - name: Executar pipeline N3
         env:
           AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
