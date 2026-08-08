@@ -47,13 +47,13 @@ jobs:
           mkdir -p assets/audio/candidate-n3/C-azure-hd-contextual/{serie-1,serie-2,serie-3}
           printf '%s\n' '.tmp_audio_n3/' >> .git/info/exclude
 
-      - name: Executar pipeline N3
+      - name: Executar pipeline N3 na ordem do plano mestre
         env:
           AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
           AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION }}
           AZURE_HD_VOICE_MALE: ${{ secrets.AZURE_HD_VOICE_MALE }}
           AZURE_HD_VOICE_FEMALE: ${{ secrets.AZURE_HD_VOICE_FEMALE }}
-        run: python scripts/audio_n3/n3_runner.py
+        run: python scripts/audio_n3/n3_runner_ordered.py
 
       - name: Gate de escopo congelado
         shell: bash
