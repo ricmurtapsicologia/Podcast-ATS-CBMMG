@@ -7,7 +7,7 @@ O N2 preserva integralmente o texto narrado e melhora a entrega por:
 - prosódia variável por fala, sem reescrita;
 - pausas contextuais entre interlocutores;
 - compressão leve e normalização de nível;
-- geração concorrente limitada, com retentativas.
+- geração concorrente limitada, com timeout e retentativas.
 """
 
 import asyncio
@@ -31,6 +31,7 @@ OPENING_SILENCE_MS = 130
 ENDING_SILENCE_MS = 240
 TARGET_DBFS = -18.0
 MAX_CONCURRENT_SYNTH = 4
+SYNTH_TIMEOUT_SECONDS = 35
 PATTERN = re.compile(r"^\*\*(INSTRUTOR|PROFISSIONAL):\*\*\s*(.+)$")
 
 
@@ -80,7 +81,10 @@ async def synthesize(text, voice, rate, pitch, output, semaphore):
                     volume="+0%",
                     pitch=pitch,
                 )
-                await communicate.save(str(output))
+                await asyncio.wait_for(
+                    communicate.save(str(output)),
+                    timeout=SYNTH_TIMEOUT_SECONDS,
+                )
                 return
             except Exception:
                 if attempt == 3:
