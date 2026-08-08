@@ -45,6 +45,7 @@ jobs:
           mkdir -p assets/audio/candidate-n3/N3-edge-semantic/{serie-1,serie-2,serie-3}
           mkdir -p assets/audio/candidate-n3/B-azure-neural-ssml/{serie-1,serie-2,serie-3}
           mkdir -p assets/audio/candidate-n3/C-azure-hd-contextual/{serie-1,serie-2,serie-3}
+          printf '%s\n' '.tmp_audio_n3/' >> .git/info/exclude
 
       - name: Executar pipeline N3
         env:
@@ -69,7 +70,7 @@ jobs:
                 bad=1
                 ;;
             esac
-          done < <(git status --porcelain)
+          done < <(git status --porcelain --untracked-files=all)
           test "$bad" -eq 0
 
       - name: Publicar resultados na branch
