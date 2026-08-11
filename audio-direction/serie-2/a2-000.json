@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "series": "serie-2",
+  "episode": "a2-000",
+  "canonical_sha256": "f97bb01b88f5dfe4f7e1686e6d84bde33a505c0b9a08134e5d240d9a93b91125",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Desvendando as engrenagens do comportamento suicida. Olá, pessoal! Sejam bem-vindos a nossa nova série do projeto girando a ampulheta da vida, intitulada em engrenagens do comportamento suicida.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 13.0
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Este podcast é o material complementar a disciplina de atendimento atentativas de suicídio oferecida nos cursos de formação do corpo de bombeiros militar de minas gerais.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 12.5
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Foi pensado especialmente para você, caroabordador, que atua diretamente em emergências envolvendo atentativas de suicídio e busca compreender mais profundamente o comportamento suicida. Na série engrenagens do comportamento suicida, exploraremos os fatores biológicos, psicológicos, sociais e filosóficos que se conectam nas crises suicidas.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 20.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Falaremos sobre as vulnerabilidades que antecedem uma tentativa de suicídio. Os processos emocionais e neurologicos que ocorrem durante a crise e o impacto devastador da impossividade em momentos decisivos.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 13.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "No próximo episódio começaremos com o tema a origem do suicídio, compreendendo o comportamento suicida. Não perca.",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 8.2
+    }
+  ]
+}

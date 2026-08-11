@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "series": "serie-2",
+  "episode": "a2-002",
+  "canonical_sha256": "190e9e09730db48ae8651d98e4e4b2f717c4265915886d4c21e59ae76492059c",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Os bastidores do cérebro, bases neurobiológicas do comportamento suicida. Olá pessoal, continuando nossa série desvendando as engrenagens do comportamento suicida, hoje vamos falar sobre os bastidores do cérebro, bases neurobiológicas do comportamento suicida.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 15.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Para entender como o cérebro influencia o comportamento suicida, é essencial compreender o processo decisório e suas bases biológicas. Em situações normais, o Cortex Prefrontal, responsável pelo raciocínio lógico e controle dos impulsos, trabalhem equilíbrio com o sistema límbico que regula as emoções.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 20.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Essa interação permite atos volitivos, ou seja, ações baseadas em intenção, deliberação, decisão e execução. Em momentos de estresse extremo, esse equilíbrio pode ser rompido.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 12.0
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "A amigda é uma estrutura do sistema límbico, pode assumir o controle, reduzindo a influência do Cortex Prefrontal. Esse fenômeno, conhecido como sequestro da amigdala, transforma decisões ponderadas em ações impulsivas, frequentemente sem avaliação adequada das consequências.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Como as emoções influenciam o processo decisório? As emoções desempenham um papel central na tomada de decisões, ajudando a priorizar informações e avaliar situações.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 11.5
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "No entanto, em crises, a intensa ativação da amigdala pode distorcer a percepção de risco e obscurecer alternativas viáveis. Quando Cortex Prefrontal não consegue moderar essas reações, as decisões se tornam precipitadas e guiadas pelo desespero.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Compreender esses mecanismos nos ajuda a reconhecer como comportamento suicida é influenciado por uma interação complexa entre processos emocionais e biológicos, muitas vezes limitando controle racional e intensificando o sofrimento.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 14.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "No próximo episódio, falaremos sobre o peso da mente, contexto psiquiático e psicológico. Não perca.",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 7.2
+    }
+  ]
+}

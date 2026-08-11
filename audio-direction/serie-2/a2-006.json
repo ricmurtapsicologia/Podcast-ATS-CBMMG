@@ -1,0 +1,108 @@
+{
+  "schema": 1,
+  "series": "serie-2",
+  "episode": "a2-006",
+  "canonical_sha256": "8183bc41c694dd8971de86ed0a27bd0ca38d8e115d36084c6889467044e5a2f5",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Fernanda, uma dependente química de cocaína em crise suicida. Fernanda está na borda de uma ponte visivelmente agitada com respiração ofegante e gestos desordenados. Sobe o efeito de cocaína, ela parece perdida. Guilherme, bombeiro militares, especialista em abordagem aproximas com calma.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 19.7
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Oi, eu sou Guilherme, bombeiro militar. Estou aqui pra te ouvir. Qual é o seu nome? Fernanda. Mas isso não importa. Nada mais importa. Importa, sim, Fernanda. O que você está sentindo agora? Posso te ajudar de alguma forma? Eu não sei.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 20.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Minha vida está uma bagunça. Minha mãe já desistiu de mim. Eu só trago problemas pra ela. Entendo que você se sinta assim? Sua mãe mora com você? Sim, mas ela está cansada.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 15.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Ela tentou me ajudar tantas vezes, mas eu só estraguei tudo. Sou um desastre. Parece que você está carregando muita culpa, Fernanda. Desde quando você sente que está assim? Desde que comecei com essa porcaria, cocaína, faz uns seis meses.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 19.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Eu sempre digo que vai ser a última vez, mas nunca consigo parar. Isso deve ser muito difícil. E hoje, antes de vir pra cá, você usou novamente. Sim, usei muito.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 14.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "É a única coisa que me faz esquecer, mas também está destruindo minha vida. Fernanda, antes de tudo isso, você trabalhava. Fazia algo que gostava. Trabalhava num salão de beleza, mas perdi tudo. Comecei a faltar.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Agora só fico em casa e nem minha mãe quer olhar pra mim. E antes de começar a usar a droga, o que te fazia bem? Tinha algo que você gostava de fazer.",
+      "intent": "transition",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 390,
+      "estimated_seconds": 15.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Eu gostava de ouvir música, sair com as minhas amigas, mas agora ninguém quer saber de mim. Eu destruí tudo. Sua mãe ainda se preocupa com você, não é? Mesmo com tudo isso? Ela diz que sim, mas eu só machuco ela.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 20.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Eu não consigo mais, Guilherme. Eu queria desaparecer. Eu entendo que você esteja se sentindo sobrecarregada agora, Fernanda. Mas você não está sozinha. Vamos sair daqui juntos e continuar essa conversa no lugar mais tranquilo. Pode ser?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 17.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Nesse diálogo, Fernanda mostra os impactos da dependência química em sua vida. Prejuízo sociais e profissionais, como a perda do emprego e o isolamento. O uso persistente da droga, apesar das consequências, reflete perda de controle e forte interferência no cotidiano.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 19.7
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "O consumo recente prejudica decisões e intensifica culpa, desesperança e escolhas impulsivas. No próximo episódio vamos conhecer Julia, uma estudante de farmácia que enfrenta os desafios do transtorno de personalidade borderline. Até lá!",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 15.8
+    }
+  ]
+}

@@ -6,7 +6,7 @@
   let CARDS = [];
 
   const pad = n => String(n).padStart(2, "0");
-  const audioUrl = index => `assets/audio/serie-3/psp-${pad(index + 1)}.mp3`;
+  const audioUrl = index => `assets/audio/serie-3/psp-${pad(index + 1)}-n3.mp3`;
   const format = seconds => {
     const total = Math.max(0, Math.floor(Number(seconds) || 0));
     return `${String(Math.floor(total / 60)).padStart(2, "0")}:${String(total % 60).padStart(2, "0")}`;

@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "series": "serie-1",
+  "episode": "a1-004",
+  "canonical_sha256": "5bf373adc2d2f47bbc951aa7dac4ab101775cdde71e3146acf461f99c6751317",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "A aproximação segura no atendimento a tentativas de suicídio. Olá, pessoal. Continuando nossa série sobre abordagem técnica, comunicação que salva, hoje vamos falar sobre a aproximação segura. Um momento decisivo para criar conexão e garantir a segurança de todos os envolvidos.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 19.7
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "A aproximação é feita de forma lenta, silenciosa e natural, com as mãos visíveis para transmitir confiança. Se o tentante pedir para parar, o local onde você está se torna a borda da zona de aproximação.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "E a partir daí que o vínculo começa a ser construído. E se houver agressividade ou xingamentos, mantenha a calma. Esse comportamento é comum e geralmente diminui com o tempo.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 14.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Evite gestos que possam parecer intimidação, como colocar as mãos na cintura ou escondê-las. Cada movimento deve passar segurança e empatia. O objetivo principal é alcançar a zona interpersonal do tentante de forma segura e permissiva. Garantindo que ele se sinta respeitado.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 20.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Lembre-se, apenas o abordador se comunica e a segurança da cena é essencial. No caso de objetos perigosos, use linguagem que desarme a situação. Como pedir para o tentante deixar o objeto de lado.",
+      "intent": "synthesis",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 480,
+      "estimated_seconds": 16.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "A aproximação segura é o primeiro passo para criar um espaço de confiança e empatia. É como abrir a porta para um diálogo que pode salvar vidas. No próximo episódio vamos explorar o silêncio inicial.",
+      "intent": "enumeration",
+      "rate_percent": -4,
+      "pitch_hz": -1,
+      "pause_after_ms": 360,
+      "estimated_seconds": 16.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Aquele momento estratégico que prepara o terreno para uma conversa verdadeira e transformadora. Não perca!",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 7.2
+    }
+  ]
+}

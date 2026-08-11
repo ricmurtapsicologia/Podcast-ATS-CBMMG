@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "series": "serie-1",
+  "episode": "a1-002",
+  "canonical_sha256": "b7490d56ddd5b9d5f0f2aa1348d074ce081eeb9be6663e6846d1e6662fca9391",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Comportamentos desejáveis na abordagem técnica. Olá, pessoal. Se você acompanhou o podcast anterior sobre abordagem técnica, comunicação que salva, sabe que a comunicação pode ser transformadora em situações de crise.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 14.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Agora vamos falar sobre como suas ações e palavras podem construir confiança e salvar vidas. Primeiro, preste atenção ao tentante. Observe sua postura, o tom de voz e os gestos. Mostre sinceridade e atenção. Isso é fundamental para fortalecer o vínculo.",
+      "intent": "transition",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 390,
+      "estimated_seconds": 19.7
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Olhe nos olhos, ouça ativamente e respeite os silêncios, porque até o silêncio tem seu papel na comunicação. Repita, resuma e conecte as ideias para que o tentante se sinta compreendido.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 14.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Mais que isso, ajude-o a encontrar suas próprias soluções, dando espaço para perguntas e valorizando suas ideias. Essa abordagem cria um canal aberto de confiança e faz toda a diferença. Quer saber o que não fazer durante uma abordagem?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 540,
+      "estimated_seconds": 18.7
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "No próximo episódio, falaremos sobre comportamentos que podem prejudicar esse processo essencial. Fique ligado.",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 6.7
+    }
+  ]
+}

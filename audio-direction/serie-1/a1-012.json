@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "series": "serie-1",
+  "episode": "a1-012",
+  "canonical_sha256": "aa24d248b3c5810d57a8990fb5945a0a48b52532c3d69201010300926ee4fd87",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Ferramentas de diálogo. Influenciando a reflexão do tentante. Olá, pessoal. Continuando nossa série sobre abordagem técnica, comunicação que salva, hoje vamos falar sobre algumas ferramentas de diálogo que podem fazer toda a diferença na conexão com o tentante.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 18.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Essas ferramentas não apenas modulam emoções, mas também ajudam a redirecionar pensamentos, promovendo uma melhor regulação do humor e diminuindo o risco de suicídio. Vamos explorar como isso funciona na prática.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 14.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Durante uma tentativa de suicídio, o diálogo pode ser um divisor de águas. Segundo o modelo da cadeia de comportamento de Beck, pensamentos influenciam emoções, que, por sua vez, determinam comportamentos.",
+      "intent": "enumeration",
+      "rate_percent": -4,
+      "pitch_hz": -1,
+      "pause_after_ms": 360,
+      "estimated_seconds": 14.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Ao intervir no pensamento, oferecendo novas perspectivas ou mudando o foco para algo positivo, é possível quebrar esse ciclo negativo, diminuindo a angústia e incentivando a desistência do ato.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 13.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "As ferramentas de diálogo que utilizamos, como a ponte para o passado ou o futuro, permitem que o tentante se reconecte com memórias significativas ou visualize possibilidades que antes pareciam distantes.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 14.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Além disso, técnicas como a paráfrase resumida ajudam a mostrar ao tentante que ele está sendo ouvido e compreendido, fortalecendo o vínculo e a confiança na abordagem.",
+      "intent": "transition",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 390,
+      "estimated_seconds": 13.0
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Essas ferramentas são poderosos moduladores emocionais, ajudando o tentante a reorganizar seus pensamentos, regular seu humor e, aos poucos, abrir espaço para novas formas de enfrentamento.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 12.5
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "No próximo episódio, vamos falar sobre a técnica do sucesso anterior e como ela pode ser usada para inspirar esperança e resiliência no tentante. Não perca!",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 12.5
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "schema": 1,
+  "series": "serie-3",
+  "episode": "psp-10",
+  "canonical_sha256": "cc380ca625c2b62efe548fa3a1f08f7b3a5d4c0b8b2b44043edfb522debb663e",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Nesta trilha, os Primeiros Socorros Psicológicos foram tratados como uma ferramenta de prevenção em saúde mental para profissionais de segurança e emergência. O valor do PSP não está em uma frase perfeita, mas em uma sequência de atitudes simples, humanas e tecnicamente cuidadosas.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 20.6
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Qual é a sequência que eu devo guardar?",
+      "intent": "question",
+      "rate_percent": 1,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 3.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Primeiro, perceber. Observe mudanças concretas no funcionamento sem rotular. Segundo, preparar. Escolha momento, lugar e postura. Terceiro, aproximar. Fale de forma privada, descreva o que percebeu e abra espaço. Quarto, escutar. Procure compreender necessidades atuais antes de dar conselhos. Quinto, conectar.",
+      "intent": "enumeration",
+      "rate_percent": -4,
+      "pitch_hz": -1,
+      "pause_after_ms": 360,
+      "estimated_seconds": 19.7
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Ajude a transformar a conversa em um próximo passo realista. Sexto, acompanhar. Retome o contato sem vigiar. E, durante todo o processo, cuidar também de si.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 12.5
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Isso pode fazer parte da rotina da equipe?",
+      "intent": "question",
+      "rate_percent": 1,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 3.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Deve fazer parte de uma cultura de cuidado, não como fiscalização emocional, mas como comportamento profissional. Em ambientes de alta exigência, saúde mental e segurança operacional se influenciam.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 13.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Uma equipe que consegue reconhecer sobrecarga e acessar apoio cedo reduz silêncio, estigma e atraso na procura por ajuda.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 9.1
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Isso não significa que colegas assumam papel clínico. PSP tem limites. Quando a necessidade ultrapassa o apoio inicial, conectar com o recurso adequado é parte da intervenção, não sinal de fracasso.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 14.9
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "E qual seria uma boa regra para lideranças?",
+      "intent": "question",
+      "rate_percent": 1,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 3.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Separar cuidado de exposição. Uma liderança pode perguntar como a pessoa está, reorganizar demandas quando possível, informar recursos e acompanhar funcionalidade sem exigir detalhes pessoais. Segurança psicológica cresce quando pedir ajuda não é tratado como fraqueza.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 17.3
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Para fechar, memorize: perceber, preparar, aproximar, escutar, conectar, acompanhar e cuidar. Você não precisa resolver a vida de ninguém. Precisa reconhecer quando alguém pode estar precisando de apoio e ajudar a tornar o próximo passo mais acessível.",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 520,
+      "estimated_seconds": 17.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Essa é uma forma concreta de prevenção em saúde mental no trabalho.",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 5.8
+    }
+  ]
+}

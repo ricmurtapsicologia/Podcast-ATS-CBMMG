@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "series": "serie-1",
+  "episode": "a1-005",
+  "canonical_sha256": "03bd288e03ba44196c21f5d071296b719c1430dfadb5b582c469c67a0ae17912",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "O Silêncio Inicial, o Poder de Ouvir. Olá, pessoal. Continuando nossa série sobre abordagem técnica e comunicação que salva, hoje vamos falar do Silêncio Inicial, uma pausa que demonstra respeito e acolhimento. Esse silêncio não é ausência, mas presença ativa.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 430,
+      "estimated_seconds": 19.2
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "É o momento em que o abordador observa as reações do tentante, gestos, expressões, postura, e permite que ele processe a situação. Essa pausa transmite, eu estou aqui para ouvir.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 14.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Respeitar esse espaço ajuda a construir confiança e dá ao tentante a oportunidade de aliviar parte de sua angústia, iniciando um diálogo em seu tempo. No próximo episódio, vamos falar sobre como se apresentar pessoalmente de forma acolhedora. Não perca.",
+      "intent": "conclusion",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 0,
+      "estimated_seconds": 19.2
+    }
+  ]
+}

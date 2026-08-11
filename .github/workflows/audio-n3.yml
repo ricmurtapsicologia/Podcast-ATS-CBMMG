@@ -1,0 +1,92 @@
+name: Audio N3 — congelamento, A/B e QA
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/audio_n3/**'
+      - '.github/workflows/audio-n3.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: read
+
+jobs:
+  audio-n3:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout da branch de áudio
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref || github.ref_name }}
+          fetch-depth: 0
+
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Dependências de áudio
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          pip install edge-tts pydub requests
+          ffmpeg -version | head -1
+          ffprobe -version | head -1
+
+      - name: Preparar diretórios candidatos N3
+        run: |
+          mkdir -p assets/audio/candidate-n3/A-current/{serie-1,serie-2,serie-3}
+          mkdir -p assets/audio/candidate-n3/N3-edge-semantic/{serie-1,serie-2,serie-3}
+          mkdir -p assets/audio/candidate-n3/B-azure-neural-ssml/{serie-1,serie-2,serie-3}
+          mkdir -p assets/audio/candidate-n3/C-azure-hd-contextual/{serie-1,serie-2,serie-3}
+          printf '%s\n' '.tmp_audio_n3/' >> .git/info/exclude
+
+      - name: Executar pipeline N3 na ordem do plano mestre
+        env:
+          AZURE_SPEECH_KEY: ${{ secrets.AZURE_SPEECH_KEY }}
+          AZURE_SPEECH_REGION: ${{ secrets.AZURE_SPEECH_REGION }}
+          AZURE_HD_VOICE_MALE: ${{ secrets.AZURE_HD_VOICE_MALE }}
+          AZURE_HD_VOICE_FEMALE: ${{ secrets.AZURE_HD_VOICE_FEMALE }}
+        run: python scripts/audio_n3/n3_runner_ordered.py
+
+      - name: Gate de escopo congelado
+        shell: bash
+        run: |
+          set -euo pipefail
+          bad=0
+          while IFS= read -r line; do
+            path="${line:3}"
+            case "$path" in
+              assets/audio/*|roteiros-canonicos/*|audio-direction/*|scripts/audio_n3/*|reports/audio-n3/*|.github/workflows/audio-n3.yml|app.js|psp.js)
+                ;;
+              *)
+                echo "ALTERAÇÃO FORA DO ESCOPO: $path"
+                bad=1
+                ;;
+            esac
+          done < <(git status --porcelain --untracked-files=all)
+          test "$bad" -eq 0
+
+      - name: Publicar resultados na branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add roteiros-canonicos audio-direction reports/audio-n3 assets/audio/candidate-n3 assets/audio/serie-1 assets/audio/serie-2 assets/audio/serie-3 app.js psp.js || true
+          if git diff --cached --quiet; then
+            echo "Sem novos resultados para publicar."
+            exit 0
+          fi
+          git commit -m "Gera resultados de áudio N3"
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            git push origin HEAD:${{ github.event.pull_request.head.ref }}
+          else
+            git push origin HEAD:${GITHUB_REF_NAME}
+          fi

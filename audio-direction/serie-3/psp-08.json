@@ -1,0 +1,99 @@
+{
+  "schema": 1,
+  "series": "serie-3",
+  "episode": "psp-08",
+  "canonical_sha256": "7108ba9beb17f99336f10fb3490ca08feb4ca6d23a41fe1967e2c465d3508cf9",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Apoio entre pares não precisa terminar quando a primeira conversa acaba. Em algumas situações, vale retomar o contato. Acompanhar, porém, é diferente de vigiar. O objetivo é oferecer continuidade sem transformar cuidado em cobrança.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 16.3
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Como retomar sem parecer invasivo?",
+      "intent": "question",
+      "rate_percent": 1,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 2.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Seja simples. Depois de algum tempo, em um momento privado, você pode perguntar: “Como você ficou depois daquela nossa conversa?” ou “Conseguiu encaminhar aquilo que combinamos?” A pergunta deve permitir uma resposta breve e não exigir detalhes pessoais.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 18.2
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Preciso saber se ele foi ao atendimento ou o que falou lá?",
+      "intent": "question",
+      "rate_percent": 0,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 5.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Não. A continuidade do cuidado não depende de conhecer conteúdo clínico. Se você é colega, o mais importante é saber se existe apoio suficiente e se alguma barreira prática permanece.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 14.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Se você exerce função de liderança, acompanhe condições de trabalho e funcionalidade dentro dos limites da sua responsabilidade, preservando privacidade.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 9.6
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Observe também a evolução do funcionamento. O colega parece estar se reorganizando? A dificuldade continua significativa? O recurso combinado foi acessível? Se não foi, talvez seja necessário ajudar a pensar em outra alternativa.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 15.8
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "E se ele parecer incomodado com o acompanhamento?",
+      "intent": "question",
+      "rate_percent": 1,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 3.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Respeite o limite. Você pode dizer que sua intenção era apenas demonstrar disponibilidade e que não precisa falar sobre isso. O vínculo é preservado quando a pessoa não se sente monitorada.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 14.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Acompanhamento proporcional comunica uma mensagem importante: você não foi ouvido apenas por alguns minutos e depois esquecido. Ao mesmo tempo, evita dependência. Microchecagem: meu contato oferece continuidade e apoio ou transmite controle, expectativa de melhora e invasão de privacidade?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 0,
+      "estimated_seconds": 18.7
+    }
+  ]
+}

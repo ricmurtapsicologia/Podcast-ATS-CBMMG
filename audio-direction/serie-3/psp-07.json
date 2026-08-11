@@ -1,0 +1,99 @@
+{
+  "schema": 1,
+  "series": "serie-3",
+  "episode": "psp-07",
+  "canonical_sha256": "20657449f7a9fd83cda1d9cdc5226f99f1ddf955a783a883543b201fe5a60319",
+  "target_wpm_reference": 125,
+  "turns": [
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Uma conversa acolhedora é importante, mas o PSP ganha força quando ajuda a pessoa a chegar a um próximo passo. Conectar significa transformar compreensão em ação prática, sem assumir o controle da vida do colega.",
+      "intent": "opening",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 16.8
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Que tipo de próximo passo pode ser esse?",
+      "intent": "question",
+      "rate_percent": 1,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 3.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Depende da necessidade. Pode ser uma pausa, alimentação, descanso disponível, reorganização de tarefa, conversa com uma liderança de confiança, contato com alguém próximo, serviço de saúde, apoio psicossocial ou atendimento profissional.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 14.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "O ponto central é reduzir a distância entre a necessidade e o recurso.",
+      "intent": "synthesis",
+      "rate_percent": -5,
+      "pitch_hz": -2,
+      "pause_after_ms": 620,
+      "estimated_seconds": 6.2
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "Então não basta dizer “qualquer coisa, me chama”.",
+      "intent": "transition",
+      "rate_percent": 0,
+      "pitch_hz": 1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 3.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Essa frase demonstra boa intenção, mas pode deixar toda a iniciativa com alguém que já está sobrecarregado. Você pode ser mais concreto: “Quer que eu fique com você enquanto organiza isso?” “Posso te ajudar a localizar o serviço?” “Faz sentido conversarmos com a chefia sobre uma reorganização de tarefa?” Sempre oferecendo opção, não impondo.",
+      "intent": "explanation",
+      "rate_percent": -4,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 25.9
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Também explique o caminho. Encaminhar alguém sem dizer o que vai acontecer aumenta incerteza. Se você conhece o recurso, diga de forma simples para que serve, como acessar e o que a pessoa pode esperar.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 620,
+      "estimated_seconds": 16.8
+    },
+    {
+      "speaker": "PROFISSIONAL",
+      "text": "E se ela não quiser o recurso que eu sugeri?",
+      "intent": "question",
+      "rate_percent": 0,
+      "pitch_hz": 2,
+      "pause_after_ms": 680,
+      "estimated_seconds": 4.8
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Respeite a autonomia sempre que as condições permitirem. Você pode explorar outra possibilidade ou deixar a informação disponível. Quando houver necessidade de proteção ou funcionamento muito comprometido, siga os fluxos institucionais correspondentes.",
+      "intent": "explanation",
+      "rate_percent": -3,
+      "pitch_hz": -1,
+      "pause_after_ms": 340,
+      "estimated_seconds": 15.4
+    },
+    {
+      "speaker": "INSTRUTOR",
+      "text": "Conectar não é carregar o colega nas costas. É ajudá-lo a recuperar acesso a escolhas, apoio e recursos. Microchecagem: esta conversa terminou com um próximo passo claro, possível e compreendido ou apenas com boas intenções?",
+      "intent": "question",
+      "rate_percent": -2,
+      "pitch_hz": 0,
+      "pause_after_ms": 0,
+      "estimated_seconds": 16.8
+    }
+  ]
+}
