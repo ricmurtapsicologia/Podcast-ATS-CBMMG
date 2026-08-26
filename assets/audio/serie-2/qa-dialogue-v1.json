@@ -1,0 +1,335 @@
+{
+  "profile": "A2 dialogue organic multivoice v1",
+  "target_episodes": [
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "all_automated_gates_pass": true,
+  "perceptual_review": {
+    "status": "REQUIRED_BEFORE_MAIN_MERGE",
+    "samples": "Ouvir abertura, trecho central com alternância e fechamento de cada episódio."
+  },
+  "episodes": [
+    {
+      "episode": 4,
+      "source": "A2 004 Maria e as sombras da depressao.mp3",
+      "output": "a2-004-dialogue-v1.mp3",
+      "characters": [
+        "NARRADOR",
+        "MARIA",
+        "GORETTE"
+      ],
+      "voice_ids": {
+        "NARRADOR": "pt-BR-AntonioNeural",
+        "MARIA": "pt-BR-ThalitaMultilingualNeural",
+        "GORETTE": "pt-BR-FranciscaNeural"
+      },
+      "turns": 29,
+      "source_duration_seconds": 169.04,
+      "final_duration_seconds": 217.63,
+      "text_integrity": 1.0,
+      "documented_transcription_corrections": 0,
+      "loudness_lufs": -18.61,
+      "true_peak_db": -1.94,
+      "sample_peak_dbfs": -1.94,
+      "clipping": false,
+      "segment_durations_seconds": [
+        16.368,
+        4.992,
+        2.256,
+        7.344,
+        1.992,
+        8.664,
+        2.016,
+        9.528,
+        2.448,
+        6.216,
+        2.256,
+        11.616,
+        2.784,
+        3.912,
+        2.256,
+        8.208,
+        2.232,
+        2.544,
+        2.016,
+        8.304,
+        2.76,
+        8.928,
+        2.736,
+        9.024,
+        4.968,
+        13.968,
+        2.76,
+        6.576,
+        36.48
+      ],
+      "gates": {
+        "text_integrity": true,
+        "explicit_speaker_map": true,
+        "voice_consistency": true,
+        "distinct_voice_models": true,
+        "duration_valid": true,
+        "loudness_valid": true,
+        "peak_valid": true,
+        "no_clipping": true
+      },
+      "status": "PASS"
+    },
+    {
+      "episode": 5,
+      "source": "A2 005 Cláudio e os Ciclos do TAB.mp3",
+      "output": "a2-005-dialogue-v1.mp3",
+      "characters": [
+        "NARRADOR",
+        "CLAUDIO",
+        "ANA"
+      ],
+      "voice_ids": {
+        "NARRADOR": "pt-BR-AntonioNeural",
+        "CLAUDIO": "pt-BR-AntonioNeural",
+        "ANA": "pt-BR-FranciscaNeural"
+      },
+      "turns": 11,
+      "source_duration_seconds": 140.85,
+      "final_duration_seconds": 163.21,
+      "text_integrity": 1.0,
+      "documented_transcription_corrections": 0,
+      "loudness_lufs": -18.45,
+      "true_peak_db": -1.91,
+      "sample_peak_dbfs": -1.92,
+      "clipping": false,
+      "segment_durations_seconds": [
+        21.6,
+        17.4,
+        6.216,
+        6.528,
+        6.864,
+        7.488,
+        3.768,
+        16.944,
+        11.832,
+        10.584,
+        46.032
+      ],
+      "gates": {
+        "text_integrity": true,
+        "explicit_speaker_map": true,
+        "voice_consistency": true,
+        "distinct_voice_models": true,
+        "duration_valid": true,
+        "loudness_valid": true,
+        "peak_valid": true,
+        "no_clipping": true
+      },
+      "status": "PASS"
+    },
+    {
+      "episode": 6,
+      "source": "A2 006 Fernanda na Rede da Dependência.mp3",
+      "output": "a2-006-dialogue-v1.mp3",
+      "characters": [
+        "NARRADOR",
+        "GUILHERME",
+        "FERNANDA"
+      ],
+      "voice_ids": {
+        "NARRADOR": "pt-BR-AntonioNeural",
+        "GUILHERME": "pt-BR-AntonioNeural",
+        "FERNANDA": "pt-BR-ThalitaMultilingualNeural"
+      },
+      "turns": 19,
+      "source_duration_seconds": 167.5,
+      "final_duration_seconds": 200.93,
+      "text_integrity": 1.0,
+      "documented_transcription_corrections": 0,
+      "loudness_lufs": -18.53,
+      "true_peak_db": -1.9,
+      "sample_peak_dbfs": -1.9,
+      "clipping": false,
+      "segment_durations_seconds": [
+        22.56,
+        8.256,
+        4.296,
+        8.832,
+        7.68,
+        5.4,
+        7.8,
+        7.752,
+        8.904,
+        7.488,
+        6.552,
+        7.08,
+        8.544,
+        7.632,
+        7.008,
+        6.216,
+        7.704,
+        14.784,
+        37.08
+      ],
+      "gates": {
+        "text_integrity": true,
+        "explicit_speaker_map": true,
+        "voice_consistency": true,
+        "distinct_voice_models": true,
+        "duration_valid": true,
+        "loudness_valid": true,
+        "peak_valid": true,
+        "no_clipping": true
+      },
+      "status": "PASS"
+    },
+    {
+      "episode": 7,
+      "source": "A2 007 Entrevista com Júlia.mp3",
+      "output": "a2-007-dialogue-v1.mp3",
+      "characters": [
+        "ENTREVISTADOR",
+        "JULIA"
+      ],
+      "voice_ids": {
+        "ENTREVISTADOR": "pt-BR-AntonioNeural",
+        "JULIA": "pt-BR-ThalitaMultilingualNeural"
+      },
+      "turns": 13,
+      "source_duration_seconds": 206.47,
+      "final_duration_seconds": 213.76,
+      "text_integrity": 1.0,
+      "documented_transcription_corrections": 0,
+      "loudness_lufs": -18.66,
+      "true_peak_db": -1.91,
+      "sample_peak_dbfs": -1.93,
+      "clipping": false,
+      "segment_durations_seconds": [
+        39.336,
+        8.496,
+        9.384,
+        26.04,
+        4.44,
+        23.976,
+        3.528,
+        16.536,
+        3.456,
+        23.328,
+        5.376,
+        20.328,
+        22.776
+      ],
+      "gates": {
+        "text_integrity": true,
+        "explicit_speaker_map": true,
+        "voice_consistency": true,
+        "distinct_voice_models": true,
+        "duration_valid": true,
+        "loudness_valid": true,
+        "peak_valid": true,
+        "no_clipping": true
+      },
+      "status": "PASS"
+    },
+    {
+      "episode": 8,
+      "source": "A2 008 Entrevista com Dra Sara.mp3",
+      "output": "a2-008-dialogue-v1.mp3",
+      "characters": [
+        "ENTREVISTADOR",
+        "SARA"
+      ],
+      "voice_ids": {
+        "ENTREVISTADOR": "pt-BR-AntonioNeural",
+        "SARA": "pt-BR-FranciscaNeural"
+      },
+      "turns": 13,
+      "source_duration_seconds": 204.67,
+      "final_duration_seconds": 217.34,
+      "text_integrity": 1.0,
+      "documented_transcription_corrections": 0,
+      "loudness_lufs": -18.24,
+      "true_peak_db": -1.93,
+      "sample_peak_dbfs": -1.93,
+      "clipping": false,
+      "segment_durations_seconds": [
+        33.288,
+        17.04,
+        4.008,
+        20.088,
+        3.96,
+        21.432,
+        5.424,
+        20.664,
+        4.68,
+        37.32,
+        2.448,
+        16.872,
+        23.376
+      ],
+      "gates": {
+        "text_integrity": true,
+        "explicit_speaker_map": true,
+        "voice_consistency": true,
+        "distinct_voice_models": true,
+        "duration_valid": true,
+        "loudness_valid": true,
+        "peak_valid": true,
+        "no_clipping": true
+      },
+      "status": "PASS"
+    },
+    {
+      "episode": 9,
+      "source": "A2 009 Dona Lurdes e sua irmã.mp3",
+      "output": "a2-009-dialogue-v1.mp3",
+      "characters": [
+        "NARRADOR",
+        "LOURDES",
+        "FATIMA"
+      ],
+      "voice_ids": {
+        "NARRADOR": "pt-BR-AntonioNeural",
+        "LOURDES": "pt-BR-FranciscaNeural",
+        "FATIMA": "pt-BR-ThalitaMultilingualNeural"
+      },
+      "turns": 14,
+      "source_duration_seconds": 173.4,
+      "final_duration_seconds": 178.76,
+      "text_integrity": 1.0,
+      "documented_transcription_corrections": 0,
+      "loudness_lufs": -18.21,
+      "true_peak_db": -1.94,
+      "sample_peak_dbfs": -1.95,
+      "clipping": false,
+      "segment_durations_seconds": [
+        39.912,
+        4.896,
+        10.704,
+        1.92,
+        15.048,
+        3.36,
+        18.432,
+        3.168,
+        12.288,
+        2.328,
+        11.904,
+        1.872,
+        10.008,
+        35.352
+      ],
+      "gates": {
+        "text_integrity": true,
+        "explicit_speaker_map": true,
+        "voice_consistency": true,
+        "distinct_voice_models": true,
+        "duration_valid": true,
+        "loudness_valid": true,
+        "peak_valid": true,
+        "no_clipping": true
+      },
+      "status": "PASS"
+    }
+  ]
+}

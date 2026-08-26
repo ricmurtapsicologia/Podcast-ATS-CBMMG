@@ -1,0 +1,70 @@
+name: Remasterizar Série 2 — diálogos multivoz v1
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  remaster-dialogues:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout da branch de revisão
+        uses: actions/checkout@v4
+        with:
+          ref: audio/a2-dialogue-v1
+          fetch-depth: 0
+
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Dependências de áudio
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          pip install edge-tts==7.2.8 pydub
+
+      - name: Validar sintaxe
+        run: python -m py_compile scripts/remaster_series2_dialogue_v1.py
+
+      - name: Gerar A2 004–009 com casting explícito
+        run: python scripts/remaster_series2_dialogue_v1.py
+
+      - name: Gate automático final
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('assets/audio/serie-2/qa-dialogue-v1.json').read_text(encoding='utf-8'))
+          assert data['all_automated_gates_pass'] is True
+          eps = data['episodes']
+          assert [e['episode'] for e in eps] == [4,5,6,7,8,9]
+          assert all(e['status'] == 'PASS' for e in eps)
+          assert all(e['text_integrity'] == 1.0 for e in eps)
+          assert all(not e['clipping'] for e in eps)
+          by_ep = {e['episode']: e for e in eps}
+          pairs = {4:('MARIA','GORETTE'),5:('CLAUDIO','ANA'),6:('GUILHERME','FERNANDA'),7:('ENTREVISTADOR','JULIA'),8:('ENTREVISTADOR','SARA'),9:('LOURDES','FATIMA')}
+          for n,(a,b) in pairs.items():
+              vm = by_ep[n]['voice_ids']
+              assert vm[a] != vm[b]
+          assert by_ep[7]['voice_ids']['ENTREVISTADOR'] == by_ep[8]['voice_ids']['ENTREVISTADOR']
+          print('6/6 PASS automático.')
+          PY
+
+      - name: Publicar somente os artefatos aprovados na branch de revisão
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/audio/serie-2/a2-004-dialogue-v1.mp3 assets/audio/serie-2/a2-005-dialogue-v1.mp3 assets/audio/serie-2/a2-006-dialogue-v1.mp3 assets/audio/serie-2/a2-007-dialogue-v1.mp3 assets/audio/serie-2/a2-008-dialogue-v1.mp3 assets/audio/serie-2/a2-009-dialogue-v1.mp3 assets/audio/serie-2/qa-dialogue-v1.json assets/audio/serie-2/cast-dialogue-v1.json app.js
+          if git diff --cached --quiet; then
+            echo "Sem alterações geradas."
+          else
+            git commit -m "Atualiza A2 004-009 multivoz após execução manual"
+            git push origin HEAD:audio/a2-dialogue-v1
+          fi
