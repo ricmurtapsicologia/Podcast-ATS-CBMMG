@@ -42,6 +42,18 @@ jobs:
           python -m pip install --upgrade pip
           pip install edge-tts==7.2.8 pydub
 
+      - name: Inventário real de vozes pt-BR
+        run: |
+          python - <<'PY'
+          import asyncio
+          import edge_tts
+          async def main():
+              voices = await edge_tts.list_voices()
+              ptbr = sorted(v['ShortName'] for v in voices if v.get('Locale') == 'pt-BR' or v.get('ShortName','').startswith('pt-BR-'))
+              print('PTBR_CATALOG=' + '|'.join(ptbr))
+          asyncio.run(main())
+          PY
+
       - name: Validar sintaxe
         run: python -m py_compile scripts/remaster_series2_dialogue_v1.py
 
