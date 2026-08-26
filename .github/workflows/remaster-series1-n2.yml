@@ -7,6 +7,7 @@ on:
       - '.github/workflows/remaster-series1-n2.yml'
       - 'scripts/remaster_series1_organic.py'
       - 'scripts/remaster_series1_parallel.py'
+      - 'scripts/remaster_series1_opening_v5.py'
   workflow_dispatch:
 
 concurrency:
@@ -46,8 +47,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install edge-tts==7.2.8 pydub
 
-      - name: Remasterizar Série 1 — fala orgânica
-        run: python scripts/remaster_series1_parallel.py
+      - name: Remasterizar Série 1 — abertura e fala orgânica v5
+        run: python scripts/remaster_series1_opening_v5.py
 
       - name: Publicar Série 1 orgânica na branch
         run: |
@@ -57,6 +58,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "Sem alterações geradas."
           else
-            git commit -m "Remasteriza Série 1 com fala orgânica e pausas naturais"
+            git commit -m "Padroniza abertura e prosódia da Série 1"
             git push origin HEAD:${{ github.head_ref || github.ref_name }}
           fi
