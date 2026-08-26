@@ -1,0 +1,86 @@
+{
+  "NARRADOR": {
+    "voice_id": "pt-BR-AntonioNeural",
+    "base_rate": -6,
+    "base_pitch": -1,
+    "energy": "low",
+    "style": "neutral-discreet"
+  },
+  "MARIA": {
+    "voice_id": "pt-BR-ThalitaMultilingualNeural",
+    "base_rate": -7,
+    "base_pitch": 0,
+    "energy": "low",
+    "style": "young-introspective"
+  },
+  "GORETTE": {
+    "voice_id": "pt-BR-FranciscaNeural",
+    "base_rate": -4,
+    "base_pitch": 0,
+    "energy": "medium",
+    "style": "mature-warm-firm"
+  },
+  "CLAUDIO": {
+    "voice_id": "pt-BR-AntonioNeural",
+    "base_rate": 0,
+    "base_pitch": 1,
+    "energy": "high",
+    "style": "activated-but-controlled"
+  },
+  "ANA": {
+    "voice_id": "pt-BR-FranciscaNeural",
+    "base_rate": -4,
+    "base_pitch": 0,
+    "energy": "medium",
+    "style": "stable-regulating"
+  },
+  "GUILHERME": {
+    "voice_id": "pt-BR-AntonioNeural",
+    "base_rate": -6,
+    "base_pitch": -1,
+    "energy": "low",
+    "style": "calm-secure-non-authoritarian"
+  },
+  "FERNANDA": {
+    "voice_id": "pt-BR-ThalitaMultilingualNeural",
+    "base_rate": -2,
+    "base_pitch": 1,
+    "energy": "variable",
+    "style": "tense-to-regulated"
+  },
+  "ENTREVISTADOR": {
+    "voice_id": "pt-BR-AntonioNeural",
+    "base_rate": -4,
+    "base_pitch": -1,
+    "energy": "medium",
+    "style": "professional-interested"
+  },
+  "JULIA": {
+    "voice_id": "pt-BR-ThalitaMultilingualNeural",
+    "base_rate": -5,
+    "base_pitch": 0,
+    "energy": "medium-low",
+    "style": "young-reflective"
+  },
+  "SARA": {
+    "voice_id": "pt-BR-FranciscaNeural",
+    "base_rate": -3,
+    "base_pitch": 0,
+    "energy": "medium",
+    "style": "clinical-clear-warm"
+  },
+  "LOURDES": {
+    "voice_id": "pt-BR-FranciscaNeural",
+    "base_rate": -4,
+    "base_pitch": 0,
+    "energy": "medium-low",
+    "style": "mature-caregiver"
+  },
+  "FATIMA": {
+    "voice_id": "pt-BR-ThalitaMultilingualNeural",
+    "base_rate": -3,
+    "base_pitch": 0,
+    "energy": "medium",
+    "style": "mature-conversational"
+  }
+}

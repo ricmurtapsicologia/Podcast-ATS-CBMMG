@@ -58,17 +58,17 @@ class VoiceProfile:
 
 VOICE_PROFILES: dict[str, VoiceProfile] = {
     "NARRADOR": VoiceProfile("pt-BR-AntonioNeural", -6, -1, "low", "neutral-discreet"),
-    "MARIA": VoiceProfile("pt-BR-ThalitaNeural", -7, 0, "low", "young-introspective"),
+    "MARIA": VoiceProfile("pt-BR-ThalitaMultilingualNeural", -7, 0, "low", "young-introspective"),
     "GORETTE": VoiceProfile("pt-BR-FranciscaNeural", -4, 0, "medium", "mature-warm-firm"),
-    "CLAUDIO": VoiceProfile("pt-BR-DonatoNeural", 0, 1, "high", "activated-but-controlled"),
+    "CLAUDIO": VoiceProfile("pt-BR-AntonioNeural", 0, 1, "high", "activated-but-controlled"),
     "ANA": VoiceProfile("pt-BR-FranciscaNeural", -4, 0, "medium", "stable-regulating"),
-    "GUILHERME": VoiceProfile("pt-BR-DonatoNeural", -6, -1, "low", "calm-secure-non-authoritarian"),
-    "FERNANDA": VoiceProfile("pt-BR-ThalitaNeural", -2, 1, "variable", "tense-to-regulated"),
+    "GUILHERME": VoiceProfile("pt-BR-AntonioNeural", -6, -1, "low", "calm-secure-non-authoritarian"),
+    "FERNANDA": VoiceProfile("pt-BR-ThalitaMultilingualNeural", -2, 1, "variable", "tense-to-regulated"),
     "ENTREVISTADOR": VoiceProfile("pt-BR-AntonioNeural", -4, -1, "medium", "professional-interested"),
-    "JULIA": VoiceProfile("pt-BR-ThalitaNeural", -5, 0, "medium-low", "young-reflective"),
+    "JULIA": VoiceProfile("pt-BR-ThalitaMultilingualNeural", -5, 0, "medium-low", "young-reflective"),
     "SARA": VoiceProfile("pt-BR-FranciscaNeural", -3, 0, "medium", "clinical-clear-warm"),
     "LOURDES": VoiceProfile("pt-BR-FranciscaNeural", -4, 0, "medium-low", "mature-caregiver"),
-    "FATIMA": VoiceProfile("pt-BR-ThalitaNeural", -3, 0, "medium", "mature-conversational"),
+    "FATIMA": VoiceProfile("pt-BR-ThalitaMultilingualNeural", -3, 0, "medium", "mature-conversational"),
 }
 
 EPISODE_SPEAKERS = {
@@ -444,7 +444,7 @@ async def build_episode(number: int, semaphore: asyncio.Semaphore) -> dict:
     speakers = EPISODE_SPEAKERS[number]
     voice_map = {speaker: VOICE_PROFILES[speaker].voice_id for speaker in speakers}
     distinct_voices = len(set(voice_map.values()))
-    required_distinct = 2 if number in (7, 8) else 3
+    required_distinct = 3 if number in (4, 9) else 2
 
     gates = {
         "text_integrity": normalize_text(" ".join(t for _, t in turns)) == frozen,
