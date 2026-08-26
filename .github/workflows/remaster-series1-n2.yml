@@ -6,6 +6,7 @@ on:
     paths:
       - '.github/workflows/remaster-series1-n2.yml'
       - 'scripts/remaster_series1_organic.py'
+      - 'scripts/remaster_series1_parallel.py'
   workflow_dispatch:
 
 permissions:
@@ -42,7 +43,7 @@ jobs:
           pip install edge-tts==7.2.8 pydub
 
       - name: Remasterizar Série 1 — fala orgânica
-        run: python scripts/remaster_series1_organic.py
+        run: python scripts/remaster_series1_parallel.py
 
       - name: Publicar Série 1 orgânica na branch
         run: |
