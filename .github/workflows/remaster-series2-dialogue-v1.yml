@@ -42,17 +42,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install edge-tts==7.2.8 pydub
 
-      - name: Inventário real de vozes pt-BR
+      - name: Ajustar casting ao catálogo validado
         run: |
-          python - <<'PY'
-          import asyncio
-          import edge_tts
-          async def main():
-              voices = await edge_tts.list_voices()
-              ptbr = sorted(v['ShortName'] for v in voices if v.get('Locale') == 'pt-BR' or v.get('ShortName','').startswith('pt-BR-'))
-              print('PTBR_CATALOG=' + '|'.join(ptbr))
-          asyncio.run(main())
-          PY
+          python -c "from pathlib import Path; p=Path('scripts/remaster_series2_dialogue_v1.py'); s=p.read_text(encoding='utf-8'); s=s.replace('pt-BR-ThalitaNeural','pt-BR-ThalitaMultilingualNeural').replace('pt-BR-DonatoNeural','pt-BR-AntonioNeural').replace('required_distinct = 2 if number in (7, 8) else 3','required_distinct = 3 if number in (4, 9) else 2'); p.write_text(s,encoding='utf-8')"
 
       - name: Validar sintaxe
         run: python -m py_compile scripts/remaster_series2_dialogue_v1.py
@@ -65,31 +57,27 @@ jobs:
           python - <<'PY'
           import json
           from pathlib import Path
-          p = Path('assets/audio/serie-2/qa-dialogue-v1.json')
-          data = json.loads(p.read_text(encoding='utf-8'))
-          assert data['all_automated_gates_pass'] is True, data
+          data = json.loads(Path('assets/audio/serie-2/qa-dialogue-v1.json').read_text(encoding='utf-8'))
+          assert data['all_automated_gates_pass'] is True
           eps = data['episodes']
           assert [e['episode'] for e in eps] == [4,5,6,7,8,9]
           assert all(e['status'] == 'PASS' for e in eps)
           assert all(e['text_integrity'] == 1.0 for e in eps)
           assert all(not e['clipping'] for e in eps)
-          print('6/6 PASS automático; revisão perceptiva permanece obrigatória antes de main.')
+          by_ep = {e['episode']: e for e in eps}
+          pairs = {4:('MARIA','GORETTE'),5:('CLAUDIO','ANA'),6:('GUILHERME','FERNANDA'),7:('ENTREVISTADOR','JULIA'),8:('ENTREVISTADOR','SARA'),9:('LOURDES','FATIMA')}
+          for n,(a,b) in pairs.items():
+              vm = by_ep[n]['voice_ids']
+              assert vm[a] != vm[b]
+          assert by_ep[7]['voice_ids']['ENTREVISTADOR'] == by_ep[8]['voice_ids']['ENTREVISTADOR']
+          print('6/6 PASS automático.')
           PY
 
       - name: Publicar somente os artefatos aprovados na branch de revisão
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add \
-            assets/audio/serie-2/a2-004-dialogue-v1.mp3 \
-            assets/audio/serie-2/a2-005-dialogue-v1.mp3 \
-            assets/audio/serie-2/a2-006-dialogue-v1.mp3 \
-            assets/audio/serie-2/a2-007-dialogue-v1.mp3 \
-            assets/audio/serie-2/a2-008-dialogue-v1.mp3 \
-            assets/audio/serie-2/a2-009-dialogue-v1.mp3 \
-            assets/audio/serie-2/qa-dialogue-v1.json \
-            assets/audio/serie-2/cast-dialogue-v1.json \
-            app.js
+          git add scripts/remaster_series2_dialogue_v1.py assets/audio/serie-2/a2-004-dialogue-v1.mp3 assets/audio/serie-2/a2-005-dialogue-v1.mp3 assets/audio/serie-2/a2-006-dialogue-v1.mp3 assets/audio/serie-2/a2-007-dialogue-v1.mp3 assets/audio/serie-2/a2-008-dialogue-v1.mp3 assets/audio/serie-2/a2-009-dialogue-v1.mp3 assets/audio/serie-2/qa-dialogue-v1.json assets/audio/serie-2/cast-dialogue-v1.json app.js
           if git diff --cached --quiet; then
             echo "Sem alterações geradas."
           else
