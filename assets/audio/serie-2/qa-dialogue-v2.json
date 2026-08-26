@@ -1,0 +1,374 @@
+{
+  "profile": "A1/A2 dialogue editorial v2",
+  "all_automated_gates_pass": true,
+  "interviewer_voice_continuity_a2_007_008": true,
+  "a1_dialogue_episodes": [
+    8,
+    9,
+    10,
+    11,
+    13,
+    14,
+    15
+  ],
+  "a1_single_voice_preserved": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    12,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21
+  ],
+  "perceptual_review": "REQUIRED_BEFORE_MAIN_MERGE",
+  "episodes": [
+    {
+      "episode": "a1-008",
+      "title": "Usando Perguntas Simples com Tentante de Perfil Depressivo",
+      "output": "a1-008-dialogue-v2.mp3",
+      "voice_ids": {
+        "NARRADOR": "pt-BR-FranciscaNeural",
+        "ABORDADORA": "pt-BR-ThalitaMultilingualNeural",
+        "TENTANTE": "pt-BR-AntonioNeural"
+      },
+      "turns": 16,
+      "duration_seconds": 125.64,
+      "loudness_lufs": -18.76,
+      "true_peak_db": -1.94,
+      "sample_peak_dbfs": -1.95,
+      "gates": {
+        "legible_text": true,
+        "two_distinct_interlocutors": true,
+        "no_empty_turns": true,
+        "known_speakers": true,
+        "loudness": true,
+        "true_peak": true,
+        "no_clipping": true,
+        "minimum_duration": true
+      },
+      "status": "PASS"
+    },
+    {
+      "episode": "a1-009",
+      "title": "Usando Perguntas Simples com Tentante de Perfil Agressivo",
+      "output": "a1-009-dialogue-v2.mp3",
+      "voice_ids": {
+        "NARRADOR": "pt-BR-AntonioNeural",
+        "ABORDADORA": "pt-BR-FranciscaNeural",
+        "TENTANTE": "pt-BR-ThalitaMultilingualNeural"
+      },
+      "turns": 15,
+      "duration_seconds": 109.17,
+      "loudness_lufs": -18.43,
+      "true_peak_db": -1.94,
+      "sample_peak_dbfs": -1.95,
+      "gates": {
+        "legible_text": true,
+        "two_distinct_interlocutors": true,
+        "no_empty_turns": true,
+        "known_speakers": true,
+        "loudness": true,
+        "true_peak": true,
+        "no_clipping": true,
+        "minimum_duration": true
+      },
+      "status": "PASS"
+    },
+    {
+      "episode": "a1-010",
+      "title": "Usando Perguntas Simples com Tentante de Perfil Psicótico",
+      "output": "a1-010-dialogue-v2.mp3",
+      "voice_ids": {
+        "NARRADOR": "pt-BR-FranciscaNeural",
+        "ABORDADOR": "pt-BR-AntonioNeural",
+        "TENTANTE": "pt-BR-ThalitaMultilingualNeural"
+      },
+      "turns": 15,
+      "duration_seconds": 108.75,
+      "loudness_lufs": -18.84,
+      "true_peak_db": -2.0,
+      "sample_peak_dbfs": -2.01,
+      "gates": {
+        "legible_text": true,
+        "two_distinct_interlocutors": true,
+        "no_empty_turns": true,
+        "known_speakers": true,
+        "loudness": true,
+        "true_peak": true,
+        "no_clipping": true,
+        "minimum_duration": true
+      },
+      "status": "PASS"
+    },
+    {
+      "episode": "a1-011",
+      "title": "Usando Perguntas Complexas para Apoiar o Tentante",
+      "output": "a1-011-dialogue-v2.mp3",
+      "voice_ids": {
+        "NARRADOR": "pt-BR-FranciscaNeural",
+        "ABORDADOR": "pt-BR-AntonioNeural",
+        "TENTANTE": "pt-BR-ThalitaMultilingualNeural"
+      },
+      "turns": 8,
+      "duration_seconds": 83.19,
+      "loudness_lufs": -18.77,
+      "true_peak_db": -1.93,
+      "sample_peak_dbfs": -1.94,
+      "gates": {
+        "legible_text": true,
+        "two_distinct_interlocutors": true,
+        "no_empty_turns": true,
+        "known_speakers": true,
+        "loudness": true,
+        "true_peak": true,
+        "no_clipping": true,
+        "minimum_duration": true
+      },
+      "status": "PASS"
+    },
+    {
+      "episode": "a1-013",
+      "title": "Técnica do Sucesso Anterior",
+      "output": "a1-013-dialogue-v2.mp3",
+      "voice_ids": {
+        "NARRADOR": "pt-BR-AntonioNeural",
+        "ABORDADORA": "pt-BR-FranciscaNeural",
+        "TENTANTE": "pt-BR-ThalitaMultilingualNeural"
+      },
+      "turns": 10,
+      "duration_seconds": 84.69,
+      "loudness_lufs": -18.36,
+      "true_peak_db": -1.94,
+      "sample_peak_dbfs": -1.94,
+      "gates": {
+        "legible_text": true,
+        "two_distinct_interlocutors": true,
+        "no_empty_turns": true,
+        "known_speakers": true,
+        "loudness": true,
+        "true_peak": true,
+        "no_clipping": true,
+        "minimum_duration": true
+      },
+      "status": "PASS"
+    },
+    {
+      "episode": "a1-014",
+      "title": "Ponte para o Passado",
+      "output": "a1-014-dialogue-v2.mp3",
+      "voice_ids": {
+        "NARRADOR": "pt-BR-FranciscaNeural",
+        "ABORDADOR": "pt-BR-AntonioNeural",
+        "TENTANTE": "pt-BR-ThalitaMultilingualNeural"
+      },
+      "turns": 12,
+      "duration_seconds": 83.63,
+      "loudness_lufs": -18.85,
+      "true_peak_db": -2.44,
+      "sample_peak_dbfs": -2.44,
+      "gates": {
+        "legible_text": true,
+        "two_distinct_interlocutors": true,
+        "no_empty_turns": true,
+        "known_speakers": true,
+        "loudness": true,
+        "true_peak": true,
+        "no_clipping": true,
+        "minimum_duration": true
+      },
+      "status": "PASS"
+    },
+    {
+      "episode": "a1-015",
+      "title": "Ponte para o Futuro",
+      "output": "a1-015-dialogue-v2.mp3",
+      "voice_ids": {
+        "NARRADOR": "pt-BR-AntonioNeural",
+        "ABORDADORA": "pt-BR-FranciscaNeural",
+        "TENTANTE": "pt-BR-ThalitaMultilingualNeural"
+      },
+      "turns": 12,
+      "duration_seconds": 88.55,
+      "loudness_lufs": -18.56,
+      "true_peak_db": -1.92,
+      "sample_peak_dbfs": -1.95,
+      "gates": {
+        "legible_text": true,
+        "two_distinct_interlocutors": true,
+        "no_empty_turns": true,
+        "known_speakers": true,
+        "loudness": true,
+        "true_peak": true,
+        "no_clipping": true,
+        "minimum_duration": true
+      },
+      "status": "PASS"
+    },
+    {
+      "episode": "a2-004",
+      "title": "Maria e as Sombras da Depressão",
+      "output": "a2-004-dialogue-v2.mp3",
+      "voice_ids": {
+        "NARRADOR": "pt-BR-AntonioNeural",
+        "MARIA": "pt-BR-ThalitaMultilingualNeural",
+        "GORETTE": "pt-BR-FranciscaNeural"
+      },
+      "turns": 16,
+      "duration_seconds": 119.91,
+      "loudness_lufs": -18.54,
+      "true_peak_db": -1.93,
+      "sample_peak_dbfs": -1.93,
+      "gates": {
+        "legible_text": true,
+        "two_distinct_interlocutors": true,
+        "no_empty_turns": true,
+        "known_speakers": true,
+        "loudness": true,
+        "true_peak": true,
+        "no_clipping": true,
+        "minimum_duration": true
+      },
+      "status": "PASS"
+    },
+    {
+      "episode": "a2-005",
+      "title": "Cláudio e os Ciclos da Bipolaridade",
+      "output": "a2-005-dialogue-v2.mp3",
+      "voice_ids": {
+        "NARRADOR": "pt-BR-ThalitaMultilingualNeural",
+        "CLAUDIO": "pt-BR-AntonioNeural",
+        "ANA": "pt-BR-FranciscaNeural"
+      },
+      "turns": 12,
+      "duration_seconds": 118.78,
+      "loudness_lufs": -18.32,
+      "true_peak_db": -1.92,
+      "sample_peak_dbfs": -1.93,
+      "gates": {
+        "legible_text": true,
+        "two_distinct_interlocutors": true,
+        "no_empty_turns": true,
+        "known_speakers": true,
+        "narrator_distinct_from_claudio": true,
+        "loudness": true,
+        "true_peak": true,
+        "no_clipping": true,
+        "minimum_duration": true
+      },
+      "status": "PASS"
+    },
+    {
+      "episode": "a2-006",
+      "title": "Fernanda e o Labirinto da Cocaína",
+      "output": "a2-006-dialogue-v2.mp3",
+      "voice_ids": {
+        "NARRADOR": "pt-BR-FranciscaNeural",
+        "GUILHERME": "pt-BR-AntonioNeural",
+        "FERNANDA": "pt-BR-ThalitaMultilingualNeural"
+      },
+      "turns": 17,
+      "duration_seconds": 139.56,
+      "loudness_lufs": -18.94,
+      "true_peak_db": -1.94,
+      "sample_peak_dbfs": -1.95,
+      "gates": {
+        "legible_text": true,
+        "two_distinct_interlocutors": true,
+        "no_empty_turns": true,
+        "known_speakers": true,
+        "bombeiro_does_not_promise_help": true,
+        "narrator_distinct_from_bombeiro": true,
+        "loudness": true,
+        "true_peak": true,
+        "no_clipping": true,
+        "minimum_duration": true
+      },
+      "status": "PASS"
+    },
+    {
+      "episode": "a2-007",
+      "title": "Programa em Foco — Júlia e o Borderline",
+      "output": "a2-007-dialogue-v2.mp3",
+      "voice_ids": {
+        "ENTREVISTADOR": "pt-BR-AntonioNeural",
+        "JULIA": "pt-BR-ThalitaMultilingualNeural"
+      },
+      "turns": 13,
+      "duration_seconds": 120.26,
+      "loudness_lufs": -18.61,
+      "true_peak_db": -1.94,
+      "sample_peak_dbfs": -1.94,
+      "gates": {
+        "legible_text": true,
+        "two_distinct_interlocutors": true,
+        "no_empty_turns": true,
+        "known_speakers": true,
+        "podcast_turn_density": true,
+        "loudness": true,
+        "true_peak": true,
+        "no_clipping": true,
+        "minimum_duration": true
+      },
+      "status": "PASS"
+    },
+    {
+      "episode": "a2-008",
+      "title": "Programa em Foco — Dra. Sara e os Transtornos de Personalidade",
+      "output": "a2-008-dialogue-v2.mp3",
+      "voice_ids": {
+        "ENTREVISTADOR": "pt-BR-AntonioNeural",
+        "SARA": "pt-BR-FranciscaNeural"
+      },
+      "turns": 13,
+      "duration_seconds": 137.91,
+      "loudness_lufs": -18.33,
+      "true_peak_db": -1.94,
+      "sample_peak_dbfs": -1.97,
+      "gates": {
+        "legible_text": true,
+        "two_distinct_interlocutors": true,
+        "no_empty_turns": true,
+        "known_speakers": true,
+        "podcast_turn_density": true,
+        "loudness": true,
+        "true_peak": true,
+        "no_clipping": true,
+        "minimum_duration": true
+      },
+      "status": "PASS"
+    },
+    {
+      "episode": "a2-009",
+      "title": "Dona Lurdes, Mônica e os Desafios da Esquizofrenia",
+      "output": "a2-009-dialogue-v2.mp3",
+      "voice_ids": {
+        "NARRADOR": "pt-BR-AntonioNeural",
+        "LOURDES": "pt-BR-FranciscaNeural",
+        "FATIMA": "pt-BR-ThalitaMultilingualNeural"
+      },
+      "turns": 14,
+      "duration_seconds": 118.44,
+      "loudness_lufs": -18.27,
+      "true_peak_db": -1.94,
+      "sample_peak_dbfs": -1.94,
+      "gates": {
+        "legible_text": true,
+        "two_distinct_interlocutors": true,
+        "no_empty_turns": true,
+        "known_speakers": true,
+        "loudness": true,
+        "true_peak": true,
+        "no_clipping": true,
+        "minimum_duration": true
+      },
+      "status": "PASS"
+    }
+  ]
+}
