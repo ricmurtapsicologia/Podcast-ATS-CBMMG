@@ -1,0 +1,86 @@
+name: Remasterizar Série 2 — diálogos multivoz v1
+
+on:
+  push:
+    branches:
+      - audio/a2-dialogue-v1
+    paths:
+      - '.github/workflows/remaster-series2-dialogue-v1.yml'
+      - 'scripts/remaster_series2_dialogue_v1.py'
+      - 'roteiros/serie-2/a2-004.txt'
+      - 'roteiros/serie-2/a2-005.txt'
+      - 'roteiros/serie-2/a2-006.txt'
+      - 'roteiros/serie-2/a2-007.txt'
+      - 'roteiros/serie-2/a2-008.txt'
+      - 'roteiros/serie-2/a2-009.txt'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  remaster-dialogues:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout da branch de revisão
+        uses: actions/checkout@v4
+        with:
+          ref: audio/a2-dialogue-v1
+          fetch-depth: 0
+
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Dependências de áudio
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          pip install edge-tts==7.2.8 pydub
+
+      - name: Validar sintaxe
+        run: python -m py_compile scripts/remaster_series2_dialogue_v1.py
+
+      - name: Gerar A2 004–009 com casting explícito
+        run: python scripts/remaster_series2_dialogue_v1.py
+
+      - name: Gate automático final
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('assets/audio/serie-2/qa-dialogue-v1.json')
+          data = json.loads(p.read_text(encoding='utf-8'))
+          assert data['all_automated_gates_pass'] is True, data
+          eps = data['episodes']
+          assert [e['episode'] for e in eps] == [4,5,6,7,8,9]
+          assert all(e['status'] == 'PASS' for e in eps)
+          assert all(e['text_integrity'] == 1.0 for e in eps)
+          assert all(not e['clipping'] for e in eps)
+          print('6/6 PASS automático; revisão perceptiva permanece obrigatória antes de main.')
+          PY
+
+      - name: Publicar somente os artefatos aprovados na branch de revisão
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            assets/audio/serie-2/a2-004-dialogue-v1.mp3 \
+            assets/audio/serie-2/a2-005-dialogue-v1.mp3 \
+            assets/audio/serie-2/a2-006-dialogue-v1.mp3 \
+            assets/audio/serie-2/a2-007-dialogue-v1.mp3 \
+            assets/audio/serie-2/a2-008-dialogue-v1.mp3 \
+            assets/audio/serie-2/a2-009-dialogue-v1.mp3 \
+            assets/audio/serie-2/qa-dialogue-v1.json \
+            assets/audio/serie-2/cast-dialogue-v1.json \
+            app.js
+          if git diff --cached --quiet; then
+            echo "Sem alterações geradas."
+          else
+            git commit -m "Gera A2 004-009 com vozes distintas e QA"
+            git push origin HEAD:audio/a2-dialogue-v1
+          fi
