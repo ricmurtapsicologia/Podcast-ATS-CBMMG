@@ -1,27 +1,38 @@
 from __future__ import annotations
 
-"""Remasterização perceptiva da Série 1 com fala orgânica e respirada.
+"""Remasterização autônoma da Série 1 com fala orgânica e respirada.
 
-Usa os roteiros congelados já existentes como fonte textual. Nenhuma palavra é
-reescrita, resumida ou ampliada. A correção atua apenas em segmentação de fala,
-cadência, prosódia, pausas e pós-processamento já validado no pipeline N2.
+Fonte textual: roteiros congelados existentes em roteiros/serie-1.
+Nenhuma palavra é reescrita, resumida ou ampliada. A correção atua apenas em
+segmentação respiratória, cadência, prosódia, pausas e acabamento sonoro.
 """
 
 import asyncio
 import json
 import re
+from pathlib import Path
 
-import remaster_series1_n2 as base
+import edge_tts
+from pydub import AudioSegment, effects
 
-# A Série 1 original ficou perceptivelmente mais rápida que as demais.
-# O ajuste é deliberadamente moderado: mais espaço sem produzir fala arrastada.
-base.BASE_RATE = {
-    base.VOICE_INSTRUTOR: -8,
-    base.VOICE_PROFISSIONAL: -5,
-}
-base.OPENING_SILENCE_MS = 180
-base.ENDING_SILENCE_MS = 340
-base.VERSION_TAG = "organic-v2"
+ROOT = Path(__file__).resolve().parents[1]
+ROTEIROS = ROOT / "roteiros" / "serie-1"
+OUT = ROOT / "assets" / "audio" / "serie-1"
+TMP = ROOT / ".tmp_serie1_organic"
+APP = ROOT / "app.js"
+INDEX = ROOT / "index.html"
+
+VOICE_INSTRUTOR = "pt-BR-AntonioNeural"
+VOICE_PROFISSIONAL = "pt-BR-FranciscaNeural"
+BASE_RATE = {VOICE_INSTRUTOR: -8, VOICE_PROFISSIONAL: -5}
+BASE_PITCH = {VOICE_INSTRUTOR: -1, VOICE_PROFISSIONAL: 1}
+
+OPENING_SILENCE_MS = 180
+ENDING_SILENCE_MS = 340
+TARGET_DBFS = -18.0
+MAX_CONCURRENT_SYNTH = 6
+SYNTH_TIMEOUT_SECONDS = 45
+VERSION_TAG = "organic-v3"
 
 MIN_BREATH_WORDS = 9
 TARGET_BREATH_WORDS = 14
@@ -39,16 +50,16 @@ QUESTION_STARTS = (
 )
 
 
-def _normalize(text: str) -> str:
+def normalize_text(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
 
 
-def _clean_word(word: str) -> str:
+def clean_word(word: str) -> str:
     return re.sub(r"^[^\wÀ-ÿ]+|[^\wÀ-ÿ]+$", "", word.lower())
 
 
-def _chunk_unpunctuated(text: str) -> list[str]:
-    """Cria grupos de respiração sem mudar nenhuma palavra do roteiro."""
+def chunk_unpunctuated(text: str) -> list[str]:
+    """Cria grupos de respiração sem alterar palavras nem sua ordem."""
     words = text.split()
     if len(words) <= MAX_BREATH_WORDS:
         return [text]
@@ -64,17 +75,10 @@ def _chunk_unpunctuated(text: str) -> list[str]:
 
         candidates = []
         for idx in range(low, high):
-            token = _clean_word(words[idx])
-            if token in SOFT_BREAK_BEFORE:
+            if clean_word(words[idx]) in SOFT_BREAK_BEFORE:
                 candidates.append(idx)
 
-        if candidates:
-            # Prefere o conector mais próximo da duração-alvo da respiração.
-            cut = min(candidates, key=lambda idx: abs(idx - target))
-        else:
-            cut = target
-
-        # Evita deixar cauda excessivamente curta no fim do trecho.
+        cut = min(candidates, key=lambda idx: abs(idx - target)) if candidates else target
         if total - cut < 6:
             cut = max(low, total - 7)
 
@@ -87,9 +91,9 @@ def _chunk_unpunctuated(text: str) -> list[str]:
     return [unit for unit in units if unit]
 
 
-def _breath_units(text: str) -> list[str]:
-    """Respeita pontuação quando existe e cria respirações quando ela inexiste."""
-    text = _normalize(text)
+def breath_units(text: str) -> list[str]:
+    """Respeita pontuação existente e infere respirações quando ela inexiste."""
+    text = normalize_text(text)
     if not text:
         return []
 
@@ -101,12 +105,10 @@ def _breath_units(text: str) -> list[str]:
 
     units: list[str] = []
     for sentence in sentences:
-        words = sentence.split()
-        if len(words) <= MAX_BREATH_WORDS:
+        if len(sentence.split()) <= MAX_BREATH_WORDS:
             units.append(sentence)
             continue
 
-        # Em textos pontuados, tenta primeiro limites de oração explícitos.
         clauses = [
             part.strip()
             for part in re.split(r"(?<=[;:,])\s+", sentence)
@@ -114,16 +116,15 @@ def _breath_units(text: str) -> list[str]:
         ]
         if len(clauses) > 1:
             for clause in clauses:
-                units.extend(_chunk_unpunctuated(clause))
+                units.extend(chunk_unpunctuated(clause))
         else:
-            units.extend(_chunk_unpunctuated(sentence))
+            units.extend(chunk_unpunctuated(sentence))
 
     return units
 
 
-def _read_frozen_turns(number: int):
-    """Lê o roteiro congelado e preserva o locutor previamente identificado."""
-    path = base.ROTEIROS / f"a1-{number:03d}.txt"
+def read_frozen_turns(number: int):
+    path = ROTEIROS / f"a1-{number:03d}.txt"
     if not path.exists():
         raise RuntimeError(f"Roteiro congelado ausente: {path}")
 
@@ -135,38 +136,33 @@ def _read_frozen_turns(number: int):
             continue
 
         if line.startswith("PROFISSIONAL:"):
-            voice = base.VOICE_PROFISSIONAL
+            voice = VOICE_PROFISSIONAL
             text = line.split(":", 1)[1].strip()
         elif line.startswith("INSTRUTOR:"):
-            voice = base.VOICE_INSTRUTOR
+            voice = VOICE_INSTRUTOR
             text = line.split(":", 1)[1].strip()
         else:
-            # Compatibilidade defensiva para eventuais roteiros legados sem marcador.
-            voice = base.VOICE_INSTRUTOR
+            voice = VOICE_INSTRUTOR
             text = line
 
         if not text:
             continue
         frozen_parts.append(text)
-        turns.extend((voice, unit) for unit in _breath_units(text))
+        turns.extend((voice, unit) for unit in breath_units(text))
 
-    frozen = base.normalize_text(" ".join(frozen_parts))
-    rebuilt = base.normalize_text(" ".join(text for _, text in turns))
+    frozen = normalize_text(" ".join(frozen_parts))
+    rebuilt = normalize_text(" ".join(text for _, text in turns))
     if not frozen or frozen != rebuilt:
-        raise RuntimeError(
-            f"Gate de integridade textual falhou no episódio {number:03d}."
-        )
+        raise RuntimeError(f"Gate de integridade textual falhou no episódio {number:03d}.")
     return turns, frozen
 
 
 def prosody_for(voice: str, text: str, turn_index: int):
-    """Cadência variável mínima e pausas compatíveis com respiração humana."""
-    rate = base.BASE_RATE[voice]
-    pitch = base.BASE_PITCH[voice]
+    rate = BASE_RATE[voice]
+    pitch = BASE_PITCH[voice]
     normalized = text.strip().lower()
     stripped = text.rstrip()
 
-    # Microvariação reduz sensação de metrônomo sem acelerar o discurso.
     rate += (-1, 0, 0, 1, 0, 0)[turn_index % 6]
 
     inferred_question = normalized.startswith(QUESTION_STARTS)
@@ -188,7 +184,6 @@ def prosody_for(voice: str, text: str, turn_index: int):
     elif stripped.endswith(","):
         pause_ms = 310
     else:
-        # Caso predominante na Série 1: transcrição sem pontuação.
         pause_ms = 390
 
     if normalized.startswith((
@@ -203,19 +198,105 @@ def prosody_for(voice: str, text: str, turn_index: int):
     return f"{rate:+d}%", f"{pitch:+d}Hz", pause_ms
 
 
-base.prosody_for = prosody_for
+async def synthesize(text: str, voice: str, rate: str, pitch: str, output: Path, semaphore: asyncio.Semaphore):
+    async with semaphore:
+        for attempt in range(1, 4):
+            try:
+                communicate = edge_tts.Communicate(
+                    text=text,
+                    voice=voice,
+                    rate=rate,
+                    pitch=pitch,
+                    volume="+0%",
+                )
+                await asyncio.wait_for(communicate.save(str(output)), timeout=SYNTH_TIMEOUT_SECONDS)
+                return
+            except Exception:
+                if attempt == 3:
+                    raise
+                await asyncio.sleep(0.8 * attempt)
+
+
+async def synth_episode(number: int, turns, semaphore: asyncio.Semaphore):
+    work = TMP / f"a1-{number:03d}"
+    work.mkdir(parents=True, exist_ok=True)
+    tasks = []
+    sequence = []
+
+    for idx, (voice, text) in enumerate(turns):
+        rate, pitch, pause_ms = prosody_for(voice, text, idx)
+        part = work / f"{idx:03d}.mp3"
+        sequence.append((part, 0 if idx == len(turns) - 1 else pause_ms))
+        tasks.append(synthesize(text, voice, rate, pitch, part, semaphore))
+
+    await asyncio.gather(*tasks)
+
+    merged = AudioSegment.silent(duration=OPENING_SILENCE_MS)
+    for part, pause_ms in sequence:
+        merged += AudioSegment.from_file(part, format="mp3")
+        if pause_ms:
+            merged += AudioSegment.silent(duration=pause_ms)
+    merged += AudioSegment.silent(duration=ENDING_SILENCE_MS)
+
+    merged = effects.compress_dynamic_range(
+        merged,
+        threshold=-20.0,
+        ratio=2.0,
+        attack=8.0,
+        release=70.0,
+    )
+    if merged.dBFS != float("-inf"):
+        merged = merged.apply_gain(TARGET_DBFS - merged.dBFS)
+    if merged.max_dBFS > -1.2:
+        merged = merged.apply_gain(-1.2 - merged.max_dBFS)
+
+    OUT.mkdir(parents=True, exist_ok=True)
+    target = OUT / f"a1-{number:03d}-{VERSION_TAG}.mp3"
+    merged.export(target, format="mp3", bitrate="128k", parameters=["-ac", "1", "-ar", "44100"])
+    return target, round(len(merged) / 1000, 1)
+
+
+def patch_app_urls():
+    content = APP.read_text(encoding="utf-8")
+    block_match = re.search(r"const AUDIOS=\{1:\[(.*?)\],2:\[", content, re.S)
+    if not block_match:
+        raise RuntimeError("Bloco da Série 1 não localizado em app.js")
+
+    block = block_match.group(1)
+    entries = list(re.finditer(r'\{title:"([^"]+)",url:"([^"]+)"\}', block))
+    if len(entries) != 21:
+        raise RuntimeError(f"Esperados 21 episódios na Série 1; encontrados {len(entries)}")
+
+    new_block = block
+    for idx, match in reversed(list(enumerate(entries, start=1))):
+        title = match.group(1)
+        replacement = f'{{title:"{title}",url:"assets/audio/serie-1/a1-{idx:03d}-{VERSION_TAG}.mp3"}}'
+        new_block = new_block[:match.start()] + replacement + new_block[match.end():]
+
+    content = content[:block_match.start(1)] + new_block + content[block_match.end(1):]
+    APP.write_text(content, encoding="utf-8")
+
+
+def patch_index_cache():
+    content = INDEX.read_text(encoding="utf-8")
+    content = re.sub(
+        r'app\.js(?:\?v=[^"\']+)?',
+        f'app.js?v=20260825-s1-{VERSION_TAG}',
+        content,
+        count=1,
+    )
+    INDEX.write_text(content, encoding="utf-8")
 
 
 async def main():
-    """Ressintetiza os 21 episódios sem retranscrever os MP3s originais."""
-    base.OUT.mkdir(parents=True, exist_ok=True)
-    base.TMP.mkdir(parents=True, exist_ok=True)
-    semaphore = asyncio.Semaphore(base.MAX_CONCURRENT_SYNTH)
+    OUT.mkdir(parents=True, exist_ok=True)
+    TMP.mkdir(parents=True, exist_ok=True)
+    semaphore = asyncio.Semaphore(MAX_CONCURRENT_SYNTH)
     quality = []
 
     for number in range(1, 22):
-        turns, frozen = _read_frozen_turns(number)
-        target, seconds = await base.synth_episode(number, turns, semaphore)
+        turns, frozen = read_frozen_turns(number)
+        target, seconds = await synth_episode(number, turns, semaphore)
         quality.append({
             "episode": number,
             "output": target.name,
@@ -224,25 +305,19 @@ async def main():
             "turns": len(turns),
             "voices": sorted(set(voice for voice, _ in turns)),
             "duration_seconds": seconds,
-            "audio_profile": "serie-1-organic-v2",
+            "audio_profile": "serie-1-organic-v3",
             "breath_pause_ms": 390,
-            "base_rate": {
-                "instrutor": base.BASE_RATE[base.VOICE_INSTRUTOR],
-                "profissional": base.BASE_RATE[base.VOICE_PROFISSIONAL],
-            },
+            "base_rate": {"instrutor": -8, "profissional": -5},
         })
-        print(
-            f"[{number:03d}] orgânico | turnos={len(turns)} | "
-            f"duração={seconds}s | {target.name}"
-        )
+        print(f"[{number:03d}] orgânico v3 | turnos={len(turns)} | duração={seconds}s")
 
-    base.patch_app_urls()
-    base.patch_index_cache()
-    (base.OUT / "quality-organic-v2.json").write_text(
+    patch_app_urls()
+    patch_index_cache()
+    (OUT / "quality-organic-v3.json").write_text(
         json.dumps(quality, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
     )
-    print("Série 1 concluída no perfil orgânico v2.")
+    print("Série 1 concluída no perfil orgânico v3.")
 
 
 if __name__ == "__main__":
