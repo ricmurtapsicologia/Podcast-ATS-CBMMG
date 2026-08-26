@@ -1,0 +1,380 @@
+[
+  {
+    "episode": 1,
+    "output": "a1-001-organic-v5.mp3",
+    "lexical_integrity": 1.0,
+    "source_words": 143,
+    "synth_blocks": 4,
+    "greeting_units": 1,
+    "duration_seconds": 60.6,
+    "audio_profile": "serie-1-organic-v5-opening-fix",
+    "base_rate": {
+      "instrutor": -7,
+      "profissional": -4
+    },
+    "greeting_rate": "-11%",
+    "greeting_pause_ms": 700,
+    "a1_001_title_separated": true,
+    "prosodic_punctuation": true
+  },
+  {
+    "episode": 2,
+    "output": "a1-002-organic-v5.mp3",
+    "lexical_integrity": 1.0,
+    "source_words": 156,
+    "synth_blocks": 4,
+    "greeting_units": 1,
+    "duration_seconds": 80.5,
+    "audio_profile": "serie-1-organic-v5-opening-fix",
+    "base_rate": {
+      "instrutor": -7,
+      "profissional": -4
+    },
+    "greeting_rate": "-11%",
+    "greeting_pause_ms": 700,
+    "a1_001_title_separated": false,
+    "prosodic_punctuation": true
+  },
+  {
+    "episode": 3,
+    "output": "a1-003-organic-v5.mp3",
+    "lexical_integrity": 1.0,
+    "source_words": 223,
+    "synth_blocks": 5,
+    "greeting_units": 1,
+    "duration_seconds": 113.8,
+    "audio_profile": "serie-1-organic-v5-opening-fix",
+    "base_rate": {
+      "instrutor": -7,
+      "profissional": -4
+    },
+    "greeting_rate": "-11%",
+    "greeting_pause_ms": 700,
+    "a1_001_title_separated": false,
+    "prosodic_punctuation": true
+  },
+  {
+    "episode": 4,
+    "output": "a1-004-organic-v5.mp3",
+    "lexical_integrity": 1.0,
+    "source_words": 235,
+    "synth_blocks": 5,
+    "greeting_units": 1,
+    "duration_seconds": 111.0,
+    "audio_profile": "serie-1-organic-v5-opening-fix",
+    "base_rate": {
+      "instrutor": -7,
+      "profissional": -4
+    },
+    "greeting_rate": "-11%",
+    "greeting_pause_ms": 700,
+    "a1_001_title_separated": false,
+    "prosodic_punctuation": true
+  },
+  {
+    "episode": 5,
+    "output": "a1-005-organic-v5.mp3",
+    "lexical_integrity": 1.0,
+    "source_words": 110,
+    "synth_blocks": 4,
+    "greeting_units": 1,
+    "duration_seconds": 55.6,
+    "audio_profile": "serie-1-organic-v5-opening-fix",
+    "base_rate": {
+      "instrutor": -7,
+      "profissional": -4
+    },
+    "greeting_rate": "-11%",
+    "greeting_pause_ms": 700,
+    "a1_001_title_separated": false,
+    "prosodic_punctuation": true
+  },
+  {
+    "episode": 6,
+    "output": "a1-006-organic-v5.mp3",
+    "lexical_integrity": 1.0,
+    "source_words": 150,
+    "synth_blocks": 4,
+    "greeting_units": 1,
+    "duration_seconds": 75.4,
+    "audio_profile": "serie-1-organic-v5-opening-fix",
+    "base_rate": {
+      "instrutor": -7,
+      "profissional": -4
+    },
+    "greeting_rate": "-11%",
+    "greeting_pause_ms": 700,
+    "a1_001_title_separated": false,
+    "prosodic_punctuation": true
+  },
+  {
+    "episode": 7,
+    "output": "a1-007-organic-v5.mp3",
+    "lexical_integrity": 1.0,
+    "source_words": 199,
+    "synth_blocks": 5,
+    "greeting_units": 1,
+    "duration_seconds": 98.5,
+    "audio_profile": "serie-1-organic-v5-opening-fix",
+    "base_rate": {
+      "instrutor": -7,
+      "profissional": -4
+    },
+    "greeting_rate": "-11%",
+    "greeting_pause_ms": 700,
+    "a1_001_title_separated": false,
+    "prosodic_punctuation": true
+  },
+  {
+    "episode": 8,
+    "output": "a1-008-organic-v5.mp3",
+    "lexical_integrity": 1.0,
+    "source_words": 453,
+    "synth_blocks": 7,
+    "greeting_units": 1,
+    "duration_seconds": 220.9,
+    "audio_profile": "serie-1-organic-v5-opening-fix",
+    "base_rate": {
+      "instrutor": -7,
+      "profissional": -4
+    },
+    "greeting_rate": "-11%",
+    "greeting_pause_ms": 700,
+    "a1_001_title_separated": false,
+    "prosodic_punctuation": true
+  },
+  {
+    "episode": 9,
+    "output": "a1-009-organic-v5.mp3",
+    "lexical_integrity": 1.0,
+    "source_words": 462,
+    "synth_blocks": 7,
+    "greeting_units": 1,
+    "duration_seconds": 230.0,
+    "audio_profile": "serie-1-organic-v5-opening-fix",
+    "base_rate": {
+      "instrutor": -7,
+      "profissional": -4
+    },
+    "greeting_rate": "-11%",
+    "greeting_pause_ms": 700,
+    "a1_001_title_separated": false,
+    "prosodic_punctuation": true
+  },
+  {
+    "episode": 10,
+    "output": "a1-010-organic-v5.mp3",
+    "lexical_integrity": 1.0,
+    "source_words": 634,
+    "synth_blocks": 10,
+    "greeting_units": 1,
+    "duration_seconds": 309.3,
+    "audio_profile": "serie-1-organic-v5-opening-fix",
+    "base_rate": {
+      "instrutor": -7,
+      "profissional": -4
+    },
+    "greeting_rate": "-11%",
+    "greeting_pause_ms": 700,
+    "a1_001_title_separated": false,
+    "prosodic_punctuation": true
+  },
+  {
+    "episode": 11,
+    "output": "a1-011-organic-v5.mp3",
+    "lexical_integrity": 1.0,
+    "source_words": 350,
+    "synth_blocks": 6,
+    "greeting_units": 1,
+    "duration_seconds": 155.1,
+    "audio_profile": "serie-1-organic-v5-opening-fix",
+    "base_rate": {
+      "instrutor": -7,
+      "profissional": -4
+    },
+    "greeting_rate": "-11%",
+    "greeting_pause_ms": 700,
+    "a1_001_title_separated": false,
+    "prosodic_punctuation": true
+  },
+  {
+    "episode": 12,
+    "output": "a1-012-organic-v5.mp3",
+    "lexical_integrity": 1.0,
+    "source_words": 239,
+    "synth_blocks": 5,
+    "greeting_units": 1,
+    "duration_seconds": 115.7,
+    "audio_profile": "serie-1-organic-v5-opening-fix",
+    "base_rate": {
+      "instrutor": -7,
+      "profissional": -4
+    },
+    "greeting_rate": "-11%",
+    "greeting_pause_ms": 700,
+    "a1_001_title_separated": false,
+    "prosodic_punctuation": true
+  },
+  {
+    "episode": 13,
+    "output": "a1-013-organic-v5.mp3",
+    "lexical_integrity": 1.0,
+    "source_words": 421,
+    "synth_blocks": 7,
+    "greeting_units": 1,
+    "duration_seconds": 205.2,
+    "audio_profile": "serie-1-organic-v5-opening-fix",
+    "base_rate": {
+      "instrutor": -7,
+      "profissional": -4
+    },
+    "greeting_rate": "-11%",
+    "greeting_pause_ms": 700,
+    "a1_001_title_separated": false,
+    "prosodic_punctuation": true
+  },
+  {
+    "episode": 14,
+    "output": "a1-014-organic-v5.mp3",
+    "lexical_integrity": 1.0,
+    "source_words": 481,
+    "synth_blocks": 8,
+    "greeting_units": 1,
+    "duration_seconds": 248.0,
+    "audio_profile": "serie-1-organic-v5-opening-fix",
+    "base_rate": {
+      "instrutor": -7,
+      "profissional": -4
+    },
+    "greeting_rate": "-11%",
+    "greeting_pause_ms": 700,
+    "a1_001_title_separated": false,
+    "prosodic_punctuation": true
+  },
+  {
+    "episode": 15,
+    "output": "a1-015-organic-v5.mp3",
+    "lexical_integrity": 1.0,
+    "source_words": 442,
+    "synth_blocks": 8,
+    "greeting_units": 1,
+    "duration_seconds": 215.4,
+    "audio_profile": "serie-1-organic-v5-opening-fix",
+    "base_rate": {
+      "instrutor": -7,
+      "profissional": -4
+    },
+    "greeting_rate": "-11%",
+    "greeting_pause_ms": 700,
+    "a1_001_title_separated": false,
+    "prosodic_punctuation": true
+  },
+  {
+    "episode": 16,
+    "output": "a1-016-organic-v5.mp3",
+    "lexical_integrity": 1.0,
+    "source_words": 195,
+    "synth_blocks": 5,
+    "greeting_units": 1,
+    "duration_seconds": 98.3,
+    "audio_profile": "serie-1-organic-v5-opening-fix",
+    "base_rate": {
+      "instrutor": -7,
+      "profissional": -4
+    },
+    "greeting_rate": "-11%",
+    "greeting_pause_ms": 700,
+    "a1_001_title_separated": false,
+    "prosodic_punctuation": true
+  },
+  {
+    "episode": 17,
+    "output": "a1-017-organic-v5.mp3",
+    "lexical_integrity": 1.0,
+    "source_words": 172,
+    "synth_blocks": 5,
+    "greeting_units": 1,
+    "duration_seconds": 92.2,
+    "audio_profile": "serie-1-organic-v5-opening-fix",
+    "base_rate": {
+      "instrutor": -7,
+      "profissional": -4
+    },
+    "greeting_rate": "-11%",
+    "greeting_pause_ms": 700,
+    "a1_001_title_separated": false,
+    "prosodic_punctuation": true
+  },
+  {
+    "episode": 18,
+    "output": "a1-018-organic-v5.mp3",
+    "lexical_integrity": 1.0,
+    "source_words": 199,
+    "synth_blocks": 5,
+    "greeting_units": 1,
+    "duration_seconds": 100.8,
+    "audio_profile": "serie-1-organic-v5-opening-fix",
+    "base_rate": {
+      "instrutor": -7,
+      "profissional": -4
+    },
+    "greeting_rate": "-11%",
+    "greeting_pause_ms": 700,
+    "a1_001_title_separated": false,
+    "prosodic_punctuation": true
+  },
+  {
+    "episode": 19,
+    "output": "a1-019-organic-v5.mp3",
+    "lexical_integrity": 1.0,
+    "source_words": 194,
+    "synth_blocks": 5,
+    "greeting_units": 1,
+    "duration_seconds": 97.7,
+    "audio_profile": "serie-1-organic-v5-opening-fix",
+    "base_rate": {
+      "instrutor": -7,
+      "profissional": -4
+    },
+    "greeting_rate": "-11%",
+    "greeting_pause_ms": 700,
+    "a1_001_title_separated": false,
+    "prosodic_punctuation": true
+  },
+  {
+    "episode": 20,
+    "output": "a1-020-organic-v5.mp3",
+    "lexical_integrity": 1.0,
+    "source_words": 262,
+    "synth_blocks": 6,
+    "greeting_units": 1,
+    "duration_seconds": 136.9,
+    "audio_profile": "serie-1-organic-v5-opening-fix",
+    "base_rate": {
+      "instrutor": -7,
+      "profissional": -4
+    },
+    "greeting_rate": "-11%",
+    "greeting_pause_ms": 700,
+    "a1_001_title_separated": false,
+    "prosodic_punctuation": true
+  },
+  {
+    "episode": 21,
+    "output": "a1-021-organic-v5.mp3",
+    "lexical_integrity": 1.0,
+    "source_words": 172,
+    "synth_blocks": 5,
+    "greeting_units": 1,
+    "duration_seconds": 88.3,
+    "audio_profile": "serie-1-organic-v5-opening-fix",
+    "base_rate": {
+      "instrutor": -7,
+      "profissional": -4
+    },
+    "greeting_rate": "-11%",
+    "greeting_pause_ms": 700,
+    "a1_001_title_separated": false,
+    "prosodic_punctuation": true
+  }
+]
