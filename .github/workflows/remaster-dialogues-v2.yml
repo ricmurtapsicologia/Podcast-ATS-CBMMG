@@ -1,0 +1,91 @@
+name: Remasterizar diálogos A1/A2 — v2
+
+on:
+  push:
+    branches:
+      - audio/a1-a2-dialogue-v2
+    paths:
+      - '.github/workflows/remaster-dialogues-v2.yml'
+      - 'scripts/remaster_dialogues_v2.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  remaster-dialogues-v2:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout da branch de revisão
+        uses: actions/checkout@v4
+        with:
+          ref: audio/a1-a2-dialogue-v2
+          fetch-depth: 0
+
+      - name: Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Dependências de áudio
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          pip install edge-tts==7.2.8 pydub
+
+      - name: Validar sintaxe
+        run: python -m py_compile scripts/remaster_dialogues_v2.py
+
+      - name: Gerar diálogos curados A1/A2
+        run: python scripts/remaster_dialogues_v2.py
+
+      - name: Gate final
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          data = json.loads(Path('assets/audio/serie-2/qa-dialogue-v2.json').read_text(encoding='utf-8'))
+          assert data['all_automated_gates_pass'] is True, data
+          assert data['interviewer_voice_continuity_a2_007_008'] is True
+          assert data['a1_dialogue_episodes'] == [8, 9, 10, 11, 13, 14, 15]
+          eps = {e['episode']: e for e in data['episodes']}
+          assert eps['a2-005']['gates']['narrator_distinct_from_claudio'] is True
+          assert eps['a2-006']['gates']['bombeiro_does_not_promise_help'] is True
+          assert eps['a2-006']['gates']['narrator_distinct_from_bombeiro'] is True
+          assert eps['a2-007']['gates']['podcast_turn_density'] is True
+          assert eps['a2-008']['gates']['podcast_turn_density'] is True
+          assert all(e['gates']['legible_text'] for e in eps.values())
+          assert all(e['status'] == 'PASS' for e in eps.values())
+          print('A1/A2 v2: todos os gates automáticos passaram.')
+          PY
+
+      - name: Publicar artefatos aprovados na branch de revisão
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            scripts/remaster_dialogues_v2.py \
+            assets/audio/serie-1/a1-008-dialogue-v2.mp3 \
+            assets/audio/serie-1/a1-009-dialogue-v2.mp3 \
+            assets/audio/serie-1/a1-010-dialogue-v2.mp3 \
+            assets/audio/serie-1/a1-011-dialogue-v2.mp3 \
+            assets/audio/serie-1/a1-013-dialogue-v2.mp3 \
+            assets/audio/serie-1/a1-014-dialogue-v2.mp3 \
+            assets/audio/serie-1/a1-015-dialogue-v2.mp3 \
+            assets/audio/serie-2/a2-004-dialogue-v2.mp3 \
+            assets/audio/serie-2/a2-005-dialogue-v2.mp3 \
+            assets/audio/serie-2/a2-006-dialogue-v2.mp3 \
+            assets/audio/serie-2/a2-007-dialogue-v2.mp3 \
+            assets/audio/serie-2/a2-008-dialogue-v2.mp3 \
+            assets/audio/serie-2/a2-009-dialogue-v2.mp3 \
+            assets/audio/serie-2/qa-dialogue-v2.json \
+            app.js
+          if git diff --cached --quiet; then
+            echo "Sem alterações geradas."
+          else
+            git commit -m "audio: generate curated A1/A2 dialogue v2"
+            git push origin HEAD:audio/a1-a2-dialogue-v2
+          fi
