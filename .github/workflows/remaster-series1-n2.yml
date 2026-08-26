@@ -9,6 +9,10 @@ on:
       - 'scripts/remaster_series1_parallel.py'
   workflow_dispatch:
 
+concurrency:
+  group: remaster-serie1-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
