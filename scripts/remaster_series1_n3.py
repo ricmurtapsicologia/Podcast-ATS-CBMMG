@@ -10,7 +10,7 @@ import edge_tts
 from pydub import AudioSegment, effects
 
 import remaster_series1_organic as legacy
-from n3_audio_core import breath_units, lexical_tokens, normalize, prosody
+from n3_audio_core import breath_units, lexical_tokens, prosody, speakable
 
 ROOT = Path(__file__).resolve().parents[1]
 ROTEIROS = ROOT / 'roteiros' / 'serie-1'
@@ -42,7 +42,6 @@ def read_turns(number: int):
         if not text:
             continue
         spoken=legacy.add_prosodic_punctuation(text)
-        # Corrige apenas pontuação da saudação, preservando palavras.
         spoken=re.sub(r'\bolá\s*,?\s+pessoal\b[.!?…]*','Olá, pessoal.',spoken,flags=re.I)
         source_tokens.extend(lexical_tokens(text))
         for unit in breath_units(spoken):
@@ -57,7 +56,7 @@ async def synth(text, voice, rate, pitch, path, sem):
     async with sem:
         for attempt in range(1,4):
             try:
-                c=edge_tts.Communicate(text=text,voice=voice,rate=rate,pitch=pitch,volume='+0%')
+                c=edge_tts.Communicate(text=speakable(text),voice=voice,rate=rate,pitch=pitch,volume='+0%')
                 await asyncio.wait_for(c.save(str(path)),timeout=55)
                 return
             except Exception:
@@ -91,7 +90,7 @@ async def build_episode(number:int,sem:asyncio.Semaphore):
     target=OUT/f'a1-{number:03d}-{VERSION_TAG}.mp3'
     audio.export(target,format='mp3',bitrate='128k',parameters=['-ac','1','-ar','44100'])
     return {'episode':number,'output':target.name,'version':VERSION,'profile':'N3-C','lexical_integrity':1.0,
-            'source_words':word_count,'turns':len(turns),'voices':sorted(set(voices)),'intents':sorted(set(intents)),
+            'pronunciation_dictionary':True,'source_words':word_count,'turns':len(turns),'voices':sorted(set(voices)),'intents':sorted(set(intents)),
             'duration_seconds':round(len(audio)/1000,1)}
 
 
@@ -119,7 +118,7 @@ async def main():
         print(f'[A1-{number:03d}] N3 Natural')
         quality.append(await build_episode(number,sem))
     patch_app_urls()
-    (OUT/'quality-n3.json').write_text(json.dumps({'version':VERSION,'episodes':quality},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    (OUT/'quality-n3.json').write_text(json.dumps({'version':VERSION,'pronunciation_dictionary':True,'episodes':quality},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     shutil.rmtree(TMP,ignore_errors=True)
     print('Série 1 N3 concluída.')
 
