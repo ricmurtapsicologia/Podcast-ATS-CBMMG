@@ -41,6 +41,21 @@ TRANSITION_STARTS = (
     'alem disso','depois ','antes ','agora ','então ','entao ','por isso '
 )
 
+# Dicionário aplicado somente à camada de síntese. O roteiro canônico não é alterado.
+PRONUNCIATION_MAP = {
+    r'\bCBMMG\b': 'C B M M G',
+    r'\bATS\b': 'A T S',
+    r'\bATTS\b': 'A T T S',
+    r'\bPSP\b': 'P S P',
+    r'\bRPD\b': 'R P D',
+    r'\bTCC-I\b': 'T C C I',
+    r'\bTCC\b': 'T C C',
+    r'\bOMS\b': 'O M S',
+    r'\bOPAS\b': 'O P A S',
+    r'\bCATS\b': 'C A T S',
+    r'\bCATTS\b': 'C A T T S',
+}
+
 @dataclass(frozen=True)
 class Prosody:
     intent: str
@@ -55,6 +70,14 @@ def normalize(text: str) -> str:
 
 def lexical_tokens(text: str) -> list[str]:
     return re.findall(r'[\wÀ-ÿ]+', text.lower(), flags=re.UNICODE)
+
+
+def speakable(text: str) -> str:
+    """Expande apenas siglas propensas a pronúncia errada pelo TTS."""
+    spoken = text
+    for pattern, replacement in PRONUNCIATION_MAP.items():
+        spoken = re.sub(pattern, replacement, spoken, flags=re.IGNORECASE)
+    return normalize(spoken)
 
 
 def stable_unit(text: str, salt: str = '') -> float:
@@ -95,7 +118,6 @@ def breath_units(text: str, min_words: int = 9, target_words: int = 14, max_word
     text = normalize(text)
     if not text:
         return []
-    # Primeiro preserva fronteiras de sentença e interrogação.
     sentences = [s.strip() for s in re.split(r'(?<=[.!?…])\s+', text) if s.strip()]
     output: list[str] = []
     for sentence in sentences:
@@ -131,8 +153,6 @@ def breath_units(text: str, min_words: int = 9, target_words: int = 14, max_word
 
 def prosody(text: str, profile: str = 'clinical', role: str = 'narrator') -> Prosody:
     intent = classify_intent(text)
-
-    # Bases por perfil. Não há ciclos por índice de turno.
     if profile == 'experiential':
         base_rate, base_pitch = -9, -2
     elif profile == 'dialogue':
@@ -156,7 +176,6 @@ def prosody(text: str, profile: str = 'clinical', role: str = 'narrator') -> Pro
         'person_in_crisis': (-2, -1), 'guest': (-1, 0), 'family': (-2, -1),
     }.get(role, (0, 0))
 
-    # Microvariação determinística derivada do conteúdo, nunca do número do turno.
     rate_jitter = stable_int(text, -1, 1, 'rate')
     pitch_jitter = stable_int(text, -1, 1, 'pitch')
     rate = base_rate + intent_rate + role_adjust[0] + rate_jitter
