@@ -1,63 +1,12 @@
-name: Remasterizar Série 1 — padrão orgânico
+name: LEGACY — Serie 1 Organic v5/N2
 
+# Congelado após adoção do N3 Natural em 31/08/2026.
 on:
-  pull_request:
-    branches: [main]
-    paths:
-      - '.github/workflows/remaster-series1-n2.yml'
-      - 'scripts/remaster_series1_organic.py'
-      - 'scripts/remaster_series1_parallel.py'
-      - 'scripts/remaster_series1_opening_v5.py'
-  workflow_dispatch:
-
-concurrency:
-  group: remaster-serie1-${{ github.event.pull_request.number || github.ref }}
-  cancel-in-progress: true
-
+  workflow_dispatch: {}
 permissions:
-  contents: write
-
+  contents: read
 jobs:
-  remaster:
+  legacy-info:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
     steps:
-      - name: Checkout seletivo
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref || github.ref_name }}
-          fetch-depth: 1
-          sparse-checkout: |
-            scripts
-            roteiros/serie-1
-            assets/audio/serie-1
-            app.js
-            index.html
-          sparse-checkout-cone-mode: false
-
-      - name: Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Dependências mínimas
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg
-          python -m pip install --upgrade pip
-          pip install edge-tts==7.2.8 pydub
-
-      - name: Remasterizar Série 1 — abertura e fala orgânica v5
-        run: python scripts/remaster_series1_opening_v5.py
-
-      - name: Publicar Série 1 orgânica na branch
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/audio/serie-1 app.js index.html
-          if git diff --cached --quiet; then
-            echo "Sem alterações geradas."
-          else
-            git commit -m "Padroniza abertura e prosódia da Série 1"
-            git push origin HEAD:${{ github.head_ref || github.ref_name }}
-          fi
+      - run: echo "Organic v5/N2 congelado. Runtime canônico após promoção: Serie 1 N3."
