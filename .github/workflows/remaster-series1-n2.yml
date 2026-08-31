@@ -9,4 +9,7 @@ jobs:
   legacy-info:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Organic v5/N2 congelado. Runtime canônico após promoção: Serie 1 N3."
+      - name: Informar congelamento
+        run: |
+          echo "Organic v5/N2 congelado."
+          echo "Runtime canônico após promoção: Serie 1 N3."
