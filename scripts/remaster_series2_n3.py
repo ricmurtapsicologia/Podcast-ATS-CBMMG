@@ -9,7 +9,7 @@ from pathlib import Path
 import edge_tts
 from pydub import AudioSegment, effects
 
-from n3_audio_core import breath_units, normalize, prosody
+from n3_audio_core import breath_units, normalize, prosody, speakable
 from n3_foley import apply_sound_design
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -159,7 +159,7 @@ async def synth(text: str, voice: str, rate: str, pitch: str, path: Path, sem: a
     async with sem:
         for attempt in range(1, 4):
             try:
-                c = edge_tts.Communicate(text=text, voice=voice, rate=rate, pitch=pitch, volume='+0%')
+                c = edge_tts.Communicate(text=speakable(text), voice=voice, rate=rate, pitch=pitch, volume='+0%')
                 await asyncio.wait_for(c.save(str(path)), timeout=SYNTH_TIMEOUT_SECONDS)
                 return
             except Exception:
@@ -229,6 +229,7 @@ async def build_episode(number: int, cast: dict[str, str], sound_design: dict, s
         'events': events,
         'stage_directions_replaced_by_sound': stage_directions,
         'text_integrity_spoken_content': 1.0,
+        'pronunciation_dictionary': True,
         'roles': sorted(set(roles)),
         'voices': sorted(set(voices)),
         'intents': sorted(set(intents)),
@@ -272,6 +273,7 @@ async def main():
         'version': VERSION,
         'cast': cast,
         'cast_fallback_roles': fallbacks,
+        'pronunciation_dictionary': True,
         'episodes': quality,
     }
     (OUT / 'quality-n3.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
