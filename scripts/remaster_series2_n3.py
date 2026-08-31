@@ -49,6 +49,23 @@ ROLE_STYLE = {
     'dra_sara': 'professional', 'lourdes': 'family', 'fatima': 'family',
 }
 
+# Ajustes pequenos e persistentes sobre o modelo neural-base. O objetivo é identidade,
+# não caricatura. São aplicados depois da prosódia semântica e antes da síntese.
+PERSONA_ADJUST = {
+    'narrator': {'rate': 0, 'pitch': -1, 'label': 'narrador-estavel'},
+    'gorette': {'rate': -2, 'pitch': -2, 'label': 'materna-contida'},
+    'maria': {'rate': -4, 'pitch': -1, 'label': 'fragil-hesitante'},
+    'claudio': {'rate': 1, 'pitch': -2, 'label': 'energia-oscilante'},
+    'ana': {'rate': -1, 'pitch': 1, 'label': 'proxima-preocupada'},
+    'guilherme': {'rate': -2, 'pitch': -1, 'label': 'profissional-calmo'},
+    'fernanda': {'rate': -3, 'pitch': 0, 'label': 'tensa-contida'},
+    'host': {'rate': 1, 'pitch': 1, 'label': 'apresentador-claro'},
+    'julia': {'rate': -1, 'pitch': 2, 'label': 'jovem-reflexiva'},
+    'dra_sara': {'rate': -1, 'pitch': -2, 'label': 'clinica-segura'},
+    'lourdes': {'rate': -3, 'pitch': -3, 'label': 'madura-afetiva'},
+    'fatima': {'rate': -1, 'pitch': 1, 'label': 'acolhedora-pragmatica'},
+}
+
 
 def read_text(number: int) -> str:
     path = ROTEIROS / f'a2-{number:03d}.txt'
@@ -134,6 +151,13 @@ async def resolve_cast() -> tuple[dict[str, str], list[str]]:
     return cast, fallbacks
 
 
+def persona_values(rate: str, pitch: str, role: str) -> tuple[str, str]:
+    cfg = PERSONA_ADJUST.get(role, {'rate': 0, 'pitch': 0})
+    r = int(rate.rstrip('%')) + int(cfg.get('rate', 0))
+    p = int(pitch.replace('Hz', '')) + int(cfg.get('pitch', 0))
+    return f'{max(-16, min(6, r)):+d}%', f'{max(-7, min(7, p)):+d}Hz'
+
+
 def build_turns(number: int, text: str) -> tuple[list[tuple[str, str]], list[str]]:
     turns: list[tuple[str, str]] = []
     stage_directions: list[str] = []
@@ -186,11 +210,12 @@ async def build_episode(number: int, cast: dict[str, str], sound_design: dict, s
     profile = 'dialogue' if number in CINEMATIC_EPISODES else 'narrative'
     for idx, (role, turn) in enumerate(turns):
         p = prosody(turn, profile=profile, role=ROLE_STYLE.get(role, 'narrator'))
+        rate, pitch = persona_values(p.rate, p.pitch, role)
         part = work / f'{idx:03d}.mp3'
         pause = 0 if idx == len(turns) - 1 else p.pause_ms
         voice = cast[role]
         sequence.append((part, pause))
-        tasks.append(synth(turn, voice, p.rate, p.pitch, part, sem))
+        tasks.append(synth(turn, voice, rate, pitch, part, sem))
         intents.append(p.intent); roles.append(role); voices.append(voice)
     await asyncio.gather(*tasks)
 
@@ -220,6 +245,7 @@ async def build_episode(number: int, cast: dict[str, str], sound_design: dict, s
     bitrate = '192k' if cinematic else '128k'
     channels = 2 if cinematic else 1
     merged.export(target, format='mp3', bitrate=bitrate, parameters=['-ac', str(channels), '-ar', '44100'])
+    episode_roles = sorted(set(roles))
     return {
         'episode': number,
         'output': target.name,
@@ -230,8 +256,9 @@ async def build_episode(number: int, cast: dict[str, str], sound_design: dict, s
         'stage_directions_replaced_by_sound': stage_directions,
         'text_integrity_spoken_content': 1.0,
         'pronunciation_dictionary': True,
-        'roles': sorted(set(roles)),
+        'roles': episode_roles,
         'voices': sorted(set(voices)),
+        'persona_profiles': {r: PERSONA_ADJUST[r] for r in episode_roles},
         'intents': sorted(set(intents)),
         'turns': len(turns),
         'duration_seconds': round(len(merged) / 1000, 1),
@@ -274,6 +301,7 @@ async def main():
         'cast': cast,
         'cast_fallback_roles': fallbacks,
         'pronunciation_dictionary': True,
+        'persona_profiles': PERSONA_ADJUST,
         'episodes': quality,
     }
     (OUT / 'quality-n3.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
