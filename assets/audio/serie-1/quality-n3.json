@@ -1,0 +1,415 @@
+{
+  "version": "n3-20260831",
+  "episodes": [
+    {
+      "episode": 1,
+      "output": "a1-001-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "lexical_integrity": 1.0,
+      "source_words": 143,
+      "turns": 11,
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "explain",
+        "question"
+      ],
+      "duration_seconds": 67.4
+    },
+    {
+      "episode": 2,
+      "output": "a1-002-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "lexical_integrity": 1.0,
+      "source_words": 156,
+      "turns": 17,
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "explain",
+        "instruction",
+        "question",
+        "reflective"
+      ],
+      "duration_seconds": 90.1
+    },
+    {
+      "episode": 3,
+      "output": "a1-003-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "lexical_integrity": 1.0,
+      "source_words": 223,
+      "turns": 25,
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "emphasis",
+        "explain"
+      ],
+      "duration_seconds": 124.6
+    },
+    {
+      "episode": 4,
+      "output": "a1-004-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "lexical_integrity": 1.0,
+      "source_words": 235,
+      "turns": 21,
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "emphasis",
+        "explain",
+        "question"
+      ],
+      "duration_seconds": 118.7
+    },
+    {
+      "episode": 5,
+      "output": "a1-005-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "lexical_integrity": 1.0,
+      "source_words": 110,
+      "turns": 12,
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "explain",
+        "supportive"
+      ],
+      "duration_seconds": 62.1
+    },
+    {
+      "episode": 6,
+      "output": "a1-006-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "lexical_integrity": 1.0,
+      "source_words": 150,
+      "turns": 14,
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "explain",
+        "question",
+        "supportive",
+        "transition"
+      ],
+      "duration_seconds": 81.0
+    },
+    {
+      "episode": 7,
+      "output": "a1-007-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "lexical_integrity": 1.0,
+      "source_words": 199,
+      "turns": 19,
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "emphasis",
+        "explain",
+        "instruction",
+        "question"
+      ],
+      "duration_seconds": 108.6
+    },
+    {
+      "episode": 8,
+      "output": "a1-008-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "lexical_integrity": 1.0,
+      "source_words": 453,
+      "turns": 60,
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "explain",
+        "question",
+        "reflective",
+        "supportive",
+        "transition"
+      ],
+      "duration_seconds": 253.2
+    },
+    {
+      "episode": 9,
+      "output": "a1-009-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "lexical_integrity": 1.0,
+      "source_words": 462,
+      "turns": 63,
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "explain",
+        "question",
+        "reflective",
+        "supportive"
+      ],
+      "duration_seconds": 264.8
+    },
+    {
+      "episode": 10,
+      "output": "a1-010-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "lexical_integrity": 1.0,
+      "source_words": 634,
+      "turns": 74,
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "emphasis",
+        "explain",
+        "question",
+        "reflective",
+        "supportive"
+      ],
+      "duration_seconds": 350.2
+    },
+    {
+      "episode": 11,
+      "output": "a1-011-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "lexical_integrity": 1.0,
+      "source_words": 350,
+      "turns": 34,
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "emphasis",
+        "explain",
+        "question",
+        "reflective"
+      ],
+      "duration_seconds": 174.7
+    },
+    {
+      "episode": 12,
+      "output": "a1-012-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "lexical_integrity": 1.0,
+      "source_words": 239,
+      "turns": 21,
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "emphasis",
+        "explain",
+        "question",
+        "reflective",
+        "transition"
+      ],
+      "duration_seconds": 131.9
+    },
+    {
+      "episode": 13,
+      "output": "a1-013-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "lexical_integrity": 1.0,
+      "source_words": 421,
+      "turns": 48,
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "emphasis",
+        "explain",
+        "question",
+        "reflective",
+        "supportive",
+        "transition"
+      ],
+      "duration_seconds": 236.3
+    },
+    {
+      "episode": 14,
+      "output": "a1-014-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "lexical_integrity": 1.0,
+      "source_words": 481,
+      "turns": 74,
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "explain",
+        "question",
+        "reflective",
+        "supportive",
+        "transition"
+      ],
+      "duration_seconds": 292.1
+    },
+    {
+      "episode": 15,
+      "output": "a1-015-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "lexical_integrity": 1.0,
+      "source_words": 442,
+      "turns": 48,
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "explain",
+        "question",
+        "reflective",
+        "supportive"
+      ],
+      "duration_seconds": 242.9
+    },
+    {
+      "episode": 16,
+      "output": "a1-016-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "lexical_integrity": 1.0,
+      "source_words": 195,
+      "turns": 22,
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "explain",
+        "question"
+      ],
+      "duration_seconds": 109.7
+    },
+    {
+      "episode": 17,
+      "output": "a1-017-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "lexical_integrity": 1.0,
+      "source_words": 172,
+      "turns": 16,
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "emphasis",
+        "explain",
+        "instruction"
+      ],
+      "duration_seconds": 99.8
+    },
+    {
+      "episode": 18,
+      "output": "a1-018-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "lexical_integrity": 1.0,
+      "source_words": 199,
+      "turns": 21,
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "emphasis",
+        "explain",
+        "question"
+      ],
+      "duration_seconds": 111.8
+    },
+    {
+      "episode": 19,
+      "output": "a1-019-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "lexical_integrity": 1.0,
+      "source_words": 194,
+      "turns": 18,
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "emphasis",
+        "explain"
+      ],
+      "duration_seconds": 104.9
+    },
+    {
+      "episode": 20,
+      "output": "a1-020-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "lexical_integrity": 1.0,
+      "source_words": 262,
+      "turns": 28,
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "explain",
+        "instruction",
+        "question",
+        "transition"
+      ],
+      "duration_seconds": 149.8
+    },
+    {
+      "episode": 21,
+      "output": "a1-021-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "lexical_integrity": 1.0,
+      "source_words": 172,
+      "turns": 18,
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "explain",
+        "question"
+      ],
+      "duration_seconds": 97.8
+    }
+  ]
+}
