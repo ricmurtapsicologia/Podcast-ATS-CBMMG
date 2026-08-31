@@ -15,6 +15,69 @@
     "fatima": "pt-BR-FranciscaNeural"
   },
   "cast_fallback_roles": [],
+  "pronunciation_dictionary": true,
+  "persona_profiles": {
+    "narrator": {
+      "rate": 0,
+      "pitch": -1,
+      "label": "narrador-estavel"
+    },
+    "gorette": {
+      "rate": -2,
+      "pitch": -2,
+      "label": "materna-contida"
+    },
+    "maria": {
+      "rate": -4,
+      "pitch": -1,
+      "label": "fragil-hesitante"
+    },
+    "claudio": {
+      "rate": 1,
+      "pitch": -2,
+      "label": "energia-oscilante"
+    },
+    "ana": {
+      "rate": -1,
+      "pitch": 1,
+      "label": "proxima-preocupada"
+    },
+    "guilherme": {
+      "rate": -2,
+      "pitch": -1,
+      "label": "profissional-calmo"
+    },
+    "fernanda": {
+      "rate": -3,
+      "pitch": 0,
+      "label": "tensa-contida"
+    },
+    "host": {
+      "rate": 1,
+      "pitch": 1,
+      "label": "apresentador-claro"
+    },
+    "julia": {
+      "rate": -1,
+      "pitch": 2,
+      "label": "jovem-reflexiva"
+    },
+    "dra_sara": {
+      "rate": -1,
+      "pitch": -2,
+      "label": "clinica-segura"
+    },
+    "lourdes": {
+      "rate": -3,
+      "pitch": -3,
+      "label": "madura-afetiva"
+    },
+    "fatima": {
+      "rate": -1,
+      "pitch": 1,
+      "label": "acolhedora-pragmatica"
+    }
+  },
   "episodes": [
     {
       "episode": 0,
@@ -25,19 +88,27 @@
       "events": [],
       "stage_directions_replaced_by_sound": [],
       "text_integrity_spoken_content": 1.0,
+      "pronunciation_dictionary": true,
       "roles": [
         "narrator"
       ],
       "voices": [
         "pt-BR-AntonioNeural"
       ],
+      "persona_profiles": {
+        "narrator": {
+          "rate": 0,
+          "pitch": -1,
+          "label": "narrador-estavel"
+        }
+      },
       "intents": [
         "conclusion",
         "emphasis",
         "explain"
       ],
       "turns": 12,
-      "duration_seconds": 81.5,
+      "duration_seconds": 81.4,
       "channels": 1,
       "sample_rate": 44100,
       "bitrate": "128k"
@@ -51,12 +122,20 @@
       "events": [],
       "stage_directions_replaced_by_sound": [],
       "text_integrity_spoken_content": 1.0,
+      "pronunciation_dictionary": true,
       "roles": [
         "narrator"
       ],
       "voices": [
         "pt-BR-AntonioNeural"
       ],
+      "persona_profiles": {
+        "narrator": {
+          "rate": 0,
+          "pitch": -1,
+          "label": "narrador-estavel"
+        }
+      },
       "intents": [
         "conclusion",
         "emphasis",
@@ -79,12 +158,20 @@
       "events": [],
       "stage_directions_replaced_by_sound": [],
       "text_integrity_spoken_content": 1.0,
+      "pronunciation_dictionary": true,
       "roles": [
         "narrator"
       ],
       "voices": [
         "pt-BR-AntonioNeural"
       ],
+      "persona_profiles": {
+        "narrator": {
+          "rate": 0,
+          "pitch": -1,
+          "label": "narrador-estavel"
+        }
+      },
       "intents": [
         "conclusion",
         "explain",
@@ -105,12 +192,20 @@
       "events": [],
       "stage_directions_replaced_by_sound": [],
       "text_integrity_spoken_content": 1.0,
+      "pronunciation_dictionary": true,
       "roles": [
         "narrator"
       ],
       "voices": [
         "pt-BR-AntonioNeural"
       ],
+      "persona_profiles": {
+        "narrator": {
+          "rate": 0,
+          "pitch": -1,
+          "label": "narrador-estavel"
+        }
+      },
       "intents": [
         "conclusion",
         "emphasis",
@@ -140,6 +235,7 @@
       ],
       "stage_directions_replaced_by_sound": [],
       "text_integrity_spoken_content": 1.0,
+      "pronunciation_dictionary": true,
       "roles": [
         "gorette",
         "maria",
@@ -149,6 +245,23 @@
         "pt-BR-AntonioNeural",
         "pt-BR-FranciscaNeural"
       ],
+      "persona_profiles": {
+        "gorette": {
+          "rate": -2,
+          "pitch": -2,
+          "label": "materna-contida"
+        },
+        "maria": {
+          "rate": -4,
+          "pitch": -1,
+          "label": "fragil-hesitante"
+        },
+        "narrator": {
+          "rate": 0,
+          "pitch": -1,
+          "label": "narrador-estavel"
+        }
+      },
       "intents": [
         "explain",
         "question",
@@ -156,7 +269,7 @@
         "supportive"
       ],
       "turns": 39,
-      "duration_seconds": 219.5,
+      "duration_seconds": 223.2,
       "channels": 2,
       "sample_rate": 44100,
       "bitrate": "192k"
@@ -170,6 +283,7 @@
       "events": [],
       "stage_directions_replaced_by_sound": [],
       "text_integrity_spoken_content": 1.0,
+      "pronunciation_dictionary": true,
       "roles": [
         "claudio",
         "narrator"
@@ -177,6 +291,18 @@
       "voices": [
         "pt-BR-AntonioNeural"
       ],
+      "persona_profiles": {
+        "claudio": {
+          "rate": 1,
+          "pitch": -2,
+          "label": "energia-oscilante"
+        },
+        "narrator": {
+          "rate": 0,
+          "pitch": -1,
+          "label": "narrador-estavel"
+        }
+      },
       "intents": [
         "conclusion",
         "explain",
@@ -184,7 +310,7 @@
         "transition"
       ],
       "turns": 30,
-      "duration_seconds": 180.9,
+      "duration_seconds": 180.3,
       "channels": 2,
       "sample_rate": 44100,
       "bitrate": "192k"
@@ -217,6 +343,7 @@
       ],
       "stage_directions_replaced_by_sound": [],
       "text_integrity_spoken_content": 1.0,
+      "pronunciation_dictionary": true,
       "roles": [
         "fernanda",
         "guilherme",
@@ -226,6 +353,23 @@
         "pt-BR-AntonioNeural",
         "pt-BR-FranciscaNeural"
       ],
+      "persona_profiles": {
+        "fernanda": {
+          "rate": -3,
+          "pitch": 0,
+          "label": "tensa-contida"
+        },
+        "guilherme": {
+          "rate": -2,
+          "pitch": -1,
+          "label": "profissional-calmo"
+        },
+        "narrator": {
+          "rate": 0,
+          "pitch": -1,
+          "label": "narrador-estavel"
+        }
+      },
       "intents": [
         "conclusion",
         "emphasis",
@@ -236,7 +380,7 @@
         "transition"
       ],
       "turns": 54,
-      "duration_seconds": 236.0,
+      "duration_seconds": 238.5,
       "channels": 2,
       "sample_rate": 44100,
       "bitrate": "192k"
@@ -250,6 +394,7 @@
       "events": [],
       "stage_directions_replaced_by_sound": [],
       "text_integrity_spoken_content": 1.0,
+      "pronunciation_dictionary": true,
       "roles": [
         "host",
         "julia"
@@ -258,13 +403,25 @@
         "pt-BR-AntonioNeural",
         "pt-BR-FranciscaNeural"
       ],
+      "persona_profiles": {
+        "host": {
+          "rate": 1,
+          "pitch": 1,
+          "label": "apresentador-claro"
+        },
+        "julia": {
+          "rate": -1,
+          "pitch": 2,
+          "label": "jovem-reflexiva"
+        }
+      },
       "intents": [
         "explain",
         "question",
         "transition"
       ],
       "turns": 46,
-      "duration_seconds": 253.7,
+      "duration_seconds": 255.2,
       "channels": 2,
       "sample_rate": 44100,
       "bitrate": "192k"
@@ -278,6 +435,7 @@
       "events": [],
       "stage_directions_replaced_by_sound": [],
       "text_integrity_spoken_content": 1.0,
+      "pronunciation_dictionary": true,
       "roles": [
         "dra_sara",
         "host"
@@ -286,6 +444,18 @@
         "pt-BR-AntonioNeural",
         "pt-BR-FranciscaNeural"
       ],
+      "persona_profiles": {
+        "dra_sara": {
+          "rate": -1,
+          "pitch": -2,
+          "label": "clinica-segura"
+        },
+        "host": {
+          "rate": 1,
+          "pitch": 1,
+          "label": "apresentador-claro"
+        }
+      },
       "intents": [
         "conclusion",
         "explain",
@@ -294,7 +464,7 @@
         "transition"
       ],
       "turns": 43,
-      "duration_seconds": 254.1,
+      "duration_seconds": 255.5,
       "channels": 2,
       "sample_rate": 44100,
       "bitrate": "192k"
@@ -325,6 +495,7 @@
         "Sons de chícaras sendo colocadas na mesa."
       ],
       "text_integrity_spoken_content": 1.0,
+      "pronunciation_dictionary": true,
       "roles": [
         "fatima",
         "lourdes",
@@ -334,6 +505,23 @@
         "pt-BR-AntonioNeural",
         "pt-BR-FranciscaNeural"
       ],
+      "persona_profiles": {
+        "fatima": {
+          "rate": -1,
+          "pitch": 1,
+          "label": "acolhedora-pragmatica"
+        },
+        "lourdes": {
+          "rate": -3,
+          "pitch": -3,
+          "label": "madura-afetiva"
+        },
+        "narrator": {
+          "rate": 0,
+          "pitch": -1,
+          "label": "narrador-estavel"
+        }
+      },
       "intents": [
         "conclusion",
         "explain",
@@ -341,7 +529,7 @@
         "supportive"
       ],
       "turns": 43,
-      "duration_seconds": 211.1,
+      "duration_seconds": 214.9,
       "channels": 2,
       "sample_rate": 44100,
       "bitrate": "192k"
@@ -355,12 +543,20 @@
       "events": [],
       "stage_directions_replaced_by_sound": [],
       "text_integrity_spoken_content": 1.0,
+      "pronunciation_dictionary": true,
       "roles": [
         "narrator"
       ],
       "voices": [
         "pt-BR-AntonioNeural"
       ],
+      "persona_profiles": {
+        "narrator": {
+          "rate": 0,
+          "pitch": -1,
+          "label": "narrador-estavel"
+        }
+      },
       "intents": [
         "conclusion",
         "explain",
@@ -381,12 +577,20 @@
       "events": [],
       "stage_directions_replaced_by_sound": [],
       "text_integrity_spoken_content": 1.0,
+      "pronunciation_dictionary": true,
       "roles": [
         "narrator"
       ],
       "voices": [
         "pt-BR-AntonioNeural"
       ],
+      "persona_profiles": {
+        "narrator": {
+          "rate": 0,
+          "pitch": -1,
+          "label": "narrador-estavel"
+        }
+      },
       "intents": [
         "conclusion",
         "emphasis",
@@ -409,12 +613,20 @@
       "events": [],
       "stage_directions_replaced_by_sound": [],
       "text_integrity_spoken_content": 1.0,
+      "pronunciation_dictionary": true,
       "roles": [
         "narrator"
       ],
       "voices": [
         "pt-BR-AntonioNeural"
       ],
+      "persona_profiles": {
+        "narrator": {
+          "rate": 0,
+          "pitch": -1,
+          "label": "narrador-estavel"
+        }
+      },
       "intents": [
         "conclusion",
         "explain",
@@ -436,12 +648,20 @@
       "events": [],
       "stage_directions_replaced_by_sound": [],
       "text_integrity_spoken_content": 1.0,
+      "pronunciation_dictionary": true,
       "roles": [
         "narrator"
       ],
       "voices": [
         "pt-BR-AntonioNeural"
       ],
+      "persona_profiles": {
+        "narrator": {
+          "rate": 0,
+          "pitch": -1,
+          "label": "narrador-estavel"
+        }
+      },
       "intents": [
         "conclusion",
         "explain",
@@ -449,7 +669,7 @@
         "transition"
       ],
       "turns": 24,
-      "duration_seconds": 163.5,
+      "duration_seconds": 163.6,
       "channels": 1,
       "sample_rate": 44100,
       "bitrate": "128k"
