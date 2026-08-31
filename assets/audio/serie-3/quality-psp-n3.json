@@ -1,0 +1,148 @@
+{
+  "version": "n3-20260831",
+  "cards": [
+    {
+      "card": 1,
+      "output": "psp-01-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "turns": 33,
+      "intents": [
+        "explain",
+        "instruction",
+        "question",
+        "reflective",
+        "transition"
+      ],
+      "duration_seconds": 173.8
+    },
+    {
+      "card": 2,
+      "output": "psp-02-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "turns": 30,
+      "intents": [
+        "explain",
+        "instruction",
+        "question",
+        "reflective",
+        "transition"
+      ],
+      "duration_seconds": 173.0
+    },
+    {
+      "card": 3,
+      "output": "psp-03-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "turns": 29,
+      "intents": [
+        "explain",
+        "question",
+        "transition"
+      ],
+      "duration_seconds": 154.6
+    },
+    {
+      "card": 4,
+      "output": "psp-04-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "turns": 29,
+      "intents": [
+        "explain",
+        "instruction",
+        "question",
+        "reflective",
+        "transition"
+      ],
+      "duration_seconds": 164.5
+    },
+    {
+      "card": 5,
+      "output": "psp-05-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "turns": 25,
+      "intents": [
+        "explain",
+        "instruction",
+        "question",
+        "reflective",
+        "supportive",
+        "transition"
+      ],
+      "duration_seconds": 143.8
+    },
+    {
+      "card": 6,
+      "output": "psp-06-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "turns": 25,
+      "intents": [
+        "explain",
+        "question",
+        "reflective"
+      ],
+      "duration_seconds": 148.8
+    },
+    {
+      "card": 7,
+      "output": "psp-07-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "turns": 23,
+      "intents": [
+        "explain",
+        "question",
+        "supportive",
+        "transition"
+      ],
+      "duration_seconds": 141.3
+    },
+    {
+      "card": 8,
+      "output": "psp-08-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "turns": 26,
+      "intents": [
+        "explain",
+        "instruction",
+        "question",
+        "supportive",
+        "transition"
+      ],
+      "duration_seconds": 144.4
+    },
+    {
+      "card": 9,
+      "output": "psp-09-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "turns": 26,
+      "intents": [
+        "explain",
+        "question",
+        "transition"
+      ],
+      "duration_seconds": 151.9
+    },
+    {
+      "card": 10,
+      "output": "psp-10-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "turns": 34,
+      "intents": [
+        "explain",
+        "instruction",
+        "question",
+        "transition"
+      ],
+      "duration_seconds": 177.3
+    }
+  ]
+}

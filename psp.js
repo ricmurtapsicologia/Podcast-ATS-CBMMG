@@ -6,7 +6,7 @@
   let CARDS = [];
 
   const pad = n => String(n).padStart(2, "0");
-  const audioUrl = index => `assets/audio/serie-3/psp-${pad(index + 1)}.mp3`;
+  const audioUrl = index => `assets/audio/serie-3/psp-${pad(index + 1)}-n3.mp3`;
   const format = seconds => {
     const total = Math.max(0, Math.floor(Number(seconds) || 0));
     return `${String(Math.floor(total / 60)).padStart(2, "0")}:${String(total % 60).padStart(2, "0")}`;
@@ -111,7 +111,7 @@
     return `<section class="psp-audio" aria-label="Microaula em áudio do Card ${card.n}">
       <div class="psp-audio-head">
         <div>
-          <span class="psp-audio-kicker">Microaula em áudio • padrão N2</span>
+          <span class="psp-audio-kicker">Microaula em áudio • padrão N3 Natural</span>
           <strong>${card.title}</strong>
         </div>
         <span class="psp-audio-duration">2–4 min</span>
@@ -136,7 +136,7 @@
         <div class="psp-summary">
           <div class="psp-top"><span class="psp-step">Card ${card.n} • ${card.phase}</span><span class="psp-tag">${card.tag}</span></div>
           <h3>${card.title}</h3>
-          <div class="psp-summary-meta"><span class="psp-audio-chip">Áudio N2 • 2–4 min</span><span class="psp-open-label">Abrir conteúdo <span aria-hidden="true">＋</span></span></div>
+          <div class="psp-summary-meta"><span class="psp-audio-chip">Áudio N3 • 2–4 min</span><span class="psp-open-label">Abrir conteúdo <span aria-hidden="true">＋</span></span></div>
         </div>
       </button>
       <div class="psp-card-details" id="${detailId}" hidden>
@@ -235,7 +235,7 @@
 
     pauseAllAudio();
     if (audioTip) audioTip.hidden = true;
-    kicker.textContent = "Série 3 • 10 cards • 10 microaulas N2";
+    kicker.textContent = "Série 3 • 10 cards • 10 microaulas N3";
     title.textContent = "Primeiros Socorros Psicológicos no Trabalho";
     description.textContent = "Adaptação preventiva para profissionais de segurança e emergência baseada no PSP da OMS: preparar o apoio e aplicar Observar, Escutar e Conectar.";
 
