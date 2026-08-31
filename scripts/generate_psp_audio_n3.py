@@ -9,7 +9,7 @@ from pathlib import Path
 import edge_tts
 from pydub import AudioSegment, effects
 
-from n3_audio_core import breath_units, lexical_tokens, prosody
+from n3_audio_core import breath_units, lexical_tokens, prosody, speakable
 
 ROOT=Path(__file__).resolve().parents[1]
 ROTEIROS=ROOT/'roteiros'/'serie-3'
@@ -39,7 +39,7 @@ async def synth(text,voice,rate,pitch,path,sem):
     async with sem:
         for attempt in range(1,4):
             try:
-                c=edge_tts.Communicate(text=text,voice=voice,rate=rate,pitch=pitch,volume='+0%')
+                c=edge_tts.Communicate(text=speakable(text),voice=voice,rate=rate,pitch=pitch,volume='+0%')
                 await asyncio.wait_for(c.save(str(path)),timeout=55);return
             except Exception:
                 if attempt==3:raise
@@ -69,7 +69,7 @@ async def build(number:int,sem):
     audio.export(target,format='mp3',bitrate='128k',parameters=['-ac','1','-ar','44100'])
     seconds=round(len(audio)/1000,1)
     if not 95<=seconds<=330:raise RuntimeError(f'Duração atípica em {target.name}: {seconds}s')
-    return {'card':number,'output':target.name,'version':VERSION,'profile':'N3-C','turns':len(turns),'intents':sorted(set(intents)),'duration_seconds':seconds}
+    return {'card':number,'output':target.name,'version':VERSION,'profile':'N3-C','pronunciation_dictionary':True,'turns':len(turns),'intents':sorted(set(intents)),'duration_seconds':seconds}
 
 
 def patch_runtime():
@@ -83,7 +83,7 @@ async def main():
     TMP.mkdir(parents=True,exist_ok=True);sem=asyncio.Semaphore(5);rows=[]
     for n in range(1,11):rows.append(await build(n,sem))
     patch_runtime()
-    (OUT/'quality-psp-n3.json').write_text(json.dumps({'version':VERSION,'cards':rows},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    (OUT/'quality-psp-n3.json').write_text(json.dumps({'version':VERSION,'pronunciation_dictionary':True,'cards':rows},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     shutil.rmtree(TMP,ignore_errors=True)
     print('PSP N3 concluído: 10/10 microaulas.')
 
