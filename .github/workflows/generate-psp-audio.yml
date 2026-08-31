@@ -1,55 +1,12 @@
-name: Gerar áudios PSP Série 3
+name: LEGACY — PSP Serie 3 N2
 
+# Congelado após adoção do N3 Natural em 31/08/2026.
 on:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/generate-psp-audio.yml'
-      - 'scripts/generate_psp_audio.py'
-      - 'roteiros/serie-3/**'
-  pull_request:
-    branches: [main]
-    paths:
-      - '.github/workflows/generate-psp-audio.yml'
-      - 'scripts/generate_psp_audio.py'
-      - 'roteiros/serie-3/**'
-  workflow_dispatch:
-
+  workflow_dispatch: {}
 permissions:
-  contents: write
-
+  contents: read
 jobs:
-  generate:
+  legacy-info:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref || github.ref_name }}
-
-      - name: Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Dependências
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg
-          python -m pip install --upgrade pip
-          pip install edge-tts==7.2.8 pydub
-
-      - name: Gerar microaulas MP3
-        run: python scripts/generate_psp_audio.py
-
-      - name: Publicar áudios na branch
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/audio/serie-3/*.mp3
-          if git diff --cached --quiet; then
-            echo "Sem alterações nos áudios."
-          else
-            git commit -m "Gera MP3s neurais da Série 3 PSP"
-            git push origin HEAD:${{ github.head_ref || github.ref_name }}
-          fi
+      - run: echo "PSP N2 congelado. Runtime canônico após promoção: microaulas PSP N3."
