@@ -1,51 +1,12 @@
-name: Remasterizar Série 2 — paridade Série 3
+name: LEGACY — Serie 2 N2/S3 parity
 
+# Congelado após adoção do N3 Natural em 31/08/2026.
 on:
-  pull_request:
-    branches: [main]
-    paths:
-      - '.github/workflows/remaster-series2-n2.yml'
-      - 'scripts/remaster_series2_n2.py'
-      - 'roteiros/serie-2/**'
-  workflow_dispatch:
-
+  workflow_dispatch: {}
 permissions:
-  contents: write
-
+  contents: read
 jobs:
-  remaster:
+  legacy-info:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ github.head_ref || github.ref_name }}
-          fetch-depth: 0
-
-      - name: Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-
-      - name: Dependências
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y ffmpeg
-          python -m pip install --upgrade pip
-          pip install edge-tts==7.2.8 pydub
-
-      - name: Ressintetizar Série 2 no padrão da Série 3
-        run: python scripts/remaster_series2_n2.py
-
-      - name: Publicar novos áudios na branch
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/audio/serie-2 app.js
-          if git diff --cached --quiet; then
-            echo "Sem alterações geradas."
-          else
-            git commit -m "Gera Série 2 com perfil sonoro da Série 3"
-            git push origin HEAD:${{ github.head_ref || github.ref_name }}
-          fi
+      - run: echo "Serie 2 N2/S3v3 congelada. Runtime canônico após promoção: Serie 2 N3."
