@@ -9,4 +9,7 @@ jobs:
   legacy-info:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Serie 2 N2/S3v3 congelada. Runtime canônico após promoção: Serie 2 N3."
+      - name: Informar congelamento
+        run: |
+          echo "Serie 2 N2/S3v3 congelada."
+          echo "Runtime canônico após promoção: Serie 2 N3."
