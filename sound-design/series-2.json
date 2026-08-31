@@ -1,0 +1,45 @@
+{
+  "version": "n3-20260831",
+  "policy": "Somente efeitos com função narrativa explícita ou fortemente sustentada pelo cenário do roteiro. Voz sempre dominante.",
+  "episodes": {
+    "004": {
+      "scene": "living_room",
+      "events": [
+        {"name": "footsteps", "at": 0.08, "gain_db": -6, "note": "Gorette entra na sala; passos discretos de aproximação."}
+      ]
+    },
+    "005": {
+      "scene": "nightclub",
+      "events": [],
+      "note": "Ambiente sintético de boate sem música reconhecível ou conteúdo protegido."
+    },
+    "006": {
+      "scene": "bridge",
+      "events": [
+        {"name": "footsteps", "at": 0.08, "gain_db": -8, "note": "Aproximação cautelosa do bombeiro."},
+        {"name": "traffic_pass", "at": 0.25, "gain_db": -7, "note": "Tráfego urbano distante coerente com ponte."},
+        {"name": "traffic_pass", "at": 0.72, "gain_db": -9, "note": "Segunda passagem distante, sem encobrir diálogo."}
+      ]
+    },
+    "007": {
+      "scene": "studio",
+      "events": []
+    },
+    "008": {
+      "scene": "studio",
+      "events": []
+    },
+    "009": {
+      "scene": "home_table",
+      "events": [
+        {"name": "cup_tap", "at": 0.105, "gain_db": -4, "pan": -0.18, "note": "Roteiro explicita sons de xícaras sendo colocadas na mesa."},
+        {"name": "cup_tap", "at": 0.118, "gain_db": -6, "pan": 0.22, "note": "Segunda xícara, ligeiramente mais distante."}
+      ]
+    }
+  },
+  "available_not_used": [
+    "lighter",
+    "cigarette_crackle"
+  ],
+  "available_not_used_reason": "Não há indicação suficiente de cigarro nos roteiros ativos auditados. Os efeitos permanecem disponíveis para cenas futuras que os justifiquem."
+}
