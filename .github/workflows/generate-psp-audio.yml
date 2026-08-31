@@ -9,4 +9,7 @@ jobs:
   legacy-info:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "PSP N2 congelado. Runtime canônico após promoção: microaulas PSP N3."
+      - name: Informar congelamento
+        run: |
+          echo "PSP N2 congelado."
+          echo "Runtime canônico após promoção: microaulas PSP N3."
