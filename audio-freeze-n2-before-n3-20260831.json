@@ -1,0 +1,9 @@
+{
+  "frozen_at": "2026-08-31",
+  "source_tree_before_n3": "299de29341092b4e031cb23a7b57d1f3d97bc687",
+  "series_1_runtime": "organic-v5",
+  "series_2_runtime": "s3v3",
+  "series_3_runtime": "psp-01..10 N2",
+  "rollback": "Todas as masters anteriores permanecem no histórico Git e nos caminhos legados. Os workflows N2 foram convertidos para execução manual informativa, impedindo regressão automática.",
+  "n3_policy": "A promoção de cada série ocorre somente após o respectivo smoke test N3."
+}
