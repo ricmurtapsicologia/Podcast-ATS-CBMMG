@@ -1,0 +1,458 @@
+{
+  "version": "n3-20260831",
+  "cast": {
+    "narrator": "pt-BR-AntonioNeural",
+    "gorette": "pt-BR-FranciscaNeural",
+    "maria": "pt-BR-FranciscaNeural",
+    "claudio": "pt-BR-AntonioNeural",
+    "ana": "pt-BR-FranciscaNeural",
+    "guilherme": "pt-BR-AntonioNeural",
+    "fernanda": "pt-BR-FranciscaNeural",
+    "host": "pt-BR-AntonioNeural",
+    "julia": "pt-BR-FranciscaNeural",
+    "dra_sara": "pt-BR-FranciscaNeural",
+    "lourdes": "pt-BR-FranciscaNeural",
+    "fatima": "pt-BR-FranciscaNeural"
+  },
+  "cast_fallback_roles": [],
+  "episodes": [
+    {
+      "episode": 0,
+      "output": "a2-000-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "scene": "none",
+      "events": [],
+      "stage_directions_replaced_by_sound": [],
+      "text_integrity_spoken_content": 1.0,
+      "roles": [
+        "narrator"
+      ],
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "emphasis",
+        "explain"
+      ],
+      "turns": 12,
+      "duration_seconds": 81.5,
+      "channels": 1,
+      "sample_rate": 44100,
+      "bitrate": "128k"
+    },
+    {
+      "episode": 1,
+      "output": "a2-001-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "scene": "none",
+      "events": [],
+      "stage_directions_replaced_by_sound": [],
+      "text_integrity_spoken_content": 1.0,
+      "roles": [
+        "narrator"
+      ],
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "emphasis",
+        "explain",
+        "question",
+        "transition"
+      ],
+      "turns": 29,
+      "duration_seconds": 200.2,
+      "channels": 1,
+      "sample_rate": 44100,
+      "bitrate": "128k"
+    },
+    {
+      "episode": 2,
+      "output": "a2-002-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "scene": "none",
+      "events": [],
+      "stage_directions_replaced_by_sound": [],
+      "text_integrity_spoken_content": 1.0,
+      "roles": [
+        "narrator"
+      ],
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "explain",
+        "question"
+      ],
+      "turns": 18,
+      "duration_seconds": 138.1,
+      "channels": 1,
+      "sample_rate": 44100,
+      "bitrate": "128k"
+    },
+    {
+      "episode": 3,
+      "output": "a2-003-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "scene": "none",
+      "events": [],
+      "stage_directions_replaced_by_sound": [],
+      "text_integrity_spoken_content": 1.0,
+      "roles": [
+        "narrator"
+      ],
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "emphasis",
+        "explain",
+        "question",
+        "transition"
+      ],
+      "turns": 35,
+      "duration_seconds": 224.3,
+      "channels": 1,
+      "sample_rate": 44100,
+      "bitrate": "128k"
+    },
+    {
+      "episode": 4,
+      "output": "a2-004-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-D",
+      "scene": "living_room",
+      "events": [
+        {
+          "name": "footsteps",
+          "at": 0.08,
+          "gain_db": -6,
+          "note": "Gorette entra na sala; passos discretos de aproximação."
+        }
+      ],
+      "stage_directions_replaced_by_sound": [],
+      "text_integrity_spoken_content": 1.0,
+      "roles": [
+        "gorette",
+        "maria",
+        "narrator"
+      ],
+      "voices": [
+        "pt-BR-AntonioNeural",
+        "pt-BR-FranciscaNeural"
+      ],
+      "intents": [
+        "explain",
+        "question",
+        "reflective",
+        "supportive"
+      ],
+      "turns": 39,
+      "duration_seconds": 219.5,
+      "channels": 2,
+      "sample_rate": 44100,
+      "bitrate": "192k"
+    },
+    {
+      "episode": 5,
+      "output": "a2-005-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-D",
+      "scene": "nightclub",
+      "events": [],
+      "stage_directions_replaced_by_sound": [],
+      "text_integrity_spoken_content": 1.0,
+      "roles": [
+        "claudio",
+        "narrator"
+      ],
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "explain",
+        "question",
+        "transition"
+      ],
+      "turns": 30,
+      "duration_seconds": 180.9,
+      "channels": 2,
+      "sample_rate": 44100,
+      "bitrate": "192k"
+    },
+    {
+      "episode": 6,
+      "output": "a2-006-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-D",
+      "scene": "bridge",
+      "events": [
+        {
+          "name": "footsteps",
+          "at": 0.08,
+          "gain_db": -8,
+          "note": "Aproximação cautelosa do bombeiro."
+        },
+        {
+          "name": "traffic_pass",
+          "at": 0.25,
+          "gain_db": -7,
+          "note": "Tráfego urbano distante coerente com ponte."
+        },
+        {
+          "name": "traffic_pass",
+          "at": 0.72,
+          "gain_db": -9,
+          "note": "Segunda passagem distante, sem encobrir diálogo."
+        }
+      ],
+      "stage_directions_replaced_by_sound": [],
+      "text_integrity_spoken_content": 1.0,
+      "roles": [
+        "fernanda",
+        "guilherme",
+        "narrator"
+      ],
+      "voices": [
+        "pt-BR-AntonioNeural",
+        "pt-BR-FranciscaNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "emphasis",
+        "explain",
+        "question",
+        "reflective",
+        "supportive",
+        "transition"
+      ],
+      "turns": 54,
+      "duration_seconds": 236.0,
+      "channels": 2,
+      "sample_rate": 44100,
+      "bitrate": "192k"
+    },
+    {
+      "episode": 7,
+      "output": "a2-007-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-D",
+      "scene": "studio",
+      "events": [],
+      "stage_directions_replaced_by_sound": [],
+      "text_integrity_spoken_content": 1.0,
+      "roles": [
+        "host",
+        "julia"
+      ],
+      "voices": [
+        "pt-BR-AntonioNeural",
+        "pt-BR-FranciscaNeural"
+      ],
+      "intents": [
+        "explain",
+        "question",
+        "transition"
+      ],
+      "turns": 46,
+      "duration_seconds": 253.7,
+      "channels": 2,
+      "sample_rate": 44100,
+      "bitrate": "192k"
+    },
+    {
+      "episode": 8,
+      "output": "a2-008-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-D",
+      "scene": "studio",
+      "events": [],
+      "stage_directions_replaced_by_sound": [],
+      "text_integrity_spoken_content": 1.0,
+      "roles": [
+        "dra_sara",
+        "host"
+      ],
+      "voices": [
+        "pt-BR-AntonioNeural",
+        "pt-BR-FranciscaNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "explain",
+        "question",
+        "reflective",
+        "transition"
+      ],
+      "turns": 43,
+      "duration_seconds": 254.1,
+      "channels": 2,
+      "sample_rate": 44100,
+      "bitrate": "192k"
+    },
+    {
+      "episode": 9,
+      "output": "a2-009-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-D",
+      "scene": "home_table",
+      "events": [
+        {
+          "name": "cup_tap",
+          "at": 0.105,
+          "gain_db": -4,
+          "pan": -0.18,
+          "note": "Roteiro explicita sons de xícaras sendo colocadas na mesa."
+        },
+        {
+          "name": "cup_tap",
+          "at": 0.118,
+          "gain_db": -6,
+          "pan": 0.22,
+          "note": "Segunda xícara, ligeiramente mais distante."
+        }
+      ],
+      "stage_directions_replaced_by_sound": [
+        "Sons de chícaras sendo colocadas na mesa."
+      ],
+      "text_integrity_spoken_content": 1.0,
+      "roles": [
+        "fatima",
+        "lourdes",
+        "narrator"
+      ],
+      "voices": [
+        "pt-BR-AntonioNeural",
+        "pt-BR-FranciscaNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "explain",
+        "question",
+        "supportive"
+      ],
+      "turns": 43,
+      "duration_seconds": 211.1,
+      "channels": 2,
+      "sample_rate": 44100,
+      "bitrate": "192k"
+    },
+    {
+      "episode": 10,
+      "output": "a2-010-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "scene": "none",
+      "events": [],
+      "stage_directions_replaced_by_sound": [],
+      "text_integrity_spoken_content": 1.0,
+      "roles": [
+        "narrator"
+      ],
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "explain",
+        "question"
+      ],
+      "turns": 26,
+      "duration_seconds": 168.6,
+      "channels": 1,
+      "sample_rate": 44100,
+      "bitrate": "128k"
+    },
+    {
+      "episode": 11,
+      "output": "a2-011-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "scene": "none",
+      "events": [],
+      "stage_directions_replaced_by_sound": [],
+      "text_integrity_spoken_content": 1.0,
+      "roles": [
+        "narrator"
+      ],
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "emphasis",
+        "explain",
+        "question",
+        "reflective"
+      ],
+      "turns": 25,
+      "duration_seconds": 164.1,
+      "channels": 1,
+      "sample_rate": 44100,
+      "bitrate": "128k"
+    },
+    {
+      "episode": 12,
+      "output": "a2-012-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "scene": "none",
+      "events": [],
+      "stage_directions_replaced_by_sound": [],
+      "text_integrity_spoken_content": 1.0,
+      "roles": [
+        "narrator"
+      ],
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "explain",
+        "question",
+        "transition"
+      ],
+      "turns": 30,
+      "duration_seconds": 184.6,
+      "channels": 1,
+      "sample_rate": 44100,
+      "bitrate": "128k"
+    },
+    {
+      "episode": 13,
+      "output": "a2-013-n3.mp3",
+      "version": "n3-20260831",
+      "profile": "N3-C",
+      "scene": "none",
+      "events": [],
+      "stage_directions_replaced_by_sound": [],
+      "text_integrity_spoken_content": 1.0,
+      "roles": [
+        "narrator"
+      ],
+      "voices": [
+        "pt-BR-AntonioNeural"
+      ],
+      "intents": [
+        "conclusion",
+        "explain",
+        "question",
+        "transition"
+      ],
+      "turns": 24,
+      "duration_seconds": 163.5,
+      "channels": 1,
+      "sample_rate": 44100,
+      "bitrate": "128k"
+    }
+  ]
+}
