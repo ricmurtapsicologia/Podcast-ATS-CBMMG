@@ -1,0 +1,62 @@
+name: Remasterizar Serie 1 N3 Natural
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/n3_audio_core.py'
+      - 'scripts/remaster_series1_n3.py'
+      - 'scripts/remaster_series1_organic.py'
+      - 'roteiros/serie-1/**'
+      - '.github/workflows/remaster-series1-n3.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: podcast-serie1-n3
+  cancel-in-progress: true
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Instalar dependencias
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          pip install edge-tts pydub
+      - name: Gerar Serie 1 N3
+        run: python scripts/remaster_series1_n3.py
+      - name: Smoke test tecnico N3
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          report=json.loads(Path('assets/audio/serie-1/quality-n3.json').read_text(encoding='utf-8'))
+          eps=report['episodes']; assert len(eps)==21
+          for e in eps:
+              p=Path('assets/audio/serie-1')/e['output']; assert p.exists() and p.stat().st_size>1000
+              info=json.loads(subprocess.check_output(['ffprobe','-v','error','-select_streams','a:0','-show_entries','stream=channels,sample_rate,duration','-of','json',str(p)],text=True))['streams'][0]
+              assert int(info['channels'])==1 and int(info['sample_rate'])==44100 and float(info['duration'])>0
+              assert e['lexical_integrity']==1.0
+          app=Path('app.js').read_text(encoding='utf-8'); assert app.count('-n3.mp3')>=21
+          print('PASS: 21/21 episodios da Serie 1 em N3-C.')
+          PY
+      - name: Commitar masters N3
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/audio/serie-1 app.js
+          if git diff --cached --quiet; then echo "Sem alteracoes"; exit 0; fi
+          git commit -m "build: publicar Serie 1 no padrao N3 Natural"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
