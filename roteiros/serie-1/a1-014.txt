@@ -3,7 +3,7 @@
 # Revisão N3: saudação aprovada e diálogo multivoz.
 # Modo: narração + diálogo multivoz
 
-INSTRUTOR: Ponte para o passado, resgatando memórias agradáveis. Olá, pessoal. Continuando nossa série sobre abordagem técnica e comunicação que salva, hoje vamos demonstrar como aplicar a técnica da ponte para o passado em um cenário de tentativa de suicídio. Essa ferramenta ajuda o tentante a se reconectar com memórias sensoriais agradáveis, criando um espaço emocional positivo. Vamos acompanhar como ela funciona na prática. Cena: Larissa está sentada no parapeito de uma sacada, segurando um colar com pingente em forma de coração. Ela está visivelmente emocionada, mas já desenvolveu algum vínculo com o abordador, que busca explorar um fator de proteção ligado a uma lembrança especial do passado.
+INSTRUTOR: Ponte para o passado, resgatando memórias agradáveis. Olá, caros abordadores. Continuando nossa série sobre abordagem técnica e comunicação que salva, hoje vamos demonstrar como aplicar a técnica da ponte para o passado em um cenário de tentativa de suicídio. Essa ferramenta ajuda o tentante a se reconectar com memórias sensoriais agradáveis, criando um espaço emocional positivo. Vamos acompanhar como ela funciona na prática. Cena: Larissa está sentada no parapeito de uma sacada, segurando um colar com pingente em forma de coração. Ela está visivelmente emocionada, mas já desenvolveu algum vínculo com o abordador, que busca explorar um fator de proteção ligado a uma lembrança especial do passado.
 ABORDADOR_M: Larissa, esse colar parece importante para você. Tem alguma história especial por trás dele?
 TENTANTE_F: Sim. Foi meu avô quem me deu. Era um dia muito especial.
 ABORDADOR_M: Que lindo. Você lembra como era aquele dia? Onde vocês estavam?

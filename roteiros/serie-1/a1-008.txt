@@ -3,7 +3,7 @@
 # Revisão N3: saudação aprovada e diálogo multivoz.
 # Modo: narração + diálogo multivoz
 
-INSTRUTOR: Usando perguntas simples com um tentante de perfil depressivo. Olá, pessoal. Continuando nossa série sobre abordagem técnica, comunicação que salva, hoje vamos demonstrar como usar perguntas simples para identificar fatores de risco e proteção em um tentante com perfil depressivo. O segredo está em criar um espaço seguro, sem pressionar, e permitir que o tentante se expresse no seu tempo. Vamos acompanhar um diálogo direto. Um homem está sentado na beira de um viaduto, com o rosto voltado para o chão, demonstrando tristeza e cansaço. O abordador se aproxima com calma, respeitando o silêncio inicial.
+INSTRUTOR: Usando perguntas simples com um tentante de perfil depressivo. Olá, caros abordadores. Continuando nossa série sobre abordagem técnica, comunicação que salva, hoje vamos demonstrar como usar perguntas simples para identificar fatores de risco e proteção em um tentante com perfil depressivo. O segredo está em criar um espaço seguro, sem pressionar, e permitir que o tentante se expresse no seu tempo. Vamos acompanhar um diálogo direto. Um homem está sentado na beira de um viaduto, com o rosto voltado para o chão, demonstrando tristeza e cansaço. O abordador se aproxima com calma, respeitando o silêncio inicial.
 ABORDADOR_M: Oi, meu nome é João. Sou bombeiro militar e estou aqui para te ouvir. Como posso te chamar?
 INSTRUTOR: O homem permanece em silêncio, desviando o olhar.
 ABORDADOR_M: Você mora com alguém ou está sozinho em casa?

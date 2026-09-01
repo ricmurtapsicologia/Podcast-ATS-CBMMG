@@ -3,7 +3,7 @@
 # Revisão N3: saudação aprovada e diálogo multivoz.
 # Modo: narração + diálogo multivoz
 
-INSTRUTOR: Usando perguntas simples com um tentante de perfil agressivo. Olá, pessoal. Continuando nossa série sobre abordagem técnica e comunicação que salva, hoje vamos demonstrar como usar perguntas simples para lidar com um tentante de perfil agressivo. Esse tipo de abordagem exige calma, empatia e muito cuidado, já que estamos lidando com alguém que pode expressar raiva ou hostilidade. Vamos acompanhar o diálogo. Uma mulher está no terraço de um prédio, andando de um lado para o outro, gesticulando de forma agitada e falando em tom elevado. A abordadora mantém distância inicial, respeitando o espaço da tentante.
+INSTRUTOR: Usando perguntas simples com um tentante de perfil agressivo. Olá, caros abordadores. Continuando nossa série sobre abordagem técnica e comunicação que salva, hoje vamos demonstrar como usar perguntas simples para lidar com um tentante de perfil agressivo. Esse tipo de abordagem exige calma, empatia e muito cuidado, já que estamos lidando com alguém que pode expressar raiva ou hostilidade. Vamos acompanhar o diálogo. Uma mulher está no terraço de um prédio, andando de um lado para o outro, gesticulando de forma agitada e falando em tom elevado. A abordadora mantém distância inicial, respeitando o espaço da tentante.
 ABORDADOR_F: Oi, meu nome é Ana. Sou bombeira militar e estou aqui para ouvir você. Como posso te chamar?
 TENTANTE_F: Não quero falar com ninguém.
 ABORDADOR_F: Entendo. Parece que você está muito irritada. Posso ficar aqui para garantir que você não esteja sozinha?
