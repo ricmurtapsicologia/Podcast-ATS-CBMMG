@@ -1,0 +1,48 @@
+name: Podcast player E2E
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'app.js'
+      - 'styles.css'
+      - 'assets/audio/serie-1/**'
+      - 'assets/audio/serie-2/**'
+      - 'scripts/smoke_player_e2e.py'
+      - '.github/workflows/podcast-e2e.yml'
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'app.js'
+      - 'styles.css'
+      - 'assets/audio/serie-1/**'
+      - 'assets/audio/serie-2/**'
+      - 'scripts/smoke_player_e2e.py'
+      - '.github/workflows/podcast-e2e.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  player-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar Playwright
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
+      - name: Servir site localmente
+        run: |
+          python -m http.server 8765 --bind 127.0.0.1 > /tmp/podcast-http.log 2>&1 &
+          echo $! > /tmp/podcast-http.pid
+          for i in {1..20}; do curl -fsS http://127.0.0.1:8765/ >/dev/null && exit 0; sleep 0.5; done
+          cat /tmp/podcast-http.log
+          exit 1
+      - name: Smoke E2E do player
+        run: python scripts/smoke_player_e2e.py http://127.0.0.1:8765/
