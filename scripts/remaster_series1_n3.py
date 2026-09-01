@@ -17,7 +17,7 @@ ROTEIROS = ROOT / 'roteiros' / 'serie-1'
 OUT = ROOT / 'assets' / 'audio' / 'serie-1'
 TMP = ROOT / '.tmp_serie1_n3'
 APP = ROOT / 'app.js'
-VERSION = 'n3-20260831b'
+VERSION = 'n3-20260831c'
 VERSION_TAG = 'n3'
 
 VOICE_NARRATOR = 'pt-BR-AntonioNeural'
@@ -32,16 +32,18 @@ ENDING_SILENCE_MS = 340
 TARGET_DBFS = -18.0
 DIALOGUE_EPISODES = {8, 9, 10, 11, 13, 14, 15}
 
-SPEAKER_PREFIXES = (
-    ('ABORDADOR_M:', VOICE_ABORDADOR_M, 'professional'),
-    ('ABORDADOR_F:', VOICE_ABORDADOR_F, 'professional'),
-    ('TENTANTE_M:', VOICE_TENTANTE_M, 'person_in_crisis'),
-    ('TENTANTE_F:', VOICE_TENTANTE_F, 'person_in_crisis'),
-    ('PROFISSIONAL:', VOICE_PROFISSIONAL, 'professional'),
-    ('INSTRUTOR:', VOICE_NARRATOR, 'narrator'),
-)
-
 GREETING_RE = re.compile(r'\bol[áa]\s*,?\s+pessoal\b[.!?…]*', flags=re.I)
+
+
+def speaker_prefixes():
+    return (
+        ('ABORDADOR_M:', VOICE_ABORDADOR_M, 'professional'),
+        ('ABORDADOR_F:', VOICE_ABORDADOR_F, 'professional'),
+        ('TENTANTE_M:', VOICE_TENTANTE_M, 'person_in_crisis'),
+        ('TENTANTE_F:', VOICE_TENTANTE_F, 'person_in_crisis'),
+        ('PROFISSIONAL:', VOICE_PROFISSIONAL, 'professional'),
+        ('INSTRUTOR:', VOICE_NARRATOR, 'narrator'),
+    )
 
 
 def approved_editorial_transform(text: str) -> str:
@@ -55,6 +57,99 @@ def isolate_greeting(text: str) -> str:
         text,
         flags=re.I,
     )
+
+
+async def probe_voice(voice: str) -> bool:
+    """Valida a voz no mesmo endpoint usado pela renderização antes de fixar o casting."""
+    TMP.mkdir(parents=True, exist_ok=True)
+    safe_name = re.sub(r'[^A-Za-z0-9_-]+', '_', voice)
+    path = TMP / f'_probe_{safe_name}.mp3'
+    for attempt in range(1, 4):
+        try:
+            c = edge_tts.Communicate(
+                text='Teste de voz.',
+                voice=voice,
+                rate='-2%',
+                pitch='+0Hz',
+                volume='+0%',
+            )
+            await asyncio.wait_for(c.save(str(path)), timeout=45)
+            ok = path.exists() and path.stat().st_size > 500
+            path.unlink(missing_ok=True)
+            if ok:
+                print(f'[VOICE OK] {voice}')
+                return True
+        except Exception as exc:
+            path.unlink(missing_ok=True)
+            print(f'[VOICE RETRY {attempt}/3] {voice}: {type(exc).__name__}')
+            await asyncio.sleep(1.4 * attempt)
+    return False
+
+
+async def choose_voice(candidates: list[str], excluded: set[str] | None = None) -> str:
+    excluded = excluded or set()
+    for voice in candidates:
+        if voice in excluded:
+            continue
+        if await probe_voice(voice):
+            return voice
+    raise RuntimeError(f'Nenhuma voz operacional encontrada entre: {candidates}')
+
+
+async def resolve_voice_cast():
+    """Seleciona vozes pt-BR estáveis e preserva diferença perceptível entre interlocutores."""
+    global VOICE_NARRATOR, VOICE_PROFISSIONAL
+    global VOICE_ABORDADOR_M, VOICE_TENTANTE_M, VOICE_ABORDADOR_F, VOICE_TENTANTE_F
+
+    # Antonio e Francisca já são as bases estáveis do ecossistema.
+    VOICE_NARRATOR = await choose_voice([
+        'pt-BR-AntonioNeural', 'pt-BR-DonatoNeural', 'pt-BR-HumbertoNeural'
+    ])
+    VOICE_PROFISSIONAL = await choose_voice([
+        'pt-BR-FranciscaNeural', 'pt-BR-GiovannaNeural', 'pt-BR-ElzaNeural'
+    ])
+
+    VOICE_ABORDADOR_M = VOICE_NARRATOR
+    VOICE_ABORDADOR_F = VOICE_PROFISSIONAL
+
+    # Para diálogos entre pessoas do mesmo sexo, prioriza outro modelo neural do mesmo sexo.
+    # Se o endpoint não expuser nenhum alternativo, usa uma voz pt-BR do outro sexo como
+    # último fallback: a regra de duas vozes distintas prevalece sobre duplicar o mesmo timbre.
+    VOICE_TENTANTE_M = await choose_voice([
+        'pt-BR-FabioNeural',
+        'pt-BR-DonatoNeural',
+        'pt-BR-HumbertoNeural',
+        'pt-BR-JulioNeural',
+        'pt-BR-NicolauNeural',
+        'pt-BR-ValerioNeural',
+        'pt-BR-FranciscaNeural',
+    ], excluded={VOICE_ABORDADOR_M})
+
+    VOICE_TENTANTE_F = await choose_voice([
+        'pt-BR-BrendaNeural',
+        'pt-BR-GiovannaNeural',
+        'pt-BR-ElzaNeural',
+        'pt-BR-LeilaNeural',
+        'pt-BR-ManuelaNeural',
+        'pt-BR-YaraNeural',
+        'pt-BR-AntonioNeural',
+    ], excluded={VOICE_ABORDADOR_F})
+
+    if VOICE_TENTANTE_M == VOICE_ABORDADOR_M:
+        raise RuntimeError('Casting masculino não ficou multivoz.')
+    if VOICE_TENTANTE_F == VOICE_ABORDADOR_F:
+        raise RuntimeError('Casting feminino não ficou multivoz.')
+
+    cast = {
+        'narrator': VOICE_NARRATOR,
+        'professional_default': VOICE_PROFISSIONAL,
+        'male_responder': VOICE_ABORDADOR_M,
+        'male_person_in_crisis': VOICE_TENTANTE_M,
+        'female_responder': VOICE_ABORDADOR_F,
+        'female_person_in_crisis': VOICE_TENTANTE_F,
+    }
+    print('[CAST]', json.dumps(cast, ensure_ascii=False))
+    return cast
 
 
 def read_turns(number: int):
@@ -72,7 +167,7 @@ def read_turns(number: int):
         voice = VOICE_NARRATOR
         role = 'narrator'
         text = line
-        for prefix, mapped_voice, mapped_role in SPEAKER_PREFIXES:
+        for prefix, mapped_voice, mapped_role in speaker_prefixes():
             if line.startswith(prefix):
                 voice = mapped_voice
                 role = mapped_role
@@ -101,7 +196,8 @@ def read_turns(number: int):
 
 async def synth(text, voice, rate, pitch, path, sem):
     async with sem:
-        for attempt in range(1, 4):
+        last_exc = None
+        for attempt in range(1, 7):
             try:
                 c = edge_tts.Communicate(
                     text=speakable(text),
@@ -110,12 +206,20 @@ async def synth(text, voice, rate, pitch, path, sem):
                     pitch=pitch,
                     volume='+0%',
                 )
-                await asyncio.wait_for(c.save(str(path)), timeout=55)
-                return
-            except Exception:
-                if attempt == 3:
-                    raise
-                await asyncio.sleep(.9 * attempt)
+                await asyncio.wait_for(c.save(str(path)), timeout=80)
+                if path.exists() and path.stat().st_size > 500:
+                    return
+                raise RuntimeError('Arquivo de síntese vazio ou incompleto.')
+            except Exception as exc:
+                last_exc = exc
+                path.unlink(missing_ok=True)
+                if attempt == 6:
+                    excerpt = re.sub(r'\s+', ' ', text)[:100]
+                    raise RuntimeError(
+                        f'Falha TTS após 6 tentativas | voz={voice} | trecho={excerpt!r}'
+                    ) from exc
+                await asyncio.sleep(1.4 * attempt)
+        raise last_exc
 
 
 async def build_episode(number: int, sem: asyncio.Semaphore):
@@ -134,6 +238,7 @@ async def build_episode(number: int, sem: asyncio.Semaphore):
         rate, pitch, pause = p.rate, p.pitch, p.pause_ms
 
         if lexical_tokens(text) == ['olá', 'caros', 'abordadores']:
+            # Saudação curta, direta e sem a desaceleração artificial do master anterior.
             rate = '-2%'
             pitch = '+0Hz'
             pause = 460
@@ -221,7 +326,10 @@ def patch_app_urls():
 
 async def main():
     TMP.mkdir(parents=True, exist_ok=True)
-    sem = asyncio.Semaphore(6)
+    cast = await resolve_voice_cast()
+
+    # Reduz concorrência: estabilidade tem prioridade sobre velocidade de renderização.
+    sem = asyncio.Semaphore(2)
     quality = []
 
     for number in range(1, 22):
@@ -232,6 +340,7 @@ async def main():
 
     report = {
         'version': VERSION,
+        'voice_cast': cast,
         'approved_greeting_substitution': {
             'from': 'Olá, pessoal.',
             'to': 'Olá, caros abordadores.',
