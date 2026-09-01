@@ -12,6 +12,13 @@ VOICE_GENDER = {
     "pt-BR-BrendaNeural": "F",
     "pt-BR-DonatoNeural": "M",
     "pt-BR-GiovannaNeural": "F",
+    "pt-BR-HumbertoNeural": "M",
+    "pt-BR-JulioNeural": "M",
+    "pt-BR-NicolauNeural": "M",
+    "pt-BR-ValerioNeural": "M",
+    "pt-BR-LeilaNeural": "F",
+    "pt-BR-ManuelaNeural": "F",
+    "pt-BR-YaraNeural": "F",
 }
 
 
