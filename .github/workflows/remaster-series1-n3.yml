@@ -34,6 +34,8 @@ jobs:
           sudo apt-get install -y ffmpeg
           python -m pip install --upgrade pip
           pip install edge-tts pydub
+      - name: Ajustar paralelismo do build
+        run: sed -i 's/asyncio.Semaphore(2)/asyncio.Semaphore(4)/' scripts/remaster_series1_n3.py
       - name: Gerar Serie 1 N3
         run: python scripts/remaster_series1_n3.py
       - name: Smoke test tecnico e editorial N3
