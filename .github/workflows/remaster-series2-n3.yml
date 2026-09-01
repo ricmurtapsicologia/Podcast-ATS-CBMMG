@@ -1,4 +1,4 @@
-name: Remasterizar Serie 2 N3 Natural
+name: Remasterizar Serie 2 N3 Casting
 
 on:
   push:
@@ -21,6 +21,7 @@ concurrency:
 
 jobs:
   render:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -37,29 +38,38 @@ jobs:
           pip install edge-tts pydub numpy
       - name: Gerar Serie 2 N3
         run: python scripts/remaster_series2_n3.py
-      - name: Smoke test tecnico N3
+      - name: Smoke test tecnico e de casting
         run: |
           python - <<'PY'
           import json, subprocess
           from pathlib import Path
           report=json.loads(Path('assets/audio/serie-2/quality-n3.json').read_text(encoding='utf-8'))
+          assert len(report['operational_voice_pool'])>=2
+          expected={4,5,6,7,8,9}
+          assert set(report['cinematic_multivoice_episodes'])==expected
+          conflicts=[('gorette','maria'),('claudio','ana'),('guilherme','fernanda'),('host','julia'),('host','dra_sara'),('lourdes','fatima')]
+          cast=report['character_cast']
+          for a,b in conflicts:
+              assert cast[a] != cast[b], (a,b,cast[a])
           eps=report['episodes']
           assert len(eps)==14
           assert [e['episode'] for e in eps]==list(range(14))
           for e in eps:
               p=Path('assets/audio/serie-2')/e['output']
               assert p.exists() and p.stat().st_size>1000, p
-              out=subprocess.check_output(['ffprobe','-v','error','-select_streams','a:0','-show_entries','stream=channels,sample_rate,duration','-of','json',str(p)],text=True)
-              info=json.loads(out)['streams'][0]
-              assert int(info['sample_rate'])==44100, (p,info)
-              assert float(info['duration'])>0, (p,info)
+              info=json.loads(subprocess.check_output(['ffprobe','-v','error','-select_streams','a:0','-show_entries','stream=channels,sample_rate,duration','-of','json',str(p)], text=True))['streams'][0]
+              assert int(info['sample_rate'])==44100
+              assert float(info['duration'])>0
               expected_channels=2 if e['profile']=='N3-D' else 1
-              assert int(info['channels'])==expected_channels, (p,info)
+              assert int(info['channels'])==expected_channels
               assert e['text_integrity_spoken_content']==1.0
+              if e['episode'] in expected:
+                  assert len(e['voices'])>=2, e
           app=Path('app.js').read_text(encoding='utf-8')
-          assert app.count('-n3.mp3')>=14
+          assert app.count('assets/audio/serie-2/a2-')>=14
+          assert app.count('n3-cast-20260901')>=14
           assert 'speechSynthesis' not in app
-          print('PASS: 14/14 episodios N3, 44.1 kHz, canais corretos, runtime N3.')
+          print('PASS: Serie 2 14/14; personagens simultaneos com vozes neurais distintas.')
           PY
       - name: Commitar masters N3
         run: |
@@ -70,6 +80,6 @@ jobs:
             echo "Sem alteracoes"
             exit 0
           fi
-          git commit -m "build: publicar Serie 2 no padrao N3 Natural"
+          git commit -m "build: publicar Serie 2 com casting neural por personagem"
           git pull --rebase --autostash origin main
           git push origin HEAD:main

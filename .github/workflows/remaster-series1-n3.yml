@@ -1,4 +1,4 @@
-name: Remasterizar Serie 1 N3 Natural
+name: Remasterizar Serie 1 N3 Casting
 
 on:
   push:
@@ -20,6 +20,7 @@ concurrency:
 
 jobs:
   render:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -34,51 +35,54 @@ jobs:
           sudo apt-get install -y ffmpeg
           python -m pip install --upgrade pip
           pip install edge-tts pydub
-      - name: Ajustar paralelismo do build
-        run: sed -i 's/asyncio.Semaphore(2)/asyncio.Semaphore(4)/' scripts/remaster_series1_n3.py
       - name: Gerar Serie 1 N3
         run: python scripts/remaster_series1_n3.py
-      - name: Smoke test tecnico e editorial N3
+      - name: Smoke test tecnico e editorial
         run: |
           python - <<'PY'
-          import json, subprocess
+          import json, re, subprocess
           from pathlib import Path
-
+          canonical='Olá, caros abordadores.'
+          old=re.compile(r'\bol[áa]\s*,?\s+pessoal\b', re.I)
+          scripts=sorted(Path('roteiros/serie-1').glob('a1-*.txt'))
+          assert len(scripts)==21
+          for p in scripts:
+              text=p.read_text(encoding='utf-8')
+              assert canonical in text, p
+              assert not old.search(text), p
           report=json.loads(Path('assets/audio/serie-1/quality-n3.json').read_text(encoding='utf-8'))
-          assert report['approved_greeting_substitution']['to']=='Olá, caros abordadores.'
-          expected_dialogues={8,9,10,11,13,14,15}
-          assert set(report['dialogue_episodes'])==expected_dialogues
-
-          eps=report['episodes']; assert len(eps)==21
+          assert report['canonical_greeting']==canonical
+          assert len(report['operational_voice_pool'])>=2
+          expected={6,7,8,9,10,11,13,14,15,16,19,20}
+          assert set(report['multivoice_episodes'])==expected
+          eps=report['episodes']
+          assert len(eps)==21
+          assert [e['episode'] for e in eps]==list(range(1,22))
           for e in eps:
               p=Path('assets/audio/serie-1')/e['output']
-              assert p.exists() and p.stat().st_size>1000
-              info=json.loads(subprocess.check_output([
-                  'ffprobe','-v','error','-select_streams','a:0',
-                  '-show_entries','stream=channels,sample_rate,duration',
-                  '-of','json',str(p)
-              ],text=True))['streams'][0]
+              assert p.exists() and p.stat().st_size>1000, p
+              info=json.loads(subprocess.check_output(['ffprobe','-v','error','-select_streams','a:0','-show_entries','stream=channels,sample_rate,duration','-of','json',str(p)], text=True))['streams'][0]
               assert int(info['channels'])==1
               assert int(info['sample_rate'])==44100
               assert float(info['duration'])>0
-              assert e['lexical_integrity']==1.0
-              assert e['greeting']=='Olá, caros abordadores.'
-              if e['episode'] in expected_dialogues:
-                  assert e['dialogue_multivoice'] is True
-                  assert len(e['voices'])>=2
-                  assert 'professional' in e['speaker_roles']
-                  assert 'person_in_crisis' in e['speaker_roles']
-
+              assert e['greeting']==canonical
+              if e['episode'] in expected:
+                  assert e['multivoice_required'] is True
+                  assert len(e['voices'])>=2, e
           app=Path('app.js').read_text(encoding='utf-8')
-          assert app.count('-n3.mp3')>=21
-          print('PASS: 21/21 N3; saudacao revisada; 7 dialogos multivoz validados.')
+          assert app.count('assets/audio/serie-1/a1-')>=21
+          assert app.count('n3-cast-20260901')>=21
+          print('PASS: Serie 1 21/21; saudacao canonica; 12 episodios demonstrativos multivoz.')
           PY
-      - name: Commitar masters N3
+      - name: Commitar masters e roteiros corrigidos
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/audio/serie-1 app.js
-          if git diff --cached --quiet; then echo "Sem alteracoes"; exit 0; fi
-          git commit -m "build: publicar Serie 1 N3 com saudacao e dialogos multivoz"
+          git add assets/audio/serie-1 app.js roteiros/serie-1
+          if git diff --cached --quiet; then
+            echo "Sem alteracoes"
+            exit 0
+          fi
+          git commit -m "build: publicar Serie 1 com saudacao canonica e casting neural"
           git pull --rebase --autostash origin main
           git push origin HEAD:main
