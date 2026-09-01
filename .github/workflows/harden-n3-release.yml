@@ -36,9 +36,11 @@ jobs:
         run: python scripts/hotfix_n3_voice_candidates.py
       - name: Aplicar hardening de código
         run: python scripts/harden_n3_casting.py
+      - name: Adaptar ao pool operacional do edge-tts
+        run: python scripts/adapt_n3_operational_pool.py
       - name: Compilar módulos críticos
         run: |
-          python -m py_compile scripts/n3_audio_core.py scripts/n3_casting.py scripts/hotfix_n3_voice_candidates.py scripts/remaster_series1_n3.py scripts/remaster_series2_n3.py scripts/qa_n3_release.py scripts/smoke_player_e2e.py
+          python -m py_compile scripts/n3_audio_core.py scripts/n3_casting.py scripts/hotfix_n3_voice_candidates.py scripts/adapt_n3_operational_pool.py scripts/remaster_series1_n3.py scripts/remaster_series2_n3.py scripts/qa_n3_release.py scripts/smoke_player_e2e.py
       - name: Regerar Série 1 N3
         run: python scripts/remaster_series1_n3.py
       - name: Regerar Série 2 N3
@@ -58,7 +60,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add scripts/remaster_series1_n3.py scripts/remaster_series2_n3.py scripts/n3_casting.py scripts/hotfix_n3_voice_candidates.py scripts/qa_n3_release.py scripts/smoke_player_e2e.py .github/workflows/remaster-series1-n3.yml .github/workflows/remaster-series2-n3.yml .github/workflows/podcast-e2e.yml .github/workflows/n3-release-gate.yml README.md app.js assets/audio/serie-1 assets/audio/serie-2
+          git add scripts/remaster_series1_n3.py scripts/remaster_series2_n3.py scripts/n3_casting.py scripts/hotfix_n3_voice_candidates.py scripts/adapt_n3_operational_pool.py scripts/qa_n3_release.py scripts/smoke_player_e2e.py .github/workflows/remaster-series1-n3.yml .github/workflows/remaster-series2-n3.yml .github/workflows/podcast-e2e.yml .github/workflows/n3-release-gate.yml README.md app.js assets/audio/serie-1 assets/audio/serie-2
           if git diff --cached --quiet; then
             echo "Sem alterações após hardening"
             exit 0
