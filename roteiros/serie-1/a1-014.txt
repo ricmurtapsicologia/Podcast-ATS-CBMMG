@@ -1,11 +1,34 @@
 # Série 1 — Episódio 014
 # Fonte: 014 Ponte para o Passado Resgatando Memórias Agradáveis.mp3.mp3
-# Transcrição automática congelada do MP3 original; não houve reescrita editorial.
-# Modo: narração única
+# Revisão N3: saudação aprovada e diálogo multivoz.
+# Modo: narração + diálogo multivoz
 
-INSTRUTOR: Ponte para o passado resgatando memórias agradáveis. Olá, pessoal. Continuando nossa série sobre abordagem técnica e comunicação que salva, hoje vamos demonstrar como aplicar a técnica da ponte para o passado em um cenário de tentativa de suicídio. Essa ferramenta ajuda o tentante a se reconectar com memórias sensoriais agradáveis, criando um espaço emocional positivo. Vamos acompanhar como ela funciona na prática. Sena. Larissa está sentada no parapeito de uma sacada, segurando um colar com pingente em forma de coração. Ela está visivelmente emocionada,
-INSTRUTOR: mas já desenvolveu algum vínculo com o abordador que busca explorar um fator de proteção ligado a uma lembrança especial do passado. Diálogo. Larissa, esse colar parece importante para você. Tem alguma história especial por trás dele? Sim. Foi meu avô quem me deu. Era um dia muito especial. Que lindo. Você lembra como era aquele dia? Onde vocês estavam? Na varanda da casa dele, tomando café. Era um dia ensolarado. Consigo imaginar a Sena. Como era a varanda? Você consegue se lembrar de alguns detalhes?
-INSTRUTOR: Tinha uma rede branca, as plantas ao redor eram bem verdes, e o cheiro das flores era forte. Esse cheiro devia ser marcante. E o som? Tinha algo que chamava atenção. Os pássaros. Ele adorava colocar milho para eles. Que bonito. Ele costumava dizer algo para você nesses momentos. Ele dizia que eu era forte e que tudo o que é ruim passa. Que palavras inspiradoras. E aquele café? Você lembra do gosto? Era bem forte, mas ele sempre colocava muito açúcar. Parece que ele gostava de coisas doces. Tinha algo especial que ele fazia para vocês comerem.
-INSTRUTOR: Biscoitos de polvilho. O cheiro deles assando era delicioso. Imagino que fosse reconfortante. Como você se sentia estando lá com ele? Eu me sentia tranquila, protegida. Deve ter sido um momento único. O céu, você lembra de como era naquele dia. Azul, bem claro. Sem nenhuma nuvem. E o vento? Consegue lembrar se tinha uma brisa? Tinha. Era bem leve. Refrescava. Quando ele te entregou o colar, ele disse alguma coisa. Sim. Que era para eu lembrar que ele estaria comigo, sempre. Isso é muito especial. Ele acreditava muito em você, Larissa.
-INSTRUTOR: Você acha que essa força que ele via ainda faz parte de você? Não sei. Talvez. Essas memórias mostram que momentos bons fazem parte de quem você é. Se pudesse trazer algo daquele dia para o presente, o que seria? A paz que eu sentia. Essa paz está dentro de você. E ela pode estar aqui agora também. Por que essa técnica funciona? A Ponte para o Passado ajuda o tentante a acessar memórias sensoriais agradáveis que evocam emoções positivas e reconexão com o presente. Essa estratégia funciona como uma âncora emocional,
-INSTRUTOR: reduzindo o foco no sofrimento atual e fortalecendo a esperança. No próximo episódio, vamos explorar a Ponte para o Futuro, ajudando o tentante a visualizar novas possibilidades. Não perca.
+INSTRUTOR: Ponte para o passado, resgatando memórias agradáveis. Olá, pessoal. Continuando nossa série sobre abordagem técnica e comunicação que salva, hoje vamos demonstrar como aplicar a técnica da ponte para o passado em um cenário de tentativa de suicídio. Essa ferramenta ajuda o tentante a se reconectar com memórias sensoriais agradáveis, criando um espaço emocional positivo. Vamos acompanhar como ela funciona na prática. Cena: Larissa está sentada no parapeito de uma sacada, segurando um colar com pingente em forma de coração. Ela está visivelmente emocionada, mas já desenvolveu algum vínculo com o abordador, que busca explorar um fator de proteção ligado a uma lembrança especial do passado.
+ABORDADOR_M: Larissa, esse colar parece importante para você. Tem alguma história especial por trás dele?
+TENTANTE_F: Sim. Foi meu avô quem me deu. Era um dia muito especial.
+ABORDADOR_M: Que lindo. Você lembra como era aquele dia? Onde vocês estavam?
+TENTANTE_F: Na varanda da casa dele, tomando café. Era um dia ensolarado.
+ABORDADOR_M: Consigo imaginar a cena. Como era a varanda? Você consegue se lembrar de alguns detalhes?
+TENTANTE_F: Tinha uma rede branca, as plantas ao redor eram bem verdes, e o cheiro das flores era forte.
+ABORDADOR_M: Esse cheiro devia ser marcante. E o som? Tinha algo que chamava atenção?
+TENTANTE_F: Os pássaros. Ele adorava colocar milho para eles.
+ABORDADOR_M: Que bonito. Ele costumava dizer algo para você nesses momentos?
+TENTANTE_F: Ele dizia que eu era forte e que tudo o que é ruim passa.
+ABORDADOR_M: Que palavras inspiradoras. E aquele café? Você lembra do gosto?
+TENTANTE_F: Era bem forte, mas ele sempre colocava muito açúcar.
+ABORDADOR_M: Parece que ele gostava de coisas doces. Tinha algo especial que ele fazia para vocês comerem?
+TENTANTE_F: Biscoitos de polvilho. O cheiro deles assando era delicioso.
+ABORDADOR_M: Imagino que fosse reconfortante. Como você se sentia estando lá com ele?
+TENTANTE_F: Eu me sentia tranquila, protegida.
+ABORDADOR_M: Deve ter sido um momento único. O céu, você lembra de como era naquele dia?
+TENTANTE_F: Azul, bem claro. Sem nenhuma nuvem.
+ABORDADOR_M: E o vento? Consegue lembrar se tinha uma brisa?
+TENTANTE_F: Tinha. Era bem leve. Refrescava.
+ABORDADOR_M: Quando ele te entregou o colar, ele disse alguma coisa?
+TENTANTE_F: Sim. Que era para eu lembrar que ele estaria comigo, sempre.
+ABORDADOR_M: Isso é muito especial. Ele acreditava muito em você, Larissa. Você acha que essa força que ele via ainda faz parte de você?
+TENTANTE_F: Não sei. Talvez.
+ABORDADOR_M: Essas memórias mostram que momentos bons fazem parte de quem você é. Se pudesse trazer algo daquele dia para o presente, o que seria?
+TENTANTE_F: A paz que eu sentia.
+ABORDADOR_M: Essa paz está dentro de você. E ela pode estar aqui agora também.
+INSTRUTOR: Por que essa técnica funciona? A Ponte para o Passado ajuda o tentante a acessar memórias sensoriais agradáveis que evocam emoções positivas e reconexão com o presente. Essa estratégia funciona como uma âncora emocional, reduzindo o foco no sofrimento atual e fortalecendo a esperança. No próximo episódio, vamos explorar a Ponte para o Futuro, ajudando o tentante a visualizar novas possibilidades. Não perca.

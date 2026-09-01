@@ -1,10 +1,32 @@
 # Série 1 — Episódio 009
 # Fonte: 009 Usando Perguntas Simples com Tentante de Perfil Agressivo.mp3.mp3
-# Transcrição automática congelada do MP3 original; não houve reescrita editorial.
-# Modo: narração única
+# Revisão N3: saudação aprovada e diálogo multivoz.
+# Modo: narração + diálogo multivoz
 
-INSTRUTOR: usando perguntas simples com um tentante de perfil agressivo. Olá, pessoal. Continuando nossa série sobre abordagem técnica e comunicação que salva, hoje vamos demonstrar como usar perguntas simples para lidar com um tentante de perfil agressivo. Esse tipo de abordagem exige calma, empatia e muito cuidado, já que estamos lidando com alguém que pode expressar raiva ou hostilidade. Vamos acompanhar o diálogo. Uma mulher está no terraço de um prédio, andando de um lado para o outro, gesticulando de forma agitada e falando em tom elevado.
-INSTRUTOR: O abordador mantém distância inicial, respeitando o espaço da tentante. Abordador. Oi, meu nome é Ana. Sou bombeira militar e estou aqui para ouvir você. Como posso te chamar? Não quero falar com ninguém. Entendo. Parece que você está muito irritada. Posso ficar aqui para garantir que você não esteja sozinha? Faz o que quiser. Ninguém se importa mesmo. Isso soa muito doloroso. Me conta, tem alguém na sua vida que você sente que já se importou com você? Não. Nunca se importaram. Você mora com alguém? Ou está morando sozinha?
-INSTRUTOR: Moro com minha irmã, mas ela só grita comigo. Entendo como isso pode ser difícil. E fora da sua casa, tem alguém em quem você confia ou com quem gosta de conversar? Não tenho ninguém. Às vezes é difícil encontrar alguém para ouvir. Antes disso, o que costumava te ajudar a relaxar quando as coisas ficavam difíceis? Eu fazia academia, mas parei. Fazer exercícios ajudava você? Já pensou em voltar ou sente que agora não faz sentido? Não sei. Não consigo pensar nisso agora. Entendi. Você trabalha ou estuda? Como era a sua rotina antes de chegar até aqui?
-INSTRUTOR: É sustentante. Trabalho, mas meu chefe é insuportável. Isso parece bem frustrante. Você sente que as coisas no trabalho têm contribuído para o que está sentindo agora? Com certeza. E fora isso, tem algo que você gosta de fazer, como ouvir música ou ver filmes? Eu ouço música às vezes, mas não ajuda muito. Qual estilo de música você gosta? Tem alguma banda ou artista que te marcou? Eu ouvia muito antes. Entendi. Quando você pensa em momentos bons que já viveu, consegue lembrar de algo específico que te trouxe felicidade? Não. Não lembro de nada agora.
-INSTRUTOR: Tudo bem. E sobre o que você sente que precisa mais agora, além de alguém para te ouvir? Por que essas perguntas funcionam? Essas perguntas equilibram a busca por fatores de risco, como relações tensas, ausência de apoio ou situações de conflito, e fatores de proteção, como hobbies, lembranças positivas ou conexões interpessoais. O objetivo é desarmar a agressividade inicial e criar uma ponte de diálogo, sempre respeitando o ritmo do tentante. No próximo episódio, vamos falar sobre como usar perguntas simples com tentantes de perfil psicótico. Não perca.
+INSTRUTOR: Usando perguntas simples com um tentante de perfil agressivo. Olá, pessoal. Continuando nossa série sobre abordagem técnica e comunicação que salva, hoje vamos demonstrar como usar perguntas simples para lidar com um tentante de perfil agressivo. Esse tipo de abordagem exige calma, empatia e muito cuidado, já que estamos lidando com alguém que pode expressar raiva ou hostilidade. Vamos acompanhar o diálogo. Uma mulher está no terraço de um prédio, andando de um lado para o outro, gesticulando de forma agitada e falando em tom elevado. A abordadora mantém distância inicial, respeitando o espaço da tentante.
+ABORDADOR_F: Oi, meu nome é Ana. Sou bombeira militar e estou aqui para ouvir você. Como posso te chamar?
+TENTANTE_F: Não quero falar com ninguém.
+ABORDADOR_F: Entendo. Parece que você está muito irritada. Posso ficar aqui para garantir que você não esteja sozinha?
+TENTANTE_F: Faz o que quiser. Ninguém se importa mesmo.
+ABORDADOR_F: Isso soa muito doloroso. Me conta, tem alguém na sua vida que você sente que já se importou com você?
+TENTANTE_F: Não. Nunca se importaram.
+ABORDADOR_F: Você mora com alguém? Ou está morando sozinha?
+TENTANTE_F: Moro com minha irmã, mas ela só grita comigo.
+ABORDADOR_F: Entendo como isso pode ser difícil. E fora da sua casa, tem alguém em quem você confia ou com quem gosta de conversar?
+TENTANTE_F: Não tenho ninguém.
+ABORDADOR_F: Às vezes é difícil encontrar alguém para ouvir. Antes disso, o que costumava te ajudar a relaxar quando as coisas ficavam difíceis?
+TENTANTE_F: Eu fazia academia, mas parei.
+ABORDADOR_F: Fazer exercícios ajudava você? Já pensou em voltar ou sente que agora não faz sentido?
+TENTANTE_F: Não sei. Não consigo pensar nisso agora.
+ABORDADOR_F: Entendi. Você trabalha ou estuda? Como era a sua rotina antes de chegar até aqui?
+TENTANTE_F: Trabalho, mas meu chefe é insuportável.
+ABORDADOR_F: Isso parece bem frustrante. Você sente que as coisas no trabalho têm contribuído para o que está sentindo agora?
+TENTANTE_F: Com certeza.
+ABORDADOR_F: E fora isso, tem algo que você gosta de fazer, como ouvir música ou ver filmes?
+TENTANTE_F: Eu ouço música às vezes, mas não ajuda muito.
+ABORDADOR_F: Qual estilo de música você gosta? Tem alguma banda ou artista que te marcou?
+TENTANTE_F: Eu ouvia muito antes.
+ABORDADOR_F: Entendi. Quando você pensa em momentos bons que já viveu, consegue lembrar de algo específico que te trouxe felicidade?
+TENTANTE_F: Não. Não lembro de nada agora.
+ABORDADOR_F: Tudo bem. E sobre o que você sente que precisa mais agora, além de alguém para te ouvir?
+INSTRUTOR: Por que essas perguntas funcionam? Essas perguntas equilibram a busca por fatores de risco, como relações tensas, ausência de apoio ou situações de conflito, e fatores de proteção, como hobbies, lembranças positivas ou conexões interpessoais. O objetivo é desarmar a agressividade inicial e criar uma ponte de diálogo, sempre respeitando o ritmo do tentante. No próximo episódio, vamos falar sobre como usar perguntas simples com tentantes de perfil psicótico. Não perca.
