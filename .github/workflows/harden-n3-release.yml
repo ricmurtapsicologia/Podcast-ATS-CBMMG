@@ -1,0 +1,66 @@
+name: Harden N3 release
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/harden-n3-release.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: harden-n3-release
+  cancel-in-progress: true
+
+jobs:
+  harden:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Instalar dependências de áudio e E2E
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          pip install edge-tts pydub numpy playwright
+          playwright install --with-deps chromium
+      - name: Aplicar hardening de código
+        run: python scripts/harden_n3_casting.py
+      - name: Compilar módulos críticos
+        run: |
+          python -m py_compile scripts/n3_audio_core.py scripts/n3_casting.py scripts/remaster_series1_n3.py scripts/remaster_series2_n3.py scripts/qa_n3_release.py scripts/smoke_player_e2e.py
+      - name: Regerar Série 1 N3
+        run: python scripts/remaster_series1_n3.py
+      - name: Regerar Série 2 N3
+        run: python scripts/remaster_series2_n3.py
+      - name: Gate integral 35/35
+        run: python scripts/qa_n3_release.py
+      - name: Servir site localmente
+        run: |
+          python -m http.server 8765 --bind 127.0.0.1 > /tmp/podcast-http.log 2>&1 &
+          echo $! > /tmp/podcast-http.pid
+          for i in {1..30}; do curl -fsS http://127.0.0.1:8765/ >/dev/null && exit 0; sleep 0.5; done
+          cat /tmp/podcast-http.log
+          exit 1
+      - name: Smoke E2E do player
+        run: python scripts/smoke_player_e2e.py http://127.0.0.1:8765/
+      - name: Commitar release endurecido
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/remaster_series1_n3.py scripts/remaster_series2_n3.py scripts/n3_casting.py scripts/qa_n3_release.py scripts/smoke_player_e2e.py .github/workflows/remaster-series1-n3.yml .github/workflows/remaster-series2-n3.yml .github/workflows/podcast-e2e.yml .github/workflows/n3-release-gate.yml README.md app.js assets/audio/serie-1 assets/audio/serie-2
+          if git diff --cached --quiet; then
+            echo "Sem alterações após hardening"
+            exit 0
+          fi
+          git commit -m "build: endurecer casting N3 e liberar podcast após gates"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
