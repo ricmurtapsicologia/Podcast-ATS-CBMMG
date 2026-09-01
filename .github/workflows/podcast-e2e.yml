@@ -44,5 +44,25 @@ jobs:
           for i in {1..20}; do curl -fsS http://127.0.0.1:8765/ >/dev/null && exit 0; sleep 0.5; done
           cat /tmp/podcast-http.log
           exit 1
-      - name: Smoke E2E do player
+      - name: Smoke E2E local do player
         run: python scripts/smoke_player_e2e.py http://127.0.0.1:8765/
+      - name: Confirmar identidade da release pública N3
+        run: |
+          curl -fsSL --retry 5 --retry-delay 2 \
+            "https://ricmurtapsicologia.github.io/Podcast-ATS-CBMMG/app.js?release=${GITHUB_SHA}" \
+            -o /tmp/public-app.js
+          python - <<'PY'
+          from pathlib import Path
+          text = Path('/tmp/public-app.js').read_text(encoding='utf-8')
+          version = 'n3-cast-20260901c'
+          s1 = text.count('assets/audio/serie-1/a1-')
+          s2 = text.count('assets/audio/serie-2/a2-')
+          version_refs = text.count(f'?v={version}')
+          assert s1 == 21, f'Série 1 pública: {s1}/21'
+          assert s2 == 14, f'Série 2 pública: {s2}/14'
+          assert version_refs == 35, f'Referências públicas {version}: {version_refs}/35'
+          assert 'n3-cast-20260901b' not in text, 'Referência antiga N3-B encontrada no app público'
+          print(f'PASS: app público {version}; Série 1 21/21; Série 2 14/14; URLs 35/35.')
+          PY
+      - name: Smoke E2E da versão pública
+        run: python scripts/smoke_player_e2e.py https://ricmurtapsicologia.github.io/Podcast-ATS-CBMMG/
