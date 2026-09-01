@@ -18,23 +18,24 @@ OUT = ROOT / "assets" / "audio" / "serie-1"
 TMP = ROOT / ".tmp_serie1_n3"
 APP = ROOT / "app.js"
 
-VERSION = "n3-cast-20260901"
+VERSION = "n3-cast-20260901b"
 VERSION_TAG = "n3"
 OPENING_SILENCE_MS = 160
 ENDING_SILENCE_MS = 320
 TARGET_DBFS = -18.0
-MAX_CONCURRENT_SYNTH = 4
-SYNTH_TIMEOUT_SECONDS = 70
+MAX_CONCURRENT_SYNTH = 2
+SYNTH_TIMEOUT_SECONDS = 80
+MAX_TTS_CHARS = 620
 
 CANONICAL_GREETING = "Olá, caros abordadores."
 GREETING_RE = re.compile(r"\bol[áa]\s*,?\s+pessoal\b[.!?…]*", flags=re.I)
 MULTIVOICE_EPISODES = {6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 19, 20}
 
 VOICE_CANDIDATES = [
-    ("pt-BR-MacerioMultilingualNeural", "M"),
     ("pt-BR-ThalitaMultilingualNeural", "F"),
     ("pt-BR-AntonioNeural", "M"),
     ("pt-BR-FranciscaNeural", "F"),
+    ("pt-BR-MacerioMultilingualNeural", "M"),
     ("pt-BR-ThalitaNeural", "F"),
     ("pt-BR-FabioNeural", "M"),
     ("pt-BR-BrendaNeural", "F"),
@@ -101,13 +102,13 @@ def curated_segments(number: int, text: str) -> list[tuple[str | None, str]]:
             ("Como você está", "DEMO_M"),
         ]
         for phrase, speaker in phrases:
-            new = []
+            newer = []
             for current_speaker, chunk in parts:
                 if current_speaker is not None:
-                    new.append((current_speaker, chunk))
-                    continue
-                new.extend(split_once(chunk, phrase, speaker))
-            parts = new
+                    newer.append((current_speaker, chunk))
+                else:
+                    newer.extend(split_once(chunk, phrase, speaker))
+            parts = newer
         return parts
 
     if number == 7:
@@ -118,28 +119,22 @@ def curated_segments(number: int, text: str) -> list[tuple[str | None, str]]:
         text = re.sub(r"\bSena\.\s*Camila\.\s*", "Camila. ", text, flags=re.I)
         m = re.search(r"\bAbordador\.\s*", text, flags=re.I)
         if m:
-            before = text[:m.start()].strip()
-            after = text[m.end():].strip()
-            return [(None, before), ("ABORDADOR_M", after)]
-        return [(None, text)]
+            return [(None, text[:m.start()].strip()), ("ABORDADOR_M", text[m.end():].strip())]
 
     if number == 19:
-        parts = [(None, text)]
-        for phrase in (
-            "Para você, pareço ser essa pessoa.",
-            "você está segurando a mochila firmemente.",
-        ):
-            new = []
+        parts: list[tuple[str | None, str]] = [(None, text)]
+        for phrase in ("Para você, pareço ser essa pessoa.", "você está segurando a mochila firmemente."):
+            newer = []
             for current_speaker, chunk in parts:
                 if current_speaker is not None:
-                    new.append((current_speaker, chunk))
-                    continue
-                new.extend(split_once(chunk, phrase, "DEMO_M"))
-            parts = new
+                    newer.append((current_speaker, chunk))
+                else:
+                    newer.extend(split_once(chunk, phrase, "DEMO_M"))
+            parts = newer
         return parts
 
     if number == 20:
-        parts = [(None, text)]
+        parts: list[tuple[str | None, str]] = [(None, text)]
         phrases = [
             "Cláudia, aqui é o Júlio, Bombeiro Militar. Preciso que você me responda.",
             "Vou contar até três. Se você não responder, teremos que arrombar a porta.",
@@ -147,49 +142,37 @@ def curated_segments(number: int, text: str) -> list[tuple[str | None, str]]:
             "Um, dois, três.",
         ]
         for phrase in phrases:
-            new = []
+            newer = []
             for current_speaker, chunk in parts:
                 if current_speaker is not None:
-                    new.append((current_speaker, chunk))
-                    continue
-                new.extend(split_once(chunk, phrase, "ABORDADOR_M"))
-            parts = new
+                    newer.append((current_speaker, chunk))
+                else:
+                    newer.extend(split_once(chunk, phrase, "ABORDADOR_M"))
+            parts = newer
         return parts
 
     return [(None, text)]
 
 
-def parse_line(raw: str) -> tuple[str, str, str | None]:
-    line = raw.strip()
+def parse_line(line: str):
     for prefix, (role, gender) in PREFIXES.items():
         if line.startswith(prefix + ":"):
-            return prefix, role, gender
-    return "INSTRUTOR", "narrator", None
+            return prefix, role, gender, line.split(":", 1)[1].strip()
+    return "INSTRUTOR", "narrator", None, line
 
 
-def source_turns(number: int):
+def raw_turns(number: int):
     path = ROTEIROS / f"a1-{number:03d}.txt"
-    turns: list[dict] = []
-    source_spoken: list[str] = []
-
+    turns = []
+    source_spoken = []
     for raw in path.read_text(encoding="utf-8").splitlines():
         line = raw.strip()
         if not line or line.startswith("#"):
             continue
-
-        speaker, role, gender = parse_line(line)
-        if ":" in line and line.split(":", 1)[0] in PREFIXES:
-            text = line.split(":", 1)[1].strip()
-        else:
-            text = line
+        speaker, role, gender, text = parse_line(line)
         if not text:
             continue
-
-        if speaker == "INSTRUTOR" and number in {6, 7, 16, 19, 20}:
-            segments = curated_segments(number, text)
-        else:
-            segments = [(speaker, text)]
-
+        segments = curated_segments(number, text) if speaker == "INSTRUTOR" and number in {6, 7, 16, 19, 20} else [(speaker, text)]
         for override, chunk in segments:
             if not chunk:
                 continue
@@ -197,154 +180,140 @@ def source_turns(number: int):
             seg_role, seg_gender = PREFIXES.get(seg_speaker, (role, gender))
             spoken = legacy.add_prosodic_punctuation(chunk)
             for unit in breath_units(spoken):
-                turns.append({
-                    "speaker": seg_speaker,
-                    "role": seg_role,
-                    "gender": seg_gender,
-                    "text": unit,
-                })
+                turns.append({"speaker": seg_speaker, "role": seg_role, "gender": seg_gender, "text": unit})
             source_spoken.append(chunk)
-
     if not turns:
         raise RuntimeError(f"Roteiro vazio: {path}")
-
-    source_tokens = lexical_tokens(" ".join(source_spoken))
-    rebuilt_tokens = lexical_tokens(" ".join(t["text"] for t in turns))
-    if source_tokens != rebuilt_tokens:
+    if lexical_tokens(" ".join(source_spoken)) != lexical_tokens(" ".join(x["text"] for x in turns)):
         raise RuntimeError(f"Gate lexical falhou em A1-{number:03d}")
     return turns
 
 
+def compact_turns(turns: list[dict]) -> list[dict]:
+    """Agrupa unidades consecutivas do mesmo locutor para reduzir chamadas ao TTS sem fundir personagens."""
+    out: list[dict] = []
+    for turn in turns:
+        if out and out[-1]["speaker"] == turn["speaker"] and len(out[-1]["text"]) + 1 + len(turn["text"]) <= MAX_TTS_CHARS:
+            out[-1]["text"] = normalize_space(out[-1]["text"] + " " + turn["text"])
+        else:
+            out.append(dict(turn))
+    return out
+
+
 async def probe_voice(name: str) -> bool:
     TMP.mkdir(parents=True, exist_ok=True)
-    probe = TMP / ("probe-" + re.sub(r"[^A-Za-z0-9_-]+", "_", name) + ".mp3")
-    for attempt in range(2):
+    path = TMP / ("probe-" + re.sub(r"[^A-Za-z0-9_-]+", "_", name) + ".mp3")
+    for attempt in range(1, 4):
         try:
-            c = edge_tts.Communicate(
-                text="Teste breve de voz neural.", voice=name,
-                rate="-2%", pitch="+0Hz", volume="+0%",
-            )
-            await asyncio.wait_for(c.save(str(probe)), timeout=35)
-            ok = probe.exists() and probe.stat().st_size > 500
-            probe.unlink(missing_ok=True)
+            c = edge_tts.Communicate(text="Teste breve de voz neural.", voice=name, rate="-2%", pitch="+0Hz", volume="+0%")
+            await asyncio.wait_for(c.save(str(path)), timeout=40)
+            ok = path.exists() and path.stat().st_size > 500
+            path.unlink(missing_ok=True)
             if ok:
                 print(f"[VOICE OK] {name}")
                 return True
         except Exception as exc:
-            probe.unlink(missing_ok=True)
-            print(f"[VOICE FAIL] {name}: {type(exc).__name__}")
-            if attempt == 0:
-                await asyncio.sleep(0.8)
+            path.unlink(missing_ok=True)
+            print(f"[VOICE PROBE {attempt}/3] {name}: {type(exc).__name__}")
+            await asyncio.sleep(1.2 * attempt)
     return False
 
 
 async def resolve_operational_pool():
     operational = []
-    for name, gender in VOICE_CANDIDATES[:4]:
+    for name, gender in VOICE_CANDIDATES:
         if await probe_voice(name):
             operational.append({"voice": name, "gender": gender})
-    if len(operational) < 3:
-        for name, gender in VOICE_CANDIDATES[4:]:
-            if await probe_voice(name):
-                operational.append({"voice": name, "gender": gender})
-            if len(operational) >= 4:
-                break
+        if len(operational) >= 3:
+            break
     if len(operational) < 2:
         raise RuntimeError("Menos de duas vozes neurais realmente operacionais.")
     return operational
 
 
-def voice_preferences(speaker: str, role: str, gender: str | None) -> list[str]:
+def voice_preferences(role: str, gender: str | None):
     if role == "narrator":
-        return ["pt-BR-MacerioMultilingualNeural", "pt-BR-AntonioNeural", "pt-BR-ThalitaMultilingualNeural", "pt-BR-FranciscaNeural"]
+        return ["pt-BR-AntonioNeural", "pt-BR-ThalitaMultilingualNeural", "pt-BR-FranciscaNeural"]
     if gender == "F":
-        return ["pt-BR-ThalitaMultilingualNeural", "pt-BR-FranciscaNeural", "pt-BR-ThalitaNeural", "pt-BR-BrendaNeural", "pt-BR-GiovannaNeural", "pt-BR-MacerioMultilingualNeural", "pt-BR-AntonioNeural"]
+        return ["pt-BR-ThalitaMultilingualNeural", "pt-BR-FranciscaNeural", "pt-BR-AntonioNeural"]
     if gender == "M":
-        return ["pt-BR-MacerioMultilingualNeural", "pt-BR-AntonioNeural", "pt-BR-FabioNeural", "pt-BR-DonatoNeural", "pt-BR-ThalitaMultilingualNeural", "pt-BR-FranciscaNeural"]
-    return ["pt-BR-FranciscaNeural", "pt-BR-ThalitaMultilingualNeural", "pt-BR-AntonioNeural", "pt-BR-MacerioMultilingualNeural"]
+        return ["pt-BR-AntonioNeural", "pt-BR-ThalitaMultilingualNeural", "pt-BR-FranciscaNeural"]
+    return ["pt-BR-FranciscaNeural", "pt-BR-ThalitaMultilingualNeural", "pt-BR-AntonioNeural"]
 
 
-def build_episode_cast(turns: list[dict], pool: list[dict]) -> dict[str, str]:
-    available = {x["voice"]: x for x in pool}
+def build_episode_cast(turns: list[dict], pool: list[dict]):
+    available = [x["voice"] for x in pool]
     speakers = []
     info = {}
     for t in turns:
-        s = t["speaker"]
-        if s not in info:
-            speakers.append(s)
-            info[s] = (t["role"], t["gender"])
-
-    cast: dict[str, str] = {}
-    used_characters: set[str] = set()
+        if t["speaker"] not in info:
+            speakers.append(t["speaker"])
+            info[t["speaker"]] = (t["role"], t["gender"])
+    cast = {}
+    used = set()
     for speaker in [s for s in speakers if info[s][0] != "narrator"]:
         role, gender = info[speaker]
-        prefs = voice_preferences(speaker, role, gender)
-        choice = next((v for v in prefs if v in available and v not in used_characters), None)
-        if choice is None:
-            choice = next((v for v in prefs if v in available), None)
-        if choice is None:
-            choice = next(iter(available))
+        prefs = [v for v in voice_preferences(role, gender) if v in available]
+        choice = next((v for v in prefs if v not in used), None) or (prefs[0] if prefs else available[0])
         cast[speaker] = choice
-        used_characters.add(choice)
-
+        used.add(choice)
     for speaker in [s for s in speakers if info[s][0] == "narrator"]:
-        prefs = voice_preferences(speaker, "narrator", None)
-        choice = next((v for v in prefs if v in available and v not in used_characters), None)
-        if choice is None:
-            choice = next((v for v in prefs if v in available), None) or next(iter(available))
-        cast[speaker] = choice
-
-    character_speakers = [s for s in speakers if info[s][0] != "narrator"]
-    if len(character_speakers) >= 2:
-        voices = [cast[s] for s in character_speakers]
-        if len(set(voices)) < min(len(character_speakers), len(pool)):
-            for i, s in enumerate(character_speakers):
-                cast[s] = pool[i % len(pool)]["voice"]
+        prefs = [v for v in voice_preferences("narrator", None) if v in available]
+        cast[speaker] = next((v for v in prefs if v not in used), None) or (prefs[0] if prefs else available[0])
+    chars = [s for s in speakers if info[s][0] != "narrator"]
+    if len(chars) >= 2 and len(set(cast[s] for s in chars)) < min(len(chars), len(available)):
+        for i, speaker in enumerate(chars):
+            cast[speaker] = available[i % len(available)]
     return cast
 
 
 async def synth(text, voice, rate, pitch, path, sem):
     async with sem:
-        for attempt in range(1, 6):
+        last_exc = None
+        for attempt in range(1, 9):
             try:
+                await asyncio.sleep(0.18)
                 c = edge_tts.Communicate(text=speakable(text), voice=voice, rate=rate, pitch=pitch, volume="+0%")
                 await asyncio.wait_for(c.save(str(path)), timeout=SYNTH_TIMEOUT_SECONDS)
                 if path.exists() and path.stat().st_size > 500:
                     return
                 raise RuntimeError("arquivo TTS vazio")
-            except Exception:
+            except Exception as exc:
+                last_exc = exc
                 path.unlink(missing_ok=True)
-                if attempt == 5:
-                    raise
-                await asyncio.sleep(1.0 * attempt)
+                excerpt = normalize_space(text)[:80]
+                print(f"[TTS RETRY {attempt}/8] {voice} | {type(exc).__name__} | {excerpt}")
+                if attempt < 8:
+                    await asyncio.sleep(min(12.0, 1.6 * attempt))
+        raise RuntimeError(f"Falha TTS persistente | voz={voice} | trecho={normalize_space(text)[:120]}") from last_exc
 
 
 async def build_episode(number: int, pool: list[dict], sem: asyncio.Semaphore):
-    turns = source_turns(number)
+    turns = compact_turns(raw_turns(number))
     cast = build_episode_cast(turns, pool)
     work = TMP / f"a1-{number:03d}"
     work.mkdir(parents=True, exist_ok=True)
-    tasks, sequence, roles, speakers, intents = [], [], [], [], []
+    sequence = []
+    roles = []
+    speakers = []
+    intents = []
 
     for idx, turn in enumerate(turns):
         role = turn["role"]
-        profile = "dialogue" if number in MULTIVOICE_EPISODES else "clinical"
-        p = prosody(turn["text"], profile=profile, role=role)
+        p = prosody(turn["text"], profile="dialogue" if number in MULTIVOICE_EPISODES else "clinical", role=role)
         rate, pitch, pause = p.rate, p.pitch, p.pause_ms
-        if lexical_tokens(turn["text"]) == ["olá", "caros", "abordadores"]:
+        if CANONICAL_GREETING.lower().rstrip(".") in turn["text"].lower():
             rate, pitch, pause = "-1%", "+0Hz", 420
         if role == "person_in_crisis":
-            rate_i = max(-14, int(rate.rstrip("%")) - 2)
-            pitch_i = int(pitch.replace("Hz", ""))
-            rate, pitch = f"{rate_i:+d}%", f"{pitch_i:+d}Hz"
-
+            rate = f"{max(-14, int(rate.rstrip('%')) - 2):+d}%"
         part = work / f"{idx:03d}.mp3"
         voice = cast[turn["speaker"]]
-        tasks.append(synth(turn["text"], voice, rate, pitch, part, sem))
+        await synth(turn["text"], voice, rate, pitch, part, sem)
         sequence.append((part, 0 if idx == len(turns)-1 else pause))
-        roles.append(role); speakers.append(turn["speaker"]); intents.append(p.intent)
+        roles.append(role)
+        speakers.append(turn["speaker"])
+        intents.append(p.intent)
 
-    await asyncio.gather(*tasks)
     audio = AudioSegment.silent(duration=OPENING_SILENCE_MS)
     for part, pause in sequence:
         audio += AudioSegment.from_file(part, format="mp3")
@@ -366,13 +335,13 @@ async def build_episode(number: int, pool: list[dict], sem: asyncio.Semaphore):
     non_narrators = [s for s in episode_speakers if PREFIXES.get(s, ("narrator", None))[0] != "narrator"]
     if number in MULTIVOICE_EPISODES and len(unique_voices) < 2:
         raise RuntimeError(f"A1-{number:03d} não ficou multivoz.")
-    if len(non_narrators) >= 2:
-        char_voices = [cast[s] for s in non_narrators]
-        if len(set(char_voices)) < min(len(non_narrators), len(pool)):
-            raise RuntimeError(f"A1-{number:03d}: personagens simultâneos sem diferenciação.")
+    if len(non_narrators) >= 2 and len(set(cast[s] for s in non_narrators)) < min(len(non_narrators), len(pool)):
+        raise RuntimeError(f"A1-{number:03d}: personagens simultâneos sem diferenciação.")
 
     return {
-        "episode": number, "output": target.name, "version": VERSION,
+        "episode": number,
+        "output": target.name,
+        "version": VERSION,
         "greeting": CANONICAL_GREETING,
         "profile": "N3-C-dialogue" if number in MULTIVOICE_EPISODES else "N3-C",
         "speakers": episode_speakers,
@@ -380,26 +349,27 @@ async def build_episode(number: int, pool: list[dict], sem: asyncio.Semaphore):
         "voices": unique_voices,
         "multivoice_required": number in MULTIVOICE_EPISODES,
         "pronunciation_dictionary": True,
-        "intents": sorted(set(intents)), "turns": len(turns),
-        "duration_seconds": round(len(audio)/1000, 1),
+        "intents": sorted(set(intents)),
+        "turns": len(turns),
+        "duration_seconds": round(len(audio) / 1000, 1),
     }
 
 
 def patch_app_urls():
     content = APP.read_text(encoding="utf-8")
-    m = re.search(r"const AUDIOS=\{1:\[(.*?)\],2:\[", content, re.S)
-    if not m:
+    match = re.search(r"const AUDIOS=\{1:\[(.*?)\],2:\[", content, re.S)
+    if not match:
         raise RuntimeError("Bloco Série 1 não localizado em app.js")
-    block = m.group(1)
+    block = match.group(1)
     entries = list(re.finditer(r'\{title:"([^"]+)",url:"([^"]+)"\}', block))
     if len(entries) != 21:
         raise RuntimeError(f"Esperados 21 episódios; encontrados {len(entries)}")
     new_block = block
-    for idx, match in reversed(list(enumerate(entries, start=1))):
-        title = match.group(1)
+    for idx, item in reversed(list(enumerate(entries, start=1))):
+        title = item.group(1)
         repl = f'{{title:"{title}",url:"assets/audio/serie-1/a1-{idx:03d}-{VERSION_TAG}.mp3?v={VERSION}"}}'
-        new_block = new_block[:match.start()] + repl + new_block[match.end():]
-    content = content[:m.start(1)] + new_block + content[m.end(1):]
+        new_block = new_block[:item.start()] + repl + new_block[item.end():]
+    content = content[:match.start(1)] + new_block + content[match.end(1):]
     APP.write_text(content, encoding="utf-8")
 
 
@@ -415,7 +385,8 @@ async def main():
         quality.append(await build_episode(number, pool, sem))
     patch_app_urls()
     report = {
-        "version": VERSION, "canonical_greeting": CANONICAL_GREETING,
+        "version": VERSION,
+        "canonical_greeting": CANONICAL_GREETING,
         "source_files_rewritten": changed_sources,
         "operational_voice_pool": pool,
         "multivoice_episodes": sorted(MULTIVOICE_EPISODES),
