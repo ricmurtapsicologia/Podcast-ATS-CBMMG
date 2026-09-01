@@ -11,6 +11,7 @@ from pydub import AudioSegment, effects
 
 import remaster_series1_organic as legacy
 from n3_audio_core import breath_units, lexical_tokens, prosody, speakable
+from n3_casting import assert_cast_gender, choose_voice, pool_ready, require_balanced_pool
 
 ROOT = Path(__file__).resolve().parents[1]
 ROTEIROS = ROOT / "roteiros" / "serie-1"
@@ -18,7 +19,7 @@ OUT = ROOT / "assets" / "audio" / "serie-1"
 TMP = ROOT / ".tmp_serie1_n3"
 APP = ROOT / "app.js"
 
-VERSION = "n3-cast-20260901b"
+VERSION = "n3-cast-20260901c"
 VERSION_TAG = "n3"
 OPENING_SILENCE_MS = 160
 ENDING_SILENCE_MS = 320
@@ -41,6 +42,13 @@ VOICE_CANDIDATES = [
     ("pt-BR-BrendaNeural", "F"),
     ("pt-BR-DonatoNeural", "M"),
     ("pt-BR-GiovannaNeural", "F"),
+    ("pt-BR-HumbertoNeural", "M"),
+    ("pt-BR-JulioNeural", "M"),
+    ("pt-BR-NicolauNeural", "M"),
+    ("pt-BR-ValerioNeural", "M"),
+    ("pt-BR-LeilaNeural", "F"),
+    ("pt-BR-ManuelaNeural", "F"),
+    ("pt-BR-YaraNeural", "F"),
 ]
 
 PREFIXES = {
@@ -57,6 +65,33 @@ PREFIXES = {
     "DEMO_M": ("professional", "M"),
     "DEMO_F": ("professional", "F"),
 }
+
+
+SPEAKER_PERSONA = {
+    "INSTRUTOR": {"rate": 0, "pitch": 0, "label": "instrutor"},
+    "NARRADOR": {"rate": 0, "pitch": 0, "label": "narrador"},
+    "PROFISSIONAL": {"rate": 0, "pitch": 0, "label": "profissional"},
+    "ABORDADOR_M": {"rate": 0, "pitch": 1, "label": "masculino-profissional"},
+    "TENTANTE_M": {"rate": -2, "pitch": -3, "label": "masculino-crise"},
+    "DEMO_M": {"rate": 2, "pitch": 2, "label": "masculino-demo"},
+    "ABORDADOR_F": {"rate": 0, "pitch": 1, "label": "feminino-profissional"},
+    "TENTANTE_F": {"rate": -2, "pitch": -2, "label": "feminino-crise"},
+    "DEMO_F": {"rate": 1, "pitch": 2, "label": "feminino-demo"},
+    "ABORDADOR": {"rate": 0, "pitch": 0, "label": "abordador"},
+    "ABORDADORA": {"rate": 0, "pitch": 1, "label": "abordadora"},
+    "TENTANTE": {"rate": -2, "pitch": -1, "label": "tentante"},
+}
+
+
+def persona_for(speaker: str) -> dict:
+    return SPEAKER_PERSONA.get(speaker, {"rate": 0, "pitch": 0, "label": speaker.lower()})
+
+
+def apply_speaker_persona(rate: str, pitch: str, speaker: str) -> tuple[str, str]:
+    cfg = persona_for(speaker)
+    r = int(rate.rstrip("%")) + int(cfg["rate"])
+    p = int(pitch.replace("Hz", "")) + int(cfg["pitch"])
+    return f"{max(-16, min(8, r)):+d}%", f"{max(-7, min(7, p)):+d}Hz"
 
 
 def normalize_space(text: str) -> str:
@@ -224,10 +259,9 @@ async def resolve_operational_pool():
     for name, gender in VOICE_CANDIDATES:
         if await probe_voice(name):
             operational.append({"voice": name, "gender": gender})
-        if len(operational) >= 3:
+        if pool_ready(operational, min_male=1, min_female=2):
             break
-    if len(operational) < 2:
-        raise RuntimeError("Menos de duas vozes neurais realmente operacionais.")
+    require_balanced_pool(operational, min_male=1, min_female=2)
     return operational
 
 
@@ -242,28 +276,29 @@ def voice_preferences(role: str, gender: str | None):
 
 
 def build_episode_cast(turns: list[dict], pool: list[dict]):
-    available = [x["voice"] for x in pool]
     speakers = []
     info = {}
-    for t in turns:
-        if t["speaker"] not in info:
-            speakers.append(t["speaker"])
-            info[t["speaker"]] = (t["role"], t["gender"])
-    cast = {}
-    used = set()
-    for speaker in [s for s in speakers if info[s][0] != "narrator"]:
+    for turn in turns:
+        if turn["speaker"] not in info:
+            speakers.append(turn["speaker"])
+            info[turn["speaker"]] = (turn["role"], turn["gender"])
+
+    cast: dict[str, str] = {}
+    used: set[str] = set()
+    non_narrators = [s for s in speakers if info[s][0] != "narrator"]
+    narrators = [s for s in speakers if info[s][0] == "narrator"]
+
+    for speaker in non_narrators:
         role, gender = info[speaker]
-        prefs = [v for v in voice_preferences(role, gender) if v in available]
-        choice = next((v for v in prefs if v not in used), None) or (prefs[0] if prefs else available[0])
-        cast[speaker] = choice
-        used.add(choice)
-    for speaker in [s for s in speakers if info[s][0] == "narrator"]:
-        prefs = [v for v in voice_preferences("narrator", None) if v in available]
-        cast[speaker] = next((v for v in prefs if v not in used), None) or (prefs[0] if prefs else available[0])
-    chars = [s for s in speakers if info[s][0] != "narrator"]
-    if len(chars) >= 2 and len(set(cast[s] for s in chars)) < min(len(chars), len(available)):
-        for i, speaker in enumerate(chars):
-            cast[speaker] = available[i % len(available)]
+        cast[speaker] = choose_voice(pool, voice_preferences(role, gender), expected_gender=gender, used=used)
+        used.add(cast[speaker])
+
+    for speaker in narrators:
+        cast[speaker] = choose_voice(pool, voice_preferences("narrator", None), expected_gender=None, used=used)
+        used.add(cast[speaker])
+
+    expected_gender = {speaker: info[speaker][1] for speaker in speakers}
+    assert_cast_gender(cast, expected_gender, context="Série 1")
     return cast
 
 
@@ -306,6 +341,7 @@ async def build_episode(number: int, pool: list[dict], sem: asyncio.Semaphore):
             rate, pitch, pause = "-1%", "+0Hz", 420
         if role == "person_in_crisis":
             rate = f"{max(-14, int(rate.rstrip('%')) - 2):+d}%"
+        rate, pitch = apply_speaker_persona(rate, pitch, turn["speaker"])
         part = work / f"{idx:03d}.mp3"
         voice = cast[turn["speaker"]]
         await synth(turn["text"], voice, rate, pitch, part, sem)
@@ -333,10 +369,11 @@ async def build_episode(number: int, pool: list[dict], sem: asyncio.Semaphore):
     episode_speakers = list(dict.fromkeys(speakers))
     unique_voices = sorted({cast[s] for s in episode_speakers})
     non_narrators = [s for s in episode_speakers if PREFIXES.get(s, ("narrator", None))[0] != "narrator"]
-    if number in MULTIVOICE_EPISODES and len(unique_voices) < 2:
-        raise RuntimeError(f"A1-{number:03d} não ficou multivoz.")
-    if len(non_narrators) >= 2 and len(set(cast[s] for s in non_narrators)) < min(len(non_narrators), len(pool)):
-        raise RuntimeError(f"A1-{number:03d}: personagens simultâneos sem diferenciação.")
+    voice_identity = {s: f"{cast[s]}::{persona_for(s)['label']}" for s in episode_speakers}
+    if number in MULTIVOICE_EPISODES and len(set(voice_identity.values())) < 2:
+        raise RuntimeError(f"A1-{number:03d} não ficou multivoz por identidade perceptual.")
+    if len(non_narrators) >= 2 and len({voice_identity[s] for s in non_narrators}) != len(non_narrators):
+        raise RuntimeError(f"A1-{number:03d}: personagens simultâneos sem personas distintas.")
 
     return {
         "episode": number,
@@ -346,6 +383,9 @@ async def build_episode(number: int, pool: list[dict], sem: asyncio.Semaphore):
         "profile": "N3-C-dialogue" if number in MULTIVOICE_EPISODES else "N3-C",
         "speakers": episode_speakers,
         "speaker_cast": {s: cast[s] for s in episode_speakers},
+        "speaker_gender": {s: PREFIXES.get(s, ("narrator", None))[1] for s in episode_speakers},
+        "speaker_persona": {s: persona_for(s) for s in episode_speakers},
+        "voice_identity": voice_identity,
         "voices": unique_voices,
         "multivoice_required": number in MULTIVOICE_EPISODES,
         "pronunciation_dictionary": True,

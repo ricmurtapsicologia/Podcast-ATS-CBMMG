@@ -1,7 +1,7 @@
 {
-  "version": "n3-cast-20260901b",
+  "version": "n3-cast-20260901c",
   "canonical_greeting": "Olá, caros abordadores.",
-  "source_files_rewritten": 21,
+  "source_files_rewritten": 0,
   "operational_voice_pool": [
     {
       "voice": "pt-BR-ThalitaMultilingualNeural",
@@ -34,7 +34,7 @@
     {
       "episode": 1,
       "output": "a1-001-n3.mp3",
-      "version": "n3-cast-20260901b",
+      "version": "n3-cast-20260901c",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C",
       "speakers": [
@@ -42,6 +42,19 @@
       ],
       "speaker_cast": {
         "INSTRUTOR": "pt-BR-AntonioNeural"
+      },
+      "speaker_gender": {
+        "INSTRUTOR": null
+      },
+      "speaker_persona": {
+        "INSTRUTOR": {
+          "rate": 0,
+          "pitch": 0,
+          "label": "instrutor"
+        }
+      },
+      "voice_identity": {
+        "INSTRUTOR": "pt-BR-AntonioNeural::instrutor"
       },
       "voices": [
         "pt-BR-AntonioNeural"
@@ -57,7 +70,7 @@
     {
       "episode": 2,
       "output": "a1-002-n3.mp3",
-      "version": "n3-cast-20260901b",
+      "version": "n3-cast-20260901c",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C",
       "speakers": [
@@ -65,6 +78,19 @@
       ],
       "speaker_cast": {
         "INSTRUTOR": "pt-BR-AntonioNeural"
+      },
+      "speaker_gender": {
+        "INSTRUTOR": null
+      },
+      "speaker_persona": {
+        "INSTRUTOR": {
+          "rate": 0,
+          "pitch": 0,
+          "label": "instrutor"
+        }
+      },
+      "voice_identity": {
+        "INSTRUTOR": "pt-BR-AntonioNeural::instrutor"
       },
       "voices": [
         "pt-BR-AntonioNeural"
@@ -80,7 +106,7 @@
     {
       "episode": 3,
       "output": "a1-003-n3.mp3",
-      "version": "n3-cast-20260901b",
+      "version": "n3-cast-20260901c",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C",
       "speakers": [
@@ -88,6 +114,19 @@
       ],
       "speaker_cast": {
         "INSTRUTOR": "pt-BR-AntonioNeural"
+      },
+      "speaker_gender": {
+        "INSTRUTOR": null
+      },
+      "speaker_persona": {
+        "INSTRUTOR": {
+          "rate": 0,
+          "pitch": 0,
+          "label": "instrutor"
+        }
+      },
+      "voice_identity": {
+        "INSTRUTOR": "pt-BR-AntonioNeural::instrutor"
       },
       "voices": [
         "pt-BR-AntonioNeural"
@@ -104,7 +143,7 @@
     {
       "episode": 4,
       "output": "a1-004-n3.mp3",
-      "version": "n3-cast-20260901b",
+      "version": "n3-cast-20260901c",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C",
       "speakers": [
@@ -112,6 +151,19 @@
       ],
       "speaker_cast": {
         "INSTRUTOR": "pt-BR-AntonioNeural"
+      },
+      "speaker_gender": {
+        "INSTRUTOR": null
+      },
+      "speaker_persona": {
+        "INSTRUTOR": {
+          "rate": 0,
+          "pitch": 0,
+          "label": "instrutor"
+        }
+      },
+      "voice_identity": {
+        "INSTRUTOR": "pt-BR-AntonioNeural::instrutor"
       },
       "voices": [
         "pt-BR-AntonioNeural"
@@ -128,7 +180,7 @@
     {
       "episode": 5,
       "output": "a1-005-n3.mp3",
-      "version": "n3-cast-20260901b",
+      "version": "n3-cast-20260901c",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C",
       "speakers": [
@@ -136,6 +188,19 @@
       ],
       "speaker_cast": {
         "INSTRUTOR": "pt-BR-AntonioNeural"
+      },
+      "speaker_gender": {
+        "INSTRUTOR": null
+      },
+      "speaker_persona": {
+        "INSTRUTOR": {
+          "rate": 0,
+          "pitch": 0,
+          "label": "instrutor"
+        }
+      },
+      "voice_identity": {
+        "INSTRUTOR": "pt-BR-AntonioNeural::instrutor"
       },
       "voices": [
         "pt-BR-AntonioNeural"
@@ -152,7 +217,7 @@
     {
       "episode": 6,
       "output": "a1-006-n3.mp3",
-      "version": "n3-cast-20260901b",
+      "version": "n3-cast-20260901c",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C-dialogue",
       "speakers": [
@@ -164,6 +229,33 @@
         "INSTRUTOR": "pt-BR-FranciscaNeural",
         "DEMO_F": "pt-BR-ThalitaMultilingualNeural",
         "DEMO_M": "pt-BR-AntonioNeural"
+      },
+      "speaker_gender": {
+        "INSTRUTOR": null,
+        "DEMO_F": "F",
+        "DEMO_M": "M"
+      },
+      "speaker_persona": {
+        "INSTRUTOR": {
+          "rate": 0,
+          "pitch": 0,
+          "label": "instrutor"
+        },
+        "DEMO_F": {
+          "rate": 1,
+          "pitch": 2,
+          "label": "feminino-demo"
+        },
+        "DEMO_M": {
+          "rate": 2,
+          "pitch": 2,
+          "label": "masculino-demo"
+        }
+      },
+      "voice_identity": {
+        "INSTRUTOR": "pt-BR-FranciscaNeural::instrutor",
+        "DEMO_F": "pt-BR-ThalitaMultilingualNeural::feminino-demo",
+        "DEMO_M": "pt-BR-AntonioNeural::masculino-demo"
       },
       "voices": [
         "pt-BR-AntonioNeural",
@@ -178,12 +270,12 @@
         "supportive"
       ],
       "turns": 9,
-      "duration_seconds": 74.9
+      "duration_seconds": 74.6
     },
     {
       "episode": 7,
       "output": "a1-007-n3.mp3",
-      "version": "n3-cast-20260901b",
+      "version": "n3-cast-20260901c",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C-dialogue",
       "speakers": [
@@ -193,6 +285,26 @@
       "speaker_cast": {
         "INSTRUTOR": "pt-BR-ThalitaMultilingualNeural",
         "DEMO_M": "pt-BR-AntonioNeural"
+      },
+      "speaker_gender": {
+        "INSTRUTOR": null,
+        "DEMO_M": "M"
+      },
+      "speaker_persona": {
+        "INSTRUTOR": {
+          "rate": 0,
+          "pitch": 0,
+          "label": "instrutor"
+        },
+        "DEMO_M": {
+          "rate": 2,
+          "pitch": 2,
+          "label": "masculino-demo"
+        }
+      },
+      "voice_identity": {
+        "INSTRUTOR": "pt-BR-ThalitaMultilingualNeural::instrutor",
+        "DEMO_M": "pt-BR-AntonioNeural::masculino-demo"
       },
       "voices": [
         "pt-BR-AntonioNeural",
@@ -206,12 +318,12 @@
         "question"
       ],
       "turns": 4,
-      "duration_seconds": 89.5
+      "duration_seconds": 89.3
     },
     {
       "episode": 8,
       "output": "a1-008-n3.mp3",
-      "version": "n3-cast-20260901b",
+      "version": "n3-cast-20260901c",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C-dialogue",
       "speakers": [
@@ -220,13 +332,39 @@
         "TENTANTE_M"
       ],
       "speaker_cast": {
-        "INSTRUTOR": "pt-BR-FranciscaNeural",
+        "INSTRUTOR": "pt-BR-ThalitaMultilingualNeural",
         "ABORDADOR_M": "pt-BR-AntonioNeural",
-        "TENTANTE_M": "pt-BR-ThalitaMultilingualNeural"
+        "TENTANTE_M": "pt-BR-AntonioNeural"
+      },
+      "speaker_gender": {
+        "INSTRUTOR": null,
+        "ABORDADOR_M": "M",
+        "TENTANTE_M": "M"
+      },
+      "speaker_persona": {
+        "INSTRUTOR": {
+          "rate": 0,
+          "pitch": 0,
+          "label": "instrutor"
+        },
+        "ABORDADOR_M": {
+          "rate": 0,
+          "pitch": 1,
+          "label": "masculino-profissional"
+        },
+        "TENTANTE_M": {
+          "rate": -2,
+          "pitch": -3,
+          "label": "masculino-crise"
+        }
+      },
+      "voice_identity": {
+        "INSTRUTOR": "pt-BR-ThalitaMultilingualNeural::instrutor",
+        "ABORDADOR_M": "pt-BR-AntonioNeural::masculino-profissional",
+        "TENTANTE_M": "pt-BR-AntonioNeural::masculino-crise"
       },
       "voices": [
         "pt-BR-AntonioNeural",
-        "pt-BR-FranciscaNeural",
         "pt-BR-ThalitaMultilingualNeural"
       ],
       "multivoice_required": true,
@@ -238,12 +376,12 @@
         "supportive"
       ],
       "turns": 26,
-      "duration_seconds": 209.4
+      "duration_seconds": 220.0
     },
     {
       "episode": 9,
       "output": "a1-009-n3.mp3",
-      "version": "n3-cast-20260901b",
+      "version": "n3-cast-20260901c",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C-dialogue",
       "speakers": [
@@ -255,6 +393,33 @@
         "INSTRUTOR": "pt-BR-AntonioNeural",
         "ABORDADOR_F": "pt-BR-ThalitaMultilingualNeural",
         "TENTANTE_F": "pt-BR-FranciscaNeural"
+      },
+      "speaker_gender": {
+        "INSTRUTOR": null,
+        "ABORDADOR_F": "F",
+        "TENTANTE_F": "F"
+      },
+      "speaker_persona": {
+        "INSTRUTOR": {
+          "rate": 0,
+          "pitch": 0,
+          "label": "instrutor"
+        },
+        "ABORDADOR_F": {
+          "rate": 0,
+          "pitch": 1,
+          "label": "feminino-profissional"
+        },
+        "TENTANTE_F": {
+          "rate": -2,
+          "pitch": -2,
+          "label": "feminino-crise"
+        }
+      },
+      "voice_identity": {
+        "INSTRUTOR": "pt-BR-AntonioNeural::instrutor",
+        "ABORDADOR_F": "pt-BR-ThalitaMultilingualNeural::feminino-profissional",
+        "TENTANTE_F": "pt-BR-FranciscaNeural::feminino-crise"
       },
       "voices": [
         "pt-BR-AntonioNeural",
@@ -269,12 +434,12 @@
         "supportive"
       ],
       "turns": 28,
-      "duration_seconds": 212.6
+      "duration_seconds": 212.8
     },
     {
       "episode": 10,
       "output": "a1-010-n3.mp3",
-      "version": "n3-cast-20260901b",
+      "version": "n3-cast-20260901c",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C-dialogue",
       "speakers": [
@@ -286,6 +451,33 @@
         "INSTRUTOR": "pt-BR-FranciscaNeural",
         "ABORDADOR_M": "pt-BR-AntonioNeural",
         "TENTANTE_F": "pt-BR-ThalitaMultilingualNeural"
+      },
+      "speaker_gender": {
+        "INSTRUTOR": null,
+        "ABORDADOR_M": "M",
+        "TENTANTE_F": "F"
+      },
+      "speaker_persona": {
+        "INSTRUTOR": {
+          "rate": 0,
+          "pitch": 0,
+          "label": "instrutor"
+        },
+        "ABORDADOR_M": {
+          "rate": 0,
+          "pitch": 1,
+          "label": "masculino-profissional"
+        },
+        "TENTANTE_F": {
+          "rate": -2,
+          "pitch": -2,
+          "label": "feminino-crise"
+        }
+      },
+      "voice_identity": {
+        "INSTRUTOR": "pt-BR-FranciscaNeural::instrutor",
+        "ABORDADOR_M": "pt-BR-AntonioNeural::masculino-profissional",
+        "TENTANTE_F": "pt-BR-ThalitaMultilingualNeural::feminino-crise"
       },
       "voices": [
         "pt-BR-AntonioNeural",
@@ -301,12 +493,12 @@
         "supportive"
       ],
       "turns": 31,
-      "duration_seconds": 296.9
+      "duration_seconds": 298.2
     },
     {
       "episode": 11,
       "output": "a1-011-n3.mp3",
-      "version": "n3-cast-20260901b",
+      "version": "n3-cast-20260901c",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C-dialogue",
       "speakers": [
@@ -318,6 +510,33 @@
         "INSTRUTOR": "pt-BR-FranciscaNeural",
         "ABORDADOR_M": "pt-BR-AntonioNeural",
         "TENTANTE_F": "pt-BR-ThalitaMultilingualNeural"
+      },
+      "speaker_gender": {
+        "INSTRUTOR": null,
+        "ABORDADOR_M": "M",
+        "TENTANTE_F": "F"
+      },
+      "speaker_persona": {
+        "INSTRUTOR": {
+          "rate": 0,
+          "pitch": 0,
+          "label": "instrutor"
+        },
+        "ABORDADOR_M": {
+          "rate": 0,
+          "pitch": 1,
+          "label": "masculino-profissional"
+        },
+        "TENTANTE_F": {
+          "rate": -2,
+          "pitch": -2,
+          "label": "feminino-crise"
+        }
+      },
+      "voice_identity": {
+        "INSTRUTOR": "pt-BR-FranciscaNeural::instrutor",
+        "ABORDADOR_M": "pt-BR-AntonioNeural::masculino-profissional",
+        "TENTANTE_F": "pt-BR-ThalitaMultilingualNeural::feminino-crise"
       },
       "voices": [
         "pt-BR-AntonioNeural",
@@ -332,12 +551,12 @@
         "reflective"
       ],
       "turns": 6,
-      "duration_seconds": 139.7
+      "duration_seconds": 140.4
     },
     {
       "episode": 12,
       "output": "a1-012-n3.mp3",
-      "version": "n3-cast-20260901b",
+      "version": "n3-cast-20260901c",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C",
       "speakers": [
@@ -345,6 +564,19 @@
       ],
       "speaker_cast": {
         "INSTRUTOR": "pt-BR-AntonioNeural"
+      },
+      "speaker_gender": {
+        "INSTRUTOR": null
+      },
+      "speaker_persona": {
+        "INSTRUTOR": {
+          "rate": 0,
+          "pitch": 0,
+          "label": "instrutor"
+        }
+      },
+      "voice_identity": {
+        "INSTRUTOR": "pt-BR-AntonioNeural::instrutor"
       },
       "voices": [
         "pt-BR-AntonioNeural"
@@ -361,7 +593,7 @@
     {
       "episode": 13,
       "output": "a1-013-n3.mp3",
-      "version": "n3-cast-20260901b",
+      "version": "n3-cast-20260901c",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C-dialogue",
       "speakers": [
@@ -370,13 +602,39 @@
         "TENTANTE_M"
       ],
       "speaker_cast": {
-        "INSTRUTOR": "pt-BR-FranciscaNeural",
+        "INSTRUTOR": "pt-BR-ThalitaMultilingualNeural",
         "ABORDADOR_M": "pt-BR-AntonioNeural",
-        "TENTANTE_M": "pt-BR-ThalitaMultilingualNeural"
+        "TENTANTE_M": "pt-BR-AntonioNeural"
+      },
+      "speaker_gender": {
+        "INSTRUTOR": null,
+        "ABORDADOR_M": "M",
+        "TENTANTE_M": "M"
+      },
+      "speaker_persona": {
+        "INSTRUTOR": {
+          "rate": 0,
+          "pitch": 0,
+          "label": "instrutor"
+        },
+        "ABORDADOR_M": {
+          "rate": 0,
+          "pitch": 1,
+          "label": "masculino-profissional"
+        },
+        "TENTANTE_M": {
+          "rate": -2,
+          "pitch": -3,
+          "label": "masculino-crise"
+        }
+      },
+      "voice_identity": {
+        "INSTRUTOR": "pt-BR-ThalitaMultilingualNeural::instrutor",
+        "ABORDADOR_M": "pt-BR-AntonioNeural::masculino-profissional",
+        "TENTANTE_M": "pt-BR-AntonioNeural::masculino-crise"
       },
       "voices": [
         "pt-BR-AntonioNeural",
-        "pt-BR-FranciscaNeural",
         "pt-BR-ThalitaMultilingualNeural"
       ],
       "multivoice_required": true,
@@ -388,12 +646,12 @@
         "supportive"
       ],
       "turns": 13,
-      "duration_seconds": 186.7
+      "duration_seconds": 193.3
     },
     {
       "episode": 14,
       "output": "a1-014-n3.mp3",
-      "version": "n3-cast-20260901b",
+      "version": "n3-cast-20260901c",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C-dialogue",
       "speakers": [
@@ -405,6 +663,33 @@
         "INSTRUTOR": "pt-BR-FranciscaNeural",
         "ABORDADOR_M": "pt-BR-AntonioNeural",
         "TENTANTE_F": "pt-BR-ThalitaMultilingualNeural"
+      },
+      "speaker_gender": {
+        "INSTRUTOR": null,
+        "ABORDADOR_M": "M",
+        "TENTANTE_F": "F"
+      },
+      "speaker_persona": {
+        "INSTRUTOR": {
+          "rate": 0,
+          "pitch": 0,
+          "label": "instrutor"
+        },
+        "ABORDADOR_M": {
+          "rate": 0,
+          "pitch": 1,
+          "label": "masculino-profissional"
+        },
+        "TENTANTE_F": {
+          "rate": -2,
+          "pitch": -2,
+          "label": "feminino-crise"
+        }
+      },
+      "voice_identity": {
+        "INSTRUTOR": "pt-BR-FranciscaNeural::instrutor",
+        "ABORDADOR_M": "pt-BR-AntonioNeural::masculino-profissional",
+        "TENTANTE_F": "pt-BR-ThalitaMultilingualNeural::feminino-crise"
       },
       "voices": [
         "pt-BR-AntonioNeural",
@@ -419,12 +704,12 @@
         "supportive"
       ],
       "turns": 30,
-      "duration_seconds": 235.8
+      "duration_seconds": 236.7
     },
     {
       "episode": 15,
       "output": "a1-015-n3.mp3",
-      "version": "n3-cast-20260901b",
+      "version": "n3-cast-20260901c",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C-dialogue",
       "speakers": [
@@ -433,13 +718,39 @@
         "TENTANTE_M"
       ],
       "speaker_cast": {
-        "INSTRUTOR": "pt-BR-FranciscaNeural",
+        "INSTRUTOR": "pt-BR-ThalitaMultilingualNeural",
         "ABORDADOR_M": "pt-BR-AntonioNeural",
-        "TENTANTE_M": "pt-BR-ThalitaMultilingualNeural"
+        "TENTANTE_M": "pt-BR-AntonioNeural"
+      },
+      "speaker_gender": {
+        "INSTRUTOR": null,
+        "ABORDADOR_M": "M",
+        "TENTANTE_M": "M"
+      },
+      "speaker_persona": {
+        "INSTRUTOR": {
+          "rate": 0,
+          "pitch": 0,
+          "label": "instrutor"
+        },
+        "ABORDADOR_M": {
+          "rate": 0,
+          "pitch": 1,
+          "label": "masculino-profissional"
+        },
+        "TENTANTE_M": {
+          "rate": -2,
+          "pitch": -3,
+          "label": "masculino-crise"
+        }
+      },
+      "voice_identity": {
+        "INSTRUTOR": "pt-BR-ThalitaMultilingualNeural::instrutor",
+        "ABORDADOR_M": "pt-BR-AntonioNeural::masculino-profissional",
+        "TENTANTE_M": "pt-BR-AntonioNeural::masculino-crise"
       },
       "voices": [
         "pt-BR-AntonioNeural",
-        "pt-BR-FranciscaNeural",
         "pt-BR-ThalitaMultilingualNeural"
       ],
       "multivoice_required": true,
@@ -451,12 +762,12 @@
         "supportive"
       ],
       "turns": 20,
-      "duration_seconds": 206.7
+      "duration_seconds": 213.1
     },
     {
       "episode": 16,
       "output": "a1-016-n3.mp3",
-      "version": "n3-cast-20260901b",
+      "version": "n3-cast-20260901c",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C-dialogue",
       "speakers": [
@@ -466,6 +777,26 @@
       "speaker_cast": {
         "INSTRUTOR": "pt-BR-ThalitaMultilingualNeural",
         "ABORDADOR_M": "pt-BR-AntonioNeural"
+      },
+      "speaker_gender": {
+        "INSTRUTOR": null,
+        "ABORDADOR_M": "M"
+      },
+      "speaker_persona": {
+        "INSTRUTOR": {
+          "rate": 0,
+          "pitch": 0,
+          "label": "instrutor"
+        },
+        "ABORDADOR_M": {
+          "rate": 0,
+          "pitch": 1,
+          "label": "masculino-profissional"
+        }
+      },
+      "voice_identity": {
+        "INSTRUTOR": "pt-BR-ThalitaMultilingualNeural::instrutor",
+        "ABORDADOR_M": "pt-BR-AntonioNeural::masculino-profissional"
       },
       "voices": [
         "pt-BR-AntonioNeural",
@@ -482,7 +813,7 @@
     {
       "episode": 17,
       "output": "a1-017-n3.mp3",
-      "version": "n3-cast-20260901b",
+      "version": "n3-cast-20260901c",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C",
       "speakers": [
@@ -490,6 +821,19 @@
       ],
       "speaker_cast": {
         "INSTRUTOR": "pt-BR-AntonioNeural"
+      },
+      "speaker_gender": {
+        "INSTRUTOR": null
+      },
+      "speaker_persona": {
+        "INSTRUTOR": {
+          "rate": 0,
+          "pitch": 0,
+          "label": "instrutor"
+        }
+      },
+      "voice_identity": {
+        "INSTRUTOR": "pt-BR-AntonioNeural::instrutor"
       },
       "voices": [
         "pt-BR-AntonioNeural"
@@ -506,7 +850,7 @@
     {
       "episode": 18,
       "output": "a1-018-n3.mp3",
-      "version": "n3-cast-20260901b",
+      "version": "n3-cast-20260901c",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C",
       "speakers": [
@@ -514,6 +858,19 @@
       ],
       "speaker_cast": {
         "INSTRUTOR": "pt-BR-AntonioNeural"
+      },
+      "speaker_gender": {
+        "INSTRUTOR": null
+      },
+      "speaker_persona": {
+        "INSTRUTOR": {
+          "rate": 0,
+          "pitch": 0,
+          "label": "instrutor"
+        }
+      },
+      "voice_identity": {
+        "INSTRUTOR": "pt-BR-AntonioNeural::instrutor"
       },
       "voices": [
         "pt-BR-AntonioNeural"
@@ -530,7 +887,7 @@
     {
       "episode": 19,
       "output": "a1-019-n3.mp3",
-      "version": "n3-cast-20260901b",
+      "version": "n3-cast-20260901c",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C-dialogue",
       "speakers": [
@@ -540,6 +897,26 @@
       "speaker_cast": {
         "INSTRUTOR": "pt-BR-ThalitaMultilingualNeural",
         "DEMO_M": "pt-BR-AntonioNeural"
+      },
+      "speaker_gender": {
+        "INSTRUTOR": null,
+        "DEMO_M": "M"
+      },
+      "speaker_persona": {
+        "INSTRUTOR": {
+          "rate": 0,
+          "pitch": 0,
+          "label": "instrutor"
+        },
+        "DEMO_M": {
+          "rate": 2,
+          "pitch": 2,
+          "label": "masculino-demo"
+        }
+      },
+      "voice_identity": {
+        "INSTRUTOR": "pt-BR-ThalitaMultilingualNeural::instrutor",
+        "DEMO_M": "pt-BR-AntonioNeural::masculino-demo"
       },
       "voices": [
         "pt-BR-AntonioNeural",
@@ -553,12 +930,12 @@
         "question"
       ],
       "turns": 5,
-      "duration_seconds": 86.0
+      "duration_seconds": 85.9
     },
     {
       "episode": 20,
       "output": "a1-020-n3.mp3",
-      "version": "n3-cast-20260901b",
+      "version": "n3-cast-20260901c",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C-dialogue",
       "speakers": [
@@ -568,6 +945,26 @@
       "speaker_cast": {
         "INSTRUTOR": "pt-BR-ThalitaMultilingualNeural",
         "ABORDADOR_M": "pt-BR-AntonioNeural"
+      },
+      "speaker_gender": {
+        "INSTRUTOR": null,
+        "ABORDADOR_M": "M"
+      },
+      "speaker_persona": {
+        "INSTRUTOR": {
+          "rate": 0,
+          "pitch": 0,
+          "label": "instrutor"
+        },
+        "ABORDADOR_M": {
+          "rate": 0,
+          "pitch": 1,
+          "label": "masculino-profissional"
+        }
+      },
+      "voice_identity": {
+        "INSTRUTOR": "pt-BR-ThalitaMultilingualNeural::instrutor",
+        "ABORDADOR_M": "pt-BR-AntonioNeural::masculino-profissional"
       },
       "voices": [
         "pt-BR-AntonioNeural",
@@ -585,7 +982,7 @@
     {
       "episode": 21,
       "output": "a1-021-n3.mp3",
-      "version": "n3-cast-20260901b",
+      "version": "n3-cast-20260901c",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C",
       "speakers": [
@@ -593,6 +990,19 @@
       ],
       "speaker_cast": {
         "INSTRUTOR": "pt-BR-AntonioNeural"
+      },
+      "speaker_gender": {
+        "INSTRUTOR": null
+      },
+      "speaker_persona": {
+        "INSTRUTOR": {
+          "rate": 0,
+          "pitch": 0,
+          "label": "instrutor"
+        }
+      },
+      "voice_identity": {
+        "INSTRUTOR": "pt-BR-AntonioNeural::instrutor"
       },
       "voices": [
         "pt-BR-AntonioNeural"

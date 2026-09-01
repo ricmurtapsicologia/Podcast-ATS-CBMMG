@@ -147,6 +147,14 @@ O conteúdo apresenta PSP como ajuda humana, prática e respeitosa após eventos
 
 ---
 
+# Gate de publicação N3
+
+Desde 01/09/2026, as Séries 1 e 2 usam casting N3 por gênero e identidade vocal, pool operacional com cobertura real de gênero (mínimo de uma voz masculina e duas femininas no endpoint edge-tts), com personas prosódicas distintas para personagens masculinos adicionais, além de gate técnico de 35/35 masters e smoke E2E do player em Chromium. O CI valida sample rate, canais, duração, pico, integridade do texto, URLs do runtime, ausência de `speechSynthesis`, diferenciação perceptual por voz-base + persona e coerência entre gênero do papel e voz, sem cross-gender.
+
+A arquitetura de áudio fica separada em: roteiro → casting (`n3_casting.py`) → prosódia/segmentação (`n3_audio_core.py`) → síntese/remasterização → manifesto de QA → smoke E2E → publicação.
+
+---
+
 # Arquitetura atual
 
 O projeto utiliza uma arquitetura estática, adequada ao GitHub Pages, composta por HTML, CSS e JavaScript nativos, sem framework de interface obrigatório.

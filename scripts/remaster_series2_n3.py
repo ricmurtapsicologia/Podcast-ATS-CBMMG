@@ -10,6 +10,7 @@ import edge_tts
 from pydub import AudioSegment, effects
 
 from n3_audio_core import breath_units, normalize, prosody, speakable
+from n3_casting import assert_cast_gender, assert_distinct_pairs, choose_voice, pool_ready, require_balanced_pool
 from n3_foley import apply_sound_design
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -19,7 +20,7 @@ TMP = ROOT / ".tmp_serie2_n3"
 APP = ROOT / "app.js"
 SOUND_DESIGN = ROOT / "sound-design" / "series-2.json"
 VERSION_TAG = "n3"
-VERSION = "n3-cast-20260901b"
+VERSION = "n3-cast-20260901c"
 OPENING_SILENCE_MS = 160
 ENDING_SILENCE_MS = 320
 TARGET_DBFS = -18.0
@@ -38,6 +39,13 @@ VOICE_CANDIDATES = [
     ("pt-BR-BrendaNeural", "F"),
     ("pt-BR-DonatoNeural", "M"),
     ("pt-BR-GiovannaNeural", "F"),
+    ("pt-BR-HumbertoNeural", "M"),
+    ("pt-BR-JulioNeural", "M"),
+    ("pt-BR-NicolauNeural", "M"),
+    ("pt-BR-ValerioNeural", "M"),
+    ("pt-BR-LeilaNeural", "F"),
+    ("pt-BR-ManuelaNeural", "F"),
+    ("pt-BR-YaraNeural", "F"),
 ]
 
 ROLE_GENDER = {
@@ -243,27 +251,28 @@ async def resolve_operational_pool():
     for name, gender in VOICE_CANDIDATES:
         if await probe_voice(name):
             operational.append({"voice": name, "gender": gender})
-        if len(operational) >= 3:
+        if pool_ready(operational, min_male=1, min_female=2):
             break
-    if len(operational) < 2:
-        raise RuntimeError("Menos de duas vozes neurais realmente operacionais.")
+    require_balanced_pool(operational, min_male=1, min_female=2)
     return operational
 
 
 def resolve_cast(pool: list[dict]):
-    available = [x["voice"] for x in pool]
-    cast = {}
-    for role in ROLE_GENDER:
-        prefs = [v for v in ROLE_PREFERENCES[role] if v in available]
-        cast[role] = prefs[0] if prefs else available[0]
+    cast: dict[str, str] = {}
+    for role, gender in ROLE_GENDER.items():
+        cast[role] = choose_voice(pool, ROLE_PREFERENCES[role], expected_gender=gender)
+
     for left, right in CONFLICT_PAIRS:
         if cast[left] == cast[right]:
-            alt = next((v for v in ROLE_PREFERENCES[right] if v in available and v != cast[left]), None)
-            if alt is None:
-                alt = next((v for v in available if v != cast[left]), None)
-            if alt is None:
-                raise RuntimeError(f"Não há segunda voz para {left}/{right}")
-            cast[right] = alt
+            cast[right] = choose_voice(
+                pool,
+                ROLE_PREFERENCES[right],
+                expected_gender=ROLE_GENDER[right],
+                used={cast[left]},
+            )
+
+    assert_cast_gender(cast, ROLE_GENDER, context="Série 2 cast global")
+    assert_distinct_pairs(cast, CONFLICT_PAIRS, context="Série 2 cast global")
     return cast
 
 
@@ -345,6 +354,7 @@ async def build_episode(number: int, cast: dict[str, str], sound_design: dict, s
 
     episode_roles = list(dict.fromkeys(roles))
     episode_cast = {role: cast[role] for role in episode_roles}
+    assert_cast_gender(episode_cast, {role: ROLE_GENDER[role] for role in episode_roles}, context=f"A2-{number:03d}")
     if cinematic and len(set(episode_cast.values())) < 2:
         raise RuntimeError(f"A2-{number:03d} não ficou multivoz.")
 
@@ -360,6 +370,7 @@ async def build_episode(number: int, cast: dict[str, str], sound_design: dict, s
         "text_integrity_spoken_content": 1.0,
         "roles": episode_roles,
         "role_cast": episode_cast,
+        "voice_identity": {role: f"{episode_cast[role]}::{PERSONA_ADJUST[role]['label']}" for role in episode_roles},
         "voices": sorted(set(episode_cast.values())),
         "persona_profiles": {role: PERSONA_ADJUST[role] for role in episode_roles},
         "intents": sorted(set(intents)),
@@ -406,6 +417,7 @@ async def main():
         "version": VERSION,
         "operational_voice_pool": pool,
         "character_cast": cast,
+        "role_gender": ROLE_GENDER,
         "cinematic_multivoice_episodes": sorted(CINEMATIC_EPISODES),
         "dialogue_source": "historical dialogue-v2 curated turns",
         "episodes": quality,
