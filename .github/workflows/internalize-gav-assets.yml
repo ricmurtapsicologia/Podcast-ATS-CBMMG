@@ -1,0 +1,54 @@
+name: Internalizar assets Girando a Ampulheta
+
+on:
+  push:
+    branches: [refactor/learning-experience-v4]
+    paths:
+      - '.github/workflows/internalize-gav-assets.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gav-internalize-assets
+  cancel-in-progress: true
+
+jobs:
+  internalize:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Baixar assets externos canônicos
+        run: |
+          set -euo pipefail
+          mkdir -p assets/img
+          UA='Mozilla/5.0 (compatible; GirandoAmpulhetaAssetBot/1.0)'
+          curl -fL --retry 4 -A "$UA" 'https://i.pinimg.com/736x/8d/b9/5f/8db95f60c2ac138e3ed50b72450a8b68.jpg' -o assets/img/hero.jpg
+          curl -fL --retry 4 -A "$UA" 'https://i.pinimg.com/736x/46/a2/33/46a2335ebc2074b6df9a9774ce9cfd5d.jpg' -o assets/img/series-1.jpg
+          curl -fL --retry 4 -A "$UA" 'https://i.pinimg.com/736x/51/e8/8c/51e88c0d477d8812200af68229bf66d7.jpg' -o assets/img/series-2.jpg
+          curl -fL --retry 4 -A "$UA" 'https://images.pexels.com/photos/6519869/pexels-photo-6519869.jpeg?auto=compress&cs=tinysrgb&w=1200&h=1500&fit=crop' -o assets/img/series-3.jpg
+          for f in assets/img/hero.jpg assets/img/series-1.jpg assets/img/series-2.jpg assets/img/series-3.jpg; do
+            test -s "$f"
+            file "$f" | grep -Eqi 'JPEG|image data'
+          done
+      - name: Confirmar ausência de dependência visual externa no runtime
+        run: |
+          grep -q 'assets/img/hero.jpg' assets-v4.css
+          grep -q 'assets/img/series-1.jpg' content-manifest.js
+          grep -q 'assets/img/series-2.jpg' content-manifest.js
+          grep -q 'assets/img/series-3.jpg' content-manifest.js
+      - name: Commitar assets locais
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/img/hero.jpg assets/img/series-1.jpg assets/img/series-2.jpg assets/img/series-3.jpg
+          if git diff --cached --quiet; then
+            echo 'Assets já internalizados.'
+            exit 0
+          fi
+          git commit -m 'assets: internalizar imagens canônicas do projeto'
+          git pull --rebase origin refactor/learning-experience-v4
+          git push origin HEAD:refactor/learning-experience-v4
