@@ -1,0 +1,70 @@
+name: Hotfix A1-008 Casting PT-BR
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/hotfix_a1_008_casting_ptbr.py'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: podcast-a1-008-casting-ptbr
+  cancel-in-progress: true
+
+jobs:
+  render:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Instalar dependencias
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          pip install edge-tts pydub
+      - name: Renderizar A1-008 com casting distinto e PT-BR
+        run: python scripts/hotfix_a1_008_casting_ptbr.py
+      - name: Validar idioma, vozes e arquivo
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          report=json.loads(Path('assets/audio/serie-1/quality-n3.json').read_text(encoding='utf-8'))
+          ep=next(e for e in report['episodes'] if e['episode']==8)
+          cast=ep['speaker_cast']
+          assert cast['ABORDADOR_M'] != cast['TENTANTE_M'], cast
+          assert all('Multilingual' not in v for v in cast.values()), cast
+          assert cast['ABORDADOR_M'].startswith('pt-BR-') and cast['TENTANTE_M'].startswith('pt-BR-'), cast
+          assert ep.get('hotfix_language_guard') is True, ep
+          p=Path('assets/audio/serie-1/a1-008-n3.mp3')
+          assert p.exists() and p.stat().st_size>1000
+          info=json.loads(subprocess.check_output(['ffprobe','-v','error','-select_streams','a:0','-show_entries','stream=channels,sample_rate,duration','-of','json',str(p)], text=True))['streams'][0]
+          assert int(info['channels'])==1
+          assert int(info['sample_rate'])==44100
+          assert float(info['duration'])>0
+          source=Path('roteiros/serie-1/a1-008.txt').read_text(encoding='utf-8')
+          assert 'hobby' not in source.lower()
+          assert 'passatempo' in source.lower()
+          print('PASS: A1-008 em PT-BR, sem voz multilingual e com dois homens distintos.')
+          PY
+      - name: Commitar hotfix A1-008
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/audio/serie-1/a1-008-n3.mp3 assets/audio/serie-1/quality-n3.json app.js roteiros/serie-1/a1-008.txt scripts/remaster_series1_n3.py scripts/n3_audio_core.py reports/a1-008-hotfix-casting-ptbr.json
+          if git diff --cached --quiet; then
+            echo "Sem alteracoes"
+            exit 0
+          fi
+          git commit -m "fix: diferenciar personagens e blindar PT-BR no A1-008"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
