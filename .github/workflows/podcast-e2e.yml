@@ -1,24 +1,48 @@
-name: Podcast player E2E
+name: Girando a Ampulheta — Experience Gate
 
 on:
   push:
-    branches: [main]
+    branches: [main, refactor/learning-experience-v4]
     paths:
       - 'index.html'
       - 'app.js'
+      - 'content-manifest.js'
+      - 'psp.js'
+      - 'psp-cards.json'
+      - 'a11y-v4.js'
       - 'styles.css'
+      - 'psp.css'
+      - 'learning-v4.css'
+      - 'assets-v4.css'
+      - 'assets/img/**'
       - 'assets/audio/serie-1/**'
       - 'assets/audio/serie-2/**'
+      - 'assets/audio/serie-3/**'
       - 'scripts/smoke_player_e2e.py'
+      - 'scripts/a11y_smoke.py'
+      - 'scripts/validate_learning_v4.py'
+      - 'scripts/qa_n3_release.py'
       - '.github/workflows/podcast-e2e.yml'
   pull_request:
     paths:
       - 'index.html'
       - 'app.js'
+      - 'content-manifest.js'
+      - 'psp.js'
+      - 'psp-cards.json'
+      - 'a11y-v4.js'
       - 'styles.css'
+      - 'psp.css'
+      - 'learning-v4.css'
+      - 'assets-v4.css'
+      - 'assets/img/**'
       - 'assets/audio/serie-1/**'
       - 'assets/audio/serie-2/**'
+      - 'assets/audio/serie-3/**'
       - 'scripts/smoke_player_e2e.py'
+      - 'scripts/a11y_smoke.py'
+      - 'scripts/validate_learning_v4.py'
+      - 'scripts/qa_n3_release.py'
       - '.github/workflows/podcast-e2e.yml'
   workflow_dispatch: {}
 
@@ -26,53 +50,58 @@ permissions:
   contents: read
 
 jobs:
-  player-smoke:
+  experience-gate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
-      - name: Instalar Playwright
+      - name: Gate estrutural
+        run: python scripts/validate_learning_v4.py
+      - name: Instalar Playwright e axe-core
         run: |
           pip install playwright
           playwright install --with-deps chromium
+          npm install --no-save axe-core
       - name: Servir site localmente
         run: |
           python -m http.server 8765 --bind 127.0.0.1 > /tmp/podcast-http.log 2>&1 &
           echo $! > /tmp/podcast-http.pid
-          for i in {1..20}; do curl -fsS http://127.0.0.1:8765/ >/dev/null && exit 0; sleep 0.5; done
+          for i in {1..30}; do curl -fsS http://127.0.0.1:8765/ >/dev/null && exit 0; sleep 0.5; done
           cat /tmp/podcast-http.log
           exit 1
-      - name: Smoke E2E local do player
+      - name: E2E desktop, mobile, progresso, PSP e acessibilidade
         run: python scripts/smoke_player_e2e.py http://127.0.0.1:8765/
-      - name: Confirmar identidade da release pública N3
+      - name: Axe-core — estados principais
+        run: python scripts/a11y_smoke.py http://127.0.0.1:8765/
+      - name: Smoke público após merge em main
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: |
           python - <<'PY'
-          import os
           import time
           import urllib.request
 
-          sha = os.environ['GITHUB_SHA']
-          url = f"https://ricmurtapsicologia.github.io/Podcast-ATS-CBMMG/app.js?release={sha}"
-          version = 'n3-cast-20260901c'
+          url = 'https://ricmurtapsicologia.github.io/Podcast-ATS-CBMMG/'
+          marker = 'gav-learning-v4-20260902'
           last = None
           for attempt in range(1, 31):
               try:
                   with urllib.request.urlopen(url, timeout=15) as response:
                       text = response.read().decode('utf-8')
-                  s1 = text.count('assets/audio/serie-1/a1-')
-                  s2 = text.count('assets/audio/serie-2/a2-')
-                  version_refs = text.count(f'?v={version}')
-                  if s1 == 21 and s2 == 14 and version_refs == 35 and 'n3-cast-20260901b' not in text:
-                      print(f'PASS: app público {version}; Série 1 21/21; Série 2 14/14; URLs 35/35.')
+                  if marker in text and 'content-manifest.js' in text and 'learning-v4.css' in text:
+                      print('PASS: GitHub Pages convergiu para GAV learning v4.')
                       break
-                  last = f's1={s1} s2={s2} refs={version_refs}'
+                  last = 'marker ausente'
               except Exception as exc:
                   last = f'{type(exc).__name__}: {exc}'
               if attempt == 30:
-                  raise RuntimeError(f'GitHub Pages não convergiu para a release esperada: {last}')
+                  raise RuntimeError(f'GitHub Pages não convergiu: {last}')
               time.sleep(5)
           PY
-      - name: Smoke E2E da versão pública
+      - name: E2E da versão pública
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
         run: python scripts/smoke_player_e2e.py https://ricmurtapsicologia.github.io/Podcast-ATS-CBMMG/
+      - name: Axe-core da versão pública
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: python scripts/a11y_smoke.py https://ricmurtapsicologia.github.io/Podcast-ATS-CBMMG/

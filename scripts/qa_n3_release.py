@@ -9,6 +9,8 @@ from n3_casting import assert_cast_gender, gender_counts
 
 ROOT = Path(__file__).resolve().parents[1]
 APP = (ROOT / "app.js").read_text(encoding="utf-8")
+MANIFEST = (ROOT / "content-manifest.js").read_text(encoding="utf-8")
+RUNTIME_TEXT = APP + "\n" + MANIFEST
 
 
 def ffprobe(path: Path) -> dict:
@@ -74,7 +76,7 @@ def check_series1() -> None:
             # a identidade perceptual é voz-base + persona, não só o SSML voice id.
             assert len(set(identities.values())) >= 2, e
         token = f"assets/audio/serie-1/{e['output']}?v={report['version']}"
-        assert token in APP, token
+        assert token in MANIFEST, token
 
 
 def check_series2() -> None:
@@ -105,10 +107,12 @@ def check_series2() -> None:
             identities = e.get("voice_identity", {})
             assert identities and len(set(identities.values())) >= 2, e
         token = f"assets/audio/serie-2/{e['output']}?v={report['version']}"
-        assert token in APP, token
+        assert token in MANIFEST, token
 
 
-assert "speechSynthesis" not in APP
+assert "speechSynthesis" not in RUNTIME_TEXT
+assert "const SERIES=" not in APP and "const AUDIOS=" not in APP
+assert "window.GAV_MANIFEST" in MANIFEST
 check_series1()
 check_series2()
-print("PASS: N3 release gate 35/35; gênero coerente; personas multivoz; ffprobe; pico; URLs.")
+print("PASS: N3 release gate 35/35; gênero coerente; personas multivoz; ffprobe; pico; URLs no manifesto canônico.")
