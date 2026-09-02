@@ -1,0 +1,104 @@
+name: Hotfix Serie 2 Saudacao Canonica
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/hotfix_series2_greeting.py'
+      - '.github/workflows/hotfix-series2-greeting.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: podcast-serie2-greeting
+  cancel-in-progress: true
+
+jobs:
+  render:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Instalar dependencias
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          pip install edge-tts pydub numpy
+      - name: Testar casting
+        run: python scripts/test_n3_casting.py
+      - name: Corrigir saudacao e rerenderizar episodios afetados
+        run: python scripts/hotfix_series2_greeting.py
+      - name: Validar texto, audio e cache
+        run: |
+          python - <<'PY'
+          import json, re, subprocess
+          from pathlib import Path
+
+          target=(0,1,2,3,10,11,12,13)
+          greeting_re=re.compile(r'\bol[áa]\s*,?\s+pessoal\b[.!?…]*', re.I)
+          canonical='Olá, caros abordadores.'
+          for n in target:
+              source=Path(f'roteiros/serie-2/a2-{n:03d}.txt').read_text(encoding='utf-8')
+              assert canonical in source, (n, 'saudacao canonica ausente')
+              assert not greeting_re.search(source), (n, 'ola pessoal residual')
+              p=Path(f'assets/audio/serie-2/a2-{n:03d}-n3.mp3')
+              assert p.exists() and p.stat().st_size>1000, p
+              info=json.loads(subprocess.check_output([
+                  'ffprobe','-v','error','-select_streams','a:0',
+                  '-show_entries','stream=channels,sample_rate,duration','-of','json',str(p)
+              ], text=True))['streams'][0]
+              assert int(info['sample_rate'])==44100
+              assert float(info['duration'])>0
+
+          for p in Path('roteiros/serie-2').glob('a2-*.txt'):
+              assert not greeting_re.search(p.read_text(encoding='utf-8')), p
+
+          app=Path('app.js').read_text(encoding='utf-8')
+          for n in target:
+              assert f'a2-{n:03d}-n3.mp3?v=n3-cast-20260901f' in app, n
+
+          report=json.loads(Path('reports/series2-greeting-hotfix.json').read_text(encoding='utf-8'))
+          assert report['residual_ola_pessoal'] is False
+          assert report['canonical_greeting']==canonical
+          assert report['episodes']==list(target)
+          print('PASS: Série 2 sem saudação “olá pessoal”; 8 episódios rerenderizados e cache atualizado.')
+          PY
+      - name: Commitar correcao publicada
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add \
+            roteiros/serie-2/a2-000.txt \
+            roteiros/serie-2/a2-001.txt \
+            roteiros/serie-2/a2-002.txt \
+            roteiros/serie-2/a2-003.txt \
+            roteiros/serie-2/a2-010.txt \
+            roteiros/serie-2/a2-011.txt \
+            roteiros/serie-2/a2-012.txt \
+            roteiros/serie-2/a2-013.txt \
+            assets/audio/serie-2/a2-000-n3.mp3 \
+            assets/audio/serie-2/a2-001-n3.mp3 \
+            assets/audio/serie-2/a2-002-n3.mp3 \
+            assets/audio/serie-2/a2-003-n3.mp3 \
+            assets/audio/serie-2/a2-010-n3.mp3 \
+            assets/audio/serie-2/a2-011-n3.mp3 \
+            assets/audio/serie-2/a2-012-n3.mp3 \
+            assets/audio/serie-2/a2-013-n3.mp3 \
+            assets/audio/serie-2/quality-n3.json \
+            reports/series2-greeting-hotfix.json \
+            app.js
+          if git diff --cached --quiet; then
+            echo "Sem alteracoes"
+            exit 0
+          fi
+          git commit -m "fix: trocar ola pessoal por caros abordadores na Serie 2"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
