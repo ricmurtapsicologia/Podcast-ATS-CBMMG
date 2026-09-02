@@ -31,9 +31,9 @@ jobs:
           sudo apt-get install -y ffmpeg
           python -m pip install --upgrade pip
           pip install edge-tts pydub
-      - name: Renderizar A1-008 com casting distinto e PT-BR
+      - name: Renderizar A1-008 com personagens distintos e PT-BR
         run: python scripts/hotfix_a1_008_casting_ptbr.py
-      - name: Validar idioma, vozes e arquivo
+      - name: Validar idioma, personagens e arquivo
         run: |
           python - <<'PY'
           import json, subprocess
@@ -41,13 +41,18 @@ jobs:
           report=json.loads(Path('assets/audio/serie-1/quality-n3.json').read_text(encoding='utf-8'))
           ep=next(e for e in report['episodes'] if e['episode']==8)
           cast=ep['speaker_cast']
-          assert cast['ABORDADOR_M'] != cast['TENTANTE_M'], cast
+          identities=ep['voice_identity']
           assert 'Multilingual' not in cast['INSTRUTOR'], cast
           assert 'Multilingual' not in cast['ABORDADOR_M'], cast
-          assert cast['INSTRUTOR'].startswith('pt-BR-'), cast
-          assert cast['ABORDADOR_M'].startswith('pt-BR-') and cast['TENTANTE_M'].startswith('pt-BR-'), cast
+          assert cast['INSTRUTOR']=='pt-BR-FranciscaNeural', cast
+          assert cast['ABORDADOR_M']=='pt-BR-AntonioNeural', cast
+          assert cast['TENTANTE_M']=='pt-BR-AntonioNeural', cast
+          assert identities['ABORDADOR_M'] != identities['TENTANTE_M'], identities
           assert ep.get('hotfix_language_guard') is True, ep
-          assert ep.get('hotfix_distinct_male_cast') is True, ep
+          assert ep.get('hotfix_distinct_male_characters') is True, ep
+          assert ep.get('character_dsp_applied_segments', 0) > 0, ep
+          dsp=ep.get('speaker_dsp', {}).get('TENTANTE_M', {})
+          assert float(dsp.get('pitch_shift_semitones', 0)) <= -1.5, dsp
           p=Path('assets/audio/serie-1/a1-008-n3.mp3')
           assert p.exists() and p.stat().st_size>1000
           info=json.loads(subprocess.check_output(['ffprobe','-v','error','-select_streams','a:0','-show_entries','stream=channels,sample_rate,duration','-of','json',str(p)], text=True))['streams'][0]
@@ -59,7 +64,7 @@ jobs:
           assert 'passatempo' in source
           assert 'gosto de mpb' not in source
           assert 'música popular brasileira' in source
-          print('PASS: A1-008 em PT-BR, narrador blindado e dois personagens masculinos distintos.')
+          print('PASS: A1-008 em PT-BR, com personagens masculinos perceptualmente distintos e DSP aplicado.')
           PY
       - name: Commitar hotfix A1-008
         run: |
