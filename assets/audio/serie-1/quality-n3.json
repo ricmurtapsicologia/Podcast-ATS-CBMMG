@@ -611,7 +611,7 @@
     {
       "episode": 13,
       "output": "a1-013-n3.mp3",
-      "version": "n3-cast-20260901c",
+      "version": "n3-cast-20260901e",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C-dialogue",
       "speakers": [
@@ -620,7 +620,7 @@
         "TENTANTE_M"
       ],
       "speaker_cast": {
-        "INSTRUTOR": "pt-BR-ThalitaMultilingualNeural",
+        "INSTRUTOR": "pt-BR-FranciscaNeural",
         "ABORDADOR_M": "pt-BR-AntonioNeural",
         "TENTANTE_M": "pt-BR-AntonioNeural"
       },
@@ -637,23 +637,36 @@
         },
         "ABORDADOR_M": {
           "rate": 0,
-          "pitch": 1,
-          "label": "masculino-profissional"
+          "pitch": 3,
+          "label": "masculino-profissional-a1-013"
         },
         "TENTANTE_M": {
-          "rate": -2,
-          "pitch": -3,
-          "label": "masculino-crise"
+          "rate": -4,
+          "pitch": -6,
+          "label": "masculino-crise-dsp-a1-013"
+        }
+      },
+      "speaker_dsp": {
+        "INSTRUTOR": {
+          "pitch_shift_semitones": 0.0
+        },
+        "ABORDADOR_M": {
+          "pitch_shift_semitones": 0.0
+        },
+        "TENTANTE_M": {
+          "pitch_shift_semitones": -3.0,
+          "high_pass_hz": 75,
+          "low_pass_hz": 3900
         }
       },
       "voice_identity": {
-        "INSTRUTOR": "pt-BR-ThalitaMultilingualNeural::instrutor",
-        "ABORDADOR_M": "pt-BR-AntonioNeural::masculino-profissional",
-        "TENTANTE_M": "pt-BR-AntonioNeural::masculino-crise"
+        "INSTRUTOR": "pt-BR-FranciscaNeural::instrutor",
+        "ABORDADOR_M": "pt-BR-AntonioNeural::masculino-profissional-a1-013",
+        "TENTANTE_M": "pt-BR-AntonioNeural::masculino-crise-dsp-a1-013"
       },
       "voices": [
         "pt-BR-AntonioNeural",
-        "pt-BR-ThalitaMultilingualNeural"
+        "pt-BR-FranciscaNeural"
       ],
       "multivoice_required": true,
       "pronunciation_dictionary": true,
@@ -664,7 +677,10 @@
         "supportive"
       ],
       "turns": 13,
-      "duration_seconds": 193.3
+      "duration_seconds": 202.4,
+      "hotfix_distinct_characters": true,
+      "base_voice_shared_due_provider": true,
+      "character_strategy": "persona prosódica + DSP do tentante"
     },
     {
       "episode": 14,
@@ -1035,9 +1051,8 @@
     }
   ],
   "latest_hotfix": {
-    "episode": 8,
-    "version": "n3-cast-20260901e",
-    "reason": "personagens masculinos semelhantes e trecho com sonoridade estrangeira",
-    "strategy": "PT-BR fixo + DSP perceptual do tentante"
+    "episode": 13,
+    "reason": "abordador e tentante soavam como a mesma pessoa",
+    "strategy": "duas identidades masculinas distintas por prosódia e DSP"
   }
 }
