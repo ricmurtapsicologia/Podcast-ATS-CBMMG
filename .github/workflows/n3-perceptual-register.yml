@@ -1,0 +1,52 @@
+name: N3 perceptual register
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/init_n3_perceptual_audit.py'
+      - '.github/workflows/n3-perceptual-register.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: n3-perceptual-register
+  cancel-in-progress: true
+
+jobs:
+  register:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Inicializar matriz perceptual
+        run: python scripts/init_n3_perceptual_audit.py
+      - name: Validar que automação não aprovou escuta humana
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('reports/n3-perceptual-audit-latest.json')
+          d=json.loads(p.read_text(encoding='utf-8'))
+          assert len(d['episodes'])==35
+          assert d['current_summary']=={'PASS':0,'AJUSTAR':0,'REFAZER':0,'PENDING_HUMAN':35}
+          assert all(e['decision']=='PENDING_HUMAN' for e in d['episodes'])
+          assert len(d['priority_maxima'])==9
+          print('PASS: 35/35 aguardam escuta humana; prioridades registradas.')
+          PY
+      - name: Commitar registro perceptual
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add reports/n3-perceptual-audit-latest.json
+          if git diff --cached --quiet; then echo "Sem alteracoes"; exit 0; fi
+          git commit -m "audit: registrar matriz perceptual N3 pendente"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
