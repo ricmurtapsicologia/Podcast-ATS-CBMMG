@@ -20,7 +20,7 @@ permissions:
 
 concurrency:
   group: podcast-serie1-n3
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   render:
@@ -119,15 +119,64 @@ jobs:
           PY
       - name: Regressao final de casting
         run: python scripts/test_n3_casting.py
-      - name: Commitar masters e blindagem pt-BR
+      - name: Publicar masters e manifesto da Serie 1
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/audio/serie-1 app.js roteiros/serie-1 scripts/remaster_series1_n3.py
+          # app.js é compartilhado com outras séries; publique-o separadamente.
+          git restore app.js
+          git add assets/audio/serie-1 roteiros/serie-1 scripts/remaster_series1_n3.py
+          if ! git diff --cached --quiet; then
+            git commit -m "build: publicar Serie 1 integralmente em pt-BR nativo"
+            git pull --rebase --autostash origin main
+            git push origin HEAD:main
+          else
+            echo "Masters já estão atualizados"
+          fi
+      - name: Publicar cache-buster da Serie 1 sem sobrescrever outras series
+        run: |
+          git fetch origin main
+          git reset --hard origin/main
+          python - <<'PY'
+          import re
+          from pathlib import Path
+          p=Path('app.js')
+          text=p.read_text(encoding='utf-8')
+          version='n3-ptbr-native-20260901'
+          pattern=r'(assets/audio/serie-1/a1-\d{3}-n3\.mp3\?v=)[^"}]+'
+          text, count=re.subn(pattern, lambda m: m.group(1)+version, text)
+          if count < 21:
+              raise RuntimeError(f'Esperados ao menos 21 cache-busters da Série 1; encontrados {count}')
+          p.write_text(text, encoding='utf-8')
+          print(f'Cache-busters Série 1 atualizados: {count}')
+          PY
+          git add app.js
           if git diff --cached --quiet; then
-            echo "Sem alteracoes"
+            echo "Cache-buster já atualizado"
             exit 0
           fi
-          git commit -m "build: publicar Serie 1 integralmente em pt-BR nativo"
-          git pull --rebase --autostash origin main
-          git push origin HEAD:main
+          git commit -m "build: ativar masters pt-BR nativos da Serie 1"
+          for attempt in 1 2 3; do
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push concorrente detectado; reaplicando cache-buster sobre main (tentativa ${attempt})"
+            git fetch origin main
+            git reset --hard origin/main
+            python - <<'PY'
+          import re
+          from pathlib import Path
+          p=Path('app.js')
+          text=p.read_text(encoding='utf-8')
+          version='n3-ptbr-native-20260901'
+          pattern=r'(assets/audio/serie-1/a1-\d{3}-n3\.mp3\?v=)[^"}]+'
+          text, count=re.subn(pattern, lambda m: m.group(1)+version, text)
+          if count < 21:
+              raise RuntimeError(f'Esperados ao menos 21 cache-busters da Série 1; encontrados {count}')
+          p.write_text(text, encoding='utf-8')
+          PY
+            git add app.js
+            git commit -m "build: ativar masters pt-BR nativos da Serie 1" || true
+          done
+          echo "Falha ao publicar cache-buster após 3 tentativas"
+          exit 1
