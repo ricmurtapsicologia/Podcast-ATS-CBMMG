@@ -19,7 +19,7 @@ OUT = ROOT / "assets" / "audio" / "serie-1"
 TMP = ROOT / ".tmp_serie1_n3"
 APP = ROOT / "app.js"
 
-VERSION = "n3-cast-20260901c"
+VERSION = "n3-cast-20260901e"
 VERSION_TAG = "n3"
 OPENING_SILENCE_MS = 160
 ENDING_SILENCE_MS = 320
@@ -71,8 +71,8 @@ SPEAKER_PERSONA = {
     "INSTRUTOR": {"rate": 0, "pitch": 0, "label": "instrutor"},
     "NARRADOR": {"rate": 0, "pitch": 0, "label": "narrador"},
     "PROFISSIONAL": {"rate": 0, "pitch": 0, "label": "profissional"},
-    "ABORDADOR_M": {"rate": 0, "pitch": 1, "label": "masculino-profissional"},
-    "TENTANTE_M": {"rate": -2, "pitch": -3, "label": "masculino-crise"},
+    "ABORDADOR_M": {"rate": 0, "pitch": 3, "label": "masculino-profissional"},
+    "TENTANTE_M": {"rate": -3, "pitch": -5, "label": "masculino-crise-dsp"},
     "DEMO_M": {"rate": 2, "pitch": 2, "label": "masculino-demo"},
     "ABORDADOR_F": {"rate": 0, "pitch": 1, "label": "feminino-profissional"},
     "TENTANTE_F": {"rate": -2, "pitch": -2, "label": "feminino-crise"},
@@ -93,6 +93,28 @@ def apply_speaker_persona(rate: str, pitch: str, speaker: str) -> tuple[str, str
     p = int(pitch.replace("Hz", "")) + int(cfg["pitch"])
     return f"{max(-16, min(8, r)):+d}%", f"{max(-7, min(7, p)):+d}Hz"
 
+
+
+CHARACTER_DSP = {
+    "TENTANTE_M": {"pitch_shift_semitones": -2.2, "high_pass_hz": 80, "low_pass_hz": 4200},
+}
+
+
+def character_dsp_profile(speaker: str) -> dict:
+    return CHARACTER_DSP.get(speaker, {"pitch_shift_semitones": 0.0})
+
+
+def apply_character_dsp(segment: AudioSegment, speaker: str) -> AudioSegment:
+    cfg = CHARACTER_DSP.get(speaker)
+    if not cfg:
+        return segment
+    semitones = float(cfg["pitch_shift_semitones"])
+    factor = 2.0 ** (semitones / 12.0)
+    shifted_rate = max(8000, int(segment.frame_rate * factor))
+    segment = segment._spawn(segment.raw_data, overrides={"frame_rate": shifted_rate}).set_frame_rate(segment.frame_rate)
+    segment = segment.high_pass_filter(int(cfg["high_pass_hz"]))
+    segment = segment.low_pass_filter(int(cfg["low_pass_hz"]))
+    return segment
 
 def normalize_space(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
@@ -267,11 +289,11 @@ async def resolve_operational_pool():
 
 def voice_preferences(role: str, gender: str | None):
     if role == "narrator":
-        return ["pt-BR-AntonioNeural", "pt-BR-ThalitaMultilingualNeural", "pt-BR-FranciscaNeural"]
+        return ["pt-BR-FranciscaNeural", "pt-BR-ThalitaNeural", "pt-BR-AntonioNeural", "pt-BR-ThalitaMultilingualNeural"]
     if gender == "F":
         return ["pt-BR-ThalitaMultilingualNeural", "pt-BR-FranciscaNeural", "pt-BR-AntonioNeural"]
     if gender == "M":
-        return ["pt-BR-AntonioNeural", "pt-BR-ThalitaMultilingualNeural", "pt-BR-FranciscaNeural"]
+        return ["pt-BR-AntonioNeural", "pt-BR-MacerioMultilingualNeural", "pt-BR-FabioNeural", "pt-BR-DonatoNeural", "pt-BR-HumbertoNeural", "pt-BR-JulioNeural", "pt-BR-NicolauNeural", "pt-BR-ValerioNeural"]
     return ["pt-BR-FranciscaNeural", "pt-BR-ThalitaMultilingualNeural", "pt-BR-AntonioNeural"]
 
 
@@ -345,14 +367,15 @@ async def build_episode(number: int, pool: list[dict], sem: asyncio.Semaphore):
         part = work / f"{idx:03d}.mp3"
         voice = cast[turn["speaker"]]
         await synth(turn["text"], voice, rate, pitch, part, sem)
-        sequence.append((part, 0 if idx == len(turns)-1 else pause))
+        sequence.append((part, 0 if idx == len(turns)-1 else pause, turn["speaker"]))
         roles.append(role)
         speakers.append(turn["speaker"])
         intents.append(p.intent)
 
     audio = AudioSegment.silent(duration=OPENING_SILENCE_MS)
-    for part, pause in sequence:
-        audio += AudioSegment.from_file(part, format="mp3")
+    for part, pause, speaker in sequence:
+        rendered = AudioSegment.from_file(part, format="mp3")
+        audio += apply_character_dsp(rendered, speaker)
         if pause:
             audio += AudioSegment.silent(duration=pause)
     audio += AudioSegment.silent(duration=ENDING_SILENCE_MS)
@@ -385,6 +408,7 @@ async def build_episode(number: int, pool: list[dict], sem: asyncio.Semaphore):
         "speaker_cast": {s: cast[s] for s in episode_speakers},
         "speaker_gender": {s: PREFIXES.get(s, ("narrator", None))[1] for s in episode_speakers},
         "speaker_persona": {s: persona_for(s) for s in episode_speakers},
+        "speaker_dsp": {s: character_dsp_profile(s) for s in episode_speakers},
         "voice_identity": voice_identity,
         "voices": unique_voices,
         "multivoice_required": number in MULTIVOICE_EPISODES,

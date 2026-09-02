@@ -1,0 +1,33 @@
+{
+  "episode": 8,
+  "version": "n3-cast-20260901e",
+  "speaker_cast": {
+    "INSTRUTOR": "pt-BR-FranciscaNeural",
+    "ABORDADOR_M": "pt-BR-AntonioNeural",
+    "TENTANTE_M": "pt-BR-AntonioNeural"
+  },
+  "voice_identity": {
+    "INSTRUTOR": "pt-BR-FranciscaNeural::instrutor",
+    "ABORDADOR_M": "pt-BR-AntonioNeural::masculino-profissional",
+    "TENTANTE_M": "pt-BR-AntonioNeural::masculino-crise-dsp"
+  },
+  "base_voice_shared_due_provider": true,
+  "distinct_character_identities": true,
+  "character_dsp_applied_segments": 11,
+  "speaker_dsp": {
+    "ABORDADOR_M": {
+      "pitch_shift_semitones": 0.0
+    },
+    "TENTANTE_M": {
+      "pitch_shift_semitones": -2.2,
+      "high_pass_hz": 80,
+      "low_pass_hz": 4200
+    }
+  },
+  "normalizations": {
+    "hobby": "passatempo",
+    "MPB": "música popular brasileira"
+  },
+  "output": "assets/audio/serie-1/a1-008-n3.mp3",
+  "duration_seconds": 228.8
+}

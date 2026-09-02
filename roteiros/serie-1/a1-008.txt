@@ -14,12 +14,12 @@ ABORDADOR_M: Entendi. Parece que você se preocupa com ela. Você tem mais algu�
 TENTANTE_M: Não, só ela.
 ABORDADOR_M: Você tem algum animal de estimação, como um cachorro ou gato? Eles podem ser uma boa companhia.
 TENTANTE_M: Temos um cachorro. É da minha mãe, mas ele fica comigo às vezes.
-ABORDADOR_M: Isso é ótimo. Cachorros costumam ser uma boa companhia. E você tem algum hobby ou algo que gosta de fazer quando está sozinho?
+ABORDADOR_M: Isso é ótimo. Cachorros costumam ser uma boa companhia. E você tem algum passatempo ou algo que gosta de fazer quando está sozinho?
 TENTANTE_M: Eu gostava de desenhar, mas faz tempo que não faço isso.
 ABORDADOR_M: Desenhar é uma forma incrível de se expressar. O que você desenhava? Já pensou em voltar a desenhar só por você?
 TENTANTE_M: Às vezes penso, mas não consigo começar.
 ABORDADOR_M: E música? Você costuma ouvir? Tem algum artista ou estilo que gosta mais?
-TENTANTE_M: Gosto de MPB. Era algo que eu ouvia bastante.
+TENTANTE_M: Gosto de música popular brasileira. Era algo que eu ouvia bastante.
 ABORDADOR_M: Música pode trazer lembranças boas, não é? Tem alguma música que te marcou de alguma forma?
 TENTANTE_M: Sim. Mas faz tempo que não ouço nada.
 ABORDADOR_M: Entendi. E sobre o seu dia a dia, você trabalha ou estuda? Como é a sua rotina atualmente?

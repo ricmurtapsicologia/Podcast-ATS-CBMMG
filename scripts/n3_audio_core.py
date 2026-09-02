@@ -50,6 +50,7 @@ PRONUNCIATION_MAP = {
     r'\bRPD\b': 'R P D',
     r'\bTCC-I\b': 'T C C I',
     r'\bTCC\b': 'T C C',
+    r'\bMPB\b': 'música popular brasileira',
     r'\bOMS\b': 'O M S',
     r'\bOPAS\b': 'O P A S',
     r'\bCATS\b': 'C A T S',

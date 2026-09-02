@@ -323,7 +323,7 @@
     {
       "episode": 8,
       "output": "a1-008-n3.mp3",
-      "version": "n3-cast-20260901c",
+      "version": "n3-cast-20260901e",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C-dialogue",
       "speakers": [
@@ -332,7 +332,7 @@
         "TENTANTE_M"
       ],
       "speaker_cast": {
-        "INSTRUTOR": "pt-BR-ThalitaMultilingualNeural",
+        "INSTRUTOR": "pt-BR-FranciscaNeural",
         "ABORDADOR_M": "pt-BR-AntonioNeural",
         "TENTANTE_M": "pt-BR-AntonioNeural"
       },
@@ -349,23 +349,23 @@
         },
         "ABORDADOR_M": {
           "rate": 0,
-          "pitch": 1,
+          "pitch": 3,
           "label": "masculino-profissional"
         },
         "TENTANTE_M": {
-          "rate": -2,
-          "pitch": -3,
-          "label": "masculino-crise"
+          "rate": -3,
+          "pitch": -5,
+          "label": "masculino-crise-dsp"
         }
       },
       "voice_identity": {
-        "INSTRUTOR": "pt-BR-ThalitaMultilingualNeural::instrutor",
+        "INSTRUTOR": "pt-BR-FranciscaNeural::instrutor",
         "ABORDADOR_M": "pt-BR-AntonioNeural::masculino-profissional",
-        "TENTANTE_M": "pt-BR-AntonioNeural::masculino-crise"
+        "TENTANTE_M": "pt-BR-AntonioNeural::masculino-crise-dsp"
       },
       "voices": [
         "pt-BR-AntonioNeural",
-        "pt-BR-ThalitaMultilingualNeural"
+        "pt-BR-FranciscaNeural"
       ],
       "multivoice_required": true,
       "pronunciation_dictionary": true,
@@ -376,7 +376,25 @@
         "supportive"
       ],
       "turns": 26,
-      "duration_seconds": 220.0
+      "duration_seconds": 228.8,
+      "hotfix_language_guard": true,
+      "hotfix_distinct_male_characters": true,
+      "base_voice_shared_due_provider": true,
+      "character_dsp_applied_segments": 11,
+      "speaker_dsp": {
+        "ABORDADOR_M": {
+          "pitch_shift_semitones": 0.0
+        },
+        "TENTANTE_M": {
+          "pitch_shift_semitones": -2.2,
+          "high_pass_hz": 80,
+          "low_pass_hz": 4200
+        }
+      },
+      "normalized_terms": {
+        "hobby": "passatempo",
+        "MPB": "música popular brasileira"
+      }
     },
     {
       "episode": 9,
@@ -1015,5 +1033,11 @@
       "turns": 3,
       "duration_seconds": 84.9
     }
-  ]
+  ],
+  "latest_hotfix": {
+    "episode": 8,
+    "version": "n3-cast-20260901e",
+    "reason": "personagens masculinos semelhantes e trecho com sonoridade estrangeira",
+    "strategy": "PT-BR fixo + DSP perceptual do tentante"
+  }
 }
