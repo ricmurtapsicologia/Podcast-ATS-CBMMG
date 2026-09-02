@@ -29,8 +29,8 @@ jobs:
   player-smoke:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
       - name: Instalar Playwright
@@ -48,21 +48,29 @@ jobs:
         run: python scripts/smoke_player_e2e.py http://127.0.0.1:8765/
       - name: Confirmar identidade da release pública N3
         run: |
-          curl -fsSL --retry 5 --retry-delay 2 \
-            "https://ricmurtapsicologia.github.io/Podcast-ATS-CBMMG/app.js?release=${GITHUB_SHA}" \
-            -o /tmp/public-app.js
           python - <<'PY'
-          from pathlib import Path
-          text = Path('/tmp/public-app.js').read_text(encoding='utf-8')
+          import time
+          import urllib.request
+
+          url = f"https://ricmurtapsicologia.github.io/Podcast-ATS-CBMMG/app.js?release=${{GITHUB_SHA}}"
           version = 'n3-cast-20260901c'
-          s1 = text.count('assets/audio/serie-1/a1-')
-          s2 = text.count('assets/audio/serie-2/a2-')
-          version_refs = text.count(f'?v={version}')
-          assert s1 == 21, f'Série 1 pública: {s1}/21'
-          assert s2 == 14, f'Série 2 pública: {s2}/14'
-          assert version_refs == 35, f'Referências públicas {version}: {version_refs}/35'
-          assert 'n3-cast-20260901b' not in text, 'Referência antiga N3-B encontrada no app público'
-          print(f'PASS: app público {version}; Série 1 21/21; Série 2 14/14; URLs 35/35.')
+          last = None
+          for attempt in range(1, 31):
+              try:
+                  with urllib.request.urlopen(url, timeout=15) as response:
+                      text = response.read().decode('utf-8')
+                  s1 = text.count('assets/audio/serie-1/a1-')
+                  s2 = text.count('assets/audio/serie-2/a2-')
+                  version_refs = text.count(f'?v={version}')
+                  if s1 == 21 and s2 == 14 and version_refs == 35 and 'n3-cast-20260901b' not in text:
+                      print(f'PASS: app público {version}; Série 1 21/21; Série 2 14/14; URLs 35/35.')
+                      break
+                  last = f's1={s1} s2={s2} refs={version_refs}'
+              except Exception as exc:
+                  last = f'{type(exc).__name__}: {exc}'
+              if attempt == 30:
+                  raise RuntimeError(f'GitHub Pages não convergiu para a release esperada: {last}')
+              time.sleep(5)
           PY
       - name: Smoke E2E da versão pública
         run: python scripts/smoke_player_e2e.py https://ricmurtapsicologia.github.io/Podcast-ATS-CBMMG/
