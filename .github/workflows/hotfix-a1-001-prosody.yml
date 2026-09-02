@@ -27,20 +27,21 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Instalar dependencias
+      - name: Instalar dependencias leves
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y ffmpeg
           python -m pip install --upgrade pip
-          pip install edge-tts pydub
+          pip install edge-tts pydub imageio-ffmpeg
       - name: Renderizar A1-001 com prosodia humanizada
         run: python scripts/hotfix_a1_001_prosody.py
       - name: Validar integridade, ritmo e master
         run: |
           python - <<'PY'
-          import json, subprocess
+          import json
           from pathlib import Path
+          import imageio_ffmpeg
+          from pydub import AudioSegment
 
+          AudioSegment.converter = imageio_ffmpeg.get_ffmpeg_exe()
           version='n3-a1-001-prosody-20260902a'
           report=json.loads(Path('assets/audio/serie-1/quality-n3.json').read_text(encoding='utf-8'))
           ep=next(e for e in report['episodes'] if e['episode']==1)
@@ -59,13 +60,10 @@ jobs:
 
           p=Path('assets/audio/serie-1/a1-001-n3.mp3')
           assert p.exists() and p.stat().st_size>1000
-          info=json.loads(subprocess.check_output([
-              'ffprobe','-v','error','-select_streams','a:0',
-              '-show_entries','stream=channels,sample_rate,duration','-of','json',str(p)
-          ], text=True))['streams'][0]
-          assert int(info['channels'])==1
-          assert int(info['sample_rate'])==44100
-          assert 65 <= float(info['duration']) <= 80
+          rendered=AudioSegment.from_file(p, format='mp3')
+          assert rendered.channels==1, rendered.channels
+          assert rendered.frame_rate==44100, rendered.frame_rate
+          assert 65000 <= len(rendered) <= 80000, len(rendered)
 
           hotfix=json.loads(Path('reports/a1-001-prosody-hotfix.json').read_text(encoding='utf-8'))
           assert hotfix['lexical_integrity']==1.0
