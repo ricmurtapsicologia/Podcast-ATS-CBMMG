@@ -4,59 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#07111f" />
+  <meta name="gav-release" content="gav-learning-v4-20260902" />
 
   <title>Girando a Ampulheta da Vida | Biblioteca de Apoio ATS</title>
-  <meta name="description" content="Biblioteca de apoio à formação em Atendimento a Tentativas de Suicídio, com séries sonoras e trilha visual de Primeiros Socorros Psicológicos para profissionais de emergência e segurança pública." />
+  <meta name="description" content="Biblioteca de apoio à formação em Atendimento a Tentativas de Suicídio, com séries sonoras e trilha de Primeiros Socorros Psicológicos para profissionais de emergência e segurança pública." />
   <meta name="keywords" content="ATS, CBMMG, biblioteca sonora, primeiros socorros psicológicos, PSP, profissionais de emergência, segurança pública, saúde mental" />
   <meta name="author" content="Major BM Richelmy Murta Pinto" />
 
   <meta property="og:title" content="Girando a Ampulheta da Vida | Biblioteca de Apoio ATS" />
   <meta property="og:description" content="Conteúdos complementares para escuta, reflexão técnica e Primeiros Socorros Psicológicos." />
-  <meta property="og:image" content="https://i.pinimg.com/736x/8d/b9/5f/8db95f60c2ac138e3ed50b72450a8b68.jpg" />
+  <meta property="og:image" content="https://ricmurtapsicologia.github.io/Podcast-ATS-CBMMG/assets/img/hero.jpg" />
   <meta property="og:url" content="https://ricmurtapsicologia.github.io/Podcast-ATS-CBMMG/" />
   <meta property="og:type" content="website" />
 
-  <link rel="icon" href="https://i.pinimg.com/originals/33/9d/0c/339d0cc2f05bbb719debe6a5efb414dd.jpg" type="image/x-icon" />
-  <link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin />
-  <link rel="preconnect" href="https://github.com" crossorigin />
-  <link rel="preconnect" href="https://i.pinimg.com" crossorigin />
-  <link rel="preconnect" href="https://images.pexels.com" crossorigin />
-  <link rel="preload" as="image" href="https://i.pinimg.com/736x/8d/b9/5f/8db95f60c2ac138e3ed50b72450a8b68.jpg" />
-
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="psp.css" />
+  <link rel="icon" href="assets/img/hero.jpg" type="image/jpeg" />
+  <link rel="stylesheet" href="styles.css?v=gav-learning-v4-20260902" />
+  <link rel="stylesheet" href="psp.css?v=gav-learning-v4-20260902" />
+  <link rel="stylesheet" href="learning-v4.css?v=gav-learning-v4-20260902" />
+  <link rel="stylesheet" href="assets-v4.css?v=gav-learning-v4-20260902" />
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-N1GEBDNZ8B"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-N1GEBDNZ8B",{anonymize_ip:true});</script>
-  <script defer src="app.js?v=20260825-s1-organic-v5"></script>
-  <script defer src="psp.js"></script>
+  <script defer src="content-manifest.js?v=gav-learning-v4-20260902"></script>
+  <script defer src="psp.js?v=gav-learning-v4-20260902"></script>
+  <script defer src="app.js?v=gav-learning-v4-20260902"></script>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <div id="appStatus" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
 
-  <div class="onboarding" id="onboarding" role="dialog" aria-modal="true" aria-labelledby="onboardTitle" aria-hidden="true">
+  <div class="onboarding" id="onboarding" role="dialog" aria-modal="true" aria-labelledby="onboardTitle" aria-describedby="onboardDescription" aria-hidden="true">
     <div class="onboarding-panel">
-      <div class="onboard-slide is-active" data-slide="0">
-        <span class="onboard-kicker">Material complementar</span>
-        <h2 id="onboardTitle">Bem-vindo ao ambiente de apoio</h2>
-        <p>Este espaço reúne duas séries de áudio de ATS e uma trilha visual de Primeiros Socorros Psicológicos.</p>
-      </div>
-      <div class="onboard-slide" data-slide="1">
-        <span class="onboard-kicker">Organização</span>
-        <h2>Escolha uma série</h2>
-        <p>As Séries 1 e 2 preservam os episódios sonoros. A Série 3 apresenta 10 cards de PSP voltados a profissionais de emergência e segurança pública.</p>
-      </div>
-      <div class="onboard-slide" data-slide="2">
-        <span class="onboard-kicker">Progressão</span>
-        <h2>Use cada trilha no seu ritmo</h2>
-        <p>Nos áudios, o progresso pode ser salvo neste dispositivo. Na trilha de PSP, avance pelos 10 cards em sequência e depois use-os como consulta rápida.</p>
-      </div>
+      <span class="onboard-kicker">Material complementar</span>
+      <h2 id="onboardTitle">Escolha uma trilha e avance no seu ritmo</h2>
+      <p id="onboardDescription">As Séries 1 e 2 reúnem episódios em áudio. A Série 3 apresenta Primeiros Socorros Psicológicos. Seu progresso fica salvo neste dispositivo para facilitar a retomada.</p>
       <div class="onboard-actions">
-        <button class="btn ghost" type="button" id="onboardPrev">Voltar</button>
-        <button class="btn" type="button" id="onboardNext">Próximo</button>
-        <button class="btn ghost" type="button" id="onboardSkip">Pular</button>
+        <button class="btn" type="button" id="onboardStart">Explorar as séries</button>
+        <button class="btn ghost" type="button" id="onboardSkip">Fechar orientação</button>
       </div>
-      <label class="dont-show"><input type="checkbox" id="dontShowAgain" /> Não mostrar novamente</label>
     </div>
   </div>
 
@@ -68,9 +53,10 @@
           <span class="hero-kicker">Biblioteca de apoio às aulas de ATS</span>
           <h1 class="hero-title">Girando a <span class="accent">Ampulheta</span> da Vida</h1>
           <p class="hero-text">Conteúdos complementares para escuta, reflexão técnica e aprofundamento em abordagem, compreensão do sofrimento em crise e Primeiros Socorros Psicológicos.</p>
+          <p class="hero-progress" id="heroProgress" hidden></p>
           <div class="hero-actions">
-            <button class="btn" type="button" id="aboutOpen">Conhecer o projeto</button>
-            <a class="btn ghost" href="#series">Ver séries</a>
+            <a class="btn" id="heroPrimary" href="#series">Explorar as séries</a>
+            <button class="btn ghost" type="button" id="aboutOpen">Conhecer o projeto</button>
           </div>
         </div>
       </div>
@@ -83,7 +69,7 @@
             <div>
               <span class="section-kicker">Sobre o projeto</span>
               <h2 id="aboutTitle">Estudo, revisão e aprofundamento profissional</h2>
-              <p>O projeto organiza conteúdos de apoio à formação técnica em ATS e uma trilha visual de Primeiros Socorros Psicológicos para profissionais de emergência e segurança pública.</p>
+              <p>O projeto organiza conteúdos de apoio à formação técnica em ATS e uma trilha de Primeiros Socorros Psicológicos para profissionais de emergência e segurança pública.</p>
             </div>
             <button class="btn secondary" type="button" id="aboutToggle" aria-expanded="false" aria-controls="aboutContent">Entenda a proposta</button>
           </div>
@@ -98,7 +84,7 @@
               <ul class="about-list">
                 <li><strong>Série 1:</strong> Abordagem Técnica — comunicação que salva.</li>
                 <li><strong>Série 2:</strong> Engrenagens do comportamento suicida.</li>
-                <li><strong>Série 3:</strong> Primeiros Socorros Psicológicos.</li>
+                <li><strong>Série 3:</strong> Primeiros Socorros Psicológicos no Trabalho.</li>
               </ul>
             </div>
           </div>
@@ -109,12 +95,12 @@
         <div class="section-head">
           <span class="section-kicker">Séries disponíveis</span>
           <h2 class="section-title" id="seriesTitle">Escolha uma trilha de aprendizagem</h2>
-          <p class="section-text">As Séries 1 e 2 mantêm a biblioteca sonora original. A Série 3 abre, no mesmo painel, uma trilha visual com 10 cards de Primeiros Socorros Psicológicos.</p>
+          <p class="section-text">As três séries estão organizadas para consulta e progressão. Ao retornar, use “Continuar de onde parei” para retomar rapidamente seu último conteúdo.</p>
         </div>
         <div class="series-grid" id="seriesGrid" aria-label="Séries de conteúdos"></div>
       </section>
 
-      <section class="container" id="episodes" aria-live="polite">
+      <section class="container" id="episodes">
         <div class="library-panel" id="libraryPanel">
           <div class="library-head">
             <div>
@@ -125,7 +111,7 @@
             <button class="btn ghost" type="button" id="backToSeries">Voltar às séries</button>
           </div>
           <div class="episode-list">
-            <p class="tip" id="audioTip" hidden>O progresso do áudio é salvo neste dispositivo.</p>
+            <p class="tip" id="audioTip" hidden>Seu progresso é salvo neste dispositivo.</p>
             <div id="episodeList"></div>
           </div>
         </div>
@@ -134,7 +120,7 @@
       <section class="container" id="feedback" aria-labelledby="feedbackTitle">
         <div class="section-head"><span class="section-kicker">Participação</span><h2 class="section-title" id="feedbackTitle">Contribua com o aperfeiçoamento</h2></div>
         <article class="feedback-panel">
-          <div><h2>Envie observações sobre o material</h2><p>Sugestões de melhoria, correções e percepções sobre a experiência de estudo ajudam a qualificar o projeto.</p></div>
+          <div><h2>Envie observações sobre a experiência</h2><p>Sugestões de melhoria, correções e percepções sobre a navegação e o conteúdo ajudam a qualificar o projeto.</p></div>
           <a class="btn secondary" href="https://wa.me/5535984640729?text=Ol%C3%A1%2C%20gostaria%20de%20dar%20um%20feedback%20sobre%20o%20projeto%20Girando%20a%20Ampulheta%20da%20Vida." target="_blank" rel="noopener noreferrer">Enviar feedback</a>
         </article>
       </section>
