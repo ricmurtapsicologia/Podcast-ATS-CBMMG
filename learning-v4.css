@@ -1,0 +1,92 @@
+/* Girando a Ampulheta da Vida — camada de experiência de aprendizagem v4 */
+
+.sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+
+.hero-progress{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:8px 11px;border:1px solid rgba(255,221,0,.22);border-radius:999px;background:rgba(255,221,0,.08);color:rgba(255,255,255,.82);font-size:12.5px;font-weight:800}
+.has-progress .hero{min-height:430px}
+.has-progress .hero-inner{min-height:430px}
+.has-progress .hero-main{padding-top:34px}
+
+.series-progress{height:5px;overflow:hidden;border-radius:999px;background:rgba(255,255,255,.08)}
+.series-progress span{display:block;height:100%;border-radius:inherit;background:var(--gold)}
+
+.learning-toolbar{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.8fr);gap:16px;padding:18px;border-bottom:1px solid var(--stroke-soft);background:rgba(255,255,255,.025)}
+.learning-progress-summary{display:grid;gap:5px;align-content:center}
+.learning-progress-summary strong{color:var(--white);font-size:17px}
+.learning-progress-summary>span{color:var(--text-muted);font-size:12.5px}
+.learning-progress-track{height:7px;overflow:hidden;border-radius:999px;background:rgba(255,255,255,.09)}
+.learning-progress-track span{display:block;height:100%;border-radius:inherit;background:var(--gold);transition:width var(--transition-base)}
+.episode-search{display:grid;gap:7px;color:var(--text-muted);font-size:12px;font-weight:800}
+.episode-search input{width:100%;min-height:44px;padding:10px 12px;border:1px solid var(--stroke-soft);border-radius:12px;background:rgba(255,255,255,.06);color:var(--white);outline:none}
+.episode-search input::placeholder{color:rgba(255,255,255,.42)}
+.episode-search input:focus{border-color:rgba(255,221,0,.45);box-shadow:0 0 0 3px rgba(255,221,0,.09)}
+
+.filter-row{display:flex;flex-wrap:wrap;gap:8px;padding:13px 18px;border-bottom:1px solid var(--stroke-soft)}
+.filter-chip{min-height:36px;padding:8px 11px;border:1px solid var(--stroke-soft);border-radius:999px;background:rgba(255,255,255,.04);color:var(--text-soft);font-size:12.5px;font-weight:800;cursor:pointer}
+.filter-chip.is-active{border-color:rgba(255,221,0,.32);background:rgba(255,221,0,.10);color:var(--gold)}
+
+.active-player{position:sticky;top:12px;z-index:20;display:grid;gap:13px;margin:16px 18px;padding:17px;border:1px solid rgba(255,221,0,.25);border-radius:18px;background:linear-gradient(180deg,rgba(13,28,46,.98),rgba(5,13,23,.98));box-shadow:0 18px 44px rgba(0,0,0,.42);backdrop-filter:blur(14px)}
+.active-player-copy{display:grid;gap:5px}
+.active-player-copy h3{margin:0;color:var(--white);font-size:clamp(18px,2vw,24px);line-height:1.25}
+.active-player-copy p{margin:0;color:var(--text-muted);font-size:12.8px;line-height:1.45}
+.active-player audio{width:100%;display:block}
+.player-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.text-action{padding:4px 0;border:0;background:transparent;color:rgba(255,221,0,.92);font:inherit;font-size:12.5px;font-weight:800;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.player-actions .btn{margin-left:auto}
+
+.episode-index-head{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:2px 18px 8px;color:var(--text-soft);font-size:13px}
+.episode-index-head strong{color:var(--white);font-size:14px}
+.episode-index{display:grid;gap:8px;padding:0 18px 18px}
+.episode-row{border:1px solid var(--stroke-soft);border-radius:15px;background:rgba(255,255,255,.035);overflow:hidden}
+.episode-row.is-active{border-color:rgba(255,221,0,.30);background:rgba(255,221,0,.055)}
+.episode-row.is-complete{border-color:rgba(190,242,100,.16)}
+.episode-select{width:100%;display:grid;grid-template-columns:48px minmax(0,1fr) auto;gap:13px;align-items:center;padding:12px;background:transparent;color:inherit;text-align:left;cursor:pointer}
+.episode-row .episode-number{width:48px;height:48px;border-radius:14px}
+.episode-row-copy{display:grid;gap:4px;min-width:0}
+.episode-row-copy strong{color:var(--white);font-size:14px;line-height:1.35}
+.episode-row-copy span{color:var(--text-muted);font-size:12px}
+.episode-row-action{color:var(--gold);font-size:12px;font-weight:850;white-space:nowrap}
+.episode-select:hover .episode-row-action{text-decoration:underline;text-underline-offset:3px}
+.empty-state,.loading-state{margin:0;padding:22px;border:1px dashed var(--stroke-soft);border-radius:15px;color:var(--text-muted);text-align:center}
+
+.psp-learning-toolbar{grid-template-columns:1fr}
+.psp-active-player{margin-top:0}
+.psp-card-state{display:inline-flex;align-items:center;min-height:28px;padding:5px 9px;border:1px solid var(--stroke-soft);border-radius:999px;background:rgba(255,255,255,.04);color:var(--text-soft);font-size:11px;font-weight:800}
+.psp-card.is-complete{border-color:rgba(190,242,100,.20)}
+.psp-listen{grid-column:1/-1;justify-self:start;margin-top:2px}
+.psp-audio-chip{color:#bfeefa}
+.psp-summary-meta{align-items:center}
+
+.onboarding-panel{max-width:560px}
+.onboard-actions{justify-content:flex-start}
+
+@media(max-width:760px){
+  .learning-toolbar{grid-template-columns:1fr;padding:14px}
+  .filter-row{padding:11px 14px}
+  .active-player{position:relative;top:auto;margin:12px 14px;padding:14px}
+  .player-actions{display:grid;grid-template-columns:1fr 1fr}
+  .player-actions .btn{grid-column:1/-1;margin-left:0;width:100%}
+  .episode-index-head{padding:2px 14px 8px}
+  .episode-index{padding:0 14px 14px}
+  .episode-select{grid-template-columns:42px minmax(0,1fr);gap:10px;padding:11px}
+  .episode-row .episode-number{width:42px;height:42px;border-radius:12px}
+  .episode-row-action{grid-column:2;justify-self:start}
+  .has-progress .hero{min-height:430px}
+  .has-progress .hero-inner{min-height:430px}
+  .has-progress .hero-main{padding-top:92px}
+}
+
+@media(max-width:420px){
+  .filter-row{gap:6px}
+  .filter-chip{flex:1 1 calc(50% - 6px);text-align:center}
+  .episode-row-copy strong{font-size:13.3px}
+  .player-actions{grid-template-columns:1fr}
+  .player-actions .btn{grid-column:auto}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+  *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}
+  .series-card:hover,.psp-card:hover,.btn:hover:not(:disabled){transform:none!important}
+  .series-media img,.psp-media img{transform:none!important}
+}
