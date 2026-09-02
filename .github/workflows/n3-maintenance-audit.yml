@@ -1,0 +1,79 @@
+name: N3 maintenance audit
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/optimize_series1_concurrency.py'
+      - 'scripts/test_n3_casting.py'
+      - 'scripts/test_n3_pipeline_concurrency.py'
+      - 'scripts/probe_n3_voice_pool.py'
+      - '.github/workflows/n3-maintenance-audit.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: n3-maintenance-audit
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Instalar dependências
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          pip install edge-tts pydub playwright
+          playwright install --with-deps chromium
+      - name: Aplicar otimização determinística da Série 1
+        run: python scripts/optimize_series1_concurrency.py
+      - name: Compilar módulos críticos
+        run: >-
+          python -m py_compile
+          scripts/n3_audio_core.py
+          scripts/n3_casting.py
+          scripts/remaster_series1_n3.py
+          scripts/remaster_series2_n3.py
+          scripts/qa_n3_release.py
+          scripts/test_n3_casting.py
+          scripts/test_n3_pipeline_concurrency.py
+          scripts/probe_n3_voice_pool.py
+      - name: Testes de casting e gênero
+        run: python scripts/test_n3_casting.py
+      - name: Teste funcional da concorrência da Série 1
+        run: python scripts/test_n3_pipeline_concurrency.py
+      - name: Investigar pool operacional de vozes pt-BR
+        run: python scripts/probe_n3_voice_pool.py --output reports/n3-voice-probe-latest.json --timeout 15
+      - name: Gate técnico integral 35/35
+        run: python scripts/qa_n3_release.py
+      - name: Servir site localmente
+        run: |
+          python -m http.server 8765 --bind 127.0.0.1 > /tmp/podcast-http.log 2>&1 &
+          echo $! > /tmp/podcast-http.pid
+          for i in {1..20}; do curl -fsS http://127.0.0.1:8765/ >/dev/null && exit 0; sleep 0.5; done
+          cat /tmp/podcast-http.log
+          exit 1
+      - name: Smoke E2E local
+        run: python scripts/smoke_player_e2e.py http://127.0.0.1:8765/
+      - name: Smoke E2E público
+        run: python scripts/smoke_player_e2e.py https://ricmurtapsicologia.github.io/Podcast-ATS-CBMMG/
+      - name: Commitar otimização e relatório de vozes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add scripts/remaster_series1_n3.py reports/n3-voice-probe-latest.json
+          if git diff --cached --quiet; then
+            echo "Sem alterações a publicar"
+            exit 0
+          fi
+          git commit -m "perf: paralelizar Série 1 e registrar pool N3"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
