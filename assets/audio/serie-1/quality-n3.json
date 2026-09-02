@@ -921,7 +921,7 @@
     {
       "episode": 19,
       "output": "a1-019-n3.mp3",
-      "version": "n3-cast-20260901c",
+      "version": "n3-cast-20260901e",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C-dialogue",
       "speakers": [
@@ -929,7 +929,7 @@
         "DEMO_M"
       ],
       "speaker_cast": {
-        "INSTRUTOR": "pt-BR-ThalitaMultilingualNeural",
+        "INSTRUTOR": "pt-BR-FranciscaNeural",
         "DEMO_M": "pt-BR-AntonioNeural"
       },
       "speaker_gender": {
@@ -948,13 +948,21 @@
           "label": "masculino-demo"
         }
       },
+      "speaker_dsp": {
+        "INSTRUTOR": {
+          "pitch_shift_semitones": 0.0
+        },
+        "DEMO_M": {
+          "pitch_shift_semitones": 0.0
+        }
+      },
       "voice_identity": {
-        "INSTRUTOR": "pt-BR-ThalitaMultilingualNeural::instrutor",
+        "INSTRUTOR": "pt-BR-FranciscaNeural::instrutor",
         "DEMO_M": "pt-BR-AntonioNeural::masculino-demo"
       },
       "voices": [
         "pt-BR-AntonioNeural",
-        "pt-BR-ThalitaMultilingualNeural"
+        "pt-BR-FranciscaNeural"
       ],
       "multivoice_required": true,
       "pronunciation_dictionary": true,
@@ -964,7 +972,9 @@
         "question"
       ],
       "turns": 5,
-      "duration_seconds": 85.9
+      "duration_seconds": 85.9,
+      "hotfix_language_guard": true,
+      "hotfix_reason": "abertura com sonoridade de espanhol/ingles"
     },
     {
       "episode": 20,
@@ -1051,8 +1061,8 @@
     }
   ],
   "latest_hotfix": {
-    "episode": 13,
-    "reason": "abordador e tentante soavam como a mesma pessoa",
-    "strategy": "duas identidades masculinas distintas por prosódia e DSP"
+    "episode": 19,
+    "reason": "abertura com sonoridade de espanhol/ingles",
+    "strategy": "casting exclusivamente pt-BR nativo, sem voz Multilingual"
   }
 }
