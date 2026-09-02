@@ -10,6 +10,8 @@ on:
       - 'scripts/remaster_series1_n3.py'
       - 'scripts/remaster_series2_n3.py'
       - 'scripts/qa_n3_release.py'
+      - 'scripts/test_n3_casting.py'
+      - 'scripts/test_n3_pipeline_concurrency.py'
       - 'assets/audio/serie-1/**'
       - 'assets/audio/serie-2/**'
       - '.github/workflows/n3-release-gate.yml'
@@ -21,6 +23,8 @@ on:
       - 'scripts/remaster_series1_n3.py'
       - 'scripts/remaster_series2_n3.py'
       - 'scripts/qa_n3_release.py'
+      - 'scripts/test_n3_casting.py'
+      - 'scripts/test_n3_pipeline_concurrency.py'
       - 'assets/audio/serie-1/**'
       - 'assets/audio/serie-2/**'
   workflow_dispatch: {}
@@ -32,15 +36,28 @@ jobs:
   gate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
-      - name: Instalar ffmpeg
+      - name: Instalar dependências do gate
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y ffmpeg
-      - name: Compilar núcleo N3
-        run: python -m py_compile scripts/n3_audio_core.py scripts/n3_casting.py scripts/qa_n3_release.py
+          pip install edge-tts pydub
+      - name: Compilar núcleo N3 e testes
+        run: >-
+          python -m py_compile
+          scripts/n3_audio_core.py
+          scripts/n3_casting.py
+          scripts/remaster_series1_n3.py
+          scripts/remaster_series2_n3.py
+          scripts/qa_n3_release.py
+          scripts/test_n3_casting.py
+          scripts/test_n3_pipeline_concurrency.py
+      - name: Regressão de casting e gênero
+        run: python scripts/test_n3_casting.py
+      - name: Concorrência determinística da Série 1
+        run: python scripts/test_n3_pipeline_concurrency.py
       - name: Gate integral 35/35
         run: python scripts/qa_n3_release.py
