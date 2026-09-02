@@ -43,12 +43,15 @@ jobs:
           from pathlib import Path
 
           target=(0,1,2,3,10,11,12,13)
-          greeting_re=re.compile(r'\bol[áa]\s*,?\s+pessoal\b[.!?…]*', re.I)
+          greeting_re=re.compile(r'\bol[áa]\s*,?\s+pessoal\b[,.!?…]*', re.I)
+          malformed_re=re.compile(r'Olá, caros abordadores\.\s*[,.;:]+', re.I)
           canonical='Olá, caros abordadores.'
           for n in target:
               source=Path(f'roteiros/serie-2/a2-{n:03d}.txt').read_text(encoding='utf-8')
               assert canonical in source, (n, 'saudacao canonica ausente')
               assert not greeting_re.search(source), (n, 'ola pessoal residual')
+              assert not malformed_re.search(source), (n, 'pontuacao invalida')
+              assert 'abordadores.,' not in source, (n, 'ponto seguido de virgula')
               p=Path(f'assets/audio/serie-2/a2-{n:03d}-n3.mp3')
               assert p.exists() and p.stat().st_size>1000, p
               info=json.loads(subprocess.check_output([
@@ -59,17 +62,20 @@ jobs:
               assert float(info['duration'])>0
 
           for p in Path('roteiros/serie-2').glob('a2-*.txt'):
-              assert not greeting_re.search(p.read_text(encoding='utf-8')), p
+              text=p.read_text(encoding='utf-8')
+              assert not greeting_re.search(text), p
+              assert not malformed_re.search(text), p
 
           app=Path('app.js').read_text(encoding='utf-8')
           for n in target:
-              assert f'a2-{n:03d}-n3.mp3?v=n3-cast-20260901f' in app, n
+              assert f'a2-{n:03d}-n3.mp3?v=n3-cast-20260901g' in app, n
 
           report=json.loads(Path('reports/series2-greeting-hotfix.json').read_text(encoding='utf-8'))
           assert report['residual_ola_pessoal'] is False
+          assert report['malformed_canonical_punctuation'] is False
           assert report['canonical_greeting']==canonical
           assert report['episodes']==list(target)
-          print('PASS: Série 2 sem saudação “olá pessoal”; 8 episódios rerenderizados e cache atualizado.')
+          print('PASS: Série 2 com saudação canônica, pontuação correta, 8 episódios rerenderizados e cache atualizado.')
           PY
       - name: Commitar correcao publicada
         run: |
@@ -99,6 +105,6 @@ jobs:
             echo "Sem alteracoes"
             exit 0
           fi
-          git commit -m "fix: trocar ola pessoal por caros abordadores na Serie 2"
+          git commit -m "fix: padronizar saudacao da Serie 2 para caros abordadores"
           git pull --rebase --autostash origin main
           git push origin HEAD:main
