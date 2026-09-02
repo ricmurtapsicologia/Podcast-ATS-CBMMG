@@ -44,17 +44,18 @@ jobs:
           cast=ep['speaker_cast']
           assert cast['INSTRUTOR']=='pt-BR-FranciscaNeural', cast
           assert cast['ABORDADOR_M']=='pt-BR-AntonioNeural', cast
-          assert cast['TENTANTE_M'].startswith('pt-BR-'), cast
-          assert cast['TENTANTE_M'] != cast['ABORDADOR_M'], cast
+          assert cast['TENTANTE_M']=='pt-BR-AntonioNeural', cast
           assert all('Multilingual' not in v for v in cast.values()), cast
           assert all(v.startswith('pt-BR-') for v in cast.values()), cast
+          identities=ep['voice_identity']
+          assert identities['ABORDADOR_M'] != identities['TENTANTE_M'], identities
           p=Path('assets/audio/serie-1/a1-013-n3.mp3')
           assert p.exists() and p.stat().st_size>1000
           info=json.loads(subprocess.check_output(['ffprobe','-v','error','-select_streams','a:0','-show_entries','stream=channels,sample_rate,duration','-of','json',str(p)], text=True))['streams'][0]
           assert int(info['channels'])==1
           assert int(info['sample_rate'])==44100
           assert float(info['duration'])>0
-          print('PASS: A1-013 exclusivamente pt-BR, sem voz multilingual e com personagens masculinos distintos.')
+          print('PASS: A1-013 exclusivamente pt-BR, sem voz multilingual; personagens diferenciados por persona/prosodia.')
           PY
       - name: Commitar somente A1-013 e relatorio
         run: |
