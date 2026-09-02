@@ -71,12 +71,12 @@ def patch_renderer() -> None:
 
     text = re.sub(
         r'pool_ready\(operational, min_male=\d+, min_female=\d+\)',
-        'pool_ready(operational, min_male=1, min_female=1)',
+        'pool_ready(operational, min_male=1, min_female=2)',
         text,
     )
     text = re.sub(
         r'require_balanced_pool\(operational, min_male=\d+, min_female=\d+\)',
-        'require_balanced_pool(operational, min_male=1, min_female=1)',
+        'require_balanced_pool(operational, min_male=1, min_female=2)',
         text,
     )
 
@@ -116,11 +116,30 @@ def patch_renderer() -> None:
         raise RuntimeError(f"Série 1: voz multilíngue proibida no casting: {cast}")
     if any(not voice.startswith("pt-BR-") for voice in cast.values()):
         raise RuntimeError(f"Série 1: voz fora de pt-BR no casting: {cast}")
+    if "ABORDADOR_F" in cast and "TENTANTE_F" in cast and cast["ABORDADOR_F"] == cast["TENTANTE_F"]:
+        raise RuntimeError(
+            f"Série 1: ABORDADOR_F e TENTANTE_F exigem vozes-base femininas distintas; casting={cast}"
+        )
     return cast'''
     if old_guard in text:
         text = text.replace(old_guard, new_guard, 1)
-    elif 'voz multilíngue proibida no casting' not in text:
-        raise RuntimeError("Ponto do language guard não localizado.")
+    else:
+        if 'voz multilíngue proibida no casting' not in text:
+            raise RuntimeError("Ponto do language guard não localizado.")
+        if 'ABORDADOR_F e TENTANTE_F exigem vozes-base femininas distintas' not in text:
+            anchor = '''    if any(not voice.startswith("pt-BR-") for voice in cast.values()):
+        raise RuntimeError(f"Série 1: voz fora de pt-BR no casting: {cast}")
+    return cast'''
+            replacement = '''    if any(not voice.startswith("pt-BR-") for voice in cast.values()):
+        raise RuntimeError(f"Série 1: voz fora de pt-BR no casting: {cast}")
+    if "ABORDADOR_F" in cast and "TENTANTE_F" in cast and cast["ABORDADOR_F"] == cast["TENTANTE_F"]:
+        raise RuntimeError(
+            f"Série 1: ABORDADOR_F e TENTANTE_F exigem vozes-base femininas distintas; casting={cast}"
+        )
+    return cast'''
+            if anchor not in text:
+                raise RuntimeError("Ponto do guard de vozes femininas distintas não localizado.")
+            text = text.replace(anchor, replacement, 1)
 
     if '"native_ptbr_only": True,' not in text:
         episode_marker = '        "pronunciation_dictionary": True,\n'
@@ -149,8 +168,10 @@ def patch_renderer() -> None:
         if voice in text:
             raise RuntimeError(f"Voz multilíngue ainda presente no renderizador: {voice}")
 
-    if 'min_male=1, min_female=1' not in text:
-        raise RuntimeError("Pool nativo 1M/1F não foi aplicado.")
+    if 'min_male=1, min_female=2' not in text:
+        raise RuntimeError("Pool nativo 1M/2F não foi aplicado.")
+    if 'ABORDADOR_F e TENTANTE_F exigem vozes-base femininas distintas' not in text:
+        raise RuntimeError("Gate de vozes femininas distintas não foi aplicado.")
     if f'VERSION = "{VERSION}"' not in text:
         raise RuntimeError("Versão pt-BR nativa não foi aplicada.")
     if 'native_ptbr_only' not in text:
@@ -162,7 +183,10 @@ def patch_renderer() -> None:
 def main() -> int:
     normalized = normalize_sources()
     patch_renderer()
-    print(f"PASS: Série 1 blindada para pt-BR nativo; roteiros normalizados={normalized}; version={VERSION}")
+    print(
+        f"PASS: Série 1 blindada para pt-BR nativo; pool mínimo=1M/2F; "
+        f"personagens femininas distintas; roteiros normalizados={normalized}; version={VERSION}"
+    )
     return 0
 
 
