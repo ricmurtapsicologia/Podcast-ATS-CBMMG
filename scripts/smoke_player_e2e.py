@@ -1,53 +1,128 @@
 from __future__ import annotations
 
+import json
 import sys
 from playwright.sync_api import sync_playwright
 
 BASE = sys.argv[1] if len(sys.argv) > 1 else "http://127.0.0.1:8765/"
 
-with sync_playwright() as p:
-    browser = p.chromium.launch(headless=True)
-    page = browser.new_page(viewport={"width": 1365, "height": 900})
-    errors: list[str] = []
-    page.on("pageerror", lambda exc: errors.append(str(exc)))
-    page.on("console", lambda msg: errors.append(msg.text) if msg.type == "error" else None)
-    response = page.goto(BASE, wait_until="networkidle")
-    assert response and response.ok, response
-    page.evaluate("localStorage.setItem('gav:onboard_done_v2','1'); localStorage.removeItem('gav:last_series_v2')")
+
+def prepare(page):
+    page.goto(BASE, wait_until="networkidle")
+    page.evaluate("localStorage.setItem('gav:v4:onboard-done','1')")
     page.reload(wait_until="networkidle")
 
-    def exercise(series_id: str, expected: int) -> None:
-        button = page.locator(f'button[data-series-id="{series_id}"]')
-        assert button.count() == 1
-        button.click()
-        cards = page.locator("#episodeList .episode-card")
-        assert cards.count() == expected, (series_id, cards.count())
-        indexes = sorted({0, expected // 2, expected - 1})
-        for idx in indexes:
-            audio = cards.nth(idx).locator("audio")
-            audio.scroll_into_view_if_needed()
-            audio.evaluate("el => new Promise((resolve, reject) => { if (el.readyState >= 1) return resolve(); const t=setTimeout(()=>reject(new Error('metadata timeout')),15000); el.addEventListener('loadedmetadata',()=>{clearTimeout(t);resolve();},{once:true}); el.load(); })")
-            duration = audio.evaluate("el => el.duration")
-            assert duration and duration > 0, (series_id, idx, duration)
-            audio.evaluate("el => { el.currentTime = Math.min(1, Math.max(0, el.duration/4)); }")
-            audio.evaluate("el => el.play()")
-            page.wait_for_timeout(450)
-            assert audio.evaluate("el => !el.paused")
-            audio.evaluate("el => el.pause()")
-            assert audio.evaluate("el => el.paused")
-        page.locator("#backToSeries").click()
 
-    exercise("1", 21)
-    exercise("2", 14)
+with sync_playwright() as p:
+    browser = p.chromium.launch(headless=True)
+    context = browser.new_context(viewport={"width": 1365, "height": 900})
+    page = context.new_page()
+    errors: list[str] = []
+    external_visual_requests: list[str] = []
+    page.on("pageerror", lambda exc: errors.append(str(exc)))
+    page.on("console", lambda msg: errors.append(msg.text) if msg.type == "error" else None)
+    page.on("request", lambda req: external_visual_requests.append(req.url) if ("pinimg.com" in req.url or "images.pexels.com" in req.url) else None)
+    prepare(page)
+
+    # Home/branding/CTA: três séries, assets locais e ação pedagógica primária.
+    assert page.locator(".series-card").count() == 3
+    assert page.locator("#heroPrimary").inner_text().strip() == "Explorar as séries"
+    image_sources = page.locator(".series-card img").evaluate_all("els => els.map(el => el.getAttribute('src'))")
+    assert image_sources == ["assets/img/series-1.jpg", "assets/img/series-2.jpg", "assets/img/series-3.jpg"], image_sources
+    assert not external_visual_requests, external_visual_requests
+
+    # Série 1: lista compacta, player único, busca, progresso por ID estável.
+    page.locator('button[data-series-id="1"]').click()
+    assert page.locator("#episodeIndex .episode-row").count() == 21
+    assert page.locator("#episodeList audio").count() == 1
+    assert page.locator("#activeEpisodeTitle").inner_text().startswith("A1 001")
+
+    search = page.locator("#episodeSearch")
+    search.fill("Poder de Ouvir")
+    assert page.locator("#episodeIndex .episode-row").count() == 1
+    assert "A1 005" in page.locator("#episodeIndex .episode-row").inner_text()
+    search.fill("")
+    assert page.locator("#episodeIndex .episode-row").count() == 21
+
+    page.locator('[data-item-id="a1-005"]').click()
+    audio = page.locator("#seriesAudio")
+    audio.evaluate("el => new Promise((resolve, reject) => { if (el.readyState >= 1) return resolve(); const t=setTimeout(()=>reject(new Error('metadata timeout')),15000); el.addEventListener('loadedmetadata',()=>{clearTimeout(t);resolve();},{once:true}); el.load(); })")
+    duration = audio.evaluate("el => el.duration")
+    assert duration and duration > 0
+    audio.evaluate("el => { el.currentTime = Math.min(2, Math.max(1, el.duration / 8)); }")
+    audio.evaluate("el => el.play()")
+    page.wait_for_timeout(450)
+    audio.evaluate("el => el.pause()")
+    state = json.loads(page.evaluate("localStorage.getItem('gav:v4:item:a1-005')"))
+    assert state["position"] > 0, state
+    assert state["completed"] is False
+    assert "a1-005" in page.evaluate("localStorage.getItem('gav:v4:last-item')")
+
+    # Conclusão persistente e filtro.
+    audio.evaluate("el => el.dispatchEvent(new Event('ended'))")
+    page.wait_for_timeout(80)
+    state = json.loads(page.evaluate("localStorage.getItem('gav:v4:item:a1-005')"))
+    assert state["completed"] is True, state
+    page.locator('[data-filter="completed"]').click()
+    assert page.locator("#episodeIndex .episode-row").count() >= 1
+    assert "A1 005" in page.locator("#episodeIndex").inner_text()
+
+    # Deep link não depende da URL física/versionamento do MP3.
+    deep = context.new_page()
+    deep.goto(BASE + "#serie-1/a1-007", wait_until="networkidle")
+    assert deep.locator("#libraryPanel").is_visible()
+    assert deep.locator("#episodeList audio").count() == 1
+    assert deep.locator("#activeEpisodeTitle").inner_text().startswith("A1 007")
+    assert deep.evaluate("localStorage.getItem('gav:v4:item:a1-005')") is not None
+
+    # Série 3: fonte canônica única, 10 cards, um único player e sem jargão interno N2/N3.
+    deep.locator("#backToSeries").click()
+    deep.locator('button[data-series-id="3"]').click()
+    deep.wait_for_selector("#pspGrid .psp-card")
+    assert deep.locator("#pspGrid .psp-card").count() == 10
+    assert deep.locator("#episodeList audio").count() == 1
+    visible_text = deep.locator("#episodeList").inner_text()
+    for forbidden in ("N2", "N3", "Em construção"):
+        assert forbidden not in visible_text, (forbidden, visible_text[:500])
+    deep.locator("#pspGrid .psp-card").nth(0).locator(".psp-card-toggle").click()
+    assert deep.locator("#pspGrid .psp-card").nth(0).locator(".psp-card-details").is_visible()
+    deep.locator("#pspGrid .psp-card").nth(0).locator(".psp-listen").click()
+    psp_audio = deep.locator("#pspSharedAudio")
+    psp_audio.evaluate("el => new Promise((resolve, reject) => { if (el.readyState >= 1) return resolve(); const t=setTimeout(()=>reject(new Error('psp metadata timeout')),15000); el.addEventListener('loadedmetadata',()=>{clearTimeout(t);resolve();},{once:true}); el.load(); })")
+    assert psp_audio.evaluate("el => el.duration") > 0
+
+    psp_deep = context.new_page()
+    psp_deep.goto(BASE + "#serie-3/psp-03", wait_until="networkidle")
+    psp_deep.wait_for_selector('[data-psp-id="psp-03"].is-open')
+    assert psp_deep.locator('[data-psp-id="psp-03"] .psp-card-details').is_visible()
+    assert psp_deep.locator("#episodeList audio").count() == 1
+
+    # Onboarding: foco preso ao diálogo, decisão persistente e Escape funcional.
+    fresh_context = browser.new_context(viewport={"width": 1000, "height": 760})
+    fresh = fresh_context.new_page()
+    fresh.goto(BASE, wait_until="networkidle")
+    assert fresh.locator("#onboarding").get_attribute("aria-hidden") == "false"
+    fresh.locator("#onboardStart").focus()
+    fresh.keyboard.press("Shift+Tab")
+    assert fresh.evaluate("document.activeElement.id") == "onboardSkip"
+    fresh.keyboard.press("Tab")
+    assert fresh.evaluate("document.activeElement.id") == "onboardStart"
+    fresh.keyboard.press("Escape")
+    assert fresh.locator("#onboarding").get_attribute("aria-hidden") == "true"
+    assert fresh.evaluate("localStorage.getItem('gav:v4:onboard-done')") == "1"
+
+    # Reduced motion efetivo.
+    reduced_context = browser.new_context(viewport={"width": 390, "height": 844}, reduced_motion="reduce")
+    reduced = reduced_context.new_page()
+    reduced.goto(BASE, wait_until="networkidle")
+    reduced.evaluate("localStorage.setItem('gav:v4:onboard-done','1')")
+    reduced.reload(wait_until="networkidle")
+    assert reduced.evaluate("getComputedStyle(document.documentElement).scrollBehavior") == "auto"
+    reduced.locator('button[data-series-id="1"]').click()
+    assert reduced.locator("#episodeList audio").count() == 1
+    assert reduced.locator("#episodeIndex .episode-row").count() == 21
+
     assert not errors, errors
-
-    mobile = browser.new_page(viewport={"width": 390, "height": 844})
-    mobile.goto(BASE, wait_until="networkidle")
-    mobile.evaluate("localStorage.setItem('gav:onboard_done_v2','1')")
-    mobile.reload(wait_until="networkidle")
-    mobile.locator('button[data-series-id="1"]').click()
-    assert mobile.locator("#episodeList .episode-card").count() == 21
-    assert mobile.locator("#libraryPanel").is_visible()
     browser.close()
 
-print("PASS: E2E player desktop/mobile; séries 1/2; metadata; seek; play/pause; console limpa.")
+print("PASS: GAV v4 — arquitetura canônica, player único, progresso estável, CTA, deep link, PSP, teclado, mobile e reduced-motion.")
