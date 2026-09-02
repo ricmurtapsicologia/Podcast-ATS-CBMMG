@@ -28,20 +28,20 @@
   ].map(([id,code,title,url]) => ({id,code,title,url,type:"audio"}));
 
   const s2 = [
-    ["a2-000","A2 000","Desvendando as Engrenagens","assets/audio/serie-2/a2-000-n3.mp3?v=n3-cast-20260901g"],
-    ["a2-001","A2 001","O Suicídio ao Longo da História","assets/audio/serie-2/a2-001-n3.mp3?v=n3-cast-20260901g"],
-    ["a2-002","A2 002","Decisões no Caos: O Cérebro em Crise","assets/audio/serie-2/a2-002-n3.mp3?v=n3-cast-20260901g"],
-    ["a2-003","A2 003","Transtornos Mentais e o Peso do Sofrimento","assets/audio/serie-2/a2-003-n3.mp3?v=n3-cast-20260901g"],
+    ["a2-000","A2 000","Desvendando as Engrenagens","assets/audio/serie-2/a2-000-n3.mp3?v=n3-cast-20260901c"],
+    ["a2-001","A2 001","O Suicídio ao Longo da História","assets/audio/serie-2/a2-001-n3.mp3?v=n3-cast-20260901c"],
+    ["a2-002","A2 002","Decisões no Caos: O Cérebro em Crise","assets/audio/serie-2/a2-002-n3.mp3?v=n3-cast-20260901c"],
+    ["a2-003","A2 003","Transtornos Mentais e o Peso do Sofrimento","assets/audio/serie-2/a2-003-n3.mp3?v=n3-cast-20260901c"],
     ["a2-004","A2 004","Maria e as Sombras da Depressão","assets/audio/serie-2/a2-004-n3.mp3?v=n3-cast-20260901c"],
     ["a2-005","A2 005","Cláudio e os Ciclos da Bipolaridade","assets/audio/serie-2/a2-005-n3.mp3?v=n3-cast-20260901c"],
     ["a2-006","A2 006","Fernanda e o Labirinto da Cocaína","assets/audio/serie-2/a2-006-n3.mp3?v=n3-cast-20260901c"],
     ["a2-007","A2 007","Programa em Foco - Saúde Mental: Júlia e o Desafio do Borderline","assets/audio/serie-2/a2-007-n3.mp3?v=n3-cast-20260901c"],
     ["a2-008","A2 008","Programa em Foco - Saúde Mental: Dra. Sara e os Transtornos de Personalidade","assets/audio/serie-2/a2-008-n3.mp3?v=n3-cast-20260901c"],
     ["a2-009","A2 009","Dona Lurdes, Mônica e os Desafios da Esquizofrenia","assets/audio/serie-2/a2-009-n3.mp3?v=n3-cast-20260901c"],
-    ["a2-010","A2 010","As Vulnerabilidades Invisíveis: Um Olhar Filosófico e Social","assets/audio/serie-2/a2-010-n3.mp3?v=n3-cast-20260901g"],
-    ["a2-011","A2 011","Quando as Emoções Dominam","assets/audio/serie-2/a2-011-n3.mp3?v=n3-cast-20260901g"],
-    ["a2-012","A2 012","A Ação Antes da Razão","assets/audio/serie-2/a2-012-n3.mp3?v=n3-cast-20260901g"],
-    ["a2-013","A2 013","Um Novo Olhar para as Engrenagens","assets/audio/serie-2/a2-013-n3.mp3?v=n3-cast-20260901g"]
+    ["a2-010","A2 010","As Vulnerabilidades Invisíveis: Um Olhar Filosófico e Social","assets/audio/serie-2/a2-010-n3.mp3?v=n3-cast-20260901c"],
+    ["a2-011","A2 011","Quando as Emoções Dominam","assets/audio/serie-2/a2-011-n3.mp3?v=n3-cast-20260901c"],
+    ["a2-012","A2 012","A Ação Antes da Razão","assets/audio/serie-2/a2-012-n3.mp3?v=n3-cast-20260901c"],
+    ["a2-013","A2 013","Um Novo Olhar para as Engrenagens","assets/audio/serie-2/a2-013-n3.mp3?v=n3-cast-20260901c"]
   ].map(([id,code,title,url]) => ({id,code,title,url,type:"audio"}));
 
   window.GAV_MANIFEST = Object.freeze({
