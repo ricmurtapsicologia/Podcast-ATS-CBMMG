@@ -275,7 +275,7 @@
     {
       "episode": 7,
       "output": "a1-007-n3.mp3",
-      "version": "n3-cast-20260901c",
+      "version": "n3-cast-20260901f",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C-dialogue",
       "speakers": [
@@ -302,6 +302,14 @@
           "label": "masculino-demo"
         }
       },
+      "speaker_dsp": {
+        "INSTRUTOR": {
+          "pitch_shift_semitones": 0.0
+        },
+        "DEMO_M": {
+          "pitch_shift_semitones": 0.0
+        }
+      },
       "voice_identity": {
         "INSTRUTOR": "pt-BR-FranciscaNeural::instrutor",
         "DEMO_M": "pt-BR-AntonioNeural::masculino-demo"
@@ -318,7 +326,11 @@
         "question"
       ],
       "turns": 4,
-      "duration_seconds": 89.3
+      "duration_seconds": 89.2,
+      "terminology_hotfix": {
+        "from": "pacientes",
+        "to": "tentantes"
+      }
     },
     {
       "episode": 8,
