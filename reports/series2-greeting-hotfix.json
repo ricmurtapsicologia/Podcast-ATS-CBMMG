@@ -1,5 +1,5 @@
 {
-  "version": "n3-cast-20260901f",
+  "version": "n3-cast-20260901g",
   "canonical_greeting": "Olá, caros abordadores.",
   "episodes": [
     0,
@@ -12,16 +12,10 @@
     13
   ],
   "changed_sources": [
-    "/home/runner/work/Podcast-ATS-CBMMG/Podcast-ATS-CBMMG/roteiros/serie-2/a2-000.txt",
-    "/home/runner/work/Podcast-ATS-CBMMG/Podcast-ATS-CBMMG/roteiros/serie-2/a2-001.txt",
-    "/home/runner/work/Podcast-ATS-CBMMG/Podcast-ATS-CBMMG/roteiros/serie-2/a2-002.txt",
-    "/home/runner/work/Podcast-ATS-CBMMG/Podcast-ATS-CBMMG/roteiros/serie-2/a2-003.txt",
-    "/home/runner/work/Podcast-ATS-CBMMG/Podcast-ATS-CBMMG/roteiros/serie-2/a2-010.txt",
-    "/home/runner/work/Podcast-ATS-CBMMG/Podcast-ATS-CBMMG/roteiros/serie-2/a2-011.txt",
-    "/home/runner/work/Podcast-ATS-CBMMG/Podcast-ATS-CBMMG/roteiros/serie-2/a2-012.txt",
-    "/home/runner/work/Podcast-ATS-CBMMG/Podcast-ATS-CBMMG/roteiros/serie-2/a2-013.txt"
+    "/home/runner/work/Podcast-ATS-CBMMG/Podcast-ATS-CBMMG/roteiros/serie-2/a2-002.txt"
   ],
   "residual_ola_pessoal": false,
+  "malformed_canonical_punctuation": false,
   "rerendered_outputs": [
     "a2-000-n3.mp3",
     "a2-001-n3.mp3",
