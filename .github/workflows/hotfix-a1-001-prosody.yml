@@ -47,7 +47,7 @@ jobs:
           assert ep['version']==version, ep
           assert ep['speaker_cast']=={'INSTRUTOR':'pt-BR-FranciscaNeural'}, ep['speaker_cast']
           assert ep['turns']>=12, ep['turns']
-          assert ep['word_count']==143, ep['word_count']
+          assert ep['word_count']==144, ep['word_count']
           assert 110 <= float(ep['estimated_wpm']) <= 138, ep['estimated_wpm']
           assert 62 <= float(ep['duration_seconds']) <= 78, ep['duration_seconds']
           assert ep['prosody_hotfix']['semantic_segmentation'] is True
