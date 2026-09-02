@@ -859,7 +859,7 @@
     {
       "episode": 17,
       "output": "a1-017-n3.mp3",
-      "version": "n3-cast-20260901c",
+      "version": "n3-cast-20260901e",
       "greeting": "Olá, caros abordadores.",
       "profile": "N3-C",
       "speakers": [
@@ -878,6 +878,11 @@
           "label": "instrutor"
         }
       },
+      "speaker_dsp": {
+        "INSTRUTOR": {
+          "pitch_shift_semitones": 0.0
+        }
+      },
       "voice_identity": {
         "INSTRUTOR": "pt-BR-AntonioNeural::instrutor"
       },
@@ -891,7 +896,10 @@
         "explain"
       ],
       "turns": 3,
-      "duration_seconds": 88.5
+      "duration_seconds": 88.5,
+      "hotfix_language_guard": true,
+      "hotfix_reason": "abertura com prosodia semelhante a ingles",
+      "opening_voice_replaced": "pt-BR-FranciscaNeural -> pt-BR-AntonioNeural"
     },
     {
       "episode": 18,
@@ -1073,8 +1081,8 @@
     }
   ],
   "latest_hotfix": {
-    "episode": 19,
-    "reason": "abertura com sonoridade de espanhol/ingles",
-    "strategy": "casting exclusivamente pt-BR nativo, sem voz Multilingual"
+    "episode": 17,
+    "reason": "abertura com prosodia semelhante a ingles",
+    "strategy": "narracao pt-BR AntonioNeural, sem voz Multilingual"
   }
 }
