@@ -4,7 +4,6 @@ import asyncio
 import json
 import re
 import shutil
-from pathlib import Path
 
 import remaster_series1_n3 as n3
 from n3_casting import voice_gender
@@ -41,21 +40,21 @@ MALE_CANDIDATES = [
 def patch_roteiro() -> None:
     text = ROTEIRO.read_text(encoding="utf-8")
     updated = re.sub(r"\bhobby\b", "passatempo", text, flags=re.IGNORECASE)
-    if "hobby" in updated.lower():
+    if "hobby" in updated.lower() or "passatempo" not in updated.lower():
         raise RuntimeError("Normalizacao de 'hobby' falhou no A1-008.")
-    if "passatempo" not in updated.lower():
-        raise RuntimeError("Termo 'passatempo' nao encontrado no A1-008 apos normalizacao.")
     ROTEIRO.write_text(updated, encoding="utf-8")
 
 
 def patch_pronunciation_dictionary() -> None:
     text = CORE.read_text(encoding="utf-8")
-    if "r'\\bMPB\\b': 'eme pê bê'" not in text:
-        needle = "    r'\\bOMS\\b': 'O M S',"
-        if needle not in text:
-            raise RuntimeError("Ponto de insercao do dicionario MPB nao encontrado.")
-        text = text.replace(needle, "    r'\\bMPB\\b': 'eme pê bê',\n" + needle, 1)
-        CORE.write_text(text, encoding="utf-8")
+    marker = "r'\\bMPB\\b': 'eme pê bê'"
+    if marker in text:
+        return
+    needle = "    r'\\bOMS\\b': 'O M S',"
+    if needle not in text:
+        raise RuntimeError("Ponto de insercao do dicionario MPB nao encontrado.")
+    text = text.replace(needle, "    r'\\bMPB\\b': 'eme pê bê',\n" + needle, 1)
+    CORE.write_text(text, encoding="utf-8")
 
 
 def patch_renderer_defaults() -> None:
@@ -80,19 +79,18 @@ def patch_renderer_defaults() -> None:
         '"pt-BR-HumbertoNeural", "pt-BR-JulioNeural", "pt-BR-NicolauNeural", '
         '"pt-BR-ValerioNeural", "pt-BR-MacerioMultilingualNeural"]'
     )
-
     if old_common in text:
         text = text.replace(old_common, narrator_new, 1)
     if old_common in text:
         text = text.replace(old_common, male_new, 1)
 
-    required_markers = [
+    required = [
         'min_male=3, min_female=2',
         '"pt-BR-FabioNeural", "pt-BR-DonatoNeural"',
         'return ["pt-BR-FranciscaNeural", "pt-BR-AntonioNeural"',
         f'VERSION = "{HOTFIX_VERSION}"',
     ]
-    missing = [marker for marker in required_markers if marker not in text]
+    missing = [item for item in required if item not in text]
     if missing:
         raise RuntimeError(f"Blindagem permanente do casting incompleta: {missing}")
     REMASTER.write_text(text, encoding="utf-8")
@@ -100,12 +98,13 @@ def patch_renderer_defaults() -> None:
 
 def patch_app_cache_buster() -> None:
     text = APP.read_text(encoding="utf-8")
-    pattern = r'(assets/audio/serie-1/a1-008-n3\.mp3\?v=)[^"}]+"
-    replacement = rf'\g<1>{HOTFIX_VERSION}"'
-    updated, count = re.subn(pattern, replacement, text, count=1)
-    if count != 1:
+    old = 'assets/audio/serie-1/a1-008-n3.mp3?v=n3-cast-20260901c'
+    new = f'assets/audio/serie-1/a1-008-n3.mp3?v={HOTFIX_VERSION}'
+    if old in text:
+        text = text.replace(old, new, 1)
+    elif new not in text:
         raise RuntimeError("URL do A1-008 nao localizada em app.js.")
-    APP.write_text(updated, encoding="utf-8")
+    APP.write_text(text, encoding="utf-8")
 
 
 async def first_available(candidates: list[str], *, gender: str) -> str:
@@ -172,7 +171,6 @@ async def main() -> None:
     n3.TMP.mkdir(parents=True, exist_ok=True)
     narrator = await first_available(NARRATOR_CANDIDATES, gender="F")
     abordador, tentante = await two_distinct_males()
-
     pool = [
         {"voice": narrator, "gender": "F"},
         {"voice": abordador, "gender": "M"},
@@ -218,7 +216,6 @@ async def main() -> None:
     REPORT.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
     patch_app_cache_buster()
-
     HOTFIX_REPORT.parent.mkdir(parents=True, exist_ok=True)
     HOTFIX_REPORT.write_text(
         json.dumps(
@@ -234,11 +231,9 @@ async def main() -> None:
             },
             ensure_ascii=False,
             indent=2,
-        )
-        + "\n",
+        ) + "\n",
         encoding="utf-8",
     )
-
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
 
