@@ -15,6 +15,7 @@ import shutil
 from pathlib import Path
 
 from pydub import AudioSegment, effects
+from pydub.silence import detect_nonsilent
 
 import remaster_series1_n3 as n3
 
@@ -24,8 +25,8 @@ VOICE = "pt-BR-FranciscaNeural"
 REPORT = n3.OUT / "quality-n3.json"
 HOTFIX_REPORT = n3.ROOT / "reports" / "a1-001-prosody-hotfix.json"
 
-OPENING_MS = 220
-ENDING_MS = 420
+OPENING_MS = 150
+ENDING_MS = 300
 TARGET_DBFS = -18.0
 EXPECTED_WORD_COUNT = 144
 
@@ -47,24 +48,24 @@ def canonical_source() -> str:
     return re.sub(r"\s+", " ", " ".join(chunks)).strip()
 
 
-# Segmentação curada semanticamente. Só pontuação/capitalização é acrescentada;
-# a sequência lexical permanece idêntica ao roteiro congelado.
+# A velocidade é contextual: desacelera só nas frases de ênfase/risco e evita a
+# uniformidade mecânica. Pausas também variam conforme a função da frase.
 SEGMENTS = [
-    {"text": "Abordagem técnica: comunicação que salva.", "rate": "-12%", "pitch": "-1Hz", "pause": 720, "intent": "title"},
-    {"text": "Olá, caros abordadores.", "rate": "-10%", "pitch": "+0Hz", "pause": 760, "intent": "greeting"},
-    {"text": "Hoje vamos mergulhar no que chamamos de abordagem técnica,", "rate": "-9%", "pitch": "+0Hz", "pause": 360, "intent": "opening"},
-    {"text": "uma das ferramentas mais poderosas que temos para lidar com situações de crise.", "rate": "-10%", "pitch": "-1Hz", "pause": 560, "intent": "explain"},
-    {"text": "Mas o que é exatamente essa abordagem?", "rate": "-8%", "pitch": "+1Hz", "pause": 650, "intent": "question"},
-    {"text": "É a aplicação da comunicação, tanto verbal quanto não verbal, para estabelecer um vínculo de confiança com o tentante,", "rate": "-10%", "pitch": "-1Hz", "pause": 390, "intent": "definition"},
-    {"text": "compreender seus pensamentos e, com empatia, guiá-lo a abandonar o ato autodestrutivo.", "rate": "-11%", "pitch": "-1Hz", "pause": 620, "intent": "definition_resolution"},
-    {"text": "E sabe o que faz tudo isso funcionar?", "rate": "-9%", "pitch": "+1Hz", "pause": 520, "intent": "question"},
-    {"text": "Cada detalhe importa.", "rate": "-13%", "pitch": "-1Hz", "pause": 650, "intent": "emphasis"},
-    {"text": "A forma como nos posicionamos, o tom de voz, o olhar atento, até a inclinação do corpo...", "rate": "-11%", "pitch": "-1Hz", "pause": 460, "intent": "enumeration"},
-    {"text": "tudo conta para passar segurança e acolhimento.", "rate": "-11%", "pitch": "-1Hz", "pause": 600, "intent": "resolution"},
-    {"text": "Essa combinação de palavras e linguagem corporal transforma o contato em algo genuíno e eficaz.", "rate": "-10%", "pitch": "-1Hz", "pause": 620, "intent": "explain"},
-    {"text": "Comunicar é salvar vidas.", "rate": "-13%", "pitch": "-1Hz", "pause": 760, "intent": "key_message"},
-    {"text": "E no próximo episódio, vamos explorar ainda mais como palavras e gestos podem ser a ponte para a esperança.", "rate": "-10%", "pitch": "-1Hz", "pause": 560, "intent": "conclusion"},
-    {"text": "Não perca.", "rate": "-9%", "pitch": "-1Hz", "pause": 0, "intent": "closing"},
+    {"text": "Abordagem técnica: comunicação que salva.", "rate": "-8%", "pitch": "-1Hz", "pause": 600, "intent": "title"},
+    {"text": "Olá, caros abordadores.", "rate": "-6%", "pitch": "+0Hz", "pause": 650, "intent": "greeting"},
+    {"text": "Hoje vamos mergulhar no que chamamos de abordagem técnica,", "rate": "-4%", "pitch": "+0Hz", "pause": 260, "intent": "opening"},
+    {"text": "uma das ferramentas mais poderosas que temos para lidar com situações de crise.", "rate": "-5%", "pitch": "-1Hz", "pause": 420, "intent": "explain"},
+    {"text": "Mas o que é exatamente essa abordagem?", "rate": "-3%", "pitch": "+1Hz", "pause": 480, "intent": "question"},
+    {"text": "É a aplicação da comunicação, tanto verbal quanto não verbal, para estabelecer um vínculo de confiança com o tentante,", "rate": "-6%", "pitch": "-1Hz", "pause": 280, "intent": "definition"},
+    {"text": "compreender seus pensamentos e, com empatia, guiá-lo a abandonar o ato autodestrutivo.", "rate": "-7%", "pitch": "-1Hz", "pause": 460, "intent": "definition_resolution"},
+    {"text": "E sabe o que faz tudo isso funcionar?", "rate": "-4%", "pitch": "+1Hz", "pause": 400, "intent": "question"},
+    {"text": "Cada detalhe importa.", "rate": "-9%", "pitch": "-1Hz", "pause": 520, "intent": "emphasis"},
+    {"text": "A forma como nos posicionamos, o tom de voz, o olhar atento, até a inclinação do corpo...", "rate": "-6%", "pitch": "-1Hz", "pause": 320, "intent": "enumeration"},
+    {"text": "tudo conta para passar segurança e acolhimento.", "rate": "-6%", "pitch": "-1Hz", "pause": 450, "intent": "resolution"},
+    {"text": "Essa combinação de palavras e linguagem corporal transforma o contato em algo genuíno e eficaz.", "rate": "-5%", "pitch": "-1Hz", "pause": 450, "intent": "explain"},
+    {"text": "Comunicar é salvar vidas.", "rate": "-9%", "pitch": "-1Hz", "pause": 600, "intent": "key_message"},
+    {"text": "E no próximo episódio, vamos explorar ainda mais como palavras e gestos podem ser a ponte para a esperança.", "rate": "-5%", "pitch": "-1Hz", "pause": 400, "intent": "conclusion"},
+    {"text": "Não perca.", "rate": "-4%", "pitch": "-1Hz", "pause": 0, "intent": "closing"},
 ]
 
 
@@ -81,6 +82,16 @@ def validate_lexical_integrity() -> int:
             f"Gate lexical falhou por tamanho: fonte={len(source_tokens)} síntese={len(spoken_tokens)}"
         )
     return len(source_tokens)
+
+
+def trim_tts_edges(segment: AudioSegment) -> AudioSegment:
+    """Remove silêncio técnico de borda do sintetizador sem cortar respiração interna."""
+    ranges = detect_nonsilent(segment, min_silence_len=80, silence_thresh=-48, seek_step=5)
+    if not ranges:
+        return segment
+    start = max(0, ranges[0][0] - 45)
+    end = min(len(segment), ranges[-1][1] + 55)
+    return segment[start:end]
 
 
 async def synth_segment(item: dict, idx: int, work: Path, sem: asyncio.Semaphore) -> Path:
@@ -105,13 +116,14 @@ async def main() -> None:
 
     audio = AudioSegment.silent(duration=OPENING_MS)
     for item, part in zip(SEGMENTS, parts):
-        rendered = AudioSegment.from_file(part, format="mp3")
+        rendered = trim_tts_edges(AudioSegment.from_file(part, format="mp3"))
         audio += rendered
         if item["pause"]:
             audio += AudioSegment.silent(duration=int(item["pause"]))
     audio += AudioSegment.silent(duration=ENDING_MS)
 
-    # Compressão mais leve que a master anterior para preservar microdinâmica.
+    # Compressão discreta: preserva microdinâmica e evita a sensação de locução
+    # excessivamente nivelada típica de TTS pós-processado com força.
     audio = effects.compress_dynamic_range(
         audio,
         threshold=-20.0,
@@ -126,9 +138,9 @@ async def main() -> None:
 
     duration_seconds = len(audio) / 1000.0
     wpm = word_count / duration_seconds * 60.0
-    if not (62.0 <= duration_seconds <= 78.0):
+    if not (65.0 <= duration_seconds <= 80.0):
         raise RuntimeError(f"Duração fora da janela humana esperada: {duration_seconds:.1f}s")
-    if not (110.0 <= wpm <= 138.0):
+    if not (108.0 <= wpm <= 133.0):
         raise RuntimeError(f"Ritmo fora da janela esperada: {wpm:.1f} palavras/min")
 
     target = n3.OUT / "a1-001-n3.mp3"
@@ -156,6 +168,7 @@ async def main() -> None:
             "contextual_rate": True,
             "contextual_pitch": True,
             "contextual_pauses": True,
+            "trim_tts_edge_silence": True,
             "light_dynamic_compression": True,
             "voice_preserved": VOICE,
         },
@@ -180,7 +193,7 @@ async def main() -> None:
         "duration_seconds": round(duration_seconds, 1),
         "estimated_wpm": round(wpm, 1),
         "lexical_integrity": 1.0,
-        "goal": "reduzir aceleração, cadência TTS e pausas artificiais",
+        "goal": "reduzir aceleração e cadência TTS, preservando variação prosódica natural",
         "content_changed": False,
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
@@ -189,5 +202,4 @@ async def main() -> None:
 
 
 if __name__ == "__main__":
-    # A execução automatizada é deliberadamente isolada ao episódio 001.
     asyncio.run(main())
