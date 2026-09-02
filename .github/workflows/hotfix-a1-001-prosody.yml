@@ -48,10 +48,11 @@ jobs:
           assert ep['speaker_cast']=={'INSTRUTOR':'pt-BR-FranciscaNeural'}, ep['speaker_cast']
           assert ep['turns']>=12, ep['turns']
           assert ep['word_count']==144, ep['word_count']
-          assert 110 <= float(ep['estimated_wpm']) <= 138, ep['estimated_wpm']
-          assert 62 <= float(ep['duration_seconds']) <= 78, ep['duration_seconds']
+          assert 108 <= float(ep['estimated_wpm']) <= 133, ep['estimated_wpm']
+          assert 65 <= float(ep['duration_seconds']) <= 80, ep['duration_seconds']
           assert ep['prosody_hotfix']['semantic_segmentation'] is True
           assert ep['prosody_hotfix']['contextual_pauses'] is True
+          assert ep['prosody_hotfix']['trim_tts_edge_silence'] is True
 
           app=Path('app.js').read_text(encoding='utf-8')
           assert f'a1-001-n3.mp3?v={version}' in app
@@ -64,7 +65,7 @@ jobs:
           ], text=True))['streams'][0]
           assert int(info['channels'])==1
           assert int(info['sample_rate'])==44100
-          assert 62 <= float(info['duration']) <= 78
+          assert 65 <= float(info['duration']) <= 80
 
           hotfix=json.loads(Path('reports/a1-001-prosody-hotfix.json').read_text(encoding='utf-8'))
           assert hotfix['lexical_integrity']==1.0
