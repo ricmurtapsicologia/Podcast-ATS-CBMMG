@@ -27,6 +27,7 @@ HOTFIX_REPORT = n3.ROOT / "reports" / "a1-001-prosody-hotfix.json"
 OPENING_MS = 220
 ENDING_MS = 420
 TARGET_DBFS = -18.0
+EXPECTED_WORD_COUNT = 144
 
 
 def tokens(text: str) -> list[str]:
@@ -90,7 +91,7 @@ async def synth_segment(item: dict, idx: int, work: Path, sem: asyncio.Semaphore
 
 async def main() -> None:
     word_count = validate_lexical_integrity()
-    if word_count != 143:
+    if word_count != EXPECTED_WORD_COUNT:
         raise RuntimeError(f"Contagem lexical inesperada no A1-001: {word_count}")
 
     work = n3.TMP / "a1-001-prosody-hotfix"
