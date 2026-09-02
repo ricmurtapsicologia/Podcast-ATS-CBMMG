@@ -44,7 +44,7 @@ with sync_playwright() as p:
     search.fill("")
     assert page.locator("#episodeIndex .episode-row").count() == 21
 
-    page.locator('[data-item-id="a1-005"]').click()
+    page.locator('button.episode-select[data-item-id="a1-005"]').click()
     audio = page.locator("#seriesAudio")
     audio.evaluate("el => new Promise((resolve, reject) => { if (el.readyState >= 1) return resolve(); const t=setTimeout(()=>reject(new Error('metadata timeout')),15000); el.addEventListener('loadedmetadata',()=>{clearTimeout(t);resolve();},{once:true}); el.load(); })")
     duration = audio.evaluate("el => el.duration")
