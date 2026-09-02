@@ -11,13 +11,14 @@ psp = (ROOT / "psp.js").read_text(encoding="utf-8")
 manifest = (ROOT / "content-manifest.js").read_text(encoding="utf-8")
 learning = (ROOT / "learning-v4.css").read_text(encoding="utf-8")
 assets_css = (ROOT / "assets-v4.css").read_text(encoding="utf-8")
+a11y = (ROOT / "a11y-v4.js").read_text(encoding="utf-8")
 cards = json.loads((ROOT / "psp-cards.json").read_text(encoding="utf-8"))
 
 release_match = re.search(r'<meta name="gav-release" content="([^"]+)"', index)
 assert release_match, "meta gav-release ausente"
 release = release_match.group(1)
 assert release == "gav-learning-v4-20260902", release
-for path in ("styles.css", "psp.css", "learning-v4.css", "assets-v4.css", "content-manifest.js", "psp.js", "app.js"):
+for path in ("styles.css", "psp.css", "learning-v4.css", "assets-v4.css", "content-manifest.js", "psp.js", "app.js", "a11y-v4.js"):
     assert f'{path}?v={release}' in index, f"asset fora da release única: {path}"
 
 assert manifest.count('assets/audio/serie-1/a1-') == 21
@@ -47,6 +48,8 @@ assert "prefers-reduced-motion:reduce" in learning
 assert "episode-search" in learning
 assert "filter-chip" in learning
 assert "has-progress" in learning
+assert 'role", "progressbar"' in a11y
+assert 'aria-valuenow' in a11y
 
 for asset in ("hero.jpg", "series-1.jpg", "series-2.jpg", "series-3.jpg"):
     path = ROOT / "assets" / "img" / asset
