@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/hotfix_a1_007_ptbr.py'
+      - 'roteiros/serie-1/a1-007.txt'
       - '.github/workflows/hotfix-a1-007-ptbr.yml'
   workflow_dispatch: {}
 
@@ -34,7 +35,7 @@ jobs:
           pip install edge-tts pydub
       - name: Renderizar somente A1-007 em pt-BR
         run: python scripts/hotfix_a1_007_ptbr.py
-      - name: Validar idioma, arquivo e isolamento
+      - name: Validar idioma, terminologia, arquivo e isolamento
         run: |
           python - <<'PY'
           import json, subprocess
@@ -45,23 +46,29 @@ jobs:
           assert cast['INSTRUTOR']=='pt-BR-FranciscaNeural', cast
           assert cast['DEMO_M']=='pt-BR-AntonioNeural', cast
           assert all('Multilingual' not in v for v in cast.values()), cast
+          assert ep.get('terminology_hotfix') == {'from':'pacientes','to':'tentantes'}, ep
+          source=Path('roteiros/serie-1/a1-007.txt').read_text(encoding='utf-8').lower()
+          assert 'paciente' not in source
+          assert 'tentantes com perfil depressivo' in source
+          app=Path('app.js').read_text(encoding='utf-8')
+          assert 'a1-007-n3.mp3?v=n3-cast-20260901f' in app
           p=Path('assets/audio/serie-1/a1-007-n3.mp3')
           assert p.exists() and p.stat().st_size>1000
           info=json.loads(subprocess.check_output(['ffprobe','-v','error','-select_streams','a:0','-show_entries','stream=channels,sample_rate,duration','-of','json',str(p)], text=True))['streams'][0]
           assert int(info['channels'])==1
           assert int(info['sample_rate'])==44100
           assert float(info['duration'])>0
-          print('PASS: A1-007 exclusivamente pt-BR, sem voz multilingual.')
+          print('PASS: A1-007 usa terminologia ATS (tentante), está em pt-BR e cache atualizado.')
           PY
-      - name: Commitar somente A1-007 e relatorio
+      - name: Commitar somente A1-007, relatorio e cache
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/audio/serie-1/a1-007-n3.mp3 assets/audio/serie-1/quality-n3.json
+          git add assets/audio/serie-1/a1-007-n3.mp3 assets/audio/serie-1/quality-n3.json app.js
           if git diff --cached --quiet; then
             echo "Sem alteracoes"
             exit 0
           fi
-          git commit -m "fix: corrigir sotaque estrangeiro no A1-007"
+          git commit -m "fix: usar terminologia ATS no A1-007"
           git pull --rebase --autostash origin main
           git push origin HEAD:main
