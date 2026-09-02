@@ -283,7 +283,7 @@
         "DEMO_M"
       ],
       "speaker_cast": {
-        "INSTRUTOR": "pt-BR-ThalitaMultilingualNeural",
+        "INSTRUTOR": "pt-BR-FranciscaNeural",
         "DEMO_M": "pt-BR-AntonioNeural"
       },
       "speaker_gender": {
@@ -303,12 +303,12 @@
         }
       },
       "voice_identity": {
-        "INSTRUTOR": "pt-BR-ThalitaMultilingualNeural::instrutor",
+        "INSTRUTOR": "pt-BR-FranciscaNeural::instrutor",
         "DEMO_M": "pt-BR-AntonioNeural::masculino-demo"
       },
       "voices": [
         "pt-BR-AntonioNeural",
-        "pt-BR-ThalitaMultilingualNeural"
+        "pt-BR-FranciscaNeural"
       ],
       "multivoice_required": true,
       "pronunciation_dictionary": true,
