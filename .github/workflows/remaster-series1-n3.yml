@@ -4,12 +4,14 @@ on:
   push:
     branches: [main]
     paths:
+      - '.github/workflows/remaster-series1-n3.yml'
       - 'scripts/n3_audio_core.py'
       - 'scripts/n3_casting.py'
       - 'scripts/remaster_series1_n3.py'
       - 'scripts/remaster_series1_organic.py'
       - 'scripts/test_n3_casting.py'
       - 'scripts/optimize_series1_concurrency.py'
+      - 'scripts/harden_series1_ptbr_native.py'
       - 'roteiros/serie-1/**'
   workflow_dispatch: {}
 
@@ -37,43 +39,70 @@ jobs:
           sudo apt-get install -y ffmpeg
           python -m pip install --upgrade pip
           pip install edge-tts pydub
+      - name: Blindar Serie 1 para pt-BR nativo
+        run: python scripts/harden_series1_ptbr_native.py
       - name: Garantir concorrencia deterministica
         run: python scripts/optimize_series1_concurrency.py
       - name: Testar casting antes da renderizacao
         run: python scripts/test_n3_casting.py
       - name: Gerar Serie 1 N3
         run: python scripts/remaster_series1_n3.py
-      - name: Smoke test tecnico e editorial
+      - name: Smoke test tecnico, editorial e de idioma
         run: |
           python - <<'PY'
           import json, re, subprocess
           from pathlib import Path
+
+          version='n3-ptbr-native-20260901'
           canonical='Olá, caros abordadores.'
           old=re.compile(r'\bol[áa]\s*,?\s+pessoal\b', re.I)
+          foreign_terms=re.compile(r'\b(hobby|hobbies)\b', re.I)
           scripts=sorted(Path('roteiros/serie-1').glob('a1-*.txt'))
           assert len(scripts)==21
           for p in scripts:
               text=p.read_text(encoding='utf-8')
               assert canonical in text, p
               assert not old.search(text), p
+              assert not foreign_terms.search(text), p
+
           report=json.loads(Path('assets/audio/serie-1/quality-n3.json').read_text(encoding='utf-8'))
+          assert report['version']==version, report['version']
           assert report['canonical_greeting']==canonical
+          assert report['native_ptbr_only'] is True
+          pool=report['operational_voice_pool']
+          assert pool
+          assert any(v['gender']=='M' for v in pool), pool
+          assert any(v['gender']=='F' for v in pool), pool
+          for item in pool:
+              voice=item['voice']
+              assert voice.startswith('pt-BR-'), voice
+              assert 'Multilingual' not in voice, voice
+
           expected={6,7,8,9,10,11,13,14,15,16,19,20}
           assert set(report['multivoice_episodes'])==expected
           eps=report['episodes']
           assert len(eps)==21
           assert [e['episode'] for e in eps]==list(range(1,22))
           for e in eps:
+              assert e['version']==version, e
+              assert e['native_ptbr_only'] is True, e
+              assert e['greeting']==canonical
+              for voice in e['speaker_cast'].values():
+                  assert voice.startswith('pt-BR-'), (e['episode'],voice)
+                  assert 'Multilingual' not in voice, (e['episode'],voice)
               p=Path('assets/audio/serie-1')/e['output']
               assert p.exists() and p.stat().st_size>1000, p
-              info=json.loads(subprocess.check_output(['ffprobe','-v','error','-select_streams','a:0','-show_entries','stream=channels,sample_rate,duration','-of','json',str(p)], text=True))['streams'][0]
+              info=json.loads(subprocess.check_output([
+                  'ffprobe','-v','error','-select_streams','a:0',
+                  '-show_entries','stream=channels,sample_rate,duration','-of','json',str(p)
+              ], text=True))['streams'][0]
               assert int(info['channels'])==1
               assert int(info['sample_rate'])==44100
               assert float(info['duration'])>0
-              assert e['greeting']==canonical
               if e['episode'] in expected:
                   assert e['multivoice_required'] is True
                   assert len(set(e['voice_identity'].values()))>=2, e
+
           by={e['episode']:e for e in eps}
           for number in (8,13,15):
               e=by[number]
@@ -81,18 +110,16 @@ jobs:
               assert len(male)>=2, (number,male)
               identities=[e['voice_identity'][s] for s in male]
               assert len(identities)==len(set(identities)), (number,identities)
+
           app=Path('app.js').read_text(encoding='utf-8')
-          assert app.count('assets/audio/serie-1/a1-')>=21
-          assert app.count('n3-cast-20260901')>=21
-          print('PASS: Serie 1 21/21; casting por genero e personas; multivoz por identidade perceptual.')
+          urls=re.findall(r'assets/audio/serie-1/a1-\d{3}-n3\.mp3\?v=([^"}]+)', app)
+          assert len(urls)>=21, len(urls)
+          assert all(v==version for v in urls[:21]), urls[:21]
+          print('PASS: Serie 1 21/21 em pt-BR nativo; zero voz Multilingual; zero restauração de master legado.')
           PY
       - name: Regressao final de casting
         run: python scripts/test_n3_casting.py
-      - name: Restaurar A1-001 ao master original
-        run: |
-          cp "001 Aborgagem Técnica - comunicação que salva!.mp3.mp3" "assets/audio/serie-1/a1-001-n3.mp3"
-          cmp -s "001 Aborgagem Técnica - comunicação que salva!.mp3.mp3" "assets/audio/serie-1/a1-001-n3.mp3"
-      - name: Commitar masters e roteiros corrigidos
+      - name: Commitar masters e blindagem pt-BR
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -101,6 +128,6 @@ jobs:
             echo "Sem alteracoes"
             exit 0
           fi
-          git commit -m "build: publicar Serie 1 N3 com casting e concorrencia endurecidos"
+          git commit -m "build: publicar Serie 1 integralmente em pt-BR nativo"
           git pull --rebase --autostash origin main
           git push origin HEAD:main
