@@ -413,16 +413,25 @@ def patch_app_urls():
     APP.write_text(content, encoding="utf-8")
 
 
+async def render_series(pool: list[dict], sem: asyncio.Semaphore, builder=None):
+    """Renderiza episódios em paralelo; o semaphore continua limitando chamadas TTS."""
+    builder = builder or build_episode
+
+    async def render(number: int):
+        print(f"[A1-{number:03d}] render")
+        return await builder(number, pool, sem)
+
+    results = await asyncio.gather(*(render(number) for number in range(1, 22)))
+    return sorted(results, key=lambda item: item["episode"])
+
+
 async def main():
     changed_sources = persist_canonical_greeting()
     TMP.mkdir(parents=True, exist_ok=True)
     pool = await resolve_operational_pool()
     print("[POOL]", json.dumps(pool, ensure_ascii=False))
     sem = asyncio.Semaphore(MAX_CONCURRENT_SYNTH)
-    quality = []
-    for number in range(1, 22):
-        print(f"[A1-{number:03d}] render")
-        quality.append(await build_episode(number, pool, sem))
+    quality = await render_series(pool, sem)
     patch_app_urls()
     report = {
         "version": VERSION,

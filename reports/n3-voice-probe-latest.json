@@ -1,0 +1,129 @@
+{
+  "generated_at_utc": "2026-09-02T00:04:19.159471+00:00",
+  "provider": "edge-tts",
+  "probe_is_availability_only": true,
+  "candidates_tested": 16,
+  "operational_count": 4,
+  "operational_male": [
+    "pt-BR-AntonioNeural"
+  ],
+  "operational_female": [
+    "pt-BR-ThalitaMultilingualNeural",
+    "pt-BR-FranciscaNeural",
+    "pt-BR-ThalitaNeural"
+  ],
+  "results": [
+    {
+      "voice": "pt-BR-ThalitaMultilingualNeural",
+      "gender": "F",
+      "operational": true,
+      "bytes": 26928,
+      "error": null
+    },
+    {
+      "voice": "pt-BR-AntonioNeural",
+      "gender": "M",
+      "operational": true,
+      "bytes": 29088,
+      "error": null
+    },
+    {
+      "voice": "pt-BR-FranciscaNeural",
+      "gender": "F",
+      "operational": true,
+      "bytes": 29376,
+      "error": null
+    },
+    {
+      "voice": "pt-BR-MacerioMultilingualNeural",
+      "gender": "M",
+      "operational": false,
+      "bytes": 0,
+      "error": "NoAudioReceived: No audio was received. Please verify that your parameters are correct."
+    },
+    {
+      "voice": "pt-BR-ThalitaNeural",
+      "gender": "F",
+      "operational": true,
+      "bytes": 27072,
+      "error": null
+    },
+    {
+      "voice": "pt-BR-FabioNeural",
+      "gender": "M",
+      "operational": false,
+      "bytes": 0,
+      "error": "NoAudioReceived: No audio was received. Please verify that your parameters are correct."
+    },
+    {
+      "voice": "pt-BR-BrendaNeural",
+      "gender": "F",
+      "operational": false,
+      "bytes": 0,
+      "error": "NoAudioReceived: No audio was received. Please verify that your parameters are correct."
+    },
+    {
+      "voice": "pt-BR-DonatoNeural",
+      "gender": "M",
+      "operational": false,
+      "bytes": 0,
+      "error": "NoAudioReceived: No audio was received. Please verify that your parameters are correct."
+    },
+    {
+      "voice": "pt-BR-GiovannaNeural",
+      "gender": "F",
+      "operational": false,
+      "bytes": 0,
+      "error": "NoAudioReceived: No audio was received. Please verify that your parameters are correct."
+    },
+    {
+      "voice": "pt-BR-HumbertoNeural",
+      "gender": "M",
+      "operational": false,
+      "bytes": 0,
+      "error": "NoAudioReceived: No audio was received. Please verify that your parameters are correct."
+    },
+    {
+      "voice": "pt-BR-JulioNeural",
+      "gender": "M",
+      "operational": false,
+      "bytes": 0,
+      "error": "NoAudioReceived: No audio was received. Please verify that your parameters are correct."
+    },
+    {
+      "voice": "pt-BR-NicolauNeural",
+      "gender": "M",
+      "operational": false,
+      "bytes": 0,
+      "error": "NoAudioReceived: No audio was received. Please verify that your parameters are correct."
+    },
+    {
+      "voice": "pt-BR-ValerioNeural",
+      "gender": "M",
+      "operational": false,
+      "bytes": 0,
+      "error": "NoAudioReceived: No audio was received. Please verify that your parameters are correct."
+    },
+    {
+      "voice": "pt-BR-LeilaNeural",
+      "gender": "F",
+      "operational": false,
+      "bytes": 0,
+      "error": "NoAudioReceived: No audio was received. Please verify that your parameters are correct."
+    },
+    {
+      "voice": "pt-BR-ManuelaNeural",
+      "gender": "F",
+      "operational": false,
+      "bytes": 0,
+      "error": "NoAudioReceived: No audio was received. Please verify that your parameters are correct."
+    },
+    {
+      "voice": "pt-BR-YaraNeural",
+      "gender": "F",
+      "operational": false,
+      "bytes": 0,
+      "error": "NoAudioReceived: No audio was received. Please verify that your parameters are correct."
+    }
+  ]
+}
