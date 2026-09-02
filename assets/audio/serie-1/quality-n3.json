@@ -10,6 +10,10 @@
     {
       "voice": "pt-BR-AntonioNeural",
       "gender": "M"
+    },
+    {
+      "voice": "pt-BR-ThalitaNeural",
+      "gender": "F"
     }
   ],
   "native_ptbr_only": true,
@@ -253,7 +257,7 @@
         "DEMO_M"
       ],
       "speaker_cast": {
-        "INSTRUTOR": "pt-BR-FranciscaNeural",
+        "INSTRUTOR": "pt-BR-ThalitaNeural",
         "DEMO_F": "pt-BR-FranciscaNeural",
         "DEMO_M": "pt-BR-AntonioNeural"
       },
@@ -291,13 +295,14 @@
         }
       },
       "voice_identity": {
-        "INSTRUTOR": "pt-BR-FranciscaNeural::instrutor",
+        "INSTRUTOR": "pt-BR-ThalitaNeural::instrutor",
         "DEMO_F": "pt-BR-FranciscaNeural::feminino-demo",
         "DEMO_M": "pt-BR-AntonioNeural::masculino-demo"
       },
       "voices": [
         "pt-BR-AntonioNeural",
-        "pt-BR-FranciscaNeural"
+        "pt-BR-FranciscaNeural",
+        "pt-BR-ThalitaNeural"
       ],
       "multivoice_required": true,
       "pronunciation_dictionary": true,
@@ -308,7 +313,7 @@
         "supportive"
       ],
       "turns": 9,
-      "duration_seconds": 75.0
+      "duration_seconds": 73.3
     },
     {
       "episode": 7,
@@ -453,7 +458,7 @@
       "speaker_cast": {
         "INSTRUTOR": "pt-BR-AntonioNeural",
         "ABORDADOR_F": "pt-BR-FranciscaNeural",
-        "TENTANTE_F": "pt-BR-FranciscaNeural"
+        "TENTANTE_F": "pt-BR-ThalitaNeural"
       },
       "speaker_gender": {
         "INSTRUTOR": null,
@@ -491,11 +496,12 @@
       "voice_identity": {
         "INSTRUTOR": "pt-BR-AntonioNeural::instrutor",
         "ABORDADOR_F": "pt-BR-FranciscaNeural::feminino-profissional",
-        "TENTANTE_F": "pt-BR-FranciscaNeural::feminino-crise"
+        "TENTANTE_F": "pt-BR-ThalitaNeural::feminino-crise"
       },
       "voices": [
         "pt-BR-AntonioNeural",
-        "pt-BR-FranciscaNeural"
+        "pt-BR-FranciscaNeural",
+        "pt-BR-ThalitaNeural"
       ],
       "multivoice_required": true,
       "pronunciation_dictionary": true,
@@ -506,7 +512,7 @@
         "supportive"
       ],
       "turns": 28,
-      "duration_seconds": 219.8
+      "duration_seconds": 214.6
     },
     {
       "episode": 10,
@@ -520,7 +526,7 @@
         "TENTANTE_F"
       ],
       "speaker_cast": {
-        "INSTRUTOR": "pt-BR-FranciscaNeural",
+        "INSTRUTOR": "pt-BR-ThalitaNeural",
         "ABORDADOR_M": "pt-BR-AntonioNeural",
         "TENTANTE_F": "pt-BR-FranciscaNeural"
       },
@@ -558,13 +564,14 @@
         }
       },
       "voice_identity": {
-        "INSTRUTOR": "pt-BR-FranciscaNeural::instrutor",
+        "INSTRUTOR": "pt-BR-ThalitaNeural::instrutor",
         "ABORDADOR_M": "pt-BR-AntonioNeural::masculino-profissional",
         "TENTANTE_F": "pt-BR-FranciscaNeural::feminino-crise"
       },
       "voices": [
         "pt-BR-AntonioNeural",
-        "pt-BR-FranciscaNeural"
+        "pt-BR-FranciscaNeural",
+        "pt-BR-ThalitaNeural"
       ],
       "multivoice_required": true,
       "pronunciation_dictionary": true,
@@ -576,7 +583,7 @@
         "supportive"
       ],
       "turns": 31,
-      "duration_seconds": 303.0
+      "duration_seconds": 300.9
     },
     {
       "episode": 11,
@@ -590,7 +597,7 @@
         "TENTANTE_F"
       ],
       "speaker_cast": {
-        "INSTRUTOR": "pt-BR-FranciscaNeural",
+        "INSTRUTOR": "pt-BR-ThalitaNeural",
         "ABORDADOR_M": "pt-BR-AntonioNeural",
         "TENTANTE_F": "pt-BR-FranciscaNeural"
       },
@@ -628,13 +635,14 @@
         }
       },
       "voice_identity": {
-        "INSTRUTOR": "pt-BR-FranciscaNeural::instrutor",
+        "INSTRUTOR": "pt-BR-ThalitaNeural::instrutor",
         "ABORDADOR_M": "pt-BR-AntonioNeural::masculino-profissional",
         "TENTANTE_F": "pt-BR-FranciscaNeural::feminino-crise"
       },
       "voices": [
         "pt-BR-AntonioNeural",
-        "pt-BR-FranciscaNeural"
+        "pt-BR-FranciscaNeural",
+        "pt-BR-ThalitaNeural"
       ],
       "multivoice_required": true,
       "pronunciation_dictionary": true,
@@ -645,7 +653,7 @@
         "reflective"
       ],
       "turns": 6,
-      "duration_seconds": 136.9
+      "duration_seconds": 136.8
     },
     {
       "episode": 12,
@@ -774,7 +782,7 @@
         "TENTANTE_F"
       ],
       "speaker_cast": {
-        "INSTRUTOR": "pt-BR-FranciscaNeural",
+        "INSTRUTOR": "pt-BR-ThalitaNeural",
         "ABORDADOR_M": "pt-BR-AntonioNeural",
         "TENTANTE_F": "pt-BR-FranciscaNeural"
       },
@@ -812,13 +820,14 @@
         }
       },
       "voice_identity": {
-        "INSTRUTOR": "pt-BR-FranciscaNeural::instrutor",
+        "INSTRUTOR": "pt-BR-ThalitaNeural::instrutor",
         "ABORDADOR_M": "pt-BR-AntonioNeural::masculino-profissional",
         "TENTANTE_F": "pt-BR-FranciscaNeural::feminino-crise"
       },
       "voices": [
         "pt-BR-AntonioNeural",
-        "pt-BR-FranciscaNeural"
+        "pt-BR-FranciscaNeural",
+        "pt-BR-ThalitaNeural"
       ],
       "multivoice_required": true,
       "pronunciation_dictionary": true,
@@ -829,7 +838,7 @@
         "supportive"
       ],
       "turns": 30,
-      "duration_seconds": 241.4
+      "duration_seconds": 241.0
     },
     {
       "episode": 15,

@@ -279,9 +279,9 @@ async def resolve_operational_pool():
     for name, gender in VOICE_CANDIDATES:
         if await probe_voice(name):
             operational.append({"voice": name, "gender": gender})
-        if pool_ready(operational, min_male=1, min_female=1):
+        if pool_ready(operational, min_male=1, min_female=2):
             break
-    require_balanced_pool(operational, min_male=1, min_female=1)
+    require_balanced_pool(operational, min_male=1, min_female=2)
     return operational
 
 
@@ -330,6 +330,10 @@ def build_episode_cast(turns: list[dict], pool: list[dict]):
         raise RuntimeError(f"Série 1: voz multilíngue proibida no casting: {cast}")
     if any(not voice.startswith("pt-BR-") for voice in cast.values()):
         raise RuntimeError(f"Série 1: voz fora de pt-BR no casting: {cast}")
+    if "ABORDADOR_F" in cast and "TENTANTE_F" in cast and cast["ABORDADOR_F"] == cast["TENTANTE_F"]:
+        raise RuntimeError(
+            f"Série 1: ABORDADOR_F e TENTANTE_F exigem vozes-base femininas distintas; casting={cast}"
+        )
     return cast
 
 
