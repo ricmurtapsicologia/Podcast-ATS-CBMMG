@@ -1,0 +1,66 @@
+name: Hotfix A1-017 PT-BR
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/hotfix_a1_017_ptbr.py'
+      - '.github/workflows/hotfix-a1-017-ptbr.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: podcast-a1-017-ptbr
+  cancel-in-progress: true
+
+jobs:
+  render:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Instalar dependencias
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          python -m pip install --upgrade pip
+          pip install edge-tts pydub
+      - name: Renderizar somente A1-017 em pt-BR
+        run: python scripts/hotfix_a1_017_ptbr.py
+      - name: Validar idioma, arquivo e isolamento
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          report=json.loads(Path('assets/audio/serie-1/quality-n3.json').read_text(encoding='utf-8'))
+          ep=next(e for e in report['episodes'] if e['episode']==17)
+          cast=ep['speaker_cast']
+          assert cast == {'INSTRUTOR':'pt-BR-AntonioNeural'}, cast
+          assert all('Multilingual' not in v for v in cast.values()), cast
+          p=Path('assets/audio/serie-1/a1-017-n3.mp3')
+          assert p.exists() and p.stat().st_size>1000
+          info=json.loads(subprocess.check_output(['ffprobe','-v','error','-select_streams','a:0','-show_entries','stream=channels,sample_rate,duration','-of','json',str(p)], text=True))['streams'][0]
+          assert int(info['channels'])==1
+          assert int(info['sample_rate'])==44100
+          assert float(info['duration'])>0
+          print('PASS: A1-017 em AntonioNeural pt-BR, sem voz multilingual.')
+          PY
+      - name: Commitar somente A1-017 e relatorio
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/audio/serie-1/a1-017-n3.mp3 assets/audio/serie-1/quality-n3.json
+          if git diff --cached --quiet; then
+            echo "Sem alteracoes"
+            exit 0
+          fi
+          git commit -m "fix: corrigir abertura quase inglesa no A1-017"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
