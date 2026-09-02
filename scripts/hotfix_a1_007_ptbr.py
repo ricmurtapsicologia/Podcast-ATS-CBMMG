@@ -2,8 +2,8 @@ from __future__ import annotations
 
 import asyncio
 import json
+import re
 import shutil
-from pathlib import Path
 
 import remaster_series1_n3 as n3
 
@@ -34,6 +34,15 @@ def force_ptbr_cast(turns: list[dict], pool: list[dict]) -> dict[str, str]:
     if any("Multilingual" in voice for voice in cast.values()):
         raise RuntimeError(f"Casting multilingue proibido no A1-007: {cast}")
     return cast
+
+
+def patch_app_cache() -> None:
+    content = n3.APP.read_text(encoding="utf-8")
+    pattern = r'(a1-007-n3\.mp3\?v=)[^"\\]+'
+    updated, count = re.subn(pattern, rf'\g<1>{VERSION}', content, count=1)
+    if count != 1:
+        raise RuntimeError("URL do A1-007 não localizada em app.js")
+    n3.APP.write_text(updated, encoding="utf-8")
 
 
 async def main() -> None:
@@ -75,6 +84,7 @@ async def main() -> None:
 
     report["episodes"] = episodes
     REPORT.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    patch_app_cache()
 
     voices = set(result.get("speaker_cast", {}).values())
     if voices != {NARRATOR_VOICE, DEMO_VOICE}:
