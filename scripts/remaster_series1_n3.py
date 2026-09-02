@@ -19,7 +19,7 @@ OUT = ROOT / "assets" / "audio" / "serie-1"
 TMP = ROOT / ".tmp_serie1_n3"
 APP = ROOT / "app.js"
 
-VERSION = "n3-cast-20260901e"
+VERSION = "n3-ptbr-native-20260901"
 VERSION_TAG = "n3"
 OPENING_SILENCE_MS = 160
 ENDING_SILENCE_MS = 320
@@ -33,10 +33,8 @@ GREETING_RE = re.compile(r"\bol[áa]\s*,?\s+pessoal\b[.!?…]*", flags=re.I)
 MULTIVOICE_EPISODES = {6, 7, 8, 9, 10, 11, 13, 14, 15, 16, 19, 20}
 
 VOICE_CANDIDATES = [
-    ("pt-BR-ThalitaMultilingualNeural", "F"),
-    ("pt-BR-AntonioNeural", "M"),
     ("pt-BR-FranciscaNeural", "F"),
-    ("pt-BR-MacerioMultilingualNeural", "M"),
+    ("pt-BR-AntonioNeural", "M"),
     ("pt-BR-ThalitaNeural", "F"),
     ("pt-BR-FabioNeural", "M"),
     ("pt-BR-BrendaNeural", "F"),
@@ -281,21 +279,28 @@ async def resolve_operational_pool():
     for name, gender in VOICE_CANDIDATES:
         if await probe_voice(name):
             operational.append({"voice": name, "gender": gender})
-        if pool_ready(operational, min_male=1, min_female=2):
+        if pool_ready(operational, min_male=1, min_female=1):
             break
-    require_balanced_pool(operational, min_male=1, min_female=2)
+    require_balanced_pool(operational, min_male=1, min_female=1)
     return operational
 
 
 def voice_preferences(role: str, gender: str | None):
+    female = [
+        "pt-BR-FranciscaNeural", "pt-BR-ThalitaNeural", "pt-BR-BrendaNeural",
+        "pt-BR-GiovannaNeural", "pt-BR-LeilaNeural", "pt-BR-ManuelaNeural", "pt-BR-YaraNeural",
+    ]
+    male = [
+        "pt-BR-AntonioNeural", "pt-BR-FabioNeural", "pt-BR-DonatoNeural",
+        "pt-BR-HumbertoNeural", "pt-BR-JulioNeural", "pt-BR-NicolauNeural", "pt-BR-ValerioNeural",
+    ]
     if role == "narrator":
-        return ["pt-BR-FranciscaNeural", "pt-BR-ThalitaNeural", "pt-BR-AntonioNeural", "pt-BR-ThalitaMultilingualNeural"]
+        return female + male
     if gender == "F":
-        return ["pt-BR-ThalitaMultilingualNeural", "pt-BR-FranciscaNeural", "pt-BR-AntonioNeural"]
+        return female
     if gender == "M":
-        return ["pt-BR-AntonioNeural", "pt-BR-MacerioMultilingualNeural", "pt-BR-FabioNeural", "pt-BR-DonatoNeural", "pt-BR-HumbertoNeural", "pt-BR-JulioNeural", "pt-BR-NicolauNeural", "pt-BR-ValerioNeural"]
-    return ["pt-BR-FranciscaNeural", "pt-BR-ThalitaMultilingualNeural", "pt-BR-AntonioNeural"]
-
+        return male
+    return female + male
 
 def build_episode_cast(turns: list[dict], pool: list[dict]):
     speakers = []
@@ -321,6 +326,10 @@ def build_episode_cast(turns: list[dict], pool: list[dict]):
 
     expected_gender = {speaker: info[speaker][1] for speaker in speakers}
     assert_cast_gender(cast, expected_gender, context="Série 1")
+    if any("Multilingual" in voice for voice in cast.values()):
+        raise RuntimeError(f"Série 1: voz multilíngue proibida no casting: {cast}")
+    if any(not voice.startswith("pt-BR-") for voice in cast.values()):
+        raise RuntimeError(f"Série 1: voz fora de pt-BR no casting: {cast}")
     return cast
 
 
@@ -413,6 +422,7 @@ async def build_episode(number: int, pool: list[dict], sem: asyncio.Semaphore):
         "voices": unique_voices,
         "multivoice_required": number in MULTIVOICE_EPISODES,
         "pronunciation_dictionary": True,
+        "native_ptbr_only": True,
         "intents": sorted(set(intents)),
         "turns": len(turns),
         "duration_seconds": round(len(audio) / 1000, 1),
@@ -462,6 +472,7 @@ async def main():
         "canonical_greeting": CANONICAL_GREETING,
         "source_files_rewritten": changed_sources,
         "operational_voice_pool": pool,
+        "native_ptbr_only": True,
         "multivoice_episodes": sorted(MULTIVOICE_EPISODES),
         "episodes": quality,
     }
