@@ -12,6 +12,7 @@ import asyncio
 import json
 import re
 import shutil
+import subprocess
 from pathlib import Path
 
 import imageio_ffmpeg
@@ -20,7 +21,8 @@ from pydub.silence import detect_nonsilent
 
 import remaster_series1_n3 as n3
 
-AudioSegment.converter = imageio_ffmpeg.get_ffmpeg_exe()
+FFMPEG = imageio_ffmpeg.get_ffmpeg_exe()
+AudioSegment.converter = FFMPEG
 
 EPISODE = 1
 VERSION = "n3-a1-001-prosody-20260902a"
@@ -97,6 +99,16 @@ def trim_tts_edges(segment: AudioSegment) -> AudioSegment:
     return segment[start:end]
 
 
+def decode_mp3(part: Path, work: Path) -> AudioSegment:
+    """Converte para WAV com ffmpeg empacotado; evita a dependência de ffprobe do pydub."""
+    wav = work / f"{part.stem}.wav"
+    subprocess.run(
+        [FFMPEG, "-y", "-loglevel", "error", "-i", str(part), "-ac", "1", "-ar", "44100", str(wav)],
+        check=True,
+    )
+    return AudioSegment.from_wav(wav)
+
+
 async def synth_segment(item: dict, idx: int, work: Path, sem: asyncio.Semaphore) -> Path:
     out = work / f"{idx:03d}.mp3"
     await n3.synth(item["text"], VOICE, item["rate"], item["pitch"], out, sem)
@@ -117,13 +129,13 @@ async def main() -> None:
         synth_segment(item, idx, work, sem) for idx, item in enumerate(SEGMENTS)
     ])
 
-    audio = AudioSegment.silent(duration=OPENING_MS)
+    audio = AudioSegment.silent(duration=OPENING_MS, frame_rate=44100)
     for item, part in zip(SEGMENTS, parts):
-        rendered = trim_tts_edges(AudioSegment.from_file(part, format="mp3"))
+        rendered = trim_tts_edges(decode_mp3(part, work))
         audio += rendered
         if item["pause"]:
-            audio += AudioSegment.silent(duration=int(item["pause"]))
-    audio += AudioSegment.silent(duration=ENDING_MS)
+            audio += AudioSegment.silent(duration=int(item["pause"]), frame_rate=44100)
+    audio += AudioSegment.silent(duration=ENDING_MS, frame_rate=44100)
 
     # Compressão discreta: preserva microdinâmica e evita a sensação de locução
     # excessivamente nivelada típica de TTS pós-processado com força.
@@ -149,6 +161,7 @@ async def main() -> None:
     target = n3.OUT / "a1-001-n3.mp3"
     target.parent.mkdir(parents=True, exist_ok=True)
     audio.export(target, format="mp3", bitrate="128k", parameters=["-ac", "1", "-ar", "44100"])
+    subprocess.run([FFMPEG, "-v", "error", "-i", str(target), "-f", "null", "-"], check=True)
 
     report = json.loads(REPORT.read_text(encoding="utf-8"))
     episode = next((e for e in report.get("episodes", []) if e.get("episode") == EPISODE), None)
