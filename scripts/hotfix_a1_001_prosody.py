@@ -188,4 +188,5 @@ async def main() -> None:
 
 
 if __name__ == "__main__":
+    # A execução automatizada é deliberadamente isolada ao episódio 001.
     asyncio.run(main())
