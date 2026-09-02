@@ -14,10 +14,13 @@ import re
 import shutil
 from pathlib import Path
 
+import imageio_ffmpeg
 from pydub import AudioSegment, effects
 from pydub.silence import detect_nonsilent
 
 import remaster_series1_n3 as n3
+
+AudioSegment.converter = imageio_ffmpeg.get_ffmpeg_exe()
 
 EPISODE = 1
 VERSION = "n3-a1-001-prosody-20260902a"
