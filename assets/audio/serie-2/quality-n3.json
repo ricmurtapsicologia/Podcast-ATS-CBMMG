@@ -55,7 +55,7 @@
     {
       "episode": 0,
       "output": "a2-000-n3.mp3",
-      "version": "n3-cast-20260901c",
+      "version": "n3-cast-20260901f",
       "profile": "N3-C",
       "source_mode": "frozen_source_narration",
       "scene": "none",
@@ -85,7 +85,7 @@
         "explain"
       ],
       "turns": 2,
-      "duration_seconds": 73.2,
+      "duration_seconds": 72.8,
       "channels": 1,
       "sample_rate": 44100,
       "bitrate": "128k"
@@ -93,7 +93,7 @@
     {
       "episode": 1,
       "output": "a2-001-n3.mp3",
-      "version": "n3-cast-20260901c",
+      "version": "n3-cast-20260901f",
       "profile": "N3-C",
       "source_mode": "frozen_source_narration",
       "scene": "none",
@@ -124,7 +124,7 @@
         "transition"
       ],
       "turns": 5,
-      "duration_seconds": 181.3,
+      "duration_seconds": 181.1,
       "channels": 1,
       "sample_rate": 44100,
       "bitrate": "128k"
@@ -132,7 +132,7 @@
     {
       "episode": 2,
       "output": "a2-002-n3.mp3",
-      "version": "n3-cast-20260901c",
+      "version": "n3-cast-20260901f",
       "profile": "N3-C",
       "source_mode": "frozen_source_narration",
       "scene": "none",
@@ -162,7 +162,7 @@
         "explain"
       ],
       "turns": 3,
-      "duration_seconds": 125.6,
+      "duration_seconds": 126.8,
       "channels": 1,
       "sample_rate": 44100,
       "bitrate": "128k"
@@ -170,7 +170,7 @@
     {
       "episode": 3,
       "output": "a2-003-n3.mp3",
-      "version": "n3-cast-20260901c",
+      "version": "n3-cast-20260901f",
       "profile": "N3-C",
       "source_mode": "frozen_source_narration",
       "scene": "none",
@@ -588,7 +588,7 @@
     {
       "episode": 10,
       "output": "a2-010-n3.mp3",
-      "version": "n3-cast-20260901c",
+      "version": "n3-cast-20260901f",
       "profile": "N3-C",
       "source_mode": "frozen_source_narration",
       "scene": "none",
@@ -618,7 +618,7 @@
         "explain"
       ],
       "turns": 4,
-      "duration_seconds": 151.0,
+      "duration_seconds": 151.7,
       "channels": 1,
       "sample_rate": 44100,
       "bitrate": "128k"
@@ -626,7 +626,7 @@
     {
       "episode": 11,
       "output": "a2-011-n3.mp3",
-      "version": "n3-cast-20260901c",
+      "version": "n3-cast-20260901f",
       "profile": "N3-C",
       "source_mode": "frozen_source_narration",
       "scene": "none",
@@ -657,7 +657,7 @@
         "question"
       ],
       "turns": 4,
-      "duration_seconds": 144.5,
+      "duration_seconds": 145.1,
       "channels": 1,
       "sample_rate": 44100,
       "bitrate": "128k"
@@ -665,7 +665,7 @@
     {
       "episode": 12,
       "output": "a2-012-n3.mp3",
-      "version": "n3-cast-20260901c",
+      "version": "n3-cast-20260901f",
       "profile": "N3-C",
       "source_mode": "frozen_source_narration",
       "scene": "none",
@@ -696,7 +696,7 @@
         "question"
       ],
       "turns": 4,
-      "duration_seconds": 162.6,
+      "duration_seconds": 163.1,
       "channels": 1,
       "sample_rate": 44100,
       "bitrate": "128k"
@@ -704,7 +704,7 @@
     {
       "episode": 13,
       "output": "a2-013-n3.mp3",
-      "version": "n3-cast-20260901c",
+      "version": "n3-cast-20260901f",
       "profile": "N3-C",
       "source_mode": "frozen_source_narration",
       "scene": "none",
@@ -735,10 +735,21 @@
         "transition"
       ],
       "turns": 4,
-      "duration_seconds": 148.4,
+      "duration_seconds": 148.5,
       "channels": 1,
       "sample_rate": 44100,
       "bitrate": "128k"
     }
+  ],
+  "greeting_hotfix_version": "n3-cast-20260901f",
+  "greeting_hotfix_episodes": [
+    0,
+    1,
+    2,
+    3,
+    10,
+    11,
+    12,
+    13
   ]
 }

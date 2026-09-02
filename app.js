@@ -24,20 +24,20 @@ const AUDIOS={1:[
 {title:"A1 020: Entrada Forçada - Quando a Segurança Exige Ação",url:"assets/audio/serie-1/a1-020-n3.mp3?v=n3-cast-20260901c"},
 {title:"A1 021: Encerramento - Continuemos a Girar a Ampulheta da Vida",url:"assets/audio/serie-1/a1-021-n3.mp3?v=n3-cast-20260901c"}
 ],2:[
-{title:"A2 000: Desvendando as Engrenagens",url:"assets/audio/serie-2/a2-000-n3.mp3?v=n3-cast-20260901c"},
-{title:"A2 001: O Suicídio ao Longo da História",url:"assets/audio/serie-2/a2-001-n3.mp3?v=n3-cast-20260901c"},
-{title:"A2 002: Decisões no Caos: O Cérebro em Crise",url:"assets/audio/serie-2/a2-002-n3.mp3?v=n3-cast-20260901c"},
-{title:"A2 003: Transtornos Mentais e o Peso do Sofrimento",url:"assets/audio/serie-2/a2-003-n3.mp3?v=n3-cast-20260901c"},
+{title:"A2 000: Desvendando as Engrenagens",url:"assets/audio/serie-2/a2-000-n3.mp3?v=n3-cast-20260901f"},
+{title:"A2 001: O Suicídio ao Longo da História",url:"assets/audio/serie-2/a2-001-n3.mp3?v=n3-cast-20260901f"},
+{title:"A2 002: Decisões no Caos: O Cérebro em Crise",url:"assets/audio/serie-2/a2-002-n3.mp3?v=n3-cast-20260901f"},
+{title:"A2 003: Transtornos Mentais e o Peso do Sofrimento",url:"assets/audio/serie-2/a2-003-n3.mp3?v=n3-cast-20260901f"},
 {title:"A2 004: Maria e as Sombras da Depressão",url:"assets/audio/serie-2/a2-004-n3.mp3?v=n3-cast-20260901c"},
 {title:"A2 005: Cláudio e os Ciclos da Bipolaridade",url:"assets/audio/serie-2/a2-005-n3.mp3?v=n3-cast-20260901c"},
 {title:"A2 006: Fernanda e o Labirinto da Cocaína",url:"assets/audio/serie-2/a2-006-n3.mp3?v=n3-cast-20260901c"},
 {title:"A2 007: Programa em Foco - Saúde Mental: Júlia e o Desafio do Borderline",url:"assets/audio/serie-2/a2-007-n3.mp3?v=n3-cast-20260901c"},
 {title:"A2 008: Programa em Foco - Saúde Mental: Dra. Sara e os Transtornos de Personalidade",url:"assets/audio/serie-2/a2-008-n3.mp3?v=n3-cast-20260901c"},
 {title:"A2 009: Dona Lurdes, Mônica e os Desafios da Esquizofrenia",url:"assets/audio/serie-2/a2-009-n3.mp3?v=n3-cast-20260901c"},
-{title:"A2 010: As Vulnerabilidades Invisíveis: Um Olhar Filosófico e Social",url:"assets/audio/serie-2/a2-010-n3.mp3?v=n3-cast-20260901c"},
-{title:"A2 011: Quando as Emoções Dominam",url:"assets/audio/serie-2/a2-011-n3.mp3?v=n3-cast-20260901c"},
-{title:"A2 012: A Ação Antes da Razão",url:"assets/audio/serie-2/a2-012-n3.mp3?v=n3-cast-20260901c"},
-{title:"A2 013: Um Novo Olhar para as Engrenagens",url:"assets/audio/serie-2/a2-013-n3.mp3?v=n3-cast-20260901c"}
+{title:"A2 010: As Vulnerabilidades Invisíveis: Um Olhar Filosófico e Social",url:"assets/audio/serie-2/a2-010-n3.mp3?v=n3-cast-20260901f"},
+{title:"A2 011: Quando as Emoções Dominam",url:"assets/audio/serie-2/a2-011-n3.mp3?v=n3-cast-20260901f"},
+{title:"A2 012: A Ação Antes da Razão",url:"assets/audio/serie-2/a2-012-n3.mp3?v=n3-cast-20260901f"},
+{title:"A2 013: Um Novo Olhar para as Engrenagens",url:"assets/audio/serie-2/a2-013-n3.mp3?v=n3-cast-20260901f"}
 ],3:[]};
 const LS={ONBOARD:"gav:onboard_done_v2",LAST:"gav:last_series_v2",PROGRESS:u=>`gav:progress:${u}`};
 const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
