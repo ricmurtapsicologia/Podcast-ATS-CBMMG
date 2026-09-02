@@ -42,19 +42,24 @@ jobs:
           ep=next(e for e in report['episodes'] if e['episode']==8)
           cast=ep['speaker_cast']
           assert cast['ABORDADOR_M'] != cast['TENTANTE_M'], cast
-          assert all('Multilingual' not in v for v in cast.values()), cast
+          assert 'Multilingual' not in cast['INSTRUTOR'], cast
+          assert 'Multilingual' not in cast['ABORDADOR_M'], cast
+          assert cast['INSTRUTOR'].startswith('pt-BR-'), cast
           assert cast['ABORDADOR_M'].startswith('pt-BR-') and cast['TENTANTE_M'].startswith('pt-BR-'), cast
           assert ep.get('hotfix_language_guard') is True, ep
+          assert ep.get('hotfix_distinct_male_cast') is True, ep
           p=Path('assets/audio/serie-1/a1-008-n3.mp3')
           assert p.exists() and p.stat().st_size>1000
           info=json.loads(subprocess.check_output(['ffprobe','-v','error','-select_streams','a:0','-show_entries','stream=channels,sample_rate,duration','-of','json',str(p)], text=True))['streams'][0]
           assert int(info['channels'])==1
           assert int(info['sample_rate'])==44100
           assert float(info['duration'])>0
-          source=Path('roteiros/serie-1/a1-008.txt').read_text(encoding='utf-8')
-          assert 'hobby' not in source.lower()
-          assert 'passatempo' in source.lower()
-          print('PASS: A1-008 em PT-BR, sem voz multilingual e com dois homens distintos.')
+          source=Path('roteiros/serie-1/a1-008.txt').read_text(encoding='utf-8').lower()
+          assert 'hobby' not in source
+          assert 'passatempo' in source
+          assert 'gosto de mpb' not in source
+          assert 'música popular brasileira' in source
+          print('PASS: A1-008 em PT-BR, narrador blindado e dois personagens masculinos distintos.')
           PY
       - name: Commitar hotfix A1-008
         run: |
