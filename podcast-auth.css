@@ -4,54 +4,118 @@ html.gav-auth-pending #onboarding{visibility:hidden}
 html.gav-auth-pending .noscript{visibility:visible}
 
 #catsAuthGate{
-  --a-bg0:#02050a;
-  --a-bg1:#06101d;
-  --a-bg2:#0b1b2f;
-  --a-navy:#003366;
-  --a-navy2:#07569f;
-  --a-navy3:#001f3f;
-  --a-gold:#ffdd00;
-}
-
-#catsAuthGate .cats-auth-hero{
-  background:
-    linear-gradient(100deg,rgba(2,6,12,.92),rgba(2,6,12,.62) 48%,rgba(2,6,12,.20) 76%),
-    url("assets/img/hero.jpg") center/cover no-repeat !important;
-}
-
-#catsAuthGate .cats-auth-hero:after{
-  background:
-    radial-gradient(circle at 18% 20%,rgba(255,221,0,.14),transparent 28%),
-    linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.58));
-}
-
-#catsAuthGate .cats-auth-brand svg{width:18px;height:18px}
-#catsAuthGate .cats-auth-logo svg{width:40px;height:40px}
-#catsAuthGate .cats-auth-hero-title{max-width:690px}
-#catsAuthGate .cats-auth-course-title{letter-spacing:-.01em}
-
-html.gav-auth-failed body:before{
-  content:"Não foi possível carregar a validação de acesso. Atualize a página e tente novamente.";
+  --gav-bg0:#02050a;
+  --gav-bg1:#06101d;
+  --gav-bg2:#0b1b2f;
+  --gav-navy:#003366;
+  --gav-navy-light:#07569f;
+  --gav-navy-dark:#001f3f;
+  --gav-gold:#ffdd00;
+  --gav-white:#fff;
+  --gav-soft:rgba(255,255,255,.76);
+  --gav-muted:rgba(255,255,255,.60);
+  --gav-stroke:rgba(255,255,255,.11);
+  --gav-stroke-strong:rgba(255,255,255,.18);
+  --gav-error:#ff7b70;
+  --gav-success:#5bd17a;
   position:fixed;
   inset:0;
-  z-index:2147483647;
-  display:grid;
-  place-items:center;
-  padding:28px;
-  background:#07101f;
-  color:#fff;
-  text-align:center;
-  font:700 16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  z-index:2147483646;
+  overflow:auto;
+  color:rgba(255,255,255,.95);
+  font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  background:
+    radial-gradient(circle at 16% 10%,rgba(255,221,0,.10),transparent 24%),
+    radial-gradient(circle at 86% 18%,rgba(56,189,248,.13),transparent 30%),
+    linear-gradient(135deg,var(--gav-bg0),var(--gav-bg1) 50%,var(--gav-bg2));
 }
+#catsAuthGate[hidden]{display:none!important}
+#catsAuthGate *,#catsAuthGate *:before,#catsAuthGate *:after{box-sizing:border-box}
+#catsAuthGate button,#catsAuthGate input{font:inherit}
+#catsAuthGate svg{display:block}
+#catsAuthGate :focus-visible{outline:3px solid rgba(255,221,0,.78);outline-offset:3px;border-radius:10px}
+
+.cats-auth-page{min-height:100%;display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,42px)}
+.cats-auth-shell{width:min(1120px,100%);display:grid;gap:14px}
+.cats-auth-stage{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.82fr);min-height:clamp(520px,70vh,620px);overflow:hidden;border:1px solid var(--gav-stroke);border-radius:30px;background:rgba(3,8,16,.74);box-shadow:0 34px 100px rgba(0,0,0,.58)}
+.cats-auth-hero{position:relative;min-height:100%;background:linear-gradient(100deg,rgba(2,6,12,.92),rgba(2,6,12,.62) 48%,rgba(2,6,12,.20) 76%),url("assets/img/hero.jpg") center/cover no-repeat}
+.cats-auth-hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 18% 20%,rgba(255,221,0,.14),transparent 28%),linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.58))}
+.cats-auth-hero-content{position:relative;z-index:1;min-height:100%;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(26px,4vw,42px)}
+.cats-auth-brand{display:inline-flex;align-items:center;gap:9px;width:fit-content;padding:8px 11px;border:1px solid rgba(255,221,0,.22);border-radius:999px;background:rgba(255,221,0,.08);color:rgba(255,255,255,.92);font-size:12px;font-weight:850;letter-spacing:.085em;text-transform:uppercase;backdrop-filter:blur(8px)}
+.cats-auth-brand svg{width:18px;height:18px;flex:0 0 auto}
+.cats-auth-hero-main{max-width:690px;margin-top:36px}
+.cats-auth-kicker{display:block;margin-bottom:10px;color:var(--gav-gold);font-size:12px;font-weight:900;letter-spacing:.13em;text-transform:uppercase}
+.cats-auth-hero-title{margin:0;max-width:690px;font-size:clamp(38px,4.8vw,62px);line-height:.98;letter-spacing:-.058em;text-wrap:balance;text-shadow:0 8px 28px rgba(0,0,0,.55)}
+.cats-auth-accent{color:var(--gav-gold)}
+.cats-auth-hero-text{max-width:590px;margin:16px 0 0;color:rgba(255,255,255,.84);font-size:clamp(14px,1.25vw,16px);line-height:1.58;text-shadow:0 3px 14px rgba(0,0,0,.36)}
+.cats-auth-hero-foot{width:fit-content;max-width:570px;display:flex;align-items:center;gap:9px;margin-top:24px;padding:10px 12px;border:1px solid rgba(255,255,255,.13);border-radius:12px;background:rgba(3,8,16,.50);color:rgba(255,255,255,.74);font-size:12.8px;line-height:1.4;backdrop-filter:blur(7px)}
+.cats-auth-hero-foot b{color:var(--gav-gold)}
+
+.cats-auth-panel{display:flex;align-items:center;padding:clamp(28px,4vw,42px);border-left:1px solid var(--gav-stroke);background:linear-gradient(180deg,rgba(3,8,16,.99),rgba(3,8,16,.95))}
+.cats-auth-card{width:100%;max-width:410px;margin:0 auto}
+.cats-auth-header{margin-bottom:22px}
+.cats-auth-eyebrow{display:inline-block;margin-bottom:10px;color:var(--gav-gold);font-size:11.5px;font-weight:850;letter-spacing:.12em;text-transform:uppercase}
+.cats-auth-title{margin:0;font-size:clamp(30px,3vw,38px);line-height:1.05;letter-spacing:-.052em}
+.cats-auth-subtitle{margin:9px 0 0;color:var(--gav-soft);font-size:14.5px;line-height:1.52}
+.cats-auth-course{display:flex;align-items:center;gap:12px;margin-bottom:22px;padding:13px 0 18px;border-bottom:1px solid var(--gav-stroke)}
+.cats-auth-logo{width:48px;height:48px;display:grid;place-items:center;flex:0 0 auto;border:1px solid var(--gav-stroke-strong);border-radius:14px;background:rgba(255,255,255,.045);box-shadow:0 10px 22px rgba(0,0,0,.24)}
+.cats-auth-logo svg{width:40px;height:40px}
+.cats-auth-course-title{margin:0;color:#fff;font-size:15px;font-weight:900;line-height:1.25;letter-spacing:-.01em}
+.cats-auth-course-note{margin:4px 0 0;color:var(--gav-muted);font-size:12.3px;line-height:1.35}
+
+.cats-auth-form{display:grid;gap:14px}
+.cats-auth-field{display:grid;gap:8px}
+.cats-auth-label{color:rgba(255,255,255,.90);font-size:13px;font-weight:850}
+.cats-auth-input-wrap{position:relative}
+.cats-auth-input-icon{position:absolute;left:15px;top:50%;transform:translateY(-50%);width:19px;height:19px;color:#475569;pointer-events:none}
+.cats-auth-input-icon svg{width:100%;height:100%}
+#catsAuthInput{width:100%;min-height:52px;padding:13px 15px 13px 45px;border:1px solid rgba(255,255,255,.15);border-radius:12px;background:rgba(255,255,255,.97);color:#0b1220;font-size:16px;line-height:1.2;outline:none;box-shadow:0 12px 22px rgba(0,0,0,.18);transition:border-color 140ms ease,box-shadow 140ms ease,background 140ms ease}
+#catsAuthInput::placeholder{color:rgba(15,23,42,.42)}
+#catsAuthInput:hover{background:#fff}
+#catsAuthInput:focus{border-color:rgba(255,221,0,.78);box-shadow:0 0 0 4px rgba(255,221,0,.16),0 14px 26px rgba(0,0,0,.20)}
+#catsAuthInput[aria-invalid="true"]{border-color:rgba(255,123,112,.78);box-shadow:0 0 0 4px rgba(255,123,112,.12)}
+.cats-auth-help{margin:0;color:var(--gav-muted);font-size:12.5px;line-height:1.42}
+#catsAuthSubmit{width:100%;min-height:52px;display:flex;align-items:center;justify-content:center;gap:10px;padding:13px 16px;border:1px solid rgba(255,255,255,.15);border-radius:12px;background:linear-gradient(180deg,var(--gav-navy-light),var(--gav-navy) 56%,var(--gav-navy-dark));color:#fff;font-size:13.8px;font-weight:900;letter-spacing:.055em;text-transform:uppercase;cursor:pointer;box-shadow:0 14px 32px rgba(0,0,0,.32);transition:transform 140ms ease,filter 140ms ease,box-shadow 140ms ease,border-color 140ms ease}
+#catsAuthSubmit:hover:not(:disabled){filter:brightness(1.08);transform:translateY(-1px);border-color:rgba(255,255,255,.23);box-shadow:0 18px 36px rgba(0,0,0,.36)}
+#catsAuthSubmit:disabled{cursor:not-allowed;opacity:.62;filter:grayscale(.24);box-shadow:none}
+.cats-auth-arrow{color:var(--gav-gold);font-size:18px}
+#catsAuthMessage{display:none;padding:12px;border:1px solid var(--gav-stroke);border-radius:12px;background:rgba(3,8,16,.96);font-size:13.5px;line-height:1.42}
+#catsAuthMessage.is-visible{display:block}
+#catsAuthMessage[data-tone="error"]{border-color:rgba(255,123,112,.46);box-shadow:0 0 0 3px rgba(255,123,112,.10)}
+#catsAuthMessage[data-tone="success"]{border-color:rgba(91,209,122,.48);box-shadow:0 0 0 3px rgba(91,209,122,.10)}
+.cats-auth-message-row{display:flex;align-items:flex-start;gap:9px}
+.cats-auth-message-icon{width:18px;height:18px;flex:0 0 auto;margin-top:1px}
+#catsAuthMessage[data-tone="error"] .cats-auth-message-icon{color:var(--gav-error)}
+#catsAuthMessage[data-tone="success"] .cats-auth-message-icon{color:var(--gav-success)}
+.cats-auth-note{margin:18px 0 0;padding-top:15px;border-top:1px solid var(--gav-stroke);color:var(--gav-muted);font-size:11.9px;line-height:1.45}
+.cats-auth-footer{display:flex;justify-content:center;flex-wrap:wrap;gap:7px;color:rgba(255,255,255,.52);font-size:11.8px;line-height:1.45;text-align:center;padding:0 8px}
+.cats-auth-footer b{color:rgba(255,221,0,.52)}
+
+#catsAuthLogout{position:fixed;top:14px;right:14px;z-index:2147483000;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:rgba(7,16,31,.90);color:#fff;padding:9px 13px;font:700 .86rem system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.26);backdrop-filter:blur(10px)}
+#catsAuthLogout:hover{border-color:rgba(255,221,0,.55);color:var(--gav-gold)}
+html.cats-auth-locked{overflow:hidden!important}
+
+html.gav-auth-failed body:before{content:"Não foi possível carregar a validação de acesso. Atualize a página e tente novamente.";position:fixed;inset:0;z-index:2147483647;display:grid;place-items:center;padding:28px;background:#07101f;color:#fff;text-align:center;font:700 16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif}
 
 @media(max-width:980px){
-  #catsAuthGate .cats-auth-hero{
-    background:
-      linear-gradient(180deg,rgba(2,6,12,.40),rgba(2,6,12,.88) 78%),
-      url("assets/img/hero.jpg") center/cover no-repeat !important;
-  }
+  .cats-auth-page{align-items:flex-start}
+  .cats-auth-shell{width:min(660px,100%)}
+  .cats-auth-stage{grid-template-columns:1fr;min-height:auto}
+  .cats-auth-hero{min-height:300px;background:linear-gradient(180deg,rgba(2,6,12,.38),rgba(2,6,12,.88) 80%),url("assets/img/hero.jpg") center/cover no-repeat}
+  .cats-auth-hero-content{min-height:300px;padding:24px}
+  .cats-auth-panel{border-left:0;border-top:1px solid var(--gav-stroke);padding:30px 24px 32px}
+  .cats-auth-card{max-width:100%}
 }
-
-@media(prefers-reduced-motion:reduce){
-  #catsAuthGate *,#catsAuthGate *:before,#catsAuthGate *:after{transition:none!important;animation:none!important}
+@media(max-width:560px){
+  .cats-auth-page{padding:10px}
+  .cats-auth-stage{border-radius:22px}
+  .cats-auth-hero{min-height:250px}
+  .cats-auth-hero-content{min-height:250px;padding:18px}
+  .cats-auth-hero-foot{display:none}
+  .cats-auth-hero-title{font-size:clamp(31px,9.4vw,40px)}
+  .cats-auth-panel{padding:24px 18px 25px}
+  .cats-auth-title{font-size:clamp(29px,8.5vw,34px)}
+  #catsAuthInput,#catsAuthSubmit{min-height:50px}
+  .cats-auth-footer{font-size:11.2px}
 }
+@media(prefers-reduced-motion:reduce){#catsAuthGate *,#catsAuthGate *:before,#catsAuthGate *:after{transition:none!important;animation:none!important}}
