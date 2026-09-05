@@ -21,8 +21,8 @@ release = release_match.group(1)
 assert release in (CORE_RELEASE, "gav-learning-v4-20260905-audio-protection"), release
 for path in ("styles.css", "psp.css", "learning-v4.css", "assets-v4.css", "content-manifest.js", "psp.js", "app.js", "a11y-v4.js"):
     assert f'{path}?v={CORE_RELEASE}' in index, f"asset central fora da release canônica: {path}"
-assert 'audio-protection.js?v=20260905-1' in index
-assert 'podcast-auth.js?v=20260905-4' in index
+assert 'audio-protection.js?v=20260905-2' in index
+assert 'podcast-auth.js?v=20260905-5' in index
 
 assert manifest.count('assets/audio/serie-1/a1-') == 21
 assert manifest.count('assets/audio/serie-2/a2-') == 14
@@ -58,4 +58,4 @@ for asset in ("hero.jpg", "series-1.jpg", "series-2.jpg", "series-3.jpg"):
     path = ROOT / "assets" / "img" / asset
     assert path.exists() and path.stat().st_size > 1000, f"asset local ausente: {path}"
 
-print("PASS: gate estrutural GAV v4 — release canônica preservada com camada de proteção de áudio, manifesto, estado, player único, PSP, acessibilidade e assets locais.")
+print("PASS: gate estrutural GAV v4 — release canônica preservada, autenticação corrigida, proteção de áudio, manifesto, estado, player único, PSP, acessibilidade e assets locais.")
