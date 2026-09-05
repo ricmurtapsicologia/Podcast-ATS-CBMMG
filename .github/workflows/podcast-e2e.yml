@@ -5,6 +5,8 @@ on:
     branches: [main, refactor/learning-experience-v4]
     paths:
       - 'index.html'
+      - 'podcast-auth.js'
+      - 'podcast-auth.css'
       - 'app.js'
       - 'content-manifest.js'
       - 'psp.js'
@@ -21,11 +23,14 @@ on:
       - 'scripts/smoke_player_e2e.py'
       - 'scripts/a11y_smoke.py'
       - 'scripts/validate_learning_v4.py'
+      - 'scripts/validate_auth_gate.py'
       - 'scripts/qa_n3_release.py'
       - '.github/workflows/podcast-e2e.yml'
   pull_request:
     paths:
       - 'index.html'
+      - 'podcast-auth.js'
+      - 'podcast-auth.css'
       - 'app.js'
       - 'content-manifest.js'
       - 'psp.js'
@@ -42,6 +47,7 @@ on:
       - 'scripts/smoke_player_e2e.py'
       - 'scripts/a11y_smoke.py'
       - 'scripts/validate_learning_v4.py'
+      - 'scripts/validate_auth_gate.py'
       - 'scripts/qa_n3_release.py'
       - '.github/workflows/podcast-e2e.yml'
   workflow_dispatch: {}
@@ -57,8 +63,10 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
-      - name: Gate estrutural
+      - name: Gate estrutural da experiência
         run: python scripts/validate_learning_v4.py
+      - name: Gate estrutural da autenticação
+        run: python scripts/validate_auth_gate.py
       - name: Instalar Playwright e axe-core
         run: |
           pip install playwright
@@ -71,9 +79,9 @@ jobs:
           for i in {1..30}; do curl -fsS http://127.0.0.1:8765/ >/dev/null && exit 0; sleep 0.5; done
           cat /tmp/podcast-http.log
           exit 1
-      - name: E2E desktop, mobile, progresso, PSP e acessibilidade
+      - name: E2E autenticação, desktop, mobile, progresso e PSP
         run: python scripts/smoke_player_e2e.py http://127.0.0.1:8765/
-      - name: Axe-core — estados principais
+      - name: Axe-core — gate e estados principais
         run: python scripts/a11y_smoke.py http://127.0.0.1:8765/
       - name: Smoke público após merge em main
         if: github.event_name == 'push' && github.ref == 'refs/heads/main'
@@ -89,10 +97,18 @@ jobs:
               try:
                   with urllib.request.urlopen(url, timeout=15) as response:
                       text = response.read().decode('utf-8')
-                  if marker in text and 'content-manifest.js' in text and 'learning-v4.css' in text:
-                      print('PASS: GitHub Pages convergiu para GAV learning v4.')
+                  required = (
+                      marker,
+                      'content-manifest.js',
+                      'learning-v4.css',
+                      'podcast-auth.js',
+                      'podcast-auth.css',
+                      'gav-auth-pending',
+                  )
+                  if all(item in text for item in required):
+                      print('PASS: GitHub Pages convergiu para GAV com autenticação própria.')
                       break
-                  last = 'marker ausente'
+                  last = 'marcadores de publicação ausentes'
               except Exception as exc:
                   last = f'{type(exc).__name__}: {exc}'
               if attempt == 30:
