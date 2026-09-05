@@ -40,6 +40,16 @@
     if (node) node.textContent = value;
   }
 
+  function maintainDynamicBranding(gate) {
+    const buttonText = gate.querySelector("#catsAuthButtonText");
+    if (buttonText?.textContent === "Entrar no ambiente") buttonText.textContent = "Entrar na biblioteca";
+
+    const messageText = gate.querySelector("#catsAuthMessageText");
+    if (messageText?.textContent?.includes("Abrindo o ambiente")) {
+      messageText.textContent = messageText.textContent.replace("Abrindo o ambiente", "Abrindo a biblioteca");
+    }
+  }
+
   function rebrandGate() {
     const gate = document.getElementById("catsAuthGate");
     if (!gate) return false;
@@ -73,6 +83,13 @@
     const footerSpans = gate.querySelectorAll(".cats-auth-footer span");
     if (footerSpans[0]) footerSpans[0].textContent = "© 2026 Corpo de Bombeiros Militar de Minas Gerais. Todos os direitos reservados.";
     if (footerSpans[1]) footerSpans[1].textContent = "Girando a Ampulheta da Vida";
+
+    maintainDynamicBranding(gate);
+    if (!gate.__gavBrandObserver) {
+      const brandingObserver = new MutationObserver(() => maintainDynamicBranding(gate));
+      brandingObserver.observe(gate, { childList: true, subtree: true, characterData: true });
+      Object.defineProperty(gate, "__gavBrandObserver", { value: brandingObserver });
+    }
 
     document.documentElement.classList.remove("gav-auth-pending");
     return true;
