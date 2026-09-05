@@ -30,6 +30,7 @@ html.gav-auth-pending .noscript{visibility:visible}
     linear-gradient(135deg,var(--gav-bg0),var(--gav-bg1) 50%,var(--gav-bg2));
 }
 #catsAuthGate[hidden]{display:none!important}
+#catsAuthGate:not([data-gav-branded="true"]){visibility:hidden}
 #catsAuthGate *,#catsAuthGate *:before,#catsAuthGate *:after{box-sizing:border-box}
 #catsAuthGate button,#catsAuthGate input{font:inherit}
 #catsAuthGate svg{display:block}
