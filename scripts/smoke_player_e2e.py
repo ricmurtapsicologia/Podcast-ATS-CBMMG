@@ -46,11 +46,11 @@ with sync_playwright() as p:
     gate = page.locator("#catsAuthGate")
     assert gate.is_visible(), "acesso deve iniciar bloqueado"
     assert gate.get_attribute("data-gav-branded") == "true"
-    gate_text = gate.inner_text()
-    assert "Girando a Ampulheta da Vida" in gate_text
-    assert "Acesso à biblioteca" in gate_text
-    assert "Entrar na biblioteca" in gate_text
-    assert "Atendimento a Tentativas de Suicídio" not in gate_text
+    assert "Girando a Ampulheta da Vida" in (gate.locator("#catsAuthTitle").text_content() or "")
+    assert (gate.locator(".cats-auth-eyebrow").text_content() or "").strip() == "Acesso à biblioteca"
+    assert (gate.locator("#catsAuthButtonText").text_content() or "").strip() == "Entrar na biblioteca"
+    semantic_gate_text = gate.text_content() or ""
+    assert "Atendimento a Tentativas de Suicídio" not in semantic_gate_text
     hero_bg = page.locator("#catsAuthGate .cats-auth-hero").evaluate("el => getComputedStyle(el).backgroundImage")
     assert "assets/img/hero.jpg" in hero_bg or "hero.jpg" in hero_bg, hero_bg
     assert not external_visual_requests, external_visual_requests
