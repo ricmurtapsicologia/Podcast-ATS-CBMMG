@@ -19,11 +19,12 @@ def auth_payload() -> str:
 
 def authorize(page, onboard_done: bool = True) -> None:
     page.goto(BASE, wait_until="networkidle")
+    page.wait_for_selector('#catsAuthGate[data-gav-branded="true"]')
     page.evaluate("payload => sessionStorage.setItem('gav_auth_v1', payload)", auth_payload())
     if onboard_done:
         page.evaluate("localStorage.setItem('gav:v4:onboard-done','1')")
     page.reload(wait_until="networkidle")
-    page.wait_for_selector("#catsAuthGate")
+    page.wait_for_selector('#catsAuthGate[data-gav-branded="true"]', state="attached")
     assert page.locator("#catsAuthGate").is_hidden()
 
 
@@ -56,7 +57,7 @@ with sync_playwright() as p:
     gate_context = browser.new_context(viewport={"width": 1365, "height": 900})
     gate_page = gate_context.new_page()
     gate_page.goto(BASE, wait_until="networkidle")
-    gate_page.wait_for_selector("#catsAuthGate")
+    gate_page.wait_for_selector('#catsAuthGate[data-gav-branded="true"]')
     assert gate_page.locator("#catsAuthGate").is_visible()
     audit(gate_page, "gate-desktop")
     gate_context.close()
@@ -82,11 +83,12 @@ with sync_playwright() as p:
     mobile_context = browser.new_context(viewport={"width": 390, "height": 844}, reduced_motion="reduce")
     mobile = mobile_context.new_page()
     mobile.goto(BASE, wait_until="networkidle")
-    mobile.wait_for_selector("#catsAuthGate")
+    mobile.wait_for_selector('#catsAuthGate[data-gav-branded="true"]')
     audit(mobile, "gate-mobile")
     mobile.evaluate("payload => sessionStorage.setItem('gav_auth_v1', payload)", auth_payload())
     mobile.evaluate("localStorage.setItem('gav:v4:onboard-done','1')")
     mobile.reload(wait_until="networkidle")
+    mobile.wait_for_selector('#catsAuthGate[data-gav-branded="true"]', state="attached")
     audit(mobile, "home-mobile")
     mobile_context.close()
 
