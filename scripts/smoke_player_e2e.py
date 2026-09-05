@@ -20,11 +20,12 @@ def auth_payload() -> str:
 
 def authorize(page, url: str = BASE, onboard_done: bool = True) -> None:
     page.goto(url, wait_until="networkidle")
+    page.wait_for_selector('#catsAuthGate[data-gav-branded="true"]')
     page.evaluate("payload => sessionStorage.setItem('gav_auth_v1', payload)", auth_payload())
     if onboard_done:
         page.evaluate("localStorage.setItem('gav:v4:onboard-done','1')")
     page.reload(wait_until="networkidle")
-    page.wait_for_selector("#catsAuthGate")
+    page.wait_for_selector('#catsAuthGate[data-gav-branded="true"]', state="attached")
     assert page.locator("#catsAuthGate").is_hidden(), "gate deveria estar liberado com sessão GAV válida"
 
 
@@ -41,7 +42,7 @@ with sync_playwright() as p:
     page.on("request", lambda req: external_visual_requests.append(req.url) if ("pinimg.com" in req.url or "images.pexels.com" in req.url) else None)
 
     page.goto(BASE, wait_until="networkidle")
-    page.wait_for_selector("#catsAuthGate")
+    page.wait_for_selector('#catsAuthGate[data-gav-branded="true"]')
     gate = page.locator("#catsAuthGate")
     assert gate.is_visible(), "acesso deve iniciar bloqueado"
     assert gate.get_attribute("data-gav-branded") == "true"
@@ -65,7 +66,7 @@ with sync_playwright() as p:
     ats_context.add_init_script(f"sessionStorage.setItem('curso_ats_auth_v3','{payload}')")
     ats_page = ats_context.new_page()
     ats_page.goto(BASE, wait_until="networkidle")
-    ats_page.wait_for_selector("#catsAuthGate")
+    ats_page.wait_for_selector('#catsAuthGate[data-gav-branded="true"]')
     assert ats_page.locator("#catsAuthGate").is_visible(), "sessão do Curso ATS não pode liberar o podcast"
     ats_context.close()
 
