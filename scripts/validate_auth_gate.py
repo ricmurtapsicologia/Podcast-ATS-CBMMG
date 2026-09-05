@@ -10,9 +10,9 @@ audio_protection = (ROOT / "audio-protection.js").read_text(encoding="utf-8")
 assert 'class="gav-auth-pending"' in index
 assert 'data-cats-auth' in index
 assert 'podcast-auth.css?v=20260905-2' in index
-assert 'podcast-auth.js?v=20260905-4' in index
+assert 'podcast-auth.js?v=20260905-5' in index
 assert 'https://ricmurtapsicologia.github.io/Curso-ATS/auth.js?v=20260905-2' in index
-assert 'audio-protection.js?v=20260905-1' in index
+assert 'audio-protection.js?v=20260905-2' in index
 assert '/Curso-ATS/auth.css' not in index
 assert 'gav_auth_v1' in auth_js
 assert 'gav_login_attempts_v1' in auth_js
@@ -27,16 +27,19 @@ for marker in (
 ):
     assert marker in auth_js or marker in auth_css, marker
 
-# Acesso automático: botão removido e validação por comprimento.
+# Acesso automático: botão removido e binding idempotente para evitar loop de MutationObserver.
 for marker in (
-    'submit.remove()',
+    'gate.querySelector("#catsAuthSubmit")?.remove()',
+    'input.dataset.autoAccessBound === "1"',
     'form.requestSubmit()',
     'length === 11',
     'length === 7',
     'trySubmit(550)',
-    'O acesso é validado automaticamente.',
+    'Matrícula BM/PM: 7 números. CPF cadastrado: 11 números.',
 ):
     assert marker in auth_js, marker
+assert 'validado automaticamente' not in auth_js
+assert 'O acesso ocorre automaticamente' not in auth_js
 
 # Proteção de mídia na interface: sem download, envio remoto ou ação direta sobre MP3.
 for marker in (
@@ -62,4 +65,4 @@ assert '<meta name="robots" content="noindex,nofollow" />' in index
 for marker in ('focus-visible', 'prefers-reduced-motion:reduce', '@media(max-width:980px)', '@media(max-width:560px)'):
     assert marker in auth_css, marker
 
-print("PASS: autenticação GAV isolada, botão removido, acesso automático, proteção de mídia, fail-closed, noindex, cache e responsividade.")
+print("PASS: autenticação GAV isolada, sem loop de observer, botão removido, UI limpa, proteção de mídia, fail-closed, noindex e responsividade.")
