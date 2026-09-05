@@ -32,7 +32,7 @@ def authorize(page, url: str = BASE, onboard_done: bool = True) -> None:
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=True)
 
-    # 1) Gate próprio: bloqueado por padrão, branding da ampulheta e sem assets visuais externos.
+    # 1) Gate próprio: bloqueado por padrão, branding da ampulheta, acesso automático e sem assets visuais externos.
     context = browser.new_context(viewport={"width": 1365, "height": 900})
     page = context.new_page()
     errors: list[str] = []
@@ -48,17 +48,20 @@ with sync_playwright() as p:
     assert gate.get_attribute("data-gav-branded") == "true"
     assert "Girando a Ampulheta da Vida" in (gate.locator("#catsAuthTitle").text_content() or "")
     assert (gate.locator(".cats-auth-eyebrow").text_content() or "").strip() == "Acesso à biblioteca"
-    assert (gate.locator("#catsAuthButtonText").text_content() or "").strip() == "Entrar na biblioteca"
+    assert gate.locator("#catsAuthSubmit").is_hidden(), "botão de entrada não deve aparecer"
+    assert "validado automaticamente" in (gate.locator("#catsAuthHelp").text_content() or "")
     semantic_gate_text = gate.text_content() or ""
     assert "Atendimento a Tentativas de Suicídio" not in semantic_gate_text
     hero_bg = page.locator("#catsAuthGate .cats-auth-hero").evaluate("el => getComputedStyle(el).backgroundImage")
     assert "assets/img/hero.jpg" in hero_bg or "hero.jpg" in hero_bg, hero_bg
     assert not external_visual_requests, external_visual_requests
 
-    # Formato inválido é rejeitado sem depender de uma credencial real.
-    page.locator("#catsAuthInput").fill("000")
-    page.locator("#catsAuthSubmit").click()
-    assert "Formato inválido" in page.locator("#catsAuthMessage").inner_text()
+    # Uma matrícula de 7 dígitos dispara validação automaticamente, sem clique.
+    page.locator("#catsAuthInput").fill("0000000")
+    page.wait_for_function("() => document.querySelector('#catsAuthMessage')?.classList.contains('is-visible')", timeout=5000)
+    assert "Credencial não localizada" in page.locator("#catsAuthMessage").inner_text()
+    page.evaluate("localStorage.removeItem('gav_login_attempts_v1')")
+    page.locator("#catsAuthInput").fill("")
 
     # 2) Isolamento: uma sessão física do Curso ATS não libera o podcast.
     ats_context = browser.new_context(viewport={"width": 1100, "height": 760})
@@ -172,4 +175,4 @@ with sync_playwright() as p:
     assert not errors, errors
     browser.close()
 
-print("PASS: GAV — gate próprio, sessão isolada, branding da ampulheta, players, progresso, deep links, PSP, onboarding, mobile e reduced-motion.")
+print("PASS: GAV — acesso automático sem botão, sessão isolada, branding, players, progresso, deep links, PSP, onboarding, mobile e reduced-motion.")
