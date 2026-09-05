@@ -9,7 +9,7 @@ auth_css = (ROOT / "podcast-auth.css").read_text(encoding="utf-8")
 assert 'class="gav-auth-pending"' in index
 assert 'data-cats-auth' in index
 assert 'podcast-auth.css?v=20260905-2' in index
-assert 'podcast-auth.js?v=20260905-2' in index
+assert 'podcast-auth.js?v=20260905-3' in index
 assert 'https://ricmurtapsicologia.github.io/Curso-ATS/auth.js?v=20260905-2' in index
 assert '/Curso-ATS/auth.css' not in index
 assert 'gav_auth_v1' in auth_js
@@ -21,10 +21,20 @@ assert 'ats_login_attempts_v3: "gav_login_attempts_v1"' in auth_js
 for marker in (
     'Girando a <span class="cats-auth-accent">Ampulheta</span> da Vida',
     'Acesso à biblioteca',
-    'Entrar na biblioteca',
     'assets/img/hero.jpg',
 ):
     assert marker in auth_js or marker in auth_css, marker
+
+# Acesso automático: botão fora da experiência e validação por comprimento.
+for marker in (
+    'submit.hidden = true',
+    'form.requestSubmit()',
+    'length === 11',
+    'length === 7',
+    'trySubmit(550)',
+    'O acesso é validado automaticamente.',
+):
+    assert marker in auth_js, marker
 
 # Visual local: nenhum asset visual da tela de bloqueio vem de Pinterest/Pexels.
 assert 'pinimg.com' not in auth_css
@@ -39,4 +49,4 @@ assert '<meta name="robots" content="noindex,nofollow" />' in index
 for marker in ('focus-visible', 'prefers-reduced-motion:reduce', '@media(max-width:980px)', '@media(max-width:560px)'):
     assert marker in auth_css, marker
 
-print("PASS: autenticação GAV isolada, branding próprio, ampulheta local, fail-closed, noindex, cache e responsividade.")
+print("PASS: autenticação GAV isolada, branding próprio, acesso automático sem botão, fail-closed, noindex, cache e responsividade.")
