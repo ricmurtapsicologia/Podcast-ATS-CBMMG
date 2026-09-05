@@ -9,7 +9,7 @@ auth_css = (ROOT / "podcast-auth.css").read_text(encoding="utf-8")
 assert 'class="gav-auth-pending"' in index
 assert 'data-cats-auth' in index
 assert 'podcast-auth.css?v=20260905-2' in index
-assert 'podcast-auth.js?v=20260905-1' in index
+assert 'podcast-auth.js?v=20260905-2' in index
 assert 'https://ricmurtapsicologia.github.io/Curso-ATS/auth.js?v=20260905-2' in index
 assert '/Curso-ATS/auth.css' not in index
 assert 'gav_auth_v1' in auth_js
@@ -39,4 +39,4 @@ assert '<meta name="robots" content="noindex,nofollow" />' in index
 for marker in ('focus-visible', 'prefers-reduced-motion:reduce', '@media(max-width:980px)', '@media(max-width:560px)'):
     assert marker in auth_css, marker
 
-print("PASS: autenticação GAV isolada, branding próprio, ampulheta local, fail-closed, noindex e responsividade.")
+print("PASS: autenticação GAV isolada, branding próprio, ampulheta local, fail-closed, noindex, cache e responsividade.")
