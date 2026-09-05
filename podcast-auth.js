@@ -1,11 +1,6 @@
 (() => {
   "use strict";
 
-  /*
-    O podcast reutiliza somente a validação canônica de credenciais do Curso ATS.
-    Sessão e tentativas são isoladas por namespace próprio para que um login não
-    autentique automaticamente a outra página.
-  */
   const KEY_MAP = Object.freeze({
     curso_ats_auth_v3: "gav_auth_v1",
     ats_login_attempts_v3: "gav_login_attempts_v1"
@@ -40,21 +35,19 @@
 
   function setText(root, selector, value) {
     const node = root.querySelector(selector);
-    if (node) node.textContent = value;
+    if (node && node.textContent !== value) node.textContent = value;
   }
 
   function bindAutoAccess(gate) {
     const form = gate.querySelector("#catsAuthForm");
     const input = gate.querySelector("#catsAuthInput");
-    const submit = gate.querySelector("#catsAuthSubmit");
     if (!form || !input) return;
-
-    if (submit) submit.remove();
-
-    setText(gate, "#catsAuthHelp", "Digite sua matrícula BM/PM (7 números) ou CPF cadastrado (11 números). O acesso é validado automaticamente.");
 
     if (input.dataset.autoAccessBound === "1") return;
     input.dataset.autoAccessBound = "1";
+
+    gate.querySelector("#catsAuthSubmit")?.remove();
+    setText(gate, "#catsAuthHelp", "Matrícula BM/PM: 7 números. CPF cadastrado: 11 números.");
 
     const trySubmit = delay => {
       window.clearTimeout(autoTimer);
@@ -101,16 +94,16 @@
 
     setText(gate, ".cats-auth-kicker", "Biblioteca sonora e trilhas de aprendizagem");
     setText(gate, ".cats-auth-hero-text", "Conteúdos complementares para escuta, reflexão técnica, aprofundamento em abordagem e Primeiros Socorros Psicológicos.");
-    setText(gate, ".cats-auth-hero-foot span", "Identifique-se ao lado para acessar a biblioteca.");
+    setText(gate, ".cats-auth-hero-foot span", "Identifique-se para acessar a biblioteca.");
     setText(gate, ".cats-auth-eyebrow", "Acesso à biblioteca");
 
     const loginTitle = gate.querySelector("#catsAuthLoginTitle");
     if (loginTitle) loginTitle.innerHTML = `Entre na <span class="cats-auth-accent">biblioteca</span>`;
 
-    setText(gate, ".cats-auth-subtitle", "Informe a mesma credencial autorizada utilizada na plataforma ATS. O acesso ocorre automaticamente após a validação.");
+    setText(gate, ".cats-auth-subtitle", "Informe sua credencial de acesso.");
     setText(gate, ".cats-auth-course-title", "Girando a Ampulheta da Vida");
     setText(gate, ".cats-auth-course-note", "Biblioteca de apoio às aulas e à formação em ATS.");
-    setText(gate, ".cats-auth-note", "O acesso é individual e destinado às pessoas previamente cadastradas.");
+    setText(gate, ".cats-auth-note", "Acesso individual para pessoas previamente cadastradas.");
 
     const logo = gate.querySelector(".cats-auth-logo");
     if (logo) logo.innerHTML = hourglassSvg;
