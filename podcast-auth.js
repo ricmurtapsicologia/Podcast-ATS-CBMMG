@@ -35,8 +35,8 @@
       <path d="M27 23h10c-1.7 3.2-3.4 4.7-5 6.3-1.7-1.6-3.3-3.1-5-6.3Zm2.2 18c.9-2 1.8-3 2.8-4 1 1 1.9 2 2.8 4h-5.6Z" fill="#ffdd00"/>
     </svg>`;
 
-  function setText(selector, value) {
-    const node = document.querySelector(selector);
+  function setText(root, selector, value) {
+    const node = root.querySelector(selector);
     if (node) node.textContent = value;
   }
 
@@ -54,7 +54,7 @@
     const gate = document.getElementById("catsAuthGate");
     if (!gate) return false;
 
-    gate.dataset.gavBranded = "true";
+    gate.removeAttribute("data-gav-branded");
     gate.setAttribute("aria-label", "Acesso ao Girando a Ampulheta da Vida");
 
     const brand = gate.querySelector(".cats-auth-brand");
@@ -63,19 +63,19 @@
     const title = gate.querySelector("#catsAuthTitle");
     if (title) title.innerHTML = `Girando a <span class="cats-auth-accent">Ampulheta</span> da Vida`;
 
-    setText("#catsAuthGate .cats-auth-kicker", "Biblioteca sonora e trilhas de aprendizagem");
-    setText("#catsAuthGate .cats-auth-hero-text", "Conteúdos complementares para escuta, reflexão técnica, aprofundamento em abordagem e Primeiros Socorros Psicológicos.");
-    setText("#catsAuthGate .cats-auth-hero-foot span", "Identifique-se ao lado para acessar a biblioteca.");
-    setText("#catsAuthGate .cats-auth-eyebrow", "Acesso à biblioteca");
+    setText(gate, ".cats-auth-kicker", "Biblioteca sonora e trilhas de aprendizagem");
+    setText(gate, ".cats-auth-hero-text", "Conteúdos complementares para escuta, reflexão técnica, aprofundamento em abordagem e Primeiros Socorros Psicológicos.");
+    setText(gate, ".cats-auth-hero-foot span", "Identifique-se ao lado para acessar a biblioteca.");
+    setText(gate, ".cats-auth-eyebrow", "Acesso à biblioteca");
 
     const loginTitle = gate.querySelector("#catsAuthLoginTitle");
     if (loginTitle) loginTitle.innerHTML = `Entre na <span class="cats-auth-accent">biblioteca</span>`;
 
-    setText("#catsAuthGate .cats-auth-subtitle", "Informe a mesma credencial autorizada utilizada na plataforma ATS.");
-    setText("#catsAuthGate .cats-auth-course-title", "Girando a Ampulheta da Vida");
-    setText("#catsAuthGate .cats-auth-course-note", "Biblioteca de apoio às aulas e à formação em ATS.");
-    setText("#catsAuthGate #catsAuthButtonText", "Entrar na biblioteca");
-    setText("#catsAuthGate .cats-auth-note", "O acesso é individual e destinado às pessoas previamente cadastradas.");
+    setText(gate, ".cats-auth-subtitle", "Informe a mesma credencial autorizada utilizada na plataforma ATS.");
+    setText(gate, ".cats-auth-course-title", "Girando a Ampulheta da Vida");
+    setText(gate, ".cats-auth-course-note", "Biblioteca de apoio às aulas e à formação em ATS.");
+    setText(gate, "#catsAuthButtonText", "Entrar na biblioteca");
+    setText(gate, ".cats-auth-note", "O acesso é individual e destinado às pessoas previamente cadastradas.");
 
     const logo = gate.querySelector(".cats-auth-logo");
     if (logo) logo.innerHTML = hourglassSvg;
@@ -91,6 +91,7 @@
       Object.defineProperty(gate, "__gavBrandObserver", { value: brandingObserver });
     }
 
+    gate.dataset.gavBranded = "true";
     document.documentElement.classList.remove("gav-auth-pending");
     return true;
   }
