@@ -35,14 +35,54 @@
       <path d="M27 23h10c-1.7 3.2-3.4 4.7-5 6.3-1.7-1.6-3.3-3.1-5-6.3Zm2.2 18c.9-2 1.8-3 2.8-4 1 1 1.9 2 2.8 4h-5.6Z" fill="#ffdd00"/>
     </svg>`;
 
+  let autoTimer = 0;
+  const onlyDigits = value => String(value || "").replace(/\D/g, "");
+
   function setText(root, selector, value) {
     const node = root.querySelector(selector);
     if (node) node.textContent = value;
   }
 
+  function bindAutoAccess(gate) {
+    const form = gate.querySelector("#catsAuthForm");
+    const input = gate.querySelector("#catsAuthInput");
+    const submit = gate.querySelector("#catsAuthSubmit");
+    if (!form || !input) return;
+
+    if (submit) {
+      submit.hidden = true;
+      submit.setAttribute("aria-hidden", "true");
+      submit.tabIndex = -1;
+    }
+
+    setText(gate, "#catsAuthHelp", "Digite sua matrícula BM/PM (7 números) ou CPF cadastrado (11 números). O acesso é validado automaticamente.");
+
+    if (input.dataset.autoAccessBound === "1") return;
+    input.dataset.autoAccessBound = "1";
+
+    const trySubmit = delay => {
+      window.clearTimeout(autoTimer);
+      const current = onlyDigits(input.value);
+      if (current.length !== 7 && current.length !== 11) return;
+      autoTimer = window.setTimeout(() => {
+        if (input.disabled) return;
+        const latest = onlyDigits(input.value);
+        if (latest !== current) return;
+        if (latest.length !== 7 && latest.length !== 11) return;
+        form.requestSubmit();
+      }, delay);
+    };
+
+    input.addEventListener("input", () => {
+      const length = onlyDigits(input.value).length;
+      window.clearTimeout(autoTimer);
+      if (length === 11) trySubmit(0);
+      else if (length === 7) trySubmit(550);
+    });
+  }
+
   function maintainDynamicBranding(gate) {
-    const buttonText = gate.querySelector("#catsAuthButtonText");
-    if (buttonText?.textContent === "Entrar no ambiente") buttonText.textContent = "Entrar na biblioteca";
+    bindAutoAccess(gate);
 
     const messageText = gate.querySelector("#catsAuthMessageText");
     if (messageText?.textContent?.includes("Abrindo o ambiente")) {
@@ -71,10 +111,9 @@
     const loginTitle = gate.querySelector("#catsAuthLoginTitle");
     if (loginTitle) loginTitle.innerHTML = `Entre na <span class="cats-auth-accent">biblioteca</span>`;
 
-    setText(gate, ".cats-auth-subtitle", "Informe a mesma credencial autorizada utilizada na plataforma ATS.");
+    setText(gate, ".cats-auth-subtitle", "Informe a mesma credencial autorizada utilizada na plataforma ATS. O acesso ocorre automaticamente após a validação.");
     setText(gate, ".cats-auth-course-title", "Girando a Ampulheta da Vida");
     setText(gate, ".cats-auth-course-note", "Biblioteca de apoio às aulas e à formação em ATS.");
-    setText(gate, "#catsAuthButtonText", "Entrar na biblioteca");
     setText(gate, ".cats-auth-note", "O acesso é individual e destinado às pessoas previamente cadastradas.");
 
     const logo = gate.querySelector(".cats-auth-logo");
