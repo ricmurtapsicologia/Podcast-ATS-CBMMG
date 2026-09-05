@@ -1,0 +1,57 @@
+html.gav-auth-pending .page,
+html.gav-auth-pending .skip-link,
+html.gav-auth-pending #onboarding{visibility:hidden}
+html.gav-auth-pending .noscript{visibility:visible}
+
+#catsAuthGate{
+  --a-bg0:#02050a;
+  --a-bg1:#06101d;
+  --a-bg2:#0b1b2f;
+  --a-navy:#003366;
+  --a-navy2:#07569f;
+  --a-navy3:#001f3f;
+  --a-gold:#ffdd00;
+}
+
+#catsAuthGate .cats-auth-hero{
+  background:
+    linear-gradient(100deg,rgba(2,6,12,.92),rgba(2,6,12,.62) 48%,rgba(2,6,12,.20) 76%),
+    url("assets/img/hero.jpg") center/cover no-repeat !important;
+}
+
+#catsAuthGate .cats-auth-hero:after{
+  background:
+    radial-gradient(circle at 18% 20%,rgba(255,221,0,.14),transparent 28%),
+    linear-gradient(180deg,rgba(0,0,0,.04),rgba(0,0,0,.58));
+}
+
+#catsAuthGate .cats-auth-brand svg{width:18px;height:18px}
+#catsAuthGate .cats-auth-logo svg{width:40px;height:40px}
+#catsAuthGate .cats-auth-hero-title{max-width:690px}
+#catsAuthGate .cats-auth-course-title{letter-spacing:-.01em}
+
+html.gav-auth-failed body:before{
+  content:"Não foi possível carregar a validação de acesso. Atualize a página e tente novamente.";
+  position:fixed;
+  inset:0;
+  z-index:2147483647;
+  display:grid;
+  place-items:center;
+  padding:28px;
+  background:#07101f;
+  color:#fff;
+  text-align:center;
+  font:700 16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+}
+
+@media(max-width:980px){
+  #catsAuthGate .cats-auth-hero{
+    background:
+      linear-gradient(180deg,rgba(2,6,12,.40),rgba(2,6,12,.88) 78%),
+      url("assets/img/hero.jpg") center/cover no-repeat !important;
+  }
+}
+
+@media(prefers-reduced-motion:reduce){
+  #catsAuthGate *,#catsAuthGate *:before,#catsAuthGate *:after{transition:none!important;animation:none!important}
+}
