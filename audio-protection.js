@@ -22,15 +22,19 @@
     audio.addEventListener("dragstart", block, {capture:true});
   }
 
+  function isDirectAudioAction(link) {
+    if (!(link instanceof HTMLAnchorElement)) return false;
+    const href = link.getAttribute("href") || "";
+    return link.hasAttribute("download") || AUDIO_URL.test(href) || /baixar\s+áudio/i.test(link.textContent || "");
+  }
+
+  function stripDirectAudioAction(link) {
+    if (isDirectAudioAction(link)) link.remove();
+  }
+
   function removeDirectAudioActions(root = document) {
-    const links = root.querySelectorAll?.("a") || [];
-    links.forEach(link => {
-      const href = link.getAttribute("href") || "";
-      const isAudio = AUDIO_URL.test(href);
-      const isDownload = link.hasAttribute("download") || /baixar\s+áudio/i.test(link.textContent || "");
-      if (!isAudio && !isDownload) return;
-      link.remove();
-    });
+    if (root instanceof HTMLAnchorElement) stripDirectAudioAction(root);
+    root.querySelectorAll?.("a").forEach(stripDirectAudioAction);
   }
 
   function protect(root = document) {
@@ -39,13 +43,13 @@
     removeDirectAudioActions(root);
   }
 
-  document.addEventListener("click", event => {
+  function blockDirectAudioLink(event) {
     const link = event.target?.closest?.("a");
-    if (!link) return;
-    const href = link.getAttribute("href") || "";
-    if (link.hasAttribute("download") || AUDIO_URL.test(href)) block(event);
-  }, true);
+    if (isDirectAudioAction(link)) block(event);
+  }
 
+  document.addEventListener("click", blockDirectAudioLink, true);
+  document.addEventListener("auxclick", blockDirectAudioLink, true);
   document.addEventListener("contextmenu", event => {
     if (event.target?.closest?.("audio")) block(event);
   }, true);
