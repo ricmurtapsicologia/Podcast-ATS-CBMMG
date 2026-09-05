@@ -49,17 +49,21 @@ with sync_playwright() as p:
     assert "Girando a Ampulheta da Vida" in (gate.locator("#catsAuthTitle").text_content() or "")
     assert (gate.locator(".cats-auth-eyebrow").text_content() or "").strip() == "Acesso à biblioteca"
     assert gate.locator("#catsAuthSubmit").count() == 0, "botão de entrada deve ser removido do DOM"
-    assert "validado automaticamente" in (gate.locator("#catsAuthHelp").text_content() or "")
+    assert (gate.locator("#catsAuthHelp").text_content() or "").strip() == "Matrícula BM/PM: 7 números. CPF cadastrado: 11 números."
     semantic_gate_text = gate.text_content() or ""
-    assert "Atendimento a Tentativas de Suicídio" not in semantic_gate_text
+    for forbidden in ("validado automaticamente", "O acesso ocorre automaticamente", "Atendimento a Tentativas de Suicídio"):
+        assert forbidden not in semantic_gate_text
     hero_bg = page.locator("#catsAuthGate .cats-auth-hero").evaluate("el => getComputedStyle(el).backgroundImage")
     assert "assets/img/hero.jpg" in hero_bg or "hero.jpg" in hero_bg, hero_bg
     assert not external_visual_requests, external_visual_requests
 
-    # Uma matrícula de 7 dígitos dispara validação automaticamente, sem clique.
+    # Uma matrícula de 7 dígitos dispara validação automaticamente, sem clique e sem travar o observer.
     page.locator("#catsAuthInput").fill("0000000")
     page.wait_for_function("() => document.querySelector('#catsAuthMessage')?.classList.contains('is-visible')", timeout=5000)
     assert "Credencial não localizada" in page.locator("#catsAuthMessage").inner_text()
+    page.locator("#catsAuthInput").fill("")
+    page.locator("#catsAuthInput").fill("123")
+    assert page.locator("#catsAuthInput").input_value() == "123"
     page.evaluate("localStorage.removeItem('gav_login_attempts_v1')")
     page.locator("#catsAuthInput").fill("")
 
@@ -183,4 +187,4 @@ with sync_playwright() as p:
     assert not errors, errors
     browser.close()
 
-print("PASS: GAV — gate sem botão, acesso automático, proteção de áudio, sessão isolada, players, progresso, deep links, PSP, onboarding e mobile.")
+print("PASS: GAV — gate responsivo sem botão, acesso automático, frontend limpo, proteção de áudio, sessão isolada, players, progresso, deep links, PSP, onboarding e mobile.")
