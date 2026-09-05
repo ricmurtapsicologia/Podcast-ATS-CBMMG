@@ -48,7 +48,7 @@ with sync_playwright() as p:
     assert gate.get_attribute("data-gav-branded") == "true"
     assert "Girando a Ampulheta da Vida" in (gate.locator("#catsAuthTitle").text_content() or "")
     assert (gate.locator(".cats-auth-eyebrow").text_content() or "").strip() == "Acesso à biblioteca"
-    assert gate.locator("#catsAuthSubmit").is_hidden(), "botão de entrada não deve aparecer"
+    assert gate.locator("#catsAuthSubmit").count() == 0, "botão de entrada deve ser removido do DOM"
     assert "validado automaticamente" in (gate.locator("#catsAuthHelp").text_content() or "")
     semantic_gate_text = gate.text_content() or ""
     assert "Atendimento a Tentativas de Suicídio" not in semantic_gate_text
@@ -82,11 +82,12 @@ with sync_playwright() as p:
     image_sources = page.locator(".series-card img").evaluate_all("els => els.map(el => el.getAttribute('src'))")
     assert image_sources == ["assets/img/series-1.jpg", "assets/img/series-2.jpg", "assets/img/series-3.jpg"], image_sources
 
-    # Série 1: lista compacta, player único, busca, progresso por ID estável.
+    # Série 1: lista compacta, player único, sem download/compartilhamento direto, busca e progresso por ID estável.
     page.locator('button[data-series-id="1"]').click()
     assert page.locator("#episodeIndex .episode-row").count() == 21
     assert page.locator("#episodeList audio").count() == 1
     assert page.locator("#activeEpisodeTitle").inner_text().startswith("A1 001")
+    assert page.locator("#downloadActive").count() == 0
 
     search = page.locator("#episodeSearch")
     search.fill("Poder de Ouvir")
@@ -97,6 +98,9 @@ with sync_playwright() as p:
 
     page.locator('button.episode-select[data-item-id="a1-005"]').click()
     audio = page.locator("#seriesAudio")
+    controls_list = audio.get_attribute("controlsList") or ""
+    assert "nodownload" in controls_list and "noremoteplayback" in controls_list, controls_list
+    assert audio.evaluate("el => el.disableRemotePlayback === true")
     audio.evaluate("el => new Promise((resolve, reject) => { if (el.readyState >= 1) return resolve(); const t=setTimeout(()=>reject(new Error('metadata timeout')),15000); el.addEventListener('loadedmetadata',()=>{clearTimeout(t);resolve();},{once:true}); el.load(); })")
     duration = audio.evaluate("el => el.duration")
     assert duration and duration > 0
@@ -125,7 +129,7 @@ with sync_playwright() as p:
     assert deep.locator("#activeEpisodeTitle").inner_text().startswith("A1 007")
     assert deep.evaluate("localStorage.getItem('gav:v4:item:a1-005')") is not None
 
-    # Série 3: 10 cards, player único e conteúdo preservado.
+    # Série 3: 10 cards, player único, proteção de mídia e conteúdo preservado.
     deep.locator("#backToSeries").click()
     deep.locator('button[data-series-id="3"]').click()
     deep.wait_for_selector("#pspGrid .psp-card")
@@ -138,6 +142,9 @@ with sync_playwright() as p:
     assert deep.locator("#pspGrid .psp-card").nth(0).locator(".psp-card-details").is_visible()
     deep.locator("#pspGrid .psp-card").nth(0).locator(".psp-listen").click()
     psp_audio = deep.locator("#pspSharedAudio")
+    psp_controls_list = psp_audio.get_attribute("controlsList") or ""
+    assert "nodownload" in psp_controls_list and "noremoteplayback" in psp_controls_list, psp_controls_list
+    assert psp_audio.evaluate("el => el.disableRemotePlayback === true")
     psp_audio.evaluate("el => new Promise((resolve, reject) => { if (el.readyState >= 1) return resolve(); const t=setTimeout(()=>reject(new Error('psp metadata timeout')),15000); el.addEventListener('loadedmetadata',()=>{clearTimeout(t);resolve();},{once:true}); el.load(); })")
     assert psp_audio.evaluate("el => el.duration") > 0
 
@@ -170,9 +177,10 @@ with sync_playwright() as p:
     reduced.locator('button[data-series-id="1"]').click()
     assert reduced.locator("#episodeList audio").count() == 1
     assert reduced.locator("#episodeIndex .episode-row").count() == 21
+    assert "nodownload" in (reduced.locator("#seriesAudio").get_attribute("controlsList") or "")
     reduced_context.close()
 
     assert not errors, errors
     browser.close()
 
-print("PASS: GAV — acesso automático sem botão, sessão isolada, branding, players, progresso, deep links, PSP, onboarding, mobile e reduced-motion.")
+print("PASS: GAV — gate sem botão, acesso automático, proteção de áudio, sessão isolada, players, progresso, deep links, PSP, onboarding e mobile.")
