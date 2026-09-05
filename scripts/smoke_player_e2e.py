@@ -2,19 +2,36 @@ from __future__ import annotations
 
 import json
 import sys
+import time
 from playwright.sync_api import sync_playwright
 
 BASE = sys.argv[1] if len(sys.argv) > 1 else "http://127.0.0.1:8765/"
 
 
-def prepare(page):
-    page.goto(BASE, wait_until="networkidle")
-    page.evaluate("localStorage.setItem('gav:v4:onboard-done','1')")
+def auth_payload() -> str:
+    now = int(time.time() * 1000)
+    return json.dumps({
+        "authenticated": True,
+        "createdAt": now,
+        "expiresAt": now + 8 * 60 * 60 * 1000,
+        "version": 3,
+    })
+
+
+def authorize(page, url: str = BASE, onboard_done: bool = True) -> None:
+    page.goto(url, wait_until="networkidle")
+    page.evaluate("payload => sessionStorage.setItem('gav_auth_v1', payload)", auth_payload())
+    if onboard_done:
+        page.evaluate("localStorage.setItem('gav:v4:onboard-done','1')")
     page.reload(wait_until="networkidle")
+    page.wait_for_selector("#catsAuthGate")
+    assert page.locator("#catsAuthGate").is_hidden(), "gate deveria estar liberado com sessão GAV válida"
 
 
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=True)
+
+    # 1) Gate próprio: bloqueado por padrão, branding da ampulheta e sem assets visuais externos.
     context = browser.new_context(viewport={"width": 1365, "height": 900})
     page = context.new_page()
     errors: list[str] = []
@@ -22,14 +39,44 @@ with sync_playwright() as p:
     page.on("pageerror", lambda exc: errors.append(str(exc)))
     page.on("console", lambda msg: errors.append(msg.text) if msg.type == "error" else None)
     page.on("request", lambda req: external_visual_requests.append(req.url) if ("pinimg.com" in req.url or "images.pexels.com" in req.url) else None)
-    prepare(page)
+
+    page.goto(BASE, wait_until="networkidle")
+    page.wait_for_selector("#catsAuthGate")
+    gate = page.locator("#catsAuthGate")
+    assert gate.is_visible(), "acesso deve iniciar bloqueado"
+    assert gate.get_attribute("data-gav-branded") == "true"
+    gate_text = gate.inner_text()
+    assert "Girando a Ampulheta da Vida" in gate_text
+    assert "Acesso à biblioteca" in gate_text
+    assert "Entrar na biblioteca" in gate_text
+    assert "Atendimento a Tentativas de Suicídio" not in gate_text
+    hero_bg = page.locator("#catsAuthGate .cats-auth-hero").evaluate("el => getComputedStyle(el).backgroundImage")
+    assert "assets/img/hero.jpg" in hero_bg or "hero.jpg" in hero_bg, hero_bg
+    assert not external_visual_requests, external_visual_requests
+
+    # Formato inválido é rejeitado sem depender de uma credencial real.
+    page.locator("#catsAuthInput").fill("000")
+    page.locator("#catsAuthSubmit").click()
+    assert "Formato inválido" in page.locator("#catsAuthMessage").inner_text()
+
+    # 2) Isolamento: uma sessão física do Curso ATS não libera o podcast.
+    ats_context = browser.new_context(viewport={"width": 1100, "height": 760})
+    payload = auth_payload().replace("\\", "\\\\").replace("'", "\\'")
+    ats_context.add_init_script(f"sessionStorage.setItem('curso_ats_auth_v3','{payload}')")
+    ats_page = ats_context.new_page()
+    ats_page.goto(BASE, wait_until="networkidle")
+    ats_page.wait_for_selector("#catsAuthGate")
+    assert ats_page.locator("#catsAuthGate").is_visible(), "sessão do Curso ATS não pode liberar o podcast"
+    ats_context.close()
+
+    # 3) Sessão própria libera apenas a experiência GAV.
+    authorize(page)
 
     # Home/branding/CTA: três séries, assets locais e ação pedagógica primária.
     assert page.locator(".series-card").count() == 3
     assert page.locator("#heroPrimary").inner_text().strip() == "Explorar as séries"
     image_sources = page.locator(".series-card img").evaluate_all("els => els.map(el => el.getAttribute('src'))")
     assert image_sources == ["assets/img/series-1.jpg", "assets/img/series-2.jpg", "assets/img/series-3.jpg"], image_sources
-    assert not external_visual_requests, external_visual_requests
 
     # Série 1: lista compacta, player único, busca, progresso por ID estável.
     page.locator('button[data-series-id="1"]').click()
@@ -58,7 +105,6 @@ with sync_playwright() as p:
     assert state["completed"] is False
     assert "a1-005" in page.evaluate("localStorage.getItem('gav:v4:last-item')")
 
-    # Conclusão persistente e filtro.
     audio.evaluate("el => el.dispatchEvent(new Event('ended'))")
     page.wait_for_timeout(80)
     state = json.loads(page.evaluate("localStorage.getItem('gav:v4:item:a1-005')"))
@@ -67,15 +113,15 @@ with sync_playwright() as p:
     assert page.locator("#episodeIndex .episode-row").count() >= 1
     assert "A1 005" in page.locator("#episodeIndex").inner_text()
 
-    # Deep link não depende da URL física/versionamento do MP3.
+    # Deep link preservado sob autenticação própria.
     deep = context.new_page()
-    deep.goto(BASE + "#serie-1/a1-007", wait_until="networkidle")
+    authorize(deep, BASE + "#serie-1/a1-007")
     assert deep.locator("#libraryPanel").is_visible()
     assert deep.locator("#episodeList audio").count() == 1
     assert deep.locator("#activeEpisodeTitle").inner_text().startswith("A1 007")
     assert deep.evaluate("localStorage.getItem('gav:v4:item:a1-005')") is not None
 
-    # Série 3: fonte canônica única, 10 cards, um único player e sem jargão interno N2/N3.
+    # Série 3: 10 cards, player único e conteúdo preservado.
     deep.locator("#backToSeries").click()
     deep.locator('button[data-series-id="3"]').click()
     deep.wait_for_selector("#pspGrid .psp-card")
@@ -92,15 +138,15 @@ with sync_playwright() as p:
     assert psp_audio.evaluate("el => el.duration") > 0
 
     psp_deep = context.new_page()
-    psp_deep.goto(BASE + "#serie-3/psp-03", wait_until="networkidle")
+    authorize(psp_deep, BASE + "#serie-3/psp-03")
     psp_deep.wait_for_selector('[data-psp-id="psp-03"].is-open')
     assert psp_deep.locator('[data-psp-id="psp-03"] .psp-card-details').is_visible()
     assert psp_deep.locator("#episodeList audio").count() == 1
 
-    # Onboarding: foco preso ao diálogo, decisão persistente e Escape funcional.
+    # Onboarding continua funcional após autenticação.
     fresh_context = browser.new_context(viewport={"width": 1000, "height": 760})
     fresh = fresh_context.new_page()
-    fresh.goto(BASE, wait_until="networkidle")
+    authorize(fresh, onboard_done=False)
     assert fresh.locator("#onboarding").get_attribute("aria-hidden") == "false"
     fresh.locator("#onboardStart").focus()
     fresh.keyboard.press("Shift+Tab")
@@ -110,19 +156,19 @@ with sync_playwright() as p:
     fresh.keyboard.press("Escape")
     assert fresh.locator("#onboarding").get_attribute("aria-hidden") == "true"
     assert fresh.evaluate("localStorage.getItem('gav:v4:onboard-done')") == "1"
+    fresh_context.close()
 
-    # Reduced motion efetivo.
+    # Mobile + reduced motion.
     reduced_context = browser.new_context(viewport={"width": 390, "height": 844}, reduced_motion="reduce")
     reduced = reduced_context.new_page()
-    reduced.goto(BASE, wait_until="networkidle")
-    reduced.evaluate("localStorage.setItem('gav:v4:onboard-done','1')")
-    reduced.reload(wait_until="networkidle")
+    authorize(reduced)
     assert reduced.evaluate("getComputedStyle(document.documentElement).scrollBehavior") == "auto"
     reduced.locator('button[data-series-id="1"]').click()
     assert reduced.locator("#episodeList audio").count() == 1
     assert reduced.locator("#episodeIndex .episode-row").count() == 21
+    reduced_context.close()
 
     assert not errors, errors
     browser.close()
 
-print("PASS: GAV v4 — arquitetura canônica, player único, progresso estável, CTA, deep link, PSP, teclado, mobile e reduced-motion.")
+print("PASS: GAV — gate próprio, sessão isolada, branding da ampulheta, players, progresso, deep links, PSP, onboarding, mobile e reduced-motion.")
