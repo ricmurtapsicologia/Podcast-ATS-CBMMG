@@ -1,7 +1,16 @@
 (() => {
   "use strict";
 
+  const AUTH_EXTRA_URL = "https://ricmurtapsicologia.github.io/Curso-ATS/auth-extra-20260914.js?v=20260914-1";
   const AUDIO_URL = /\.(?:mp3|m4a|aac|wav|ogg)(?:$|[?#])/i;
+
+  function loadSupplementalAuth() {
+    if (document.querySelector('script[src*="auth-extra-20260914.js"]')) return;
+    const script = document.createElement("script");
+    script.src = AUTH_EXTRA_URL;
+    script.async = false;
+    document.head.appendChild(script);
+  }
 
   function block(event) {
     event.preventDefault();
@@ -48,6 +57,7 @@
     if (isDirectAudioAction(link)) block(event);
   }
 
+  loadSupplementalAuth();
   document.addEventListener("click", blockDirectAudioLink, true);
   document.addEventListener("auxclick", blockDirectAudioLink, true);
   document.addEventListener("contextmenu", event => {
