@@ -1,13 +1,13 @@
 (() => {
   "use strict";
 
-  const AUTH_EXTRA_URL = "https://ricmurtapsicologia.github.io/Curso-ATS/auth-extra-20260914.js?v=20260914-2";
+  const ACCESS_URL = "https://ricmurtapsicologia.github.io/Curso-ATS/access-2026.js?v=20260914-3";
   const AUDIO_URL = /\.(?:mp3|m4a|aac|wav|ogg)(?:$|[?#])/i;
 
-  function loadSupplementalAuth() {
-    if (document.querySelector('script[src*="auth-extra-20260914.js"]')) return;
+  function loadCanonicalAccess() {
+    if (document.querySelector('script[src*="access-2026.js"]')) return;
     const script = document.createElement("script");
-    script.src = AUTH_EXTRA_URL;
+    script.src = ACCESS_URL;
     script.async = false;
     document.head.appendChild(script);
   }
@@ -57,7 +57,7 @@
     if (isDirectAudioAction(link)) block(event);
   }
 
-  loadSupplementalAuth();
+  loadCanonicalAccess();
   document.addEventListener("click", blockDirectAudioLink, true);
   document.addEventListener("auxclick", blockDirectAudioLink, true);
   document.addEventListener("contextmenu", event => {
