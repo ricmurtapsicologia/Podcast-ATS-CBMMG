@@ -1,7 +1,7 @@
 (() => {
   "use strict";
 
-  const AUTH_EXTRA_URL = "https://ricmurtapsicologia.github.io/Curso-ATS/auth-extra-20260914.js?v=20260914-1";
+  const AUTH_EXTRA_URL = "https://ricmurtapsicologia.github.io/Curso-ATS/auth-extra-20260914.js?v=20260914-2";
   const AUDIO_URL = /\.(?:mp3|m4a|aac|wav|ogg)(?:$|[?#])/i;
 
   function loadSupplementalAuth() {
