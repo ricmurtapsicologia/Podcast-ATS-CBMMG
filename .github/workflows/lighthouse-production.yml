@@ -5,6 +5,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/lighthouse-production.yml'
+      - 'index.html'
   workflow_dispatch: {}
 
 permissions:
