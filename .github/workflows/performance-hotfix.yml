@@ -1,0 +1,41 @@
+name: Hotfix — performance Podcast ATS
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/performance-hotfix.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  hotfix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Remover analytics duplicado e priorizar LCP
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          s=re.sub(r'\n\s*<script async src="https://www\.googletagmanager\.com/gtag/js\?id=G-N1GEBDNZ8B"></script>\s*\n\s*<script>window\.dataLayer=.*?</script>\s*', '\n', s, count=1, flags=re.S)
+          marker='<link rel="icon" href="assets/img/hero.jpg" type="image/jpeg" />'
+          preload=marker+'\n  <link rel="preload" as="image" href="assets/img/hero.jpg" fetchpriority="high" />'
+          if marker in s and 'rel="preload" as="image" href="assets/img/hero.jpg"' not in s:
+              s=s.replace(marker,preload,1)
+          s=s.replace('ric-analytics.js?v=1.0.0','ric-analytics.js?v=1.1.2')
+          p.write_text(s,encoding='utf-8')
+          PY
+          if grep -q 'googletagmanager.com/gtag/js?id=G-N1GEBDNZ8B' index.html; then echo 'Analytics duplicado ainda presente'; exit 1; fi
+      - name: Publicar hotfix
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m 'Hotfix performance: remove analytics duplicado e prioriza LCP'
+          git push origin HEAD:main
