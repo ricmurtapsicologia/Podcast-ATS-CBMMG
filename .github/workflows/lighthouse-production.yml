@@ -1,0 +1,61 @@
+name: Lighthouse — Produção
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/lighthouse-production.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Instalar Lighthouse
+        run: npm install --global lighthouse@12.8.2
+
+      - name: Aguardar página publicada
+        run: |
+          for i in {1..18}; do
+            if curl -fsSL --max-time 20 'https://ricmurtapsicologia.github.io/Podcast-ATS-CBMMG/' >/dev/null; then exit 0; fi
+            sleep 10
+          done
+          exit 1
+
+      - name: Executar Lighthouse
+        run: |
+          lighthouse 'https://ricmurtapsicologia.github.io/Podcast-ATS-CBMMG/' \
+            --chrome-flags='--headless --no-sandbox --disable-gpu' \
+            --only-categories=performance,accessibility,best-practices,seo \
+            --output=json --output-path=lighthouse.json --quiet
+
+      - name: Resumo e achados
+        run: |
+          node <<'NODE'
+          const fs=require('fs');
+          const r=JSON.parse(fs.readFileSync('lighthouse.json','utf8'));
+          console.log('LIGHTHOUSE_SCORES');
+          for (const [k,v] of Object.entries(r.categories)) console.log(`${k}=${Math.round(v.score*100)}`);
+          console.log('LIGHTHOUSE_FINDINGS');
+          const rows=[];
+          for (const [id,a] of Object.entries(r.audits)) {
+            if (a.scoreDisplayMode==='notApplicable' || a.score===null || a.score===1) continue;
+            const impact=(a.details&&typeof a.details.overallSavingsMs==='number')?a.details.overallSavingsMs:0;
+            rows.push({id,score:a.score,title:a.title,display:a.displayValue||'',impact});
+          }
+          rows.sort((a,b)=>(a.score??1)-(b.score??1)||b.impact-a.impact);
+          for (const x of rows.slice(0,40)) console.log(JSON.stringify(x));
+          NODE
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-podcast-ats
+          path: lighthouse.json
+          retention-days: 7
