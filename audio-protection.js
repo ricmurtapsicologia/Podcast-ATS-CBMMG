@@ -2,14 +2,20 @@
   "use strict";
 
   const ACCESS_URL = "https://ricmurtapsicologia.github.io/Curso-ATS/access-2026.js?v=20260917-1";
+  const ACCESS_HOTFIX_URL = "https://ricmurtapsicologia.github.io/Curso-ATS/access-hotfix-20260918.js?v=20260918-2";
   const AUDIO_URL = /\.(?:mp3|m4a|aac|wav|ogg)(?:$|[?#])/i;
 
-  function loadCanonicalAccess() {
-    if (document.querySelector('script[src*="access-2026.js"]')) return;
+  function loadAccess(src, marker) {
+    if (document.querySelector(`script[src*="${marker}"]`)) return;
     const script = document.createElement("script");
-    script.src = ACCESS_URL;
+    script.src = src;
     script.async = false;
     document.head.appendChild(script);
+  }
+
+  function loadCanonicalAccess() {
+    loadAccess(ACCESS_URL, "access-2026.js");
+    loadAccess(ACCESS_HOTFIX_URL, "access-hotfix-20260918.js");
   }
 
   function block(event) {
