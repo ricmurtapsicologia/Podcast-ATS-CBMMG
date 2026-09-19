@@ -1,6 +1,17 @@
 (() => {
   "use strict";
 
+  function loadSharedAccessPolicy() {
+    if (document.querySelector('script[data-ats-shared-access]')) return;
+    const script = document.createElement("script");
+    script.src = "https://ricmurtapsicologia.github.io/Curso-ATS/auth-extra.js?v=20260919-1";
+    script.async = false;
+    script.dataset.atsSharedAccess = "true";
+    document.head.appendChild(script);
+  }
+
+  loadSharedAccessPolicy();
+
   const KEY_MAP = Object.freeze({
     curso_ats_auth_v3: "gav_auth_v1",
     ats_login_attempts_v3: "gav_login_attempts_v1"
