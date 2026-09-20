@@ -4,7 +4,7 @@
   function loadSharedAccessPolicy() {
     if (document.querySelector('script[data-ats-shared-access]')) return;
     const script = document.createElement("script");
-    script.src = "https://ricmurtapsicologia.github.io/Curso-ATS/auth-extra.js?v=20260919-1";
+    script.src = "https://ricmurtapsicologia.github.io/Curso-ATS/auth-extra.js?v=20260920-ops1";
     script.async = false;
     script.dataset.atsSharedAccess = "true";
     document.head.appendChild(script);
