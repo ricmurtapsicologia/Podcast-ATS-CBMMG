@@ -1,0 +1,69 @@
+name: Podcast GA4 Core Hotfix
+
+on:
+  push:
+    branches: [hotfix/ga4-core-20260920]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  patch-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: hotfix/ga4-core-20260920
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.13'
+      - name: Apply canonical GA4 core
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          GA='G-N1GEBDNZ8B'
+          p=Path('index.html')
+          s=p.read_text(encoding='utf-8')
+          s=re.sub(r'<meta name="ric-analytics-ga"[^>]*>\s*', '', s)
+          anchor='<meta name="ric-analytics-privacy" content="public">'
+          if anchor not in s:
+              raise SystemExit('analytics privacy meta missing')
+          s=s.replace(anchor, anchor+f'\n<meta name="ric-analytics-ga" content="{GA}">', 1)
+          s=re.sub(r'ric-analytics\.js\?v=[^"\']+', 'ric-analytics.js?v=1.1.3', s)
+          # Never allow the obsolete direct GA tag to reappear.
+          s=re.sub(r'\n\s*<script async src="https://www\.googletagmanager\.com/gtag/js\?id=[^"]+"></script>\s*\n\s*<script>window\.dataLayer=.*?</script>\s*', '\n', s, flags=re.S)
+          p.write_text(s, encoding='utf-8')
+
+          wf=Path('.github/workflows/performance-hotfix.yml')
+          if wf.exists():
+              t=wf.read_text(encoding='utf-8')
+              t=t.replace('ric-analytics.js?v=1.1.2','ric-analytics.js?v=1.1.3')
+              wf.write_text(t, encoding='utf-8')
+          PY
+      - name: Validate canonical GA4 only
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          s=Path('index.html').read_text(encoding='utf-8')
+          assert s.count('<meta name="ric-analytics-page" content="podcast-ats">') == 1
+          assert s.count('<meta name="ric-analytics-privacy" content="public">') == 1
+          assert s.count('<meta name="ric-analytics-ga" content="G-N1GEBDNZ8B">') == 1
+          assert s.count('ric-analytics.js?v=1.1.3') == 1
+          assert 'G-38D052F915' not in s
+          assert 'googletagmanager.com/gtag/js?id=' not in s
+          print('PODCAST_GA4_HOTFIX_OK')
+          PY
+      - name: Commit hotfix branch
+        run: |
+          if git diff --quiet -- index.html .github/workflows/performance-hotfix.yml; then
+            echo 'No content patch needed.'
+            exit 0
+          fi
+          git config user.name 'ricmurtapsicologia'
+          git config user.email '164411318+ricmurtapsicologia@users.noreply.github.com'
+          git add index.html .github/workflows/performance-hotfix.yml
+          git commit -m 'hotfix: unify Podcast on canonical GA4 core'
+          git push origin HEAD:hotfix/ga4-core-20260920
