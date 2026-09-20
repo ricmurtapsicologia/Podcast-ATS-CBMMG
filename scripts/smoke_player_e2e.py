@@ -32,7 +32,7 @@ def authorize(page, url: str = BASE, onboard_done: bool = True) -> None:
 with sync_playwright() as p:
     browser = p.chromium.launch(headless=True)
 
-    # 1) Gate próprio: bloqueado por padrão, branding da ampulheta, acesso automático e sem assets visuais externos.
+    # 1) Gate próprio: bloqueado por padrão, branding da ampulheta, acesso seguro e sem assets visuais externos.
     context = browser.new_context(viewport={"width": 1365, "height": 900})
     page = context.new_page()
     errors: list[str] = []
@@ -48,8 +48,8 @@ with sync_playwright() as p:
     assert gate.get_attribute("data-gav-branded") == "true"
     assert "Girando a Ampulheta da Vida" in (gate.locator("#catsAuthTitle").text_content() or "")
     assert (gate.locator(".cats-auth-eyebrow").text_content() or "").strip() == "Acesso à biblioteca"
-    assert gate.locator("#catsAuthSubmit").count() == 0, "botão de entrada deve ser removido do DOM"
-    assert (gate.locator("#catsAuthHelp").text_content() or "").strip() == "Matrícula BM/PM: 7 números. CPF cadastrado: 11 números."
+    assert gate.locator("#catsAuthSubmit").count() == 1, "botão Acessar deve permanecer disponível"
+    assert (gate.locator("#catsAuthHelp").text_content() or "").strip() == "Matrícula BM/PM: 7 números. CPF cadastrado: 11 números. Use o botão Acessar ou Enter."
     semantic_gate_text = gate.text_content() or ""
     for forbidden in ("validado automaticamente", "O acesso ocorre automaticamente", "Atendimento a Tentativas de Suicídio"):
         assert forbidden not in semantic_gate_text
@@ -57,15 +57,29 @@ with sync_playwright() as p:
     assert "assets/img/hero.jpg" in hero_bg or "hero.jpg" in hero_bg, hero_bg
     assert not external_visual_requests, external_visual_requests
 
-    # Uma matrícula de 7 dígitos dispara validação automaticamente, sem clique e sem travar o observer.
-    page.locator("#catsAuthInput").fill("0000000")
+    # Matrícula de 7 dígitos não pode autoenviar: evita validar prematuramente os sete primeiros dígitos de um CPF.
+    auth_input = page.locator("#catsAuthInput")
+    auth_input.fill("0000000")
+    page.wait_for_timeout(700)
+    assert not page.locator("#catsAuthMessage").evaluate("el => el.classList.contains('is-visible')")
+    assert auth_input.input_value() == "0000000"
+
+    # A matrícula continua funcional por ação explícita.
+    gate.locator("#catsAuthSubmit").click()
     page.wait_for_function("() => document.querySelector('#catsAuthMessage')?.classList.contains('is-visible')", timeout=5000)
     assert "Credencial não localizada" in page.locator("#catsAuthMessage").inner_text()
-    page.locator("#catsAuthInput").fill("")
-    page.locator("#catsAuthInput").fill("123")
-    assert page.locator("#catsAuthInput").input_value() == "123"
+    auth_input.fill("")
+    auth_input.fill("123")
+    assert auth_input.input_value() == "123"
     page.evaluate("localStorage.removeItem('gav_login_attempts_v1')")
-    page.locator("#catsAuthInput").fill("")
+    auth_input.fill("")
+
+    # CPF completo mantém o autoenvio somente após os 11 dígitos.
+    auth_input.fill("00000000000")
+    page.wait_for_function("() => document.querySelector('#catsAuthMessage')?.classList.contains('is-visible')", timeout=5000)
+    assert "Credencial não localizada" in page.locator("#catsAuthMessage").inner_text()
+    page.evaluate("localStorage.removeItem('gav_login_attempts_v1')")
+    auth_input.fill("")
 
     # 2) Isolamento: uma sessão física do Curso ATS não libera o podcast.
     ats_context = browser.new_context(viewport={"width": 1100, "height": 760})
@@ -187,4 +201,4 @@ with sync_playwright() as p:
     assert not errors, errors
     browser.close()
 
-print("PASS: GAV — gate responsivo sem botão, acesso automático, frontend limpo, proteção de áudio, sessão isolada, players, progresso, deep links, PSP, onboarding e mobile.")
+print("PASS: GAV — gate responsivo com acesso explícito em 7 dígitos e autoenvio só em CPF completo, frontend limpo, proteção de áudio, sessão isolada, players, progresso, deep links, PSP, onboarding e mobile.")
