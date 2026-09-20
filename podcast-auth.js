@@ -4,7 +4,7 @@
   function loadSharedAccessPolicy() {
     if (document.querySelector('script[data-ats-shared-access]')) return;
     const script = document.createElement("script");
-    script.src = "https://ricmurtapsicologia.github.io/Curso-ATS/auth-extra.js?v=20260920-ops1";
+    script.src = "https://ricmurtapsicologia.github.io/Curso-ATS/auth-extra.js?v=20260920-v201";
     script.async = false;
     script.dataset.atsSharedAccess = "true";
     document.head.appendChild(script);
@@ -57,18 +57,16 @@
     if (input.dataset.autoAccessBound === "1") return;
     input.dataset.autoAccessBound = "1";
 
-    gate.querySelector("#catsAuthSubmit")?.remove();
-    setText(gate, "#catsAuthHelp", "Matrícula BM/PM: 7 números. CPF cadastrado: 11 números.");
+    setText(gate, "#catsAuthHelp", "Matrícula BM/PM: 7 números. CPF cadastrado: 11 números. Use o botão Acessar ou Enter.");
 
     const trySubmit = delay => {
       window.clearTimeout(autoTimer);
       const current = onlyDigits(input.value);
-      if (current.length !== 7 && current.length !== 11) return;
+      if (current.length !== 11) return;
       autoTimer = window.setTimeout(() => {
         if (input.disabled) return;
         const latest = onlyDigits(input.value);
-        if (latest !== current) return;
-        if (latest.length !== 7 && latest.length !== 11) return;
+        if (latest !== current || latest.length !== 11) return;
         form.requestSubmit();
       }, delay);
     };
@@ -77,7 +75,6 @@
       const length = onlyDigits(input.value).length;
       window.clearTimeout(autoTimer);
       if (length === 11) trySubmit(0);
-      else if (length === 7) trySubmit(550);
     });
   }
 
