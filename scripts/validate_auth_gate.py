@@ -27,17 +27,19 @@ for marker in (
 ):
     assert marker in auth_js or marker in auth_css, marker
 
-# Acesso automático: botão removido e binding idempotente para evitar loop de MutationObserver.
+# Acesso seguro: matrícula de 7 dígitos exige ação explícita; CPF só autoenvia quando completo.
 for marker in (
-    'gate.querySelector("#catsAuthSubmit")?.remove()',
     'input.dataset.autoAccessBound === "1"',
     'form.requestSubmit()',
     'length === 11',
-    'length === 7',
-    'trySubmit(550)',
-    'Matrícula BM/PM: 7 números. CPF cadastrado: 11 números.',
+    'current.length !== 11',
+    'latest.length !== 11',
+    'Use o botão Acessar ou Enter.',
 ):
     assert marker in auth_js, marker
+assert 'gate.querySelector("#catsAuthSubmit")?.remove()' not in auth_js
+assert 'length === 7' not in auth_js
+assert 'trySubmit(550)' not in auth_js
 assert 'validado automaticamente' not in auth_js
 assert 'O acesso ocorre automaticamente' not in auth_js
 
@@ -65,4 +67,4 @@ assert '<meta name="robots" content="noindex,nofollow" />' in index
 for marker in ('focus-visible', 'prefers-reduced-motion:reduce', '@media(max-width:980px)', '@media(max-width:560px)'):
     assert marker in auth_css, marker
 
-print("PASS: autenticação GAV isolada, sem loop de observer, botão removido, UI limpa, proteção de mídia, fail-closed, noindex e responsividade.")
+print("PASS: autenticação GAV isolada, sem autoenvio prematuro em 7 dígitos, botão/Enter disponíveis, CPF completo com autoenvio, proteção de mídia, fail-closed, noindex e responsividade.")
